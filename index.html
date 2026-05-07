@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>TestRipper - Mocks</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<style>
+  /* ====== THEME VARIABLES ====== */
+  :root {
+    --bg-main: #0B0E14;
+    --bg-card: #151A22;
+    --bg-nav: #0B0E14;
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --accent-green: #A3E635;
+    --accent-purple: #8B5CF6;
+    --accent-red: #EF4444;
+    --border-color: #1E293B;
+  }
+
+  [data-theme="light"] {
+    --bg-main: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-nav: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --accent-green: #16A34A;
+    --accent-purple: #6D28D9;
+    --accent-red: #DC2626;
+    --border-color: #E2E8F0;
+  }
+
+  /* ====== RESET & BASE ====== */
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+  body { background: var(--bg-main); color: var(--text-primary); transition: background 0.3s, color 0.3s; padding-bottom: 70px; }
+  a { text-decoration: none; color: inherit; }
+  button { border: none; background: none; cursor: pointer; color: inherit; outline: none; }
+
+  /* ====== HEADER ====== */
+  .header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; position: sticky; top: 0; background: var(--bg-main); z-index: 100; border-bottom: 1px solid var(--border-color); }
+  .logo-area { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 800; color: var(--accent-green); }
+  .logo-area i { color: var(--accent-green); }
+  .header-actions { display: flex; gap: 15px; font-size: 1.2rem; }
+
+  /* ====== QUOTE MARQUEE ====== */
+  .quote-container { background: var(--bg-card); overflow: hidden; white-space: nowrap; padding: 8px 0; border-bottom: 1px solid var(--border-color); position: relative; height: 36px; display: flex; align-items: center;}
+  .vibrating-quote { position: absolute; font-size: 0.85rem; font-weight: 600; color: var(--accent-purple); animation: scrollLeftToRight 15s linear infinite; }
+  
+  @keyframes scrollLeftToRight {
+    0% { left: -100%; transform: translateY(0px); }
+    25% { transform: translateY(-1px); }
+    50% { transform: translateY(1px); }
+    75% { transform: translateY(-1px); }
+    100% { left: 100%; transform: translateY(0px); }
+  }
+
+  /* ====== LAYOUT CONTAINER ====== */
+  .container { padding: 16px; max-width: 800px; margin: 0 auto; }
+
+  /* ====== HOME VIEW SPECIFICS ====== */
+  .welcome-section { margin-bottom: 20px; }
+  .welcome-section p { color: var(--accent-purple); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+  .welcome-section h1 { font-size: 1.8rem; font-weight: 800; margin-top: 4px; }
+  .profile-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(163, 230, 53, 0.1); color: var(--accent-green); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 8px; border: 1px solid rgba(163, 230, 53, 0.3); }
+
+  /* ====== PREMIUM SOCIAL BANNER ====== */
+  .social-banner { background: #11141A; border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; margin-bottom: 24px; position: relative; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+  .social-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #ff4757, #ffa502, #A3E635); }
+  .social-banner h2 { color: #ff4757; font-size: 1.6rem; font-weight: 900; margin-bottom: 4px; letter-spacing: 0.5px; }
+  .social-banner .sub-heading { font-size: 1rem; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+  .social-banner .sub-heading span { color: #ffa502; }
+  .social-banner hr { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 12px 0; }
+  .social-banner .desc { font-size: 0.8rem; color: #a4b0be; line-height: 1.5; margin-bottom: 16px; }
+  .social-banner .desc i { color: #facc15; }
+  
+  .social-buttons-container { display: flex; gap: 10px; flex-wrap: wrap; }
+  .soc-btn { flex: 1; min-width: 100px; display: flex; align-items: center; gap: 8px; padding: 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); text-decoration: none; transition: 0.2s; background: rgba(0,0,0,0.3); }
+  .soc-btn:active { transform: scale(0.95); }
+  .soc-btn i { font-size: 1.5rem; }
+  .soc-btn .text { display: flex; flex-direction: column; }
+  .soc-btn .text b { font-size: 0.8rem; color: #fff; }
+  .soc-btn .text span { font-size: 0.6rem; color: #a4b0be; }
+  
+  .btn-telegram { border-color: rgba(30, 161, 242, 0.3); }
+  .btn-telegram i { color: #1da1f2; }
+  .btn-youtube { border-color: rgba(255, 0, 0, 0.3); }
+  .btn-youtube i { color: #ff0000; }
+  .btn-instagram { border-color: rgba(193, 53, 132, 0.3); }
+  .btn-instagram i { background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  /* ====== GRID CARDS ====== */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 16px; text-align: center; cursor: pointer; transition: transform 0.2s; }
+  .stat-card:active { transform: scale(0.96); }
+  .stat-card i { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .stat-card.mock-stat i { color: var(--accent-purple); }
+  .stat-card.target-stat i { color: var(--accent-red); }
+  .stat-card h3 { font-size: 1rem; margin-bottom: 4px; }
+  .stat-card p { font-size: 0.75rem; color: var(--text-secondary); }
+
+  .section-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+  
+  .category-list { display: flex; flex-direction: column; gap: 12px; }
+  .category-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px; transition: transform 0.2s; cursor: pointer; }
+  .category-card:active { transform: scale(0.98); }
+  .cat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .bg-blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+  .bg-green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+  .bg-orange { background: rgba(249, 115, 22, 0.1); color: #f97316; }
+  .bg-red { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+  .cat-info flex-grow { flex-grow: 1; }
+  .cat-info h4 { font-size: 1rem; margin-bottom: 4px; text-transform: uppercase; }
+  .cat-info p { font-size: 0.75rem; color: var(--text-secondary); }
+
+  /* ====== DYNAMIC TABS ====== */
+  .cross-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+  .cross-block .info h4 { color: var(--text-primary); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .cross-block .btn { background: var(--bg-nav); border: 1px solid var(--border-color); color: var(--text-primary); padding: 6px 12px; border-radius: 6px; font-weight: bold; font-size: 0.85rem; }
+
+  /* ====== GITHUB BROWSER VIEW ====== */
+  .breadcrumb { font-size: 0.9rem; color: var(--accent-green); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; text-transform: uppercase;}
+  .breadcrumb span.crumb { cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+  
+  .loader { text-align: center; padding: 40px; color: var(--text-secondary); }
+  .loader i { font-size: 2rem; color: var(--accent-green); animation: spin 1s linear infinite; margin-bottom: 10px; }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+
+  .github-list { display: flex; flex-direction: column; gap: 10px; }
+  
+  /* UPDATED FILE & FOLDER ITEMS FOR HISTORY INJECTION */
+  .file-card-wrapper {
+    background: var(--bg-card); border: 1px solid var(--border-color); 
+    border-radius: 10px; padding: 12px 16px; transition: 0.2s;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .file-card-wrapper:active { background: var(--border-color); }
+  
+  .github-item-row { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+  .github-item-row .left { display: flex; align-items: center; gap: 12px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;}
+  .github-item-row.file .left i { color: var(--accent-purple); }
+  .github-item-row.folder .left i { color: #facc15; }
+  .github-item-row .btn-start { background: var(--accent-green); color: #000; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; }
+
+  /* NEW ATTEMPT BADGES CSS */
+  .attempts-row { 
+    display: flex; gap: 8px; flex-wrap: wrap; 
+    margin-top: 4px; padding-top: 10px; 
+    border-top: 1px dashed rgba(255,255,255,0.1); 
+  }
+  body[data-theme="light"] .attempts-row { border-top-color: rgba(0,0,0,0.1); }
+  
+  .attempt-badge {
+    border-radius: 8px; padding: 6px 10px; text-align: center; 
+    font-size: 0.75rem; border: 1px solid transparent;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+  }
+  .attempt-badge.att-1 { border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.05); }
+  .attempt-badge.att-2 { border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.05); }
+  .attempt-badge.att-3 { border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.05); }
+  
+  .att-title { font-weight: 900; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .attempt-badge.att-1 .att-title { color: #ef4444; }
+  .attempt-badge.att-2 .att-title { color: #3b82f6; }
+  .attempt-badge.att-3 .att-title { color: #a855f7; }
+  
+  .att-score { font-weight: 800; font-size: 0.8rem; color: var(--text-primary); }
+  .att-date { font-size: 0.6rem; color: var(--text-secondary); font-weight: 600; }
+
+  /* ====== BOTTOM NAV ====== */
+  .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-nav); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); z-index: 100; }
+  .nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 0.7rem; color: var(--text-secondary); transition: 0.2s; }
+  .nav-item i { font-size: 1.2rem; }
+  .nav-item.active { color: var(--accent-green); }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-area">
+      <i class="fa-solid fa-tree"></i> TestRipper
+    </div>
+    <div class="header-actions">
+      <button onclick="toggleTheme()"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+      <button><i class="fa-regular fa-bell"></i></button>
+    </div>
+  </header>
+
+  <div class="quote-container">
+    <div class="vibrating-quote" id="daily-quote">
+      <i class="fa-solid fa-bolt" style="color:#facc15"></i> Loading Quote of the Day...
+    </div>
+  </div>
+
+  <main class="container" id="main-content">
+    
+    <div id="view-home">
+      <div class="welcome-section">
+        <p id="greeting-text">Good Morning</p>
+        <h1>Welcome back,<br><span style="color:var(--accent-green)">⚔️WARRIOR⚔️</span></h1>
+        <div class="profile-tag"><i class="fa-solid fa-khanda"></i> Warrior Level</div>
+      </div>
+
+      <div class="social-banner">
+        <h2>Thank You!</h2>
+        <div class="sub-heading">Thankooo for visiting here<br><span>You're at the right place!</span></div>
+        <hr>
+        <div class="desc">
+          <i class="fa-solid fa-sparkles"></i> Must Join our following Channels<br>for Daily Targets, Best Solutions, Free Courses, PDFs & Exam Hack
+        </div>
+        <div class="social-buttons-container">
+          <a href="https://t.me/Vishwasniya" target="_blank" class="soc-btn btn-telegram">
+            <i class="fa-brands fa-telegram"></i>
+            <div class="text"><b>Telegram</b><span>Join Channel</span></div>
+          </a>
+          <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="soc-btn btn-youtube">
+            <i class="fa-brands fa-youtube"></i>
+            <div class="text"><b>YouTube</b><span>Subscribe</span></div>
+          </a>
+          <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="soc-btn btn-instagram">
+            <i class="fa-brands fa-instagram"></i>
+            <div class="text"><b>Instagram</b><span>Follow Us</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="stat-card mock-stat" onclick="openFolder('MOCK TESTS')">
+          <i class="fa-solid fa-file-pen"></i>
+          <h3>Mock Tests</h3>
+          <p>23,055 Available</p>
+        </div>
+        <div class="stat-card target-stat" onclick="openFolder('TARGET-SERIES')">
+          <i class="fa-solid fa-bullseye"></i>
+          <h3>Target Series</h3>
+          <p>Real-time Tests</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">Explore Exams <span style="font-size: 0.8rem; color: var(--accent-green)">View All</span></h3>
+      
+      <div class="category-list">
+        <div class="category-card" onclick="openFolder('MOCK TESTS/SSC')">
+          <div class="cat-icon bg-blue"><i class="fa-solid fa-book-open"></i></div>
+          <div class="cat-info">
+            <h4>SSC Exams</h4>
+            <p>CGL, CHSL, MTS, CPO, GD</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+
+        <div class="category-card" onclick="openFolder('MOCK TESTS/BANKS & REGULATORIES BODIES')">
+          <div class="cat-icon bg-green"><i class="fa-solid fa-building-columns"></i></div>
+          <div class="cat-info">
+            <h4>Bank Exams</h4>
+            <p>IBPS, SBI, RBI, NABARD</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+
+        <div class="category-card" onclick="openFolder('MOCK TESTS/RAILWAY EXAMS')">
+          <div class="cat-icon bg-orange"><i class="fa-solid fa-train-subway"></i></div>
+          <div class="cat-info">
+            <h4>Railway Exams</h4>
+            <p>RRB NTPC, Group D, ALP</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+        
+        <div class="category-card" onclick="openFolder('MOCK TESTS/Defence')">
+          <div class="cat-icon bg-red"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="cat-info">
+            <h4>Defence Exams</h4>
+            <p>NDA, CDS, AFCAT, CAPF</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+      </div>
+
+      <h3 class="section-title" style="margin-top: 24px;">Other Resources</h3>
+      <div id="dynamic-tabs-container" style="display:flex; flex-direction:column; gap:12px;">
+        <div style="text-align:center; color:var(--text-secondary); font-size:0.8rem;"><i class="fa-solid fa-spinner fa-spin"></i> Checking for new tabs...</div>
+      </div>
+
+    </div>
+
+    <div id="view-folder" class="hidden">
+      <div class="breadcrumb" id="breadcrumb-container"></div>
+      <div id="github-content"></div>
+      
+      <div class="cross-block" style="margin-top:20px;" onclick="navigateHome()">
+        <div class="info">
+          <h4 style="color:var(--accent-purple)"><i class="fa-solid fa-house"></i> Back to Dashboard</h4>
+        </div>
+        <div class="btn" style="background:var(--accent-purple); color:#fff;">Home &rarr;</div>
+      </div>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="navigateHome()">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" onclick="openFolder('MOCK TESTS')">
+      <i class="fa-solid fa-pen-nib"></i>
+      <span>Mocks</span>
+    </button>
+    <button class="nav-item" onclick="openFolder('TARGET-SERIES')">
+      <i class="fa-solid fa-bullseye"></i>
+      <span>Targets</span>
+    </button>
+    <button class="nav-item" onclick="alert('Profile section under construction, Warrior!')">
+      <i class="fa-solid fa-user"></i>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+<script>
+  /* =========================================
+     FIREBASE SETUP & GLOBAL ATTEMPTS FETCH
+     ========================================= */
+  const firebaseConfig = {
+    apiKey: "AIzaSyAbaDJ5F9HK45SybxhuYaR4aZo0PDKVi7o",
+    authDomain: "testripper-mocks.firebaseapp.com",
+    projectId: "testripper-mocks",
+    storageBucket: "testripper-mocks.firebasestorage.app",
+    messagingSenderId: "344935856479",
+    appId: "1:344935856479:web:26014707272cb8bd7e1eea"
+  };
+
+  if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  // Yahan sabhi tests ka record ek baar me save hoga
+  let globalUserAttempts = [];
+
+  auth.onAuthStateChanged(async (user) => {
+    if (user) {
+      try {
+        const snap = await db.collection("users").doc(user.uid).collection("attempts").orderBy("serverTime", "asc").get();
+        globalUserAttempts = snap.docs.map(doc => doc.data());
+        
+        // Agar baccha directly kisi folder me hai, toh history turant update kar do
+        if (history.state && history.state.view === 'folder') {
+          renderFolderView(history.state.path, false);
+        }
+      } catch(e) {
+        console.error("Firebase fetch error", e);
+      }
+    } else {
+      globalUserAttempts = [];
+    }
+  });
+
+  /* =========================================
+     MATCHING ALGORITHM (FILE NAME === TEST NAME)
+     ========================================= */
+  function normalizeStringForMatch(str) {
+    if (!str) return "";
+    // Saare extra symbols, extensions, dots, aur "quiz" word hata do fuzzy matching ke liye
+    return str.replace(/\.html|\.txt/g, '')
+              .replace(/[-_ \.]/g, '')
+              .replace(/quiz$/i, '')
+              .toLowerCase()
+              .trim();
+  }
+
+  /* =========================================
+     EXISTING GITHUB BROWSER LOGIC
+     ========================================= */
+  const REPO_OWNER = 'TestRipper'; 
+  const REPO_NAME = 'testripper-mocks'; 
+  const GITHUB_API_BASE = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
+  
+  const folderCache = {}; 
+
+  window.onload = () => {
+    setTimeBasedGreeting();
+    fetchQuote();
+    loadDynamicRootFolders();
+    history.replaceState({ view: 'home', path: '' }, "");
+  };
+
+  function setTimeBasedGreeting() {
+    const options = { timeZone: 'Asia/Kolkata', hour: 'numeric', hour12: false };
+    const formatter = new Intl.DateTimeFormat([], options);
+    const currentHour = parseInt(formatter.format(new Date()));
+    
+    let greeting = "Good Morning";
+    if (currentHour >= 12 && currentHour < 17) {
+      greeting = "Good Afternoon";
+    } else if (currentHour >= 17) {
+      greeting = "Good Night";
+    }
+    document.getElementById('greeting-text').innerText = greeting;
+  }
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    if (body.hasAttribute('data-theme')) {
+      body.removeAttribute('data-theme');
+      icon.className = 'fa-solid fa-moon';
+    } else {
+      body.setAttribute('data-theme', 'light');
+      icon.className = 'fa-solid fa-sun';
+    }
+  }
+
+  async function fetchQuote() {
+    try {
+      const quoteUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/QUOTE/quote.txt`;
+      const res = await fetch(quoteUrl);
+      if(res.ok) {
+        const text = await res.text();
+        document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-bolt" style="color:#facc15"></i> ${text.trim()}`;
+      } else {
+        document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-fire"></i> Keep going, Stay awake, Warrior!`;
+      }
+    } catch(e) {
+      document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-fire"></i> Keep going, Stay awake, Warrior!`;
+    }
+  }
+
+  async function loadDynamicRootFolders() {
+    try {
+      const res = await fetch(GITHUB_API_BASE);
+      if(!res.ok) throw new Error("API Error");
+      const data = await res.json();
+      
+      const container = document.getElementById('dynamic-tabs-container');
+      let html = '';
+      const exclude = ['.main', 'MOCK TESTS', 'TARGET-SERIES'];
+      
+      data.forEach(item => {
+        if (item.type === 'dir' && !exclude.includes(item.name)) {
+          html += `
+          <div class="cross-block" onclick="openFolder('${item.name.replace(/'/g, "\\'")}')">
+            <div class="info">
+              <h4><i class="fa-solid fa-folder-open"></i> ${item.name}</h4>
+            </div>
+            <div class="btn">Open &rarr;</div>
+          </div>`;
+        }
+      });
+      
+      if(html === '') {
+        container.innerHTML = `<div style="text-align:center; color:var(--text-secondary); font-size:0.8rem;">No extra folders found in root.</div>`;
+      } else {
+        container.innerHTML = html;
+      }
+    } catch(e) {
+      document.getElementById('dynamic-tabs-container').innerHTML = '';
+    }
+  }
+
+  window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.view === 'folder') {
+      renderFolderView(event.state.path, false);
+    } else {
+      renderHomeView(false);
+    }
+  });
+
+  function navigateHome() { renderHomeView(true); }
+  function openFolder(path) { renderFolderView(path, true); }
+
+  function renderHomeView(pushHistory = true) {
+    document.getElementById('view-home').classList.remove('hidden');
+    document.getElementById('view-folder').classList.add('hidden');
+    
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-item')[0].classList.add('active');
+
+    if (pushHistory) history.pushState({ view: 'home', path: '' }, "");
+    window.scrollTo(0,0);
+  }
+
+  async function renderFolderView(path, pushHistory = true) {
+    document.getElementById('view-home').classList.add('hidden');
+    document.getElementById('view-folder').classList.remove('hidden');
+    
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    if(path.includes('TARGET-SERIES')) {
+      document.querySelectorAll('.nav-item')[2].classList.add('active');
+    } else {
+      document.querySelectorAll('.nav-item')[1].classList.add('active');
+    }
+
+    if (pushHistory) history.pushState({ view: 'folder', path: path }, "");
+
+    renderBreadcrumbs(path);
+    const contentDiv = document.getElementById('github-content');
+    contentDiv.innerHTML = `<div class="loader"><i class="fa-solid fa-spinner"></i><br>Fetching Data...</div>`;
+    window.scrollTo(0,0);
+
+    try {
+      let data;
+      if (folderCache[path]) {
+        data = folderCache[path];
+      } else {
+        let apiPath = path.split('/').map(segment => encodeURIComponent(segment)).join('/');
+        const response = await fetch(GITHUB_API_BASE + apiPath);
+        if (!response.ok) throw new Error("Folder not found");
+        data = await response.json();
+        folderCache[path] = data; 
+      }
+
+      const folders = data.filter(item => item.type === 'dir');
+      const files = data.filter(item => item.type === 'file' && (item.name.endsWith('.html') || item.name.endsWith('.txt')));
+      
+      if (folders.length === 0 && files.length === 0) {
+        contentDiv.innerHTML = `<div class="loader">Is folder mein abhi koi file nahi hai bhai!</div>`;
+        return;
+      }
+
+      let htmlString = '<div class="github-list">';
+      
+      folders.forEach(folder => {
+        let cleanName = decodeURIComponent(folder.name).replace(/-/g, ' ');
+        htmlString += `
+          <div class="file-card-wrapper" onclick="openFolder('${folder.path.replace(/'/g, "\\'")}')" style="cursor:pointer">
+            <div class="github-item-row folder">
+              <div class="left"><i class="fa-solid fa-folder-closed"></i> ${cleanName}</div>
+              <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+            </div>
+          </div>
+        `;
+      });
+
+      files.forEach(file => {
+        let cleanTitle = decodeURIComponent(file.name).replace('.html', '').replace('.txt', '').replace(/-/g, ' ');
+        let fileLink = `/${file.path}`; 
+
+        let iconStr = file.name.endsWith('.txt') ? '<i class="fa-solid fa-file-lines" style="color:#3b82f6"></i>' : '<i class="fa-solid fa-file-circle-check"></i>';
+        let btnText = file.name.endsWith('.txt') ? 'View' : 'Start';
+
+        // 🟢 MAGIC STARTS HERE: Match Firebase History with GitHub File
+        let normalizedFile = normalizeStringForMatch(file.name);
+        
+        let matchingHistory = globalUserAttempts.filter(att => {
+          return normalizeStringForMatch(att.testName) === normalizedFile;
+        });
+
+        let historyHTML = '';
+        if (matchingHistory.length > 0) {
+          historyHTML += `<div class="attempts-row">`;
+          
+          matchingHistory.forEach((att, idx) => {
+            // Give different colors to Attempt 1, 2, 3...
+            let colorClass = (idx === 0) ? 'att-1' : ((idx === 1) ? 'att-2' : 'att-3');
+            let dateOnly = att.ts ? att.ts.split(',')[0].toUpperCase() : '';
+            
+            historyHTML += `
+              <div class="attempt-badge ${colorClass}">
+                <div class="att-title">Attempt ${idx + 1}</div>
+                <div class="att-score">${att.score}</div>
+                <div class="att-date">${dateOnly}</div>
+              </div>
+            `;
+          });
+          
+          historyHTML += `</div>`;
+        }
+        // 🟢 MAGIC ENDS HERE
+
+        htmlString += `
+          <div class="file-card-wrapper">
+            <a href="${fileLink}" class="github-item-row file">
+              <div class="left">${iconStr} <span style="text-transform:capitalize">${cleanTitle}</span></div>
+              <div class="btn-start">${btnText}</div>
+            </a>
+            ${historyHTML}
+          </div>
+        `;
+      });
+
+      htmlString += '</div>';
+      contentDiv.innerHTML = htmlString;
+
+    } catch (error) {
+      console.error(error);
+      contentDiv.innerHTML = `<div class="loader" style="color:var(--accent-red)"><i class="fa-solid fa-triangle-exclamation"></i><br>Error loading data. Path check kar bhai.</div>`;
+    }
+  }
+
+  function renderBreadcrumbs(path) {
+    const container = document.getElementById('breadcrumb-container');
+    const parts = path.split('/');
+    
+    let breadcrumbHTML = `<span class="crumb" onclick="navigateHome()"><i class="fa-solid fa-house"></i> Home</span>`;
+    let currentPath = "";
+
+    parts.forEach((part, index) => {
+      if (!part) return;
+      currentPath += (currentPath === "" ? part : "/" + part);
+      
+      let cleanName = decodeURIComponent(part).replace(/-/g, ' ');
+      breadcrumbHTML += ` <i class="fa-solid fa-angle-right" style="font-size:0.7rem"></i> `;
+      
+      if (index === parts.length - 1) {
+        breadcrumbHTML += `<span style="color:var(--text-primary); font-weight:bold;">${cleanName}</span>`;
+      } else {
+        breadcrumbHTML += `<span class="crumb" onclick="openFolder('${currentPath.replace(/'/g, "\\'")}')">${cleanName}</span>`;
+      }
+    });
+
+    container.innerHTML = breadcrumbHTML;
+  }
+</script>
+</body>
+</html>
