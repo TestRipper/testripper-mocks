@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>TestRipper - Mocks</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+
+<style>
+  /* ====== THEME VARIABLES ====== */
+  :root {
+    --bg-main: #0B0E14;
+    --bg-card: #151A22;
+    --bg-nav: #0B0E14;
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --accent-green: #A3E635;
+    --accent-purple: #8B5CF6;
+    --accent-red: #EF4444;
+    --accent-blue: #3B82F6;
+    --accent-gold: #FACC15;
+    --border-color: #1E293B;
+  }
+
+  [data-theme="light"] {
+    --bg-main: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-nav: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --accent-green: #16A34A;
+    --accent-purple: #6D28D9;
+    --accent-red: #DC2626;
+    --accent-blue: #2563EB;
+    --accent-gold: #D97706;
+    --border-color: #E2E8F0;
+  }
+
+  /* ====== RESET & BASE ====== */
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+  body { background: var(--bg-main); color: var(--text-primary); transition: background 0.3s, color 0.3s; padding-bottom: 70px; }
+  a { text-decoration: none; color: inherit; }
+  button { border: none; background: none; cursor: pointer; color: inherit; outline: none; }
+
+  /* ====== HEADER ====== */
+  .header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; position: sticky; top: 0; background: var(--bg-main); z-index: 100; border-bottom: 1px solid var(--border-color); }
+  .logo-area { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 800; color: var(--accent-green); }
+  .logo-area i { color: var(--accent-green); }
+  .header-actions { display: flex; gap: 15px; font-size: 1.2rem; }
+
+  /* ====== QUOTE MARQUEE ====== */
+  .quote-container { background: var(--bg-card); overflow: hidden; white-space: nowrap; padding: 8px 0; border-bottom: 1px solid var(--border-color); position: relative; height: 36px; display: flex; align-items: center;}
+  .vibrating-quote { position: absolute; font-size: 0.85rem; font-weight: 600; color: var(--accent-purple); animation: scrollLeftToRight 15s linear infinite; }
+  
+  @keyframes scrollLeftToRight {
+    0% { left: -100%; transform: translateY(0px); }
+    25% { transform: translateY(-1px); }
+    50% { transform: translateY(1px); }
+    75% { transform: translateY(-1px); }
+    100% { left: 100%; transform: translateY(0px); }
+  }
+
+  /* ====== LAYOUT CONTAINER ====== */
+  .container { padding: 16px; max-width: 800px; margin: 0 auto; }
+
+  /* ====== HOME VIEW SPECIFICS ====== */
+  .welcome-section { margin-bottom: 20px; }
+  .welcome-section p { color: var(--accent-purple); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+  .welcome-section h1 { font-size: 1.8rem; font-weight: 800; margin-top: 4px; }
+  .profile-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(163, 230, 53, 0.1); color: var(--accent-green); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 8px; border: 1px solid rgba(163, 230, 53, 0.3); }
+
+  /* ====== PREMIUM SOCIAL BANNER ====== */
+  .social-banner { background: #11141A; border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; margin-bottom: 24px; position: relative; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+  .social-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #ff4757, #ffa502, #A3E635); }
+  .social-banner h2 { color: #ff4757; font-size: 1.6rem; font-weight: 900; margin-bottom: 4px; letter-spacing: 0.5px; }
+  .social-banner .sub-heading { font-size: 1rem; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+  .social-banner .sub-heading span { color: #ffa502; }
+  .social-banner hr { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 12px 0; }
+  .social-banner .desc { font-size: 0.8rem; color: #a4b0be; line-height: 1.5; margin-bottom: 16px; }
+  .social-banner .desc i { color: #facc15; }
+  
+  .social-buttons-container { display: flex; gap: 10px; flex-wrap: wrap; }
+  .soc-btn { flex: 1; min-width: 100px; display: flex; align-items: center; gap: 8px; padding: 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); text-decoration: none; transition: 0.2s; background: rgba(0,0,0,0.3); }
+  .soc-btn:active { transform: scale(0.95); }
+  .soc-btn i { font-size: 1.5rem; }
+  .soc-btn .text { display: flex; flex-direction: column; }
+  .soc-btn .text b { font-size: 0.8rem; color: #fff; }
+  .soc-btn .text span { font-size: 0.6rem; color: #a4b0be; }
+  
+  .btn-telegram { border-color: rgba(30, 161, 242, 0.3); }
+  .btn-telegram i { color: #1da1f2; }
+  .btn-youtube { border-color: rgba(255, 0, 0, 0.3); }
+  .btn-youtube i { color: #ff0000; }
+  .btn-instagram { border-color: rgba(193, 53, 132, 0.3); }
+  .btn-instagram i { background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  /* ====== GRID CARDS ====== */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 16px; text-align: center; cursor: pointer; transition: transform 0.2s; position: relative; overflow: hidden;}
+  .stat-card:active { transform: scale(0.96); }
+  .stat-card i { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .stat-card.mock-stat i { color: var(--accent-purple); }
+  .stat-card.target-stat i { color: var(--accent-red); }
+  .stat-card h3 { font-size: 1rem; margin-bottom: 4px; }
+  .stat-card p { font-size: 0.75rem; color: var(--text-secondary); }
+
+  /* ====== RECENT TESTS UI ====== */
+  .recent-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .recent-header h3 { font-size: 1.1rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff4757, #ffa502); -webkit-background-clip: text; color: transparent; margin:0;}
+  .recent-header .view-all { font-size: 0.8rem; color: var(--accent-green); font-weight: 700; cursor: pointer; }
+  .recent-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+  .recent-card h4 { font-size: 1rem; margin-bottom: 8px; color: var(--text-primary); text-transform: capitalize; }
+  
+  .recent-path-scroll {
+    overflow-x: auto; white-space: nowrap; font-size: 0.7rem; color: var(--text-secondary);
+    font-weight: 600; scrollbar-width: none; -ms-overflow-style: none; text-transform: uppercase;
+  }
+  .recent-path-scroll::-webkit-scrollbar { display: none; }
+
+  .section-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+  
+  .category-list { display: flex; flex-direction: column; gap: 12px; }
+  .category-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px; transition: transform 0.2s; cursor: pointer; }
+  .category-card:active { transform: scale(0.98); }
+  .cat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .bg-blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+  .bg-green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+  .bg-orange { background: rgba(249, 115, 22, 0.1); color: #f97316; }
+  .bg-red { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+  .cat-info flex-grow { flex-grow: 1; }
+  .cat-info h4 { font-size: 1rem; margin-bottom: 4px; text-transform: uppercase; }
+  .cat-info p { font-size: 0.75rem; color: var(--text-secondary); }
+
+  /* ====== DYNAMIC TABS ====== */
+  .cross-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+  .cross-block .info h4 { color: var(--text-primary); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .cross-block .btn { background: var(--bg-nav); border: 1px solid var(--border-color); color: var(--text-primary); padding: 6px 12px; border-radius: 6px; font-weight: bold; font-size: 0.85rem; }
+
+  /* ====== GITHUB BROWSER VIEW ====== */
+  .breadcrumb { font-size: 0.9rem; color: var(--accent-green); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; text-transform: uppercase;}
+  .breadcrumb span.crumb { cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+  .loader { text-align: center; padding: 40px; color: var(--text-secondary); }
+  .loader i { font-size: 2rem; color: var(--accent-green); animation: spin 1s linear infinite; margin-bottom: 10px; }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+  .github-list { display: flex; flex-direction: column; gap: 10px; }
+  
+  .file-card-wrapper { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 16px; transition: 0.2s; display: flex; flex-direction: column; gap: 8px; }
+  .file-card-wrapper:active { background: var(--border-color); }
+  .github-item-row { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+  .github-item-row .left { display: flex; align-items: center; gap: 12px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;}
+  .github-item-row.file .left i { color: var(--accent-purple); }
+  .github-item-row.folder .left i { color: #facc15; }
+  .github-item-row .btn-start { background: var(--accent-green); color: #000; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; }
+
+  /* ====== ATTEMPT BADGES ====== */
+  .attempts-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); }
+  body[data-theme="light"] .attempts-row { border-top-color: rgba(0,0,0,0.1); }
+  .attempt-badge { border-radius: 8px; padding: 6px 10px; text-align: center; font-size: 0.75rem; border: 1px solid transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: transform 0.15s; }
+  .attempt-badge:active { transform: scale(0.92); }
+  .attempt-badge.att-1 { border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.05); }
+  .attempt-badge.att-2 { border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.05); }
+  .attempt-badge.att-3 { border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.05); }
+  .att-title { font-weight: 900; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .attempt-badge.att-1 .att-title { color: #ef4444; }
+  .attempt-badge.att-2 .att-title { color: #3b82f6; }
+  .attempt-badge.att-3 .att-title { color: #a855f7; }
+  .att-score { font-weight: 800; font-size: 0.8rem; color: var(--text-primary); }
+  .att-date { font-size: 0.6rem; color: var(--text-secondary); font-weight: 600; }
+
+  /* ====== PROFILE & CYBERPUNK UI CSS ====== */
+  .profile-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; background: var(--bg-card); padding: 20px; border-radius: 16px; border: 1px solid var(--border-color); position: relative; overflow: hidden;}
+  .prof-avatar { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--accent-green); object-fit: cover; background: rgba(255,255,255,0.1); z-index: 2;}
+  .prof-info { z-index: 2; }
+  .prof-info h2 { margin-bottom: 4px; font-size: 1.5rem; font-weight: 900; }
+  .prof-info p { color: var(--text-secondary); font-size: 0.9rem; }
+  
+  /* CYBERPUNK GLOWING NAME */
+  .cyber-name {
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 50%, #A3E635 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 3s linear infinite;
+    text-shadow: 0px 0px 8px rgba(79, 172, 254, 0.3);
+    letter-spacing: 0.5px;
+  }
+  @keyframes shine { to { background-position: 200% center; } }
+
+  .chart-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; position: relative; height: 260px; display: flex; justify-content: center; align-items: center; margin-bottom: 16px;}
+  .chart-title { position: absolute; top: 16px; left: 16px; font-size: 1rem; font-weight: 800; color: var(--text-primary); z-index: 10;}
+  .chart-title .week-tag { display:inline-block; background: var(--accent-gold); color: #000; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom:4px; font-weight: 900;}
+
+  /* PREVIOUS WEEKS UI */
+  .prev-weeks-wrapper { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 24px; margin-top:-4px;}
+  .prev-week-card { min-width: 120px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: 0.2s;}
+  .prev-week-card:hover { border-color: var(--accent-green); }
+  .prev-week-card:active { transform: scale(0.95); }
+  .prev-week-card canvas { width: 60px !important; height: 60px !important; margin-bottom: 8px;}
+  .prev-week-card .pw-title { font-size: 0.75rem; font-weight: 800; color: var(--text-primary); text-align: center;}
+  .prev-week-card .pw-acc { font-size: 0.7rem; color: var(--accent-green); font-weight:bold;}
+
+  /* WEAK TOPICS UI */
+  .weak-topics-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .weak-card { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3); border-left: 4px solid var(--accent-red); border-radius: 10px; padding: 14px; position: relative; overflow:hidden;}
+  .weak-card h4 { font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 6px; text-transform: capitalize;}
+  .weak-card .w-stats { display: flex; gap: 15px; font-size: 0.8rem; font-weight: 700;}
+  .weak-card .w-stats span.red { color: #f87171; text-shadow: 0 0 5px rgba(248,113,113,0.4); }
+  .weak-card .w-stats span.purple { color: #c084fc; text-shadow: 0 0 5px rgba(192,132,252,0.4); }
+  .weak-card i.bg-icon { position:absolute; right:-10px; bottom:-10px; font-size: 4rem; color:rgba(239,68,68,0.05); transform:rotate(-15deg);}
+
+  .badges-container { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; }
+  .ach-badge { min-width: 110px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px;}
+  .ach-badge i { font-size: 1.8rem; color: var(--accent-gold); }
+  .ach-badge .ach-title { font-size: 0.8rem; font-weight: 800; color: var(--text-primary); }
+
+  /* ====== EMBEDDED MODALS CSS ====== */
+  .modal{ position:fixed;inset:0;background:rgba(0,0,0,.65); display:none;align-items:center;justify-content:center;padding:16px;z-index:9999; }
+  .modal.show{display:flex}
+  .result{ background:var(--bg-card);border:1px solid var(--border-color);border-radius:18px; padding:18px;max-width:640px;width:100%; color:var(--text-primary); display:flex; flex-direction:column; max-height:90vh;}
+  .rev-wrap{overflow-y:auto; padding-right:4px; flex-grow:1;}
+  .rev-head{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .badge{ background:rgba(255,255,255,.15);padding:6px 10px;border-radius:999px; font-weight:800;font-size:.82rem;color:var(--text-primary); }
+  .badge.ok{background:linear-gradient(90deg,var(--accent-purple),var(--accent-green))}
+  .badge.min{background:color-mix(in oklab, var(--accent-green) 65%, black)}
+  .badge.link{cursor:pointer;outline:2px solid transparent}
+  .badge.link:hover{outline:2px dashed rgba(255,255,255,.35)}
+  .rev-opt{ position:relative;border:2px solid var(--border-color);border-radius:12px; padding:10px 12px;margin:8px 0;background:rgba(255,255,255,.03); display:flex;align-items:center;gap:10px; }
+  .rev-dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--border-color);flex:0 0 18px}
+  .rev-opt.correct{border-color:var(--accent-green);background:color-mix(in oklab, var(--accent-green) 16%, transparent)}
+  .rev-opt.user{outline:2px dashed #60a5fa}
+  .rev-opt.user.wrong{border-color:var(--accent-red);background:color-mix(in oklab, var(--accent-red) 18%, transparent)}
+  .rev-ico{ position:absolute;right:10px;top:50%;transform:translateY(-50%); width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center; font-weight:900;color:#fff; }
+  .rev-ico.ok{background:var(--accent-green)}
+  .rev-ico.bad{background:var(--accent-red)}
+  .rev-dot.user{background:#60a5fa;border-color:#60a5fa}
+  .rev-dot.correct{background:var(--accent-green);border-color:var(--accent-green)}
+  .mini-nav{margin:10px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(34px,1fr));gap:6px}
+  .mini-chip{ display:flex;align-items:center;justify-content:center;border:1px solid var(--border-color); border-radius:10px;padding:6px 0;font-weight:800;font-size:.82rem;cursor:pointer; background:rgba(255,255,255,.04); }
+  .mini-chip.cur { outline: 3px solid #fbbf24 !important; outline-offset: 2px; transform: scale(1.12); z-index: 5; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); }
+  .mini-chip.ok{background:color-mix(in oklab, var(--accent-green) 28%, transparent)}
+  .mini-chip.bad{background:color-mix(in oklab, var(--accent-red) 28%, transparent)}
+  .mini-chip.un{background:rgba(148,163,184,.25)}
+  .mini-chip.mark { background: var(--accent-purple) !important; color: #fff; border-color: var(--accent-purple); }
+  .chart-wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:6px}
+  canvas#reviewChart{width:140px!important;height:140px!important;border-radius:8px;background:transparent}
+  .q{font-size:1.06rem;margin-bottom:10px}
+  .sol{ display:none;margin-top:12px; border:1px solid color-mix(in oklab,var(--accent-green) 50%,transparent); background:color-mix(in oklab,var(--accent-green) 18%,transparent); padding:12px;border-radius:12px; }
+  .btn-modal{ border:none;background:rgba(255,255,255,.15);color:var(--text-primary);padding:8px 16px;border-radius:10px;font-weight:800; cursor:pointer;display:inline-flex;align-items:center;gap:8px; font-size:1rem;}
+  .btn-modal:hover{background:rgba(255,255,255,.25)}
+  .btn-modal.danger{background:var(--accent-red);color:#fff;}
+  .btn-modal[disabled]{opacity:.55;cursor:not-allowed}
+
+  body[data-theme="light"] .badge{ background:linear-gradient(90deg,var(--accent-purple),var(--accent-green));color:#fff; box-shadow:0 0 0 1px rgba(0,0,0,.05) inset; }
+  body[data-theme="light"] .badge.min{background:color-mix(in oklab,var(--accent-green) 70%, black)}
+  body[data-theme="light"] .mini-chip.cur { outline: 3px solid #eab308 !important; }
+  body[data-theme="light"] .btn-modal{ background:rgba(0,0,0,.08); color:#111;}
+
+  /* ====== BOTTOM NAV ====== */
+  .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-nav); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); z-index: 100; }
+  .nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 0.7rem; color: var(--text-secondary); transition: 0.2s; }
+  .nav-item i { font-size: 1.2rem; }
+  .nav-item.active { color: var(--accent-green); }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-area">
+      <i class="fa-solid fa-tree"></i> TestRipper
+    </div>
+    <div class="header-actions">
+      <button onclick="toggleTheme()"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+      <button><i class="fa-regular fa-bell"></i></button>
+    </div>
+  </header>
+
+  <div class="quote-container">
+    <div class="vibrating-quote" id="daily-quote">
+      <i class="fa-solid fa-bolt" style="color:#facc15"></i> Loading Quote of the Day...
+    </div>
+  </div>
+
+  <main class="container" id="main-content">
+    
+    <div id="view-home">
+      <div class="welcome-section">
+        <p id="greeting-text">Good Morning</p>
+        <h1>Welcome back,<br><span style="color:var(--accent-green)">⚔️WARRIOR⚔️</span></h1>
+        <div class="profile-tag"><i class="fa-solid fa-khanda"></i> Warrior Level</div>
+      </div>
+
+      <div class="social-banner">
+        <h2>Thank You!</h2>
+        <div class="sub-heading">Thankooo for visiting here<br><span>You're at the right place!</span></div>
+        <hr>
+        <div class="desc">
+          <i class="fa-solid fa-sparkles"></i> Must Join our following Channels<br>for Daily Targets, Best Solutions, Free Courses, PDFs & Exam Hack
+        </div>
+        <div class="social-buttons-container">
+          <a href="https://t.me/Vishwasniya" target="_blank" class="soc-btn btn-telegram">
+            <i class="fa-brands fa-telegram"></i>
+            <div class="text"><b>Telegram</b><span>Join Channel</span></div>
+          </a>
+          <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="soc-btn btn-youtube">
+            <i class="fa-brands fa-youtube"></i>
+            <div class="text"><b>YouTube</b><span>Subscribe</span></div>
+          </a>
+          <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="soc-btn btn-instagram">
+            <i class="fa-brands fa-instagram"></i>
+            <div class="text"><b>Instagram</b><span>Follow Us</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="stat-card mock-stat" onclick="openFolder('MOCK TESTS')">
+          <i class="fa-solid fa-file-pen"></i>
+          <h3>Mock Tests</h3>
+          <p>23,055 Available</p>
+        </div>
+        <div class="stat-card target-stat" onclick="openFolder('TARGET-SERIES')">
+          <i class="fa-solid fa-bullseye"></i>
+          <h3>Target Series</h3>
+          <p>Real-time Tests</p>
+        </div>
+      </div>
+
+      <div id="home-recent-sec" class="hidden" style="margin-bottom: 24px;">
+         </div>
+
+      <h3 class="section-title">Explore Exams <span style="font-size: 0.8rem; color: var(--accent-green); cursor:pointer;" onclick="alert('More exams coming soon!')">View All</span></h3>
+      <div class="category-list">
+        <div class="category-card" onclick="openFolder('MOCK TESTS/SSC')">
+          <div class="cat-icon bg-blue"><i class="fa-solid fa-book-open"></i></div>
+          <div class="cat-info">
+            <h4>SSC Exams</h4>
+            <p>CGL, CHSL, MTS, CPO, GD</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+        <div class="category-card" onclick="openFolder('MOCK TESTS/BANKS & REGULATORIES BODIES')">
+          <div class="cat-icon bg-green"><i class="fa-solid fa-building-columns"></i></div>
+          <div class="cat-info">
+            <h4>Bank Exams</h4>
+            <p>IBPS, SBI, RBI, NABARD</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+        <div class="category-card" onclick="openFolder('MOCK TESTS/RAILWAY EXAMS')">
+          <div class="cat-icon bg-orange"><i class="fa-solid fa-train-subway"></i></div>
+          <div class="cat-info">
+            <h4>Railway Exams</h4>
+            <p>RRB NTPC, Group D, ALP</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+        <div class="category-card" onclick="openFolder('MOCK TESTS/Defence')">
+          <div class="cat-icon bg-red"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="cat-info">
+            <h4>Defence Exams</h4>
+            <p>NDA, CDS, AFCAT, CAPF</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+      </div>
+
+      <h3 class="section-title" style="margin-top: 24px;">Other Resources</h3>
+      <div id="dynamic-tabs-container" style="display:flex; flex-direction:column; gap:12px;">
+        <div style="text-align:center; color:var(--text-secondary); font-size:0.8rem;"><i class="fa-solid fa-spinner fa-spin"></i> Checking for new tabs...</div>
+      </div>
+    </div>
+
+    <div id="view-recent" class="hidden">
+      <div id="view-recent-content"></div>
+    </div>
+
+    <div id="view-folder" class="hidden">
+      <div class="breadcrumb" id="breadcrumb-container"></div>
+      <div id="github-content"></div>
+      <div class="cross-block" style="margin-top:20px;" onclick="navigateHome()">
+        <div class="info">
+          <h4 style="color:var(--accent-purple)"><i class="fa-solid fa-house"></i> Back to Dashboard</h4>
+        </div>
+        <div class="btn" style="background:var(--accent-purple); color:#fff;">Home &rarr;</div>
+      </div>
+    </div>
+
+    <div id="view-profile" class="hidden">
+      <div class="profile-header">
+        <img id="prof-img" class="prof-avatar" src="https://ui-avatars.com/api/?name=Warrior&background=A3E635&color=0B0E14" alt="Profile">
+        <div class="prof-info">
+          <h2 id="prof-name" class="cyber-name">Warrior</h2>
+          <p id="prof-email">Not Logged In</p>
+        </div>
+      </div>
+
+      <div id="prof-login-sec" style="display:none; text-align:center; margin-bottom:20px;">
+        <button class="btn-modal ok" style="background:var(--accent-green); color:#000; padding:10px 20px; font-weight:800;" onclick="googleLoginDash()">
+          <i class="fa-brands fa-google"></i> Login to Sync Progress
+        </button>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap:12px;">
+        <div class="stat-card" style="padding:12px;">
+          <i class="fa-solid fa-bullseye" style="color:var(--accent-green); font-size:1.4rem;"></i>
+          <h3 style="font-size:0.9rem;">Accuracy</h3>
+          <p id="prof-overall-acc" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0%</p>
+        </div>
+        <div class="stat-card" style="padding:12px;">
+          <i class="fa-solid fa-clock" style="color:var(--accent-blue); font-size:1.4rem;"></i>
+          <h3 style="font-size:0.9rem;">Time Spent</h3>
+          <p id="prof-total-time" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0 Hrs</p>
+        </div>
+        <div class="stat-card" style="padding:12px;">
+          <i class="fa-solid fa-fire" style="color:var(--accent-red); font-size:1.4rem;"></i>
+          <h3 style="font-size:0.9rem;">Day Streak</h3>
+          <p id="prof-streak" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0</p>
+        </div>
+        <div class="stat-card" style="padding:12px;">
+          <i class="fa-solid fa-star" style="color:var(--accent-gold); font-size:1.4rem;"></i>
+          <h3 style="font-size:0.9rem;">Avg Score</h3>
+          <p id="prof-avg-score" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0.00</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">Weekly Accuracy Matrix</h3>
+      <div class="chart-box">
+        <div class="chart-title" style="display:flex; justify-content:space-between; width:calc(100% - 32px); align-items:center;">
+            <div>
+                <span class="week-tag" id="main-week-title">This Week</span><br>
+                <span style="font-size:0.7rem; color:var(--text-secondary); font-weight:normal;">*Click RED/PURPLE/GREY slice for Error Book</span>
+            </div>
+            <button onclick="downloadErrorBook()" title="Download Mistake Journal" style="background:rgba(255,255,255,0.1); border:none; border-radius:8px; padding:6px 12px; color:var(--text-primary); cursor:pointer; font-size:1rem;"><i class="fa-solid fa-download"></i></button>
+        </div>
+        <canvas id="profAccChart"></canvas>
+      </div>
+
+      <div style="font-size: 0.9rem; font-weight: 800; color:var(--accent-purple); margin-bottom: 8px; text-transform: uppercase;">Previous Weeks Analytics</div>
+      <div class="prev-weeks-wrapper" id="prev-weeks-container">
+          </div>
+
+      <div class="chart-box" style="height: 220px;">
+        <div class="chart-title"><i class="fa-solid fa-chart-line" style="color:var(--accent-green)"></i> Performance Trend <br><span style="font-size:0.7rem; color:var(--text-secondary); font-weight:normal;">*Based on last 10 tests</span></div>
+        <canvas id="profTrendChart"></canvas>
+      </div>
+
+      <h3 class="section-title" style="margin-top: 24px;">Weak Topics <span style="font-size:0.7rem; color:var(--accent-red)">Auto-Detected</span></h3>
+      <div class="weak-topics-list" id="weak-topics-container">
+          </div>
+
+      <h3 class="section-title">Achievements <span style="font-size:0.7rem; color:var(--accent-gold)">Auto-Unlocks</span></h3>
+      <div class="badges-container" id="prof-badges">
+         </div>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="navigateHome()">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" onclick="openFolder('MOCK TESTS')">
+      <i class="fa-solid fa-pen-nib"></i>
+      <span>Mocks</span>
+    </button>
+    <button class="nav-item" onclick="openFolder('TARGET-SERIES')">
+      <i class="fa-solid fa-bullseye"></i>
+      <span>Targets</span>
+    </button>
+    <button class="nav-item" onclick="openProfile()">
+      <i class="fa-solid fa-user"></i>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+  <div class="modal" id="dash-snap">
+    <div class="result">
+      <div class="rev-wrap">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <h3 id="snapTitle" style="margin:0; font-weight:800; color:var(--accent-green)">Attempt Review</h3>
+        </div>
+        <div class="rev-head" id="snapMetaBadges" style="margin-bottom:6px;align-items:center"></div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+          <div class="mini-nav" id="snapMini" style="flex:1"></div>
+          <div class="chart-wrap" id="chartWrap">
+            <canvas id="reviewChart"></canvas>
+          </div>
+        </div>
+        <div id="snapQ" class="q" style="margin-top:12px"></div>
+        <div id="snapOpts"></div>
+        <div class="sol" id="solBlock" style="display:none;margin-top:12px">
+          <b><i class="fa fa-lightbulb"></i> Solution</b>
+          <div id="snapSol" style="margin-top:6px"></div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:14px; padding-top:12px; border-top:1px solid var(--border-color)">
+        <button class="btn-modal" id="sPrev" title="Previous Question"><i class="fa fa-chevron-left"></i></button>
+        <button class="btn-modal" id="sNext" title="Next Question"><i class="fa fa-chevron-right"></i></button>
+        <button class="btn-modal danger" id="sClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="error-book-modal">
+    <div class="result">
+      <div class="rev-wrap" style="max-height:80vh;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px; border-bottom:1px solid var(--border-color); padding-bottom:8px;">
+          <h3 id="ebTitle" style="margin:0; font-weight:800; color:var(--accent-red)"><i class="fa-solid fa-book-skull"></i> Mistake Journal</h3>
+          <button class="btn-modal danger" id="ebClose" style="padding:6px 12px; font-size:0.8rem;">Close</button>
+        </div>
+        
+        <div id="ebListArea"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  /* =========================================
+     FIREBASE SETUP & GLOBAL ATTEMPTS FETCH
+     ========================================= */
+  const firebaseConfig = {
+    apiKey: "AIzaSyAbaDJ5F9HK45SybxhuYaR4aZo0PDKVi7o",
+    authDomain: "testripper-mocks.firebaseapp.com",
+    projectId: "testripper-mocks",
+    storageBucket: "testripper-mocks.firebasestorage.app",
+    messagingSenderId: "344935856479",
+    appId: "1:344935856479:web:26014707272cb8bd7e1eea"
+  };
+
+  if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  let globalUserAttempts = [];
+  let globalWeeksMap = {};
+  let currentlySelectedWeek = null;
+
+  window.googleLoginDash = function() {
+    auth.signInWithPopup(provider).then((result) => {
+      alert("Swagat hai Officer " + result.user.displayName);
+    }).catch(err => console.error("Login Failed", err));
+  };
+
+  auth.onAuthStateChanged(async (user) => {
+    if (user) {
+      document.getElementById('prof-login-sec').style.display = 'none';
+      try {
+        const snap = await db.collection("users").doc(user.uid).collection("attempts").orderBy("serverTime", "asc").get();
+        globalUserAttempts = snap.docs.map(doc => doc.data());
+        
+        renderRecentLogic();
+
+        if (history.state && history.state.view === 'folder') renderFolderView(history.state.path, false);
+        if (history.state && history.state.view === 'profile') renderProfileAnalytics();
+      } catch(e) { console.error("Firebase fetch error", e); }
+    } else {
+      globalUserAttempts = [];
+      document.getElementById('prof-login-sec').style.display = 'block';
+      renderRecentLogic();
+    }
+  });
+
+  function normalizeStringForMatch(str) {
+    if (!str) return "";
+    return str.replace(/\.html|\.txt/g, '').replace(/[-_ \.]/g, '').replace(/quiz$/i, '').toLowerCase().trim();
+  }
+
+  /* =========================================
+     IST TIMEZONE & WEEK CALCULATION ENGINE
+     ========================================= */
+  function getISTDate() {
+      let d = new Date();
+      let utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+      return new Date(utc + (3600000 * 5.5)); // +5:30 IST Fix
+  }
+  
+  function parseFirebaseDateToIST(tsString) {
+      let cleanTs = tsString ? tsString.replace(',', '') : "";
+      let d = new Date(cleanTs);
+      if(isNaN(d)) return getISTDate();
+      return d;
+  }
+
+  function getMonday(d) {
+      d = new Date(d);
+      var day = d.getDay(), diff = d.getDate() - day + (day == 0 ? -6:1); 
+      let monday = new Date(d.setDate(diff));
+      monday.setHours(0,0,0,0);
+      return monday.getTime();
+  }
+
+  /* =========================================
+     RECENT ATTEMPTED TESTS LOGIC
+     ========================================= */
+  function renderRecentLogic() {
+    const homeSec = document.getElementById('home-recent-sec');
+    if(globalUserAttempts.length === 0) {
+      homeSec.classList.add('hidden');
+      return;
+    }
+    
+    let reversed = [...globalUserAttempts].reverse();
+    let uniqueTests = [];
+    let seen = new Set();
+
+    reversed.forEach(att => {
+        let tName = normalizeStringForMatch(att.testName);
+        if(!seen.has(tName)) {
+            seen.add(tName);
+            let allAttsForThis = globalUserAttempts.map((a, i) => ({att: a, globalIdx: i}))
+                .filter(obj => normalizeStringForMatch(obj.att.testName) === tName);
+            uniqueTests.push({ originalTitle: att.testName, attempts: allAttsForThis });
+        }
+    });
+
+    homeSec.classList.remove('hidden');
+    let homeHTML = `
+      <div class="recent-header">
+        <h3>Recent Attempted Tests</h3>
+        <span class="view-all" onclick="openRecentTests()">View All <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    `;
+    uniqueTests.slice(0, 2).forEach(item => { homeHTML += buildRecentCardHTML(item); });
+    homeSec.innerHTML = homeHTML;
+
+    let fullHTML = `
+      <div class="breadcrumb">
+        <span class="crumb" onclick="navigateHome()"><i class="fa-solid fa-house"></i> Home</span>
+        <i class="fa-solid fa-angle-right" style="font-size:0.7rem"></i>
+        <span style="color:var(--text-primary); font-weight:bold;">Recent Tests</span>
+      </div>
+      <div class="github-list">
+    `;
+    uniqueTests.forEach(item => { fullHTML += buildRecentCardHTML(item); });
+    fullHTML += `</div>`;
+    document.getElementById('view-recent-content').innerHTML = fullHTML;
+  }
+
+  function buildRecentCardHTML(item) {
+      let historyHTML = `<div class="attempts-row" style="margin-top:8px; border:none; padding-top:4px;">`;
+      item.attempts.forEach((obj, idx) => {
+          let colorClass = (idx === 0) ? 'att-1' : ((idx === 1) ? 'att-2' : 'att-3');
+          let dateOnly = obj.att.ts ? obj.att.ts.split(',')[0].toUpperCase() : '';
+          historyHTML += `
+            <div class="attempt-badge ${colorClass}" onclick="openDashboardSnap(${obj.globalIdx}); event.stopPropagation();">
+              <div class="att-title">Attempt ${idx + 1}</div>
+              <div class="att-score">${obj.att.score}</div>
+              <div class="att-date">${dateOnly}</div>
+            </div>
+          `;
+      });
+      historyHTML += `</div>`;
+
+      // Extract raw path or use placeholder format from user screenshot
+      let rawPath = item.attempts[0].att.path || '';
+      let displayPath = rawPath ? '/' + rawPath.split('/').reverse().join('/') : '/MOCK TESTS/SSC/QUANTITATIVE APTITUDE/PERCENTAGE';
+
+      return `
+        <div class="recent-card">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom: 8px; max-width:100%; overflow:hidden;">
+            <h4 style="margin:0; flex-shrink:0; white-space:nowrap;"><i class="fa-solid fa-file-circle-check" style="color:var(--accent-green)"></i> ${item.originalTitle.replace(/-/g, ' ')}</h4>
+            <div class="recent-path-scroll">
+              ${displayPath}
+            </div>
+          </div>
+          ${historyHTML}
+        </div>
+      `;
+  }
+
+  window.openRecentTests = function(pushHistory = true) {
+    document.getElementById('view-home').classList.add('hidden');
+    document.getElementById('view-folder').classList.add('hidden');
+    document.getElementById('view-profile').classList.add('hidden');
+    document.getElementById('view-recent').classList.remove('hidden');
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    if (pushHistory) history.pushState({ view: 'recent', path: '' }, "");
+    window.scrollTo(0,0);
+  }
+
+  /* =========================================
+     IN-DASHBOARD REVIEW MODAL LOGIC
+     ========================================= */
+  let dSnapS = {arr:[], curIndexInOrder:0, meta:null, filter:'all', order:[]};
+  let dChart = null;
+
+  window.openDashboardSnap = function(globalIdx) {
+     const att = globalUserAttempts[globalIdx];
+     if(!att || !att.snap) return alert("Attempt data missing.");
+     dSnapS.arr = att.snap;
+     dSnapS.meta = att;
+     dSnapS.curIndexInOrder = 0;
+     window.setDashFilter('all');
+     document.getElementById('dash-snap').classList.add('show');
+  }
+  
+  function badge(txt,cls=''){return `<span class="badge ${cls}">${txt}</span>`;}
+  function linkBadge(id,txt){return `<span class="badge link" onclick="window.setDashFilter('${id}')">${txt}</span>`;}
+
+  window.setDashFilter = function(f) {
+      dSnapS.filter = f;
+      const map = dSnapS.arr.map((it, idx) => {
+        const attempted = it.user !== -1;
+        const right = attempted && it.user === it.correct;
+        const wrong = attempted && it.user !== it.correct;
+        return {idx, attempted, right, wrong, mark: !!it.mark};
+      });
+      if(f==='correct') dSnapS.order = map.filter(x=>x.right).map(x=>x.idx);
+      else if(f==='wrong') dSnapS.order = map.filter(x=>x.wrong).map(x=>x.idx);
+      else if(f==='un') dSnapS.order = map.filter(x=>!x.attempted).map(x=>x.idx);
+      else if(f==='mark') dSnapS.order = map.filter(x=>x.mark).map(x=>x.idx);
+      else dSnapS.order = map.map(x=>x.idx);
+      
+      if(!dSnapS.order.length) dSnapS.order=[0];
+      dSnapS.curIndexInOrder=0;
+      
+      drawDashMini();
+      drawDashChart();
+      drawDashSnap();
+  }
+  
+  function curDashIdx() { return dSnapS.order[dSnapS.curIndexInOrder] ?? 0; }
+
+  function drawDashMini() {
+      const cont = document.getElementById('snapMini'); cont.innerHTML='';
+      dSnapS.order.forEach((idx, i) => {
+          const it = dSnapS.arr[idx];
+          const attempted = it.user !== -1;
+          const right = attempted && it.user === it.correct;
+          const wrong = attempted && it.user !== it.correct;
+          const d = document.createElement('div'); d.className='mini-chip';
+          if(i === dSnapS.curIndexInOrder) d.classList.add('cur');
+          if(it.mark) d.classList.add('mark'); else if(right) d.classList.add('ok'); else if(wrong) d.classList.add('bad'); else d.classList.add('un');
+          d.textContent = idx + 1;
+          d.onclick = () => { dSnapS.curIndexInOrder = i; drawDashSnap(); };
+          cont.appendChild(d);
+      });
+  }
+  
+  function drawDashChart() {
+      const counts = {correct:0, wrong:0, un:0, mark:0};
+      dSnapS.arr.forEach(it => {
+        if(it.mark) counts.mark++; 
+        else if(it.user === -1) counts.un++;
+        else if(it.user === it.correct) counts.correct++;
+        else counts.wrong++;
+      });
+      if(dChart) { try { dChart.destroy(); } catch(e){} dChart=null; }
+      const ctx = document.getElementById('reviewChart').getContext('2d');
+      dChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Marked', 'Correct', 'Incorrect', 'Unattempted'],
+          datasets: [{ data: [counts.mark, counts.correct, counts.wrong, counts.un], backgroundColor: ['#a855f7','#10b981','#ef4444','#94a3b8'], borderWidth: 0 }]
+        },
+        options: { plugins: { legend: { display:false } }, responsive: true, maintainAspectRatio: false }
+      });
+  }
+
+  function drawDashSnap() {
+      if(!dSnapS.arr.length) { document.getElementById('snapQ').innerHTML='Nothing.'; return; }
+      const it = dSnapS.arr[curDashIdx()];
+      document.getElementById('snapTitle').textContent = `Attempt Review — Q${curDashIdx()+1}/${dSnapS.arr.length}`;
+      document.getElementById('snapMetaBadges').innerHTML = [
+        badge(dSnapS.meta.ts, 'ok'), badge(dSnapS.meta.score), linkBadge('all', 'All'), linkBadge('correct', `C:${dSnapS.meta.correct}`),
+        linkBadge('wrong', `W:${dSnapS.meta.incorrect}`), linkBadge('un', `U:${dSnapS.meta.unattempted}`), linkBadge('mark', `M:${dSnapS.meta.marked||0}`)
+      ].join(' ');
+
+      document.getElementById('snapQ').innerHTML = it.q;
+      const b = document.getElementById('snapOpts'); b.innerHTML='';
+      it.opts.forEach((t, i) => {
+        const div = document.createElement('div'); div.className='rev-opt';
+        const dot = document.createElement('div'); dot.className='rev-dot';
+        const isUser = (i === it.user), isCorrect = (i === it.correct);
+        if(isUser){ div.classList.add('user'); dot.classList.add('user'); }
+        if(isCorrect){ div.classList.add('correct'); dot.classList.add('correct'); }
+        if(isUser && !isCorrect){ const ico=document.createElement('div'); ico.className='rev-ico bad'; ico.textContent='✖'; div.appendChild(ico); div.classList.add('wrong'); }
+        if(isCorrect && isUser){ const ico=document.createElement('div'); ico.className='rev-ico ok'; ico.textContent='✔'; div.appendChild(ico); }
+        const text=document.createElement('div'); text.innerHTML=`${String.fromCharCode(65+i)}) ${t}`;
+        div.prepend(text); div.prepend(dot); b.appendChild(div);
+      });
+
+      const solBlock = document.getElementById('solBlock');
+      if (it.sol) { solBlock.style.display = 'block'; document.getElementById('snapSol').innerHTML = it.sol; } 
+      else { solBlock.style.display = 'none'; }
+      document.getElementById('sPrev').disabled = (dSnapS.curIndexInOrder === 0);
+      document.getElementById('sNext').disabled = (dSnapS.curIndexInOrder === dSnapS.order.length-1);
+      if(window.MathJax) MathJax.typesetPromise();
+      
+      // FIRE BUG FIX: Update mini-nav active state correctly
+      drawDashMini();
+  }
+  
+  document.getElementById('sPrev').onclick = () => { if(dSnapS.curIndexInOrder > 0){ dSnapS.curIndexInOrder--; drawDashSnap(); } };
+  document.getElementById('sNext').onclick = () => { if(dSnapS.curIndexInOrder < dSnapS.order.length-1){ dSnapS.curIndexInOrder++; drawDashSnap(); } };
+  document.getElementById('sClose').onclick = () => document.getElementById('dash-snap').classList.remove('show');
+
+
+  /* =========================================
+     MISTAKE JOURNAL LOGIC (CLICKABLE CHART & DOWNLOAD)
+     ========================================= */
+  document.getElementById('ebClose').onclick = () => document.getElementById('error-book-modal').classList.remove('show');
+
+  function openErrorBook(filterType, customBookArray = null) {
+      const ebListArea = document.getElementById('ebListArea');
+      ebListArea.innerHTML = '';
+      
+      let sourceBook = customBookArray ? customBookArray : [];
+      let filteredQs = sourceBook.filter(q => q.errType === filterType).reverse();
+      
+      if(filteredQs.length === 0) {
+          ebListArea.innerHTML = `<div style="text-align:center; color:var(--text-secondary); padding:20px;">No questions found in this category! 🎉</div>`;
+      } else {
+          let titleText = filterType === 'wrong' ? "Incorrect Questions" : (filterType === 'marked' ? "Marked for Review" : "Unattempted Questions");
+          document.getElementById('ebTitle').innerHTML = `<i class="fa-solid fa-book-skull"></i> Mistake Journal - ${titleText}`;
+          
+          filteredQs.forEach((item, index) => {
+              let optHTML = '';
+              item.opts.forEach((optText, oIdx) => {
+                  let cls = 'rev-opt';
+                  if(oIdx === item.correct) cls += ' correct';
+                  else if(oIdx === item.user) cls += ' user wrong';
+                  optHTML += `<div class="${cls}"><div>${String.fromCharCode(65+oIdx)}) ${optText}</div></div>`;
+              });
+
+              let qBlock = document.createElement('div');
+              qBlock.style.cssText = "background:var(--bg-card); padding:16px; border:1px solid var(--border-color); border-radius:12px; margin-bottom:16px;";
+              let formattedDate = item.ts ? item.ts.split(',')[0] : '';
+              qBlock.innerHTML = `
+                  <div style="font-size:0.75rem; color:var(--accent-gold); margin-bottom:8px; font-weight:800; text-transform:uppercase;">From: ${item.testName} <span style="float:right; color:var(--text-secondary)">${formattedDate}</span></div>
+                  <div class="q">${index + 1}. ${item.q}</div>
+                  <div>${optHTML}</div>
+                  <div class="sol" style="display:block; margin-top:12px;"><b>Solution:</b><br>${item.sol || 'No solution provided.'}</div>
+              `;
+              ebListArea.appendChild(qBlock);
+          });
+      }
+      
+      document.getElementById('error-book-modal').classList.add('show');
+      if(window.MathJax) MathJax.typesetPromise();
+  }
+
+  window.downloadErrorBook = function() {
+      let weekData = globalWeeksMap[currentlySelectedWeek];
+      if (!weekData || !weekData.eBook || weekData.eBook.length === 0) {
+          alert("No mistakes/unattempted questions found for this week to download! 🎉");
+          return;
+      }
+      
+      let htmlContent = `
+      <!DOCTYPE html><html><head><meta charset="utf-8"><title>Mistake Journal</title>
+      <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\\\(','\\\\)']]}};</script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+      <style>
+        body{font-family:sans-serif; background:#0B0E14; color:#fff; padding:20px; max-width:800px; margin:auto;}
+        h1{color:#A3E635; text-align:center; text-transform:uppercase;}
+        .q-card{background:#151A22; border:1px solid #1E293B; border-radius:12px; padding:20px; margin-bottom:20px;}
+        .meta{color:#FACC15; font-size:0.85rem; font-weight:bold; margin-bottom:10px;}
+        .q{font-size:1.1rem; margin-bottom:12px;}
+        .opt{padding:10px; border:2px solid #1E293B; border-radius:8px; margin-bottom:8px; background:rgba(255,255,255,0.03);}
+        .opt.correct{border-color:#10B981; background:rgba(16,185,129,0.1);}
+        .opt.wrong{border-color:#EF4444; background:rgba(239,68,68,0.1); border-style:dashed;}
+        .sol{margin-top:15px; background:rgba(16,185,129,0.1); border-left:4px solid #10B981; padding:12px; border-radius:6px;}
+      </style></head><body>
+      <h1>Mistake Journal</h1><p style="text-align:center; color:#94A3B8;">Keep grinding, Warrior! 🔥</p>
+      `;
+
+      let sortedErrors = weekData.eBook.slice().reverse();
+      sortedErrors.forEach((item, index) => {
+          let optsHTML = '';
+          item.opts.forEach((optText, oIdx) => {
+              let cls = 'opt';
+              if(oIdx === item.correct) cls += ' correct';
+              else if(oIdx === item.user && item.errType === 'wrong') cls += ' wrong';
+              optsHTML += `<div class="${cls}"><b>${String.fromCharCode(65+oIdx)})</b> ${optText}</div>`;
+          });
+          
+          let badge = item.errType === 'wrong' ? '<span style="color:#EF4444">[Incorrect]</span>' : (item.errType === 'marked' ? '<span style="color:#8B5CF6">[Marked]</span>' : '<span style="color:#94A3B8">[Unattempted]</span>');
+          
+          htmlContent += `
+          <div class="q-card">
+              <div class="meta">${item.testName} | ${item.ts.split(',')[0]} | ${badge}</div>
+              <div class="q"><b>Q${index+1}.</b> ${item.q}</div>
+              ${optsHTML}
+              <div class="sol"><b>Solution:</b><br>${item.sol || 'No solution provided.'}</div>
+          </div>`;
+      });
+      
+      htmlContent += `</body></html>`;
+      
+      const blob = new Blob([htmlContent], {type: 'text/html;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.download = `Mistake_Journal_${currentlySelectedWeek}.html`;
+      a.href = url;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+  }
+
+  /* =========================================
+     PROFILE ANALYTICS LOGIC (WEEKLY, TRENDS & WEAK TOPICS)
+     ========================================= */
+  let profAccChartObj = null;
+  let profTrendChartObj = null;
+  let prevWeekCharts = []; 
+
+  window.loadWeekToMain = function(monTimestamp) {
+      currentlySelectedWeek = monTimestamp;
+      let dataW = globalWeeksMap[monTimestamp];
+      if(!dataW) return;
+      
+      let isThisWeek = (monTimestamp == getMonday(getISTDate()));
+      let titleText = isThisWeek ? "This Week" : "Week of " + new Date(Number(monTimestamp)).toLocaleDateString('en-IN');
+      document.getElementById('main-week-title').innerText = titleText;
+      
+      if(profAccChartObj) {
+          let hasData = (dataW.tC + dataW.tW + dataW.tM > 0) || dataW.tU > 0;
+          profAccChartObj.data.datasets[0].data = hasData ? [dataW.tC, dataW.tW, dataW.tU, dataW.tM] : [0,0,1,0];
+          profAccChartObj.update();
+      }
+  };
+
+  function renderProfileAnalytics() {
+    const user = auth.currentUser;
+    if(user) {
+      document.getElementById('prof-name').textContent = user.displayName || 'Warrior';
+      document.getElementById('prof-email').textContent = user.email || 'No email found';
+      if(user.photoURL) document.getElementById('prof-img').src = user.photoURL;
+    }
+
+    let overallC = 0, overallW = 0, totalScore = 0, totalMins = 0;
+    let trendScores = [], trendLabels = [];
+    globalWeeksMap = {};
+    let testStatsMap = {}; 
+
+    let actualIST = getISTDate();
+    let currentWeekMonday = getMonday(actualIST);
+
+    globalUserAttempts.forEach((att, idx) => {
+      overallC += (att.correct || 0);
+      overallW += (att.incorrect || 0);
+      totalMins += (att.minutes || 0);
+      
+      let scoreVal = att.score ? parseFloat(att.score.split(' ')[0]) : 0;
+      let maxVal = att.score ? parseFloat(att.score.split('/')[1]) : 0;
+      
+      if(!isNaN(scoreVal)) {
+          totalScore += scoreVal;
+          trendScores.push(scoreVal);
+          trendLabels.push(`T${idx+1}`);
+      }
+
+      if(maxVal > 0) {
+          if(!testStatsMap[att.testName]) testStatsMap[att.testName] = {c:0, w:0, score:0, max:0};
+          testStatsMap[att.testName].c += (att.correct||0);
+          testStatsMap[att.testName].w += (att.incorrect||0);
+          testStatsMap[att.testName].score += scoreVal;
+          testStatsMap[att.testName].max += maxVal;
+      }
+
+      let attemptISTDate = parseFirebaseDateToIST(att.ts);
+      let attMonday = getMonday(attemptISTDate);
+      if(!globalWeeksMap[attMonday]) globalWeeksMap[attMonday] = { tC:0, tW:0, tU:0, tM:0, eBook: [] };
+      
+      globalWeeksMap[attMonday].tC += (att.correct||0);
+      globalWeeksMap[attMonday].tW += (att.incorrect||0);
+      globalWeeksMap[attMonday].tU += (att.unattempted||0);
+      globalWeeksMap[attMonday].tM += (att.marked||0);
+      
+      if(att.snap) {
+          att.snap.forEach(q => {
+              if (q.user !== -1 && q.user !== q.correct) globalWeeksMap[attMonday].eBook.push({...q, testName: att.testName, errType: 'wrong', ts: att.ts});
+              if (q.mark === true) globalWeeksMap[attMonday].eBook.push({...q, testName: att.testName, errType: 'marked', ts: att.ts});
+              if (q.user === -1) globalWeeksMap[attMonday].eBook.push({...q, testName: att.testName, errType: 'un', ts: att.ts});
+          });
+      }
+    });
+
+    let totalQuestionsAttempted = overallC + overallW; 
+    let accuracy = totalQuestionsAttempted > 0 ? ((overallC / totalQuestionsAttempted) * 100).toFixed(1) : "0";
+    document.getElementById('prof-overall-acc').textContent = accuracy + "%";
+    
+    let hrs = (totalMins / 60).toFixed(1);
+    document.getElementById('prof-total-time').textContent = hrs + " Hrs";
+    
+    let avg = globalUserAttempts.length > 0 ? (totalScore / globalUserAttempts.length).toFixed(2) : "0.00";
+    document.getElementById('prof-avg-score').textContent = avg;
+
+    let uniqueDates = [...new Set(globalUserAttempts.map(a => a.ts ? a.ts.split(',')[0] : ''))].filter(Boolean);
+    document.getElementById('prof-streak').textContent = uniqueDates.length + " Days";
+
+    let badgesHTML = '';
+    if(globalUserAttempts.length >= 1) badgesHTML += `<div class="ach-badge"><i class="fa-solid fa-seedling"></i><div class="ach-title">Rookie</div></div>`;
+    if(accuracy >= 80 && totalQuestionsAttempted > 10) badgesHTML += `<div class="ach-badge"><i class="fa-solid fa-crosshairs"></i><div class="ach-title">Sniper</div></div>`;
+    if(hrs >= 5) badgesHTML += `<div class="ach-badge"><i class="fa-solid fa-stopwatch"></i><div class="ach-title">Marathoner</div></div>`;
+    if(badgesHTML === '') badgesHTML = `<div style="font-size:0.8rem; color:var(--text-secondary);">Complete more tests to unlock badges!</div>`;
+    document.getElementById('prof-badges').innerHTML = badgesHTML;
+
+    let weakArr = Object.keys(testStatsMap).map(k => {
+        let s = testStatsMap[k];
+        let acc = (s.c+s.w)>0 ? (s.c/(s.c+s.w)*100) : 0;
+        let ach = s.max>0 ? (s.score/s.max*100) : 0;
+        return {name: k, acc: acc, ach: ach};
+    });
+    weakArr.sort((a,b) => a.acc - b.acc); 
+    
+    let weakHTML = '';
+    weakArr.slice(0,3).forEach(w => {
+        let accStr = w.acc.toFixed(1);
+        let achStr = w.ach.toFixed(1);
+        weakHTML += `
+            <div class="weak-card">
+              <h4>${w.name.replace(/-/g, ' ')}</h4>
+              <div class="w-stats">
+                  <span class="red"><i class="fa-solid fa-crosshairs"></i> Acc: ${accStr}%</span>
+                  <span class="purple"><i class="fa-solid fa-award"></i> Achieved: ${achStr}%</span>
+              </div>
+              <i class="fa-solid fa-triangle-exclamation bg-icon"></i>
+            </div>
+        `;
+    });
+    if(weakHTML === '') weakHTML = '<div style="color:var(--text-secondary);font-size:0.8rem;">Attempt tests to detect weak topics.</div>';
+    document.getElementById('weak-topics-container').innerHTML = weakHTML;
+
+    currentlySelectedWeek = currentWeekMonday;
+    if(profAccChartObj) { try{profAccChartObj.destroy();}catch(e){} profAccChartObj = null; }
+    
+    let currWkData = globalWeeksMap[currentWeekMonday] || {tC:0, tW:0, tU:1, tM:0, eBook:[]}; 
+    
+    const ctxAcc = document.getElementById('profAccChart').getContext('2d');
+    profAccChartObj = new Chart(ctxAcc, {
+      type: 'doughnut',
+      data: {
+        labels: ['Correct', 'Incorrect', 'Unattempted', 'Marked'],
+        datasets: [{
+          data: [currWkData.tC, currWkData.tW, currWkData.tU, currWkData.tM],
+          backgroundColor: ['#10b981', '#ef4444', '#94a3b8', '#a855f7'],
+          borderWidth: 0, hoverOffset: 10
+        }]
+      },
+      options: {
+        plugins: { legend: { position: 'bottom', labels: { color: document.body.getAttribute('data-theme')==='light'?'#111':'#fff' } } },
+        responsive: true, maintainAspectRatio: false,
+        onClick: (e, elements) => {
+            if (elements.length > 0) {
+                const idx = elements[0].index;
+                let dataToPass = globalWeeksMap[currentlySelectedWeek].eBook;
+                if(idx === 1) openErrorBook('wrong', dataToPass); 
+                if(idx === 2) openErrorBook('un', dataToPass);    
+                if(idx === 3) openErrorBook('marked', dataToPass); 
+            }
+        }
+      }
+    });
+    document.getElementById('main-week-title').innerText = "This Week";
+
+    prevWeekCharts.forEach(c => { try{c.destroy();}catch(e){} });
+    prevWeekCharts = [];
+    let prevContainer = document.getElementById('prev-weeks-container');
+    prevContainer.innerHTML = '';
+    
+    let sortedWeeks = Object.keys(globalWeeksMap).map(Number).sort((a,b) => b-a);
+    let previousMondays = sortedWeeks.filter(m => m !== currentWeekMonday);
+
+    if(previousMondays.length === 0) {
+        prevContainer.innerHTML = `<div style="font-size:0.8rem; color:var(--text-secondary); width:100%;">No previous weeks data found.</div>`;
+    } else {
+        previousMondays.forEach((mon, i) => {
+            let dataW = globalWeeksMap[mon];
+            let accW = (dataW.tC+dataW.tW)>0 ? ((dataW.tC / (dataW.tC+dataW.tW)) * 100).toFixed(0) : 0;
+            let dObj = new Date(mon);
+            let dStr = dObj.getDate() + " " + dObj.toLocaleString('en-US',{month:'short'});
+            
+            let id = `pwChart_${i}`;
+            let cardHTML = `
+                <div class="prev-week-card" onclick="loadWeekToMain('${mon}')">
+                    <div class="pw-title">${dStr}</div>
+                    <canvas id="${id}"></canvas>
+                    <div class="pw-acc">${accW}% Acc</div>
+                </div>
+            `;
+            prevContainer.insertAdjacentHTML('beforeend', cardHTML);
+            
+            let ctxPW = document.getElementById(id).getContext('2d');
+            let chartPW = new Chart(ctxPW, {
+                type: 'doughnut',
+                data: { datasets: [{ data: [dataW.tC, dataW.tW, dataW.tU, dataW.tM], backgroundColor: ['#10b981', '#ef4444', '#94a3b8', '#a855f7'], borderWidth:0 }] },
+                options: { plugins:{legend:{display:false}, tooltip:{enabled:false}}, responsive:true, maintainAspectRatio:false }
+            });
+            prevWeekCharts.push(chartPW);
+        });
+    }
+
+    if(profTrendChartObj) { try{profTrendChartObj.destroy();}catch(e){} profTrendChartObj = null; }
+    let chartScores = trendScores.slice(-10);
+    let chartLabels = trendLabels.slice(-10);
+    
+    const ctxTrend = document.getElementById('profTrendChart').getContext('2d');
+    profTrendChartObj = new Chart(ctxTrend, {
+        type: 'line',
+        data: {
+            labels: chartLabels.length ? chartLabels : ['No Data'],
+            datasets: [{
+                label: 'Score Trend',
+                data: chartScores.length ? chartScores : [0],
+                borderColor: '#A3E635', backgroundColor: 'rgba(163, 230, 53, 0.1)',
+                borderWidth: 3, fill: true, tension: 0.3, pointBackgroundColor: '#fff', pointRadius: 4
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: { ticks: { color: 'rgba(255,255,255,0.5)' }, grid: { display:false } },
+                y: { ticks: { color: 'rgba(255,255,255,0.5)' }, grid: { color: 'rgba(255,255,255,0.1)' } }
+            }
+        }
+    });
+  }
+
+
+  /* =========================================
+     EXISTING GITHUB BROWSER LOGIC & NAVIGATION
+     ========================================= */
+  const REPO_OWNER = 'TestRipper'; 
+  const REPO_NAME = 'testripper-mocks'; 
+  const GITHUB_API_BASE = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
+  
+  const folderCache = {}; 
+
+  window.onload = () => {
+    setTimeBasedGreeting();
+    fetchQuote();
+    loadDynamicRootFolders();
+    history.replaceState({ view: 'home', path: '' }, "");
+  };
+
+  function setTimeBasedGreeting() {
+    const options = { timeZone: 'Asia/Kolkata', hour: 'numeric', hour12: false };
+    const formatter = new Intl.DateTimeFormat([], options);
+    const currentHour = parseInt(formatter.format(new Date()));
+    let greeting = "Good Morning";
+    if (currentHour >= 12 && currentHour < 17) greeting = "Good Afternoon";
+    else if (currentHour >= 17) greeting = "Good Night";
+    document.getElementById('greeting-text').innerText = greeting;
+  }
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    if (body.hasAttribute('data-theme')) {
+      body.removeAttribute('data-theme');
+      icon.className = 'fa-solid fa-moon';
+    } else {
+      body.setAttribute('data-theme', 'light');
+      icon.className = 'fa-solid fa-sun';
+    }
+  }
+
+  async function fetchQuote() {
+    try {
+      const quoteUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/QUOTE/quote.txt`;
+      const res = await fetch(quoteUrl);
+      if(res.ok) {
+        const text = await res.text();
+        document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-bolt" style="color:#facc15"></i> ${text.trim()}`;
+      } else {
+        document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-fire"></i> Keep going, Stay awake, Warrior!`;
+      }
+    } catch(e) {
+      document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-fire"></i> Keep going, Stay awake, Warrior!`;
+    }
+  }
+
+  async function loadDynamicRootFolders() {
+    try {
+      const res = await fetch(GITHUB_API_BASE);
+      if(!res.ok) throw new Error("API Error");
+      const data = await res.json();
+      
+      const container = document.getElementById('dynamic-tabs-container');
+      let html = '';
+      const exclude = ['.main', 'MOCK TESTS', 'TARGET-SERIES'];
+      
+      data.forEach(item => {
+        if (item.type === 'dir' && !exclude.includes(item.name)) {
+          html += `
+          <div class="cross-block" onclick="openFolder('${item.name.replace(/'/g, "\\'")}')">
+            <div class="info">
+              <h4><i class="fa-solid fa-folder-open"></i> ${item.name}</h4>
+            </div>
+            <div class="btn">Open &rarr;</div>
+          </div>`;
+        }
+      });
+      
+      if(html === '') container.innerHTML = `<div style="text-align:center; color:var(--text-secondary); font-size:0.8rem;">No extra folders found in root.</div>`;
+      else container.innerHTML = html;
+    } catch(e) {
+      document.getElementById('dynamic-tabs-container').innerHTML = '';
+    }
+  }
+
+  window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.view === 'folder') renderFolderView(event.state.path, false);
+    else if (event.state && event.state.view === 'profile') window.openProfile(false);
+    else if (event.state && event.state.view === 'recent') window.openRecentTests(false);
+    else renderHomeView(false);
+  });
+
+  function navigateHome() { renderHomeView(true); }
+  function openFolder(path) { renderFolderView(path, true); }
+  
+  window.openProfile = function(pushHistory = true) {
+    document.getElementById('view-home').classList.add('hidden');
+    document.getElementById('view-folder').classList.add('hidden');
+    document.getElementById('view-recent').classList.add('hidden');
+    document.getElementById('view-profile').classList.remove('hidden');
+    
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-item')[3].classList.add('active');
+
+    if (pushHistory) history.pushState({ view: 'profile', path: '' }, "");
+    window.scrollTo(0,0);
+    renderProfileAnalytics();
+  }
+
+  function renderHomeView(pushHistory = true) {
+    document.getElementById('view-folder').classList.add('hidden');
+    document.getElementById('view-profile').classList.add('hidden');
+    document.getElementById('view-recent').classList.add('hidden');
+    document.getElementById('view-home').classList.remove('hidden');
+    
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-item')[0].classList.add('active');
+
+    if (pushHistory) history.pushState({ view: 'home', path: '' }, "");
+    window.scrollTo(0,0);
+  }
+
+  async function renderFolderView(path, pushHistory = true) {
+    document.getElementById('view-home').classList.add('hidden');
+    document.getElementById('view-profile').classList.add('hidden');
+    document.getElementById('view-recent').classList.add('hidden');
+    document.getElementById('view-folder').classList.remove('hidden');
+    
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    if(path.includes('TARGET-SERIES')) document.querySelectorAll('.nav-item')[2].classList.add('active');
+    else document.querySelectorAll('.nav-item')[1].classList.add('active');
+
+    if (pushHistory) history.pushState({ view: 'folder', path: path }, "");
+
+    renderBreadcrumbs(path);
+    const contentDiv = document.getElementById('github-content');
+    contentDiv.innerHTML = `<div class="loader"><i class="fa-solid fa-spinner"></i><br>Fetching Data...</div>`;
+    window.scrollTo(0,0);
+
+    try {
+      let data;
+      if (folderCache[path]) {
+        data = folderCache[path];
+      } else {
+        let apiPath = path.split('/').map(segment => encodeURIComponent(segment)).join('/');
+        const response = await fetch(GITHUB_API_BASE + apiPath);
+        if (!response.ok) throw new Error("Folder not found");
+        data = await response.json();
+        folderCache[path] = data; 
+      }
+
+      const folders = data.filter(item => item.type === 'dir');
+      const files = data.filter(item => item.type === 'file'); 
+      
+      if (folders.length === 0 && files.length === 0) {
+        contentDiv.innerHTML = `<div class="loader">Is folder mein abhi koi file nahi hai bhai!</div>`;
+        return;
+      }
+
+      let htmlString = '<div class="github-list">';
+      folders.forEach(folder => {
+        let cleanName = decodeURIComponent(folder.name).replace(/-/g, ' ');
+        htmlString += `
+          <div class="file-card-wrapper" onclick="openFolder('${folder.path.replace(/'/g, "\\'")}')" style="cursor:pointer">
+            <div class="github-item-row folder">
+              <div class="left"><i class="fa-solid fa-folder-closed"></i> ${cleanName}</div>
+              <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+            </div>
+          </div>
+        `;
+      });
+
+      files.forEach(file => {
+        let cleanTitle = decodeURIComponent(file.name).replace(/\.[^/.]+$/, "").replace(/-/g, ' '); 
+        let fileLink = `/${file.path}`; 
+        
+        let ext = file.name.split('.').pop().toLowerCase();
+        let isQuizOrCode = ['html', 'htm', 'js', 'py', 'cpp', 'c', 'java'].includes(ext);
+        let btnText = isQuizOrCode ? 'Start' : 'View';
+        
+        let iconStr = '<i class="fa-solid fa-file-lines" style="color:var(--text-secondary)"></i>';
+        if (['pdf'].includes(ext)) iconStr = '<i class="fa-solid fa-file-pdf" style="color:var(--accent-red)"></i>';
+        else if (['jpg','jpeg','png','gif','svg','webp'].includes(ext)) iconStr = '<i class="fa-solid fa-image" style="color:var(--accent-purple)"></i>';
+        else if (['mp4','webm','avi','mov'].includes(ext)) iconStr = '<i class="fa-solid fa-video" style="color:var(--accent-blue)"></i>';
+        else if (['mp3','wav','ogg'].includes(ext)) iconStr = '<i class="fa-solid fa-music" style="color:var(--accent-gold)"></i>';
+        else if (isQuizOrCode) iconStr = '<i class="fa-solid fa-file-code" style="color:var(--accent-green)"></i>';
+
+        let normalizedFile = normalizeStringForMatch(file.name);
+        let matchingHistory = globalUserAttempts.map((att, i) => ({att, globalIdx: i})).filter(obj => {
+          return normalizeStringForMatch(obj.att.testName) === normalizedFile;
+        });
+
+        let historyHTML = '';
+        if (matchingHistory.length > 0) {
+          historyHTML += `<div class="attempts-row">`;
+          matchingHistory.forEach((obj, idx) => {
+            let colorClass = (idx === 0) ? 'att-1' : ((idx === 1) ? 'att-2' : 'att-3');
+            let dateOnly = obj.att.ts ? obj.att.ts.split(',')[0].toUpperCase() : '';
+            historyHTML += `
+              <div class="attempt-badge ${colorClass}" onclick="openDashboardSnap(${obj.globalIdx}); event.stopPropagation();">
+                <div class="att-title">Attempt ${idx + 1}</div>
+                <div class="att-score">${obj.att.score}</div>
+                <div class="att-date">${dateOnly}</div>
+              </div>
+            `;
+          });
+          historyHTML += `</div>`;
+        }
+
+        htmlString += `
+          <div class="file-card-wrapper">
+            <a href="${fileLink}" class="github-item-row file">
+              <div class="left">${iconStr} <span style="text-transform:capitalize">${cleanTitle}</span></div>
+              <div class="btn-start">${btnText}</div>
+            </a>
+            ${historyHTML}
+          </div>
+        `;
+      });
+
+      htmlString += '</div>';
+      contentDiv.innerHTML = htmlString;
+
+    } catch (error) {
+      console.error(error);
+      contentDiv.innerHTML = `<div class="loader" style="color:var(--accent-red)"><i class="fa-solid fa-triangle-exclamation"></i><br>Error loading data. Path check kar bhai.</div>`;
+    }
+  }
+
+  function renderBreadcrumbs(path) {
+    const container = document.getElementById('breadcrumb-container');
+    const parts = path.split('/');
+    let breadcrumbHTML = `<span class="crumb" onclick="navigateHome()"><i class="fa-solid fa-house"></i> Home</span>`;
+    let currentPath = "";
+
+    parts.forEach((part, index) => {
+      if (!part) return;
+      currentPath += (currentPath === "" ? part : "/" + part);
+      let cleanName = decodeURIComponent(part).replace(/-/g, ' ');
+      breadcrumbHTML += ` <i class="fa-solid fa-angle-right" style="font-size:0.7rem"></i> `;
+      if (index === parts.length - 1) {
+        breadcrumbHTML += `<span style="color:var(--text-primary); font-weight:bold;">${cleanName}</span>`;
+      } else {
+        breadcrumbHTML += `<span class="crumb" onclick="openFolder('${currentPath.replace(/'/g, "\\'")}')">${cleanName}</span>`;
+      }
+    });
+    container.innerHTML = breadcrumbHTML;
+  }
+</script>
+</body>
+</html>
