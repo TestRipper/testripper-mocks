@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>SSC-CGL-2024-09SEP-SHIFT-01</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<style>
+  :root {
+    --ed-bg: #f0f4f7; --ed-blue: #092974; --ed-panel: #bbd3e8; 
+    --ed-light: #e6f0fa; --ed-btn: #1299FD; --ed-btn-hov: #0078d7;
+    --ans: #28a745; --not-ans: #dc3545; --not-vis: #ffffff; --mark: #6f42c1;
+    --brd: #ccc; --txt: #333;
+  }
+  
+  /* CHROME BUG FIX (100dvh + no pull-to-refresh bounce) */
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+  html, body { 
+    height: 100%; height: 100dvh; 
+    min-height: -webkit-fill-available;
+    background: var(--ed-bg); color: var(--txt); 
+    overflow: hidden; /* Stop whole page scroll */
+  }
+
+  /* ==========================================
+     INSTRUCTION PAGES (Step 1 & Step 2)
+     ========================================== */
+  .inst-wrapper {
+    position: fixed; inset: 0; background: #fff; z-index: 2000;
+    display: flex; flex-direction: column; height: 100%; height: 100dvh;
+  }
+  .inst-header {
+    background: #fff; border-bottom: 2px solid var(--ed-blue); padding: 15px 20px;
+    display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .inst-header .logo { font-size: 1.5rem; font-weight: 900; color: var(--ed-blue); }
+  .inst-header .lang-select { display: flex; align-items: center; gap: 8px; border: 1px solid var(--brd); padding: 5px 10px; border-radius: 4px; }
+  
+  .inst-content { flex: 1; overflow-y: auto; padding: 20px; background: #f9f9f9; }
+  .inst-card { max-width: 900px; margin: 0 auto; background: #fff; border: 1px solid var(--brd); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+  .inst-card-header { background: #e0e0e0; padding: 10px 15px; font-weight: bold; border-bottom: 1px solid var(--brd); }
+  .inst-card-body { padding: 20px; font-size: 0.95rem; line-height: 1.6; }
+  
+  .inst-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9rem; }
+  .inst-table th, .inst-table td { border: 1px solid #999; padding: 8px; text-align: center; }
+  .inst-table th { background: #d0d0d0; }
+  
+  .inst-list { margin-left: 20px; margin-bottom: 15px; }
+  .inst-list li { margin-bottom: 8px; }
+  .hi-text { color: #555; font-size: 0.85rem; margin-top: 2px; display: block; }
+
+  .inst-footer {
+    padding: 15px 20px; background: #fff; border-top: 1px solid var(--brd);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .btn-primary { background: var(--ed-btn); color: #fff; border: none; padding: 10px 24px; border-radius: 4px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: 0.2s; }
+  .btn-primary:hover:not(:disabled) { background: var(--ed-btn-hov); }
+  .btn-primary:disabled { background: #ccc; cursor: not-allowed; }
+  .btn-outline { background: #f0a500; color: #fff; border: none; padding: 10px 24px; border-radius: 4px; font-weight: bold; font-size: 1rem; cursor: pointer; }
+
+  .sym-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem; }
+  .sym-table th, .sym-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+  .sym-table th { background: #e0e0e0; }
+
+  .chk-box-area { display: flex; align-items: flex-start; gap: 10px; font-weight: bold; margin-top: 20px; color: #222; font-size: 0.95rem; }
+  .chk-box-area input { width: 20px; height: 20px; margin-top: 2px; cursor: pointer; }
+
+  /* ==========================================
+     MOCK GUIDE PANEL MODAL (Exam View)
+     ========================================== */
+  .guide-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 3000;
+    display: none; align-items: center; justify-content: center;
+  }
+  .guide-box { background: #fff; padding: 25px; border-radius: 8px; max-width: 500px; width: 95%; position: relative; }
+  .btn-close-guide { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #555; }
+
+  /* ==========================================
+     MAIN EXAM INTERFACE
+     ========================================== */
+  .exam-ui { display: none; flex-direction: column; height: 100%; height: 100dvh; }
+  
+  .header { background: #222; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+  .exam-title { font-size: 1.1rem; font-weight: bold; }
+  .header-actions { display: flex; align-items: center; gap: 15px; }
+  .timer-box { font-size: 1rem; font-weight: bold; color: #ffdd59; }
+  .btn-guide { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+
+  .layout { display: flex; flex: 1; overflow: hidden; }
+
+  /* LEFT: QUESTION AREA */
+  .left-area { flex: 1; display: flex; flex-direction: column; background: #fff; min-width: 0; }
+  
+  .sec-tabs { display: flex; background: var(--ed-light); border-bottom: 2px solid var(--ed-blue); overflow-x: auto; flex-shrink: 0; }
+  .sec-tabs::-webkit-scrollbar { height: 4px; }
+  .sec-tab { padding: 12px 20px; font-weight: bold; font-size: 0.9rem; cursor: pointer; border-right: 1px solid #cce0f5; color: #555; white-space: nowrap; }
+  .sec-tab.active { background: var(--ed-btn); color: #fff; }
+
+  .q-header { padding: 10px 20px; border-bottom: 1px solid var(--brd); display: flex; justify-content: space-between; background: #fafafa; font-weight: bold; font-size: 0.9rem; flex-shrink: 0; }
+  
+  .q-body { flex: 1; padding: 20px; overflow-y: auto; font-size: 1.05rem; line-height: 1.5; }
+  .q-text { margin-bottom: 20px; font-weight: 500; }
+  .opt-row { display: flex; align-items: flex-start; padding: 12px; border: 1px solid var(--brd); border-radius: 4px; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
+  .opt-row:hover { background: #f8f9fa; border-color: var(--ed-btn); }
+  .opt-row.sel { border-color: var(--ed-btn); background: #eef6fc; box-shadow: inset 3px 0 0 var(--ed-btn); }
+  .opt-radio { margin-top: 2px; margin-right: 12px; cursor: pointer; width: 16px; height: 16px; }
+
+  .q-footer { padding: 12px 20px; border-top: 1px solid var(--brd); display: flex; justify-content: space-between; background: #f8f9fa; flex-shrink: 0; }
+  .btn { padding: 8px 14px; border: 1px solid var(--brd); border-radius: 4px; font-weight: bold; cursor: pointer; background: #fff; font-size: 0.9rem; white-space: nowrap; }
+  .btn-mark { color: var(--mark); border-color: var(--mark); }
+  .btn-save { background: var(--ed-btn); color: #fff; border: none; }
+  
+  /* RIGHT: SIDEBAR PALETTE */
+  .right-sidebar { width: 300px; background: var(--ed-panel); border-left: 1px solid var(--brd); display: flex; flex-direction: column; flex-shrink: 0; }
+  
+  .profile-box { padding: 10px 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #9ebdd8; background: #fff; }
+  .profile-box img { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--brd); }
+  
+  .legend-box { padding: 10px 15px; border-bottom: 1px solid #9ebdd8; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.8rem; background: var(--ed-light); }
+  .l-item { display: flex; align-items: center; gap: 6px; }
+  .badge { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem; border-radius: 4px; border: 1px solid #aaa; color: #fff; flex-shrink:0; }
+  .b-ans { background: var(--ans); border-color: var(--ans); }
+  .b-not { background: var(--not-ans); border-color: var(--not-ans); }
+  .b-nv { background: var(--not-vis); color: #333; }
+  .b-mark { background: var(--mark); border-color: var(--mark); border-radius: 50%; }
+  
+  .grid-box { flex: 1; padding: 15px; overflow-y: auto; background: var(--ed-panel); }
+  .grid-title { font-weight: bold; margin-bottom: 10px; color: #222; font-size: 0.9rem; }
+  .q-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .q-grid .badge { cursor: pointer; width: 100%; aspect-ratio: 1; color: #333; transition: 0.1s; }
+  .q-grid .badge.b-ans, .q-grid .badge.b-not, .q-grid .badge.b-mark { color: #fff; }
+  .q-grid .badge.current { outline: 2px solid #222; outline-offset: 1px; }
+
+  .submit-box { padding: 12px 15px; background: #fff; border-top: 1px solid #9ebdd8; flex-shrink: 0; }
+  .btn-submit { width: 100%; padding: 10px; background: #28a745; color: #fff; border: none; border-radius: 4px; font-weight: bold; font-size: 1rem; cursor: pointer; }
+
+  /* LOADER MODAL */
+  #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 10000; }
+  .modal { background: #fff; padding: 30px; border-radius: 8px; text-align: center; max-width: 400px; width: 90%; }
+
+  /* ==========================================
+     MOBILE RESPONSIVENESS (Fixes overflow and hides sidebar to bottom)
+     ========================================== */
+  @media (max-width: 800px) {
+    .layout { flex-direction: column; }
+    .right-sidebar { 
+      width: 100%; height: 260px; /* Fixed height for palette on mobile */
+      border-left: none; border-top: 2px solid var(--brd); 
+    }
+    .grid-box { padding: 10px; }
+    
+    .q-footer { flex-wrap: wrap; gap: 8px; justify-content: center; padding: 10px; }
+    .q-footer > div { width: 100%; display: flex; justify-content: space-between; gap: 8px; }
+    .btn { flex: 1; padding: 8px; font-size: 0.85rem; } /* Buttons stretch to fit */
+    
+    .exam-title { font-size: 0.9rem; }
+    .btn-guide span { display: none; } /* Hide text, keep icon */
+    .timer-box { font-size: 0.9rem; }
+    
+    .inst-header .logo { font-size: 1.2rem; }
+    .chk-box-area { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="inst-wrapper" id="instStep1">
+  <div class="inst-header">
+    <div class="logo"><i class="fa fa-bullseye"></i> TestRipper</div>
+    <div class="lang-select">
+      <i class="fa fa-language"></i> 
+      <select style="border:none; outline:none; background:transparent; font-weight:bold;">
+        <option>English</option><option>Hindi</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="inst-content">
+    <div class="inst-card">
+      <div class="inst-card-header">Instructions, Terms & Conditions</div>
+      <div class="inst-card-body">
+        <ol class="inst-list">
+          <li>
+            <b>Exam Overview / परीक्षा का संक्षिप्त विवरण</b>
+            <span class="hi-text">Duration: <span id="s1-dur">60</span> minutes | Total Questions: <span id="s1-tq">100</span></span>
+            <span class="hi-text">Negative Marking: 25% marks deducted for each wrong answer. (प्रत्येक गलत उत्तर पर 25% अंक काटे जाएंगे।)</span>
+<!--yahan kitne £ sections hai wo upload hoga -->
+            
+          <table class="inst-table">
+  <tr><th>Section</th><th>Subject</th><th>Questions</th><th>Marks</th></tr>
+  <tr><td>PART-A</td><td>English Comprehension</td><td id="s1-q1">25</td><td id="s1-m1">50</td></tr>
+  <tr><td>PART-B</td><td>General Intelligence and Reasoning</td><td id="s1-q2">25</td><td id="s1-m2">50</td></tr>
+  <tr><td>PART-C</td><td>Quantitative Aptitude</td><td id="s1-q3">25</td><td id="s1-m3">50</td></tr>
+  <tr><td>PART-D</td><td>General Awareness</td><td id="s1-q4">25</td><td id="s1-m4">50</td></tr>
+</table>
+          </li>
+          <li>
+            <b>Timing & Submission / समय और उत्तर जमा करना</b>
+            <span class="hi-text">The timer (top right) is server-controlled. The exam auto-submits when time ends.</span>
+            <span class="hi-text">(समय समाप्त होने पर परीक्षा स्वतः सबमिट हो जाएगी।)</span>
+          </li>
+          <li>
+            <b>Navigation / नेविगेशन</b>
+            <span class="hi-text">All sections are visible. Use <b>Previous</b> or <b>Save & Next</b> to move.</span>
+            <span class="hi-text">Use <b>Mark for Review</b> to flag questions you wish to revisit.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="inst-footer">
+    <button class="btn-outline" onclick="alert('Going to Dashboard')">Go to Tests</button>
+    <button class="btn-primary" onclick="showStep2()">Next <i class="fa fa-chevron-right"></i></button>
+  </div>
+</div>
+
+<div class="inst-wrapper" id="instStep2" style="display:none;">
+  <div class="inst-header">
+    <div class="logo"><i class="fa fa-bullseye"></i> TestRipper</div>
+  </div>
+  
+  <div class="inst-content">
+    <div class="inst-card">
+      <div class="inst-card-header">Please read carefully before starting</div>
+      <div class="inst-card-body">
+        <p style="margin-bottom:10px; font-weight:bold; color:var(--ed-blue);">Symbols and their meanings:</p>
+        
+        <table class="sym-table">
+          <tr>
+            <td width="40" align="center"><div class="badge b-nv"></div></td>
+            <td>You have not visited the question yet.</td>
+          </tr>
+          <tr>
+            <td align="center"><div class="badge b-not"></div></td>
+            <td>You have not answered the question.</td>
+          </tr>
+          <tr>
+            <td align="center"><div class="badge b-ans"></div></td>
+            <td>You have answered the question.</td>
+          </tr>
+          <tr>
+            <td align="center"><div class="badge b-mark"></div></td>
+            <td>You have NOT answered the question, but marked it for review. (Will not be evaluated).</td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div class="badge b-mark" style="position:relative;">
+                <div style="position:absolute; bottom:0; right:0; width:8px; height:8px; background:var(--ans); border-radius:50%; border:1px solid #fff;"></div>
+              </div>
+            </td>
+            <td>You have answered the question, but marked it for review. <b>(Will be evaluated)</b>.</td>
+          </tr>
+        </table>
+
+        <div style="display:flex; justify-content:flex-end; align-items:center; gap:10px; margin-top:10px;">
+          <b>Select Default Language:</b>
+          <select style="padding:6px; border:1px solid var(--brd); border-radius:4px;"><option>English</option><option>Hindi</option></select>
+        </div>
+
+        <label class="chk-box-area">
+          <input type="checkbox" id="agreeChk">
+          <span>I have read all the instructions carefully and have understood them. I agree not to cheat or use unfair means in this examination. I understand that my exam can be cancelled if found guilty.</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="inst-footer">
+    <button class="btn-outline" onclick="showStep1()"><i class="fa fa-chevron-left"></i> Back</button>
+    <button class="btn-primary" id="btnStartTest" disabled>Start Test</button>
+  </div>
+</div>
+
+<div class="guide-overlay" id="guideModal">
+  <div class="guide-box">
+    <button class="btn-close-guide" onclick="document.getElementById('guideModal').style.display='none'"><i class="fa fa-times"></i></button>
+    <h3 style="color:var(--ed-blue); margin-bottom:15px; border-bottom:1px solid var(--brd); padding-bottom:10px;">Exam Controls Guide</h3>
+    <ul style="margin-left: 20px; margin-bottom: 20px; line-height: 1.6; font-size:0.95rem;">
+      <li><b>Save & Next:</b> Saves your answer and moves to the next question.</li>
+      <li><b>Mark for Review:</b> Flags the question. If answered, it will be considered for evaluation.</li>
+      <li><b>Clear Response:</b> Removes your selected answer.</li>
+    </ul>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; background:#f9f9f9; padding:10px; border-radius:6px; font-size:0.85rem;">
+      <div class="l-item"><div class="badge b-ans"></div> Answered</div>
+      <div class="l-item"><div class="badge b-not"></div> Not Answered</div>
+      <div class="l-item"><div class="badge b-nv" style="border-color:#333;"></div> Not Visited</div>
+      <div class="l-item"><div class="badge b-mark"></div> Marked</div>
+    </div>
+  </div>
+</div>
+
+<div class="exam-ui" id="examUI">
+  <div class="header">
+    <div class="exam-title" id="examTitle">SSC CGL Tier-1 Mock (Eduquity)</div>
+    <div class="header-actions">
+      <button class="btn-guide" onclick="document.getElementById('guideModal').style.display='flex'">
+        <i class="fa fa-info-circle"></i> <span>Instructions</span>
+      </button>
+      <div class="timer-box">Time Left: <span id="timerDisp">00:00:00</span></div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="left-area">
+      <div class="sec-tabs" id="secTabs"></div>
+      <div class="q-header">
+        <span id="qNumHead">Question No. 1</span>
+        <div>Marks: <span style="color:var(--ans)">+2.00</span> | <span style="color:var(--not-ans)">-0.50</span></div>
+      </div>
+      <div class="q-body" id="qBody">
+        </div>
+      <div class="q-footer">
+        <div>
+          <button class="btn btn-mark" id="btnMark">Mark for Review & Next</button>
+          <button class="btn" id="btnClear">Clear Response</button>
+        </div>
+        <div>
+          <button class="btn" id="btnPrev"><i class="fa fa-chevron-left"></i> Prev</button>
+          <button class="btn btn-save" id="btnSave">Save & Next <i class="fa fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-sidebar">
+      <div class="profile-box">
+        <img src="https://ui-avatars.com/api/?name=Test+Ripper&background=092974&color=fff" alt="User">
+        <div><b style="font-size:0.95rem;">TestRipper</b><br><small id="userEmail" style="color:#777;">Not Logged In</small></div>
+      </div>
+      <div class="legend-box">
+        <div class="l-item"><div class="badge b-ans" id="cAns">0</div> Answered</div>
+        <div class="l-item"><div class="badge b-not" id="cNot">0</div> Not Ans</div>
+        <div class="l-item"><div class="badge b-nv" id="cNv" style="border-color:#ccc;">0</div> Not Visited</div>
+        <div class="l-item"><div class="badge b-mark" id="cMark">0</div> Marked</div>
+      </div>
+      <div class="grid-box">
+        <div class="grid-title" id="gridTitle">Section Name</div>
+        <div class="q-grid" id="qGrid"></div>
+      </div>
+      <div class="submit-box">
+        <button class="btn-submit" onclick="submitExam()">Submit Exam</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="overlay">
+  <div class="modal">
+    <h3><i class="fa fa-spinner fa-spin" style="color:var(--ed-blue)"></i> Submitting...</h3>
+    <p style="margin-top:10px; color:#555;">Please wait while we sync your data to dashboard.</p>
+  </div>
+</div>
+
+<!-- --- ✓ yahan Questions upload karenge --------->
+
+<script id="MOCK_DATA" type="application/json">
+[
+  {
+    "secName": "General Intelligence and Reasoning",
+    "questions": [
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/76b09a78-d182-4fb9-a39c-c764100629cd.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/76b09a78-d182-4fb9-a39c-c764100629cd.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b25caf0a-5cf9-4270-bcc0-4764624b1c49.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b25caf0a-5cf9-4270-bcc0-4764624b1c49.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/878aefbc-7f57-4b32-84de-1bab77744ed5.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/878aefbc-7f57-4b32-84de-1bab77744ed5.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ab4759d6-bbd7-468f-9c98-5feddcda41f2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ab4759d6-bbd7-468f-9c98-5feddcda41f2.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5002c25a-d49e-4bef-b5a7-122d7c43b1ec.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5002c25a-d49e-4bef-b5a7-122d7c43b1ec.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f6989c54-fe11-4095-b49f-dd2bec4bba11.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f6989c54-fe11-4095-b49f-dd2bec4bba11.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/cf9b0a52-ba23-4ed9-be9f-7b1a5f5953e0.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/cf9b0a52-ba23-4ed9-be9f-7b1a5f5953e0.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/90550474-7708-4095-b2fe-7236ac7eb412.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/90550474-7708-4095-b2fe-7236ac7eb412.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/54e58543-a3ef-47f7-b249-7736192a67bb.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/54e58543-a3ef-47f7-b249-7736192a67bb.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/04404082-beba-4606-983c-83505dd2deed.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/04404082-beba-4606-983c-83505dd2deed.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/85ce7f28-8871-48d4-90e8-b5c2c0a69598.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/85ce7f28-8871-48d4-90e8-b5c2c0a69598.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/98dccf6b-864b-4272-ba53-b44a875b1adf.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/98dccf6b-864b-4272-ba53-b44a875b1adf.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d0c20c1c-0a53-4e75-8a8c-d3f987f0c1d3.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d0c20c1c-0a53-4e75-8a8c-d3f987f0c1d3.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e2181df5-b29c-4d4f-8749-53c492d41b7e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e2181df5-b29c-4d4f-8749-53c492d41b7e.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e77b8798-a4d0-4762-a5f3-e8fa02bd1964.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e77b8798-a4d0-4762-a5f3-e8fa02bd1964.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3b91f4cb-c355-4100-b0d1-d17b8af6e341.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3b91f4cb-c355-4100-b0d1-d17b8af6e341.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6d780124-a4e9-4b7c-8f52-c289051fefb6.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6d780124-a4e9-4b7c-8f52-c289051fefb6.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/41c12dbf-db38-48f4-a90f-36b007f4e69b.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/41c12dbf-db38-48f4-a90f-36b007f4e69b.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/dc0b6f7b-96a7-47b4-b437-0c01cc42a0fa.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/dc0b6f7b-96a7-47b4-b437-0c01cc42a0fa.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/cbbcb84a-098c-42b2-8e55-42d15be2f9d7.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/cbbcb84a-098c-42b2-8e55-42d15be2f9d7.png';\">"
+      },
+      {
+        "q": "<img src=\"https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/db397e14-46a1-4a4b-ab7b-102b9fb6899e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/db397e14-46a1-4a4b-ab7b-102b9fb6899e.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/66b1c0a7-2568-4c17-93f4-bf408fb6861a.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static.pw.live/5eb393ee95fab7468a79d189/ADMIN/66b1c0a7-2568-4c17-93f4-bf408fb6861a.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/138dec25-e313-4d7a-9fd2-310d7847f238.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/138dec25-e313-4d7a-9fd2-310d7847f238.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e675c885-174e-49ab-b3cc-adf8f446ddf2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e675c885-174e-49ab-b3cc-adf8f446ddf2.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b99570d9-47fc-483a-9a68-7b9a6110cee5.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b99570d9-47fc-483a-9a68-7b9a6110cee5.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8ba3aa9f-ad73-4c2d-bb13-e60c9ebafc57.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8ba3aa9f-ad73-4c2d-bb13-e60c9ebafc57.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bdb85acf-8fa4-45a5-84bb-a44e2f676e95.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bdb85acf-8fa4-45a5-84bb-a44e2f676e95.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/676c585a-c1cc-448c-ac9d-b5ab7ac586cc.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/676c585a-c1cc-448c-ac9d-b5ab7ac586cc.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/98ae23cd-6861-4f64-a4be-68d15fe8df3a.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/98ae23cd-6861-4f64-a4be-68d15fe8df3a.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e0f63ded-9d8b-4fce-afb5-09c5d07e0b3e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e0f63ded-9d8b-4fce-afb5-09c5d07e0b3e.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/392af70f-81d2-4c35-893e-b52a0bfc0bf0.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/392af70f-81d2-4c35-893e-b52a0bfc0bf0.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a6651e95-622b-44da-ae3a-ca8341665265.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a6651e95-622b-44da-ae3a-ca8341665265.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/741080ef-bd0d-4e4b-909e-21ed870c8032.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/741080ef-bd0d-4e4b-909e-21ed870c8032.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/62daf363-48ba-41fc-83d3-890c1b13b7fd.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/62daf363-48ba-41fc-83d3-890c1b13b7fd.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/959d154d-62d6-4c39-a990-920be916f016.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/959d154d-62d6-4c39-a990-920be916f016.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3b6a9ec6-2919-4e19-ba31-6b90fd8fdbb8.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3b6a9ec6-2919-4e19-ba31-6b90fd8fdbb8.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/aa4521a1-8914-4da2-bf2e-bb8940994e65.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/aa4521a1-8914-4da2-bf2e-bb8940994e65.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bd809bdc-ede8-4b41-be3c-6941578d173e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bd809bdc-ede8-4b41-be3c-6941578d173e.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bc54015c-0255-43f4-86da-c446d355f272.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bc54015c-0255-43f4-86da-c446d355f272.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/01b4a25c-9956-4e77-a549-382237b78055.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/01b4a25c-9956-4e77-a549-382237b78055.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3cd575e0-0ab9-4bf6-94ed-5db5f878c348.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3cd575e0-0ab9-4bf6-94ed-5db5f878c348.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5d329b9d-4408-4fbc-9536-e834abae77bf.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5d329b9d-4408-4fbc-9536-e834abae77bf.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8c625493-109f-453d-864f-89826bbab440.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8c625493-109f-453d-864f-89826bbab440.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/731e28c9-15ea-4481-88c2-448303852af3.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/731e28c9-15ea-4481-88c2-448303852af3.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/22f9a7fd-5880-4878-b867-dc63e7a42ee2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/22f9a7fd-5880-4878-b867-dc63e7a42ee2.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/09aa0794-bef4-4bdb-a624-d8075b5c5fb4.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/09aa0794-bef4-4bdb-a624-d8075b5c5fb4.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5508134f-a1f5-42fd-9083-93f7efbc81cd.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5508134f-a1f5-42fd-9083-93f7efbc81cd.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e436655e-ea5b-4b6a-b2f8-24d849944150.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e436655e-ea5b-4b6a-b2f8-24d849944150.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f8c3028d-4732-414a-a365-5489ed3e57aa.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f8c3028d-4732-414a-a365-5489ed3e57aa.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/fbb8ed27-1580-47bf-b27c-af38fdab6166.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/fbb8ed27-1580-47bf-b27c-af38fdab6166.png';\">"
+      }
+    ]
+  },
+  {
+    "secName": "General Awareness",
+    "questions": [
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/29e9a115-eb91-4aa7-bbec-7e0acb4fe1bb.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/29e9a115-eb91-4aa7-bbec-7e0acb4fe1bb.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d8b40fd5-94e5-4fbf-8627-7005bc9ade8c.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d8b40fd5-94e5-4fbf-8627-7005bc9ade8c.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8fb17b63-2aec-4272-8380-0c068d8c6281.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8fb17b63-2aec-4272-8380-0c068d8c6281.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/87b514a4-3b7a-4820-9eca-92052c0112a5.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/87b514a4-3b7a-4820-9eca-92052c0112a5.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ab921e45-a017-47bd-8ad4-dbd8f1688043.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ab921e45-a017-47bd-8ad4-dbd8f1688043.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/582d9824-88a6-4151-81cb-30ba29f609ec.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/582d9824-88a6-4151-81cb-30ba29f609ec.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/df2d4aa6-86f4-4aed-894f-0b6fea5f9173.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/df2d4aa6-86f4-4aed-894f-0b6fea5f9173.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1bc6337d-c643-410b-ad90-b788d93f6dfd.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1bc6337d-c643-410b-ad90-b788d93f6dfd.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/cd39bcd5-c3d7-4b49-97d9-e8b7d3b02198.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/cd39bcd5-c3d7-4b49-97d9-e8b7d3b02198.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/498eb1cb-5920-41b9-83e5-597957c468a4.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/498eb1cb-5920-41b9-83e5-597957c468a4.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b76cf359-f13b-47b0-9f76-6619fc20be28.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b76cf359-f13b-47b0-9f76-6619fc20be28.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4bae80a5-9909-4bd5-9b0f-7be05bb5e72e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4bae80a5-9909-4bd5-9b0f-7be05bb5e72e.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1e93b193-32aa-42e7-bc62-3217fff02c29.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1e93b193-32aa-42e7-bc62-3217fff02c29.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/fdb21bbe-fd14-49b6-b6e3-e94db3f8755b.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/fdb21bbe-fd14-49b6-b6e3-e94db3f8755b.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d89af82c-0892-42be-8f53-adeb11e35961.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d89af82c-0892-42be-8f53-adeb11e35961.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5c76f6e3-e7d7-4f3d-ad09-032eecfd77c9.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5c76f6e3-e7d7-4f3d-ad09-032eecfd77c9.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/654e00e8-0458-4934-817c-eba266e108a9.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/654e00e8-0458-4934-817c-eba266e108a9.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f8a584a8-ebed-4521-8c59-99b3178f739e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f8a584a8-ebed-4521-8c59-99b3178f739e.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/04284b53-f6c1-4b9b-8730-f9137ce7e20b.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/04284b53-f6c1-4b9b-8730-f9137ce7e20b.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d53f7a4f-56f4-4c2d-b00a-80dd0e9b7ffb.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d53f7a4f-56f4-4c2d-b00a-80dd0e9b7ffb.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/789ead84-cfa7-4e4e-8d7e-3e8579ba1322.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/789ead84-cfa7-4e4e-8d7e-3e8579ba1322.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d74e182e-64b9-47ea-bba4-92529943f8b7.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d74e182e-64b9-47ea-bba4-92529943f8b7.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/07e0935f-659b-47f9-becb-3e8f250a1210.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/07e0935f-659b-47f9-becb-3e8f250a1210.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1a7d9701-0fb9-41db-9e57-84bf035e18c7.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1a7d9701-0fb9-41db-9e57-84bf035e18c7.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1e885d6e-bced-4ef7-a4f9-7e64415cf005.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1e885d6e-bced-4ef7-a4f9-7e64415cf005.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b1f54442-d8d9-4518-a1ad-b91ea3158dda.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b1f54442-d8d9-4518-a1ad-b91ea3158dda.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1040fba6-f82d-4929-b4ae-3f2bfa3329e3.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1040fba6-f82d-4929-b4ae-3f2bfa3329e3.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/72e9e80f-ac10-4a76-9d08-bf3afc7d9e44.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/72e9e80f-ac10-4a76-9d08-bf3afc7d9e44.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8cbeefd1-c626-4f66-8122-ff23f64266a2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8cbeefd1-c626-4f66-8122-ff23f64266a2.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/78988a5b-4134-47d6-9ef0-e3504f475c91.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/78988a5b-4134-47d6-9ef0-e3504f475c91.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a269a161-4be3-42d4-956c-1cafbb64687d.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a269a161-4be3-42d4-956c-1cafbb64687d.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0df982cd-1e5f-40bc-90be-ecface4e13d1.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0df982cd-1e5f-40bc-90be-ecface4e13d1.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d50d14e7-8ce3-412a-b5c3-138e44ec2fdb.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d50d14e7-8ce3-412a-b5c3-138e44ec2fdb.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8ee031a9-60f9-4304-adad-ba60fc699918.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8ee031a9-60f9-4304-adad-ba60fc699918.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/29a28a93-36e9-43f8-9f19-20aefa6094e8.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/29a28a93-36e9-43f8-9f19-20aefa6094e8.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bd9e8f0b-21ce-4d59-b070-257ec5f7b17c.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bd9e8f0b-21ce-4d59-b070-257ec5f7b17c.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4f4b1dab-eb1f-4c2c-bb08-5b1105d6296a.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4f4b1dab-eb1f-4c2c-bb08-5b1105d6296a.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/cf4d51e4-52a0-454c-abd5-f62366b076f9.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/cf4d51e4-52a0-454c-abd5-f62366b076f9.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f579869b-5b63-4787-aa88-b7ed3068b4ce.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f579869b-5b63-4787-aa88-b7ed3068b4ce.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0d4dad53-17c8-48f6-8b28-ac4e0498ab08.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0d4dad53-17c8-48f6-8b28-ac4e0498ab08.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/47e49189-0096-49f1-835b-2d7cfc41e89a.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/47e49189-0096-49f1-835b-2d7cfc41e89a.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ccb10a5a-b447-4134-aa93-48f239e39115.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ccb10a5a-b447-4134-aa93-48f239e39115.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/7ce3e517-25ec-48eb-9561-2e7769cdf32e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/7ce3e517-25ec-48eb-9561-2e7769cdf32e.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/95467621-47b5-4cc9-a0b8-8b00ea5c3ee8.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/95467621-47b5-4cc9-a0b8-8b00ea5c3ee8.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/08b184d3-a590-4acb-bf8c-280309190745.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/08b184d3-a590-4acb-bf8c-280309190745.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/78128ab8-d237-4154-8b29-1957984091b8.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/78128ab8-d237-4154-8b29-1957984091b8.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/56872f96-ddc8-4b98-ab25-455ead8f5a5f.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/56872f96-ddc8-4b98-ab25-455ead8f5a5f.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4bcba9aa-dd42-43a7-8c68-ada8e30eaca2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4bcba9aa-dd42-43a7-8c68-ada8e30eaca2.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e3c86671-9f02-4e92-a4fd-112d0d7bcc23.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e3c86671-9f02-4e92-a4fd-112d0d7bcc23.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6c428463-6fea-46e0-bdcd-7f25e76d624b.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6c428463-6fea-46e0-bdcd-7f25e76d624b.png';\">"
+      }
+    ]
+  },
+  {
+    "secName": "Quantitative Aptitude",
+    "questions": [
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/17b53146-2361-44ff-8ade-fcdc5deee520.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/17b53146-2361-44ff-8ade-fcdc5deee520.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/89a9685e-6a56-4c2a-a8e0-7cb275ee83d2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/89a9685e-6a56-4c2a-a8e0-7cb275ee83d2.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/009ce559-64a1-4505-9354-db18f3db110d.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/009ce559-64a1-4505-9354-db18f3db110d.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/28181d87-e62e-4de9-97df-eecaa836f16d.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/28181d87-e62e-4de9-97df-eecaa836f16d.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/089d36b3-ffb4-4dcd-a1f8-19d86b55a48b.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/089d36b3-ffb4-4dcd-a1f8-19d86b55a48b.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/89c694a2-d524-4484-aaf1-5b0c929b4318.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/89c694a2-d524-4484-aaf1-5b0c929b4318.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/c2512dde-8be3-4cfc-9956-28a092800a3d.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/c2512dde-8be3-4cfc-9956-28a092800a3d.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e35be47f-a470-47b1-a430-6344917696a7.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e35be47f-a470-47b1-a430-6344917696a7.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6c66a255-dd06-4ac9-9c2f-5aa1c9d82cff.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6c66a255-dd06-4ac9-9c2f-5aa1c9d82cff.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0d31b22b-8257-4292-8f86-fd5d99a5360a.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0d31b22b-8257-4292-8f86-fd5d99a5360a.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/72bb2c07-c199-4e0d-83cd-95bf9b828173.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/72bb2c07-c199-4e0d-83cd-95bf9b828173.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/40a17935-e0db-4f76-87d0-d932762eefa5.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/40a17935-e0db-4f76-87d0-d932762eefa5.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/2caad745-6cf4-4c98-9938-fba64c331f49.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/2caad745-6cf4-4c98-9938-fba64c331f49.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e7177a79-f766-4022-870a-13aa0b4fef36.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e7177a79-f766-4022-870a-13aa0b4fef36.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a211d575-c08c-4378-9d6d-0b06876b1ac1.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a211d575-c08c-4378-9d6d-0b06876b1ac1.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3a94e712-6dd4-4c2d-baea-dcda56421edd.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3a94e712-6dd4-4c2d-baea-dcda56421edd.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b41af024-81a7-4e12-bdca-423384550a0c.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b41af024-81a7-4e12-bdca-423384550a0c.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0d4f6cfc-2da0-4090-92b2-9da7dcd84c49.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0d4f6cfc-2da0-4090-92b2-9da7dcd84c49.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a00a40fa-d619-448a-bc97-e06bc62dbb06.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a00a40fa-d619-448a-bc97-e06bc62dbb06.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0d3be9f1-9b87-4e40-9ccc-ce59eb7e6b65.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0d3be9f1-9b87-4e40-9ccc-ce59eb7e6b65.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3fbc2a1b-0c23-4898-a6fd-52445542a771.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3fbc2a1b-0c23-4898-a6fd-52445542a771.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d79fc176-7fb9-4b15-97c8-9559897f25b8.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/d79fc176-7fb9-4b15-97c8-9559897f25b8.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1f0cdbab-3cfc-4862-94e9-04cb8b508fdd.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1f0cdbab-3cfc-4862-94e9-04cb8b508fdd.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b8aa8d52-cdf9-498f-9cbd-b6a6ff4d28a4.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b8aa8d52-cdf9-498f-9cbd-b6a6ff4d28a4.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/9363c399-d829-42ab-ac67-cf6c8e26561a.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/9363c399-d829-42ab-ac67-cf6c8e26561a.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/87c952dd-42ec-4f09-a07e-5eb4d51e7e0b.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/87c952dd-42ec-4f09-a07e-5eb4d51e7e0b.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/68aea0df-b84c-40bf-8005-e7ad3a573cfb.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/68aea0df-b84c-40bf-8005-e7ad3a573cfb.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ec0787a4-3eb1-47ab-8027-61fce85d3056.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ec0787a4-3eb1-47ab-8027-61fce85d3056.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b26051f8-1a2e-48a6-b898-edbe926e4240.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b26051f8-1a2e-48a6-b898-edbe926e4240.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/360d4678-cb72-418c-a692-0ac05bc48ab3.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/360d4678-cb72-418c-a692-0ac05bc48ab3.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/c97bfd0c-c18d-4684-b822-c4eb44a3a831.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/c97bfd0c-c18d-4684-b822-c4eb44a3a831.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4b668b98-58f6-49c1-a5dc-efa2a4c3347a.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4b668b98-58f6-49c1-a5dc-efa2a4c3347a.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6746cd07-5a2a-4d44-8348-089cf81d7db0.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6746cd07-5a2a-4d44-8348-089cf81d7db0.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/765b925a-6878-41f6-936f-78f5e45ece40.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/765b925a-6878-41f6-936f-78f5e45ece40.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/132d2e69-5f3d-42a0-a1e0-858cbe5f1749.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/132d2e69-5f3d-42a0-a1e0-858cbe5f1749.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/49794f2a-a43d-43ce-9916-4f503ea0447d.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/49794f2a-a43d-43ce-9916-4f503ea0447d.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6bb8f4fc-c955-47df-af61-0b6dbd2970fc.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6bb8f4fc-c955-47df-af61-0b6dbd2970fc.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/9a97be9a-ad41-430a-b50b-fbe34ee3489b.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/9a97be9a-ad41-430a-b50b-fbe34ee3489b.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6c2d25cd-94ea-4c91-8d73-3107178560b0.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6c2d25cd-94ea-4c91-8d73-3107178560b0.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ffe04d9c-f6c9-41c2-84bb-96b202dbb0ce.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ffe04d9c-f6c9-41c2-84bb-96b202dbb0ce.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/70b37fcd-8111-43ae-9509-49ebe7d81d16.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/70b37fcd-8111-43ae-9509-49ebe7d81d16.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/99e05d63-8a20-405d-be9f-72008be0d9f7.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/99e05d63-8a20-405d-be9f-72008be0d9f7.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8a1c7018-9975-4cd5-9df5-39a0770c02da.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8a1c7018-9975-4cd5-9df5-39a0770c02da.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/be2dba3b-44b3-4cee-bfbf-1d0c172ae3aa.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/be2dba3b-44b3-4cee-bfbf-1d0c172ae3aa.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a18694b5-bb7a-4123-9613-cb2b77e6a819.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a18694b5-bb7a-4123-9613-cb2b77e6a819.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5fa209ca-02ef-4b6c-8cda-d46f901ec95f.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5fa209ca-02ef-4b6c-8cda-d46f901ec95f.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4a44afb5-23e3-406c-9e39-86db7c74dff1.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4a44afb5-23e3-406c-9e39-86db7c74dff1.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/7e65a1e2-b4be-446e-8622-25b0c194bd38.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/7e65a1e2-b4be-446e-8622-25b0c194bd38.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/65c1f06b-8c50-4834-96f6-9fbae53cfb88.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/65c1f06b-8c50-4834-96f6-9fbae53cfb88.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/63d99050-fb93-4c66-8959-128219dd7de0.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/63d99050-fb93-4c66-8959-128219dd7de0.png';\">"
+      }
+    ]
+  },
+  {
+    "secName": "English Comprehension",
+    "questions": [
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/96573416-33f9-4318-bd2b-c577ee204814.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/96573416-33f9-4318-bd2b-c577ee204814.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/449b6fc3-a053-49b2-bbb6-2235e6974c5f.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/449b6fc3-a053-49b2-bbb6-2235e6974c5f.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/2f3487a1-0281-45f7-8ed9-0f97d2caa578.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/2f3487a1-0281-45f7-8ed9-0f97d2caa578.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ceb8aeec-e5f8-4f3d-af17-e8df347792e7.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ceb8aeec-e5f8-4f3d-af17-e8df347792e7.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/db110b57-c2d1-4c5e-80c4-82c40d6cd15f.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/db110b57-c2d1-4c5e-80c4-82c40d6cd15f.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3f440839-fe66-492b-8d46-b1caba00565c.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3f440839-fe66-492b-8d46-b1caba00565c.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/84483e12-f0d0-468d-9709-abd71e071ee4.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/84483e12-f0d0-468d-9709-abd71e071ee4.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/694f77c9-e3b1-483f-b08a-1c1984ca05f7.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/694f77c9-e3b1-483f-b08a-1c1984ca05f7.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f5fdc315-2ede-47c2-bac8-9afa65c237af.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f5fdc315-2ede-47c2-bac8-9afa65c237af.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6fb571df-e953-4646-adcb-5195dea15474.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6fb571df-e953-4646-adcb-5195dea15474.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/44e6068f-0cbc-43c6-b990-23cb574b82b0.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/44e6068f-0cbc-43c6-b990-23cb574b82b0.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ccbb2e93-5399-4e06-ad9b-8a6ffecee95d.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/ccbb2e93-5399-4e06-ad9b-8a6ffecee95d.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/65d8745d-3727-4872-ab59-26e6caacca0e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/65d8745d-3727-4872-ab59-26e6caacca0e.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e7ccc68c-c608-437d-8d38-2fba07f6e4f9.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e7ccc68c-c608-437d-8d38-2fba07f6e4f9.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f97ff72a-826a-4adf-81a7-88e0c9a928cb.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f97ff72a-826a-4adf-81a7-88e0c9a928cb.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/dd2da2e7-e570-4853-b7cb-5b12d00af0e2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/dd2da2e7-e570-4853-b7cb-5b12d00af0e2.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/22714dfe-5fdd-41ab-bc29-8c6b7b7b2bb5.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/22714dfe-5fdd-41ab-bc29-8c6b7b7b2bb5.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/748161f3-6eb1-4aaf-b08f-0191670836b2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/748161f3-6eb1-4aaf-b08f-0191670836b2.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b81c700d-bb97-44aa-b417-6de01b287f20.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b81c700d-bb97-44aa-b417-6de01b287f20.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/c884ced2-11bd-4a88-a50c-066fd36343fb.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/c884ced2-11bd-4a88-a50c-066fd36343fb.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8ca18976-2f5f-4f21-a21a-a7a67f4dc6dd.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8ca18976-2f5f-4f21-a21a-a7a67f4dc6dd.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a9f1e40a-8204-4b4f-8a2e-c1656b4cde53.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a9f1e40a-8204-4b4f-8a2e-c1656b4cde53.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b2101df1-0dc9-459a-b406-25d14d033961.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b2101df1-0dc9-459a-b406-25d14d033961.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/886d75a7-5a6c-4bd8-a638-32fabee421b8.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/886d75a7-5a6c-4bd8-a638-32fabee421b8.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a3110c9b-ba88-49ef-a608-bfb7820810cb.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/a3110c9b-ba88-49ef-a608-bfb7820810cb.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/de0123d1-88fe-4466-8725-57d18cbe6b05.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/de0123d1-88fe-4466-8725-57d18cbe6b05.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f2dc6be1-9b03-41f2-8a11-67c83c57f3b7.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f2dc6be1-9b03-41f2-8a11-67c83c57f3b7.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1e53401c-b6d8-4980-b319-476716568340.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1e53401c-b6d8-4980-b319-476716568340.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/46cd276e-b163-4025-b662-08be3455540c.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/46cd276e-b163-4025-b662-08be3455540c.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/71f33932-3b4d-4eb2-a4a9-edeb06a2b21e.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/71f33932-3b4d-4eb2-a4a9-edeb06a2b21e.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f6c6eb34-f2fb-4e16-a8e9-195242f8b652.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f6c6eb34-f2fb-4e16-a8e9-195242f8b652.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 2,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b183b314-9488-4e86-bc82-194dad380f12.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/b183b314-9488-4e86-bc82-194dad380f12.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/04894153-8af8-49d0-9c14-5b1f6c9bbe9f.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/04894153-8af8-49d0-9c14-5b1f6c9bbe9f.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0b18fe4c-4c2a-4207-ba75-36a28bccbe58.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0b18fe4c-4c2a-4207-ba75-36a28bccbe58.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e01d6734-f480-4502-8e8b-68c885cdd62b.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e01d6734-f480-4502-8e8b-68c885cdd62b.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1ca4f1e6-5b0c-4143-8869-cc967b02d989.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1ca4f1e6-5b0c-4143-8869-cc967b02d989.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5a39e79e-d842-4d5b-8428-684fd1d067e5.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5a39e79e-d842-4d5b-8428-684fd1d067e5.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e2913e60-4368-4341-85a2-8a7459ad5830.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e2913e60-4368-4341-85a2-8a7459ad5830.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1cde92e7-aeed-44c1-ae71-94e98663d834.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1cde92e7-aeed-44c1-ae71-94e98663d834.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1420064b-1ddd-406e-a3b0-d56011e42d12.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1420064b-1ddd-406e-a3b0-d56011e42d12.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/87497d06-e6ef-4ebb-9c32-e7e09d4758d6.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/87497d06-e6ef-4ebb-9c32-e7e09d4758d6.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/00863384-b886-4d2c-bbd4-1d3ac1ed35e2.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/00863384-b886-4d2c-bbd4-1d3ac1ed35e2.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/736e5796-b8c9-4ddb-9b55-6dc0cac4f244.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/736e5796-b8c9-4ddb-9b55-6dc0cac4f244.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4fe0ea42-e885-44c5-b7ac-54627f7beee3.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/4fe0ea42-e885-44c5-b7ac-54627f7beee3.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/9c16ec8e-7a06-495b-8f7d-3fb8c49d50d0.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/9c16ec8e-7a06-495b-8f7d-3fb8c49d50d0.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 1,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f0190115-c60c-422e-b871-4eaa184506bf.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f0190115-c60c-422e-b871-4eaa184506bf.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/28c7960b-65c1-44c6-99f0-1ce9700d0488.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/28c7960b-65c1-44c6-99f0-1ce9700d0488.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 0,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/337eed96-5e51-4832-bbc4-de9eb1ee8f41.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/337eed96-5e51-4832-bbc4-de9eb1ee8f41.png';\">"
+      },
+      {
+        "q": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/47a00e0d-be35-40b2-b0ab-f394535e325f.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/47a00e0d-be35-40b2-b0ab-f394535e325f.png';\">",
+        "o": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "a": 3,
+        "s": "<img src=\"https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6fb7e679-8422-4c20-8f8d-ae3c059245df.png\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6fb7e679-8422-4c20-8f8d-ae3c059245df.png';\">"
+      }
+    ]
+  }
+]
+</script>
+
+<script>
+// ==========================================
+// FIREBASE CONFIGURATION (TestRipper Backend)
+// ==========================================
+const firebaseConfig = {
+  apiKey: "AIzaSyAbaDJ5F9HK45SybxhuYaR4aZo0PDKVi7o",
+  authDomain: "testripper-mocks.firebaseapp.com",
+  projectId: "testripper-mocks",
+  storageBucket: "testripper-mocks.firebasestorage.app",
+  messagingSenderId: "344935856479",
+  appId: "1:344935856479:web:26014707272cb8bd7e1eea"
+};
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+auth.onAuthStateChanged(user => {
+  if (user) document.getElementById('userEmail').textContent = user.email || 'Warrior';
+});
+
+// ==========================================
+// ¶ QUIZ NAME TIME ENGINE LOGIC
+// ==========================================
+const CONFIG = {
+  TEST_NAME: "SSC-CGL-2024-PYQ-09-SEP-SHIFT-01",
+  TOTAL_TIME: 3600, // 60 mins (in seconds)
+  POS_MARKS: 2.0,
+  NEG_MARKS: 0.5
+};
+
+const $ = id => document.getElementById(id);
+let mockData = [];
+try { mockData = JSON.parse($('MOCK_DATA').textContent); } 
+catch(e) { alert("JSON Format Error!"); }
+
+// --- Sync UI Texts (Logic for 4 Sections) ---
+$('s1-dur').textContent = CONFIG.TOTAL_TIME / 60;
+let totalQ = mockData.reduce((acc, curr) => acc + curr.questions.length, 0);
+$('s1-tq').textContent = totalQ;
+
+// Har section ke questions aur marks JSON se auto-calculate hoke table mein jayenge
+if(mockData[0]) { $('s1-q1').textContent = mockData[0].questions.length; $('s1-m1').textContent = mockData[0].questions.length * CONFIG.POS_MARKS; }
+if(mockData[1]) { $('s1-q2').textContent = mockData[1].questions.length; $('s1-m2').textContent = mockData[1].questions.length * CONFIG.POS_MARKS; }
+if(mockData[2]) { $('s1-q3').textContent = mockData[2].questions.length; $('s1-m3').textContent = mockData[2].questions.length * CONFIG.POS_MARKS; }
+if(mockData[3]) { $('s1-q4').textContent = mockData[3].questions.length; $('s1-m4').textContent = mockData[3].questions.length * CONFIG.POS_MARKS; }
+
+// State Tracking (2D Array)
+let state = mockData.map(sec => 
+  sec.questions.map(q => ({
+    ans: null, 
+    status: 'not_visited', 
+    mark: false
+  }))
+);
+
+let curSec = 0;
+let curQ = 0;
+let timeLeft = CONFIG.TOTAL_TIME;
+let timerInterval = null;
+let isSubmitted = false;
+
+// --- INSTRUCTION FLOW ---
+function showStep1() {
+  $('instStep1').style.display = 'flex';
+  $('instStep2').style.display = 'none';
+}
+function showStep2() {
+  $('instStep1').style.display = 'none';
+  $('instStep2').style.display = 'flex';
+}
+
+$('agreeChk').addEventListener('change', (e) => {
+  $('btnStartTest').disabled = !e.target.checked;
+});
+
+$('btnStartTest').onclick = () => {
+  $('instStep2').style.display = 'none';
+  $('examUI').style.display = 'flex';
+  startTimer();
+  updateUI();
+};
+
+// --- RENDER LOGIC ---
+function renderTabs() {
+  const bar = $('secTabs');
+  bar.innerHTML = '';
+  mockData.forEach((sec, i) => {
+    const tab = document.createElement('div');
+    tab.className = `sec-tab ${i === curSec ? 'active' : ''}`;
+    tab.textContent = sec.secName;
+    tab.onclick = () => { curSec = i; curQ = 0; updateUI(); };
+    bar.appendChild(tab);
+  });
+}
+
+function renderQuestion() {
+  const qData = mockData[curSec].questions[curQ];
+  const sData = state[curSec][curQ];
+  
+  if (sData.status === 'not_visited') sData.status = 'not_answered';
+
+  $('qNumHead').textContent = `Question No. ${curQ + 1}`;
+  
+  let html = `<div class="q-text">${qData.q}</div>`;
+  qData.o.forEach((opt, i) => {
+    const isSel = sData.ans === i ? 'sel' : '';
+    const checked = sData.ans === i ? 'checked' : '';
+    html += `
+      <label class="opt-row ${isSel}">
+        <input type="radio" name="opt" class="opt-radio" value="${i}" ${checked}>
+        <span>${String.fromCharCode(65+i)}) ${opt}</span>
+      </label>
+    `;
+  });
+  
+  $('qBody').innerHTML = html;
+  
+  // Auto-select logic
+  document.querySelectorAll('input[name="opt"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      document.querySelectorAll('.opt-row').forEach(el => el.classList.remove('sel'));
+      e.target.closest('.opt-row').classList.add('sel');
+      sData.ans = parseInt(e.target.value);
+      sData.status = 'answered';
+      updateGrid(); updateLegend();
+    });
+  });
+
+  $('btnMark').innerHTML = sData.mark ? 'Unmark Review & Next' : 'Mark for Review & Next';
+  if(window.MathJax) MathJax.typesetPromise();
+  updateGrid(); updateLegend();
+}
+
+function updateGrid() {
+  $('gridTitle').textContent = mockData[curSec].secName;
+  const grid = $('qGrid');
+  grid.innerHTML = '';
+  
+  state[curSec].forEach((s, i) => {
+    const box = document.createElement('div');
+    box.className = 'badge b-nv'; // default
+    
+    if (s.status === 'answered') box.className = 'badge b-ans';
+    else if (s.status === 'not_answered') box.className = 'badge b-not';
+    
+    if (s.mark) box.className = 'badge b-mark'; 
+
+    if (i === curQ) box.classList.add('current');
+
+    box.textContent = i + 1;
+    box.onclick = () => { curQ = i; updateUI(); };
+    grid.appendChild(box);
+  });
+}
+
+function updateLegend() {
+  let a=0, na=0, nv=0, m=0;
+  state[curSec].forEach(s => {
+    if (s.mark) m++;
+    else if (s.status === 'answered') a++;
+    else if (s.status === 'not_answered') na++;
+    else nv++;
+  });
+  $('cAns').textContent = a; $('cNot').textContent = na; 
+  $('cNv').textContent = nv; $('cMark').textContent = m;
+}
+
+// --- NAVIGATION ---
+$('btnSave').onclick = () => goNext(); 
+$('btnMark').onclick = () => { state[curSec][curQ].mark = !state[curSec][curQ].mark; goNext(); };
+$('btnClear').onclick = () => {
+  state[curSec][curQ].ans = null;
+  state[curSec][curQ].status = 'not_answered';
+  renderQuestion();
+};
+$('btnPrev').onclick = () => { if (curQ > 0) { curQ--; updateUI(); } };
+
+function goNext() {
+  if (curQ < mockData[curSec].questions.length - 1) {
+    curQ++; updateUI();
+  } else if (curSec < mockData.length - 1) {
+    curSec++; curQ = 0; updateUI();
+  } else {
+    alert("You have reached the end of the mock test. You can submit now from the side panel.");
+    updateGrid(); updateLegend();
+  }
+}
+
+// --- TIMER ---
+function startTimer() {
+  timerInterval = setInterval(() => {
+    if (timeLeft <= 0) { submitExam(); return; }
+    timeLeft--;
+    const h = String(Math.floor(timeLeft / 3600)).padStart(2, '0');
+    const m = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, '0');
+    const s = String(timeLeft % 60).padStart(2, '0');
+    $('timerDisp').textContent = `${h}:${m}:${s}`;
+  }, 1000);
+}
+
+// --- FIREBASE SYNC (2D -> 1D Conversion) ---
+async function submitExam() {
+  if (isSubmitted) return;
+  if (timeLeft > 0 && !confirm("Are you sure you want to submit the test?")) return;
+  
+  isSubmitted = true;
+  clearInterval(timerInterval);
+  $('overlay').style.display = 'flex'; 
+  
+  let C = 0, W = 0, U = 0, M = 0;
+  let totalScore = 0;
+  let flatSnapData = [];
+  let totalQs = 0;
+
+  mockData.forEach((sec, sIdx) => {
+    sec.questions.forEach((q, qIdx) => {
+      totalQs++;
+      const s = state[sIdx][qIdx];
+      
+      if (s.mark) M++;
+      
+      if (s.ans === null) {
+        U++;
+      } else if (s.ans === q.a) {
+        C++;
+        totalScore += CONFIG.POS_MARKS;
+      } else {
+        W++;
+        totalScore -= CONFIG.NEG_MARKS;
+      }
+
+      flatSnapData.push({
+        q: q.q, opts: q.o, correct: q.a,
+        user: s.ans !== null ? s.ans : -1,
+        sol: q.s, mark: s.mark
+      });
+    });
+  });
+
+  const mins = Math.max(1, Math.round((CONFIG.TOTAL_TIME - timeLeft) / 60));
+  const finalScoreDisplay = `${totalScore.toFixed(2)} / ${totalQs * CONFIG.POS_MARKS}`;
+
+  const d = new Date();
+  const mos = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const formattedTs = `${String(d.getDate()).padStart(2,'0')} ${mos[d.getMonth()]} ${d.getFullYear()}, ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+
+  const attemptRecord = {
+    testName: CONFIG.TEST_NAME,
+    path: window.location.pathname.substring(1),
+    ts: formattedTs, score: finalScoreDisplay,
+    correct: C, incorrect: W, unattempted: U, marked: M, minutes: mins,
+    snap: flatSnapData
+  };
+
+  const user = auth.currentUser;
+  
+  if (user) {
+    try {
+      await db.collection("users").doc(user.uid).collection("attempts").add({
+        ...attemptRecord,
+        serverTime: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      window.location.href = "/index.html"; 
+    } catch (e) {
+      console.error("Sync Error", e);
+      alert("Submission failed to sync with cloud.");
+      $('overlay').style.display = 'none';
+    }
+  } else {
+    let local = JSON.parse(localStorage.getItem(CONFIG.TEST_NAME)) || [];
+    local.unshift(attemptRecord);
+    localStorage.setItem(CONFIG.TEST_NAME, JSON.stringify(local));
+    window.location.href = "/index.html"; 
+  }
+}
+
+function updateUI() {
+  renderTabs();
+  renderQuestion();
+}
+
+// Initial prep (invisible until Step 2 finishes)
+updateUI();
+</script>
+</body>
+</html>
