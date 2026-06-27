@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestRipper - Mocks</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+
+
+<style>
+   /* ====== DEFAULT THEME (LIGHT MODE) ====== */
+  :root {
+    --bg-main: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-nav: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --accent-green: #16A34A;
+    --accent-purple: #6D28D9;
+    --accent-red: #DC2626;
+    --accent-blue: #2563EB;
+    --accent-gold: #D97706;
+    --border-color: #E2E8F0;
+  }
+
+  /* ====== DARK MODE OVERRIDE ====== */
+  [data-theme="dark"] {
+    --bg-main: #0B0E14;
+    --bg-card: #151A22;
+    --bg-nav: #0B0E14;
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --accent-green: #A3E635;
+    --accent-purple: #8B5CF6;
+    --accent-red: #EF4444;
+    --accent-blue: #3B82F6;
+    --accent-gold: #FACC15;
+    --border-color: #1E293B;
+  }
+
+
+  /* ====== RESET & BASE ====== */
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+  body { background: var(--bg-main); color: var(--text-primary); transition: background 0.3s, color 0.3s; padding-bottom: 70px; }
+  a { text-decoration: none; color: inherit; }
+  button { border: none; background: none; cursor: pointer; color: inherit; outline: none; }
+
+  /* ====== HEADER ====== */
+  .header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; position: sticky; top: 0; background: var(--bg-main); z-index: 100; border-bottom: 1px solid var(--border-color); }
+  .logo-area { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 800; color: var(--accent-green); }
+  .logo-area i { color: var(--accent-green); }
+  .header-actions { display: flex; gap: 15px; font-size: 1.2rem; }
+
+  /* ====== QUOTE MARQUEE ====== */
+  .quote-container { background: var(--bg-card); overflow: hidden; white-space: nowrap; padding: 8px 0; border-bottom: 1px solid var(--border-color); position: relative; height: 36px; display: flex; align-items: center;}
+  .vibrating-quote { position: absolute; font-size: 0.85rem; font-weight: 600; color: var(--accent-purple); animation: scrollLeftToRight 15s linear infinite; }
+  
+  @keyframes scrollLeftToRight {
+    0% { left: -100%; transform: translateY(0px); }
+    25% { transform: translateY(-1px); }
+    50% { transform: translateY(1px); }
+    75% { transform: translateY(-1px); }
+    100% { left: 100%; transform: translateY(0px); }
+  }
+
+  /* ====== LAYOUT CONTAINER ====== */
+  .container { padding: 16px; max-width: 800px; margin: 0 auto; }
+
+  /* ====== HOME VIEW SPECIFICS ====== */
+  .welcome-section { margin-bottom: 20px; }
+  .welcome-section p { color: var(--accent-purple); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+  .welcome-section h1 { font-size: 1.8rem; font-weight: 800; margin-top: 4px; }
+  .profile-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(163, 230, 53, 0.1); color: var(--accent-green); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-top: 8px; border: 1px solid rgba(163, 230, 53, 0.3); }
+
+  /* ====== PREMIUM SOCIAL BANNER ====== */
+  .social-banner { background: #11141A; border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; margin-bottom: 24px; position: relative; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+  .social-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #ff4757, #ffa502, #A3E635); }
+  .social-banner h2 { color: #ff4757; font-size: 1.6rem; font-weight: 900; margin-bottom: 4px; letter-spacing: 0.5px; }
+  .social-banner .sub-heading { font-size: 1rem; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+  .social-banner .sub-heading span { color: #ffa502; }
+  .social-banner hr { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 12px 0; }
+  .social-banner .desc { font-size: 0.8rem; color: #a4b0be; line-height: 1.5; margin-bottom: 16px; }
+  .social-banner .desc i { color: #facc15; }
+  
+  .social-buttons-container { display: flex; gap: 10px; flex-wrap: wrap; }
+  .soc-btn { flex: 1; min-width: 100px; display: flex; align-items: center; gap: 8px; padding: 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); text-decoration: none; transition: 0.2s; background: rgba(0,0,0,0.3); }
+  .soc-btn:active { transform: scale(0.95); }
+  .soc-btn i { font-size: 1.5rem; }
+  .soc-btn .text { display: flex; flex-direction: column; }
+  .soc-btn .text b { font-size: 0.8rem; color: #fff; }
+  .soc-btn .text span { font-size: 0.6rem; color: #a4b0be; }
+  
+  .btn-telegram { border-color: rgba(30, 161, 242, 0.3); }
+  .btn-telegram i { color: #1da1f2; }
+  .btn-youtube { border-color: rgba(255, 0, 0, 0.3); }
+  .btn-youtube i { color: #ff0000; }
+  .btn-instagram { border-color: rgba(193, 53, 132, 0.3); }
+  .btn-instagram i { background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  /* ====== GRID CARDS ====== */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 16px; text-align: center; cursor: pointer; transition: transform 0.2s; position: relative; overflow: hidden;}
+  .stat-card:active { transform: scale(0.96); }
+  .stat-card i { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .stat-card.mock-stat i { color: var(--accent-purple); }
+  .stat-card.target-stat i { color: var(--accent-red); }
+  .stat-card h3 { font-size: 1rem; margin-bottom: 4px; }
+  .stat-card p { font-size: 0.75rem; color: var(--text-secondary); }
+
+  /* ====== RECENT TESTS UI ====== */
+  .recent-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .recent-header h3 { font-size: 1.1rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff4757, #ffa502); -webkit-background-clip: text; color: transparent; margin:0;}
+  .recent-header .view-all { font-size: 0.8rem; color: var(--accent-green); font-weight: 700; cursor: pointer; }
+  .recent-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+  .recent-card h4 { font-size: 1rem; margin-bottom: 8px; color: var(--text-primary); text-transform: capitalize; }
+  
+  .recent-path-scroll {
+    overflow-x: auto; white-space: nowrap; font-size: 0.7rem; color: var(--text-secondary);
+    font-weight: 600; scrollbar-width: none; -ms-overflow-style: none; text-transform: uppercase;
+  }
+  .recent-path-scroll::-webkit-scrollbar { display: none; }
+
+  .section-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+  
+  .category-list { display: flex; flex-direction: column; gap: 12px; }
+  .category-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px; transition: transform 0.2s; cursor: pointer; }
+  .category-card:active { transform: scale(0.98); }
+  .cat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .bg-blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+  .bg-green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+  .bg-orange { background: rgba(249, 115, 22, 0.1); color: #f97316; }
+  .bg-red { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+  .cat-info flex-grow { flex-grow: 1; }
+  .cat-info h4 { font-size: 1rem; margin-bottom: 4px; text-transform: uppercase; }
+  .cat-info p { font-size: 0.75rem; color: var(--text-secondary); }
+
+  /* ====== DYNAMIC TABS ====== */
+  .cross-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+  .cross-block .info h4 { color: var(--text-primary); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .cross-block .btn { background: var(--bg-nav); border: 1px solid var(--border-color); color: var(--text-primary); padding: 6px 12px; border-radius: 6px; font-weight: bold; font-size: 0.85rem; }
+
+  /* ====== GITHUB BROWSER VIEW ====== */
+  .breadcrumb { font-size: 0.9rem; color: var(--accent-green); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; text-transform: uppercase;}
+  .breadcrumb span.crumb { cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+  .loader { text-align: center; padding: 40px; color: var(--text-secondary); }
+  .loader i { font-size: 2rem; color: var(--accent-green); animation: spin 1s linear infinite; margin-bottom: 10px; }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+  .github-list { display: flex; flex-direction: column; gap: 10px; }
+  
+  .file-card-wrapper { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 16px; transition: 0.2s; display: flex; flex-direction: column; gap: 8px; }
+  .file-card-wrapper:active { background: var(--border-color); }
+  .github-item-row { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+  .github-item-row .left { display: flex; align-items: center; gap: 12px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;}
+  .github-item-row.file .left i { color: var(--accent-purple); }
+  .github-item-row.folder .left i { color: #facc15; }
+  .github-item-row .btn-start { background: var(--accent-green); color: #000; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; }
+
+  /* ====== ATTEMPT BADGES ====== */
+  .attempts-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); }
+  body[data-theme="dark"] .attempts-row { border-top-color: rgba(0,0,0,0.1); }
+  .attempt-badge { border-radius: 8px; padding: 6px 10px; text-align: center; font-size: 0.75rem; border: 1px solid transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: transform 0.15s; }
+  .attempt-badge:active { transform: scale(0.92); }
+  .attempt-badge.att-1 { border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.05); }
+  .attempt-badge.att-2 { border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.05); }
+  .attempt-badge.att-3 { border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.05); }
+  .att-title { font-weight: 900; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .attempt-badge.att-1 .att-title { color: #ef4444; }
+  .attempt-badge.att-2 .att-title { color: #3b82f6; }
+  .attempt-badge.att-3 .att-title { color: #a855f7; }
+  .att-score { font-weight: 800; font-size: 0.8rem; color: var(--text-primary); }
+  .att-date { font-size: 0.6rem; color: var(--text-secondary); font-weight: 600; }
+
+  /* ====== PROFILE & CYBERPUNK UI CSS ====== */
+  .profile-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; background: var(--bg-card); padding: 20px; border-radius: 16px; border: 1px solid var(--border-color); position: relative; overflow: hidden;}
+  .prof-avatar { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--accent-green); object-fit: cover; background: rgba(255,255,255,0.1); z-index: 2;}
+  .prof-info { z-index: 2; }
+  .prof-info h2 { margin-bottom: 4px; font-size: 1.5rem; font-weight: 900; }
+  .prof-info p { color: var(--text-secondary); font-size: 0.9rem; }
+  
+  /* CYBERPUNK GLOWING NAME */
+  .cyber-name {
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 50%, #A3E635 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 3s linear infinite;
+    text-shadow: 0px 0px 8px rgba(79, 172, 254, 0.3);
+    letter-spacing: 0.5px;
+  }
+  @keyframes shine { to { background-position: 200% center; } }
+
+  .chart-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; position: relative; height: 260px; display: flex; justify-content: center; align-items: center; margin-bottom: 16px;}
+  .chart-title { position: absolute; top: 16px; left: 16px; font-size: 1rem; font-weight: 800; color: var(--text-primary); z-index: 10;}
+  .chart-title .week-tag { display:inline-block; background: var(--accent-gold); color: #000; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; margin-bottom:4px; font-weight: 900;}
+
+  /* PREVIOUS WEEKS UI */
+  .prev-weeks-wrapper { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 24px; margin-top:-4px;}
+  .prev-week-card { min-width: 120px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: 0.2s;}
+  .prev-week-card:hover { border-color: var(--accent-green); }
+  .prev-week-card:active { transform: scale(0.95); }
+  .prev-week-card canvas { width: 60px !important; height: 60px !important; margin-bottom: 8px;}
+  .prev-week-card .pw-title { font-size: 0.75rem; font-weight: 800; color: var(--text-primary); text-align: center;}
+  .prev-week-card .pw-acc { font-size: 0.7rem; color: var(--accent-green); font-weight:bold;}
+
+  /* WEAK TOPICS UI */
+  .weak-topics-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .weak-card { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.3); border-left: 4px solid var(--accent-red); border-radius: 10px; padding: 14px; position: relative; overflow:hidden;}
+  .weak-card h4 { font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 6px; text-transform: capitalize;}
+  .weak-card .w-stats { display: flex; gap: 15px; font-size: 0.8rem; font-weight: 700;}
+  .weak-card .w-stats span.red { color: #f87171; text-shadow: 0 0 5px rgba(248,113,113,0.4); }
+  .weak-card .w-stats span.purple { color: #c084fc; text-shadow: 0 0 5px rgba(192,132,252,0.4); }
+  .weak-card i.bg-icon { position:absolute; right:-10px; bottom:-10px; font-size: 4rem; color:rgba(239,68,68,0.05); transform:rotate(-15deg);}
+
+  .badges-container { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; }
+  .ach-badge { min-width: 110px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px;}
+  .ach-badge i { font-size: 1.8rem; color: var(--accent-gold); }
+  .ach-badge .ach-title { font-size: 0.8rem; font-weight: 800; color: var(--text-primary); }
+
+  /* ====== EMBEDDED MODALS CSS ====== */
+  .modal{ position:fixed;inset:0;background:rgba(0,0,0,.65); display:none;align-items:center;justify-content:center;padding:16px;z-index:9999; }
+  .modal.show{display:flex}
+  .result{ background:var(--bg-card);border:1px solid var(--border-color);border-radius:18px; padding:18px;max-width:640px;width:100%; color:var(--text-primary); display:flex; flex-direction:column; max-height:90vh;}
+  .rev-wrap{overflow-y:auto; padding-right:4px; flex-grow:1;}
+  .rev-head{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .badge{ background:rgba(255,255,255,.15);padding:6px 10px;border-radius:999px; font-weight:800;font-size:.82rem;color:var(--text-primary); }
+  .badge.ok{background:linear-gradient(90deg,var(--accent-purple),var(--accent-green))}
+  .badge.min{background:color-mix(in oklab, var(--accent-green) 65%, black)}
+  .badge.link{cursor:pointer;outline:2px solid transparent}
+  .badge.link:hover{outline:2px dashed rgba(255,255,255,.35)}
+  .rev-opt{ position:relative;border:2px solid var(--border-color);border-radius:12px; padding:10px 12px;margin:8px 0;background:rgba(255,255,255,.03); display:flex;align-items:center;gap:10px; }
+  .rev-dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--border-color);flex:0 0 18px}
+  .rev-opt.correct{border-color:var(--accent-green);background:color-mix(in oklab, var(--accent-green) 16%, transparent)}
+  .rev-opt.user{outline:2px dashed #60a5fa}
+  .rev-opt.user.wrong{border-color:var(--accent-red);background:color-mix(in oklab, var(--accent-red) 18%, transparent)}
+  .rev-ico{ position:absolute;right:10px;top:50%;transform:translateY(-50%); width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center; font-weight:900;color:#fff; }
+  .rev-ico.ok{background:var(--accent-green)}
+  .rev-ico.bad{background:var(--accent-red)}
+  .rev-dot.user{background:#60a5fa;border-color:#60a5fa}
+  .rev-dot.correct{background:var(--accent-green);border-color:var(--accent-green)}
+  .mini-nav{margin:10px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(34px,1fr));gap:6px}
+  .mini-chip{ display:flex;align-items:center;justify-content:center;border:1px solid var(--border-color); border-radius:10px;padding:6px 0;font-weight:800;font-size:.82rem;cursor:pointer; background:rgba(255,255,255,.04); }
+  .mini-chip.cur { outline: 3px solid #fbbf24 !important; outline-offset: 2px; transform: scale(1.12); z-index: 5; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); }
+  .mini-chip.ok{background:color-mix(in oklab, var(--accent-green) 28%, transparent)}
+  .mini-chip.bad{background:color-mix(in oklab, var(--accent-red) 28%, transparent)}
+  .mini-chip.un{background:rgba(148,163,184,.25)}
+  .mini-chip.mark { background: var(--accent-purple) !important; color: #fff; border-color: var(--accent-purple); }
+  .chart-wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:6px}
+  canvas#reviewChart{width:140px!important;height:140px!important;border-radius:8px;background:transparent}
+  .q{font-size:1.06rem;margin-bottom:10px}
+  .sol{ display:none;margin-top:12px; border:1px solid color-mix(in oklab,var(--accent-green) 50%,transparent); background:color-mix(in oklab,var(--accent-green) 18%,transparent); padding:12px;border-radius:12px; }
+  .btn-modal{ border:none;background:rgba(255,255,255,.15);color:var(--text-primary);padding:8px 16px;border-radius:10px;font-weight:800; cursor:pointer;display:inline-flex;align-items:center;gap:8px; font-size:1rem;}
+  .btn-modal:hover{background:rgba(255,255,255,.25)}
+  .btn-modal.danger{background:var(--accent-red);color:#fff;}
+  .btn-modal[disabled]{opacity:.55;cursor:not-allowed}
+
+  body[data-theme="dark"] .badge{ background:linear-gradient(90deg,var(--accent-purple),var(--accent-green));color:#fff; box-shadow:0 0 0 1px rgba(0,0,0,.05) inset; }
+  body[data-theme="dark"] .badge.min{background:color-mix(in oklab,var(--accent-green) 70%, black)}
+  body[data-theme="dark"] .mini-chip.cur { outline: 3px solid #eab308 !important; }
+  body[data-theme="dark"] .btn-modal{ background:rgba(0,0,0,.08); color:#111;}
+
+  /* ====== BOTTOM NAV ====== */
+  .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-nav); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); z-index: 100; }
+  .nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 0.7rem; color: var(--text-secondary); transition: 0.2s; }
+  .nav-item i { font-size: 1.2rem; }
+  .nav-item.active { color: var(--accent-green); }
+
+    .hidden { display: none !important; }
+
+  /* --- ATTEMPT REVIEW KO NUMBER SYSTEM WALA PREMIUM LOOK --- */
+  #dash-snap h3#snapTitle { color: var(--text-primary) !important; font-weight: 900; }
+  #dash-snap .badge.ok { background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue)) !important; color: #fff !important; border:none; }
+  #dash-snap .badge.min { background: rgba(255, 255, 255, 0.1) !important; color: var(--text-primary) !important; border: 1px solid rgba(255,255,255,0.2); }
+  body[data-theme="dark"] #dash-snap .badge.min { background: rgba(0, 0, 0, 0.05) !important; border: 1px solid rgba(0,0,0,0.1); color: #000 !important; }
+   #dash-snap .sol { 
+      background: rgba(16, 185, 129, 0.1) !important; 
+      border: none !important; 
+      border-left: 4px solid #10b981 !important; 
+      border-radius: 6px !important;
+      color: var(--text-primary) !important;
+  }
+
+  /* Premium Badge Colors for filters */
+  .badge-all { background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important; color: #fff !important; border: none !important; }
+  .badge-correct { background: #10b981 !important; color: #fff !important; border: none !important; }
+  .badge-wrong { background: #ef4444 !important; color: #fff !important; border: none !important; }
+    .badge-un { background: transparent !important; color: var(--text-primary) !important; border: 1px solid var(--border-color) !important; }
+  .badge-mark { background: #a855f7 !important; color: #fff !important; border: none !important; }
+  body[data-theme="dark"] .badge-un { border-color: #cbd5e1 !important; }
+
+  /* ====== 3-TAB MODAL STYLES (Testbook Clone) ====== */
+  .modal-full { position: fixed; inset: 0; background: var(--bg-main); z-index: 10000; display: none; flex-direction: column; overflow-y: auto;}
+  .modal-full.show { display: flex; }
+  
+  .tab-header { display: flex; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: var(--bg-main); z-index: 10; }
+  .tab-btn { flex: 1; padding: 15px 0; text-align: center; font-weight: 800; color: var(--text-secondary); border-bottom: 3px solid transparent; transition: 0.3s; font-size: 0.95rem; text-transform: uppercase;}
+  .tab-btn.active { color: var(--accent-purple); border-bottom-color: var(--accent-purple); }
+  
+  .tab-content { display: none; padding: 16px; max-width: 800px; margin: 0 auto; width: 100%; flex-grow: 1; }
+  .tab-content.active { display: block; }
+
+  /* Analysis Tab */
+  .summary-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  .summary-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+  .summary-row:last-child { border-bottom: none; }
+  .s-label { font-weight: 700; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
+  .s-val { font-weight: 900; font-size: 1.2rem; }
+  .chart-compare { display: flex; align-items: flex-end; justify-content: space-around; height: 150px; margin-top: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+  .bar-col { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 40px; }
+  .bar-fill { width: 100%; background: var(--accent-purple); border-radius: 4px 4px 0 0; transition: height 0.5s; }
+  .bar-label { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); }
+
+  /* Leaderboard Tab */
+  .podium { display: flex; justify-content: center; align-items: flex-end; gap: 10px; margin-top: 20px; margin-bottom: 30px; }
+  .pod-item { display: flex; flex-direction: column; align-items: center; position: relative; }
+  .pod-avatar { border-radius: 50%; object-fit: cover; border: 3px solid; background: #222; }
+  .pod-rank { position: absolute; top: -10px; right: -10px; width: 24px; height: 24px; border-radius: 50%; background: gold; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.8rem; }
+  .pod-1 .pod-avatar { width: 80px; height: 80px; border-color: gold; }
+  .pod-2 .pod-avatar { width: 65px; height: 65px; border-color: silver; }
+  .pod-3 .pod-avatar { width: 65px; height: 65px; border-color: #cd7f32; }
+  .pod-name { font-weight: 800; font-size: 0.85rem; margin-top: 8px; color: var(--text-primary); }
+  .pod-score { font-weight: 700; font-size: 0.75rem; color: var(--text-secondary); }
+  
+  .lb-list { display: flex; flex-direction: column; gap: 8px; padding-bottom: 80px; }
+  .lb-row { display: flex; align-items: center; padding: 12px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color); }
+  .lb-r-num { width: 30px; font-weight: 900; color: var(--text-secondary); }
+  .lb-r-name { flex-grow: 1; font-weight: 700; margin-left: 10px; color: var(--text-primary); }
+  .lb-r-score { font-weight: 900; color: var(--accent-green); }
+  
+  .sticky-you { position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #1e3a8a, #3b82f6); padding: 15px 20px; display: flex; align-items: center; z-index: 100; box-shadow: 0 -4px 15px rgba(0,0,0,0.3); }
+
+  /* Review Stats Tags */
+  .q-stats-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+  .q-stat-tag { padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; color: #fff; }
+  .tag-you { background: #3b82f6; }
+  .tag-avg { background: #facc15; color: #000; }
+  .tag-top { background: #10b981; }
+  .tag-att { background: #ef4444; }
+  .tag-cor { background: #8b5cf6; }
+
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-area">
+      <i class="fa-solid fa-tree"></i> TestRipper
+    </div>
+    <div class="header-actions">
+      <button onclick="toggleTheme()"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+      <button><i class="fa-regular fa-bell"></i></button>
+    </div>
+  </header>
+
+  <div class="quote-container">
+    <div class="vibrating-quote" id="daily-quote">
+      <i class="fa-solid fa-bolt" style="color:#facc15"></i> Loading Quote of the Day...
+    </div>
+  </div>
+
+  <main class="container" id="main-content">
+    
+    <div id="view-home">
+      <div class="welcome-section">
+        <p id="greeting-text">Good Morning</p>
+        <h1>Welcome back,<br><span style="color:var(--accent-green)">⚔️WARRIOR⚔️</span></h1>
+        <div class="profile-tag"><i class="fa-solid fa-khanda"></i> Warrior Level</div>
+      </div>
+
+      <div class="social-banner">
+        <h2>Thank You!</h2>
+        <div class="sub-heading">Thankooo for visiting here<br><span>You're at the right place!</span></div>
+        <hr>
+        <div class="desc">
+          <i class="fa-solid fa-sparkles"></i> Must Join our following Channels<br>for Daily Targets, Best Solutions, Free Courses, PDFs & Exam Hack
+        </div>
+        <div class="social-buttons-container">
+          <a href="https://t.me/Vishwasniya" target="_blank" class="soc-btn btn-telegram">
+            <i class="fa-brands fa-telegram"></i>
+            <div class="text"><b>Telegram</b><span>Join Channel</span></div>
+          </a>
+          <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="soc-btn btn-youtube">
+            <i class="fa-brands fa-youtube"></i>
+            <div class="text"><b>YouTube</b><span>Subscribe</span></div>
+          </a>
+          <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="soc-btn btn-instagram">
+            <i class="fa-brands fa-instagram"></i>
+            <div class="text"><b>Instagram</b><span>Follow Us</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="stat-card mock-stat" onclick="openFolder('MOCK TESTS')">
+          <i class="fa-solid fa-file-pen"></i>
+          <h3>Mock Tests</h3>
+          <p>23,055 Available</p>
+        </div>
+        <div class="stat-card target-stat" onclick="checkPasswordAndOpen('TARGET-SERIES')">
+          <i class="fa-solid fa-bullseye"></i>
+          <h3>Target Series</h3>
+          <p>Real-time Tests</p>
+        </div>
+      </div>
+
+      <div id="home-recent-sec" class="hidden" style="margin-bottom: 24px;">
+         </div>
+
+      <h3 class="section-title">Explore Exams <span style="font-size: 0.8rem; color: var(--accent-green); cursor:pointer;" onclick="alert('More exams coming soon!')">View All</span></h3>
+      <div class="category-list">
+        <div class="category-card" onclick="openFolder('MOCK TESTS/SSC')">
+          <div class="cat-icon bg-blue"><i class="fa-solid fa-book-open"></i></div>
+          <div class="cat-info">
+            <h4>SSC Exams</h4>
+            <p>CGL, CHSL, MTS, CPO, GD</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+        <div class="category-card" onclick="openFolder('MOCK TESTS/BANKS & REGULATORIES BODIES')">
+          <div class="cat-icon bg-green"><i class="fa-solid fa-building-columns"></i></div>
+          <div class="cat-info">
+            <h4>Bank Exams</h4>
+            <p>IBPS, SBI, RBI, NABARD</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+        <div class="category-card" onclick="openFolder('MOCK TESTS/RAILWAY EXAMS')">
+          <div class="cat-icon bg-orange"><i class="fa-solid fa-train-subway"></i></div>
+          <div class="cat-info">
+            <h4>Railway Exams</h4>
+            <p>RRB NTPC, Group D, ALP</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+        <div class="category-card" onclick="openFolder('MOCK TESTS/Defence')">
+          <div class="cat-icon bg-red"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="cat-info">
+            <h4>Defence Exams</h4>
+            <p>NDA, CDS, AFCAT, CAPF</p>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+        </div>
+      </div>
+
+      <h3 class="section-title" style="margin-top: 24px;">Other Resources</h3>
+      <div id="dynamic-tabs-container" style="display:flex; flex-direction:column; gap:12px;">
+        <div style="text-align:center; color:var(--text-secondary); font-size:0.8rem;"><i class="fa-solid fa-spinner fa-spin"></i> Checking for new tabs...</div>
+      </div>
+    </div>
+
+    <div id="view-recent" class="hidden">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 class="section-title" style="margin:0;">Attempt History</h3>
+        <button onclick="exportFullHistoryHTML()" style="background:var(--accent-green); color:#000; padding:8px 16px; border-radius:8px; font-weight:bold; border:none; cursor:pointer; font-size:0.85rem;"><i class="fa-solid fa-download"></i> Download History</button>
+      </div>
+      <div id="view-recent-content"></div>
+    </div>
+
+    <div id="view-folder" class="hidden">
+      <div class="breadcrumb" id="breadcrumb-container"></div>
+      <div id="github-content"></div>
+      <div class="cross-block" style="margin-top:20px;" onclick="navigateHome()">
+        <div class="info">
+          <h4 style="color:var(--accent-purple)"><i class="fa-solid fa-house"></i> Back to Dashboard</h4>
+        </div>
+        <div class="btn" style="background:var(--accent-purple); color:#fff;">Home &rarr;</div>
+      </div>
+    </div>
+
+    <div id="view-profile" class="hidden">
+            <div class="profile-header">
+        <img id="prof-img" class="prof-avatar" src="https://ui-avatars.com/api/?name=Warrior&background=A3E635&color=0B0E14" alt="Profile">
+        <div class="prof-info" style="flex:1;">
+          <h2 id="prof-name" class="cyber-name">Warrior</h2>
+          <p id="prof-email">Not Logged In</p>
+        </div>
+        <button onclick="openSavedQuestionsModal()" style="background:linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); color:#fff; border:none; padding:10px 18px; border-radius:10px; font-weight:900; cursor:pointer; font-size:0.9rem; box-shadow:0 8px 20px rgba(139, 92, 246, 0.3); transition: transform 0.2s;">
+          <i class="fa-solid fa-star" style="color:var(--accent-gold)"></i> Saved Qs
+        </button>
+      </div>
+
+      <div id="prof-login-sec" style="display:none; text-align:center; margin-bottom:20px;">
+        <button class="btn-modal ok" style="background:var(--accent-green); color:#000; padding:10px 20px; font-weight:800;" onclick="googleLoginDash()">
+          <i class="fa-brands fa-google"></i> Login to Sync Progress
+        </button>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap:12px;">
+        <div class="stat-card" style="padding:12px;">
+          <i class="fa-solid fa-bullseye" style="color:var(--accent-green); font-size:1.4rem;"></i>
+          <h3 style="font-size:0.9rem;">Accuracy</h3>
+          <p id="prof-overall-acc" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0%</p>
+        </div>
+        <div class="stat-card" style="padding:12px;">
+          <i class="fa-solid fa-clock" style="color:var(--accent-blue); font-size:1.4rem;"></i>
+          <h3 style="font-size:0.9rem;">Time Spent</h3>
+          <p id="prof-total-time" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0 Hrs</p>
+        </div>
+        <div class="stat-card" style="padding:12px;">
+          <i class="fa-solid fa-fire" style="color:var(--accent-red); font-size:1.4rem;"></i>
+          <h3 style="font-size:0.9rem;">Day Streak</h3>
+          <p id="prof-streak" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0</p>
+        </div>
+        <div class="stat-card" style="padding:12px;">
+          <i class="fa-solid fa-star" style="color:var(--accent-gold); font-size:1.4rem;"></i>
+          <h3 style="font-size:0.9rem;">Avg Score</h3>
+          <p id="prof-avg-score" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0.00</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">Weekly Accuracy Matrix</h3>
+      <div class="chart-box" style="height: auto; min-height: 260px;">
+        <div class="chart-title" style="display:flex; justify-content:space-between; width:calc(100% - 32px); align-items:flex-start;">
+            <div>
+                <span class="week-tag" id="main-week-title">This Week</span>
+                <button id="btn-back-this-week" class="hidden" onclick="loadThisWeek()" style="background:var(--accent-purple); color:#fff; border:none; padding:4px 10px; border-radius:6px; font-size:0.7rem; cursor:pointer; font-weight:900; margin-left:6px; transition:0.2s;"><i class="fa-solid fa-rotate-left"></i> This Week</button>
+                <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:normal; margin-top:6px; line-height:1.3;">*Click RED/PURPLE/GREY slice for Error Book</div>
+            </div>
+                        <div style="display:flex; gap:8px; flex-shrink:0;">
+                <button onclick="downloadErrorBook('txt')" title="Export as TXT (JSON Format for Engine)" style="background:var(--bg-nav); border:1px solid var(--border-color); border-radius:8px; padding:6px 12px; color:var(--accent-gold); cursor:pointer; font-weight:900; font-size:0.85rem;"><i class="fa-solid fa-file-code"></i> TXT</button>
+                <button onclick="downloadErrorBook('html')" title="Export as Premium HTML" style="background:linear-gradient(90deg, var(--accent-red), #ff7675); border:none; border-radius:8px; padding:6px 12px; color:#fff; cursor:pointer; font-weight:900; font-size:0.85rem; box-shadow:0 4px 10px rgba(239, 68, 68, 0.3);"><i class="fa-solid fa-file-pdf"></i> HTML</button>
+            </div>
+        </div>
+        <div style="height: 180px; width: 100%; margin-top: 50px;">
+           <canvas id="profAccChart"></canvas>
+        </div>
+      </div>
+
+      <div style="font-size: 0.9rem; font-weight: 800; color:var(--accent-purple); margin-bottom: 8px; text-transform: uppercase;">Previous Weeks Analytics</div>
+      <div class="prev-weeks-wrapper" id="prev-weeks-container">
+          </div>
+
+      <div class="chart-box" style="height: 220px;">
+        <div class="chart-title"><i class="fa-solid fa-chart-line" style="color:var(--accent-green)"></i> Performance Trend <br><span style="font-size:0.7rem; color:var(--text-secondary); font-weight:normal;">*Based on last 10 tests</span></div>
+        <canvas id="profTrendChart"></canvas>
+      </div>
+
+      <h3 class="section-title" style="margin-top: 24px;">Weak Topics <span style="font-size:0.7rem; color:var(--accent-red)">Auto-Detected</span></h3>
+      <div class="weak-topics-list" id="weak-topics-container">
+          </div>
+
+      <h3 class="section-title">Achievements <span style="font-size:0.7rem; color:var(--accent-gold)">Auto-Unlocks</span></h3>
+      <div class="badges-container" id="prof-badges">
+         </div>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="navigateHome()">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" onclick="openFolder('MOCK TESTS')">
+      <i class="fa-solid fa-pen-nib"></i>
+      <span>Mocks</span>
+    </button>
+    <button class="nav-item" onclick="checkPasswordAndOpen('TARGET-SERIES')">
+      <i class="fa-solid fa-bullseye"></i>
+      <span>Targets</span>
+    </button>
+    <button class="nav-item" onclick="openProfile()">
+      <i class="fa-solid fa-user"></i>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+    <!-- ====== NAYA 3-TAB ANALYSIS MODAL ====== -->
+  <div class="modal-full" id="dash-snap">
+    <div class="tab-header">
+      <button class="tab-btn active" onclick="switchModalTab('analysis')">Analysis</button>
+      <button class="tab-btn" onclick="switchModalTab('review')">Attempt Review</button>
+      <button class="tab-btn" onclick="switchModalTab('leaderboard')">Leaderboard</button>
+      <button id="sClose" style="padding:0 15px; color:var(--accent-red); ... " onclick="document.getElementById('dash-snap').classList.remove('show')">
+  <i class="fa-solid fa-xmark"></i>
+</button>
+
+    </div>
+
+    <!-- TAB 1: ANALYSIS -->
+    <div class="tab-content active" id="tab-analysis">
+      <h3 style="margin-bottom:12px; font-weight:900; color:var(--text-secondary);">QUICK SUMMARY</h3>
+      <div class="summary-card">
+        <div class="summary-row">
+          <div class="s-label"><i class="fa-regular fa-flag" style="color:#facc15;"></i> Rank</div>
+          <div class="s-val" id="an-rank">--/--</div>
+        </div>
+        <div class="summary-row">
+          <div class="s-label"><i class="fa-solid fa-trophy" style="color:#a855f7;"></i> Score</div>
+          <div class="s-val" id="an-score">--/--</div>
+        </div>
+        <div style="font-size:0.75rem; color:var(--text-secondary); text-align:right; margin-bottom:10px;">Average Score: <span id="an-avg-score">--</span> | Best Score: <span id="an-top-score">--</span></div>
+        <div class="summary-row">
+          <div class="s-label"><i class="fa-regular fa-user" style="color:#ec4899;"></i> Percentile</div>
+          <div class="s-val" id="an-percentile">--%</div>
+        </div>
+        <div class="summary-row">
+          <div class="s-label"><i class="fa-solid fa-crosshairs" style="color:#10b981;"></i> Accuracy</div>
+          <div class="s-val" id="an-accuracy">--%</div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <h4 style="text-align:center; margin-bottom:15px; color:var(--text-primary);">Score Comparison</h4>
+        <div class="chart-compare">
+          <div class="bar-col"><div class="bar-fill" id="bar-you" style="height:0%; background:#a855f7;"></div><div class="bar-label">You</div></div>
+          <div class="bar-col"><div class="bar-fill" id="bar-top" style="height:0%; background:#10b981;"></div><div class="bar-label">Topper</div></div>
+          <div class="bar-col"><div class="bar-fill" id="bar-avg" style="height:0%; background:#facc15;"></div><div class="bar-label">Average</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: ATTEMPT REVIEW -->
+    <div class="tab-content" id="tab-review">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h3 id="snapTitle" style="margin:0; font-weight:800; color:var(--accent-green)">Attempt Review</h3>
+        <button class="btn-modal" onclick="downloadCurrentSnap()" style="padding:6px 12px; font-size:1rem; border-radius: 8px;" title="Download Snap">
+          <i class="fa-solid fa-download"></i>
+        </button>
+      </div>
+      <div id="sectionalTabsContainer" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:8px; margin-bottom:8px;"></div>
+      <div class="rev-head" id="snapMetaBadges" style="margin-bottom:6px;align-items:center"></div>
+      
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+        <div class="mini-nav" id="snapMini" style="flex:1"></div>
+        <div class="chart-wrap" id="chartWrap"><canvas id="reviewChart"></canvas></div>
+      </div>
+
+      <!-- TIME & ACCURACY TAGS YAHAN RENDER HONGE -->
+      <div class="q-stats-row" id="qStatsRow"></div>
+
+      <div id="snapQ" class="q" style="margin-top:12px"></div>
+      <div id="snapOpts"></div>
+      
+      <div class="sol" id="solBlock" style="display:none;margin-top:12px">
+        <b><i class="fa fa-lightbulb"></i> Solution</b>
+        <div id="snapSol" style="margin-top:6px"></div>
+      </div>
+      
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+        <div id="saveBtnContainer"></div>
+        <div>
+          <button class="btn-modal" id="sPrev"><i class="fa fa-chevron-left"></i></button>
+          <button class="btn-modal" id="sNext"><i class="fa fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: LEADERBOARD -->
+    <div class="tab-content" id="tab-leaderboard" style="position:relative;">
+      <div class="podium" id="lb-podium"></div>
+      <div class="lb-list" id="lb-list"></div>
+      <div class="sticky-you" id="lb-sticky-you"></div>
+    </div>
+  </div>
+  <div class="modal" id="error-book-modal">
+    <div class="result">
+      <div class="rev-wrap" style="max-height:80vh;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px; border-bottom:1px solid var(--border-color); padding-bottom:8px;">
+          <h3 id="ebTitle" style="margin:0; font-weight:800; color:var(--accent-red)"><i class="fa-solid fa-book-skull"></i> Mistake Journal</h3>
+          <button class="btn-modal danger" id="ebClose" style="padding:6px 12px; font-size:0.8rem;">Close</button>
+        </div>
+        
+        <div id="ebListArea"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="media-modal" style="z-index:10000; padding:0; background:var(--bg-main);">
+    <div style="width:100%; height:100%; display:flex; flex-direction:column;">
+      <div class="media-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:var(--bg-card); border-bottom:1px solid var(--border-color);">
+        <h3 id="media-title" style="margin:0; color:var(--accent-green); font-size:1.1rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Document Viewer</h3>
+        <button onclick="closeMedia()" style="background:var(--accent-red); color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:900; cursor:pointer;"><i class="fa-solid fa-xmark"></i> Close</button>
+      </div>
+      <div id="media-container" style="flex:1; background:#000; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
+        </div>
+    </div>
+  </div>
+
+<script>
+  /* =========================================
+     UPDATED FEATURE: Password Logic & HTML Export
+     ========================================= */
+  window.checkPasswordAndOpen = function(folderPath) {
+    const pass = prompt("Enter Password to unlock Daily Targets:");
+    if(pass === "963258") {
+      openFolder(folderPath);
+    } else {
+      alert("Incorrect Password! Access Denied.");
+    }
+  };
+
+  window.exportFullHistoryHTML = function() {
+    let content = document.getElementById('view-recent-content').innerHTML;
+    if (!content || content.trim() === '') {
+      alert("No attempt history found to export!"); return;
+    }
+    let html = `
+    <!DOCTYPE html>
+    <html><head><meta charset="utf-8"><title>My Attempt History</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+      body { font-family: sans-serif; background: #0B0E14; color: #fff; padding: 20px; }
+      .recent-card { background: #151A22; border: 1px solid #1E293B; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+      .recent-path-scroll { font-size: 0.75rem; color: #94A3B8; margin-bottom: 8px; }
+      .attempt-badge { display: inline-flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 12px; margin: 4px; }
+      .att-title { font-weight: bold; font-size: 0.75rem; color: #a855f7; text-transform: uppercase; }
+      .att-score { font-weight: bold; font-size: 1.1rem; color: #fff; }
+      .att-date { font-size: 0.7rem; color: #94A3B8; margin-top: 4px; }
+      h4 { margin: 0; color: #A3E635; font-size: 1.1rem; }
+    </style>
+    </head><body>
+    <h2 style="text-align:center; color:#A3E635;">My Attempt History Export</h2>
+    ${content}
+    </body></html>`;
+    let blob = new Blob([html], {type: "text/html"});
+    let a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "Attempt_History_Export.html";
+    a.click();
+  };
+
+  /* =========================================
+     FIREBASE SETUP & GLOBAL ATTEMPTS FETCH
+     ========================================= */
+  const firebaseConfig = {
+    apiKey: "AIzaSyAbaDJ5F9HK45SybxhuYaR4aZo0PDKVi7o",
+    authDomain: "testripper-mocks.firebaseapp.com",
+    projectId: "testripper-mocks",
+    storageBucket: "testripper-mocks.firebasestorage.app",
+    messagingSenderId: "344935856479",
+    appId: "1:344935856479:web:26014707272cb8bd7e1eea"
+  };
+
+  if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  let globalUserAttempts = [];
+  let globalWeeksMap = {};
+  let currentlySelectedWeek = null;
+
+  window.googleLoginDash = function() {
+    auth.signInWithPopup(provider).then((result) => {
+      alert("Swagat hai Officer " + result.user.displayName);
+    }).catch(err => console.error("Login Failed", err));
+  };
+
+    window.savedQuestionsCache = {}; // Saved questions track karne ke liye
+
+  auth.onAuthStateChanged(async (user) => {
+    if (user) {
+      document.getElementById('prof-login-sec').style.display = 'none';
+      try {
+        const snap = await db.collection("users").doc(user.uid).collection("attempts").orderBy("serverTime", "asc").get();
+        globalUserAttempts = snap.docs.map(doc => doc.data());
+        
+        renderRecentLogic();
+
+        if (history.state && history.state.view === 'folder') renderFolderView(history.state.path, false);
+        if (history.state && history.state.view === 'profile') renderProfileAnalytics();
+      } catch(e) { console.error("Firebase fetch error", e); }
+
+            // NAYA JADOO: Live Saved Questions Tracker with Weekly Grouping
+      db.collection("users").doc(user.uid).collection("saved_questions").orderBy("savedAt", "desc").onSnapshot(snap => {
+          window.savedQuestionsCache = {};
+          window.globalSavedQsByWeek = {};
+          
+          snap.docs.forEach(doc => {
+              let data = doc.data();
+              data.id = doc.id;
+              window.savedQuestionsCache[data.q] = doc.id;
+              
+              // Group by week using Monday timestamp
+              let dateObj = data.savedAt ? data.savedAt.toDate() : new Date();
+              let mondayTs = getMonday(dateObj);
+              if (!window.globalSavedQsByWeek[mondayTs]) window.globalSavedQsByWeek[mondayTs] = [];
+              window.globalSavedQsByWeek[mondayTs].push(data);
+          });
+          
+          if(document.getElementById('dash-snap').classList.contains('show')) {
+              if(typeof drawDashSnap === 'function') drawDashSnap();
+          }
+          if(document.getElementById('saved-questions-modal') && document.getElementById('saved-questions-modal').classList.contains('show')) {
+              if(typeof renderSavedQuestionsList === 'function') renderSavedQuestionsList();
+          }
+      });
+
+
+    } else {
+      globalUserAttempts = [];
+      window.savedQuestionsCache = {};
+      document.getElementById('prof-login-sec').style.display = 'block';
+      renderRecentLogic();
+    }
+  });
+
+  function normalizeStringForMatch(str) {
+    if (!str) return "";
+    return str.replace(/\.html|\.txt/g, '').replace(/[-_ \.]/g, '').replace(/quiz$/i, '').toLowerCase().trim();
+  }
+
+  /* =========================================
+     IST TIMEZONE & WEEK CALCULATION ENGINE
+     ========================================= */
+  function getISTDate() {
+      let d = new Date();
+      let utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+      return new Date(utc + (3600000 * 5.5)); // +5:30 IST Fix
+  }
+  
+  function parseFirebaseDateToIST(tsString) {
+      let cleanTs = tsString ? tsString.replace(',', '') : "";
+      let d = new Date(cleanTs);
+      if(isNaN(d)) return getISTDate();
+      return d;
+  }
+
+  function getMonday(d) {
+      d = new Date(d);
+      var day = d.getDay(), diff = d.getDate() - day + (day == 0 ? -6:1); 
+      let monday = new Date(d.setDate(diff));
+      monday.setHours(0,0,0,0);
+      return monday.getTime();
+  }
+
+  /* =========================================
+     RECENT ATTEMPTED TESTS LOGIC
+     ========================================= */
+  function renderRecentLogic() {
+    const homeSec = document.getElementById('home-recent-sec');
+    if(globalUserAttempts.length === 0) {
+      homeSec.classList.add('hidden');
+      return;
+    }
+    
+    let reversed = [...globalUserAttempts].reverse();
+    let uniqueTests = [];
+    let seen = new Set();
+
+    reversed.forEach(att => {
+        let tName = normalizeStringForMatch(att.testName);
+        if(!seen.has(tName)) {
+            seen.add(tName);
+            let allAttsForThis = globalUserAttempts.map((a, i) => ({att: a, globalIdx: i}))
+                .filter(obj => normalizeStringForMatch(obj.att.testName) === tName);
+            uniqueTests.push({ originalTitle: att.testName, attempts: allAttsForThis });
+        }
+    });
+
+    homeSec.classList.remove('hidden');
+    let homeHTML = `
+      <div class="recent-header">
+        <h3>Recent Attempted Tests</h3>
+        <span class="view-all" onclick="openRecentTests()">View All <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    `;
+    uniqueTests.slice(0, 2).forEach(item => { homeHTML += buildRecentCardHTML(item); });
+    homeSec.innerHTML = homeHTML;
+
+    let fullHTML = `
+      <div class="breadcrumb">
+        <span class="crumb" onclick="navigateHome()"><i class="fa-solid fa-house"></i> Home</span>
+        <i class="fa-solid fa-angle-right" style="font-size:0.7rem"></i>
+        <span style="color:var(--text-primary); font-weight:bold;">Recent Tests</span>
+      </div>
+      <div class="github-list">
+    `;
+    uniqueTests.forEach(item => { fullHTML += buildRecentCardHTML(item); });
+    fullHTML += `</div>`;
+    document.getElementById('view-recent-content').innerHTML = fullHTML;
+  }
+
+  function buildRecentCardHTML(item) {
+      let historyHTML = `<div class="attempts-row" style="margin-top:8px; border:none; padding-top:4px;">`;
+      item.attempts.forEach((obj, idx) => {
+          let colorClass = (idx === 0) ? 'att-1' : ((idx === 1) ? 'att-2' : 'att-3');
+          let dateOnly = obj.att.ts ? obj.att.ts.split(',')[0].toUpperCase() : '';
+          historyHTML += `
+            <div class="attempt-badge ${colorClass}" onclick="openDashboardSnap(${obj.globalIdx}); event.stopPropagation();">
+              <div class="att-title">Attempt ${idx + 1}</div>
+              <div class="att-score">${obj.att.score}</div>
+              <div class="att-date">${dateOnly}</div>
+            </div>
+          `;
+      });
+      historyHTML += `</div>`;
+
+      let rawPath = item.attempts[0].att.path || '';
+      let folderPath = 'MOCK TESTS'; 
+      if(rawPath) {
+          let lastSlash = rawPath.lastIndexOf('/');
+          folderPath = lastSlash !== -1 ? rawPath.substring(0, lastSlash) : 'ROOT';
+      }
+      let displayPath = folderPath.replace(/\//g, ' <i class="fa-solid fa-angle-right" style="font-size:0.6rem; margin:0 4px; color:var(--text-secondary)"></i> ').toUpperCase();
+
+      return `
+        <div class="recent-card">
+          <div style="display:flex; flex-direction:column; gap:4px; margin-bottom: 8px;">
+            <h4 style="margin:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"><i class="fa-solid fa-file-circle-check" style="color:var(--accent-green)"></i> ${item.originalTitle.replace(/-/g, ' ')}</h4>
+            <div class="recent-path-scroll" style="display:flex; align-items:center;">
+              <i class="fa-regular fa-folder-open" style="margin-right:6px; color:var(--accent-gold)"></i> ${displayPath}
+            </div>
+          </div>
+          ${historyHTML}
+        </div>
+      `;
+  }
+
+  window.openRecentTests = function(pushHistory = true) {
+    document.getElementById('view-home').classList.add('hidden');
+    document.getElementById('view-folder').classList.add('hidden');
+    document.getElementById('view-profile').classList.add('hidden');
+    document.getElementById('view-recent').classList.remove('hidden');
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    if (pushHistory) history.pushState({ view: 'recent', path: '' }, "");
+    window.scrollTo(0,0);
+  }
+
+  /* =========================================
+     UPDATED FEATURE: IN-DASHBOARD REVIEW MODAL (WITH SECTIONAL LOGIC)
+     ========================================= */
+  let dSnapS = {arr:[], curIndexInOrder:0, meta:null, filter:'all', order:[], currentSection: 'all'};
+  let dChart = null;
+
+    // ⏳ NAYA: TAB SWITCHING LOGIC
+  window.switchModalTab = function(tabName) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    
+    event.target.classList.add('active');
+    document.getElementById(`tab-${tabName}`).classList.add('active');
+  };
+
+  window.openDashboardSnap = function(globalIdx) {
+     const user = auth.currentUser;
+     const att = globalUserAttempts[globalIdx];
+     if(!att || !att.snap) return alert("Attempt data missing.");
+     dSnapS.arr = att.snap;
+     dSnapS.meta = att;
+     dSnapS.curIndexInOrder = 0;
+     dSnapS.currentSection = 'all';
+
+     let sections = [...new Set(att.snap.map(q => q.secName).filter(Boolean))];
+     let tabsContainer = document.getElementById('sectionalTabsContainer');
+     if (tabsContainer) {
+       tabsContainer.innerHTML = '';
+       if(sections.length > 0) {
+         let tabsHtml = `<button class="badge ok" id="tab-all-sec" onclick="filterBySection('all')">Overall</button>`;
+         sections.forEach((sec, i) => { tabsHtml += `<button class="badge min" id="tab-sec-${i}" onclick="filterBySection('${sec}', ${i})">${sec}</button>`; });
+         tabsContainer.innerHTML = tabsHtml;
+       }
+     }
+
+     window.setDashFilter('all');
+     
+     // Reset UI to Analysis Tab
+     document.querySelectorAll('.tab-btn')[0].click();
+     document.getElementById('dash-snap').classList.add('show');
+
+     // ⏳ NAYA: LEADERBOARD & ANALYSIS FETCH
+     window.currentLbStats = null;
+     document.getElementById('an-rank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+     
+     db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
+        const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
+        
+        if (docs.length > 0) {
+            let myRank = docs.findIndex(d => d.id === user.uid) + 1;
+            if(myRank === 0) myRank = "-";
+            let totalStudents = docs.length;
+            
+            let myScoreStr = String(att.score).split(' /')[0];
+            let myScore = parseFloat(myScoreStr);
+            let topScore = parseFloat(docs[0].score);
+            let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / totalStudents).toFixed(2);
+            let percentile = myRank !== "-" ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "0.00";
+            
+            // Populate Analysis Tab
+            document.getElementById('an-rank').innerHTML = `${myRank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${totalStudents}</span>`;
+            document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${att.snap.length * 2}</span>`;
+            document.getElementById('an-avg-score').innerText = avgScore;
+            document.getElementById('an-top-score').innerText = topScore;
+            document.getElementById('an-percentile').innerText = percentile + "%";
+            
+            let acc = (att.correct + att.incorrect) > 0 ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) : 0;
+            document.getElementById('an-accuracy').innerText = acc + "%";
+
+            // Bar Chart Animation
+            let maxScoreChart = Math.max(myScore, topScore, avgScore, 1);
+            setTimeout(() => {
+              document.getElementById('bar-you').style.height = `${(myScore/maxScoreChart)*100}%`;
+              document.getElementById('bar-top').style.height = `${(topScore/maxScoreChart)*100}%`;
+              document.getElementById('bar-avg').style.height = `${(avgScore/maxScoreChart)*100}%`;
+            }, 100);
+
+            // Populate Leaderboard Tab
+            let podHtml = '';
+            if(docs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${docs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${docs[1].name.split(' ')[0]}</div><div class="pod-score">${docs[1].score}</div></div>`;
+            if(docs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${docs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${docs[0].name.split(' ')[0]}</div><div class="pod-score">${docs[0].score}</div></div>`;
+            if(docs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${docs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${docs[2].name.split(' ')[0]}</div><div class="pod-score">${docs[2].score}</div></div>`;
+            document.getElementById('lb-podium').innerHTML = podHtml;
+
+            let listHtml = '';
+            docs.slice(3).forEach((d, i) => {
+              listHtml += `<div class="lb-row"><div class="lb-r-num">${i+4}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${d.score}</div></div>`;
+            });
+            document.getElementById('lb-list').innerHTML = listHtml;
+
+            // Sticky You
+            let myData = myRank !== "-" ? docs[myRank-1] : {name: user.displayName, score: myScore};
+            document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+myData.name}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${myData.name} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${myData.score}</div>`;
+
+            // Prepare Question Stats for Review Tab
+            window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
+            for (let i = 0; i < dSnapS.arr.length; i++) {
+                let totalTime = 0, correctCount = 0, attemptCount = 0;
+                docs.forEach(doc => {
+                    totalTime += (doc.timeArray && doc.timeArray[i]) ? doc.timeArray[i] : 0;
+                    if (doc.userArray && doc.userArray[i] !== -1) {
+                        attemptCount++;
+                        if (doc.userArray[i] === doc.correctArray[i]) correctCount++;
+                    }
+                });
+                window.currentLbStats.avgTimes.push(Math.round(totalTime / docs.length));
+                window.currentLbStats.attemptPercents.push(Math.round((attemptCount / docs.length) * 100));
+                window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
+            }
+        }
+        drawDashSnap();
+     }).catch(e => { console.error("LB Fetch Error", e); drawDashSnap(); });
+  }
+
+  window.filterBySection = function(secName, index = null) {
+    dSnapS.currentSection = secName;
+    let tabsContainer = document.getElementById('sectionalTabsContainer');
+    if (tabsContainer) {
+        let buttons = tabsContainer.getElementsByTagName('button');
+        for(let btn of buttons) {
+          btn.classList.remove('ok');
+          btn.classList.add('min');
+        }
+        if(secName === 'all') {
+          document.getElementById('tab-all-sec').classList.add('ok');
+          document.getElementById('tab-all-sec').classList.remove('min');
+        } else {
+          let targetBtn = document.getElementById(`tab-sec-${index}`);
+          if(targetBtn) { targetBtn.classList.add('ok'); targetBtn.classList.remove('min'); }
+        }
+    }
+    window.setDashFilter(dSnapS.filter);
+  };
+  
+  function badge(txt,cls=''){return `<span class="badge ${cls}">${txt}</span>`;}
+    function linkBadge(id,txt){return `<span class="badge link badge-${id}" onclick="window.setDashFilter('${id}')">${txt}</span>`;}
+
+  window.setDashFilter = function(f) {
+      dSnapS.filter = f;
+      const map = dSnapS.arr.map((it, idx) => {
+        const matchSec = (dSnapS.currentSection === 'all' || !dSnapS.currentSection || it.secName === dSnapS.currentSection);
+        const attempted = it.user !== -1;
+        const right = attempted && it.user === it.correct;
+        const wrong = attempted && it.user !== it.correct;
+        return {idx, attempted, right, wrong, mark: !!it.mark, matchSec};
+      });
+
+      let filtered = map.filter(x => x.matchSec);
+
+      if(f==='correct') dSnapS.order = filtered.filter(x=>x.right).map(x=>x.idx);
+      else if(f==='wrong') dSnapS.order = filtered.filter(x=>x.wrong).map(x=>x.idx);
+      else if(f==='un') dSnapS.order = filtered.filter(x=>!x.attempted).map(x=>x.idx);
+      else if(f==='mark') dSnapS.order = filtered.filter(x=>x.mark).map(x=>x.idx);
+      else dSnapS.order = filtered.map(x=>x.idx);
+      
+      if(!dSnapS.order.length) dSnapS.order=[0];
+      dSnapS.curIndexInOrder=0;
+      
+      drawDashMini();
+      drawDashChart();
+      drawDashSnap();
+  }
+  
+  function curDashIdx() { return dSnapS.order[dSnapS.curIndexInOrder] ?? 0; }
+
+  function drawDashMini() {
+      const cont = document.getElementById('snapMini'); cont.innerHTML='';
+      dSnapS.order.forEach((idx, i) => {
+          const it = dSnapS.arr[idx];
+          const attempted = it.user !== -1;
+          const right = attempted && it.user === it.correct;
+          const wrong = attempted && it.user !== it.correct;
+          const d = document.createElement('div'); d.className='mini-chip';
+          if(i === dSnapS.curIndexInOrder) d.classList.add('cur');
+          if(it.mark) d.classList.add('mark'); else if(right) d.classList.add('ok'); else if(wrong) d.classList.add('bad'); else d.classList.add('un');
+          d.textContent = idx + 1;
+          d.onclick = () => { dSnapS.curIndexInOrder = i; drawDashSnap(); };
+          cont.appendChild(d);
+      });
+  }
+  
+  function drawDashChart() {
+      const counts = {correct:0, wrong:0, un:0, mark:0};
+      dSnapS.arr.forEach(it => {
+        if (dSnapS.currentSection && dSnapS.currentSection !== 'all' && it.secName !== dSnapS.currentSection) return;
+        if(it.mark) counts.mark++; 
+        else if(it.user === -1) counts.un++;
+        else if(it.user === it.correct) counts.correct++;
+        else counts.wrong++;
+      });
+      if(dChart) { try { dChart.destroy(); } catch(e){} dChart=null; }
+      const ctx = document.getElementById('reviewChart').getContext('2d');
+      dChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Marked', 'Correct', 'Incorrect', 'Unattempted'],
+          datasets: [{ data: [counts.mark, counts.correct, counts.wrong, counts.un], backgroundColor: ['#a855f7','#10b981','#ef4444','#94a3b8'], borderWidth: 0 }]
+        },
+        options: { plugins: { legend: { display:false } }, responsive: true, maintainAspectRatio: false }
+      });
+  }
+
+        function drawDashSnap() {
+      if(!dSnapS.arr.length) { document.getElementById('snapQ').innerHTML='Nothing.'; return; }
+      const it = dSnapS.arr[curDashIdx()];
+      
+      // Sectional counts logic & hiding 0s
+      let secStats = { c:0, w:0, u:0, m:0 };
+      dSnapS.arr.forEach(q => {
+          if (dSnapS.currentSection && dSnapS.currentSection !== 'all' && q.secName !== dSnapS.currentSection) return;
+          if (q.mark) secStats.m++;
+          if (q.user === -1) secStats.u++;
+          else if (q.user === q.correct) secStats.c++;
+          else secStats.w++;
+      });
+
+      document.getElementById('snapTitle').innerHTML = `Attempt Review <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:600;">— Q${curDashIdx()+1}/${dSnapS.arr.length}</span>`;
+      
+      let badgeArr = [ badge(dSnapS.meta.ts, 'ok'), badge(dSnapS.meta.score) ];
+      if (dSnapS.currentSection === 'all') badgeArr.push(linkBadge('all', 'All'));
+      if (secStats.c > 0) badgeArr.push(linkBadge('correct', `C:${secStats.c}`));
+      if (secStats.w > 0) badgeArr.push(linkBadge('wrong', `W:${secStats.w}`));
+      if (secStats.u > 0) badgeArr.push(linkBadge('un', `U:${secStats.u}`));
+      if (secStats.m > 0) badgeArr.push(linkBadge('mark', `M:${secStats.m}`));
+
+      document.getElementById('snapMetaBadges').innerHTML = badgeArr.join(' ');
+
+      // Professional Save Button at the Bottom
+      const isSaved = !!window.savedQuestionsCache[it.q];
+      const starIcon = isSaved ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
+      const starColor = isSaved ? '#facc15' : 'var(--text-primary)';
+      const starText = isSaved ? 'SAVED' : 'SAVE This Q';
+      
+      const saveBtnHtml = `<button onclick="toggleSaveCurrentDashQ()" style="background: transparent; color:${starColor}; border:1px solid var(--border-color); padding:8px 16px; border-radius:10px; font-weight:800; cursor:pointer; font-size:1rem; display:flex; align-items:center; gap:8px; transition:0.2s;">
+        ${starIcon} <span>${starText}</span>
+      </button>`;
+      
+      let saveContainer = document.getElementById('saveBtnContainer');
+      if(saveContainer) saveContainer.innerHTML = saveBtnHtml;
+
+            // ⏳ NAYA: Question Stats Labels
+      if (window.currentLbStats) {
+         const qIdx = curDashIdx();
+         document.getElementById('qStatsRow').innerHTML = `
+            <div class="q-stat-tag tag-you">You: ${it.timeTaken || 0}s</div>
+            <div class="q-stat-tag tag-avg">Avg: ${window.currentLbStats.avgTimes[qIdx] || 0}s</div>
+            <div class="q-stat-tag tag-top">Topper: ${window.currentLbStats.topperTimes[qIdx] || 0}s</div>
+            <div class="q-stat-tag tag-att">${window.currentLbStats.attemptPercents[qIdx] || 0}% Attempted</div>
+            <div class="q-stat-tag tag-cor">${window.currentLbStats.correctPercents[qIdx] || 0}% Correct</div>
+         `;
+      } else {
+         document.getElementById('qStatsRow').innerHTML = ''; // Clear if no data
+      }
+
+      document.getElementById('snapQ').innerHTML = it.q;
+      const b = document.getElementById('snapOpts'); b.innerHTML='';
+      it.opts.forEach((t, i) => {
+        const div = document.createElement('div'); div.className='rev-opt';
+        const dot = document.createElement('div'); dot.className='rev-dot';
+        const isUser = (i === it.user), isCorrect = (i === it.correct);
+        if(isUser){ div.classList.add('user'); dot.classList.add('user'); }
+        if(isCorrect){ 
+            div.classList.add('correct'); 
+            // Unattempted fix: Only fill green dot if user actually attempted it
+            if(it.user !== -1) { dot.classList.add('correct'); } 
+        }
+        if(isUser && !isCorrect){ const ico=document.createElement('div'); ico.className='rev-ico bad'; ico.textContent='✖'; div.appendChild(ico); div.classList.add('wrong'); }
+        if(isCorrect && isUser){ const ico=document.createElement('div'); ico.className='rev-ico ok'; ico.textContent='✔'; div.appendChild(ico); }
+        const text=document.createElement('div'); text.innerHTML=`${String.fromCharCode(65+i)}) ${t}`;
+        div.prepend(text); div.prepend(dot); b.appendChild(div);
+      });
+
+      const solBlock = document.getElementById('solBlock');
+      if (it.sol) { solBlock.style.display = 'block'; document.getElementById('snapSol').innerHTML = it.sol; } 
+      else { solBlock.style.display = 'none'; }
+      document.getElementById('sPrev').disabled = (dSnapS.curIndexInOrder === 0);
+      document.getElementById('sNext').disabled = (dSnapS.curIndexInOrder === dSnapS.order.length-1);
+            if (window.renderMathInElement) {
+          renderMathInElement(document.body, {
+              delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError: false
+          });
+      }
+      
+      drawDashMini();
+  }
+  
+  document.getElementById('sPrev').onclick = () => { if(dSnapS.curIndexInOrder > 0){ dSnapS.curIndexInOrder--; drawDashSnap(); } };
+  document.getElementById('sNext').onclick = () => { if(dSnapS.curIndexInOrder < dSnapS.order.length-1){ dSnapS.curIndexInOrder++; drawDashSnap(); } };
+  document.getElementById('sClose').onclick = () => document.getElementById('dash-snap').classList.remove('show');
+    // --- NAYA ADDITION: Toggle Save/Unsave Logic ---
+  window.toggleSaveCurrentDashQ = async function() {
+      const user = auth.currentUser;
+      if(!user) {
+          alert("Bhai, pehle login kar le questions save karne ke liye!");
+          return;
+      }
+      
+      const it = dSnapS.arr[curDashIdx()];
+      const qText = it.q;
+      
+      try {
+          if (window.savedQuestionsCache[qText]) {
+              // Agar save hai, toh Delete kar do (Unstar)
+              const docId = window.savedQuestionsCache[qText];
+              await db.collection("users").doc(user.uid).collection("saved_questions").doc(docId).delete();
+          } else {
+              // Agar save nahi hai, toh Firebase me dal do (Star)
+              let saveObj = {
+                  q: it.q,
+                  o: it.opts,
+                  a: it.correct,
+                  s: it.sol || '',
+                  testName: dSnapS.meta.testName,
+                  savedAt: firebase.firestore.FieldValue.serverTimestamp()
+              };
+              await db.collection("users").doc(user.uid).collection("saved_questions").add(saveObj);
+          }
+      } catch(e) {
+          console.error("Error toggling save:", e);
+      }
+  };
+
+
+/* =========================================
+   DOWNLOAD ATTEMPT SNAP LOGIC
+   ========================================= */
+window.downloadCurrentSnap = function() {
+    // Agar koi attempt load nahi hua hai
+    if (!dSnapS.meta || !dSnapS.arr || dSnapS.arr.length === 0) {
+        alert("Koi data nahi hai download karne ke liye!");
+        return;
+    }
+
+    let htmlContent = `
+    <!DOCTYPE html><html><head><meta charset="utf-8"><title>Attempt Snap - ${dSnapS.meta.testName}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"><\/script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false},{left:'\\\\(', right:'\\\\)', display:false},{left:'\\\\[', right:'\\\\]', display:true}], throwOnError:false});"><\/script>
+
+    <style>
+      body{font-family:sans-serif; background:#0B0E14; color:#fff; padding:20px; max-width:800px; margin:auto;}
+      h1{color:#A3E635; text-align:center; text-transform:uppercase;}
+      .q-card{background:#151A22; border:1px solid #1E293B; border-radius:12px; padding:20px; margin-bottom:20px;}
+      .meta{color:#FACC15; font-size:0.85rem; font-weight:bold; margin-bottom:10px;}
+      .q{font-size:1.1rem; margin-bottom:12px;}
+      .opt{padding:10px; border:2px solid #1E293B; border-radius:8px; margin-bottom:8px; background:rgba(255,255,255,0.03);}
+      .opt.correct{border-color:#10B981; background:rgba(16,185,129,0.1);}
+      .opt.wrong{border-color:#EF4444; background:rgba(239,68,68,0.1); border-style:dashed;}
+      .sol{margin-top:15px; background:rgba(16,185,129,0.1); border-left:4px solid #10B981; padding:12px; border-radius:6px;}
+    </style></head><body>
+    <h1>${dSnapS.meta.testName} - Attempt Snap</h1>
+    <p style="text-align:center; color:#94A3B8;">Score: ${dSnapS.meta.score} | Date: ${dSnapS.meta.ts} | Keep grinding, Warrior! 🔥</p>
+    `;
+
+    // Loop through all questions in the current snap
+    dSnapS.arr.forEach((item, index) => {
+        let optsHTML = '';
+        item.opts.forEach((optText, oIdx) => {
+            let cls = 'opt';
+            if(oIdx === item.correct) cls += ' correct';
+            else if(oIdx === item.user) cls += ' wrong';
+            optsHTML += `<div class="${cls}"><b>${String.fromCharCode(65+oIdx)})</b> ${optText}</div>`;
+        });
+        
+        // Status Badge Logic
+        let badge = (item.user === item.correct) ? '<span style="color:#10B981">[Correct]</span>' : (item.user === -1 ? '<span style="color:#94A3B8">[Unattempted]</span>' : '<span style="color:#EF4444">[Incorrect]</span>');
+        
+        // Agar question me section name present hai toh dikhao
+        let secTag = item.secName ? ` | Sec: ${item.secName}` : '';
+
+        htmlContent += `
+        <div class="q-card">
+            <div class="meta">Q${index+1} ${secTag} | ${badge}</div>
+            <div class="q">${item.q}</div>
+            ${optsHTML}
+            <div class="sol"><b>Solution:</b><br>${item.sol || 'No solution provided.'}</div>
+        </div>`;
+    });
+    
+    htmlContent += `</body></html>`;
+    
+    // Generate and Download File
+    const blob = new Blob([htmlContent], {type: 'text/html;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.download = `Attempt_Snap_${dSnapS.meta.testName.replace(/ /g, '_')}.html`;
+    a.href = url;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+}
+
+  /* =========================================
+     MISTAKE JOURNAL LOGIC (CLICKABLE CHART & DOWNLOAD)
+     ========================================= */
+  document.getElementById('ebClose').onclick = () => document.getElementById('error-book-modal').classList.remove('show');
+
+  function openErrorBook(filterType, customBookArray = null) {
+      const ebListArea = document.getElementById('ebListArea');
+      ebListArea.innerHTML = '';
+      
+      let sourceBook = customBookArray ? customBookArray : [];
+      let filteredQs = sourceBook.filter(q => q.errType === filterType).reverse();
+      
+      if(filteredQs.length === 0) {
+          ebListArea.innerHTML = `<div style="text-align:center; color:var(--text-secondary); padding:20px;">No questions found in this category! 🎉</div>`;
+      } else {
+          let titleText = filterType === 'wrong' ? "Incorrect Questions" : (filterType === 'marked' ? "Marked for Review" : "Unattempted Questions");
+          document.getElementById('ebTitle').innerHTML = `<i class="fa-solid fa-book-skull"></i> Mistake Journal - ${titleText}`;
+          
+          filteredQs.forEach((item, index) => {
+              let optHTML = '';
+              item.opts.forEach((optText, oIdx) => {
+                  let cls = 'rev-opt';
+                  if(oIdx === item.correct) cls += ' correct';
+                  else if(oIdx === item.user) cls += ' user wrong';
+                  optHTML += `<div class="${cls}"><div>${String.fromCharCode(65+oIdx)}) ${optText}</div></div>`;
+              });
+
+              let qBlock = document.createElement('div');
+              qBlock.style.cssText = "background:var(--bg-card); padding:16px; border:1px solid var(--border-color); border-radius:12px; margin-bottom:16px;";
+              let formattedDate = item.ts ? item.ts.split(',')[0] : '';
+              qBlock.innerHTML = `
+                  <div style="font-size:0.75rem; color:var(--accent-gold); margin-bottom:8px; font-weight:800; text-transform:uppercase;">From: ${item.testName} <span style="float:right; color:var(--text-secondary)">${formattedDate}</span></div>
+                  <div class="q">${index + 1}. ${item.q}</div>
+                  <div>${optHTML}</div>
+                  <div class="sol" style="display:block; margin-top:12px;"><b>Solution:</b><br>${item.sol || 'No solution provided.'}</div>
+              `;
+              ebListArea.appendChild(qBlock);
+          });
+      }
+      
+      document.getElementById('error-book-modal').classList.add('show');
+            if (window.renderMathInElement) {
+          renderMathInElement(document.body, {
+              delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+              ],
+              throwOnError: false
+          });
+      }
+
+  }
+
+    // Helper: File ka naam dynamically set karne ke liye (e.g., 22Jun-28Jun)
+  function formatWeekLabel(mondayTs) {
+      let d1 = new Date(Number(mondayTs));
+      let d2 = new Date(Number(mondayTs) + 6 * 86400000);
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return `${d1.getDate()}${months[d1.getMonth()]}-${d2.getDate()}${months[d2.getMonth()]}`;
+  }
+
+  window.downloadErrorBook = function(format) {
+      let weekData = globalWeeksMap[currentlySelectedWeek];
+      if (!weekData || !weekData.eBook || weekData.eBook.length === 0) {
+          alert("No mistakes/unattempted questions found for this week to download! 🎉");
+          return;
+      }
+      
+      let weekLabel = formatWeekLabel(currentlySelectedWeek);
+      let fileName = `${weekLabel}-Mistake Journal`;
+      let sortedErrors = weekData.eBook.slice().reverse();
+
+      if (format === 'txt') {
+          // TXT EXPORT: Engine me dalne ke liye JSON format
+          let exportData = sortedErrors.map(item => ({
+              q: item.q,
+              o: item.opts,
+              a: item.correct,
+              s: item.sol || ''
+          }));
+          let dataStr = JSON.stringify(exportData, null, 2);
+          let blob = new Blob([dataStr], {type: "text/plain;charset=utf-8"});
+          let url = URL.createObjectURL(blob);
+          let a = document.createElement('a');
+          a.href = url;
+          a.download = `${fileName}.txt`;
+          a.click();
+          URL.revokeObjectURL(url);
+
+      } else if (format === 'html') {
+          // HTML EXPORT: Tumhara purana premium HTML format (Bina chhed-chhad)
+          let htmlContent = `
+          <!DOCTYPE html><html><head><meta charset="utf-8"><title>${fileName}</title>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"><\/script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false},{left:'\\\\(', right:'\\\\)', display:false},{left:'\\\\[', right:'\\\\]', display:true}], throwOnError:false});"><\/script>
+
+          <style>
+            body{font-family:sans-serif; background:#0B0E14; color:#fff; padding:20px; max-width:800px; margin:auto;}
+            h1{color:#A3E635; text-align:center; text-transform:uppercase;}
+            .q-card{background:#151A22; border:1px solid #1E293B; border-radius:12px; padding:20px; margin-bottom:20px;}
+            .meta{color:#FACC15; font-size:0.85rem; font-weight:bold; margin-bottom:10px;}
+            .q{font-size:1.1rem; margin-bottom:12px;}
+            .opt{padding:10px; border:2px solid #1E293B; border-radius:8px; margin-bottom:8px; background:rgba(255,255,255,0.03);}
+            .opt.correct{border-color:#10B981; background:rgba(16,185,129,0.1);}
+            .opt.wrong{border-color:#EF4444; background:rgba(239,68,68,0.1); border-style:dashed;}
+            .sol{margin-top:15px; background:rgba(16,185,129,0.1); border-left:4px solid #10B981; padding:12px; border-radius:6px;}
+          </style></head><body>
+          <h1>${fileName.replace(/-/g, ' ')}</h1><p style="text-align:center; color:#94A3B8;">Keep grinding, Warrior! 🔥</p>
+          `;
+
+          sortedErrors.forEach((item, index) => {
+              let optsHTML = '';
+              item.opts.forEach((optText, oIdx) => {
+                  let cls = 'opt';
+                  if(oIdx === item.correct) cls += ' correct';
+                  else if(oIdx === item.user && item.errType === 'wrong') cls += ' wrong';
+                  optsHTML += `<div class="${cls}"><b>${String.fromCharCode(65+oIdx)})</b> ${optText}</div>`;
+              });
+              
+              let badge = item.errType === 'wrong' ? '<span style="color:#EF4444">[Incorrect]</span>' : (item.errType === 'marked' ? '<span style="color:#8B5CF6">[Marked]</span>' : '<span style="color:#94A3B8">[Unattempted]</span>');
+              
+              htmlContent += `
+              <div class="q-card">
+                  <div class="meta">${item.testName} | ${item.ts.split(',')[0]} | ${badge}</div>
+                  <div class="q"><b>Q${index+1}.</b> ${item.q}</div>
+                  ${optsHTML}
+                  <div class="sol"><b>Solution:</b><br>${item.sol || 'No solution provided.'}</div>
+              </div>`;
+          });
+          
+          htmlContent += `</body></html>`;
+          
+          const blob = new Blob([htmlContent], {type: 'text/html;charset=utf-8'});
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.download = `${fileName}.html`;
+          a.href = url;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+      }
+  }
+
+
+  /* =========================================
+     PROFILE ANALYTICS LOGIC (WEEKLY, TRENDS & WEAK TOPICS)
+     ========================================= */
+  let profAccChartObj = null;
+  let profTrendChartObj = null;
+  let prevWeekCharts = []; 
+
+  window.loadWeekToMain = function(monTimestamp) {
+      currentlySelectedWeek = monTimestamp;
+      let dataW = globalWeeksMap[monTimestamp];
+      if(!dataW) return;
+      
+      let isThisWeek = (monTimestamp == getMonday(getISTDate()));
+      let titleText = isThisWeek ? "This Week" : "Week of " + new Date(Number(monTimestamp)).toLocaleDateString('en-IN');
+      document.getElementById('main-week-title').innerText = titleText;
+      
+      let backBtn = document.getElementById('btn-back-this-week');
+      if(backBtn) {
+          if(isThisWeek) backBtn.classList.add('hidden');
+          else backBtn.classList.remove('hidden');
+      }
+      
+      if(profAccChartObj) {
+          let hasData = (dataW.tC + dataW.tW + dataW.tM > 0) || dataW.tU > 0;
+          profAccChartObj.data.datasets[0].data = hasData ? [dataW.tC, dataW.tW, dataW.tU, dataW.tM] : [0,0,1,0];
+          profAccChartObj.update();
+      }
+  };
+
+  window.loadThisWeek = function() {
+      let thisMon = getMonday(getISTDate());
+      if(globalWeeksMap[thisMon]) {
+          loadWeekToMain(thisMon);
+      } else {
+          currentlySelectedWeek = thisMon;
+          document.getElementById('main-week-title').innerText = "This Week";
+          let backBtn = document.getElementById('btn-back-this-week');
+          if(backBtn) backBtn.classList.add('hidden');
+          if(profAccChartObj) {
+              profAccChartObj.data.datasets[0].data = [0,0,1,0];
+              profAccChartObj.update();
+          }
+      }
+  };
+
+  function renderProfileAnalytics() {
+    const user = auth.currentUser;
+    if(user) {
+      document.getElementById('prof-name').textContent = user.displayName || 'Warrior';
+      document.getElementById('prof-email').textContent = user.email || 'No email found';
+      if(user.photoURL) document.getElementById('prof-img').src = user.photoURL;
+    }
+
+    let overallC = 0, overallW = 0, totalScore = 0, totalMins = 0;
+    let trendScores = [], trendLabels = [];
+    globalWeeksMap = {};
+    let testStatsMap = {}; 
+
+    let actualIST = getISTDate();
+    let currentWeekMonday = getMonday(actualIST);
+
+    globalUserAttempts.forEach((att, idx) => {
+      overallC += (att.correct || 0);
+      overallW += (att.incorrect || 0);
+      totalMins += (att.minutes || 0);
+      
+      let scoreVal = att.score ? parseFloat(att.score.split(' ')[0]) : 0;
+      let maxVal = att.score ? parseFloat(att.score.split('/')[1]) : 0;
+      
+      if(!isNaN(scoreVal)) {
+          totalScore += scoreVal;
+          trendScores.push(scoreVal);
+          trendLabels.push(`T${idx+1}`);
+      }
+
+      if(maxVal > 0) {
+          if(!testStatsMap[att.testName]) testStatsMap[att.testName] = {c:0, w:0, score:0, max:0};
+          testStatsMap[att.testName].c += (att.correct||0);
+          testStatsMap[att.testName].w += (att.incorrect||0);
+          testStatsMap[att.testName].score += scoreVal;
+          testStatsMap[att.testName].max += maxVal;
+      }
+
+      let attemptISTDate = parseFirebaseDateToIST(att.ts);
+      let attMonday = getMonday(attemptISTDate);
+      if(!globalWeeksMap[attMonday]) globalWeeksMap[attMonday] = { tC:0, tW:0, tU:0, tM:0, eBook: [] };
+      
+      globalWeeksMap[attMonday].tC += (att.correct||0);
+      globalWeeksMap[attMonday].tW += (att.incorrect||0);
+      globalWeeksMap[attMonday].tU += (att.unattempted||0);
+      globalWeeksMap[attMonday].tM += (att.marked||0);
+      
+      if(att.snap) {
+          att.snap.forEach(q => {
+              if (q.user !== -1 && q.user !== q.correct) globalWeeksMap[attMonday].eBook.push({...q, testName: att.testName, errType: 'wrong', ts: att.ts});
+              if (q.mark === true) globalWeeksMap[attMonday].eBook.push({...q, testName: att.testName, errType: 'marked', ts: att.ts});
+              if (q.user === -1) globalWeeksMap[attMonday].eBook.push({...q, testName: att.testName, errType: 'un', ts: att.ts});
+          });
+      }
+    });
+
+    let totalQuestionsAttempted = overallC + overallW; 
+    let accuracy = totalQuestionsAttempted > 0 ? ((overallC / totalQuestionsAttempted) * 100).toFixed(1) : "0";
+    document.getElementById('prof-overall-acc').textContent = accuracy + "%";
+    
+    let hrs = (totalMins / 60).toFixed(1);
+    document.getElementById('prof-total-time').textContent = hrs + " Hrs";
+    
+    let avg = globalUserAttempts.length > 0 ? (totalScore / globalUserAttempts.length).toFixed(2) : "0.00";
+    document.getElementById('prof-avg-score').textContent = avg;
+
+    let uniqueDates = [...new Set(globalUserAttempts.map(a => a.ts ? a.ts.split(',')[0] : ''))].filter(Boolean);
+    document.getElementById('prof-streak').textContent = uniqueDates.length + " Days";
+
+    let badgesHTML = '';
+    if(globalUserAttempts.length >= 1) badgesHTML += `<div class="ach-badge"><i class="fa-solid fa-seedling"></i><div class="ach-title">Rookie</div></div>`;
+    if(accuracy >= 80 && totalQuestionsAttempted > 10) badgesHTML += `<div class="ach-badge"><i class="fa-solid fa-crosshairs"></i><div class="ach-title">Sniper</div></div>`;
+    if(hrs >= 5) badgesHTML += `<div class="ach-badge"><i class="fa-solid fa-stopwatch"></i><div class="ach-title">Marathoner</div></div>`;
+    if(badgesHTML === '') badgesHTML = `<div style="font-size:0.8rem; color:var(--text-secondary);">Complete more tests to unlock badges!</div>`;
+    document.getElementById('prof-badges').innerHTML = badgesHTML;
+
+    let weakArr = Object.keys(testStatsMap).map(k => {
+        let s = testStatsMap[k];
+        let acc = (s.c+s.w)>0 ? (s.c/(s.c+s.w)*100) : 0;
+        let ach = s.max>0 ? (s.score/s.max*100) : 0;
+        return {name: k, acc: acc, ach: ach};
+    });
+    weakArr.sort((a,b) => a.acc - b.acc); 
+    
+    let weakHTML = '';
+    weakArr.slice(0,3).forEach(w => {
+        let accStr = w.acc.toFixed(1);
+        let achStr = w.ach.toFixed(1);
+        weakHTML += `
+            <div class="weak-card">
+              <h4>${w.name.replace(/-/g, ' ')}</h4>
+              <div class="w-stats">
+                  <span class="red"><i class="fa-solid fa-crosshairs"></i> Acc: ${accStr}%</span>
+                  <span class="purple"><i class="fa-solid fa-award"></i> Achieved: ${achStr}%</span>
+              </div>
+              <i class="fa-solid fa-triangle-exclamation bg-icon"></i>
+            </div>
+        `;
+    });
+    if(weakHTML === '') weakHTML = '<div style="color:var(--text-secondary);font-size:0.8rem;">Attempt tests to detect weak topics.</div>';
+    document.getElementById('weak-topics-container').innerHTML = weakHTML;
+
+    currentlySelectedWeek = currentWeekMonday;
+    let backBtn = document.getElementById('btn-back-this-week');
+    if(backBtn) backBtn.classList.add('hidden'); 
+    
+    if(profAccChartObj) { try{profAccChartObj.destroy();}catch(e){} profAccChartObj = null; }
+    
+    let currWkData = globalWeeksMap[currentWeekMonday] || {tC:0, tW:0, tU:1, tM:0, eBook:[]}; 
+    
+    const ctxAcc = document.getElementById('profAccChart').getContext('2d');
+    profAccChartObj = new Chart(ctxAcc, {
+      type: 'doughnut',
+      data: {
+        labels: ['Correct', 'Incorrect', 'Unattempted', 'Marked'],
+        datasets: [{
+          data: [currWkData.tC, currWkData.tW, currWkData.tU, currWkData.tM],
+          backgroundColor: ['#10b981', '#ef4444', '#94a3b8', '#a855f7'],
+          borderWidth: 0, hoverOffset: 10
+        }]
+      },
+      options: {
+        plugins: { legend: { position: 'bottom', labels: { color: document.body.getAttribute('data-theme')==='light'?'#111':'#fff' } } },
+        responsive: true, maintainAspectRatio: false,
+        onClick: (e, elements) => {
+            if (elements.length > 0) {
+                const idx = elements[0].index;
+                let dataToPass = globalWeeksMap[currentlySelectedWeek].eBook;
+                if(idx === 1) openErrorBook('wrong', dataToPass); 
+                if(idx === 2) openErrorBook('un', dataToPass);    
+                if(idx === 3) openErrorBook('marked', dataToPass); 
+            }
+        }
+      }
+    });
+    document.getElementById('main-week-title').innerText = "This Week";
+
+    prevWeekCharts.forEach(c => { try{c.destroy();}catch(e){} });
+    prevWeekCharts = [];
+    let prevContainer = document.getElementById('prev-weeks-container');
+    prevContainer.innerHTML = '';
+    
+    let sortedWeeks = Object.keys(globalWeeksMap).map(Number).sort((a,b) => b-a);
+    let previousMondays = sortedWeeks.filter(m => m !== currentWeekMonday);
+
+    if(previousMondays.length === 0) {
+        prevContainer.innerHTML = `<div style="font-size:0.8rem; color:var(--text-secondary); width:100%;">No previous weeks data found.</div>`;
+    } else {
+        previousMondays.forEach((mon, i) => {
+            let dataW = globalWeeksMap[mon];
+            let accW = (dataW.tC+dataW.tW)>0 ? ((dataW.tC / (dataW.tC+dataW.tW)) * 100).toFixed(0) : 0;
+            let dObj = new Date(mon);
+            let dStr = dObj.getDate() + " " + dObj.toLocaleString('en-US',{month:'short'});
+            
+            let id = `pwChart_${i}`;
+            let cardHTML = `
+                <div class="prev-week-card" onclick="loadWeekToMain('${mon}')">
+                    <div class="pw-title">${dStr}</div>
+                    <canvas id="${id}"></canvas>
+                    <div class="pw-acc">${accW}% Acc</div>
+                </div>
+            `;
+            prevContainer.insertAdjacentHTML('beforeend', cardHTML);
+            
+            let ctxPW = document.getElementById(id).getContext('2d');
+            let chartPW = new Chart(ctxPW, {
+                type: 'doughnut',
+                data: { datasets: [{ data: [dataW.tC, dataW.tW, dataW.tU, dataW.tM], backgroundColor: ['#10b981', '#ef4444', '#94a3b8', '#a855f7'], borderWidth:0 }] },
+                options: { plugins:{legend:{display:false}, tooltip:{enabled:false}}, responsive:true, maintainAspectRatio:false }
+            });
+            prevWeekCharts.push(chartPW);
+        });
+    }
+
+    if(profTrendChartObj) { try{profTrendChartObj.destroy();}catch(e){} profTrendChartObj = null; }
+    let chartScores = trendScores.slice(-10);
+    let chartLabels = trendLabels.slice(-10);
+    
+    const ctxTrend = document.getElementById('profTrendChart').getContext('2d');
+    profTrendChartObj = new Chart(ctxTrend, {
+        type: 'line',
+        data: {
+            labels: chartLabels.length ? chartLabels : ['No Data'],
+            datasets: [{
+                label: 'Score Trend',
+                data: chartScores.length ? chartScores : [0],
+                borderColor: '#A3E635', backgroundColor: 'rgba(163, 230, 53, 0.1)',
+                borderWidth: 3, fill: true, tension: 0.3, pointBackgroundColor: '#fff', pointRadius: 4
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+                x: { ticks: { color: 'rgba(255,255,255,0.5)' }, grid: { display:false } },
+                y: { ticks: { color: 'rgba(255,255,255,0.5)' }, grid: { color: 'rgba(255,255,255,0.1)' } }
+            }
+        }
+    });
+  }
+
+  /* =========================================
+     ADVANCED IN-APP MEDIA VIEWER LOGIC
+     ========================================= */
+  let playerInstance = null;
+  window.openMedia = function(path, type, title) {
+      document.getElementById('media-title').innerText = title;
+      const container = document.getElementById('media-container');
+      container.innerHTML = ''; 
+      
+      let cleanPath = path.startsWith('/') ? path.substring(1) : path;
+      let rawUrl = `https://raw.githubusercontent.com/TestRipper/testripper-mocks/main/${cleanPath}`;
+
+      if(type === 'video') {
+          container.innerHTML = `
+            <video id="plyr-video" playsinline controls style="width:100%; max-height:100%;">
+                <source src="${rawUrl}" type="video/mp4" />
+            </video>`;
+          playerInstance = new Plyr('#plyr-video', {
+              controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'],
+              settings: ['quality', 'speed'],
+              speed: { selected: 1, options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2] }
+          });
+      } else if (type === 'pdf') {
+          container.innerHTML = `<iframe src="https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(rawUrl)}" style="width:100%; height:100%; border:none; background:#fff;"></iframe>`; 
+      }
+      
+      document.getElementById('media-modal').classList.add('show');
+      document.body.style.overflow = 'hidden'; 
+  };
+
+  window.closeMedia = function() {
+      if(playerInstance) { 
+          playerInstance.destroy(); 
+          playerInstance = null; 
+      }
+      document.getElementById('media-modal').classList.remove('show');
+      document.getElementById('media-container').innerHTML = '';
+      document.body.style.overflow = 'auto'; 
+  };
+
+  /* =========================================
+     EXISTING GITHUB BROWSER LOGIC & NAVIGATION
+     ========================================= */
+  const REPO_OWNER = 'TestRipper'; 
+  const REPO_NAME = 'testripper-mocks'; 
+  const GITHUB_API_BASE = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/`;
+  
+  const folderCache = {}; 
+
+  window.onload = () => {
+    setTimeBasedGreeting();
+    fetchQuote();
+    loadDynamicRootFolders();
+    history.replaceState({ view: 'home', path: '' }, "");
+  };
+
+  function setTimeBasedGreeting() {
+    const options = { timeZone: 'Asia/Kolkata', hour: 'numeric', hour12: false };
+    const formatter = new Intl.DateTimeFormat([], options);
+    const currentHour = parseInt(formatter.format(new Date()));
+    let greeting = "Good Morning";
+    if (currentHour >= 12 && currentHour < 17) greeting = "Good Afternoon";
+    else if (currentHour >= 17) greeting = "Good Night";
+    document.getElementById('greeting-text').innerText = greeting;
+  }
+
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    
+    // Agar body par 'data-theme' nahi hai, toh iska matlab abhi Light mode mein hai
+    // Toh ab Dark mode apply karo
+    if (!body.getAttribute('data-theme')) {
+      body.setAttribute('data-theme', 'dark');
+      icon.className = 'fa-solid fa-sun'; // Dark mode mein Sun icon dikhao
+    } else {
+      // Agar 'data-theme' hai, toh remove kar do (Wapas Light mode mein aa jayega)
+      body.removeAttribute('data-theme');
+      icon.className = 'fa-solid fa-moon'; // Light mode mein Moon icon dikhao
+    }
+}
+
+  async function fetchQuote() {
+    try {
+      const quoteUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/QUOTE/quote.txt`;
+      const res = await fetch(quoteUrl);
+      if(res.ok) {
+        const text = await res.text();
+        document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-bolt" style="color:#facc15"></i> ${text.trim()}`;
+      } else {
+        document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-fire"></i> Keep going, Stay awake, Warrior!`;
+      }
+    } catch(e) {
+      document.getElementById('daily-quote').innerHTML = `<i class="fa-solid fa-fire"></i> Keep going, Stay awake, Warrior!`;
+    }
+  }
+
+  async function loadDynamicRootFolders() {
+    try {
+      const res = await fetch(GITHUB_API_BASE);
+      if(!res.ok) throw new Error("API Error");
+      const data = await res.json();
+      
+      const container = document.getElementById('dynamic-tabs-container');
+      let html = '';
+      const exclude = ['.main', 'MOCK TESTS', 'TARGET-SERIES'];
+      
+      data.forEach(item => {
+        if (item.type === 'dir' && !exclude.includes(item.name)) {
+          html += `
+          <div class="cross-block" onclick="openFolder('${item.name.replace(/'/g, "\\'")}')">
+            <div class="info">
+              <h4><i class="fa-solid fa-folder-open"></i> ${item.name}</h4>
+            </div>
+            <div class="btn">Open &rarr;</div>
+          </div>`;
+        }
+      });
+      
+      if(html === '') container.innerHTML = `<div style="text-align:center; color:var(--text-secondary); font-size:0.8rem;">No extra folders found in root.</div>`;
+      else container.innerHTML = html;
+    } catch(e) {
+      document.getElementById('dynamic-tabs-container').innerHTML = '';
+    }
+  }
+
+  window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.view === 'folder') renderFolderView(event.state.path, false);
+    else if (event.state && event.state.view === 'profile') window.openProfile(false);
+    else if (event.state && event.state.view === 'recent') window.openRecentTests(false);
+    else renderHomeView(false);
+  });
+
+  function navigateHome() { renderHomeView(true); }
+  function openFolder(path) { renderFolderView(path, true); }
+  
+  window.openProfile = function(pushHistory = true) {
+    document.getElementById('view-home').classList.add('hidden');
+    document.getElementById('view-folder').classList.add('hidden');
+    document.getElementById('view-recent').classList.add('hidden');
+    document.getElementById('view-profile').classList.remove('hidden');
+    
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-item')[3].classList.add('active');
+
+    if (pushHistory) history.pushState({ view: 'profile', path: '' }, "");
+    window.scrollTo(0,0);
+    renderProfileAnalytics();
+  }
+
+  function renderHomeView(pushHistory = true) {
+    document.getElementById('view-folder').classList.add('hidden');
+    document.getElementById('view-profile').classList.add('hidden');
+    document.getElementById('view-recent').classList.add('hidden');
+    document.getElementById('view-home').classList.remove('hidden');
+    
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-item')[0].classList.add('active');
+
+    if (pushHistory) history.pushState({ view: 'home', path: '' }, "");
+    window.scrollTo(0,0);
+  }
+
+  async function renderFolderView(path, pushHistory = true) {
+    document.getElementById('view-home').classList.add('hidden');
+    document.getElementById('view-profile').classList.add('hidden');
+    document.getElementById('view-recent').classList.add('hidden');
+    document.getElementById('view-folder').classList.remove('hidden');
+    
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    if(path.includes('TARGET-SERIES')) document.querySelectorAll('.nav-item')[2].classList.add('active');
+    else document.querySelectorAll('.nav-item')[1].classList.add('active');
+
+    if (pushHistory) history.pushState({ view: 'folder', path: path }, "");
+
+    renderBreadcrumbs(path);
+    const contentDiv = document.getElementById('github-content');
+    contentDiv.innerHTML = `<div class="loader"><i class="fa-solid fa-spinner"></i><br>Fetching Data...</div>`;
+    window.scrollTo(0,0);
+
+    try {
+      let data;
+      if (folderCache[path]) {
+        data = folderCache[path];
+      } else {
+        let apiPath = path.split('/').map(segment => encodeURIComponent(segment)).join('/');
+        const response = await fetch(GITHUB_API_BASE + apiPath);
+        if (!response.ok) throw new Error("Folder not found");
+        data = await response.json();
+        folderCache[path] = data; 
+      }
+
+      const folders = data.filter(item => item.type === 'dir');
+      const files = data.filter(item => item.type === 'file'); 
+      
+      if (folders.length === 0 && files.length === 0) {
+        contentDiv.innerHTML = `<div class="loader">Is folder mein abhi koi file nahi hai bhai!</div>`;
+        return;
+      }
+
+      let htmlString = '<div class="github-list">';
+      folders.forEach(folder => {
+        let cleanName = decodeURIComponent(folder.name).replace(/-/g, ' ');
+        htmlString += `
+          <div class="file-card-wrapper" onclick="openFolder('${folder.path.replace(/'/g, "\\'")}')" style="cursor:pointer">
+            <div class="github-item-row folder">
+              <div class="left"><i class="fa-solid fa-folder-closed"></i> ${cleanName}</div>
+              <i class="fa-solid fa-chevron-right" style="color:var(--text-secondary)"></i>
+            </div>
+          </div>
+        `;
+      });
+
+      files.forEach(file => {
+        let cleanTitle = decodeURIComponent(file.name).replace(/\.[^/.]+$/, "").replace(/-/g, ' '); 
+        let fileLink = `/${file.path}`; 
+        
+        let ext = file.name.split('.').pop().toLowerCase();
+        let isVideo = ['mp4','webm','avi','mov'].includes(ext);
+        let isPDF = ['pdf'].includes(ext);
+        let isQuizOrCode = ['html', 'htm', 'js', 'py', 'cpp', 'c', 'java'].includes(ext);
+        
+        let btnText = isQuizOrCode ? 'Start' : (isVideo ? 'Watch' : 'View');
+        
+        let iconStr = '<i class="fa-solid fa-file-lines" style="color:var(--text-secondary)"></i>';
+        if (isPDF) iconStr = '<i class="fa-solid fa-file-pdf" style="color:var(--accent-red)"></i>';
+        else if (['jpg','jpeg','png','gif','svg','webp'].includes(ext)) iconStr = '<i class="fa-solid fa-image" style="color:var(--accent-purple)"></i>';
+        else if (isVideo) iconStr = '<i class="fa-solid fa-video" style="color:var(--accent-blue)"></i>';
+        else if (['mp3','wav','ogg'].includes(ext)) iconStr = '<i class="fa-solid fa-music" style="color:var(--accent-gold)"></i>';
+        else if (isQuizOrCode) iconStr = '<i class="fa-solid fa-file-code" style="color:var(--accent-green)"></i>';
+
+        let normalizedFile = normalizeStringForMatch(file.name);
+        let matchingHistory = globalUserAttempts.map((att, i) => ({att, globalIdx: i})).filter(obj => {
+          return normalizeStringForMatch(obj.att.testName) === normalizedFile;
+        });
+
+        let historyHTML = '';
+        if (matchingHistory.length > 0) {
+          historyHTML += `<div class="attempts-row">`;
+          matchingHistory.forEach((obj, idx) => {
+            let colorClass = (idx === 0) ? 'att-1' : ((idx === 1) ? 'att-2' : 'att-3');
+            let dateOnly = obj.att.ts ? obj.att.ts.split(',')[0].toUpperCase() : '';
+            historyHTML += `
+              <div class="attempt-badge ${colorClass}" onclick="openDashboardSnap(${obj.globalIdx}); event.stopPropagation();">
+                <div class="att-title">Attempt ${idx + 1}</div>
+                <div class="att-score">${obj.att.score}</div>
+                <div class="att-date">${dateOnly}</div>
+              </div>
+            `;
+          });
+          historyHTML += `</div>`;
+        }
+
+        let clickAction = `href="${fileLink}"`; 
+        if (isVideo) {
+            clickAction = `onclick="event.preventDefault(); openMedia('${fileLink}', 'video', '${cleanTitle.replace(/'/g, "\\'")}')"`;
+        } else if (isPDF) {
+            clickAction = `onclick="event.preventDefault(); openMedia('${fileLink}', 'pdf', '${cleanTitle.replace(/'/g, "\\'")}')"`;
+        }
+
+        htmlString += `
+          <div class="file-card-wrapper">
+            <a ${clickAction} style="cursor:pointer;" class="github-item-row file">
+              <div class="left">${iconStr} <span style="text-transform:capitalize">${cleanTitle}</span></div>
+              <div class="btn-start">${btnText}</div>
+            </a>
+            ${historyHTML}
+          </div>
+        `;
+      });
+
+      htmlString += '</div>';
+      contentDiv.innerHTML = htmlString;
+
+    } catch (error) {
+      console.error(error);
+      contentDiv.innerHTML = `<div class="loader" style="color:var(--accent-red)"><i class="fa-solid fa-triangle-exclamation"></i><br>Error loading data. Path check kar bhai.</div>`;
+    }
+  }
+
+  function renderBreadcrumbs(path) {
+    const container = document.getElementById('breadcrumb-container');
+    const parts = path.split('/');
+    let breadcrumbHTML = `<span class="crumb" onclick="navigateHome()"><i class="fa-solid fa-house"></i> Home</span>`;
+    let currentPath = "";
+
+    parts.forEach((part, index) => {
+      if (!part) return;
+      currentPath += (currentPath === "" ? part : "/" + part);
+      let cleanName = decodeURIComponent(part).replace(/-/g, ' ');
+      breadcrumbHTML += ` <i class="fa-solid fa-angle-right" style="font-size:0.7rem"></i> `;
+      if (index === parts.length - 1) {
+        breadcrumbHTML += `<span style="color:var(--text-primary); font-weight:bold;">${cleanName}</span>`;
+      } else {
+        breadcrumbHTML += `<span class="crumb" onclick="openFolder('${currentPath.replace(/'/g, "\\'")}')">${cleanName}</span>`;
+      }
+    });
+    container.innerHTML = breadcrumbHTML;
+  }
+    </script> <div class="modal" id="saved-questions-modal">
+    <div class="result" style="max-width: 850px; padding:0; overflow:hidden; border-radius:18px;">
+      
+      <div style="background:linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); padding:20px 24px; display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0; font-weight:900; font-size:1.4rem; color:#fff; text-transform:uppercase; letter-spacing:1px;">
+          <i class="fa-solid fa-star" style="color:#FACC15;"></i> Weekly Saved Questions
+        </h3>
+        <button class="btn-modal" onclick="document.getElementById('saved-questions-modal').classList.remove('show')" style="background:rgba(0,0,0,0.3); color:#fff; padding:8px 16px; font-size:0.9rem; border-radius:8px; border:1px solid rgba(255,255,255,0.2);">Close <i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <div style="padding:16px 24px; background:var(--bg-nav); border-bottom:1px solid var(--border-color); display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <select id="savedWeekSelector" style="padding:10px 16px; background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-color); border-radius:8px; font-weight:bold; flex:1; outline:none; font-size:1rem; cursor:pointer;" onchange="renderSavedQuestionsList()">
+          <option value="">Loading Weeks...</option>
+        </select>
+        <button onclick="downloadSavedQs('txt')" style="background:var(--bg-card); color:var(--accent-gold); border:1px solid var(--border-color); padding:10px 16px; border-radius:8px; font-weight:900; font-size:0.9rem; cursor:pointer; transition:0.2s;"><i class="fa-solid fa-file-code"></i> Export TXT</button>
+        <button onclick="downloadSavedQs('html')" style="background:linear-gradient(90deg, var(--accent-red), #ff7675); color:#fff; border:none; padding:10px 16px; border-radius:8px; font-weight:900; font-size:0.9rem; cursor:pointer; box-shadow:0 4px 10px rgba(239, 68, 68, 0.3);"><i class="fa-solid fa-file-pdf"></i> Export HTML</button>
+      </div>
+
+      <div class="rev-wrap" id="savedQsListArea" style="padding:24px; max-height:65vh; background:var(--bg-main);"></div>
+    </div>
+  </div>
+
+  <script>
+  /* ====== SAVED QUESTIONS LOGIC ====== */
+  window.openSavedQuestionsModal = function() {
+      document.getElementById('saved-questions-modal').classList.add('show');
+      const selector = document.getElementById('savedWeekSelector');
+      selector.innerHTML = '';
+      
+      let weeks = Object.keys(window.globalSavedQsByWeek || {}).sort((a, b) => b - a);
+      if (weeks.length === 0) {
+          selector.innerHTML = '<option value="">No Saved Questions Yet</option>';
+          document.getElementById('savedQsListArea').innerHTML = `
+            <div style="text-align:center; color:var(--text-secondary); padding:50px 20px;">
+              <i class="fa-solid fa-star" style="font-size:4rem; margin-bottom:16px; opacity:0.1;"></i>
+              <h3 style="margin:0;">No Bookmarks Found!</h3>
+              <p style="font-size:0.9rem; margin-top:8px;">Attempt tests and 'Save Q' tricky questions to build your revision bank.</p>
+            </div>`;
+          return;
+      }
+
+      weeks.forEach(ts => {
+          let opt = document.createElement('option');
+          opt.value = ts;
+          opt.textContent = "Week: " + formatWeekLabel(ts);
+          selector.appendChild(opt);
+      });
+      renderSavedQuestionsList();
+  };
+
+  window.renderSavedQuestionsList = function() {
+      const selectedTs = document.getElementById('savedWeekSelector').value;
+      const listArea = document.getElementById('savedQsListArea');
+      
+      if (!selectedTs || !window.globalSavedQsByWeek[selectedTs] || window.globalSavedQsByWeek[selectedTs].length === 0) {
+          listArea.innerHTML = ''; return;
+      }
+      
+      let qs = window.globalSavedQsByWeek[selectedTs];
+      let html = '';
+      
+      qs.forEach((item, index) => {
+          let optHTML = '';
+          item.o.forEach((optText, oIdx) => {
+              let cls = 'rev-opt';
+              if(oIdx === item.a) cls += ' correct';
+              optHTML += `<div class="${cls}"><div>${String.fromCharCode(65+oIdx)}) ${optText}</div></div>`;
+          });
+
+          let exactDate = item.savedAt ? item.savedAt.toDate().toLocaleString('en-IN', {day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit'}) : '';
+
+          html += `
+              <div style="background:var(--bg-card); padding:20px; border:1px solid var(--border-color); border-radius:14px; margin-bottom:20px; box-shadow:0 6px 12px rgba(0,0,0,0.15);">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:12px; align-items:center; border-bottom:1px dashed rgba(255,255,255,0.1); padding-bottom:8px;">
+                      <div style="font-size:0.8rem; color:var(--accent-gold); font-weight:900; text-transform:uppercase;"><i class="fa-solid fa-tag"></i> ${item.testName || 'Practice Set'}</div>
+                      <div style="font-size:0.75rem; color:var(--text-secondary); font-weight:600;"><i class="fa-regular fa-clock"></i> ${exactDate}</div>
+                  </div>
+                  <div class="q" style="font-size:1.1rem; font-weight:600; margin-bottom:16px;"><b>Q${index + 1}.</b> ${item.q}</div>
+                  <div style="margin-bottom:16px;">${optHTML}</div>
+                  <div class="sol" style="display:block; margin-top:0; background:rgba(16,185,129,0.1); border:none; border-left:4px solid var(--ok); padding:16px; border-radius:8px; font-size:0.95rem;">
+                      <b><i class="fa-solid fa-lightbulb"></i> Solution:</b><br>${item.s || 'No solution provided.'}
+                  </div>
+              </div>
+          `;
+      });
+      listArea.innerHTML = html;
+      
+      if (window.renderMathInElement) {
+          renderMathInElement(listArea, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
+      }
+  };
+
+    window.downloadSavedQs = function(format) {
+      const selectedTs = document.getElementById('savedWeekSelector').value;
+      if (!selectedTs || !window.globalSavedQsByWeek[selectedTs]) {
+          alert("Koi questions nahi hain export karne ke liye!"); 
+          return;
+      }
+      
+      let qs = window.globalSavedQsByWeek[selectedTs];
+      
+      // formatWeekLabel function upar mistake journal me define kiya tha, wahi use hoga
+      let weekLabel = formatWeekLabel(selectedTs);
+      let fileName = `${weekLabel}-Week-Saved`;
+
+      if (format === 'txt') {
+          // TXT EXPORT: Engine me dalne ke liye exact JSON format
+          let exportData = qs.map(item => ({
+              q: item.q,
+              o: item.o,
+              a: item.a,
+              s: item.s || ''
+          }));
+          let dataStr = JSON.stringify(exportData, null, 2);
+          let blob = new Blob([dataStr], {type: "text/plain;charset=utf-8"});
+          let url = URL.createObjectURL(blob);
+          let a = document.createElement('a');
+          a.href = url;
+          a.download = `${fileName}.txt`;
+          a.click();
+          URL.revokeObjectURL(url);
+          
+      } else if (format === 'html') {
+          // HTML EXPORT: Mistake Journal jaisa premium self-contained format
+          let htmlContent = `
+          <!DOCTYPE html><html><head><meta charset="utf-8"><title>${fileName}</title>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"><\/script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters:[{left:'$$', right:'$$', display:true},{left:'$', right:'$', display:false},{left:'\\\\(', right:'\\\\)', display:false},{left:'\\\\[', right:'\\\\]', display:true}], throwOnError:false});"><\/script>
+
+          <style>
+            body{font-family:sans-serif; background:#0B0E14; color:#fff; padding:20px; max-width:800px; margin:auto;}
+            h1{color:#A3E635; text-align:center; text-transform:uppercase;}
+            .q-card{background:#151A22; border:1px solid #1E293B; border-radius:12px; padding:20px; margin-bottom:20px;}
+            .meta{color:#FACC15; font-size:0.85rem; font-weight:bold; margin-bottom:10px;}
+            .q{font-size:1.1rem; margin-bottom:12px;}
+            .opt{padding:10px; border:2px solid #1E293B; border-radius:8px; margin-bottom:8px; background:rgba(255,255,255,0.03);}
+            .opt.correct{border-color:#10B981; background:rgba(16,185,129,0.1);}
+            .sol{margin-top:15px; background:rgba(16,185,129,0.1); border-left:4px solid #10B981; padding:12px; border-radius:6px;}
+          </style></head><body>
+          <h1>${fileName.replace(/-/g, ' ')}</h1><p style="text-align:center; color:#94A3B8;">Your Saved Arsenal, Warrior! 🔥</p>
+          `;
+
+          qs.forEach((item, index) => {
+              let optsHTML = '';
+              item.o.forEach((optText, oIdx) => {
+                  let cls = 'opt';
+                  if(oIdx === item.a) cls += ' correct';
+                  optsHTML += `<div class="${cls}"><b>${String.fromCharCode(65+oIdx)})</b> ${optText}</div>`;
+              });
+              
+              let dateStr = item.savedAt ? item.savedAt.toDate().toLocaleDateString('en-IN') : '';
+              
+              htmlContent += `
+              <div class="q-card">
+                  <div class="meta">${item.testName || 'Practice Set'} | ${dateStr} | <span style="color:#3B82F6">[Saved]</span></div>
+                  <div class="q"><b>Q${index+1}.</b> ${item.q}</div>
+                  ${optsHTML}
+                  <div class="sol"><b>Solution:</b><br>${item.s || 'No solution provided.'}</div>
+              </div>`;
+          });
+          
+          htmlContent += `</body></html>`;
+          
+          const blob = new Blob([htmlContent], {type: 'text/html;charset=utf-8'});
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.download = `${fileName}.html`;
+          a.href = url;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+      }
+  };
+</script>
+</body>
+</html>
