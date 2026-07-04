@@ -1,0 +1,19 @@
+{
+  "quizTitle": "CGL Mini Mock - English Only",
+  "quizTime": 10,
+  "totalMarks": 4,
+  "questions": [
+    {
+      "q": "Find the unit digit of $7^{105}$.",
+      "o": ["5", "7", "9", "1"],
+      "a": 1,
+      "s": "Cyclicity of 7 is 4. $105 = 4 \\times 26 + 1$. So, $7^1 = 7$."
+    },
+    {
+      "q": "Select the correct active form: 'The window was broken by the boys.'",
+      "o": ["The boys break the window.", "The boys broke the window.", "The boys had broken the window.", "The boys are breaking the window."],
+      "a": 1,
+      "s": "Simple Past tense passive 'was broken' changes to active V2 'broke'."
+    }
+  ]
+}
