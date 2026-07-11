@@ -2,477 +2,281 @@
   "quizTitle": "Number-System-Set-12",
   "quizTime": 18,
   "totalMarks": 50,
-  "questions":[
-{
-"q": "How many divisors of 10^5 are NOT divisible by 10?",
-"o": [
-"11",
-"21",
-"25",
-"15"
-],
-"a": 0,
-"s": "<b>Answer is 11.</b>
-
-<b>Pen-Free Observation:</b> Dekh bhai, Total divisors nikal ke, unn divisors ko subtract karna hai jo 10 ke multiples hain. Basic prime factorization lagana hai.
-
-<b>Method 1 (Ninja Technique / Exam Approach):</b>
-Number N = 10^5 = 2^5 \times 5^5.
-Total Divisors = (5+1)(5+1) = 36.
-Divisors divisible by 10: Isme se ek '10' bahar nikal le. 10 \times (2^4 \times 5^4).
-Iske divisors hue (4+1)(4+1) = 25.
-Not divisible by 10 = 36 - 25 = 11.
-
-<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept Builder</th><th style='text-align:left;padding:4px;color:var(--p2)'>Formula</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Total Factors</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>If N = a^p \times b^q, Factors = (p+1)(q+1)</td></tr></table>
-<b>Takeaway:</b> Hamesha jo nikalna ho (like multiple of 10, 12 etc), usko factorize karke equation ke bahar common le lo."
-},
-{
-"q": "The square of any prime number greater than 3, when divided by 24, always leaves a remainder of:",
-"o": [
-"1",
-"2",
-"3",
-"5"
-],
-"a": 0,
-"s": "<b>Answer is 1.</b>
-
-<b>Pen-Free Observation:</b> 3 se bada koi bhi prime number assume karle, jaise 5 ya 7. Square kar aur 24 se divide kar. 25/24 rem 1, 49/24 rem 1. Khel khatam!
-
-<b>Method 2 (Concept Builder):</b>
-Koi bhi prime number >3 humesha 6k \pm 1 ki form mein hota hai.
-Square it: (6k \pm 1)^2 = 36k^2 \pm 12k + 1 = 12k(3k \pm 1) + 1.
-Ab dekh bhai, k(3k \pm 1) hamesha even hoga (put k=1,2,3...). Matlab yeh poori term 12 \times \text{even} = 24m ban jayegi.
-So, 24m + 1 ko 24 se divide karega toh Remainder strictly 1 aayega."
-},
-{
-"q": "If the 8-digit number 6913x08y is divisible by 88, find the minimum possible value of (x + y).",
-"o": [
-"13",
-"2",
-"8",
-"11"
-],
-"a": 1,
-"s": "<b>Answer is 2.</b>
-
-<b>Pen-Free Observation:</b> Dekh bhai, 88 ka matlab 8 aur 11 ka divisibility rule. 8 ke liye aakhri 3 digit (08y) dekh, aur 11 ke liye alternating sum.
-
-<b>Method 1 (Ninja Technique):</b>
-For 8: 08y divisible by 8. So y can be 0 or 8.
-For 11: Sum of odd places - Sum of even places.
-(y + x + 1 + 6) - (8 + 0 + 3 + 9) = x + y - 13.
-For div by 11, (x + y - 13) must be 0, 11, or -11.
-Case 1: Let y = 0. Then x - 13 = -11 \implies x = 2. Therefore, x + y = 2 + 0 = 2.
-Case 2: Let y = 8. Then x + 8 - 13 = 0 \implies x - 5 = 0 \implies x = 5. Therefore, x + y = 13.
-Question ne minimum poocha hai, toh minimum value 2 hogi."
-},
-{
-"q": "The difference between the cubes of two given natural numbers is 6272, while the positive difference between the two given numbers is 8. What is the sum of the cubes of the two given numbers?",
-"o": [
-"9728",
-"9684",
-"8000",
-"9600"
-],
-"a": 0,
-"s": "<b>Answer is 9728.</b>
-
-<b>Pen-Free Observation:</b> SSC pre ka pet question hai. Formulas ka direct application. (a-b)^3 waali identity dimaag mein aani chahiye.
-
-<b>Method 1 (Concept Builder):</b>
-Given: a^3 - b^3 = 6272 and a - b = 8.
-Formula: a^3 - b^3 = (a-b)[(a-b)^2 + 3ab]
-Substitute kar: 6272 = 8 [64 + 3ab]
-\implies 784 = 64 + 3ab \implies 3ab = 720 \implies ab = 240.
-Numbers jinka difference 8 ho aur product 240, woh mentally socho: 20 aur 12.
-Sum of cubes: 20^3 + 12^3 = 8000 + 1728 = 9728."
-},
-{
-"q": "How many natural numbers are there between 1000 to 2000, which when divided by 341 leaves remainder 5?",
-"o": [
-"3",
-"2",
-"4",
-"1"
-],
-"a": 0,
-"s": "<b>Answer is 3.</b>
-
-<b>Pen-Free Observation:</b> Dekh bhai, basic linear range ka sawal hai. Form hamesha N = Dk + R hoti hai.
-
-<b>Method 1 (Ninja Technique):</b>
-Format of number: N = 341k + 5
-Range limit: 1000 \le 341k + 5 \le 2000
-\implies 995 \le 341k \le 1995
-Multiplier check kar: 
-k = 3 \implies 1023 (Valid)
-k = 4 \implies 1364 (Valid)
-k = 5 \implies 1705 (Valid)
-k = 6 \implies 2046 (Crosses 2000, invalid).
-Strictly 3 numbers satisfy kar rahe hain."
-},
-{
-"q": "What is the remainder when 14! is divided by 17?",
-"o": [
-"1",
-"8",
-"16",
-"0"
-],
-"a": 1,
-"s": "<b>Answer is 8.</b>
-
-<b>Pen-Free Observation:</b> Factorial aur Prime Divisor ka combination dekhte hi Wilson's Theorem yaad aani chahiye. 5 second ka sawaal hai!
-
-<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept Builder</th><th style='text-align:left;padding:4px;color:var(--p2)'>Wilson's Theorem</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Rule</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>(P-1)! \equiv -1 \pmod{P}</td></tr></table>
-<b>Method 1 (Ninja Technique):</b>
-Using Wilson's, 16! \equiv -1 \pmod{17}.
-Expand kar backward: 16 \times 15 \times 14! \equiv -1 \pmod{17}.
-Mod 17 mein, 16 \equiv -1 aur 15 \equiv -2.
-So, (-1) \times (-2) \times 14! \equiv -1 \implies 2 \times 14! \equiv -1.
-Ab -1 ko 16 (since 17-1=16) likh sakte hain.
-2 \times 14! = 16 \implies 14! \equiv 8 \pmod{17}."
-},
-{
-"q": "Find the number of ways in which 1200 can be resolved as a product of two factors.",
-"o": [
-"12",
-"15",
-"14",
-"30"
-],
-"a": 1,
-"s": "<b>Answer is 15.</b>
-
-<b>Pen-Free Observation:</b> Product of two factors nikalna ho toh bas Total Factors nikal kar half (divide by 2) kar do (if it's not a perfect square).
-
-<b>Method 1 (Exam Approach):</b>
-Prime factorization of 1200: 12 \times 100 = (2^2 \times 3) \times (2^2 \times 5^2) = 2^4 \times 3^1 \times 5^2.
-Total number of factors = (4+1)(1+1)(2+1) = 5 \times 2 \times 3 = 30.
-Number of ways to resolve as product of 2 factors = 30 / 2 = 15 pairs. Straight hit, no calculation!"
-},
-{
-"q": "Find the sum of 6 + 8 + 10 + 12 + 14 + ... + 40.",
-"o": [
-"424",
-"1600",
-"400",
-"414"
-],
-"a": 3,
-"s": "<b>Answer is 414.</b>
-
-<b>Pen-Free Observation:</b> Even numbers ki simple AP (Arithmetic Progression) series hai. First term aur last term pata hai, toh \frac{n}{2} (a+l) lagana best hai.
-
-<b>Method 1 (Ninja Technique):</b>
-Number of terms n = \frac{\text{Last} - \text{First}}{\text{Difference}} + 1 = \frac{40 - 6}{2} + 1 = 17 + 1 = 18 terms.
-Sum = \frac{n}{2} \times (a + l) = \frac{18}{2} \times (6 + 40) = 9 \times 46.
-Unit digit check: 9 \times 6 = 54, aakhri digit 4 aayega. Options me 424, 400, 414 hain. 9 \times 46 = 414 direct leap. JSM/Deviation lagane ki zaroorat nahi yahan!"
-},
-{
-"q": "On dividing the numbers 6453 and 1676 by a three digit number M, the same remainder is obtained. Then, find the sum of the digits of the number M.",
-"o": [
-"7",
-"9",
-"10",
-"11"
-],
-"a": 3,
-"s": "<b>Answer is 11.</b>
-
-<b>Pen-Free Observation:</b> Dekh bhai, jab bhi 'same remainder' ka case ho, HCF/Difference method kaam aata hai. Dono numbers ka difference le lo, wo M ka exact multiple hoga.
-
-<b>Method 1 (Ninja Technique):</b>
-Difference = 6453 - 1676 = 4777.
-Number M (3-digit) is 4777 ka factor hona chahiye. 4777 kisse divide hota hai? Prime test kar: 17 se try kar.
-4777 = 17 \times 281.
-Since M ek 3-digit number hai, M strictly 281 hoga.
-Sum of digits of M = 2 + 8 + 1 = 11."
-},
-{
-"q": "Four bells ring simultaneously at starting and an interval of 6 sec, 12 sec, 15 sec and 20 sec respectively. How many times they ring together in 2 hours?",
-"o": [
-"120",
-"60",
-"121",
-"112"
-],
-"a": 2,
-"s": "<b>Answer is 121.</b>
-
-<b>Pen-Free Observation:</b> Bhai isme exam setter bachcho ko hamesha '+1' wale trap me fansata hai. 'Simultaneously at starting' bola hai, matlab 0th second wala bhi count hoga.
-
-<b>Method 1 (Exam Approach):</b>
-LCM of intervals (6, 12, 15, 20) = 60 seconds (1 minute).
-Matlab har 1 minute baad sab ek saath bajeingi.
-Total time = 2 hours = 120 minutes.
-Number of intervals = \frac{120}{1} = 120.
-Total times they ring together = 120 + 1 \text{ (starting wali)} = 121."
-},
-{
-"q": "If 432 / n leaves a remainder of 12, then find the number of possible integral values of n.",
-"o": [
-"14",
-"15",
-"16",
-"17"
-],
-"a": 1,
-"s": "<b>Answer is 15.</b>
-
-<b>Pen-Free Observation:</b> Agar remainder 12 aa raha hai, iska seedha matlab hai ki divisor n hamesha remainder se bada hoga (n > 12) aur 432 - 12 = 420 ko exactly divide karega.
-
-<b>Method 1 (Concept Builder):</b>
-Target number = 420. Hamein iske factors chahiye jo 12 se bade hon.
-Prime factorization: 420 = 42 \times 10 = 2^2 \times 3^1 \times 5^1 \times 7^1.
-Total factors of 420 = (2+1)(1+1)(1+1)(1+1) = 3 \times 2 \times 2 \times 2 = 24.
-Factors jo 12 ya usse chote hain, unko hata de: 1, 2, 3, 4, 5, 6, 7, 10, 12 (Total 9 invalid factors).
-Valid values of n = 24 - 9 = 15."
-},
-{
-"q": "The sum of a rational number and an irrational number is always:",
-"o": [
-"Rational",
-"Irrational",
-"Can be either",
-"Integer"
-],
-"a": 1,
-"s": "<b>Answer is Irrational.</b>
-
-<b>Pen-Free Observation:</b> CDS ka pet theoretical statement. Dekh bhai, ek pure paani ka glass (Rational) me ek boond keechad (Irrational) dalega toh result keechad (Irrational) hi rahega.
-
-<b>Concept Definition:</b> By mathematical axioms, combination (sum/difference) of any rational (p/q) and irrational (non-terminating, non-repeating) strictly and invariably resolves to an Irrational number. Option B mark kar aur aage badh!"
-},
-{
-"q": "Find the unit digit of 348^{114^{115^{116}}}.",
-"o": [
-"2",
-"4",
-"6",
-"8"
-],
-"a": 2,
-"s": "<b>Answer is 6.</b>
-
-<b>Pen-Free Observation:</b> Dekh bhai, power tower dekh kar ghabrana nahi hai. Base ka unit digit 8 hai. Humein bas check karna hai ki power 4 ka multiple hai ya nahi.
-
-<b>Method 1 (Ninja Technique):</b>
-Power = 114^{115^{116}}. Yeh clearly ek even number hai kyunki base 114 even hai.
-Kya yeh 4 se divide hota hai? 114 = 4k + 2.
-So, (4k+2)^{\text{power > 1}}. Koi bhi number jo 2 (mod 4) ho, uski power 2 ya usse badi karne par wo hamesha 4 ka multiple ban jata hai (e.g., 2^2=4, 6^2=36).
-Matlab, poori power perfectly divisible by 4 hai.
-Toh 8^4 projection use kar. 8 \times 8 \times 8 \times 8 \implies 4 \times 4 = 16. Terminal digit is strictly 6."
-},
-{
-"q": "What is the remainder when 11^{11} + 12^{12} + 13^{13} + 14^{14} is divided by 10?",
-"o": [
-"6",
-"2",
-"4",
-"8"
-],
-"a": 0,
-"s": "<b>Answer is 6.</b>
-
-<b>Pen-Free Observation:</b> 'Divided by 10' ka simple matlab hota hai 'Unit Digit nikalna'. Ye trick words the examiner ke. Bas sabka individual unit digit nikal kar add kar de.
-
-<b>Method 1 (Exam Approach):</b>
-11^{11} \implies unit digit 1.
-12^{12} \implies power 12 is divisible by 4. So 2^4 \implies unit digit 6.
-13^{13} \implies power 13 / 4, rem 1. So 3^1 \implies unit digit 3.
-14^{14} \implies 4 ki power even hai, toh hamesha 6 aata hai.
-Sum them up: 1 + 6 + 3 + 6 = 16. Last digit 6 hai. Mod 10 strictly resolves to 6."
-},
-{
-"q": "Find the least common multiple of 1.2 and 2.7?",
-"o": [
-"5.4",
-"10.8",
-"32.4",
-"7.08"
-],
-"a": 1,
-"s": "<b>Answer is 10.8.</b>
-
-<b>Pen-Free Observation:</b> Decimals ka LCM nikalne me bache aksar fraction 12/10 aur 27/10 bana kar fans jate hain. Standard ninja technique lagao: decimal places equalize karo aur integers ki tarah treat karo.
-
-<b>Method 1 (Ninja Technique):</b>
-Numbers hain 1.2 and 2.7. Point bhool ja, 12 aur 27 treat kar.
-LCM(12, 27): 27 \times 4 = 108.
-Ab original equation me ek decimal place tha, toh LCM me bhi wapas 1 decimal place laga de.
-Final Output = 10.8. Khatam!"
-},
-{
-"q": "Using the 1024 rule and CRT, find the last two digits of 2^{999}.",
-"o": [
-"68",
-"88",
-"28",
-"48"
-],
-"a": 1,
-"s": "<b>Answer is 88.</b>
-
-<b>Pen-Free Observation:</b> Last two digits wale chapter ka pro-hack! 2^{10} = 1024. Iske end me 24 aata hai. 24 ki odd power hamesha 24 me end hoti hai, aur even power hamesha 76 me end hoti hai.
-
-<b>Method 1 (Concept Builder):</b>
-Split 2^{999} as 2^{990} \times 2^9.
-Now 2^{990} = (2^{10})^{99}. Since 99 is ODD, last two digits of this part will be 24.
-Second part 2^9 = 512. Iske last two digits hain 12.
-Final product = 24 \times 12 = 288. Terminal digits lock strictly at 88."
-},
-{
-"q": "What is the Remainder of 21^201 / 400?",
-"o": [
-"21",
-"61",
-"39",
-"None of these"
-],
-"a": 0,
-"s": "<b>Answer is 21.</b>
-
-<b>Pen-Free Observation:</b> Dekh bhai, base 21 aur divisor 400 dekhte hi dimaag me 20+1 chamakna chahiye. Binomial Expansion ka direct application hai.
-
-<b>Method 1 (Ninja Technique):</b>
-Number ko (20+1)^{201} me tod de.
-Binomial expansion me aakhri 2 terms chhod kar baki sabme 20^2 = 400 aayega, jo ki totally divisible by 400 hoga.
-Bachi aakhri do terms: ^{201}C_1 (20)^1 (1)^{200} + ^{201}C_0 (20)^0 (1)^{201}
-= (201 \times 20) + 1 = 4020 + 1 = 4021.
-Ab 4021 ko 400 se divide karega toh naturally 4000 kat jayega, strictly 21 bachega."
-},
-{
-"q": "Raj wants to type first 200 natural numbers. Find out the number of times he has to press the keys.",
-"o": [
-"492",
-"489",
-"490",
-"491"
-],
-"a": 0,
-"s": "<b>Answer is 492.</b>
-
-<b>Pen-Free Observation:</b> Typewriter/keystroke ke sawaal range segmentation se hote hain. 1-digit, 2-digit aur 3-digit ke bundles alag-alag count kar.
-
-<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Segment</th><th style='text-align:left;padding:4px;color:var(--p2)'>Calculation</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1 to 9</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>9 numbers \times 1 = 9 keys</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>10 to 99</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>90 numbers \times 2 = 180 keys</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>100 to 200</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>101 numbers \times 3 = 303 keys</td></tr></table>
-<b>Takeaway:</b> Direct leap karo, sum it up: 9 + 180 + 303 = 492 keystrokes."
-},
-{
-"q": "Find the remainder when 55^{55^{55}} is divided by 14.",
-"o": [
-"1",
-"5",
-"9",
-"13"
-],
-"a": 3,
-"s": "<b>Answer is 13.</b>
-
-<b>Pen-Free Observation:</b> Jab negative remainder chamak jaye na, toh maths aasan ho jati hai. 14 \times 4 = 56, toh 55 base ko mod 14 me -1 likh sakte hain.
-
-<b>Method 1 (Ninja Technique):</b>
-Base = 55 \equiv -1 \pmod{14}.
-Power = 55^{55} jo ki clearly ek odd number hai.
-So equation ban jayegi: (-1)^{\text{odd}} = -1.
-Remainder hamesha positive hona chahiye, so structurally -1 + 14 = 13 yields the final result."
-},
-{
-"q": "If 0.x\overline{yz} + 0.y\overline{zx} + 0.z\overline{xy} = \frac{154}{99}, find the value of x+y+z.",
-"o": [
-"14",
-"16",
-"17",
-"18"
-],
-"a": 0,
-"s": "<b>Answer is 14.</b>
-
-<b>Pen-Free Observation:</b> Dekh bhai, SSC CGL ke iss repeating decimal pattern mein hamesha symmetry hoti hai. Basic expansion se x+y+z common aa jata hai.
-
-<b>Method 1 (Concept Builder):</b>
-Fraction conversion map kar:
-0.x\overline{yz} = \frac{xyz - x}{990} = \frac{100x + 10y + z - x}{990} = \frac{99x + 10y + z}{990}.
-Symmetrically teeno ko add karega toh aayega: \frac{110x + 110y + 110z}{990}.
-Common nikal: \frac{110(x+y+z)}{990} = \frac{x+y+z}{9}.
-Equation given hai: \frac{x+y+z}{9} = \frac{154}{99}.
-Toh \frac{x+y+z}{9} = \frac{14}{9} \implies x+y+z = 14."
-},
-{
-"q": "The sum of two number is 50 and their product is 525. The LCM of the two numbers is?",
-"o": [
-"85",
-"105",
-"115",
-"125"
-],
-"a": 1,
-"s": "<b>Answer is 105.</b>
-
-<b>Pen-Free Observation:</b> Equations banane ki jagah hit and trial aur common sense lagao. 525 ke last me 25 hai, matlab ek number 25 ya 15 type ka hoga. 35 \times 15 exactly 525 aur inka sum 50 deta hai.
-
-<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Step</th><th style='text-align:left;padding:4px;color:var(--p2)'>Application</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Root Synthesis</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Numbers are 35 and 15</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>LCM Logic</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>35 = 5 \times 7, 15 = 3 \times 5</td></tr></table>
-<b>Method 1 (Ninja Technique):</b>
-LCM aayega 3 \times 5 \times 7 = 105. Straight equation leap thi yeh!"
-},
-{
-"q": "What is the digit at the 100th place of the number (225)^{40}?",
-"o": [
-"6",
-"5",
-"4",
-"2"
-],
-"a": 0,
-"s": "<b>Answer is 6.</b>
-
-<b>Pen-Free Observation:</b> 100th place matlab last 3 digits nikalne hain, so we need (225)^{40} \pmod{1000}. CGL/CDS ka advance level remainder concept hai.
-
-<b>Method 1 (Concept Builder):</b>
-Number = (15^2)^{40} = 15^{80}.
-Mod 1000 nikalne ke liye CRT lagate hain (1000 = 125 \times 8).
-Part 1: 15^{80} \pmod{125} \implies (3 \times 5)^{80} \implies 5 ki power 80 hai toh obviously 125 se divisible hoga, so remainder is 0.
-Part 2: 15^{80} \pmod 8 \implies (-1)^{80} = 1.
-So number N 125 ka aesa multiple hai jo 8 se divide karne par 1 remainder de. Multiples check kar: 125(rem 5), 250(rem 2), 375(rem 7), 500(rem 4), 625(rem 1).
-Match mil gaya! Terminal triad (last 3 digits) is 625. Toh 100th place (hundreds digit) naturally 6 hai."
-},
-{
-"q": "Using remainder theorem to find unit digit: What is the remainder when 17^{2026} is divided by 10?",
-"o": [
-"1",
-"3",
-"7",
-"9"
-],
-"a": 3,
-"s": "<b>Answer is 9.</b>
-
-<b>Pen-Free Observation:</b> Bhai, 'divided by 10' ka mathematical translation simply 'Unit Digit batao' hota hai. 17 ka base 7 check kar.
-
-<b>Method 1 (Ninja Technique):</b>
-Base = 7. Power cyclicity hamesha 4 ki hoti hai.
-Divide power 2026 by 4. Aakhri 2 digit 26 ko 4 se divide kar, remainder 2 aayega.
-Toh cycle remnant yields 7^2 = 49. Terminal digit strictly guarantees 9 as the answer."
-},
-{
-"q": "What is the remainder when 1! + 2! + 3! + \dots + 1000! is divided by 18?",
-"o": [
-"0",
-"9",
-"12",
-"15"
-],
-"a": 1,
-"s": "<b>Answer is 9.</b>
-
-<b>Pen-Free Observation:</b> Series of factorials mei hamesha ek collapse point dhundho jahan se terms perfectly divisible ho jayein. 18 banane ke liye 9 \times 2 chahiye.
-
-<b>Method 1 (Ninja Technique):</b>
-Notice kar ki 6! = 720, jo ki 18 se perfectly divide hota hai. Toh 6! aur uske aage saare aane wale factorials (7!, 8!, \dots) me bhi 18 chupa hoga. Un sabka remainder zero ho gaya.
-Game bas pehle 5 terms me bacha: 1! + 2! + 3! + 4! + 5! = 1 + 2 + 6 + 24 + 120 = 153.
-Ab 153 ko 18 se divide kar de. 18 \times 8 = 144.
-Active remainder strictly collapses to 153 - 144 = 9."
-}
-]
+  "questions": [
+    {
+      "q": "Find the unit digit of $37^{38^{39}} + 39^{38^{37}}$.",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 2.</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, power ki bhi power hai! Ghabrana nahi hai. Unit digit hamesha base ke aakhri digit aur power ki cyclicity (4) par depend karta hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>1st term $37^{38^{39}}$: Base 7 hai. Power $38^{39}$ ek even number hai. Agar 38 ko 4 se divide karein toh remainder 2 aayega. Toh $(4k+2)^{\\text{odd}} \\implies$ hamesha 4 ka multiple hoga. Matlab power perfectly divisible by 4. $7^4$ ka unit digit hamesha 1 hota hai.<br>2nd term $39^{38^{37}}$: Base 9 hai. Power $38^{37}$ even number hai. 9 ki power even ho toh unit digit hamesha 1 aata hai.<br>Total sum: $1 + 1 = 2$.<br><br><b>Takeaway:</b> SSC CGL Mains me aese hi darate hain, bas cyclicity ka rule yaad rakhna!"
+    },
+    {
+      "q": "How many divisors of $10^5$ are NOT divisible by 10?",
+      "o": [
+        "11",
+        "21",
+        "25",
+        "15"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 11.</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, Total divisors nikal ke, unn divisors ko subtract karna hai jo 10 ke multiples hain. Basic prime factorization lagana hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Number $N = 10^5 = 2^5 \\times 5^5$.<br>Total Divisors = $(5+1)(5+1) = 36$.<br>Divisors divisible by 10: Isme se ek '10' bahar nikal le. $10 \\times (2^4 \\times 5^4)$.<br>Iske divisors hue $(4+1)(4+1) = 25$.<br>Not divisible by 10 = $36 - 25 = 11$.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept Builder</th><th style='text-align:left;padding:4px;color:var(--p2)'>Formula</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Total Factors</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>If $N = a^p \\times b^q$, Factors = $(p+1)(q+1)$</td></tr></table><br><b>Takeaway:</b> Hamesha jo nikalna ho (like multiple of 10, 12 etc), usko factorize karke equation ke bahar common le lo."
+    },
+    {
+      "q": "The square of any prime number greater than 3, when divided by 24, always leaves a remainder of:",
+      "o": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 1.</b><br><br><b>Pen-Free Observation:</b> 3 se bada koi bhi prime number assume karle, jaise 5 ya 7. Square kar aur 24 se divide kar. $25/24$ rem 1, $49/24$ rem 1. Khel khatam!<br><br><b>Method 2 (Concept Builder):</b><br>Koi bhi prime number $>3$ humesha $6k \\pm 1$ ki form mein hota hai.<br>Square it: $(6k \\pm 1)^2 = 36k^2 \\pm 12k + 1 = 12k(3k \\pm 1) + 1$.<br>Ab dekh bhai, $k(3k \\pm 1)$ hamesha even hoga (put $k=1,2,3...$). Matlab yeh poori term $12 \\times \\text{even} = 24m$ ban jayegi.<br>So, $24m + 1$ ko 24 se divide karega toh Remainder strictly 1 aayega."
+    },
+    {
+      "q": "If the 8-digit number $6913x08y$ is divisible by 88, find the minimum possible value of $(x + y)$.",
+      "o": [
+        "13",
+        "2",
+        "8",
+        "11"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 2.</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, 88 ka matlab 8 aur 11 ka divisibility rule. 8 ke liye aakhri 3 digit ($08y$) dekh, aur 11 ke liye alternating sum.<br><br><b>Method 1 (Ninja Technique):</b><br>For 8: $08y$ divisible by 8. So $y$ can be $0$ or $8$.<br>For 11: Sum of odd places - Sum of even places.<br>$(y + x + 1 + 6) - (8 + 0 + 3 + 9) = x + y - 13$.<br>For div by 11, $(x + y - 13)$ must be $0, 11,$ or $-11$.<br>Case 1: Let $y = 0$. Then $x - 13 = -11 \\implies x = 2$. Therefore, $x + y = 2 + 0 = 2$.<br>Case 2: Let $y = 8$. Then $x + 8 - 13 = 0 \\implies x - 5 = 0 \\implies x = 5$. Therefore, $x + y = 13$.<br>Question ne minimum poocha hai, toh minimum value 2 hogi."
+    },
+    {
+      "q": "The difference between the cubes of two given natural numbers is 6272, while the positive difference between the two given numbers is 8. What is the sum of the cubes of the two given numbers?",
+      "o": [
+        "9728",
+        "9684",
+        "8000",
+        "9600"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 9728.</b><br><br><b>Pen-Free Observation:</b> SSC pre ka pet question hai. Formulas ka direct application. $(a-b)^3$ waali identity dimaag mein aani chahiye.<br><br><b>Method 1 (Concept Builder):</b><br>Given: $a^3 - b^3 = 6272$ and $a - b = 8$.<br>Formula: $a^3 - b^3 = (a-b)[(a-b)^2 + 3ab]$<br>Substitute kar: $6272 = 8 [64 + 3ab]$<br>$\\implies 784 = 64 + 3ab \\implies 3ab = 720 \\implies ab = 240$.<br>Numbers jinka difference 8 ho aur product 240, woh mentally socho: 20 aur 12.<br>Sum of cubes: $20^3 + 12^3 = 8000 + 1728 = 9728$."
+    },
+    {
+      "q": "How many natural numbers are there between 1000 to 2000, which when divided by 341 leaves remainder 5?",
+      "o": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 3.</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, basic linear range ka sawal hai. Form hamesha $N = Dk + R$ hoti hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Format of number: $N = 341k + 5$<br>Range limit: $1000 \\le 341k + 5 \\le 2000$<br>$\\implies 995 \\le 341k \\le 1995$<br>Multiplier check kar: <br>$k = 3 \\implies 1023$ (Valid)<br>$k = 4 \\implies 1364$ (Valid)<br>$k = 5 \\implies 1705$ (Valid)<br>$k = 6 \\implies 2046$ (Crosses 2000, invalid).<br>Strictly 3 numbers satisfy kar rahe hain."
+    },
+    {
+      "q": "What is the remainder when 14! is divided by 17?",
+      "o": [
+        "1",
+        "8",
+        "16",
+        "0"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 8.</b><br><br><b>Pen-Free Observation:</b> Factorial aur Prime Divisor ka combination dekhte hi Wilson's Theorem yaad aani chahiye. 5 second ka sawaal hai!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept Builder</th><th style='text-align:left;padding:4px;color:var(--p2)'>Wilson's Theorem</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Rule</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$(P-1)! \\equiv -1 \\pmod{P}$</td></tr></table><br><b>Method 1 (Ninja Technique):</b><br>Using Wilson's, $16! \\equiv -1 \\pmod{17}$.<br>Expand kar backward: $16 \\times 15 \\times 14! \\equiv -1 \\pmod{17}$.<br>Mod 17 mein, $16 \\equiv -1$ aur $15 \\equiv -2$.<br>So, $(-1) \\times (-2) \\times 14! \\equiv -1 \\implies 2 \\times 14! \\equiv -1$.<br>Ab $-1$ ko $16$ (since $17-1=16$) likh sakte hain.<br>$2 \\times 14! = 16 \\implies 14! \\equiv 8 \\pmod{17}$."
+    },
+    {
+      "q": "Find the number of ways in which 1200 can be resolved as a product of two factors.",
+      "o": [
+        "12",
+        "15",
+        "14",
+        "30"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 15.</b><br><br><b>Pen-Free Observation:</b> Product of two factors nikalna ho toh bas Total Factors nikal kar half (divide by 2) kar do (if it's not a perfect square).<br><br><b>Method 1 (Exam Approach):</b><br>Prime factorization of 1200: $12 \\times 100 = (2^2 \\times 3) \\times (2^2 \\times 5^2) = 2^4 \\times 3^1 \\times 5^2$.<br>Total number of factors = $(4+1)(1+1)(2+1) = 5 \\times 2 \\times 3 = 30$.<br>Number of ways to resolve as product of 2 factors = $30 / 2 = 15$ pairs. Straight hit, no calculation!"
+    },
+    {
+      "q": "Find the sum of 6 + 8 + 10 + 12 + 14 + ... + 40.",
+      "o": [
+        "424",
+        "1600",
+        "400",
+        "414"
+      ],
+      "a": 3,
+      "s": "<b>Answer is 414.</b><br><br><b>Pen-Free Observation:</b> Even numbers ki simple AP (Arithmetic Progression) series hai. First term aur last term pata hai, toh $\\frac{n}{2} (a+l)$ lagana best hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Number of terms $n = \\frac{\\text{Last} - \\text{First}}{\\text{Difference}} + 1 = \\frac{40 - 6}{2} + 1 = 17 + 1 = 18$ terms.<br>Sum = $\\frac{n}{2} \\times (a + l) = \\frac{18}{2} \\times (6 + 40) = 9 \\times 46$.<br>Unit digit check: $9 \\times 6 = 54$, aakhri digit 4 aayega. Options me 424, 400, 414 hain. $9 \\times 46 = 414$ direct leap. JSM/Deviation lagane ki zaroorat nahi yahan!"
+    },
+    {
+      "q": "On dividing the numbers 6453 and 1676 by a three digit number M, the same remainder is obtained. Then, find the sum of the digits of the number M.",
+      "o": [
+        "7",
+        "9",
+        "10",
+        "11"
+      ],
+      "a": 3,
+      "s": "<b>Answer is 11.</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, jab bhi 'same remainder' ka case ho, HCF/Difference method kaam aata hai. Dono numbers ka difference le lo, wo M ka exact multiple hoga.<br><br><b>Method 1 (Ninja Technique):</b><br>Difference $= 6453 - 1676 = 4777$.<br>Number M (3-digit) is 4777 ka factor hona chahiye. 4777 kisse divide hota hai? Prime test kar: 17 se try kar.<br>$4777 = 17 \\times 281$.<br>Since M ek 3-digit number hai, M strictly 281 hoga.<br>Sum of digits of $M = 2 + 8 + 1 = 11$."
+    },
+    {
+      "q": "Four bells ring simultaneously at starting and an interval of 6 sec, 12 sec, 15 sec and 20 sec respectively. How many times they ring together in 2 hours?",
+      "o": [
+        "120",
+        "60",
+        "121",
+        "112"
+      ],
+      "a": 2,
+      "s": "<b>Answer is 121.</b><br><br><b>Pen-Free Observation:</b> Bhai isme exam setter bachcho ko hamesha '+1' wale trap me fansata hai. 'Simultaneously at starting' bola hai, matlab 0th second wala bhi count hoga.<br><br><b>Method 1 (Exam Approach):</b><br>LCM of intervals (6, 12, 15, 20) = 60 seconds (1 minute).<br>Matlab har 1 minute baad sab ek saath bajeingi.<br>Total time = 2 hours = 120 minutes.<br>Number of intervals = $\\frac{120}{1} = 120$.<br>Total times they ring together = $120 + 1 \\text{ (starting wali)} = 121$."
+    },
+    {
+      "q": "If 432 / n leaves a remainder of 12, then find the number of possible integral values of n.",
+      "o": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 15.</b><br><br><b>Pen-Free Observation:</b> Agar remainder 12 aa raha hai, iska seedha matlab hai ki divisor $n$ hamesha remainder se bada hoga ($n > 12$) aur $432 - 12 = 420$ ko exactly divide karega.<br><br><b>Method 1 (Concept Builder):</b><br>Target number = 420. Hamein iske factors chahiye jo 12 se bade hon.<br>Prime factorization: $420 = 42 \\times 10 = 2^2 \\times 3^1 \\times 5^1 \\times 7^1$.<br>Total factors of 420 = $(2+1)(1+1)(1+1)(1+1) = 3 \\times 2 \\times 2 \\times 2 = 24$.<br>Factors jo 12 ya usse chote hain, unko hata de: 1, 2, 3, 4, 5, 6, 7, 10, 12 (Total 9 invalid factors).<br>Valid values of $n = 24 - 9 = 15$."
+    },
+    {
+      "q": "The sum of a rational number and an irrational number is always:",
+      "o": [
+        "Rational",
+        "Irrational",
+        "Can be either",
+        "Integer"
+      ],
+      "a": 1,
+      "s": "<b>Answer is Irrational.</b><br><br><b>Pen-Free Observation:</b> CDS ka pet theoretical statement. Dekh bhai, ek pure paani ka glass (Rational) me ek boond keechad (Irrational) dalega toh result keechad (Irrational) hi rahega.<br><br><b>Concept Definition:</b> By mathematical axioms, combination (sum/difference) of any rational ($p/q$) and irrational (non-terminating, non-repeating) strictly and invariably resolves to an Irrational number. Option B mark kar aur aage badh!"
+    },
+    {
+      "q": "Find the unit digit of $348^{114^{115^{116}}}$.",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 2,
+      "s": "<b>Answer is 6.</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, power tower dekh kar ghabrana nahi hai. Base ka unit digit 8 hai. Humein bas check karna hai ki power 4 ka multiple hai ya nahi.<br><br><b>Method 1 (Ninja Technique):</b><br>Power $= 114^{115^{116}}$. Yeh clearly ek even number hai kyunki base 114 even hai.<br>Kya yeh 4 se divide hota hai? $114 = 4k + 2$.<br>So, $(4k+2)^{\\text{power > 1}}$. Koi bhi number jo 2 (mod 4) ho, uski power 2 ya usse badi karne par wo hamesha 4 ka multiple ban jata hai (e.g., $2^2=4, 6^2=36$).<br>Matlab, poori power perfectly divisible by 4 hai.<br>Toh $8^4$ projection use kar. $8 \\times 8 \\times 8 \\times 8 \\implies 4 \\times 4 = 16$. Terminal digit is strictly 6."
+    },
+    {
+      "q": "What is the remainder when $11^{11} + 12^{12} + 13^{13} + 14^{14}$ is divided by $10$?",
+      "o": [
+        "6",
+        "2",
+        "4",
+        "8"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 6.</b><br><br><b>Pen-Free Observation:</b> 'Divided by 10' ka simple matlab hota hai 'Unit Digit nikalna'. Ye trick words the examiner ke. Bas sabka individual unit digit nikal kar add kar de.<br><br><b>Method 1 (Exam Approach):</b><br>$11^{11} \\implies$ unit digit 1.<br>$12^{12} \\implies$ power 12 is divisible by 4. So $2^4 \\implies$ unit digit 6.<br>$13^{13} \\implies$ power $13 / 4$, rem 1. So $3^1 \\implies$ unit digit 3.<br>$14^{14} \\implies$ 4 ki power even hai, toh hamesha 6 aata hai.<br>Sum them up: $1 + 6 + 3 + 6 = 16$. Last digit 6 hai. Mod 10 strictly resolves to 6."
+    },
+    {
+      "q": "Find the least common multiple of 1.2 and 2.7?",
+      "o": [
+        "5.4",
+        "10.8",
+        "32.4",
+        "7.08"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 10.8.</b><br><br><b>Pen-Free Observation:</b> Decimals ka LCM nikalne me bache aksar fraction $12/10$ aur $27/10$ bana kar fans jate hain. Standard ninja technique lagao: decimal places equalize karo aur integers ki tarah treat karo.<br><br><b>Method 1 (Ninja Technique):</b><br>Numbers hain 1.2 and 2.7. Point bhool ja, 12 aur 27 treat kar.<br>LCM(12, 27): $27 \\times 4 = 108$.<br>Ab original equation me ek decimal place tha, toh LCM me bhi wapas 1 decimal place laga de.<br>Final Output = 10.8. Khatam!"
+    },
+    {
+      "q": "Using the 1024 rule and CRT, find the last two digits of $2^{999}$.",
+      "o": [
+        "68",
+        "88",
+        "28",
+        "48"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 88.</b><br><br><b>Pen-Free Observation:</b> Last two digits wale chapter ka pro-hack! $2^{10} = 1024$. Iske end me 24 aata hai. 24 ki odd power hamesha 24 me end hoti hai, aur even power hamesha 76 me end hoti hai.<br><br><b>Method 1 (Concept Builder):</b><br>Split $2^{999}$ as $2^{990} \\times 2^9$.<br>Now $2^{990} = (2^{10})^{99}$. Since 99 is ODD, last two digits of this part will be 24.<br>Second part $2^9 = 512$. Iske last two digits hain 12.<br>Final product = $24 \\times 12 = 288$. Terminal digits lock strictly at 88."
+    },
+    {
+      "q": "What is the Remainder of 21^201 / 400?",
+      "o": [
+        "21",
+        "61",
+        "39",
+        "None of these"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 21.</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, base 21 aur divisor 400 dekhte hi dimaag me $20+1$ chamakna chahiye. Binomial Expansion ka direct application hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Number ko $(20+1)^{201}$ me tod de.<br>Binomial expansion me aakhri 2 terms chhod kar baki sabme $20^2 = 400$ aayega, jo ki totally divisible by 400 hoga.<br>Bachi aakhri do terms: $^{201}C_1 (20)^1 (1)^{200} + ^{201}C_0 (20)^0 (1)^{201}$<br>$= (201 \\times 20) + 1 = 4020 + 1 = 4021$.<br>Ab $4021$ ko 400 se divide karega toh naturally $4000$ kat jayega, strictly 21 bachega."
+    },
+    {
+      "q": "Raj wants to type first 200 natural numbers. Find out the number of times he has to press the keys.",
+      "o": [
+        "492",
+        "489",
+        "490",
+        "491"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 492.</b><br><br><b>Pen-Free Observation:</b> Typewriter/keystroke ke sawaal range segmentation se hote hain. 1-digit, 2-digit aur 3-digit ke bundles alag-alag count kar.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Segment</th><th style='text-align:left;padding:4px;color:var(--p2)'>Calculation</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1 to 9</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>9 numbers $\\times 1 = 9$ keys</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>10 to 99</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>90 numbers $\\times 2 = 180$ keys</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>100 to 200</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>101 numbers $\\times 3 = 303$ keys</td></tr></table><br><b>Takeaway:</b> Direct leap karo, sum it up: $9 + 180 + 303 = 492$ keystrokes."
+    },
+    {
+      "q": "Find the remainder when $55^{55^{55}}$ is divided by $14$.",
+      "o": [
+        "1",
+        "5",
+        "9",
+        "13"
+      ],
+      "a": 3,
+      "s": "<b>Answer is 13.</b><br><br><b>Pen-Free Observation:</b> Jab negative remainder chamak jaye na, toh maths aasan ho jati hai. $14 \\times 4 = 56$, toh $55$ base ko mod 14 me $-1$ likh sakte hain.<br><br><b>Method 1 (Ninja Technique):</b><br>Base $= 55 \\equiv -1 \\pmod{14}$.<br>Power $= 55^{55}$ jo ki clearly ek odd number hai.<br>So equation ban jayegi: $(-1)^{\\text{odd}} = -1$.<br>Remainder hamesha positive hona chahiye, so structurally $-1 + 14 = 13$ yields the final result."
+    },
+    {
+      "q": "If $0.x\\overline{yz} + 0.y\\overline{zx} + 0.z\\overline{xy} = \\frac{154}{99}$, find the value of $x+y+z$.",
+      "o": [
+        "14",
+        "16",
+        "17",
+        "18"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 14.</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, SSC CGL ke iss repeating decimal pattern mein hamesha symmetry hoti hai. Basic expansion se $x+y+z$ common aa jata hai.<br><br><b>Method 1 (Concept Builder):</b><br>Fraction conversion map kar:<br>$0.x\\overline{yz} = \\frac{xyz - x}{990} = \\frac{100x + 10y + z - x}{990} = \\frac{99x + 10y + z}{990}$.<br>Symmetrically teeno ko add karega toh aayega: $\\frac{110x + 110y + 110z}{990}$.<br>Common nikal: $\\frac{110(x+y+z)}{990} = \\frac{x+y+z}{9}$.<br>Equation given hai: $\\frac{x+y+z}{9} = \\frac{154}{99}$.<br>Toh $\\frac{x+y+z}{9} = \\frac{14}{9} \\implies x+y+z = 14$."
+    },
+    {
+      "q": "The sum of two number is 50 and their product is 525. The LCM of the two numbers is?",
+      "o": [
+        "85",
+        "105",
+        "115",
+        "125"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 105.</b><br><br><b>Pen-Free Observation:</b> Equations banane ki jagah hit and trial aur common sense lagao. 525 ke last me 25 hai, matlab ek number 25 ya 15 type ka hoga. $35 \\times 15$ exactly 525 aur inka sum 50 deta hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Step</th><th style='text-align:left;padding:4px;color:var(--p2)'>Application</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Root Synthesis</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Numbers are 35 and 15</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>LCM Logic</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$35 = 5 \\times 7$, $15 = 3 \\times 5$</td></tr></table><br><b>Method 1 (Ninja Technique):</b><br>LCM aayega $3 \\times 5 \\times 7 = 105$. Straight equation leap thi yeh!"
+    },
+    {
+      "q": "What is the digit at the 100th place of the number $(225)^{40}$?",
+      "o": [
+        "6",
+        "5",
+        "4",
+        "2"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 6.</b><br><br><b>Pen-Free Observation:</b> 100th place matlab last 3 digits nikalne hain, so we need $(225)^{40} \\pmod{1000}$. CGL/CDS ka advance level remainder concept hai.<br><br><b>Method 1 (Concept Builder):</b><br>Number $= (15^2)^{40} = 15^{80}$.<br>Mod 1000 nikalne ke liye CRT lagate hain ($1000 = 125 \\times 8$).<br>Part 1: $15^{80} \\pmod{125} \\implies (3 \\times 5)^{80} \\implies$ 5 ki power 80 hai toh obviously 125 se divisible hoga, so remainder is 0.<br>Part 2: $15^{80} \\pmod 8 \\implies (-1)^{80} = 1$.<br>So number $N$ 125 ka aesa multiple hai jo 8 se divide karne par 1 remainder de. Multiples check kar: 125(rem 5), 250(rem 2), 375(rem 7), 500(rem 4), 625(rem 1).<br>Match mil gaya! Terminal triad (last 3 digits) is 625. Toh 100th place (hundreds digit) naturally 6 hai."
+    },
+    {
+      "q": "Using remainder theorem to find unit digit: What is the remainder when $17^{2026}$ is divided by 10?",
+      "o": [
+        "1",
+        "3",
+        "7",
+        "9"
+      ],
+      "a": 3,
+      "s": "<b>Answer is 9.</b><br><br><b>Pen-Free Observation:</b> Bhai, 'divided by 10' ka mathematical translation simply 'Unit Digit batao' hota hai. 17 ka base 7 check kar.<br><br><b>Method 1 (Ninja Technique):</b><br>Base $= 7$. Power cyclicity hamesha 4 ki hoti hai.<br>Divide power 2026 by 4. Aakhri 2 digit 26 ko 4 se divide kar, remainder 2 aayega.<br>Toh cycle remnant yields $7^2 = 49$. Terminal digit strictly guarantees 9 as the answer."
+    },
+    {
+      "q": "What is the remainder when $1! + 2! + 3! + \\dots + 1000!$ is divided by $18$?",
+      "o": [
+        "0",
+        "9",
+        "12",
+        "15"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 9.</b><br><br><b>Pen-Free Observation:</b> Series of factorials mei hamesha ek collapse point dhundho jahan se terms perfectly divisible ho jayein. 18 banane ke liye $9 \\times 2$ chahiye.<br><br><b>Method 1 (Ninja Technique):</b><br>Notice kar ki $6! = 720$, jo ki 18 se perfectly divide hota hai. Toh $6!$ aur uske aage saare aane wale factorials ($7!, 8!, \\dots$) me bhi 18 chupa hoga. Un sabka remainder zero ho gaya.<br>Game bas pehle 5 terms me bacha: $1! + 2! + 3! + 4! + 5! = 1 + 2 + 6 + 24 + 120 = 153$.<br>Ab $153$ ko 18 se divide kar de. $18 \\times 8 = 144$.<br>Active remainder strictly collapses to $153 - 144 = 9$."
+    }
+  ]
 }

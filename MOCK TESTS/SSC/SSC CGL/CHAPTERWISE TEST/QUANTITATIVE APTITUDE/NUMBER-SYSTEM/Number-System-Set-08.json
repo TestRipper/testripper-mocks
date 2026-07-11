@@ -2,335 +2,281 @@
   "quizTitle": "Number-System-Set-08",
   "quizTime": 18,
   "totalMarks": 50,
-  "questions":[
-{
-"q": "Express 9.43\overline{87} in p/q form.",
-"o": [
-"\frac{93444}{9900}",
-"\frac{93443}{9900}",
-"\frac{93445}{9900}",
-"\frac{93442}{9900}"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> Dekh bhai, options dekh kar denominator 9900 confirm hota hai. 
-<b>Method 1 (Ninja Technique):</b> Standard setup applied for repeating decimals. 
-Numerator transformation directly yields 94387 - 943 = 93444. 
-Final Result: \frac{93444}{9900}. Khel khatam!"
-},
-{
-"q": "Find the last two digits of the sequence 1234\dots up to exactly 138 digits.",
-"o": [
-"37",
-"73",
-"74",
-"72"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> Digit counting ka standard boundary case hai. 
-<b>Method 1 (Ninja Technique):</b> Initial 1 to 9 context established. Remaining 129 digits directly map to 2-digit numbers. 
-Leaping to the boundary: 9 + 64 = 73 tak clear hai. 
-Next digit starts 74, giving sequence end ...72, 73, 7. Last two digits are 37."
-},
-{
-"q": "Find the remainder when the polynomial x^3 - 3x^2 + 4x - 5 is divided by x - 2.",
-"o": [
-"-1",
-"0",
-"1",
-"3"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> Remainder theorem ka direct hit hai. 
-<b>Method 1 (Ninja Technique):</b> Standard polynomial substitution x = 2 applied. 
-Result directly jumps to 16 - 17 = -1."
-},
-{
-"q": "What is the remainder when 888\dots 888 (written 25 times) is divided by 37?",
-"o": [
-"6",
-"7",
-"8",
-"9"
-],
-"a": 2,
-"s": "<b>The Pen-Free Observation:</b> Divisibility rule of 37 on repeating blocks. 
-<b>Method 1 (Ninja Technique):</b> 3-digit cyclicity validated. 24 digits cancel out completely. 
-25th digit is 8, which is the final remainder."
-},
-{
-"q": "What is the remainder when 100! is divided by 101?",
-"o": [
-"1",
-"100",
-"0",
-"99"
-],
-"a": 1,
-"s": "<b>The Pen-Free Observation:</b> Prime denominator screams Wilson's Theorem. 
-<b>Method 1 (Ninja Technique):</b> Theorem logic (P-1)! \equiv -1 validated for P = 101. 
-Direct transformation yields remainder 100."
-},
-{
-"q": "How many numbers between 400 and 600 begin with or end with the digit 5?",
-"o": [
-"100",
-"110",
-"119",
-"120"
-],
-"a": 1,
-"s": "<b>The Pen-Free Observation:</b> Venn diagram based boundary limits. 
-<b>Method 1 (Ninja Technique):</b> Set constraints validated. 
-Total sets directly compute to 100 + 20 - 10. Final overlap resolution gives 110."
-},
-{
-"q": "The total number of integers between 200 and 400, each of which either begins with 3 or ends with 3 or both, is",
-"o": [
-"10",
-"100",
-"110",
-"120"
-],
-"a": 2,
-"s": "<b>The Pen-Free Observation:</b> Exact same framework as previous. 
-<b>Method 1 (Ninja Technique):</b> Standard inclusion-exclusion applied. 
-Leap to result: 100 + 20 - 10 = 110."
-},
-{
-"q": "M, is the largest 4-digit number, which when divided by 4, 5, 6 and 7 leaves remainder as 2, 3, 4 and 5, respectively. What is the remainder when M is divided by 9?",
-"o": [
-"2",
-"1",
-"3",
-"6"
-],
-"a": 1,
-"s": "<b>The Pen-Free Observation:</b> Constant negative remainder of 2. 
-<b>Method 1 (Ninja Technique):</b> Base parameters validated, LCM is 420. 
-Direct shift to largest 4-digit boundary: 9660 - 2 = 9658. 
-Digital Sum of 9658 directly gives 1. Pen-free target hit!"
-},
-{
-"q": "Find the last two digits of 3^{1000} \times 7^{1000}.",
-"o": [
-"01",
-"21",
-"41",
-"81"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> Base combinations form 21, last digit is 1. 
-<b>Method 1 (Ninja Technique):</b> Standard cyclicity parameters mapped for 21^{1000}. 
-Transformation jump: tens digit is 2 * 0 = 0, giving 01."
-},
-{
-"q": "If the 9-digit number 7x79251y8 is divisible by 36, what is the value of (10x^2-3y^2) for the largest possible value of y?",
-"o": [
-"490",
-"289",
-"192",
-"298"
-],
-"a": 3,
-"s": "<b>The Pen-Free Observation:</b> 4 and 9 divisibility checks. 
-<b>Method 1 (Ninja Technique):</b> 4-rule validates max y = 8. 
-9-rule sum substitution directly forces x = 7. 
-Final transformation: 490 - 192 = 298."
-},
-{
-"q": "Find the smallest Six digit number which is a perfect Square?",
-"o": [
-"100389",
-"100489",
-"100589",
-"100289"
-],
-"a": 1,
-"s": "<b>The Pen-Free Observation:</b> Boundary is 100000, root is approx 316. 
-<b>Method 1 (Ninja Technique):</b> Next integer baseline established at 317. 
-Leaping through Base 300 squaring directly yields 100489."
-},
-{
-"q": "Find the total number of digits of 2^{24} \times 5^{12}.",
-"o": [
-"14",
-"15",
-"16",
-"17"
-],
-"a": 2,
-"s": "<b>The Pen-Free Observation:</b> Power balancing to create base 10. 
-<b>Method 1 (Ninja Technique):</b> Variables combined to 2^{12} \times 10^{12}. 
-Direct leap: 4096 gives 4 digits, plus 12 zeros = 16."
-},
-{
-"q": "A 6-digit number 524x8y is divisible by 36. What is the maximum possible value of (x + y)?",
-"o": [
-"8",
-"17",
-"9",
-"12"
-],
-"a": 1,
-"s": "<b>The Pen-Free Observation:</b> Maximize y first for divisibility by 4. 
-<b>Method 1 (Ninja Technique):</b> Parameters fixed: max y = 8. 
-Sum rule for 9 directly outputs x = 9. Final sum = 17."
-},
-{
-"q": "What is the unit digit of [7^{(4n+3)}] \times 6^n, where n is a positive integer?",
-"o": [
-"8",
-"7",
-"6",
-"1"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> 6 retains identity, 7 has cyclicity of 4. 
-<b>Method 1 (Ninja Technique):</b> Cyclicity variables eliminated. Base reduces to 7^3 \times 6. 
-Result transformation: 3 * 6 = 18, so unit digit 8."
-},
-{
-"q": "From 500 to 750 (including both) how many natural numbers are there are which are neither Divisible by 3 or 11?",
-"o": [
-"114",
-"93",
-"151",
-"451"
-],
-"a": 2,
-"s": "<b>The Pen-Free Observation:</b> Total range is 251, find union of multiples and subtract. 
-<b>Method 1 (Ninja Technique):</b> Range counts validated. Union count resolves to 100. 
-Direct leap: 251 - 100 = 151."
-},
-{
-"q": "When a number is divided by 65, the remainder is 31. When the same number is divided by 13, the remainder is?",
-"o": [
-"7",
-"5",
-"3",
-"9"
-],
-"a": 1,
-"s": "<b>The Pen-Free Observation:</b> Divisors are multiples (65 is 13 * 5). 
-<b>Method 1 (Ninja Technique):</b> Base divisor check passed. 
-Direct calculation leap: 31 mod 13 yields 5."
-},
-{
-"q": "In a farm, there are some cows and some hens. If heads are counted, there are 180. If legs are counted, there are 420. How many cows are there in the farm?",
-"o": [
-"30",
-"150",
-"60",
-"120"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> JSM (Junior Satisfaction Method) perfectly applies here. 
-<b>Method 1 (Ninja Technique):</b> Baseline assumption of 2 legs validated (360 total). 
-Extra 60 legs directly map to 30 cows."
-},
-{
-"q": "How many numbers are there between 99 and 1000 such that the digit 8, occupies the unit's place?",
-"o": [
-"64",
-"74",
-"90",
-"None of these"
-],
-"a": 2,
-"s": "<b>The Pen-Free Observation:</b> 3-digit fixed position permutation. 
-<b>Method 1 (Ninja Technique):</b> Positional constraints validated. 
-Transformation jump: 9 hundreds options * 10 tens options = 90."
-},
-{
-"q": "For the number 7200, find the number of factors divisible by 40.",
-"o": [
-"18",
-"16",
-"20",
-"24"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> Extract the target multiple from prime factorization. 
-<b>Method 1 (Ninja Technique):</b> Base 2^5 \times 3^2 \times 5^2 established. Factor 2^3 \times 5 extracted. 
-Remaining powers jump directly to (2+1)(2+1)(1+1) = 18."
-},
-{
-"q": "The average of 1088 real numbers is zero. At most, how many of them can be negative?",
-"o": [
-"1088",
-"1087",
-"0",
-"544"
-],
-"a": 1,
-"s": "<b>The Pen-Free Observation:</b> Zero-sum balance constraint. 
-<b>Method 1 (Ninja Technique):</b> Logic parameters for counter-balancing validated. 
-Direct transformation bounds the maximum N-1 negative values to 1087."
-},
-{
-"q": "The 55x41y is a six-digit even number and is completely divisible by 33, then among the following (x^2 + y^2) is divisible by: (x and y are non-zero)",
-"o": [
-"7",
-"11",
-"13",
-"17"
-],
-"a": 2,
-"s": "<b>The Pen-Free Observation:</b> 11 and 3 divisibility intersections on even constraints. 
-<b>Method 1 (Ninja Technique):</b> Modular rules applied. Direct constraints isolate x = 9, y = 6. 
-Final transformation 81 + 36 = 117, which is a multiple of 13."
-},
-{
-"q": "What is the largest 4-digit number that is exactly divisible by 88?",
-"o": [
-"9944",
-"9988",
-"9966",
-"9900"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> Reverse option elimination is faster than manual generation. 
-<b>Method 1 (Ninja Technique):</b> Top-down array scan validated. 
-9944 perfectly hits both 8 and 11 divisibility criteria. Answer confirmed."
-},
-{
-"q": "Find the rightmost two non-zero digits of 30^{2720}.",
-"o": [
-"01",
-"61",
-"41",
-"21"
-],
-"a": 0,
-"s": "<b>The Pen-Free Observation:</b> Ignore zero multipliers, focus on base 3. 
-<b>Method 1 (Ninja Technique):</b> Base shifted to 81^{680}. 
-Cyclicity jump: Ends in 1, tens digit is 8 * 0 = 0, outputting 01."
-},
-{
-"q": "The difference between a two-digit number and the number obtained by interchanging the positions of its digits is 54. The difference between the two digits of that number is?",
-"o": [
-"4",
-"5",
-"6",
-"9"
-],
-"a": 2,
-"s": "<b>The Pen-Free Observation:</b> Reversed difference is always a multiple of 9. 
-<b>Method 1 (Ninja Technique):</b> Standard structural formula 9(x-y) validated. 
-Leaping to result: 54 / 9 = 6."
-},
-{
-"q": "Find the number of factors of 46656 (which is 2^6 \times 3^6) that are BOTH a perfect square and a perfect cube.",
-"o": [
-"2",
-"4",
-"6",
-"8"
-],
-"a": 1,
-"s": "<b>The Pen-Free Observation:</b> LCM of 2 (square) and 3 (cube) means 6th power targets. 
-<b>Method 1 (Ninja Technique):</b> Base matrix 2^6 \times 3^6 established. 
-Direct extraction of 6th power multiples yields 2 * 2 = 4."
-}
-]
+  "questions": [
+    {
+      "q": "Express $9.43\\overline{87}$ in p/q form.",
+      "o": [
+        "$\\frac{93444}{9900}$",
+        "$\\frac{93443}{9900}$",
+        "$\\frac{93445}{9900}$",
+        "$\\frac{93442}{9900}$"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> Dekh bhai TestRipper, options dekh kar denominator $9900$ confirm hota hai.<br><br><b>Method 1 (Ninja Technique):</b> Standard setup applied for repeating decimals.<br>Numerator transformation directly yields $94387 - 943 = 93444$.<br>Final Result: $\\frac{93444}{9900}$. Khel khatam!"
+    },
+    {
+      "q": "Find the last two digits of the sequence $1234\\dots$ up to exactly $138$ digits.",
+      "o": [
+        "37",
+        "73",
+        "74",
+        "72"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> Digit counting ka standard boundary case hai.<br><br><b>Method 1 (Ninja Technique):</b> Initial $1$ to $9$ context established. Remaining $129$ digits directly map to 2-digit numbers.<br>Leaping to the boundary: $9 + 64 = 73$ tak clear hai.<br>Next digit starts $74$, giving sequence end $\\dots 72, 73, 7$. Last two digits are $37$."
+    },
+    {
+      "q": "Find the remainder when the polynomial $x^3 - 3x^2 + 4x - 5$ is divided by $x - 2$.",
+      "o": [
+        "-1",
+        "0",
+        "1",
+        "3"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> Remainder theorem ka direct hit hai.<br><br><b>Method 1 (Ninja Technique):</b> Standard polynomial substitution $x = 2$ applied.<br>Result directly jumps to $16 - 17 = -1$."
+    },
+    {
+      "q": "What is the remainder when $888\\dots 888$ (written 25 times) is divided by $37$?",
+      "o": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>The Pen-Free Observation:</b> Divisibility rule of $37$ on repeating blocks.<br><br><b>Method 1 (Ninja Technique):</b> 3-digit cyclicity validated. $24$ digits cancel out completely.<br>$25$th digit is $8$, which is the final remainder."
+    },
+    {
+      "q": "What is the remainder when $100!$ is divided by $101$?",
+      "o": [
+        "1",
+        "100",
+        "0",
+        "99"
+      ],
+      "a": 1,
+      "s": "<b>The Pen-Free Observation:</b> Prime denominator screams Wilson's Theorem.<br><br><b>Method 1 (Ninja Technique):</b> Theorem logic $(P-1)! \\equiv -1$ validated for $P = 101$.<br>Direct transformation yields remainder $100$."
+    },
+    {
+      "q": "How many numbers between $400$ and $600$ begin with or end with the digit $5$?",
+      "o": [
+        "100",
+        "110",
+        "119",
+        "120"
+      ],
+      "a": 1,
+      "s": "<b>The Pen-Free Observation:</b> Venn diagram based boundary limits.<br><br><b>Method 1 (Ninja Technique):</b> Set constraints validated.<br>Total sets directly compute to $100 + 20 - 10$. Final overlap resolution gives $110$."
+    },
+    {
+      "q": "The total number of integers between $200$ and $400$, each of which either begins with $3$ or ends with $3$ or both, is",
+      "o": [
+        "10",
+        "100",
+        "110",
+        "120"
+      ],
+      "a": 2,
+      "s": "<b>The Pen-Free Observation:</b> Exact same framework as previous.<br><br><b>Method 1 (Ninja Technique):</b> Standard inclusion-exclusion applied.<br>Leap to result: $100 + 20 - 10 = 110$."
+    },
+    {
+      "q": "$M$, is the largest 4-digit number, which when divided by $4, 5, 6$ and $7$ leaves remainder as $2, 3, 4$ and $5$, respectively. What is the remainder when $M$ is divided by $9$?",
+      "o": [
+        "2",
+        "1",
+        "3",
+        "6"
+      ],
+      "a": 1,
+      "s": "<b>The Pen-Free Observation:</b> Constant negative remainder of $2$.<br><br><b>Method 1 (Ninja Technique):</b> Base parameters validated, LCM is $420$.<br>Direct shift to largest 4-digit boundary: $9660 - 2 = 9658$.<br>Digital Sum of $9658$ directly gives $1$. Pen-free target hit!"
+    },
+    {
+      "q": "Find the last two digits of $3^{1000} \\times 7^{1000}$.",
+      "o": [
+        "01",
+        "21",
+        "41",
+        "81"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> Base combinations form $21$, last digit is $1$.<br><br><b>Method 1 (Ninja Technique):</b> Standard cyclicity parameters mapped for $21^{1000}$.<br>Transformation jump: tens digit is $2 \\times 0 = 0$, giving $01$."
+    },
+    {
+      "q": "If the 9-digit number $7x79251y8$ is divisible by $36$, what is the value of $(10x^2-3y^2)$ for the largest possible value of $y$?",
+      "o": [
+        "490",
+        "289",
+        "192",
+        "298"
+      ],
+      "a": 3,
+      "s": "<b>The Pen-Free Observation:</b> $4$ and $9$ divisibility checks.<br><br><b>Method 1 (Ninja Technique):</b> 4-rule validates max $y = 8$.<br>9-rule sum substitution directly forces $x = 7$.<br>Final transformation: $490 - 192 = 298$."
+    },
+    {
+      "q": "Find the smallest Six digit number which is a perfect Square?",
+      "o": [
+        "100389",
+        "100489",
+        "100589",
+        "100289"
+      ],
+      "a": 1,
+      "s": "<b>The Pen-Free Observation:</b> Boundary is $100000$, root is approx $316$.<br><br><b>Method 1 (Ninja Technique):</b> Next integer baseline established at $317$.<br>Leaping through Base 300 squaring directly yields $100489$."
+    },
+    {
+      "q": "Find the total number of digits of $2^{24} \\times 5^{12}$.",
+      "o": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "a": 2,
+      "s": "<b>The Pen-Free Observation:</b> Power balancing to create base 10.<br><br><b>Method 1 (Ninja Technique):</b> Variables combined to $2^{12} \\times 10^{12}$.<br>Direct leap: $4096$ gives $4$ digits, plus $12$ zeros = $16$."
+    },
+    {
+      "q": "A 6-digit number $524x8y$ is divisible by $36$. What is the maximum possible value of $(x + y)$?",
+      "o": [
+        "8",
+        "17",
+        "9",
+        "12"
+      ],
+      "a": 1,
+      "s": "<b>The Pen-Free Observation:</b> Maximize $y$ first for divisibility by $4$.<br><br><b>Method 1 (Ninja Technique):</b> Parameters fixed: max $y = 8$.<br>Sum rule for $9$ directly outputs $x = 9$. Final sum = $17$."
+    },
+    {
+      "q": "What is the unit digit of $[7^{(4n+3)}] \\times 6^n$, where $n$ is a positive integer?",
+      "o": [
+        "8",
+        "7",
+        "6",
+        "1"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> $6$ retains identity, $7$ has cyclicity of $4$.<br><br><b>Method 1 (Ninja Technique):</b> Cyclicity variables eliminated. Base reduces to $7^3 \\times 6$.<br>Result transformation: $3 \\times 6 = 18$, so unit digit $8$."
+    },
+    {
+      "q": "From $500$ to $750$ (including both) how many natural numbers are there are which are neither Divisible by $3$ or $11$?",
+      "o": [
+        "114",
+        "93",
+        "151",
+        "451"
+      ],
+      "a": 2,
+      "s": "<b>The Pen-Free Observation:</b> Total range is $251$, find union of multiples and subtract.<br><br><b>Method 1 (Ninja Technique):</b> Range counts validated. Union count resolves to $100$.<br>Direct leap: $251 - 100 = 151$."
+    },
+    {
+      "q": "When a number is divided by $65$, the remainder is $31$. When the same number is divided by $13$, the remainder is?",
+      "o": [
+        "7",
+        "5",
+        "3",
+        "9"
+      ],
+      "a": 1,
+      "s": "<b>The Pen-Free Observation:</b> Divisors are multiples ($65$ is $13 \\times 5$).<br><br><b>Method 1 (Ninja Technique):</b> Base divisor check passed.<br>Direct calculation leap: $31 \\pmod{13}$ yields $5$."
+    },
+    {
+      "q": "In a farm, there are some cows and some hens. If heads are counted, there are $180$. If legs are counted, there are $420$. How many cows are there in the farm?",
+      "o": [
+        "30",
+        "150",
+        "60",
+        "120"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> JSM (Junior Satisfaction Method) perfectly applies here.<br><br><b>Method 1 (Ninja Technique):</b> Baseline assumption of 2 legs validated ($360$ total).<br>Extra $60$ legs directly map to $30$ cows."
+    },
+    {
+      "q": "How many numbers are there between $99$ and $1000$ such that the digit $8$, occupies the unit's place?",
+      "o": [
+        "64",
+        "74",
+        "90",
+        "None of these"
+      ],
+      "a": 2,
+      "s": "<b>The Pen-Free Observation:</b> 3-digit fixed position permutation.<br><br><b>Method 1 (Ninja Technique):</b> Positional constraints validated.<br>Transformation jump: $9$ hundreds options $\\times$ $10$ tens options = $90$."
+    },
+    {
+      "q": "For the number $7200$, find the number of factors divisible by $40$.",
+      "o": [
+        "18",
+        "16",
+        "20",
+        "24"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> Extract the target multiple from prime factorization.<br><br><b>Method 1 (Ninja Technique):</b> Base $2^5 \\times 3^2 \\times 5^2$ established. Factor $2^3 \\times 5$ extracted.<br>Remaining powers jump directly to $(2+1)(2+1)(1+1) = 18$."
+    },
+    {
+      "q": "The average of $1088$ real numbers is zero. At most, how many of them can be negative?",
+      "o": [
+        "1088",
+        "1087",
+        "0",
+        "544"
+      ],
+      "a": 1,
+      "s": "<b>The Pen-Free Observation:</b> Zero-sum balance constraint.<br><br><b>Method 1 (Ninja Technique):</b> Logic parameters for counter-balancing validated.<br>Direct transformation bounds the maximum $N-1$ negative values to $1087$."
+    },
+    {
+      "q": "The $55x41y$ is a six-digit even number and is completely divisible by $33$, then among the following $(x^2 + y^2)$ is divisible by: ($x$ and $y$ are non-zero)",
+      "o": [
+        "7",
+        "11",
+        "13",
+        "17"
+      ],
+      "a": 2,
+      "s": "<b>The Pen-Free Observation:</b> $11$ and $3$ divisibility intersections on even constraints.<br><br><b>Method 1 (Ninja Technique):</b> Modular rules applied. Direct constraints isolate $x = 9, y = 6$.<br>Final transformation $81 + 36 = 117$, which is a multiple of $13$."
+    },
+    {
+      "q": "What is the largest 4-digit number that is exactly divisible by $88$?",
+      "o": [
+        "9944",
+        "9988",
+        "9966",
+        "9900"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> Reverse option elimination is faster than manual generation.<br><br><b>Method 1 (Ninja Technique):</b> Top-down array scan validated.<br>$9944$ perfectly hits both $8$ and $11$ divisibility criteria. Answer confirmed."
+    },
+    {
+      "q": "Find the rightmost two non-zero digits of $30^{2720}$.",
+      "o": [
+        "01",
+        "61",
+        "41",
+        "21"
+      ],
+      "a": 0,
+      "s": "<b>The Pen-Free Observation:</b> Ignore zero multipliers, focus on base $3$.<br><br><b>Method 1 (Ninja Technique):</b> Base shifted to $81^{680}$.<br>Cyclicity jump: Ends in $1$, tens digit is $8 \\times 0 = 0$, outputting $01$."
+    },
+    {
+      "q": "The difference between a two-digit number and the number obtained by interchanging the positions of its digits is $54$. The difference between the two digits of that number is?",
+      "o": [
+        "4",
+        "5",
+        "6",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>The Pen-Free Observation:</b> Reversed difference is always a multiple of $9$.<br><br><b>Method 1 (Ninja Technique):</b> Standard structural formula $9(x-y)$ validated.<br>Leaping to result: $54 / 9 = 6$."
+    },
+    {
+      "q": "Find the number of factors of $46656$ (which is $2^6 \\times 3^6$) that are BOTH a perfect square and a perfect cube.",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 1,
+      "s": "<b>The Pen-Free Observation:</b> LCM of $2$ (square) and $3$ (cube) means 6th power targets.<br><br><b>Method 1 (Ninja Technique):</b> Base matrix $2^6 \\times 3^6$ established.<br>Direct extraction of 6th power multiples yields $2 \\times 2 = 4$."
+    }
+  ]
 }
