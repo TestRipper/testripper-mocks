@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Number-System-Set-07",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions": [
+    {
+      "q": "Find the total number of prime factors in the expression $30^{15} \\times 22^{11} \\times 15^{24}$.",
+      "o": [
+        "110",
+        "115",
+        "125",
+        "130"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $115$<br><br><b>Pen-Free Observation:</b> Options sab $110+$ hain. Prime factor sum base splitting par depend karega.<br><br><b>Method 1 (Ninja Technique):</b> Dekh bhai, sidha bases ko primes me tod: $30=2\\times3\\times5$ (3 primes), $22=2\\times11$ (2 primes), $15=3\\times5$ (2 primes). Total sum = $3(15) + 2(11) + 2(24) = 45 + 22 + 48 = 115$. Khatam.<br><br><b>Takeaway:</b> 'Total prime factors' bole to individual primes ki powers ka sum karte hain, distinct nahi."
+    },
+    {
+      "q": "What are the last two digits of $4^{4^4}$?",
+      "o": [
+        "16",
+        "36",
+        "76",
+        "96"
+      ],
+      "a": 3,
+      "s": "<b>Final Output:</b> $96$<br><br><b>Pen-Free Observation:</b> Power tower with base $4$. Result will definitely be even, ruling out odd trap logic.<br><br><b>Method 1 (Ninja Technique):</b> $4^{256} = 2^{512}$. Initial logic validated. Leap directly to transformation: $2^{12} \\times (2^{10})^{50} = 4096 \\times (1024)^{\\text{Even}}$. Modulo $100$ extraction gives $96 \\times 76 \\equiv 96$.<br><br><b>Takeaway:</b> Any number ending in $76$ multiplied by $X$ retains the last two digits of $X$ (if $X$ is a power of $2$)."
+    },
+    {
+      "q": "Find the unit digit of $(1!)^{1!^{1!}} + (2!)^{2!^{2!}} + (3!)^{3!^{3!}} + (4!)^{4!^{4!}}$.",
+      "o": [
+        "1",
+        "3",
+        "7",
+        "9"
+      ],
+      "a": 3,
+      "s": "<b>Final Output:</b> $9$<br><br><b>Pen-Free Observation:</b> Factorial $>4!$ ends in $0$, to aage check hi nahi karna. Just evaluate $1!$ to $4!$.<br><br><b>Method 1 (Ninja Technique):</b> Standard processing applied for $1!$ to $3!$ giving unit sum $1+6+6=13$. Leap to $4!$: Base $24$, Power is even. $4^{\\text{Even}}$ ends in $6$. Total unit sum $13+6 = 19 \\implies 9$.<br><br><b>Takeaway:</b> SSC CGL trap! Factorial powers ko jaldi evaluate karo. $4^{\\text{Even}}$ hamesha $6$ deta hai."
+    },
+    {
+      "q": "Find the total number of factors of $(73^3 - 40^3 - 33^3)$.",
+      "o": [
+        "192",
+        "190",
+        "188",
+        "186"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $192$<br><br><b>Pen-Free Observation:</b> $a+b+c = 73-40-33 = 0$. Identity alert!<br><br><b>Method 1 (Ninja Technique):</b> $a^3+b^3+c^3 = 3abc$. Transformation: $3 \\times 73 \\times 40 \\times 33 = 2^3 \\times 3^2 \\times 5^1 \\times 11^1 \\times 73^1$. Exponents jump: $4 \\times 3 \\times 2 \\times 2 \\times 2 = 192$.<br><br><b>Takeaway:</b> Algebra aur Number System ka deadly combo. Sum of bases zero ho to direct $3abc$ me tod do."
+    },
+    {
+      "q": "If a 9-digit number $897359y7x$ is divisible by $72$, then what is the value of $(3x + 4y)$ for the largest possible value of $y$?",
+      "o": [
+        "54",
+        "48",
+        "60",
+        "72"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $54$<br><br><b>Pen-Free Observation:</b> Divisibility by $72$ means check $8$ and $9$. Target is 'largest' $y$.<br><br><b>Method 1 (Ninja Technique):</b> Assume max $y=9$. Last 3 digits $97x / 8 \\implies x=6$. Digital sum for $9$: $48 + x + y = 48+6+9 = 63$ (Divisible). Set $y=9, x=6$. Final equation: $18+36=54$.<br><br><b>Takeaway:</b> Largest/smallest word par dhyan de bhai, CGL yahi fasaega."
+    },
+    {
+      "q": "Find the number of proper divisors of $3^6 \\times 5^4$.",
+      "o": [
+        "34",
+        "35",
+        "36",
+        "33"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $34$<br><br><b>Pen-Free Observation:</b> 'Proper' divisors pucha hai, total nahi. Formula is Total Factors - $1$.<br><br><b>Method 1 (Ninja Technique):</b> Powers me $+1$ karke multiply kar: $7 \\times 5 = 35$. Proper hone ke chakkar me $1$ minus kar de: $34$.<br><br><b>Takeaway:</b> Proper divisors me original number ko count nahi karte."
+    },
+    {
+      "q": "If the 8-digit number $8439x53y$ is divisible by $99$, then what is the value of $(x^2 + y^2)$?",
+      "o": [
+        "16",
+        "25",
+        "36",
+        "49"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $16$<br><br><b>Pen-Free Observation:</b> Divisibility by $99$ means applying $11$ and $9$ rules simultaneously.<br><br><b>Method 1 (Ninja Technique):</b> $11$ rule leap: $x-y = 4$. $9$ rule leap: $32+x+y \\equiv 0 \\pmod 9 \\implies x+y = 4$. Simultaneous solve gives $x=4, y=0$. Result $4^2+0^2 = 16$.<br><br><b>Takeaway:</b> Variables set karte time check kar liya kar bhai ki digit $0-9$ ke bahar na jaye."
+    },
+    {
+      "q": "Let $y$ be the least number which is divisible by $22, 33, 36$, and $66$, and is also a perfect cube. Find the sum of the digits of the remainder when $y$ is divided by $179$.",
+      "o": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $4$<br><br><b>Pen-Free Observation:</b> Perfect cube aur LCM ka mix. Multipliers missing honge.<br><br><b>Method 1 (Ninja Technique):</b> LCM $= 396 = 2^2 \\times 3^2 \\times 11$. Cube completion needs $2^1 \\times 3^1 \\times 11^2 = 726$. Number $y = 396 \\times 726 = 287496$. Leap to division: $287496 \\pmod{179} = 22$. Digits sum $= 4$.<br><br><b>Takeaway:</b> Cube/Square banane ke liye factors ki power ko $3$ ya $2$ ke multiple tak push karte hain."
+    },
+    {
+      "q": "If $N = 4^{11} + 4^{12} + 4^{13} + 4^{14}$, then find the total number of positive factors of $N$.",
+      "o": [
+        "90",
+        "92",
+        "94",
+        "96"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $92$<br><br><b>Pen-Free Observation:</b> Series of powers. Lowest power common niklegi.<br><br><b>Method 1 (Ninja Technique):</b> Pull out $4^{11}$. Inside: $(1+4+16+64) = 85$. Prime rep: $2^{22} \\times 5^1 \\times 17^1$. Powers $+1$ multiplication: $23 \\times 2 \\times 2 = 92$.<br><br><b>Takeaway:</b> Hamesha base ko absolute prime ($2, 3, 5$) me convert karna mat bhulna."
+    },
+    {
+      "q": "What are the last two digits of $31^{41^{51}}$?",
+      "o": [
+        "11",
+        "31",
+        "51",
+        "71"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $31$<br><br><b>Pen-Free Observation:</b> Base ends in $1$. Aman Sir's universal rule for $X1$ applies.<br><br><b>Method 1 (Ninja Technique):</b> Unit digit is always $1$. Tens digit = (Tens of base $\\times$ Unit of power). $3 \\times (\\text{Last digit of } 41^{51})$. Since $41^{51}$ ends in $1$, $3 \\times 1 = 3$. Answer: $31$.<br><br><b>Takeaway:</b> $(\\dots x1)^y$ ke last two digits hamesha $(x \\times \\text{last digit of } y)$ aur $1$ hote hain."
+    },
+    {
+      "q": "How many composite numbers are there from $69$ to $91$?",
+      "o": [
+        "17",
+        "18",
+        "19",
+        "20"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $18$<br><br><b>Pen-Free Observation:</b> Small range. Total numbers me se prime hatane hain.<br><br><b>Method 1 (Ninja Technique):</b> Total numbers $= 91-69+1 = 23$. Primes evaluated: $71, 73, 79, 83, 89$ (Total $5$). Composite $= 23 - 5 = 18$.<br><br><b>Takeaway:</b> Range formula $= (L - F + 1)$ and directly skip prime traps."
+    },
+    {
+      "q": "Remainder when $2025^{(2024^{3025})}$ is divided by $7$ is",
+      "o": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "a": 3,
+      "s": "<b>Final Output:</b> $4$<br><br><b>Pen-Free Observation:</b> Euler's totient theorem will collapse the massive exponent.<br><br><b>Method 1 (Ninja Technique):</b> Base transformation: $2025 \\equiv 2 \\pmod 7$. Totient of $7$ is $6$. Power transformation: $2024^{3025} \\equiv 2^{\\text{Odd}} \\equiv 2 \\pmod 6$. Final collapse: $2^2 \\pmod 7 = 4$.<br><br><b>Takeaway:</b> Fermat/Euler Totient is a cheat code for these massive power towers."
+    },
+    {
+      "q": "If a book has $250$ pages, how many digits have been used to number the pages.",
+      "o": [
+        "650",
+        "453",
+        "642",
+        "672"
+      ],
+      "a": 2,
+      "s": "<b>Final Output:</b> $642$<br><br><b>Pen-Free Observation:</b> $250$ pages standard pagination counting. $1$-digit, $2$-digit, $3$-digit slots.<br><br><b>Method 1 (Ninja Technique):</b> $1$ to $99$ takes exactly $189$ digits. Remaining $3$-digit pages $= 250 - 99 = 151$. Computation: $189 + (151 \\times 3) = 642$.<br><br><b>Takeaway:</b> Memorize: $1-99$ uses $189$ digits. $1-999$ uses $2889$ digits."
+    },
+    {
+      "q": "What is the remainder when $15^{400}$ is divided by $1309$?",
+      "o": [
+        "1",
+        "15",
+        "1012",
+        "1308"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $1$<br><br><b>Pen-Free Observation:</b> $1309$ is a composite of $7 \\times 11 \\times 17$. Chinese Remainder Theorem logic.<br><br><b>Method 1 (Ninja Technique):</b> Check mod $7, 11, 17$. $15^{400} \\equiv 1$ across all three prime bases using Fermat's Little Theorem. Recombination gives $1 \\pmod{1309}$.<br><br><b>Takeaway:</b> Large weird divisors are always product of primes. Break them and conquer."
+    },
+    {
+      "q": "Which of the following sets is a proper subset of rational numbers?",
+      "o": [
+        "Irrational numbers",
+        "Natural numbers",
+        "Real numbers",
+        "None of the above"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> Natural numbers<br><br><b>Pen-Free Observation:</b> Pure number system hierarchy.<br><br><b>Method 1 (Ninja Technique):</b> Natural $\\subset$ Whole $\\subset$ Integers $\\subset$ Rationals $\\subset$ Reals. Option validation complete. Natural numbers fit.<br><br><b>Takeaway:</b> Diagrammatic clarity of number sets saves time."
+    },
+    {
+      "q": "In how many ways can the number $11025$ be resolved into two factors which are co-prime to each other?",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $4$<br><br><b>Pen-Free Observation:</b> Number of co-prime factor pairs strictly depends on the count of distinct prime bases.<br><br><b>Method 1 (Ninja Technique):</b> Prime factorization of $11025 = 3^2 \\times 5^2 \\times 7^2$. Distinct bases $(n) = 3$. Jump to formula: $2^{n-1} = 2^2 = 4$.<br><br><b>Takeaway:</b> Direct hack: Co-prime ways $= 2^{n-1}$ jaha $n$ = distinct prime factors."
+    },
+    {
+      "q": "What is the value of $1006^2 - 1007 \\times 1005 + 1008 \\times 1004 - 1009 \\times 1003$?",
+      "o": [
+        "4",
+        "6",
+        "-6",
+        "9"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $6$<br><br><b>Pen-Free Observation:</b> Numbers are strictly consecutive around $1006$. Algebraic substitution is the key.<br><br><b>Method 1 (Ninja Technique):</b> Let $x = 1006$. Pattern leap: $x^2 - (x^2-1) + (x^2-4) - (x^2-9) = 1 - 4 + 9 = 6$.<br><br><b>Takeaway:</b> Never multiply! Treat consecutive massive numbers as $(x-a)(x+a)$ forms."
+    },
+    {
+      "q": "What is the sum of the first $39$ odd numbers?",
+      "o": [
+        "1521",
+        "1541",
+        "1601",
+        "1421"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $1521$<br><br><b>Pen-Free Observation:</b> AP sum of odds starting from $1$ is just the square of the count.<br><br><b>Method 1 (Ninja Technique):</b> Sum $= n^2 = 39^2 = 1521$.<br><br><b>Takeaway:</b> First $n$ odd numbers sum $= n^2$. First $n$ even $= n(n+1)$."
+    },
+    {
+      "q": "How many numbers between $200$ and $800$ are not divisible by $5$ and $7$?",
+      "o": [
+        "411",
+        "548",
+        "137",
+        "400"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $411$<br><br><b>Pen-Free Observation:</b> Range is exactly $600$. Divisibility exclusions follow a fractional depletion pattern.<br><br><b>Method 1 (Ninja Technique):</b> Use consecutive block jump. Total $= 600$. Fraction remaining $= 600 \\times (4/5) \\times (6/7) \\approx 411.4$. Round down to $411$.<br><br><b>Takeaway:</b> Not divisible by $p, q$ over large uniform ranges is approximately Total $\\times (1 - 1/p)(1 - 1/q)$."
+    },
+    {
+      "q": "Find the last three digits of $2^{300}$.",
+      "o": [
+        "001",
+        "376",
+        "624",
+        "176"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $376$<br><br><b>Pen-Free Observation:</b> Last $3$ digits mean $\\pmod{1000}$. Base $2$ and $1000$ share common factors. CRT is mandatory.<br><br><b>Method 1 (Ninja Technique):</b> Split $1000 = 8 \\times 125$. Mod $8$: $0$. Mod $125$: Euler jump $\\implies 2^{100} \\equiv 1 \\implies 2^{300} \\equiv 1$. Target is $125k + 1$ divisible by $8$. For $k=3$, $376$ fits perfectly.<br><br><b>Takeaway:</b> Extreme level hack! CRT for non-coprime modulus is CDS/CGL Mains material."
+    },
+    {
+      "q": "What is the ratio of the sum of the even factors to the sum of the odd factors of $240$?",
+      "o": [
+        "30:1",
+        "15:1",
+        "14:1",
+        "24:1"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $30:1$<br><br><b>Pen-Free Observation:</b> Ratio of even to odd factor sums isolates the base-$2$ component.<br><br><b>Method 1 (Ninja Technique):</b> $240 = 2^4 \\times 3 \\times 5$. Odd part sum $= (1+3)(1+5) = 24$. Even part sum removes $2^0$: $(2+4+8+16) \\times 24 = 30 \\times 24$. Ratio $= 30:1$.<br><br><b>Takeaway:</b> Even factor sum me bas $2^0$ wala element ignore karna hota hai."
+    },
+    {
+      "q": "What is the remainder when a 6-digit number formed by repeating a 2-digit number three times (for example, $252525$) is divided by $10101$?",
+      "o": [
+        "1",
+        "25",
+        "0",
+        "101"
+      ],
+      "a": 2,
+      "s": "<b>Final Output:</b> $0$<br><br><b>Pen-Free Observation:</b> $ababab$ pattern itself is a multiple of $10101$.<br><br><b>Method 1 (Ninja Technique):</b> $ababab = ab(10101)$. Remainder when divided by $10101$ is inherently $0$.<br><br><b>Takeaway:</b> Place value expansion patterns ($ab \\to 101, abc \\to 1001$) are instant visual solves."
+    },
+    {
+      "q": "If $n = 8^{12}$, then how many perfect squares are there in its factors?",
+      "o": [
+        "18",
+        "19",
+        "20",
+        "21"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $19$<br><br><b>Pen-Free Observation:</b> Convert to prime base to trace all even exponents.<br><br><b>Method 1 (Ninja Technique):</b> $8^{12} = 2^{36}$. Perfect squares need even powers $\\{0, 2, 4 \\dots 36\\}$. Count leap: $36/2 + 1 = 19$.<br><br><b>Takeaway:</b> Total perfect squares $= (\\text{Highest even power} / 2) + 1$ (for $0$)."
+    },
+    {
+      "q": "The 5-digit number $7x23y$ is divisible by $24$. Find the maximum possible value of $(x + y)$.",
+      "o": [
+        "7",
+        "9",
+        "11",
+        "5"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $9$<br><br><b>Pen-Free Observation:</b> Divisible by $24 \\implies 8$ and $3$. Target is MAX $(x+y)$.<br><br><b>Method 1 (Ninja Technique):</b> Rule of $8$ on $23y \\implies y=2$. Rule of $3$ on sum: $14+x$. Max single digit $x$ for multiple of $3$ is $7$ (sum $21$). Hence $7+2=9$.<br><br><b>Takeaway:</b> Divisibility me humesha pehle restrictive rule lagao (last digits), fir broad rule (sum)."
+    },
+    {
+      "q": "What is the remainder when the $7$-digit number $4538291$ is divided by $101$?",
+      "o": [
+        "58",
+        "27",
+        "15",
+        "42"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $58$<br><br><b>Pen-Free Observation:</b> Divisibility of $101$ works on $2$-digit alternating blocks from right.<br><br><b>Method 1 (Ninja Technique):</b> Blocks: $04, 53, 82, 91$. Alternating sum: $91 - 82 + 53 - 04 = 58$. Remainder directly $58$.<br><br><b>Takeaway:</b> Base $10^2+1$ (i.e. $101$) requires blocks of $2$. Base $10^3+1$ (i.e. $1001$) requires blocks of $3$."
+    }
+  ]
+}
