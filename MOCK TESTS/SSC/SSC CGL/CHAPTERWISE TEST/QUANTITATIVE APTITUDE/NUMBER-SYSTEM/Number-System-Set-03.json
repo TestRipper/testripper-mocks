@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Number-System-Set03",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "The ratio between a two-digit number and the number obtained by reversing its digits is $4:7$. Find the ratio between the tens place digit and the units place digit.",
+    "o": [
+      "$1:2$",
+      "$2:1$",
+      "$1:3$",
+      "$3:1$"
+    ],
+    "a": 0,
+    "s": "<b>Answer: 1:2</b><br><br>Dekh bhai, ye options se udane wala question hai! Pen uthane ki bhi zarurat nahi.<br><b>Pen-Free Observation:</b> Number $ab$ aur reversed $ba$ ka ratio $4:7$ diya hai. Option A me digits ratio $1:2$ hai, check karlo jaise $12$ aur $21$. Seedha $\\frac{12}{21} = \\frac{4}{7}$ ban raha hai. Baaki check karne ka koi logic nahi banta."
+  },
+  {
+    "q": "A number when divided by $15$ leaves remainder $8$ and when divided by $9$ leaves remainder $a$. Which of the following regarding $a$ is TRUE?",
+    "o": [
+      "$a$ is always a prime number",
+      "$a$ is always a multiple of $3$",
+      "$a$ is always an even number",
+      "None of the above"
+    ],
+    "a": 3,
+    "s": "<b>Answer: None of the above</b><br><br>Dekh bhai, basic remainder theorem ka setup hai.<br>Number $N = 15k + 8$ assume karke initial cases test kiye. $k=1$ par $N=23$, mod 9 gives $a=5$ (odd/prime). $k=2$ par $N=38$, mod 9 gives $a=2$ (even/prime). Conditions constantly fluctuate kar rahi hain. Final leap: Koi fixed pattern nahi hai, hence None of the above."
+  },
+  {
+    "q": "Find the smallest value of $a$ so that $42a48b$ ($a>b$) is divisible by $11$.",
+    "o": [
+      "9",
+      "4",
+      "5",
+      "0"
+    ],
+    "a": 2,
+    "s": "<b>Answer: 5</b><br><br>Dekh bhai, $11$ ka divisibility rule (sum of alternate digits difference) lagayenge.<br>Difference logic setup kiya: $(12+a) - (6+b) = 6 + a - b$. Isko $11$ ke barabar rakhne par $a-b = 5$ established. Chuki $a>b$ aur hume smallest $a$ chahiye, minimum value $b=0$ lenge. Seedha jump: $a = 5$."
+  },
+  {
+    "q": "Find the remainder when $2^{76}$ is divided by $96$.",
+    "o": [
+      "16",
+      "32",
+      "64",
+      "48"
+    ],
+    "a": 2,
+    "s": "<b>Answer: 64</b><br><br>Dekh bhai, Base aur divisor coprime nahi hain, toh Cancellation rule ka jalwa chalega!<br>Fraction ko $\\frac{2^{76}}{2^5 \\times 3}$ form me break kiya. Upar niche $2^5$ se kaat diya. Bacha $\\frac{2^{71}}{3}$, jiska remainder $2$ aayega. Final transformation: Jisse kata tha usse multiply kar do. $2 \\times 2^5 = 64$."
+  },
+  {
+    "q": "Let $k$ be a natural number and $1 \\le k \\le 16$. Let $A$ be a set of two-digit natural numbers which are in the form $6k+1$, $B$ be the set of two-digit prime numbers which are in the form $6k+1$. $n(A) = x, n(B) = y$, and the number of pairs of co-prime numbers of set $A$ be $z$. What is the value of $x+y+z$:",
+    "o": [
+      "125",
+      "231",
+      "225",
+      "100"
+    ],
+    "a": 0,
+    "s": "<b>Answer: 125</b><br><br>Dekh bhai, set properties aur counting framework ka proper implementation hai.<br>Range verify ki: $k=2$ se $16$ tak $x=15$. Set B (primes) count $y=10$. Combinatorics apply ki: Total pairs me se non-coprimes (multiples of 5, 7, 13) minus kiye, so $z = 105 - 5 = 100$. Final leap: $x+y+z = 15+10+100 = 125$."
+  },
+  {
+    "q": "$N$ is a natural number less than $1000$ and is a multiple of $5$. When $N$ is successively divided by $7$ and $8$, it leaves remainders of $2$ and $3$ respectively. How many possible values of $N$ exist?",
+    "o": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "a": 3,
+    "s": "<b>Answer: 4</b><br><br>Dekh bhai, successive division ka base parameter set karna hai.<br>Divisors aur remainders se general form $N = 56k+23$ nikali. Multiple of $5$ ke liye mod $5$ laga kar condition $N = 280m + 135$ set ki. $N < 1000$ limit pe constraint check kiya. Final jump: $m = 0, 1, 2, 3$ ke liye exactly $4$ values aayengi."
+  },
+  {
+    "q": "Let '$a$', '$b$', '$c$' be three integers which give $3, 4$ and $8$ remainders respectively when divided by $45$. What is the remainder if $3a^{2}+5b+c^{3}$ is divided by $15$?",
+    "o": [
+      "0",
+      "4",
+      "5",
+      "10"
+    ],
+    "a": 1,
+    "s": "<b>Answer: 4</b><br><br>Dekh bhai, Modular arithmetic ki seedhi application hai, pen uthane ki need nahi.<br>Chuki divisor $15$, purane divisor $45$ ka factor hai, remainders unchanged rahenge. Initial logic established. Seedha substitution step: $3(3)^2 + 5(4) + 8^3 \\equiv 27 + 20 + 512 = 559$. $559 \\pmod{15}$ gives exact remainder $4$."
+  },
+  {
+    "q": "The six-digit number $537xy5$ is divisible by $125$. How many such six-digit numbers are there?",
+    "o": [
+      "4",
+      "2",
+      "3",
+      "5"
+    ],
+    "a": 0,
+    "s": "<b>Answer: 4</b><br><br>Dekh bhai, divisibility rules ko smartly apply karna seekh.<br>$125$ ka divisibility rule says last $3$ digits must be a multiple of $125$. Form 'xy5' set hai. Last $3$ digits $125$ ke multiples hone chahiye jo $5$ pe end hon. Leap step: Aise exact $4$ multiples hain ($125, 375, 625, 875$). Hence, $4$ numbers possible hain."
+  },
+  {
+    "q": "What is the remainder when $7^{99}$ is divided by $344$?",
+    "o": [
+      "1",
+      "343",
+      "7",
+      "0"
+    ],
+    "a": 1,
+    "s": "<b>Answer: 343</b><br><br>Dekh bhai, negative remainder concept aur powers ka khel hai.<br>Format ko $(7^3)^{33} = 343^{33}$ me adjust kiya. $343 \\pmod{344}$ se $-1$ aayega. Odd power par result $-1$ fix. Final transformation: Negative remainder ko divisor me add karo, $344 - 1 = 343$."
+  },
+  {
+    "q": "What is the least number must be subtracted from $56785$ so that the given number become perfect Square?",
+    "o": [
+      "121",
+      "131",
+      "141",
+      "151"
+    ],
+    "a": 2,
+    "s": "<b>Answer: 141</b><br><br>Dekh bhai, Approximation & Range Definition ka mast hack hai.<br>Closest standard square $238^2 = 56644$ established as context. No long division method needed. Seedha jump to difference: $56785 - 56644 = 141$ subtract karna padega."
+  },
+  {
+    "q": "What is the sum of all integer values of $n$ for which $n^2 + 19n + 92$ is a perfect square?",
+    "o": [
+      "21",
+      "19",
+      "0",
+      "-19"
+    ],
+    "a": 3,
+    "s": "<b>Answer: -19</b><br><br>Dekh bhai, Quadratic completion ka advanced approach use karenge.<br>Expression ko $(2n+19)^2 - 4k^2 = -7$ me resolve kiya. Bounding ranges aur factors $(-1, 7)$ identify kiye. Standard processing applied. Leap to outcome: Symmetric roots aayenge, $n = -8$ and $n = -11$. Direct sum is $-19$."
+  },
+  {
+    "q": "A number $N$ leaves a remainder of $4$ when divided by $7$. What will be the remainder when the expression $(N^3 + 3N^2 + 5N + 1)$ is divided by $7$?",
+    "o": [
+      "0",
+      "1",
+      "4",
+      "6"
+    ],
+    "a": 0,
+    "s": "<b>Answer: 0</b><br><br>Dekh bhai, Remainder property seedha polynomial pe lagti hai.<br>Value $N=4$ seedhe equation me dali. Contextually valid parameters set: $4^3 + 3(4^2) + 5(4) + 1 = 133$. Jump to final calculation: $133$ is perfectly divisible by $7$, remainder $0$ aayega."
+  },
+  {
+    "q": "When $999999\\dots$ ($104$ times) is divided by $271$, the remainder that remains is:",
+    "o": [
+      "0",
+      "1",
+      "186",
+      "243"
+    ],
+    "a": 3,
+    "s": "<b>Answer: 243</b><br><br>Dekh bhai, repeating digits aur magic multiples ka khel hai.<br>Rule fix: $271 \\times 369 = 99999$. Matlab har $5$ digit ka block perfectly divide hoga. Total $104$ digits me se $100$ digits consume ho gaye. End step: Bacha sirf $9999$, isko $271$ se divide karne par exactly $243$ remainder bachega."
+  },
+  {
+    "q": "Find the sum of the reciprocals of all the factors of $360$.",
+    "o": [
+      "$2.8$",
+      "$3.25$",
+      "$3.5$",
+      "$2.5$"
+    ],
+    "a": 1,
+    "s": "<b>Answer: 3.25</b><br><br>Dekh bhai, seedha shortcut yaad rakh: Sum of reciprocals = Sum of factors / N.<br>Prime factorization of $360$ aur sum of factors directly $1170$ evaluate kar liya gaya hai. Intermediate steps omitted. Final jump: $\\frac{1170}{360} = 3.25$. Gold standard approach, bina time waste kiye!"
+  },
+  {
+    "q": "The sum of a two-digit number and the number obtained by reversing its digits is a perfect square. How many such two-digit numbers are there?",
+    "o": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "a": 3,
+    "s": "<b>Answer: 8</b><br><br>Dekh bhai, basic digital formula lagana hai.<br>Sum hamesha $11(x+y)$ hota hai. Isko perfect square hone ke liye $(x+y)$ ko $11$ banna padega. Standard processing applied for pair selection. Direct outcome: Valid digit pairs $(2,9), (3,8), (4,7), (5,6)$ aur unke reverses. Total $8$ numbers."
+  },
+  {
+    "q": "The product of three consecutive positive integers is always exactly divisible by which of the following numbers?",
+    "o": [
+      "12",
+      "6",
+      "8",
+      "15"
+    ],
+    "a": 1,
+    "s": "<b>Answer: 6</b><br><br>Dekh bhai, ye CDS ka standard theoretical trap hai.<br>Rule of consecutive integers is universally verified: Out of any $n$ consecutive integers, product is always divisible by $n!$. Yaha $3$ integers hain, so directly divisible by $3!$. Leap step: $3! = 6$. Seedha mark karo."
+  },
+  {
+    "q": "What is the remainder when $(10^{10} + 10^{100} + 10^{1000} + 10^{10000})$ is divided by $7$?",
+    "o": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "a": 1,
+    "s": "<b>Answer: 2</b><br><br>Dekh bhai, Fermat's/Euler's cyclic pattern observe karna padega.<br>Base $10 \\equiv 3 \\pmod 7$. Cycle length $6$ established. Powers $10, 100, 1000$ mod $6$ hamesha $4$ denge. Intermediate transitions replaced with direct substitution: Har term $3^4 \\equiv 4 \\pmod 7$ banegi. Char terms: $4 \\times 4 = 16 \\pmod 7 = 2$."
+  },
+  {
+    "q": "If the 10-digit number $5432y1749x$ is divisible by $72$, what is the minimum possible value of $(5x - 4y)$?",
+    "o": [
+      "14",
+      "10",
+      "24",
+      "18"
+    ],
+    "a": 0,
+    "s": "<b>Answer: 14</b><br><br>Dekh bhai, $72$ ka matlab $8$ aur $9$ ki divisibility.<br>Last 3 digits ($49x$) par $8$ ka rule lagakar $x = 6$ locked in. Entire sum formula processed, required multiple of $9$ demands $y = 4$. Both variables isolated. Final jump: $5(6) - 4(4) = 30 - 16 = 14$."
+  },
+  {
+    "q": "A number when divided by $4$ and $5$ successively leaves remainders of $1$ and $4$ respectively. What will be the successive remainders when the same number is divided by $5$ and $4$ successively?",
+    "o": [
+      "4, 1",
+      "1, 4",
+      "2, 3",
+      "3, 2"
+    ],
+    "a": 2,
+    "s": "<b>Answer: 2, 3</b><br><br>Dekh bhai, successive division me least number form karne ka direct hack hai.<br>Bottom-up logic validated: Number $N = 4(0+4) + 1 = 17$ minimum condition verify ho gayi. Now seedha divide kar: $17 \\div 5$ gives remainder $2$ (quotient 3). $3 \\div 4$ gives remainder $3$. Final remainders: $2, 3$."
+  },
+  {
+    "q": "Calculate the sum: $1 + 3 + 5 + 7 + \\dots + 21 = ?$",
+    "o": [
+      "100",
+      "121",
+      "144",
+      "169"
+    ],
+    "a": 1,
+    "s": "<b>Answer: 121</b><br><br>Dekh bhai, AP mat lagana, seedha sum of odd numbers ka formula yaad rakh.<br>Series context validated: Sum of first $n$ odd numbers is $n^2$. Last term set as $(2n-1) = 21$, giving $n = 11$. Transformation: $11^2 = 121$."
+  },
+  {
+    "q": "When two numbers are separately divided by $44$ the remainders are $11$ and $38$ respectively. If the sum of the two number is divided by $44$, then the obtained remainder will be?",
+    "o": [
+      "16",
+      "33",
+      "5",
+      "44"
+    ],
+    "a": 2,
+    "s": "<b>Answer: 5</b><br><br>Dekh bhai, Remainder Summation rule universally constant hai.<br>Numbers ki jagah unke remainders pe hi direct operation kiya. $11 + 38 = 49$. Modulo operation leap: $49 \\pmod{44}$ seedha remainder $5$ dega."
+  },
+  {
+    "q": "Value of $22.\\overline{4} + 11.5\\overline{67} - 33.5\\overline{9}$ is?",
+    "o": [
+      "$0.\\overline{32}$",
+      "$0.4\\overline{12}$",
+      "$0.4\\overline{21}$",
+      "$0.\\overline{3}$"
+    ],
+    "a": 1,
+    "s": "<b>Answer: $0.4\\overline{12}$</b><br><br>Dekh bhai, Bar decimals ko fraction me todne me time waste nahi karna.<br>Expansion logic validated up to 4 decimal places for pattern spotting. $33.5\\overline{9}$ directly normalizes to $33.60$. Standard alignment addition subtraction executed silently. Leap to final outcome pattern: $0.4121212...$ i.e., $0.4\\overline{12}$."
+  },
+  {
+    "q": "The expression $333^{555} + 555^{333}$ is divisible by",
+    "o": [
+      "3",
+      "2",
+      "37",
+      "All of these"
+    ],
+    "a": 3,
+    "s": "<b>Answer: All of these</b><br><br>Dekh bhai, bases ko unke prime factors me todenge toh saaf dikhega.<br>Expression components expanded into common multiplier $111$ format. Established presence of $2, 3$, aur $37$ as inherent factors of bases and their power sums. Leap logic: Teeno primes inherently embedded hain, so perfectly divisible by 'All of these'."
+  },
+  {
+    "q": "What is the sum of all $3$ digit positive integers divisible by $11$?",
+    "o": [
+      "44550",
+      "43550",
+      "42550",
+      "45550"
+    ],
+    "a": 0,
+    "s": "<b>Answer: 44550</b><br><br>Dekh bhai, basic Arithmetic Progression (AP) framework hai.<br>Range boundaries $110$ aur $990$ strictly set hain. Number of terms $n=81$ established without intermediate loops. Final outcome via direct summation leap: $\\frac{81}{2} \\times (110 + 990) = 44550$."
+  },
+  {
+    "q": "What is the sum of all the common terms less $632$ between the given series $S_1$ and $S_2$. $S_1 = 2, 9, 16, 23 \\dots, 632$ and $S_2 = 7, 11, 15, \\dots, 743$?",
+    "o": [
+      "6860",
+      "7140",
+      "6974",
+      "6750"
+    ],
+    "a": 2,
+    "s": "<b>Answer: 6974</b><br><br>Dekh bhai, Common series nikalne ka shortcut LCM trick se aayega.<br>Common difference $LCM(7, 4) = 28$ aur first matching term $23$ lock kiya. Upper bound condition $\\le 631$ gives $n=22$ terms. Middle term extraction bypassed. Direct final AP sum transformation: $\\frac{22}{2} \\times (23 + 611) = 6974$."
+  }
+]
+}

@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Number-System-Set02",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "What is the sum of all the natural number between $1$ and $200$ which are multiple of $5$?",
+    "o": [
+      "3900",
+      "4100",
+      "4155",
+      "4235"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Range $5$ se start hoke $195$ tak jayegi. Average lagbhag $100$ aayega aur numbers $40$ ke aas-paas hain. $100 \\times 40 = 4000$ ke kareeb ka answer hoga. <br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> AP me Average hamesha $\\frac{First + Last}{2}$ hota hai. Matalab $\\frac{5+195}{2} = 100$. Total terms $n = \\frac{195}{5} = 39$. Seedha multiply mar: Sum = $39 \\times 100 = 3900$.<br><br><b>Method 2 (Concept Builder):</b> Dekh bhai, basic formula $S_n = \\frac{n}{2}(2a + (n-1)d)$ lagane se time waste hota hai. Jab AP me $a$ aur $l$ pata ho, toh $S_n = n \\times \\text{Average}$ ka use karte hain.<br><br><b>Best Method:</b> Method 1 (Average trick).<br><b>Future exam takeaway:</b> Sum of AP hamesha 'Number of terms $\\times$ Middle Term (Average)' hota hai. Pen uthane ki zaroorat nahi padni chahiye!"
+  },
+  {
+    "q": "$x, y,$ and $z$ are distinct prime numbers where $x < y < z$. If $x + y + z = 70$, then what is the maximum possible value of $z$?",
+    "o": [
+      "59",
+      "61",
+      "67",
+      "71"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Teen prime numbers ka sum $70$ (Even) hai. Teen odd numbers ka sum kabhi even nahi ho sakta. Matalab ek prime lazmi taur par $2$ hoga!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Sabse chota prime $x = 2$ set kar diya. Bacha $y + z = 68$. $z$ ko maximum karna hai toh options se check kar. Agar $z = 67$ (prime), toh $y = 1$ (not prime, reject). Agar $z = 61$ (prime), toh $y = 7$ (prime, accept!). Done.<br><br><b>Method 2 (Concept Builder):</b> Prime number set me sirf $2$ hi ek akela even warrior hai. Ye property SSC/CDS ka favourite trap hai.<br><br><b>Best Method:</b> Option elimination with Parity (Odd/Even) check.<br><b>Future exam takeaway:</b> Jab bhi prime numbers ka sum Even diya ho, toh aankh band karke ek number ko $2$ maan lena."
+  },
+  {
+    "q": "In how many ways can the number $10800$ be written as a product of two co-prime factors?",
+    "o": [
+      "4",
+      "8",
+      "16",
+      "32"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $10800$ me prime bases check kar: $2, 3$ aur $5$ aayenge. Co-prime factors banane ke liye pure-pure base uthane padenge.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Number of ways = $2^{n-1}$, jahan $n$ distinct prime bases ka count hai. $10800 = 2^4 \\times 3^3 \\times 5^2$. Yahan $n=3$ bases hain ($2,3,5$). Formula me daal: $2^{3-1} = 2^2 = 4$ ways. Seedha hack!<br><br><b>Method 2 (Concept Builder):</b> Dekh bhai, co-prime matlab HCF $1$. Yani ek prime factor ya toh poora group $A$ me jayega ya poora group $B$ me. It behaves like distributing distinct items.<br><br><b>Best Method:</b> Method 1 ka direct formula.<br><b>Future exam takeaway:</b> Number system me 'ways to express as co-prime product' pooche toh bas prime bases gino aur $2^{n-1}$ thop do."
+  },
+  {
+    "q": "What is the sum of $1 \\frac{1}{2} + 4 \\frac{1}{6} + 7 \\frac{1}{12} + 10 \\frac{1}{20} \\dots$ upto $20$ terms?",
+    "o": [
+      "12410/21",
+      "12412/21",
+      "12433/21",
+      "12435/21"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Is heavy series ko mix fraction se mat kholna. Integer part ($1, 4, 7...$) AP bana raha hai aur fraction part ($\\frac{1}{2}, \\frac{1}{6}, \\frac{1}{12}...$) ek Telescoping series hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> <br>Integers: $1 + 4 + 7 \\dots$ $20$ terms tak. Sum = $\\frac{20}{2}[2(1) + 19(3)] = 10 \\times 59 = 590$.<br>Fractions: $\\frac{1}{1 \\times 2} + \\frac{1}{2 \\times 3} \\dots$ $20$ terms tak. Sum = $\\frac{n}{n+1} = \\frac{20}{21}$.<br>Dono jodd de: $590 + \\frac{20}{21} = \\frac{12390 + 20}{21} = \\frac{12410}{21}$.<br><br><b>Method 2 (Concept Builder):</b> <table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Part</th><th style='text-align:left;padding:4px;color:var(--p2)'>Nature</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Integers</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Standard AP with $d=3$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Fractions</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Telescoping: $\\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}$</td></tr></table><br><br><b>Best Method:</b> Splitting technique.<br><b>Future exam takeaway:</b> Mixed fractions ki badi series hamesha Integer + Fraction me tod kar solve karni hai."
+  },
+  {
+    "q": "What is the result when the sum of the digits of $(10^{15} + 1)$ is divided by $11$?",
+    "o": [
+      "$0$",
+      "$2$",
+      "$9$",
+      "$10$"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Sawaal me dhokha hai! Sawaal number ko $11$ se divide karne ka nahi hai, uske 'Sum of digits' ko $11$ se divide karne ka hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> $10^{15} + 1$ number dikhne me kaisa hoga? Ek $1$, uske beech me $14$ zeros, aur aakhiri me ek $1$. Is pure number ke digits ko jodega toh sum aayega $1 + 0 + \\dots + 1 = 2$. Ab $2$ ko $11$ se divide karega toh Remainder $2$ hi aayega na mere bhai!<br><br><b>Method 2 (Concept Builder):</b> Logical gherabandi! $10^n + 1$ form me sum of digits hamesha $2$ hi hota hai, chahe $n$ kuch bhi ho.<br><br><b>Best Method:</b> Direct observation.<br><b>Future exam takeaway:</b> Language ko dhyan se padho. 'Sum of digits' aur 'Number' me confuse mat hona."
+  },
+  {
+    "q": "$846523X7Y$ is a 9 digit number which is divisible by $9$, and $Y-X=6$. Find the value of $\\sqrt{2X+4Y}$.",
+    "o": [
+      "4",
+      "6",
+      "8",
+      "2"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $9$ ka rule matlab Digital Sum $9$ hona chahiye. Digital sum nikalte waqt $9$ banne wale pairs wahin uda do ($4+5=9$, etc).<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Remaining digits ka sum: $8+6+2+3+7 = 26 \to 8$. Matalab $8 + X + Y$ ko $9$ se katna hai. <br>Yani $X+Y$ ki value ya toh $1$ hogi ya $10$.<br>Given: $Y - X = 6$. <br>Agar $X+Y=1$ liya toh values negative/fraction aayengi. <br>Toh $X+Y = 10$ aur $-X+Y = 6$ solve kar. Jodd de: $2Y = 16 \implies Y=8$. Toh $X=2$. <br>Equation me daal: $\\sqrt{2(2) + 4(8)} = \\sqrt{4 + 32} = \\sqrt{36} = 6$.<br><br><b>Method 2 (Concept Builder):</b> Digital sum technique, jise C9 method bhi kehte hain, equation ko chhoti kar deti hai.<br><br><b>Best Method:</b> C9 Method + Simultaneous Equation.<br><b>Future exam takeaway:</b> Divisibility of $9$ dekhte hi sab digits joddne nahi baithna, $9$ ke multiples ko raaste me hi cancel karte jao."
+  },
+  {
+    "q": "What is the sum of the digits of the sum of all factors of $100$?",
+    "o": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $100$ chota number hai. Uske total factors ka sum direct formulae se jaldi aayega. Uske baad bas digits ko joddna hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> $100 = 2^2 \\times 5^2$. <br>Sum of factors = $\\left(\\frac{2^3 - 1}{2-1}\\right) \\times \\left(\\frac{5^3 - 1}{5-1}\\right) = \\left(\\frac{7}{1}\\right) \\times \\left(\\frac{124}{4}\\right) = 7 \\times 31 = 217$.<br>Sum of digits of $217 = 2 + 1 + 7 = 10$. Khatam.<br><br><b>Method 2 (Concept Builder):</b> Formula $\\frac{p^{a+1}-1}{p-1}$ use karna best hota hai sum of factors ke liye. Alternately, $(2^0+2^1+2^2)(5^0+5^1+5^2)$ bhi wahi baat hai.<br><br><b>Best Method:</b> Standard factor sum formula.<br><b>Future exam takeaway:</b> CGL Mains me direct formula application ke upar ek chota step (like sum of digits) laga kar traps banate hain."
+  },
+  {
+    "q": "$0.\\overline{47} + 0.5\\overline{03} - 0.\\overline{39} \\times 0.\\overline{9} = ?$",
+    "o": [
+      "$0.5\\overline{83}$",
+      "$0.6\\overline{15}$",
+      "$0.6\\overline{25}$",
+      "$0.5\\overline{78}$"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Sabse badi trick ye hai ki $0.\\overline{9}$ hamesha exact $1$ ke barabar hota hai! Equation ko complex banane ke liye usko wahan rakha gaya hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Equation ko decode kar: $\\frac{47}{99} + \\frac{503-5}{990} - \\frac{39}{99} \\times 1$.<br>Pehle $\\frac{47}{99}$ aur $\\frac{39}{99}$ ko handle kar: $\\frac{47-39}{99} = \\frac{8}{99} = \\frac{80}{990}$.<br>Ab isko second fraction me jodd de: $\\frac{80}{990} + \\frac{498}{990} = \\frac{578}{990}$.<br>Wapas bar format me convert karne ke liye denominator me $990$ hai (do $9$, ek $0$). Matalab decimal ke baad ek digit bina bar ke, aur do digit pe bar. Check option A: $0.5\\overline{83} = \\frac{583-5}{990} = \\frac{578}{990}$. Matched!<br><br><b>Method 2 (Concept Builder):</b> Bar ko fraction me badalne ka rule: Puri sankhya minus bina bar wali sankhya, divided by jitne bar hain utne 9 aur jitne khali utne 0.<br><br><b>Best Method:</b> Fraction conversion.<br><b>Future exam takeaway:</b> $0.\\overline{9} = 1$ is property pe direct MCQ banta hai."
+  },
+  {
+    "q": "Which prime number is a mandatory factor of any $8$-digit number of the form $abcdabcd$?",
+    "o": [
+      "$37$",
+      "$73$",
+      "$101$",
+      "$1001$"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Pattern dekh bhai, $abcdabcd$. Yeh repetition kisi particular number se multiply karne par hi aati hai. Yahan multiply $10001$ se ho raha hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> $abcdabcd = abcd \\times 10001$. <br>Aur ye baat rata hua hona chahiye ki $10001$ ek magical composite number hai jiska prime factorization $73 \\times 137$ hota hai. Toh kisi bhi $abcdabcd$ form ke number ko $73$ compulsory divide karega. Options me $73$ hai, tick maar!<br><br><b>Method 2 (Concept Builder):</b> <table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Repetition Form</th><th style='text-align:left;padding:4px;color:var(--p2)'>Multiplier & Factors</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>$xyxy$</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$101$ (Prime)</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>$xyzxyz$</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$1001 = 7 \\times 11 \\times 13$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>$abcdabcd$</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$10001 = 73 \\times 137$</td></tr></table><br><br><b>Best Method:</b> Pattern memory.<br><b>Future exam takeaway:</b> Repetition multipliers ko hamesha table form me dimag me print rakho."
+  },
+  {
+    "q": "If $N = 77^{77^{77}}$ and $M = 33^{33^{33}}$, what is the unit digit of $N \\times M$?",
+    "o": [
+      "1",
+      "3",
+      "7",
+      "9"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Base digits $7$ aur $3$ hain. Unki power towers ajeeb lag rahi hain but essentially wo Odd numbers ki Odd power hain. Matalab power HAMESHA Odd hi rahegi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Unit digit me sirf aakhri $2$ digit power ke $4$ se divide hote hain. <br>$N$ me power $77^{\\text{odd}}$. $77 \\pmod 4 \\equiv 1$. Toh $1^{\\text{odd}} = 1$. Base mod cycle me power $1$ aayegi. $7^1 = 7$.<br>$M$ me power $33^{\\text{odd}}$. $33 \\pmod 4 \\equiv 1$. Toh $1^{\\text{odd}} = 1$. Base mod cycle me power $1$. $3^1 = 3$.<br>Unit digit = $7 \\times 3 = 21 \\implies 1$.<br><br><b>Method 2 (Concept Builder):</b> Power tower $a^{b^c}$ me bas $b \\pmod 4$ check kar liya karo aur uski power $c$ chala do.<br><br><b>Best Method:</b> Cyclicity of 4 hack.<br><b>Future exam takeaway:</b> Power towers dekh ke ghabrana nahi, Modulo 4 Cyclicity hamesha bachayegi."
+  },
+  {
+    "q": "What is the sum of all possible values of $a$ for which the 4-digit number $3a4b$ is divisible by $45$?",
+    "o": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $45$ se divisibility ka matalab $5$ aur $9$ dono se kategi. $5$ ke liye aakhri digit ($b$) ya toh $0$ hoga ya $5$.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> <br>Case 1: Agar $b = 0$, number hai $3a40$. $9$ ka rule (sum of digits): $7+a$. $9$ se divide hone ke liye $a$ ko $2$ hona padega.<br>Case 2: Agar $b = 5$, number hai $3a45$. $9$ ka rule: $12+a$. $18$ banne ke liye $a$ ko $6$ hona padega.<br>Possible values ka sum = $2 + 6 = 8$.<br><br><b>Method 2 (Concept Builder):</b> <table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Step</th><th style='text-align:left;padding:4px;color:var(--p2)'>Condition & Result</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>For 5</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Last digit $b$ must be $0$ or $5$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>For 9</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Sum of digits must be multiple of $9$</td></tr></table><br><br><b>Best Method:</b> Logical cases for composite divisibility.<br><b>Future exam takeaway:</b> Composite divisors ($45, 72, 88$) hamesha co-prime rules ($5\\times9, 8\\times9, 8\\times11$) pe toote hain."
+  },
+  {
+    "q": "Find the remainder when $55^{55}$ is divided by $7$.",
+    "o": [
+      "1",
+      "3",
+      "5",
+      "6"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Base $55$ ko divisor $7$ ke paas la. $7 \\times 8 = 56$. Toh $55$ negative remainder $-1$ dega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> $55 \\pmod 7 \\equiv -1$. <br>Expression ban gaya $(-1)^{55}$. <br>Negative number ki Odd power ka result hamesha negative $(-1)$ hi hota hai. <br>Lekin remainder negative chhod nahi sakte. Isliye divisor ko add karke positive bana lo: $-1 + 7 = 6$.<br><br><b>Method 2 (Concept Builder):</b> Fermat's Theorem ya Euler's Totient yahan zaroori nahi. Direct negative remainder format (Deviation Method in Remainders) is the fastest way.<br><br><b>Best Method:</b> Negative Remainder Concept.<br><b>Future exam takeaway:</b> Hamesha base ko divisor ke multiple ke $\\pm 1$ ke range me set karne ki koshish karo."
+  },
+  {
+    "q": "Three fractions $x, y$ and $z$, are such that $x > y > z$. When the smallest of them is divided by the greatest, the result is $9/16$, which exceeds $y$ by $0.0625$. If $x+y+z = 1 \\frac{13}{24}$ then the value of $x+z$ is:",
+    "o": [
+      "7/6",
+      "1",
+      "25/24",
+      "7/8"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Statement padhne me lengthy hai bas. Main loop hai $0.0625$ ko decode karna, jo directly $\\frac{1}{16}$ ka fraction value hota hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Question kehta hai ki $\\frac{z}{x} = \\frac{9}{16}$ aur ye $y$ se $\\frac{1}{16}$ zyada hai. <br>Yani $y = \\frac{9}{16} - \\frac{1}{16} = \\frac{8}{16} = \\frac{1}{2}$.<br>Sum diya hai: $x + y + z = \\frac{37}{24}$. <br>Hamein chahiye $x + z$. Toh seedha sum me se $y$ uda de! <br>$x + z = \\frac{37}{24} - \\frac{1}{2} = \\frac{37}{24} - \\frac{12}{24} = \\frac{25}{24}$.<br><br><b>Method 2 (Concept Builder):</b> Fractions aur unki decimal values rata hona chahiye (jaise $0.0625 = 1/16$). Tabhi aise sawaal smooth lagte hain.<br><br><b>Best Method:</b> Fraction decoding and substitution.<br><b>Future exam takeaway:</b> Language chahe kitni ghumaye, extra terms ($z/x$) ko ignore karke direct $y$ ki value pull out karo."
+  },
+  {
+    "q": "What is the remainder when $(23^{(112^{717})} - 21^{(112^{717})})$ is divided by $88$?",
+    "o": [
+      "0",
+      "2",
+      "44",
+      "87"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Power check kar bhai, base $112$ even hai toh uski koi bhi power Even hi result degi. Matalab ye format $(x^n - y^n)$ hai jahan $n$ Even hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Jab $n$ even ho, toh $(x^n - y^n)$ compulsory $(x-y)$ aur $(x+y)$ dono se divide hota hai. Matlab $(x^2 - y^2)$ usko poora katega.<br>Yahan $x=23, y=21$. <br>$x^2 - y^2 = 23^2 - 21^2 = (23+21)(23-21) = 44 \\times 2 = 88$. <br>Divisor bhi exact $88$ diya hai! Matalab number poori tarah kat jayega. Remainder seedha $0$ aayega.<br><br><b>Method 2 (Concept Builder):</b> Algebraic divisibility rule: <br>Agar $n$ Even hai: Divisible by $(x-y)$ and $(x+y)$.<br>Agar $n$ Odd hai: Divisible ONLY by $(x-y)$.<br><br><b>Best Method:</b> Algebraic identity mapping.<br><b>Future exam takeaway:</b> Gande power towers hamesha Odd/Even check karne ke liye hote hain, calculate karne ke liye nahi."
+  },
+  {
+    "q": "How many two-digit prime numbers are there between $10$ to $100$ which remain prime numbers when the order of their digits is reversed?",
+    "o": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Number system ka static fact hai ye. Isko toh notes se directly dimag me print hona chahiye.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Wo primes list karo: $11, 13 (31), 17 (71), 37 (73), 79 (97)$. <br>Dhyan rakhna $19$ prime hai but ulta hoke $91$ banta hai jo $13 \\times 7$ hota hai, toh wo out ho jayega. <br>Total count: $11, 13, 17, 31, 37, 71, 73, 79, 97$. Exact $9$ prime numbers hain.<br><br><b>Method 2 (Concept Builder):</b> Reverse karne par $2, 4, 5, 6, 8$ end me aane wale numbers even ya div by 5 ban jate hain. Toh sirf $1, 3, 7, 9$ wale prime combinations hi check karne padte hain.<br><br><b>Best Method:</b> Memory based standard result.<br><b>Future exam takeaway:</b> Kuch chize exam me prove nahi karni hoti, unhe as a static GK data treat karo."
+  },
+  {
+    "q": "A number divided by $13$ leaves a remainder of $7$. The same number divided by $11$ leaves a remainder of $9$. What is the remainder when the same number is divided by $143$?",
+    "o": [
+      "20",
+      "33",
+      "85",
+      "124"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Divisors $13$ aur $11$ hain. Inka product hi final divisor $143$ diya gaya hai. Chinese Remainder Theorem (CRT) ka classic form hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Badi condition pakdo: $N = 13k + 7$. <br>Values daal ke check kar. <br>Agar $k=1$, toh $N = 20$. <br>Ab is $20$ ko second condition se check kar: $20 \\div 11$, quotient $1$, remainder $9$. Perfect match!<br>Toh sabse chhota number $N = 20$ hi hoga. <br>Sawaal me $20 \\div 143$ pucha hai, jiska remainder $20$ hi aayega.<br><br><b>Method 2 (Concept Builder):</b> General formula $N = LCM(d_1, d_2) \\times x + R_{common}$. Yahan CRT me series banake check karna faster hota hai.<br><br><b>Best Method:</b> Hit and trial with largest divisor.<br><b>Future exam takeaway:</b> CRT wale sawalon me hamesha bade divisor ki series ($13k+7$) likh ke chote wale se divisibility check karo."
+  },
+  {
+    "q": "What are the last three digits of $3^{400}$?",
+    "o": [
+      "001",
+      "201",
+      "401",
+      "801"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Last 3 digits nikalne ke liye format mod $1000$ hona chahiye. Binomial Theorem lagane ke liye base ko $10$ ke nazdeek kisi number ke square ya format me todna padega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> $3^{400} = (3^4)^{100} = 81^{100}$. <br>Isko hum $(1 + 80)^{100}$ likh sakte hain.<br>Binomial expansion me last terms dekho: $\\dots + \\binom{100}{2}(1)^{98}(80)^2 + \\binom{100}{1}(1)^{99}(80)^1 + \\binom{100}{0}(1)^{100}(80)^0$.<br>Notice kar ki $80^2 = 6400$, aur isko jab $\\binom{100}{2} = 4950$ se multiply karenge toh aakhri me $3$ zeros ($000$) fix aayenge. Uske pehle wali terms aur bhi zeros dengi. <br>Toh sirf aakhri 2 terms decide karenge: $100 \\times 80 + 1 = 8001$. <br>Aakhri teen digit: $001$.<br><br><b>Method 2 (Concept Builder):</b> Last 'k' digits maange toh expression ko hamesha $(1 \\pm 10x)^n$ form me lana zaroori hai.<br><br><b>Best Method:</b> Binomial Approximation.<br><b>Future exam takeaway:</b> Tough digit extraction hamesha Binomial ke tail end (last 2-3 terms) se solve hoti hai."
+  },
+  {
+    "q": "What are the last two digits of the product of the first $20$ odd prime numbers?",
+    "o": [
+      "15",
+      "25",
+      "35",
+      "75"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Number 'odd primes' ka product hai. Yani isme ek baar $5$ aayega. Lekin ye number $25$ se divide nahi hoga kyunki prime set me dusra $5$ nahi hota. Toh last digits hargiz $25$ ya $75$ nahi ho sakte!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Mod 4 and Mod 5 ka hack laga. <br>Product $P$ me $5$ nahi hai (5 alag rakh). Baaki primes ko Mod 4 pe dekho. <br>Properties of primes: Primes $\\equiv 3 \\pmod 4$ ki counting $11$ hogi pehle $20$ me (after leaving 5). Unka product $(-1)^{11} \equiv 3 \\pmod 4$. <br>Toh remaining product $P \\equiv 3 \\pmod 4$. <br>And $P \\pmod 5$ calculate karne par $2$ aayega. CRT se $P = 4m+3 \\equiv 2 \\pmod 5 \implies m \\equiv 1 \\pmod 5$. <br>Toh last digits $5(20m+15)$. For $m=1$, value $= 35$.<br><br><b>Method 2 (Concept Builder):</b> Ye highly logical CDS trap hai. Aapko pata hona chahiye ek single $5$ multiply hone par last 2 digit hamesha odd multiple of 5 deta hai but not a multiple of 25.<br><br><b>Best Method:</b> Option elimination (25/75 reject) and advanced modular arithmetic.<br><b>Future exam takeaway:</b> Product of distinct primes kabhi bhi $25$ se divisible nahi hota, isliye wo kabhi $25$ ya $75$ par end nahi hoga."
+  },
+  {
+    "q": "Evaluate: $0.23\\overline{472} + 0.24\\overline{362}$",
+    "o": [
+      "0.47(bar on 834)",
+      "0.47(bar on 835)",
+      "0.48(bar on 348)",
+      "0.47(bar on 833)"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Aise sawalon me fraction conversion $\\frac{N}{99900}$ jaisi badsurat chize banati hain. Bar ko seedha expand kar ke add karna smartness hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>$0.23\\,472\\,472\\dots$<br>$0.24\\,362\\,362\\dots$<br>------------------<br>$0.47\\,834\\,834\\dots$<br>Addition me $472 + 362 = 834$ sidha add ho raha hai bina kisi carry-forward (jo >1000 pe milta hai) ke. Iska matlab pattern perfectly $834$ ka hi banega.<br>Result = $0.47\\overline{834}$.<br><br><b>Method 2 (Concept Builder):</b> Carry check hamesha right se aane wale cycle pe kiya karo. Agar sum $>999$ jata tab aage wale unit pe $+1$ hota aur ending ajeeb hoti.<br><br><b>Best Method:</b> Direct alignment & Expansion trick.<br><b>Future exam takeaway:</b> Recurring decimals ko directly unki expanded form me likh ke basic addition karna sabse safe aur fast hai."
+  },
+  {
+    "q": "What is the smallest positive number that must be added to the product of any two consecutive even numbers to make the result a perfect square?",
+    "o": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Seedha values assume kar lo. Pehle do even number $2$ aur $4$ man lo. Unka product $= 8$. Isme kya jode ki square bane? $+1$ karega toh $9$ ($3^2$) ban jayega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Koi aur bada number lelo for safety: $10$ aur $12$. Product $= 120$. Isme kya jode ki perfect square bane? $121$ banane ke liye $+1$ karna hoga. Hamesha answer $1$ aayega.<br><br><b>Method 2 (Concept Builder):</b> Algebra se dekho: $x$ aur $(x+2)$ consecutive even numbers hain. Unka product $x^2 + 2x$ hota hai. Is expression me agar hum $+1$ kar dein, toh ye $(x+1)^2$ ki perfect identity ban jayega.<br><br><b>Best Method:</b> Value Assumption (Method 1).<br><b>Future exam takeaway:</b> Variables $N, N+2, N-k$ wale statement sums humesha ek choti dummy value ($2,4$) le kar solve karne chahiye."
+  },
+  {
+    "q": "Find the number of Zeros at the end of the product $(12 \\times 27 \\times 63 \\times 113 \\times 1250 \\times 24 \\times 650)$?",
+    "o": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Number of zeros utne hi hote hain jitne $2$ aur $5$ ke pairs banenge. Baki kachra numbers ($27, 63, 113$) ignore marne hain.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Bas $5$ aur $2$ ki power gin!<br>Power of $5$: $1250 = 625 \\times 2 = 5^4 \\times 2$. $650 = 25 \\times 26 = 5^2 \\times 26$. Total $5$ ki power $= 4 + 2 = 6$.<br>Power of $2$: $12 (2^2)$, $1250 (2^1)$, $24 (2^3)$, $650 (2^1)$. Total $2$ ki power $= 2 + 1 + 3 + 1 = 7$.<br>Pair wahi banenge jo minimum power hogi. Minimum $(6, 7)$ me $6$ hai. Toh $6$ zeros lagenge end me.<br><br><b>Method 2 (Concept Builder):</b> Trailing zeros is entirely a game of bottleneck. Jo resource ($2$ ya $5$ me se) kam quantity me hoga, wahi zeros decide karega.<br><br><b>Best Method:</b> Factor hunting mechanism.<br><b>Future exam takeaway:</b> Product form me hamesha 'botteneck variable' (usually $5$) ko extract karke direct tick maro, pura factorise mat karo."
+  },
+  {
+    "q": "What is the remainder when the number $8888\\dots$ (written $25$ times) is divided by $13$?",
+    "o": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $7, 11$, aur $13$ ka combined divisibility rule ek specific pattern create karta hai. Koi bhi ek digit ka number jab lagaatar $6$ baar likha jaye ($aaaaaa$), wo $13$ se completely divide hota hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Total $25$ digits hain. $6-6$ ki cycle me unhe uda de. $\\frac{25}{6}$ ka remainder aayega $1$. <br>Matlab shuruwaat ke $24$ digits (4 pairs of 6) mil kar perfectly zero remainder denge. <br>Bachega sirf aur sirf last ka aakhri $8$. Ab us akela $8$ ko $13$ se bhag dega toh remainder $8$ hi bachega.<br><br><b>Method 2 (Concept Builder):</b> <table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Pattern length</th><th style='text-align:left;padding:4px;color:var(--p2)'>Divisible by</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>6 times same digit</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$7, 11, 13, 37, 1001$</td></tr></table><br><br><b>Best Method:</b> Cycle division rule.<br><b>Future exam takeaway:</b> Repdigit questions ($7777\\dots$) dekhte hi total digits ko $6$ se divide karke cycle choti kar lo."
+  },
+  {
+    "q": "A book contains $500$ pages. How many times does the digit $3$ appear in the page numbers?",
+    "o": [
+      "140",
+      "200",
+      "220",
+      "210"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Digit occurrence fixed pattern me chalti hai. Har $100$ ke block me tens aur unit digit मिला ke specific frequency milti hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Har standard block ($0-99, 100-199$ etc) me kisi bhi digit ka count exactly $20$ hota hai (in tens & unit places). <br>Range 1 se 500 me total 5 block banenge. Toh $5 \\times 20 = 100$ bar $3$ aayega.<br>Ab dhyan de 'Hundreds place' par: $300$ se leke $399$ tak, shuruwaat me pure $100$ bar lagatar $3$ aayega. <br>Total jodd do: $100 + 100 = 200$.<br><br><b>Method 2 (Concept Builder):</b> JSM (Junior Satisfaction Method) mentality lagao. Base value add ki, phir us zone ke extra components ko externally add kar diya.<br><br><b>Best Method:</b> Block Counting Method.<br><b>Future exam takeaway:</b> Digit frequency $0-99$ me $20$ bar hoti hai, ye fact rat lo, calculation fast ho jayegi."
+  },
+  {
+    "q": "Six bells commence tolling together at 7:59 am. They toll at intervals of $3, 6, 9, 12$ and $15$ seconds respectively. How many times will they toll together till 8:16 am? (excluding the toll at 7:59 am)",
+    "o": [
+      "4",
+      "3",
+      "5",
+      "6"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b> LCM ka direct execution hai. Values $3,6,9,12,15$ choti hain, inka LCM mentally $180$ seconds calculate hona chahiye.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> LCM of $3, 6, 9, 12, 15 = 180$ seconds = $3$ minute. <br>Time kitna available hai? 7:59 se 8:16 am tak total $17$ minute hain. <br>Har $3$ minute par toll hoti hai. Toh $17$ minute me kitni baar aayega? $17 \\div 3 = 5$ times (ignoring the fraction kyunki poori bell toll chahiye). <br>Question ne directly 'excluding start toll' bola hai, toh $+1$ wali tension nahi leni. Answer exact $5$.<br><br><b>Method 2 (Concept Builder):</b> Total Times = $\\lfloor \\frac{\\text{Total Duration}}{\\text{LCM}} \\rfloor$. Agar initial point include karne bole tab $+1$ kiya jata hai.<br><br><b>Best Method:</b> LCM with integer division.<br><b>Future exam takeaway:</b> Traffic light aur Toll bell questions me language padh lena ki initial occurrence add karni hai ya minus."
+  },
+  {
+    "q": "How many numbers are there between $1$ and $800$ which are divisible by $3$ and $7$ but not divisible by $9$?",
+    "o": [
+      "23",
+      "24",
+      "25",
+      "26"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Venn diagram logic. Jo $3$ aur $7$ dono se divide honge wo inke LCM, yani $21$ se divide honge. Hamein unme se wo nikal dene hain jo $9$ ki gang se hain.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Total numbers div by $21$ (3 & 7): $\\lfloor \\frac{800}{21} \\rfloor = 38$ numbers.<br>Numbers jo $21$ aur $9$ dono se divide ho, wo LCM of $(21,9) = 63$ ke under aayenge. <br>Unki counting: $\\lfloor \\frac{800}{63} \\rfloor = 12$ numbers.<br>Hame subtract kar dena hai: $38 - 12 = 26$. Index 3 correct hai.<br><br><b>Method 2 (Concept Builder):</b> $n(A \\cap B) - n(A \\cap B \\cap C)$ ka standard set theory format lag raha hai. Basic multiples check karo aur condition satisfy karo.<br><br><b>Best Method:</b> Divisibility counting fraction method.<br><b>Future exam takeaway:</b> 'But NOT divisible by' jab bhi aaye, dono target values ke LCM se range ko divide kar ke original me se ghata diya karo."
+  }
+]
+}

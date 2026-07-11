@@ -1,0 +1,541 @@
+{
+  "quizTitle": "Number-System-Set-11",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+{
+"q": "Find the remainder when 16! is divided by 19.",
+"o": [
+"1",
+"9",
+"10",
+"18"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> Dekh bhai, options me 1, 9, 10, 18 hain. Wilson's theorem se 18! ka remainder -1 ya 18 hota hai, toh backward calculate karke seedha 9 hit kar sakte hain bina poori calculation ke.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Step</th><th style='text-align:left;padding:4px;color:var(--p2)'>Action</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1. Wilson's</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>18! \equiv -1 \pmod{19}</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2. Expand</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>18 \times 17 \times 16! \equiv -1</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>3. Neg Remainders</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>(-1)(-2) \times 16! \equiv -1</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>4. Solve</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>2 \times 16! \equiv 18 \implies 16! \equiv 9</td></tr></table>
+<b>Method 2 (Concept Builder):</b>
+Bhai mere, Wilson's Theorem kehti hai ki (P-1)! + 1 humesha P se completely divisible hoga (agar P prime hai). Yaha P=19 hai, toh (19-1)! \implies 18! \equiv -1 \pmod{19}. Phir sequence ko piche kholte jao jab tak 16! na mil jaye.
+
+<b>Future Exam Takeaway:</b> Prime divisors ke factorial remainder me hamesha Wilson's ka hi jalwa hota hai, 10 second lagne chahiye bas!"
+},
+{
+"q": "What is the remainder when 1^1 + 2^2 + 3^3 + \dots + 10^{10} is divided by 4?",
+"o": [
+"0",
+"1",
+"2",
+"3"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> Options 0, 1, 2, 3 hain. 4 se division check karna hai. Even bases ka power >1 hai toh vo seedha 4 ka multiple ban jayenge (Remainder 0). Sirf odd bases calculate karne hain!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai TestRipper, 2^2, 4^4, 6^6, 8^8, 10^{10} sabme 4 chupa hai, toh inka remainder sidha 0 bachega. Ab odd bases pe Mod 4 lagao:
+1^1 \implies 1
+3^3 = 27 \implies 3
+5^5 \equiv 1^5 \implies 1
+7^7 \equiv (-1)^7 \implies -1 \equiv 3
+9^9 \equiv 1^9 \implies 1
+Sum = 1 + 3 + 1 + 3 + 1 = 9. Final step: 9 \pmod 4 = 1.
+
+<b>Method 2 (Concept Builder):</b>
+Bhai, divisibility ki property hai ki sum ke andar har term ko individually divide karke remainder nikal sakte hain. Odd terms alternating 1 aur 3 remainder dete hain mod 4 me, cyclicity follow hoti hai. Aisa breakdown karo questions ka, SSC CGL first attempt me nikal jayega.
+
+<b>Future Exam Takeaway:</b> Jab 4 se bhag ho aur even base power \ge 2 ho, toh usko direct kaat ke 0 likh dena, mazdoori mat karna!"
+},
+{
+"q": "What is the remainder when 9^{2n+1} is divided by 6?",
+"o": [
+"3",
+"4",
+"2",
+"1"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b> 9 ke kisi bhi odd power ko 6 se divide karne par remainder humesha constant rehta hai, options dekh ke hi samajh aana chahiye ki n=0 rakh do.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, aise sawalon me lamba method mat ratna. Approximation aur Value Putting lagao. Agar n=0 rakhega, toh expression banega 9^1 = 9. Ab 9 ko 6 se divide karega toh seedha remainder 3 bachega. Option tick maar!
+
+<b>Method 2 (Concept Builder):</b>
+Agar n=1 rakhega, 9^3 = 729. 729 ko 6 se divide karega (726 divisible hai), tab bhi remainder 3. Generally, a^k \pmod b cycle repeat karta hai.
+
+<b>Future Exam Takeaway:</b> Variables wale algebraic remainders me humesha smallest possible value (jaise n=0 ya 1) daalkar check kar lena, SSC ka sabse favorite trap hai ye!"
+},
+{
+"q": "Calculate the unit digit of 123^{123!} + 124^{124!} + 125^{125!} + 126^{126!}.",
+"o": [
+"0",
+"4",
+"6",
+"8"
+],
+"a": 3,
+"s": "<b>The 'Pen-Free' Observation First:</b> Power factorial me hai aur 4! (24) se badi hai. Iska matlab saari powers 4 ka perfectly multiple hongi. Seedha last digits ka cyclicity 4 check karna hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Bhai mere, sabka power multiple of 4 hai.
+123^{\dots} \implies 3^4 \implies 1
+124^{\dots} \implies 4^{\text{even}} \implies 6
+125^{\dots} \implies 5 (Hamesha 5 rehta hai)
+126^{\dots} \implies 6 (Hamesha 6 rehta hai)
+In sab ki unit digits ko jod de: 1+6+5+6 = 18. Aakhiri digit 8 bacha.
+
+<b>Method 2 (Concept Builder):</b>
+Unit digit property ke hisaab se, kisi bhi base number N ki power cycle har 4 power ke baad repeat hoti hai. Kyunki 123! etc me 4 maujood hai, vo completely divisible by 4 hain, so remainder power is taken as 4.
+
+<b>Future Exam Takeaway:</b> Factorial \ge 4! power me ho toh aankh band karke power 4 assume kar liya kar!"
+},
+{
+"q": "How many ordered pairs of (x, y) are possible if the 5-digit number 3x4y5 is divisible by 9?",
+"o": [
+"9",
+"10",
+"11",
+"12"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b> 9 ke divisibility me 9 khud 0 ban jata hai. Toh remaining numbers ka digital sum nikalo aur options eliminate karo!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, Digital Sum nikalo: 3+x+4+y+5 = 12 + x + y. Isko further simplify kar: 1+2+x+y = 3+x+y. Ab 9 banne ke liye (x+y) ka sum 6 ya 15 hona chahiye.
+
+<b>Method 2 (Concept Builder):</b>
+Agar (x+y)=6: possible ordered pairs hain (0,6), (1,5), (2,4), (3,3), (4,2), (5,1), (6,0) \implies Total 7 pairs.
+Agar (x+y)=15: pairs hain (6,9), (7,8), (8,7), (9,6) \implies Total 4 pairs. Over 15 nahi ho sakta kyunki max digit 9 hai. Overall total pairs = 7 + 4 = 11.
+
+<b>Future Exam Takeaway:</b> Ordered pairs ke case me boundary limits (like digit max 9) ka dhyan zarur rakhna."
+},
+{
+"q": "What is the remainder when 2^{736} is divided by 117?",
+"o": [
+"1",
+"16",
+"32",
+"64"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> 117 thoda bada number hai, toh CRT (Chinese Remainder Theorem) ka socho. Options me se us number ko check karo jo 117 ke coprime factors ko set kare.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai TestRipper, 117 ko tod de 13 \times 9 me.
+Mod 9: 2^3 = 8 \equiv -1 \implies (2^3)^{245} \times 2 \implies (-1)^{245} \times 2 = -2 \equiv 7 \pmod 9.
+Options dekh, 16 \pmod 9 = 7 de raha hai. Baaki options (1, 32, 64) nahi de rahe. Seedha Option 16 tick kar aur aage badh!
+
+<b>Method 2 (Concept Builder):</b>
+Proper check karne ke liye 13 se bhi verify kar le. 2^6 = 64 \equiv -1 \pmod{13}. Toh 2^{736} = (2^6)^{122} \times 2^4 \implies (-1)^{122} \times 16 \equiv 16 \equiv 3 \pmod{13}. Option 16 isko bhi satisfy karta hai.
+
+<b>Future Exam Takeaway:</b> Bade divisors ko hamesha co-prime factors me tod kar options eliminate kiya karo, mazdoori time kill karti hai."
+},
+{
+"q": "The sum of four consecutive two-digit odd numbers, when divided by 10, yields a perfect square. What is the smallest of these four numbers?",
+"o": [
+"27",
+"33",
+"37",
+"41"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b> Sum ko 10 se divide karne pe perfect square ban raha hai, iska matlab sum exactly ek perfect square \times 10 hoga (jaise 90, 160, 250). Chote options se check karo.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, seedha options se khel! Smallest number pucha hai.
+Take 27: sum = 27+29+31+33 = 120. 120/10 = 12 (Not perfect square).
+Take 37: sum = 37+39+41+43 = 160. 160/10 = 16 = 4^2 (Perfect square). Yahi tera answer hai, 5 seconds ka kaam!
+
+<b>Method 2 (Concept Builder):</b>
+Basic se: Numbers assume kar x, x+2, x+4, x+6. Inka sum 4x + 12. Question keh raha hai \frac{4x+12}{10} = k^2. Aise algebra banane me CGL ka cutoff nikal jayega, options is best!
+
+<b>Future Exam Takeaway:</b> Jaha 'perfect square' ya 'cube' condition ho, reverse option checking is the supreme hack."
+},
+{
+"q": "Using remainder theorem to find last two digits: What are the last two digits of 2^{2026}?",
+"o": [
+"24",
+"44",
+"64",
+"84"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b> Last 2 digits matlab mod 100. 2^{2026} obviously 4 ka multiple hai, toh answer wahi option hoga jo 4 se divisible ho. Saare options hain, so Mod 25 apply karna padega.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, 100 ko 4 \times 25 me tod.
+Mod 4 me 2^{2026} \equiv 0.
+Mod 25 ke liye Euler laga: \phi(25) = 20. Power 2026 \pmod{20} = 6. So, 2^6 = 64. Ab 64 \pmod{25} = 14.
+Aisa option dhundh jo mod 4 pe 0 de aur mod 25 pe 14 de. 64 satisfy kar raha hai! (64 = 25 \times 2 + 14).
+
+<b>Method 2 (Concept Builder):</b>
+Euler's totient theorem kehti hai ki a^{\phi(n)} \equiv 1 \pmod n. Iska base hamesha strong rakh, unit digits ke hardest sawal isse udate hain.
+
+<b>Future Exam Takeaway:</b> Last 2 digits base 2, 4, 6, 8 ke liye hamesha mod 100 ko 4 and 25 me tod kar check kiya kar."
+},
+{
+"q": "If the 6-digit number 51x34y is divisible by 72, find the value of (2x + 3y).",
+"o": [
+"12",
+"14",
+"16",
+"18"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> 72 = 8 \times 9. Sabse pehle 8 ka rule last 3 digits pe lagega, phir digital sum 9 ke liye.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, 8 ke rule me 34y hai. 300 series me 344 8 se kat-ta hai (yaad rakhna 8 \times 43). Toh seedha y=4.
+Ab 9 ke liye CPR mat laga, bas Digital Sum (C9 method) kaat de: 5+4=9 (cancel), 1+3+4+x = 8+x. Isko 9 banne ke liye x=1 chahiye.
+Find: 2(1) + 3(4) = 2 + 12 = 14. Khatam!
+
+<b>Method 2 (Concept Builder):</b>
+Digital sum is universally the best approach for 9. Just ignore combinations that add up to 9.
+
+<b>Future Exam Takeaway:</b> 88, 72, 99 wale questions SSC ke damad hain, humesha 8, 9, 11 ke separate rules apply karo."
+},
+{
+"q": "What is the remainder of 71^{382} divided by 100?",
+"o": [
+"41",
+"28",
+"39",
+"46"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b> Base ka unit digit 1 hai. Aakhiri do digits nikalne ka shortcut yahi kehta hai ki unit place par humesha 1 hi aayega. Options dekh, sirf pehle option me 1 hai. Dekhte hi tick!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, in case options close hon, Ninja Technique lagana:
+1. Unit digit hamesha 1.
+2. Tens digit \implies Base ki tens digit (7) \times Power ki unit digit (2). 7 \times 2 = 14. Iska last digit 4 utha le.
+Dono mila ke ban gaye 41.
+
+<b>Method 2 (Concept Builder):</b>
+Ye actual me Binomial theorem ka expansion hai: (70+1)^{382}. First all terms will end with 00 except the last two which give 382 \times 70 \times 1 + 1 = 26740 + 1, ending in 41.
+
+<b>Future Exam Takeaway:</b> Base ending in 1 ka hamesha Tens(Base) * Unit(Power) wala shortcut use karna."
+},
+{
+"q": "When a two-digit number is multiplied by the sum of its digits, the product is 424. When the number obtained by interchanging its digits is multiplied by the sum of its digits, the result is 280. What is the sum of the digits of the given number?",
+"o": [
+"7",
+"8",
+"9",
+"11"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> Equations banakar add karte hi 11(x+y)^2 ban jayega, numbers (424+280=704) ko 11 se mentally divide karke square root lenge toh sum of digits aa jayega.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, in conditions ko mentally jod de:
+Sum = (10x+y+10y+x) \times (x+y) = 11(x+y) \times (x+y) = 11(x+y)^2.
+Toh 11(x+y)^2 = 704 \implies (x+y)^2 = 64 \implies (x+y) = 8.
+Bina pen uthaye 8 mark kar!
+
+<b>Method 2 (Concept Builder):</b>
+Two digit number 10x+y and reverse 10y+x ka sum humesha 11(x+y) hota hai aur difference 9(x-y) hota hai. Ye identity tips pe honi chahiye.
+
+<b>Future Exam Takeaway:</b> Number reverse wale sawalo me hamesha Sum aur Difference equations bana ke chize cancel out karna easy rehta hai."
+},
+{
+"q": "Find the greatest value of b so that 30a68b (where a > b) is divisible by 11.",
+"o": [
+"4",
+"6",
+"3",
+"9"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b> 11 ki divisibility means alternate digits sum ka difference 0, 11, 22 hona chahiye. a>b ka constraint dhyan rakhna hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, 30a68b me sums nikal:
+S_1 = 3+a+8 = 11+a
+S_2 = 0+6+b = 6+b
+Difference = 5+a-b.
+Difference 0 nahi ho sakta kyuki a>b (positive result aayega). Toh isko 11 ke barabar rakh: 5+a-b = 11 \implies a-b = 6.
+b ki maximum value chahiye, toh a ko maximum single digit 9 rakh. b = 9-6 = 3.
+
+<b>Method 2 (Concept Builder):</b>
+Basic equations se constraints dhyan na rakhne pe marks kat-te hain. a aur b dono digits hain (0-9).
+
+<b>Future Exam Takeaway:</b> Jab bhi do unknowns a, b hon aur maximum/minimum pucha jaye, ek ko 9 ya 0 boundary value dekar dusre ko set kiya kar."
+},
+{
+"q": "Let x be the smallest 4-digit number such that when it is divided by 5, 6 and 7, it leaves the remainders 2, 3 and 4, respectively. The sum of the digits of x is:",
+"o": [
+"9",
+"11",
+"12",
+"14"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b> Divisors aur remainders ka difference constant (-3) hai. Matlab answer LCM \times K - 3 hoga. Digits sum nikalna hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, LCM(5,6,7) = 210. Pattern hai 210k - 3.
+Sabse chota 4-digit number jo 210 ka multiple hai vo hai 210 \times 5 = 1050.
+Number nikal de: 1050 - 3 = 1047.
+Inke digits ko jod de: 1+0+4+7 = 12. Game over.
+
+<b>Method 2 (Concept Builder):</b>
+Aise questions me always check for constant difference: (5-2=3), (6-3=3), (7-4=3). Agar constant na ho, tab hume CRT (Chinese Remainder Theorem) ka actual format lagana padta.
+
+<b>Future Exam Takeaway:</b> LCM based remainders ke 3 format hote hain: Same Remainder, Constant Difference, aur Random. Constant difference wale CGL ke favorites hain."
+},
+{
+"q": "What is the sum of the squares of the first 20 natural numbers?",
+"o": [
+"2870",
+"2860",
+"2770",
+"2970"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b> Formula based hai, par calculations puri nahi karni. Unit digit aur last two digits se options eliminate karke apna time bachana hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, sum of squares ka formula: \frac{n(n+1)(2n+1)}{6}.
+n = 20 rakh: \frac{20 \times 21 \times 41}{6} = 10 \times 7 \times 41 = 70 \times 41.
+Calculation hack lagao: Aakhiri me 0 aayega, aur uske pehle 7 \times 1 = 7 aayega. Last 2 digits 70 sirf pehle option (2870) me hain.
+
+<b>Method 2 (Concept Builder):</b>
+Aise sums ke formula tips pe hone chahiye. Sum of natural numbers \frac{n(n+1)}{2}, aur cubes ke liye iska square.
+
+<b>Future Exam Takeaway:</b> Lamba multiplication kbhi solve mat karo, aakhiri 2 digits (tens place) hack se answer tak pahocha karo!"
+},
+{
+"q": "How many whole numbers are there between 122 and 156?",
+"o": [
+"32",
+"33",
+"34",
+"35"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> 'Between' word pe focus karna hai. Jab bhi between aata hai, endpoints count nahi hote. Aise silly traps bahut aate hain.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, seedha sa funda yaad rakh:
+'From a to b' \implies b - a + 1
+'Between a and b' \implies b - a - 1
+Hamein chaiye: 156 - 122 - 1 = 33. Bina pen touch kare answer 33.
+
+<b>Method 2 (Concept Builder):</b>
+Agar tu sequence se sochega toh pehla number 123 aur aakhiri 155. Number of terms = L - F + 1 = 155 - 123 + 1 = 33.
+
+<b>Future Exam Takeaway:</b> Arithmetic Progression me language games ko break down karna seekho. From/To vs Between ka difference basic but crucial hai."
+},
+{
+"q": "How many numbers are there from 200 to 800 which are neither divisible by 5 nor by 7?",
+"o": [
+"410",
+"407",
+"413",
+"411"
+],
+"a": 3,
+"s": "<b>The 'Pen-Free' Observation First:</b> Sets and Venn diagram me ghusoge toh 2 minute lag jayenge. Direct cycle property aur fraction multiplication approach lagani hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai TestRipper, total terms from 200 to 800 hain 601. LCM(5, 7) = 35.
+601 \div 35 me 17 complete cycles milti hain (17 \times 35 = 595 terms).
+Ninja Hack: In 595 terms, non-divisible numbers honge = 595 \times (1 - 1/5) \times (1 - 1/7) = 595 \times \frac{4}{5} \times \frac{6}{7} = 408.
+Bache 6 terms (795 se 800): Inme 796, 797, 799 na 5 se aur na 7 se kat-te hain (3 terms).
+Total = 408 + 3 = 411.
+
+<b>Method 2 (Concept Builder):</b>
+Ye formula Euler totient ke logic par based hai. Jaha complete cycle banti hai, wahan successive percentage reduction wala formula ekdum fit baithta hai.
+
+<b>Future Exam Takeaway:</b> Divisibility of NOT by X nor Y ke sawalo me complete cycles fraction se nikalo aur bache hue terms ko manually count karlo."
+},
+{
+"q": "What is the remainder when 3^{102} + 5 is divided by 10?",
+"o": [
+"1",
+"4",
+"7",
+"9"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> Kisi bhi number ka 'mod 10' mathematically uski unit digit hi hoti hai. Toh sawal sirf unit digit nikalne ka hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, 3^{102} ki unit digit nikalne ke liye 102 \pmod 4 = 2 bacha.
+Toh 3^2 = 9 aayi unit digit.
+Ab isme +5 kar de, 9+5=14. Aakhiri digit aayi 4. Yahi tera 10 se remainder hoga.
+
+<b>Method 2 (Concept Builder):</b>
+Unit digit theorem essentially modulo 10 arithmetic hi hai. Har cycle 4 ke baad repeat hota hai kyunki kisi bhi digit ko 4 baar multiply karne se cycle renew ho jata hai.
+
+<b>Future Exam Takeaway:</b> Divide by 10 means Unit Digit, Divide by 100 means Last Two Digits. Ye equivalence hamesha dimag me rakh."
+},
+{
+"q": "The product of two co-prime numbers is 903. Then their LCM should be?",
+"o": [
+"903",
+"1",
+"301",
+"Cannot be determined"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b> Co-prime numbers unhe kehte hain jinme kuch bhi common factor nahi hota (except 1). Unka HCF hamesha 1 hoga, aur LCM unka direct product hoga.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, CGL language se darata hai bas. Universal LCM HCF rule: LCM \times HCF = A \times B
+Co-prime ke liye HCF = 1
+Toh LCM = A \times B (Product). Product given hai 903, toh LCM bhi 903 hoga. Pen mat uthana aise questions ke liye!
+
+<b>Method 2 (Concept Builder):</b>
+For example 4 and 9 co-prime hain. Inka HCF 1 aur LCM inka product 36 hi aayega. This holds true for any co-prime pair.
+
+<b>Future Exam Takeaway:</b> Co-prime terms, twin primes aur consecutive integers me LCM hamesha direct multiplication of numbers hota hai."
+},
+{
+"q": "If N = 4^{11} + 4^{12} + 4^{13} + 4^{14}, then how many positive factors of N are there?",
+"o": [
+"92",
+"48",
+"85",
+"104"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b> Terms geometric progression me add ho rahi hain. Sabse choti power common lene se ek prime factorization nikal aayegi jisse number of factors milenge.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, 4^{11} common le: 4^{11} (1 + 4 + 16 + 64) = 4^{11} \times 85.
+Ab isko strict prime bases me tod: 4^{11} = (2^2)^{11} = 2^{22}. Aur 85 = 5^1 \times 17^1.
+Toh N = 2^{22} \times 5^1 \times 17^1.
+Number of factors ke liye powers me +1 kar ke multiply: (22+1)(1+1)(1+1) = 23 \times 2 \times 2 = 92.
+
+<b>Method 2 (Concept Builder):</b>
+Galti log ye karte hain ki base 4 pe hi powers add kar dete hain. Number of factors ke formula P=(a+1)(b+1) me hamesha base ko Prime number hi rakhna padta hai.
+
+<b>Future Exam Takeaway:</b> Factor patterns ke expression me prime bases ka conversion kabhi skip mat karna varna seedha zero milega."
+},
+{
+"q": "Which of the following numbers is completely divisible by 99?",
+"o": [
+"135792",
+"913464",
+"114345",
+"357240"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b> 99 matlab usme 9 aur 11 dono ki divisibility lagegi. Sabse pehle 9 ka digital sum check karke ghatiya options udane hain.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, 114345 ka digital sum dekh: 1+1+4+3+4+5 = 18 (9 ka multiple hai).
+Ab 11 ka check kar isme: alternate sum le. S_1 = 1+4+4 = 9, S_2 = 1+3+5 = 9. Difference = 9-9 = 0.
+Ye number dono shartein poori kar raha hai, yahi correct hai.
+
+<b>Method 2 (Concept Builder):</b>
+Options ki scan aise kiya kar: 135792 \implies sum 27 (divisible by 9). But 11 rule: (1+5+9)-(3+7+2) = 15-12 = 3 (not div by 11). Direct elimination.
+
+<b>Future Exam Takeaway:</b> 99 ki divisibility check me C9 (casting out nines) first pass hona chahiye, aur bache options me hi 11 ka rule lagao."
+},
+{
+"q": "What will be the unit digit of (137^{13})^{47}?",
+"o": [
+"1",
+"3",
+"7",
+"9"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> Exponents multiplied honge. (a^m)^n = a^{m \times n}. Seedha unit digit of base aur combined power par focus karna hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, 137^{13 \times 47} = 137^{611}.
+Ab power 611 ko 4 se bhag dena hai. 4 ke divisibility rule se sirf last 2 digits 11 ko divide kar. Remainder aayega 3.
+Base ka unit digit 7 hai, toh naya expression bacha 7^3 = 343. Last digit 3. Tick maar aur aage nikal!
+
+<b>Method 2 (Concept Builder):</b>
+Bracket ka dhyan rakhna. (a^m)^n = a^{mn} hota hai, lekin a^{m^n} me power alag banti hai. SSC hamesha bracket lagake deta hai to simplify.
+
+<b>Future Exam Takeaway:</b> Kitni bhi lambi powers multiply me hon, sabka alag alag modulo 4 nikal ke final mod nikal sakte ho (Remainder theorem in powers)."
+},
+{
+"q": "Find the largest number which when divides 148, 246 and 623 leaves remainders 4, 6 and 11 respectively.",
+"o": [
+"12",
+"14",
+"24",
+"48"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b> Numbers aur remainders ke beech HCF nikalna hai. Difference of numbers lene se HCF hamesha limit ho jata hai chote factors me.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai TestRipper, pehle remainders ghata: 144, 240, 612.
+Unke beech ka sabse chota difference pakad: 240 - 144 = 96. HCF is difference 96 ka factor hi hoga.
+Ab options reverse-check kar. 48 612 ko nahi kaat-ta. 24 bhi 612 ko nahi kaat-ta. 12 in teeno ko kaat deta hai. HCF = 12.
+
+<b>Method 2 (Concept Builder):</b>
+Long division factor tree method exam me fail ho jata hai. HCF of numbers is always a factor of their absolute difference. Ye property calculations ko 10\times fast karti hai.
+
+<b>Future Exam Takeaway:</b> Jaha 'largest number dividing X, Y' ho, waha Remainders ghata kar Seedha Minimum Difference HCF technique lagao."
+},
+{
+"q": "If x = 0.535353\dots and y = 0.424242\dots, then what is the value of (x+y) as a fraction?",
+"o": [
+"95/99",
+"105/99",
+"89/99",
+"97/99"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b> Bar bar recurring digit hamesha fraction me denominator '9' lati hai. In dono ki periodicity same hai, toh direct sum kar sakte hain.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, 0.\overline{53} = \frac{53}{99}. Dusra 0.\overline{42} = \frac{42}{99}.
+Dono ka base common hai, seedha numerator jod de: \frac{53+42}{99} = \frac{95}{99}.
+Ye sawal literally 2 second ka tha.
+
+<b>Method 2 (Concept Builder):</b>
+Mixed recurring me dhyaan rakhna, agar 0.2\overline{53} hota toh \frac{253-2}{990} likhna padta. Lekin yaha direct pure recurring decimal diya tha.
+
+<b>Future Exam Takeaway:</b> Pure recurring fractions (digits repeat from the start) me directly numbers add/subtract kiye ja sakte hain bina fractions banaye (0.53 + 0.42 = 0.95 recurring)."
+},
+{
+"q": "What is the remainder when 83^{261} + 85^{261} is divided by 168?",
+"o": [
+"0",
+"1",
+"84",
+"167"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b> Format a^n + b^n ban raha hai jaha n odd hai. Aise me sum humesha (a+b) se completely kaatega, remainder 0 aayega.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Dekh bhai, algebra ka simple sa funda hai: a^n + b^n is completely divisible by (a+b) if n is odd.
+Yaha power 261 odd hai. Toh expression (83+85) se divide hogi.
+(83+85) = 168. Question me divisor bhi exactly 168 diya hai. So, fully divisible hai, remainder aayega 0.
+
+<b>Method 2 (Concept Builder):</b>
+Similarly a^n - b^n is divisible by (a-b) for any n, and divisible by (a+b) for even n. Ye polynomial rules arithmetic me magic ki tarah kaam aate hain.
+
+<b>Future Exam Takeaway:</b> Exponent addition/subtraction ke polynomials properties ko base formats pe lagake dekho."
+},
+{
+"q": "If a 9-digit number 32x4115y2 is divisible by 88, then what is the value of (4x - y) for the smallest possible value of y?",
+"o": [
+"27",
+"31",
+"34",
+"39"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b> 88 means check for 8 and 11. Aur specifically pucha hai 'smallest possible value of y', toh 8 ke divisibility pe trial small numbers se start hoga.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Target</th><th style='text-align:left;padding:4px;color:var(--p2)'>Calculation</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1. Div 8 (y)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Last 3 digits 5y2. Smallest y=1 gives 512 (perfect cube of 8). So y=1.</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2. Div 11 (x)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Alt diff: (3+x+1+5+2) - (2+4+1+1) = (11+x) - 8 = 3+x. Equate to 11 \implies x=8.</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>3. Final</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>4(8) - 1 = 32 - 1 = 31.</td></tr></table>
+<b>Method 2 (Concept Builder):</b>
+Agar smallest nahi pucha hota toh y=5 (552) aur y=9 (592) bhi satisfy karte. Hamesha question ki requirement padho.
+
+<b>Future Exam Takeaway:</b> SSC CGL ka sabse evergreen pattern! Div 88 me pehle always extreme end variable (y) ko set karo, fir x par aao."
+}
+]
+}

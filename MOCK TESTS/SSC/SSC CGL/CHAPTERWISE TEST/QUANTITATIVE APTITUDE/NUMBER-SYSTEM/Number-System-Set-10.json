@@ -1,0 +1,586 @@
+{
+  "quizTitle": "Number-System-Set-10",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+{
+"q": "If the number 555\dots (repeated 100 times) is divided by 37, what is the remainder?",
+"o": [
+"0",
+"5",
+"15",
+"30"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Dekh bhai, 37 ka magic number dekhte hi dimag mein 3-digit repeating blocks (111, 222, 555) chamakne chahiye. 100 ko 3 se divide karega toh 1 remainder bachega, yani aakhiri ka 1 digit hi answer decide karega.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Har 3 digit ka set (555) 37 se poori tarah cancel ho jayega. 
+100 digits = 33 blocks of 3 digits + 1 extra digit.
+99 digits tak remainder 0 ho gaya. Bacha sirf aakhiri digit, jo ki 5 hai. Wahi tera remainder hai.
+
+<b>Method 2 (Concept Builder):</b>
+Rule of 37: 37 \times 3 = 111. Isliye koi bhi digit agar 3 baar repeat ho, wo 111 ka multiple ban jata hai aur automatically 37 se divide hota hai.
+
+<b>Future Exam Takeaway:</b>
+Agar question mein 999\dots (101 times) de de, toh 101 \div 3 \rightarrow Remainder 2. Yani last ke do digit (99) ko 37 se bhag de dena."
+},
+{
+"q": "What is the remainder when 45324532 is divided by 10001?",
+"o": [
+"0",
+"45",
+"32",
+"1"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Jab bhi koi 4-digit ka number khud ko repeat kare (jaise abcdabcd), toh wo directly 10001 ka multiple hota hai. Seedha 0 pe tick maar!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+45324532 ko hum aise likh sakte hain: 45320000 + 4532.
+Common le le: 4532(10000 + 1) = 4532 \times 10001.
+Jab number khud 10001 se bana hai, toh remainder kya khak bachega? 0 aayega!
+
+<b>Future Exam Takeaway:</b>
+<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Repetition Pattern</th><th style='text-align:left;padding:4px;color:var(--p2)'>Divisible By</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>xyxy</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>101</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>xyzxyz</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>1001 (7 \times 11 \times 13)</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>abcdabcd</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>10001 (73 \times 137)</td></tr></table>"
+},
+{
+"q": "Find the sum of all factors of 900 that are multiples of 3.",
+"o": [
+"2604",
+"2614",
+"2624",
+"2634"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Sum of factors poochha hai aur multiple of 3 ki condition hai. Iska matlab humein normal factor sum formula mein 3^0 (yani 1) ko ignore karna hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+900 ka Prime Factorization: 900 = 36 \times 25 = 2^2 \times 3^2 \times 5^2.
+Factor multiple of 3 hone ke liye, 3 ki power kam se kam 1 honi chahiye. Isliye 3^0 wali term chhod de.
+Sum = (2^0 + 2^1 + 2^2) \times (3^1 + 3^2) \times (5^0 + 5^1 + 5^2).
+Calculate kar: (1 + 2 + 4) \times (3 + 9) \times (1 + 5 + 25).
+= 7 \times 12 \times 31.
+Unit digit hack lagao: 7 \times 2 \times 1 \rightarrow unit digit 4. Lekin options mein sabke last mein 4 hai. Toh pura multiply kar le:
+84 \times 31 = 2604.
+
+<b>Future Exam Takeaway:</b>
+Agar bolta 'multiples of 5', toh sum equation mein 5^0 exclude kar dete."
+},
+{
+"q": "Evaluate: 2.\overline{75} + 3.\overline{78}",
+"o": [
+"6.\overline{54}",
+"6.\overline{53}",
+"6.\overline{52}",
+"6.\overline{51}"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Dekh bhai, 2+3=5 hoga aur 75+78 > 100 hoga, yani ek 1 idhar aayega carry over hoke, toh answer 6 point something banega. Fractional conversion mat karne lag jana.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Chup-chaap expand karke vertically add kar de:
+\phantom{+}2.757575
++3.787878
+------------
+\phantom{+}6.545453
+Kyunki series aage continuous hai, agle step se bhi ek 1 carry aayega, toh ye exact 6.545454\dots ban jayega.
+Result = 6.\overline{54}.
+
+<b>Method 2 (Concept Builder):</b>
+\frac{75}{99} + \frac{78}{99} = \frac{153}{99} = 1 \frac{54}{99}.
+Toh 2 + 3 + 1\frac{54}{99} = 6 + \frac{54}{99} = 6.\overline{54}.
+
+<b>Future Exam Takeaway:</b>
+Bar addition/subtraction mein humesha numbers ko 3-4 baar likh kar vertical add karna is the safest hack."
+},
+{
+"q": "If a 10-digit number 1330x558y2 is divisible by 88, then the value of (x+y) is?",
+"o": [
+"9",
+"8",
+"6",
+"7"
+],
+"a": 3,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+88 ka divisibility rule directly 8 aur 11 ko target karta hai. Pehle last 3 digits dekh kar y ki value set karo.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Rule of 8: Last 3 digits '8y2' divisible by 8. y=3 rakha toh 832/8 = 104 (divisible). y=7 rakha toh 872/8=109 (divisible). So y = 3, 7.
+Rule of 11: Alternate sum ka difference.
+Odd places: 2 + y + 5 + x + 3 = x + y + 10.
+Even places: 8 + 5 + 0 + 3 + 1 = 17.
+Difference: (x + y + 10) - 17 = x + y - 7.
+Ye difference ya toh 0 hona chahiye ya 11 ka multiple.
+Condition 1: x + y - 7 = 0 \implies x + y = 7.
+Condition 2: x + y - 7 = 11 \implies x + y = 18 (But x, y are single digits, so max 9+9=18, possible only if x=9, y=9, which fails the 8 rule because y can only be 3 or 7).
+Toh definitely x + y = 7 hi aayega.
+
+<b>Future Exam Takeaway:</b>
+Hamesha combined divisibility mein pehle choti restrictions (jaise last digits for 8, 4, 25) ko solve karo."
+},
+{
+"q": "How many factors of N = 2^7 \times 3^4 \times 5^3 are both even and perfect squares?",
+"o": [
+"12",
+"15",
+"18",
+"24"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Perfect square ke liye powers even honi chahiye (0, 2, 4...). Aur 'Even' factor maanga hai, toh base 2 ki power me 0 nahi aa sakta! Waha se filtering karni hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Base 2: Powers available 0,1,2,3,4,5,6,7. Perfect square & even hone ke liye choices hain 2^2, 2^4, 2^6 (Total 3 choices).
+Base 3: Powers available 0,1,2,3,4. Perfect square ke liye choices 3^0, 3^2, 3^4 (Total 3 choices).
+Base 5: Powers available 0,1,2,3. Perfect square ke liye choices 5^0, 5^2 (Total 2 choices).
+Total factors = 3 \times 3 \times 2 = 18.
+
+<b>Future Exam Takeaway:</b>
+Jo condition question de, bas uske hisab se un base powers ko count karke P&C ka basic multiplication rule laga do."
+},
+{
+"q": "Find the unit digit of 1! - 2! + 3! - 4! + 5! - \dots + 333!",
+"o": [
+"1",
+"9",
+"3",
+"4"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Factorial Series ka super hack! 5! (120) ke aage har number mein unit digit 0 hota hai. Toh un sabka impact unit digit par null ho jata hai. Sirf 1! se 4! tak dhyan dena hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Expressions jinki value leni hai:
+1! = 1
+2! = 2
+3! = 6
+4! = 24 (Unit digit 4 le lo bas).
+Dhyan se equation mein put karo:
+1 - 2 + 6 - 4
+= 7 - 6 = 1.
+Aagaya unit digit seedha 1.
+
+<b>Future Exam Takeaway:</b>
+Hamesha Factorial + Unit Digit wale sawalon mein aankh band karke 4! ke aage waale terms ko gaayab kar diya karo."
+},
+{
+"q": "18^{2000} + 12^{2000} - 5^{2000} - 1 is divisible by?",
+"o": [
+"221",
+"237",
+"299",
+"323"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Format a^n + b^n - c^n - d^n ka hai. Grouping technique lagegi. Power Even hai, toh (x^n - y^n) humesha (x+y) aur (x-y) dono se divide hota hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Chalo isko 2 parts me club karte hain:
+Part 1: (18^{2000} - 5^{2000}). Ye divide hoga 18-5 = 13 se, aur 18+5 = 23 se.
+Part 2: (12^{2000} - 1^{2000}). Ye divide hoga 12-1 = 11 se, aur 12+1 = 13 se.
+Dhyan se dekho dono parts me 13 common factor nikal raha hai. Yani pura expression 13 se divide hoga!
+Ab doosri grouping try karte hain:
+Part A: (18^{2000} - 1^{2000}) divide hoga 18-1=17 se.
+Part B: (12^{2000} - 5^{2000}) divide hoga 12-5=7 se, wait, power even hai, toh check karo: (12^{2000} - 5^{2000}) is actually divisible by 17 as well using modulo logic: 12 \equiv -5 \pmod{17}, so (-5)^{2000} - 5^{2000} = 0.
+So the expression is universally divisible by 13 aur 17 dono!
+Result = 13 \times 17 = 221.
+
+<b>Future Exam Takeaway:</b>
+Aise algebraic factor questions mein hamesha pairs banakar check karo kaunsa Prime factor dono terms se common nikal raha hai."
+},
+{
+"q": "The sum of three consecutive odd natural numbers is 147. What is the middle number?",
+"o": [
+"47",
+"49",
+"51",
+"53"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Average concepts in AP (Arithmetic Progression) zindabad! Jab terms Odd ginti mein hon (3, 5, 7 terms), unka Average hamesha bilkul center (middle) wali term hoti hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Seedha Average nikal le bhai:
+\text{Average} = \frac{\text{Sum}}{\text{Number of terms}} = \frac{147}{3} = 49.
+Yehi tera middle number hai. Equation (x + x+2 + x+4) banane walo ka selection nahi hota time pe.
+
+<b>Future Exam Takeaway:</b>
+JSM or AP average rules save you 30 seconds minimum here."
+},
+{
+"q": "Find the remainder when a number consisting of 1111\dots written 100 times is divided by 37.",
+"o": [
+"0",
+"1",
+"11",
+"111"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Ek hi digit repeating wali chain dekar exam setter 37, 7, 11, 13, 27 ki divisibility hi test karta hai. Rule of 37 kehta hai ki har 3-digit ka same block perfectly cut jayega.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+100 digits hain.
+3-3 ke kitne sets banenge? 99 digits tak 33 blocks banenge jo 37 se poori tarah Zero remainder denge.
+Bachega sirf 100^{\text{th}} position ka akela digit, jo ki '1' hai.
+Answer = 1. Pen nahi uthana tha issme!
+
+<b>Method 2 (Concept Builder):</b>
+Koi bhi digit 'A' agar 6 times aaye (AAAAAA), toh wo 7, 11, 13, 37, 1001 sabse divide hota hai. 37 ke liye 3 ka block sufficient hai."
+},
+{
+"q": "Is zero considered an integer?",
+"o": [
+"Yes",
+"No",
+"Cannot be determined",
+"None of these"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Bhai mere, Number system ki basic pehchan. Number line pe Zero bilkul center me baitha integer hai.
+
+<b>Method 2 (Concept Builder):</b>
+Integers ke 3 types hote hain:
+1. Positive Integers (+1, +2, +3\dots)
+2. Negative Integers (-1, -2, -3\dots)
+3. Zero (Na positive, na negative).
+Answer 'Yes' hai."
+},
+{
+"q": "Find the total number of factors of 1800 which are not divisible by 5.",
+"o": [
+"10",
+"12",
+"14",
+"16"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Jab question strictly bole "not divisible by 5", iska seedha matlab hai ki prime factorization mein base 5 ki koi bhi power leni hi nahi hai.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+1800 ko jaldi factorize kar:
+1800 = 18 \times 100 = 2 \times 3^2 \times 2^2 \times 5^2 = 2^3 \times 3^2 \times 5^2.
+Humein base 5 ko poora delete karna hai. Uska wajood khatam kar do.
+Bacha kya? 2^3 \times 3^2.
+Number of factors nikalne ke liye powers mein +1 karke multiply kar do:
+Total = (3+1) \times (2+1) = 4 \times 3 = 12.
+
+<b>Future Exam Takeaway:</b>
+Jiske divisible na hona ho, us prime base ko udhaa do factorization se. Free ka 1 mark."
+},
+{
+"q": "What is the remainder when 10^{10} + 10^{100} + 10^{1000} is divided by 7?",
+"o": [
+"1",
+"3",
+"5",
+"6"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Divisibility by 7 cycle (Euler's Totient ya Pattern recognition) se solve hoti hai. 10 aur 7 ka remainder relation nikalo pehle.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+10 \div 7 gives remainder 3.
+Toh expression ban gaya: 3^{10} + 3^{100} + 3^{1000} \pmod{7}.
+Pattern of powers of 3 mod 7 check karo:
+3^1 \equiv 3
+3^2 \equiv 2
+3^3 \equiv 27 \equiv 6 \equiv -1
+Jab 3^3 \equiv -1 mil gaya, toh game over!
+Power 10: 3^{10} = (3^3)^3 \times 3^1 \equiv (-1)^3 \times 3 \equiv -3 \equiv 4.
+Power 100: 3^{100} = (3^3)^{33} \times 3^1 \equiv (-1)^{33} \times 3 \equiv -3 \equiv 4.
+Power 1000: 3^{1000} = (3^3)^{333} \times 3^1 \equiv (-1)^{333} \times 3 \equiv -3 \equiv 4.
+Final step: 4 + 4 + 4 = 12.
+12 \div 7 \rightarrow Remainder 5.
+
+<b>Future Exam Takeaway:</b>
+Number system me negative remainder technique (jaise -1) calculation ka pura kachra saaf kar deti hai."
+},
+{
+"q": "The value of A for which the expression 2x^3 + x^2 - 6x + A will be divisible by (x - 3) is:",
+"o": [
+"-45",
+"54",
+"45",
+"-54"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Polynomial Remainder Theorem lagani hai. Agar completely divisible hai, toh remainder seedha zero hoga.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Divisor ko 0 ke equal rakho: x - 3 = 0 \implies x = 3.
+Expression mein jahan x hai waha 3 thok de aur equal to 0 kar de.
+2(3)^3 + (3)^2 - 6(3) + A = 0
+2(27) + 9 - 18 + A = 0
+54 + 9 - 18 + A = 0
+45 + A = 0 \implies A = -45.
+
+<b>Future Exam Takeaway:</b>
+Aise algebraic division wale sawalo me division lamba lamba mat karna, seedha zero banakar root dalo."
+},
+{
+"q": "If the number 89x43y is exactly divisible by 101, find the possible maximum value of x+y.",
+"o": [
+"8",
+"12",
+"15",
+"18"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+SSC CGL ka hardcore pattern! 101 ki divisibility humesha right se 2-2 digits ke blocks bana kar alternating sum se nikalte hain, exactly 11 ke divisibility rule jaisa but with blocks of 2!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Number: 89, x4, 3y.
+Right se start karke alternately subtract/add kar:
+3y - x4 + 89.
+Isko proper digits me expand kar le:
+(30 + y) - (10x + 4) + 89 = 115 + y - 10x.
+Ab is equation ko 101 ke barabar hona chahiye.
+115 + y - 10x = 101 \implies 10x - y = 14.
+x aur y dono single digits (0-9) hain.
+Agar x=2 rakhun, toh 10(2) - y = 14 \implies y=6. Ye perfect match hai.
+Aur koi pair fit hi nahi hoga (e.g. x=3 dega y=16, which is two-digit).
+Toh maximum (aur ek-loti) possible value of x+y = 2 + 6 = 8.
+
+<b>Future Exam Takeaway:</b>
+Rule of 101 dekhte hi pair making from right side yaad aana chahiye."
+},
+{
+"q": "Find the highest power of 10 in 50! + 60! + 70!?",
+"o": [
+"50",
+"14",
+"12",
+"5"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Bhai jab addition ho raha ho (multiply nahi), toh common zeroes bahar nikali jaati hain. Iska matlab addition mein total zeroes hamesha wahi decide karega jo sabse choti term (50!) hogi!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Sabse choti term = 50!. Hum sirf iske trailing zeroes nikalenge. (Zeroes 5 ki power pe depend karte hain kyunki 2 ki power already bohot zyada hoti hai).
+Successive division of 50 by 5:
+\frac{50}{5} = 10
+\frac{10}{5} = 2
+Inko add kar do: 10 + 2 = 12.
+Toh 50! mein end mein 12 zeroes aayengi, toh combined sum mein bhi 12 hi rahengi."
+},
+{
+"q": "What is the remainder when 53^{105} is divided by 17?",
+"o": [
+"15",
+"16",
+"1",
+"2"
+],
+"a": 3,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Divisor 17 ek prime number hai. Ye clear hint hai Fermat's Little Theorem lagane ka.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Pehle base reduce karo: 53 \div 17 \rightarrow Remainder 2 (kyunki 17 \times 3 = 51).
+New expression: 2^{105} \pmod{17}.
+Fermat theorem kehti hai A^{P-1} \equiv 1 \pmod{P}. Yani power cycle 16 ki chalegi.
+105 ko 16 se divide kar power choti karne ke liye: 105 = 16 \times 6 + 9.
+Remainder power bachi 9.
+Expression bana: 2^9 \pmod{17}.
+2^9 = 512. Ab 512 ko 17 se bhag kar do.
+17 \times 30 = 510. Remainder seedha 2 bacha!
+
+<b>Future Exam Takeaway:</b>
+Bade base wale numbers pehle reduce karo division karke, phir power ko Euler ya Fermat theorem se udhao."
+},
+{
+"q": "A number when divided by a divisor, leaves a remainder of 29. Thrice the number, when divided by the same divisor, gives remainder 7. Find the divisor, if it is less than 50?",
+"o": [
+"60",
+"40",
+"80",
+"20"
+],
+"a": 1,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Simple proportionality! Jo relation Numbers ke beech hai, wahi Remainder ke beech hona chahiye.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Agar Number 3 guna hua hai, toh Remainder bhi 3 guna hona chahiye tha.
+Expected remainder = 29 \times 3 = 87.
+Lekin actual remainder 7 bacha hai. Yani baaki ka bacha hua hissa divisor se perfectly divide ho gaya hoga.
+Difference = 87 - 7 = 80.
+Yani Divisor 80 ka koi factor hai.
+Factors of 80: 80, 40, 20, 16\dots
+Condition 1: Divisor Remainder (29) se humesha bada hona chahiye (D > 29). Toh 20, 16 reject ho gaye.
+Condition 2: Question mein diya hai D < 50. Toh 80 reject ho gaya.
+Bacha sirf 40. Wahi answer hai!"
+},
+{
+"q": "When a number is divided by 7, the remainder is 1. What will be the remainder when the cube of this number is divided by 7?",
+"o": [
+"2",
+"4",
+"1",
+"3"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+SSC ka evergreen logic. Number ke sath jo operation hua hai (Square, Cube, Multiply), same operation uske Remainder ke sath chipka do!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Original Number ka Remainder = 1.
+Question ne bola Number ka cube karo, toh hum Remainder ka cube kar denge.
+Naya value = 1^3 = 1.
+Is 1 ko jab 7 se bhag doge toh Remainder 1 hi aayega.
+Second me solve hona chahiye tha ye."
+},
+{
+"q": "What is the remainder when the number 58627316892 is divided by 7?",
+"o": [
+"2",
+"3",
+"4",
+"5"
+],
+"a": 2,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Bade number ko 7 se bhag karne ka normal tarika time khayega. Seedha 3-3 digits ke blocks (right to left) banake Osculator method/Alternate Sum method lagao.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Number: 058, 627, 316, 892.
+Alternate Add/Subtract karo:
++ 892 - 316 + 627 - 058.
+Calculate: (892 + 627) - (316 + 58) = 1519 - 374 = 1145.
+Ab is 1145 ko 7 se bhag de do, easy padega.
+1145 = 7 \times 163 + 4.
+Remainder seedha 4 aagaya.
+
+<b>Future Exam Takeaway:</b>
+Ye same 3-digit alternating block rule 11 aur 13 ke liye bhi perfectly kaam karta hai."
+},
+{
+"q": "Find the number of distinct prime factors of 536.",
+"o": [
+"2",
+"3",
+"4",
+"5"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Dhyan se padh - "distinct prime factors". Matlab base kaun kaun se unique primes hain wo ginna hai, total factor nahi!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+536 ko jaldi todo:
+Last digits 36 hain toh 4 se jayega: 536 = 4 \times 134
+Aur ek 2 nikal lo: 4 \times 2 \times 67
+536 = 2^3 \times 67^1.
+67 khud ek prime number hai. Toh bases dekho: ek 2 hai, aur ek 67 hai.
+Total distinct prime factors siraf 2 huye."
+},
+{
+"q": "If the sum of three numbers is 18 and the sum of their squares is 36, then find the difference between the sum of their cubes and three times their product.",
+"o": [
+"-1944",
+"-1844",
+"1944",
+"0"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Seedha formula based. Algebra me a^3 + b^3 + c^3 - 3abc ka structure dekh ke formula apply karne ki aadat bana lo.
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Diya hai:
+(a+b+c) = 18
+(a^2+b^2+c^2) = 36
+Target = a^3+b^3+c^3-3abc = (a+b+c)[a^2+b^2+c^2 - (ab+bc+ca)].
+Humein bas (ab+bc+ca) nikalna hai.
+(a+b+c)^2 = a^2+b^2+c^2 + 2(ab+bc+ca)
+18^2 = 36 + 2(ab+bc+ca)
+324 = 36 + 2(ab+bc+ca) \implies 288 = 2(ab+bc+ca) \implies (ab+bc+ca) = 144.
+Ab original formula me patko:
+Value = 18 \times (36 - 144) = 18 \times (-108) = -1944.
+Direct multiplication tha, signs ka dhyan rakhna tha bas."
+},
+{
+"q": "Find the unit digit of 55^{55^{55}} + 66^{66^{66}} + 99^{99^{99}}.",
+"o": [
+"0",
+"2",
+"4",
+"8"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Power cycle dekh ke mat darna. In numbers ke bases (5, 6, 9) itne pyare hain ki inki power series fixed hoti hai!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Base 5: Power kuch bhi ho, unit digit hamesha 5 rahega.
+Base 6: Power kuch bhi ho, unit digit hamesha 6 rahega.
+Base 9: Check for Even/Odd power. Power hai 99^{99} jo ek Odd number banegi. 9^{\text{odd}} hamesha 9 deta hai.
+Bas teeno ko add kar de: 5 + 6 + 9 = 20.
+Aakhiri digit aagaya 0."
+},
+{
+"q": "Find the number of factors of N = 2^8 \times 3^5 \times 5^4 which are perfect cubes.",
+"o": [
+"12",
+"18",
+"24",
+"8"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Perfect cube matlab powers ka multiple of 3 hona zaroori hai. (jaise 0, 3, 6, 9\dots).
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Check ki kin powers ko select kar sakte hain:
+Base 2: Max power 8. Multiples of 3 available: 0, 3, 6. (3 Choices).
+Base 3: Max power 5. Multiples of 3 available: 0, 3. (2 Choices).
+Base 5: Max power 4. Multiples of 3 available: 0, 3. (2 Choices).
+Sabko multiply kar de: Total choices = 3 \times 2 \times 2 = 12.
+Ekdum CPR jaisi smooth counting!"
+},
+{
+"q": "If x and y are single digits such that 56x78y is divisible by 101, what is x \times y?",
+"o": [
+"6",
+"8",
+"12",
+"24"
+],
+"a": 0,
+"s": "<b>The 'Pen-Free' Observation First:</b>
+Wapas se 101 rule ka application! Right side se 2-2 ke block banayenge. Rule dimag me fix kar lo!
+
+<b>Method 1 (Ninja Technique / Exam Approach):</b>
+Number: 56, x7, 8y
+Alternate sum equation from right to left: 8y - x7 + 56
+Expand into proper values: (80 + y) - (10x + 7) + 56
+= 129 + y - 10x.
+To make this divisible by 101, equate it to 101:
+129 + y - 10x = 101
+10x - y = 28.
+We need single-digit values (0-9). 10 ka multiple dhundo jisme se kuch minus kar ke 28 aa jaye.
+Agar x=3 rakha, toh 30 - y = 28 \implies y = 2. Perfect fit!
+Product of x and y = 3 \times 2 = 6.
+
+<b>Future Exam Takeaway:</b>
+Is logic se humesha ek linear equation banti hai. Unit digit method se usme fit baithne wali x, y single digit guessing bohot easily ho jati hai."
+}
+]
+}
