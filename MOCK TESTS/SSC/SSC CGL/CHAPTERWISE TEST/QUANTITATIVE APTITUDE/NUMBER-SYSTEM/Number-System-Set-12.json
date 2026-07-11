@@ -4,26 +4,6 @@
   "totalMarks": 50,
   "questions":[
 {
-"q": "Find the unit digit of 37^{38^{39}} + 39^{38^{37}}.",
-"o": [
-"2",
-"4",
-"6",
-"8"
-],
-"a": 0,
-"s": "<b>Answer is 2.</b>
-
-<b>Pen-Free Observation:</b> Dekh bhai, power ki bhi power hai! Ghabrana nahi hai. Unit digit hamesha base ke aakhri digit aur power ki cyclicity (4) par depend karta hai.
-
-<b>Method 1 (Ninja Technique / Exam Approach):</b>
-1st term 37^{38^{39}}: Base 7 hai. Power 38^{39} ek even number hai. Agar 38 ko 4 se divide karein toh remainder 2 aayega. Toh (4k+2)^{\text{odd}} \implies hamesha 4 ka multiple hoga. Matlab power perfectly divisible by 4. 7^4 ka unit digit hamesha 1 hota hai.
-2nd term 39^{38^{37}}: Base 9 hai. Power 38^{37} even number hai. 9 ki power even ho toh unit digit hamesha 1 aata hai.
-Total sum: 1 + 1 = 2.
-
-<b>Takeaway:</b> SSC CGL Mains me aese hi darate hain, bas cyclicity ka rule yaad rakhna!"
-},
-{
 "q": "How many divisors of 10^5 are NOT divisible by 10?",
 "o": [
 "11",
