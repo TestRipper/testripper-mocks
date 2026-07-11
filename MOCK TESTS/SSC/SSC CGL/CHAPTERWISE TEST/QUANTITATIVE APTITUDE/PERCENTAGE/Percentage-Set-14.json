@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Percentage-Set-14",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "In a survey conducted at a university, it was found that 55% of the students like Mathematics, 45% like Physics, and 30% like both Mathematics and Physics. Among the remaining students, 25% prefer Computer Science, while the rest have no preference. If the total number of students surveyed is 800, how many students had no preference for any of the three subjects? (CHSL TIER I - 17/11/2025-SHIFT 1)",
+    "o": [
+      "200",
+      "180",
+      "160",
+      "220"
+    ],
+    "a": 1,
+    "s": "Dekh bhai TestRipper, basic Venn diagram se uda isko. Math ya Physics pasand karne wale = 55 + 45 - 30 = 70%. Baki bache hue = 30%. Ab is 30% me se 25% (yani 1/4th) CS pasand karte hain, toh no preference wale hue remaining 75% (yani 3/4th). Seedha 30% ka 3/4 nikal = 22.5%. Total 800 students hain, unka 22.5% nikalna hai. 800 * 22.5 / 100 = 180. Smart calculation hamesha time bachati hai!"
+  },
+  {
+    "q": "The difference between 20% of a number and 10% of the same number is 120. What is the number? (CGL TIER I - 26/09/2025 - SHIFT 1)",
+    "o": [
+      "1100",
+      "1400",
+      "1000",
+      "1200"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, isme pen uthane wala fail hai. 20% aur 10% ka difference 10% hota hai. Agar kisi number ka 10% = 120 hai, toh pura number (100%) nikalne ke liye bas ek zero aage laga de. Answer 1200. Free ke 2 number!"
+  },
+  {
+    "q": "The population of bacteria in a culture prepared in a lab is 8 * 10^8. Their birth and death rates per hour are 12.75% and 10.75% respectively. Find their population in the culture after 3 hours.",
+    "o": [
+      "8,48,96,640",
+      "84,89,66,400",
+      "84,89,44,600",
+      "8,48,96,460"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, exact calculation mat karna, unit digit aur DS laga! Net increase har ghante = 12.75 - 10.75 = 2%. Yani har ghante population 102% ho jayegi. 3 ghante baad: 8 * (102/100)^3. Upar numbers dekho: 8 * 102 * 102 * 102. Unit digit check kar: 8 * 2 = 16 (6), 6 * 2 = 12 (2), 2 * 2 = 4. Zeroes se pehle 4 aana chahiye. Aur zeroes ke base hisab se option 2 perfect fit hai. Examiner mazdoori nahi smartness check kar raha hai."
+  },
+  {
+    "q": "A reduction of 20% in the price of sugar enables a person to buy 5 kg more for Rs. 200. What is the original price per kg? (CGL TIER 1 - 26/09/2025 - SHIFT 2)",
+    "o": [
+      "Rs. 20",
+      "Rs. 15",
+      "Rs. 5",
+      "Rs. 10"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, discount wala jabardast shortcut le. 200 Rs leke dukan gaya, 20% discount mila yani 40 Rs bach gaye! In 40 Rs me dukan wale ne 5 kg sugar extra di. Toh naya price hua 40 / 5 = 8 Rs per kg. Ye 8 Rs original price ka 80% hai (kyunki 20% reduction tha). Agar 80% = 8 hai, toh original 100% = 10 Rs. Pen-free approach!"
+  },
+  {
+    "q": "A mixture of milk and water contains 8 liters of water. On adding 6 liters of milk and 8 liters of water, the amount of milk becomes 75% of the new mixture. Now 10 liters of mixture is removed, then find the quantity of milk in the final mixture.",
+    "o": [
+      "32.5 L",
+      "40.5 L",
+      "37.5 L",
+      "34.5 L"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, step by step equation banao. Pehle M milk aur 8L water tha. Naye mix me 6L milk aur 8L water dala. Naya water = 16L. Naya milk = M + 6. Question kehta hai milk 75% hai, toh water 25% hoga. Yani ratio 3:1 hai. Agar 1 part water = 16L hai, toh 3 part milk = 48L hoga. (Yani initial milk M = 42 tha). Naya total mixture 48+16 = 64L hai. Isme se 10L nikal liya. 10L me milk kitna jayega? 10 * (3/4) = 7.5L milk gaya. Bacha milk = 48 - 7.5 = 40.5 L. Concept is king!"
+  },
+  {
+    "q": "Rate of tax increase by 18%, if net income reduced by 2%. Find initial rate of tax.",
+    "o": [
+      "15%",
+      "20%",
+      "12%",
+      "10%"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, iska all-time favorite shortcut hai: Tax * % Increase = Net Income * % Decrease. Yani Tax * 18 = Net Income * 2. Ratio nikal: Tax / Net Income = 2 / 18 = 1/9. Total Income hoti hai = Tax + Net Income = 1 + 9 = 10 units. Tax rate humesha Total Income pe nikalta hai, toh (1 / 10) * 100 = 10%. Ye pattern SSC ka damad hai!"
+  },
+  {
+    "q": "The production of bottles rose to 26000 from 16000 in 2 years. Find the rate of growth per annum. (CGL TIER I - 26/09/2025 - SHIFT 3)",
+    "o": [
+      "31.25%",
+      "27.47%",
+      "28.47%",
+      "26.47%"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, 2 saal ka growth hai toh successive (compound) logic lagega. Multiplier nikalo: 26000 / 16000 = 26/16 = 13/8 = 1.625. Do saal hai isliye square root lena padega. 1.625 ka square root approx 1.2747 hota hai. Yani 1 + r/100 = 1.2747, jisse rate 27.47% aayega. Options close the, thoda precision zaruri tha."
+  },
+  {
+    "q": "The salaries of Prashant and Sujal together amount to 24000. Prashant spends (x - 5)% of his salary and Sujal, (x + 5)% of his. If ratio of their income is 3 : 5 and their savings are same, then what is difference between their expenditure?",
+    "o": [
+      "9000",
+      "6000",
+      "900",
+      "4500"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Income ratio 3:5 hai, total 8 unit = 24000. Toh Prashant = 9000, Sujal = 15000. Dono ki saving barabar hai. Prashant (x-5)% kharch karta hai toh bachata 100-(x-5) = (105-x)% hai. Sujal (x+5)% kharchta hai toh bachata (95-x)% hai. Equation: 9000 * (105-x) = 15000 * (95-x). Zero kaato, 3(105-x) = 5(95-x). Solve karke x = 80 aayega. P ki exp = 75% of 9000 = 6750. S ki exp = 85% of 15000 = 12750. Difference = 12750 - 6750 = 6000. Basic equation fast solve karni hoti hai!"
+  },
+  {
+    "q": "The value of a machine depreciates 10% in the first year, 20% in the second year, and 30% in the third year. If the initial value was Rs. 10,000, what is its value at the end of 3 years? (CGL TIER I - 22/09/2025 - SHIFT 2)",
+    "o": [
+      "Rs. 5040",
+      "Rs. 6200",
+      "Rs. 5800",
+      "Rs. 5600"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, seedha successive fractions laga. 10000 * 0.9 * 0.8 * 0.7 karna hai. 9 * 8 * 7 = 504 hota hai. Decimal adjust karke 5040 aayega. Digital Sum se bhi 9 ka multiple check kar sakta tha, 5040 me sum 9 ban raha hai, ek hi option hai!"
+  },
+  {
+    "q": "If the area of a square is decreased by 19%, then the diagonal of the square is decreased by:",
+    "o": [
+      "10%",
+      "5%",
+      "15%",
+      "12%"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, Area 2D hota hai aur Diagonal 1D. Area 100 se 81 ho gaya (19% decrease). 1D par wapas aane ke liye iska square root kar de. Sqrt(100) = 10, Sqrt(81) = 9. Diagonal 10 se 9 ho gaya. 1 ka decrease 10 par, matlab 10% decrease. Pen free!"
+  },
+  {
+    "q": "At the beginning of day 1 of a month, Rajesh has 500 eggs. He sells 20% of the eggs by the end of the day and added b% of the eggs at the beginning of the next day and sold 20% of the eggs at the end of the next day. This pattern continued up to the end of the third day of the month when he is left with 1024 eggs. The value of b is equal to:",
+    "o": [
+      "100",
+      "20",
+      "10",
+      "500"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, line by line successive fraction banao. Day 1 ke end me 500 ka 80% = 400 eggs bache. Fir roz ka pattern hai: b% add kiya yani (1+b/100) se multiply, aur fir 20% becha yani 0.8 se multiply. Day 3 ke end tak ye pattern do baar aur chala. Equation: 400 * (1 + b/100)^2 * (0.8)^2 = 1024. Solve kar: 400 * 0.64 * (1+b/100)^2 = 1024. Yani 256 * (1+b/100)^2 = 1024. Jisse (1+b/100)^2 = 4 aayega. Toh 1+b/100 = 2 => b = 100. Mast concept tha!"
+  },
+  {
+    "q": "The cost of a table is 200% more than that of a chair and the cost of a chair is 20% less than that of a cupboard. If the price of each table and chair is decreased by 25%, and the price of a cupboard is increased by 25%, what will be the percentage increase/decrease in the total cost of 4 tables, 5 chairs and 8 shelves?",
+    "o": [
+      "Decreased by 6.9%",
+      "Increased by 4.2%",
+      "Increased by 5.5%",
+      "Decreased by 6.5%"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, 100 man ke solve kar. Cupboard/Shelf ko 100 man le. Chair 20% kam = 80. Table 200% jyada yani 80 + 160 = 240. Purani cost: 4(240) + 5(80) + 8(100) = 960 + 400 + 800 = 2160. Nayi price: Table -25% = 180, Chair -25% = 60, Shelf +25% = 125. Nayi cost: 4(180) + 5(60) + 8(125) = 720 + 300 + 1000 = 2020. Decrease kitna hua? 140 ka. Percentage = (140/2160)*100 = 6.48%. Options dekho, Decreased by 6.5% sabse pass hai."
+  },
+  {
+    "q": "In an examination a candidate had to sit for three papers A, B and C. The candidate secured 75% marks in Paper A, 80% marks in Paper B, and 60% marks in Paper C. If the weightage assigned to Papers A, B and C were 40%, 50% and 10%, respectively, then find the weighted percentage of marks obtained by the candidate, when all three papers were taken together.",
+    "o": [
+      "76%",
+      "72%",
+      "74%",
+      "77%"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, weighted average ya JSM laga! Base ratio weights ka 4:5:1 hai. Multiply karde unke score se: (75*4 + 80*5 + 60*1) / 10. Yani (300 + 400 + 60) / 10 = 760 / 10 = 76%. Ye marks free ke hote hain paper me!"
+  },
+  {
+    "q": "A quality control officer tracks the defect rates in 4 different machines in a textile factory. The first machine produces fabrics with an average defect rate of 1.8%, the second with 2.4%, and the third with 1.6%. The fourth machine operated for 5 fewer hours than the average runtime of the first three, yet its total defective output was 0.92 units. If the total number of defective units from all four machines is 4.12, and each machine's total production was identical, find the defect percentage of the fourth machine.",
+    "o": [
+      "1.73%",
+      "1.52%",
+      "1.58%",
+      "1.667%"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, ghuma raha hai examiner! Runtime ka line faltu hai kyunki likha hai 'production was identical'. Maan le sabka production P hai. M1, M2, M3 ke defects = P(1.8% + 2.4% + 1.6%) = P(5.8%). Total defects 4.12 diye hain jisme se M4 ke 0.92 hain. Toh pehle 3 machines ke defect 4.12 - 0.92 = 3.2 hue. P(5.8%) = 3.2 => P = 3.2 / 5.8%. M4 ka defect percentage x% hai jiski value 0.92 di hai. P(x%) = 0.92. P ki jagah dal de: x = 0.92 / (3.2 / 5.8) = 1.6675%. Faltu data ignore karna aana chahiye!"
+  },
+  {
+    "q": "The ticket of an IPL match in Chennai was Rs. 2,500. When the price of the ticket was lowered, the sale (number of tickets) of the tickets was increased by 50%, but the revenue noticed a reduction of 15%. What was the reduced price of the ticket (rounded off to two decimal places)?",
+    "o": [
+      "Rs. 1,450.33",
+      "Rs. 1416.67",
+      "Rs. 2,250.33",
+      "Rs. 2,125.67"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Revenue = Price * Sale. Net revenue pe 15% decrease hai yani 85% ho gaya. Sale 50% badhi yani 1.5 times ho gayi. Let Naya price x hai. x * 1.5 = 0.85 * (Purana Price). Naya Price = (0.85 / 1.5) * 2500 = (85 / 150) * 2500 = 8500 / 6 = 1416.666... Options elimination se aaram se 1416.67 mark karo."
+  },
+  {
+    "q": "The population of a village 4 years ago was 3,20,000. Due to migration to cities, it decreases at the rate of 5% every year. Find the decrease in its population in the last 4 years.",
+    "o": [
+      "93558",
+      "59358",
+      "83595",
+      "53985"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, exact mazdoori karega toh time jayega. Digital Sum laga! 320000 ka DS 5 hai. Decrease factor 0.95 (DS=5) char baar multiply hoga: 5^4 = 625 -> DS = 13 -> 4. Toh Nayi population ka DS hoga 5 * 4 = 20 -> 2. Decrease kitna hua? 320000 (DS=5) - Nayi Pop (DS=2) = 3. Option me check karo kiska sum 3 ban raha hai. Sirf 59358 (5+9+3+5+8 = 30 -> 3) match karta hai. Trick aisi ho jo time bachaye!"
+  },
+  {
+    "q": "In a village, two contestants (A & B) are contesting in an election. 70% of the registered voters cast their votes in the election and A wins the election by 400 votes. If A had received 12.5% less votes, A’s votes would have been equal to B’s votes. How many registered voters are there in the village?",
+    "o": [
+      "4200",
+      "4000",
+      "4250",
+      "4500"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Election ka logical twist! A ne agar 1/8th votes (12.5%) lose kiye, toh vo opponent ko jayenge na! A - A/8 = B + A/8. Jisse 7A/8 = B + A/8 => B = 6A/8 = 3A/4. Yani A aur B ke votes ka ratio 4:3 hai. Dono me margin 1 unit = 400. Toh Total cast votes (A+B) = 7 units = 2800. Ye 2800 total registered ka 70% hai. Toh 100% registered voters = 2800 / 0.7 = 4000. Superb logical question!"
+  },
+  {
+    "q": "A man started a business with a certain amount of capital. In the first year, he earned a 12.5% profit and donated 33.33% of the total capital (initial amount + profit). He followed the same procedure with the remaining capital after the second and the third year. If at the end of the three years, he is left with 82,944, what was the initial amount with which the man started his business ?",
+    "o": [
+      "196680",
+      "180000",
+      "196600",
+      "196608"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, multiplier method zindabad! Capital badha 12.5% (yani 9/8 ho gaya). Fir donate kiya 33.33% (yani 1/3 hataya, bacha 2/3). Net effect 1 saal ka = 9/8 * 2/3 = 3/4. Ye process 3 baar hua, toh Initial * (3/4)^3 = 82944. Initial * 27/64 = 82944. Cut kar 27 se: 82944 / 27 = 3072. Initial = 3072 * 64. Unit digit dekho: 2 * 4 = 8 end me aayega. Ek hi option me 8 hai last me! 196608."
+  },
+  {
+    "q": "If 25% of A = 20% of B = 10% of C, find A:B:C. (CGL TIER I - 19/09/2025 - SHIFT 1)",
+    "o": [
+      "4:5:10",
+      "10:5:4",
+      "2:3:5",
+      "5:4:10"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, seedha fraction bana le. A/4 = B/5 = C/10. Jo denominator me hai, wahi ratio hai. A:B:C = 4:5:10. Pen chhoo liya toh pap lagega isme!"
+  },
+  {
+    "q": "In an election only two candidates contested. 70% of the voters casted their votes and 425 casted votes declared invalid. Winner got 980 valid votes more than his opponent, if the number of valid votes received by the winner 38% of the number of registered total voters, then find how many registered voters cast their votes?",
+    "o": [
+      "6450",
+      "6475",
+      "6425",
+      "6500"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, x man kar chal. Registered = 100x. Casted = 70x. Valid = 70x - 425. Winner = 38x. Loser ko mile = Valid - Winner = 32x - 425. Question bol raha hai Margin 980 hai. Winner - Loser = 980. 38x - (32x - 425) = 980. Solve kar: 6x = 555 jisse x = 92.5 aayega. Pucha kya hai? Casted votes (yani 70x). 70 * 92.5 = 6475. Concept follow karo, answer tumhare kadmo me hoga."
+  },
+  {
+    "q": "In a school the number of students who reads math only is double to who reads only English and the number of students who reads both is one third to who did not read any. If 28 students read both subject and 400 students are in the school (i) Find number of student who read only English (ii) Find number of student who read Math.",
+    "o": [
+      "96, 220",
+      "96, 210",
+      "200, 220",
+      "80, 210"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, set theory ka classic case hai. Both = 28. Neither = 3 * Both = 84. Total 400 hai. Math_Only + English_Only + Both + Neither = 400. Math_Only ko 2E maan le aur English_Only ko E. 3E + 28 + 84 = 400 => 3E = 288 => E = 96. Yani English_only = 96. Math padhne wale (Total Math) = Math_Only + Both = 192 + 28 = 220. Pehla hi option match kar raha hai!"
+  },
+  {
+    "q": "The union of rational and irrational numbers is equal to: (CPO TIER I- 10/12/2025-SHIFT 2)",
+    "o": [
+      "Natural Numbers",
+      "Complex Numbers",
+      "Real Numbers",
+      "Whole Numbers"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, isme koi trick nahi bas fact hai. Number system tree me Real numbers ke hi do bete hote hain: Rational aur Irrational. Dono ka union hamesha Real Numbers hi banata hai."
+  },
+  {
+    "q": "In an election between two candidates , (x + 15) % of the voters cast their votes, out of which 13,875 votes were declared invalid. A candidate got 55,500 votes which were (x-5)% of the total voters in the voter list. Total number of voters enrolled in the voter list is 1,38,750, then find how many valid votes were casted?",
+    "o": [
+      "72,375",
+      "68,375",
+      "55,285",
+      "69,375"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, step by step khol isko. Total 1,38,750 ka 1% hota hai 1387.5. Cand ki vote 55,500 di hui hain jo ki (x-5)% hai. Percentage me dekho toh 55500 / 1387.5 = 40%. Yani x - 5 = 40 jisse x = 45 aa gaya. Casted votes kitne the? (x+15)% = 60%. 1,38,750 ka 60% hota hai 83,250. Pucha valid kitne hain? Casted (83250) me se invalid (13875) minus kar do = 69,375. Calculation game strong rakhna hai."
+  },
+  {
+    "q": "A fruit seller sells 40% of the oranges that he has along with 4 more oranges to a customer. he then sells 25% of the remaining oranges and 4 more oranges to second customer. he then sells 80% of the now remaining oranges to a third customer and is still left with 4 oranges. How many oranges did the fruit seller have initially?",
+    "o": [
+      "52",
+      "58",
+      "60",
+      "55"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, piche se pakad question ko (Reverse Logic). C3 ko 80% diye aur 4 bache (yani bache hue 20% = 4). Toh C3 ke paas aane se pehle total 20 hone chahiye. C2 ne 25% liya aur 4 aur liye. Agar 4 nahi leta toh 24 bachte, jo ki remaining ka 75% the. Toh C2 se pehle total = 24 / 0.75 = 32 the. Wahi logic C1 par laga: 4 nahi leta toh 36 bachte, jo 60% the. Total start me 36 / 0.6 = 60 honge. Ulta sochna exam me best hota hai aise questions me!"
+  },
+  {
+    "q": "A mixture contains 18% copper by weight. How much mixture (in kg) is required to obtain 81 kg of copper?",
+    "o": [
+      "250",
+      "450",
+      "300",
+      "350"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, seedha equation hai. Mixture ka 18% agar 81 hai, toh 100% kitna hoga? 81 / 18 * 100 = 4.5 * 100 = 450 kg. Options dur hain, approx se bhi soch sakta tha ki 20% agar 80 hai toh 100% 400 ke aas pass hoga, ek hi option hai!"
+  }
+]
+}

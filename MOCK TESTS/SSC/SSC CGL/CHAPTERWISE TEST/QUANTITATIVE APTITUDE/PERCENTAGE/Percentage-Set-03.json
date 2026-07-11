@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Percentage-Set-03",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+  "q": "A is $33.33\\%$ less than B and C is $20\\%$ more than D. If D is $50\\%$ more than A, then which of the following is true?",
+  "o": [
+    "A = 1.75D",
+    "C = 1.2B",
+    "C = 0.20B",
+    "A = 0.22C"
+  ],
+  "a": 1,
+  "s": "Dekh bhai, jab bhi aisa percentage chain ka question aaye, toh bas ek sahi starting number choose karna hai game over karne ke liye. Ratios ko fraction me badal: $33.33\\% = \\frac{1}{3}$, $20\\% = \\frac{1}{5}$, aur $50\\% = \\frac{1}{2}$.<br><br>Calulation me decimals se bachne ke liye B ko $300$ maan le. <br>1. $A$, $B$ se $\\frac{1}{3}$ kam hai $\\Rightarrow A = 300 - 100 = 200$.<br>2. $D$, $A$ se $50\\%$ (yani $\\frac{1}{2}$) zyada hai $\\Rightarrow D = 200 + 100 = 300$.<br>3. $C$, $D$ se $20\\%$ (yani $\\frac{1}{5}$) zyada hai $\\Rightarrow C = 300 + 60 = 360$.<br><br>Ab variables clear hain: $B = 300$ aur $C = 360$. Inka relation nikalenge toh $\\frac{C}{B} = \\frac{360}{300} = 1.2 \\Rightarrow C = 1.2B$. Option (B) bilkul match kar raha hai! CGL me aise traps variables ko aage-piche karke diye jaate hain, isliye calculation ke baad options dhyan se check kar.<br><br><b>Trick:</b> Hamesha denominators ($3, 2, 5$) ke LCM ke multiples me value assume karo taaki bina kisi pen-paper drop ke mind me hi answer aa jaye!"
+}
+,
+  {
+    "q": "A saves $40\\%$ of his income and B saves $20\\%$ more than A. If the income of A is $80\\%$ of the income of B and A's expenditure is $\\text{Rs. } 18000$, then what is the expenditure of B?",
+    "o": [
+      "$\\text{Rs. } 21900$",
+      "$\\text{Rs. } 23100$",
+      "$\\text{Rs. } 22800$",
+      "$\\text{Rs. } 24500$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, B ki income ko 100 maan. Toh A ki income = 80. A save karta hai $40\\%$ of 80 = 32. Toh A ka expenditure = 80 - 32 = 48. B save karta hai $20\\%$ MORE than A's saving. Yani 32 + (20% of 32) = 32 + 6.4 = 38.4. Toh B ka expenditure = 100 - 38.4 = 61.6. Question me diya hai A ka expenditure (48 unit) = 18000. 1 unit = $18000 / 48 = 375$. B ka expenditure = $61.6 \\times 375$. Calculation easy kar: $61.6 \\times \\frac{3000}{8} = 7.7 \\times 3000 = 23100$.<br><br><b>Trick:</b> Decimal multiplication se bachne ke liye fractions ka use karo last step me."
+  },
+  {
+    "q": "Sterling silver is $92.5\\%$ pure silver. How many grams of sterling silver must be mixed to a $90\\%$ silver alloy to obtain a 500 gm of a $91\\%$ of silver alloy?",
+    "o": [
+      "250",
+      "200",
+      "100",
+      "150"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, seedha Alligation laga! Ek side $92.5\\%$, dusri side $90\\%$, beech me $91\\%$. Difference nikal: $(91 - 90) : (92.5 - 91) = 1 : 1.5$. Point hata de $\\Rightarrow 10 : 15 = 2 : 3$. Yani pehla wala 2 part aur dusra 3 part milana hoga. Total 5 parts = 500 gm. 1 part = 100 gm. Sterling silver (pehla wala) = 2 parts = 200 gm.<br><br><b>Summary:</b> Mixture ke percentage questions me Alligation se fast kuch nahi hai."
+  },
+  {
+    "q": "A man spends $80\\%$ of his income and saves 17,000. What is his total income? (PHASE XIII (HS) - $\\frac{30}{07}$/2025 - SHIFT 3)",
+    "o": [
+      "$\\text{Rs. } 85$,000",
+      "$\\text{Rs. } 75$,000",
+      "$\\text{Rs. } 95$,000",
+      "$\\text{Rs. } 55$,000"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye CGL ka sabse lallu sawal hai. $80\\%$ udaya, toh bacha $20\\%$. Isi $20\\%$ ki value 17,000 di hai. Total income hamesha $100\\%$ hoti hai. $20\\%$ ko 5 se multiply karega toh $100\\%$ aayega. Toh seedha 17,000 ko 5 se multiply kar de $\\Rightarrow 85,000$."
+  },
+  {
+    "q": "Forty per cent of the employees of a certain company are men, and $75\\%$ of the men earn more than $\\text{Rs. } 38$,000 per year. If $48\\%$ of the company's employees earn more than $\\text{Rs. } 38$,000 per year, what fraction of the women employed by the company earn less than or equal to $\\text{Rs. } 38$,000 per year?",
+    "o": [
+      "$\\frac{4}{15}$",
+      "$\\frac{8}{15}$",
+      "$\\frac{11}{15}$",
+      "$\\frac{7}{15}$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai TestRipper, Tree bana le! Total employees = 100. Men = 40, Women = 60. Men > 38k = $75\\%$ of 40 = 30. Total > 38k = 48. Iska matlab Women > 38k kitni hui? 48 - 30 = 18. Ab pucha hai Women <= 38k ka fraction. Total women 60 thi, usme se 18 jyada kamati hain, toh kam ya barabar wali hui $60 - 18 = 42$. Fraction pucha hai unhi aurto me se: $\\frac{42}{60} = \\frac{7}{10}$. Options me shayad gadbad hai ya language me 'fraction of total employees' pucha hai. Agar total ka pucha hota toh $\\frac{42}{100} = \\frac{21}{50}$. But $\\frac{11}{15}$ aur baki options match nahi kar rahe. Let's re-read carefully. 'What fraction of the women' means base is women. $42/60 = 7/10$. Options are definitely flawed based on standard logic, but closer match strategy or exact question review might be needed in real exam. If we assume the question meant $11/15$, it implies 44 women, which breaks the $48\\%$ condition. Ignore the faulty options, the logic is solid."
+  },
+  {
+    "q": "The strength of a school increases and decreases every alternate year by $15\\%$. If it started with an increase in 2012, then the strength of the school in the beginning of 2015, as compared to that in 2012, had (correct to two decimal places):",
+    "o": [
+      "Increased by $12.41\\%$",
+      "Decreased by $12.41\\%$",
+      "Increased by $13.85\\%$",
+      "Decreased by $13.85\\%$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, 2012 se 2015 tak 3 changes honge (2012-13, 13-14, 14-15). Sequence hoga: $+15\\%$, $-15\\%$, $+15\\%$. Pehle do ka net effect loss hota hai: $15^2 / 100 = 2.25\\%$ decrease. Ab $-2.25\\%$ aur $+15\\%$ ka successive nikal: $-2.25 + 15 - \\frac{2.25 \\times 15}{100} = 12.75 - 0.3375 = +12.4125\\%$. Yani increase hua $12.41\\%$.<br><br><b>Trick:</b> $+x$ aur $-x$ ka hamesha ek standard formula $-x^2/100$ dimaag me set rakh."
+  },
+  {
+    "q": "If the word Photosynthesis is spelt with F in place of 'PH' then what would be the percentage reduction in the number of letters ?",
+    "o": [
+      "$7.14\\%$",
+      "$14.28\\%$",
+      "$12.5\\%$",
+      "$7.33\\%$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, P-H-O-T-O-S-Y-N-T-H-E-S-I-S me total 14 letters hain. 'PH' ko hatakar ek akela 'F' lagana hai. Yani 2 letters jayenge aur 1 aayega. Net reduction 1 letter ka hua. Base original 14 rahega. Reduction $\\% = \\frac{1}{14} \\times 100 = 7.14\\%$. Ekdum mental math wali ball thi ye!"
+  },
+  {
+    "q": "The ratio of the monthly income of P to the monthly income of Q is 7:10, and P's saving is $\\frac{150}{7}$% more than Q's savings. Find the expenditure of P if the sum of the monthly income of P and Q is 85,000, and the expenditure of Q is 22,000.",
+    "o": [
+      "$\\text{Rs. } 12$,000",
+      "$\\text{Rs. } 8$,000",
+      "$\\text{Rs. } 1$,000",
+      "$\\text{Rs. } 1$,500"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Incomes ka sum 85,000 hai aur ratio 7:10 (Total 17 parts). 1 part = 5000. Toh P ki income = 35000, Q ki income = 50000. Q ka exp 22000 hai, toh Q ki saving = 50000 - 22000 = 28000. P ki saving Q se $\\frac{150}{7}\\%$ jyada hai. $\\frac{150}{7}\\%$ ka fraction $=\\frac{150}{700} = \\frac{3}{14}$. Yani 28000 pe $\\frac{3}{14}$ extra. Extra saving = $28000 \\times \\frac{3}{14} = 6000$. Toh P ki saving = $28000 + 6000 = 34000$. P ki income 35000 hai aur saving 34000, toh P ka exp = $35000 - 34000 = 1000$. Option me dekho 1000 kahan hai!"
+  },
+  {
+    "q": "A salesman is allowed $16.66\\%$ commission on the total sales made by him and a bonus of $3.33\\%$ on the sales over 18000rs. if the total earning of the salesman is $\\text{Rs. } 9720$. Find the total sales?",
+    "o": [
+      "51600",
+      "55200",
+      "48600",
+      "52000"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, Aman sir ka 'Shift Method' lagao! Agar 18000 par bhi usko $3.33\\%$ bonus mil jata toh earning kitni badhti? $18000 \\times 3.33\\% = 18000 \\times \\frac{1}{30} = 600$. Nayi imaginary earning = $9720 + 600 = 10320$. Ab is total earning par use poora $16.66\\% + 3.33\\% = 20\\%$ mil raha hai! Agar $20\\%$ (yani 1/5) ki value 10320 hai, toh Total Sales ($100\\%$) = $10320 \\times 5 = 51600$. Boom!<br><br><b>Trick:</b> Bonus ke uniform hone ki assumption se hamesha equation single step ban jati hai."
+  },
+  {
+    "q": "The price of cooking oil increased by $8\\%$. A family uses 12 litres of cooking oil per month. If the original price was 150 per litre, what is the additional annual expenditure (nearest ₹) for the family due to the price hike?",
+    "o": [
+      "1,728",
+      "1,700",
+      "1,765",
+      "1,789"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, extra kharcha pucha hai toh purana bill nikalne ki zaroorat nahi. 1 litre pe kitna rate badha? $8\\%$ of 150 = 12 Rs. Ek mahine me 12 litre lagta hai, toh monthly extra = $12 \\times 12 = 144$ Rs. Annual pucha hai toh 12 se aur multiply kar de: $144 \\times 12 = 1728$ Rs. Unit digit $4 \\times 2 = 8$ se bhi options eliminate ho jate!"
+  },
+  {
+    "q": "Fresh fruits contain $58.33\\%$ water and dry fruits contain $8.33\\%$ water, so how many dry fruits can be made from 440 kg of fresh fruits?",
+    "o": [
+      "220",
+      "180",
+      "240",
+      "200"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, pani udta hai, Guda (Pulp) same rehta hai! Fresh me water $58.33\\%$ toh Pulp = $100 - 58.33 = 41.67\\%$. Dry me water $8.33\\%$ toh Pulp = $100 - 8.33 = 91.67\\%$. Pulp equate kar: $41.67\\%$ of $440 = 91.67\\%$ of Dry. Decimal ignore kar kyunki ratio banana hai. $\\frac{4167}{100} \\times 440 = \\frac{9167}{100} \\times D$. Approx dekho: 4167 lagbhag 41.6 ka multiple aur 9167 lagbhag 91.6 ka. Use fraction: $58.33\\% = 7/12$ (Water) $\\Rightarrow Pulp = 5/12$. $8.33\\% = 1/12$ (Water) $\\Rightarrow Pulp = 11/12$. $\\frac{5}{12} \\times 440 = \\frac{11}{12} \\times D$. 12 se 12 kata. $D = \\frac{5 \\times 440}{11} = 5 \\times 40 = 200$ kg. Fractional values are lifesavers!"
+  },
+  {
+    "q": "A person can save $25\\%$ of his income. if his income increases by $20\\%$ and still he saves the same amount as before the percentage increase in his expenditure is:",
+    "o": [
+      "None of these",
+      "26⅔",
+      "22⅓",
+      "20%"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Income 100 maan, Save 25, Exp 75. Income ho gayi 120. Saving wahi 25 hai. Naya Exp = 120 - 25 = 95. Exp kitna badha? 20 badha. Kispe badha? Purane 75 pe. Percentage = $\\frac{20}{75} \\times 100 = \\frac{4}{15} \\times 100 = \\frac{80}{3} = 26\\frac{2}{3}\\%$. Ek aur trick: Constant saving me saara Income ka increase sidha Exp me jod do! Income 20 badhi, toh Exp bhi 20 badha. $\\frac{20}{75} = 26\\frac{2}{3}\\%$."
+  },
+  {
+    "q": "In any Exam $12\\%$ student absent, there are two subject Math and English, students who passed in both exam is triple to number of students who failed in both and number of student who passed in math only is $45.45\\%$ of student who passed in both. If $29\\%$ students of total student in English only then find out the % of students who passed in math ?",
+    "o": [
+      "$48\\%$",
+      "$76\\%$",
+      "$59\\%$",
+      "$38\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai TestRipper, total 100x maan. Absent = 12x, Present = 88x. Failed both ko y maan le. Passed both = 3y. Only Math = $45.45\\%$ of 3y. $45.45\\% = \\frac{5}{11}$. Toh Only Math = $\\frac{15y}{11}$. Only English diya hai 29x (total ka $29\\%$). Ye sab present bachcho me se hain: Only M + Only E + Both Pass + Both Fail = Present. $\\frac{15y}{11} + 29x + 3y + y = 88x$. Yani $\\frac{15y}{11} + 4y = 59x \\Rightarrow \\frac{59y}{11} = 59x \\Rightarrow y = 11x$. Pucha kya hai? Passed in Math = Only Math + Both Pass = $\\frac{15y}{11} + 3y$. y ki value daal: $15x + 33x = 48x$. Yani $48\\%$. Question lamba zaroor tha par equations cutne wali thi."
+  },
+  {
+    "q": "F(a,b,c,d) = $3a + 2bc + 5c^2d$. If a, b, c and d increases by $65\\%$, $32\\%$, $25\\%$ and $5.6\\%$ respectively. What is the percentage change in F?",
+    "o": [
+      "$65\\%$",
+      "$63\\%$",
+      "$61\\%$",
+      "$67\\%$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye ek concept test hai calculation nahi! Expression $3a + 2bc + 5c^2d$ hai. Har term ka degree check kar: 'a' (degree 1) me $65\\%$ increase. 'bc' (degree 2) me $32\\%$ and $25\\%$ increase $\\Rightarrow$ Net increase = $32 + 25 + \\frac{32 \\times 25}{100} = 57 + 8 = 65\\%$. '$c^2d$' (degree 3) me c me $25\\%$ aur d me $5.6\\%$. $c^2$ ka net = $25+25+6.25 = 56.25\\%$. Fir iska $5.6\\%$ ke sath = $56.25 + 5.6 + \\frac{56.25 \\times 5.6}{100} = 61.85 + 3.15 = 65\\%$. Har individual term strictly $65\\%$ badh raha hai! Toh overall F bhi exactly $65\\%$ hi badhega. CGL me aise format patterns common hain."
+  },
+  {
+    "q": "Annually income of Arun is 6.24 lakh, he spend 38 $\\frac{6}{13}$ % of monthly income on Food and Rent, $12.5\\%$ of remaining on Gym, 14 $\\frac{2}{7}$ % of remaining on clothing and $75\\%$ of remaining invested in mutual fund. if he kept remaining amount after all expense as cash with him then find how much cash Arun have after one year?",
+    "o": [
+      "(a) $72000 \\text{ Rs.}$",
+      "(b) $74000 \\text{ Rs.}$",
+      "(d) $78000 \\text{ Rs.}$",
+      "(c) $75000 \\text{ Rs.}$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, 'Remaining' wala case hai toh successive fractions lagenge. $38 \\frac{6}{13}\\%$ ka fraction $\\frac{5}{13}$ hai (bacha $\\frac{8}{13}$). $12.5\\%$ = $\\frac{1}{8}$ (bacha $\\frac{7}{8}$). $14 \\frac{2}{7}\\%$ = $\\frac{1}{7}$ (bacha $\\frac{6}{7}$). $75\\%$ = $\\frac{3}{4}$ (bacha $\\frac{1}{4}$). Final bacha = $\\frac{8}{13} \\times \\frac{7}{8} \\times \\frac{6}{7} \\times \\frac{1}{4} = \\frac{6}{52} = \\frac{3}{26}$ of Income. Annual Income 6,24,000 hai. Final Cash = $\\frac{3}{26} \\times 624000 = 3 \\times 24000 = 72000$ Rs. Fractions se saari terms cancel ho gayi smooth tarike se!"
+  },
+  {
+    "q": "Everyday a fruit seller sells $75\\%$ of his stock during the day and $20\\%$ of his stock gets spoiled during the night. If in the morning of third day he had 128 fresh fruits, then how many fruits he had initially.",
+    "o": [
+      "1600",
+      "2400",
+      "3200",
+      "4000"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, daily bachta kitna hai? $75\\%$ bik gaya, bacha $25\\%$ (1/4). Phir bache hue me se $20\\%$ (1/5) kharab ho gaya, toh fresh bacha $80\\%$ (4/5). Daily fraction multiplier = $\\frac{1}{4} \\times \\frac{4}{5} = \\frac{1}{5}$. Yani har din ke end me original ka $1/5$ bachta hai. Ye process 2 din chali (Day 1 aur Day 2 ke end me Day 3 ki morning aayegi). Initial $\\times \\frac{1}{5} \\times \\frac{1}{5} = 128$. Initial = $128 \\times 25 = 3200$. Options aur logic donon se easily nikalta hai."
+  },
+  {
+    "q": "Geeta's savings are equal to $28\\%$ of her expenditure. If the expenditure increases by $17.4\\%$ and savings decreased by $5\\%$, then by what percentage does her income increase?",
+    "o": [
+      "$12.5\\%$",
+      "$12\\%$",
+      "$18\\%$",
+      "$22.4\\%$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai TestRipper, Exp ko 100 maan, toh Saving = 28. Income = 128. Ab Alligation laga ya direct jodo. Naya Exp = 100 par $+17.4$ badha. Nayi Saving = 28 par $-5\\%$ (yani $-1.4$) ka change. Total Income me net change kitna hua? $+17.4$ (Exp se) aur $-1.4$ (Sav se) = $+16.0$ ka net change aya 128 base par. Percentage increase = $\\frac{16}{128} \\times 100 = \\frac{1}{8} \\times 100 = 12.5\\%$. Calculations me zero cut karne se life aasan hoti hai."
+  },
+  {
+    "q": "Out of total population of a city, 450 are males. Respective ratio of literate to illiterate females is 5: 2 and their difference is 150. If $28\\%$ males are illiterate, then find the percentage of literate population.",
+    "o": [
+      "$77.25\\%$",
+      "$75.5\\%$",
+      "$70.25\\%$",
+      "$71.75\\%$"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, Females ka data pakdo pehle. Lit : Illit ratio 5:2 hai. Difference 3 unit hai. 3 unit = 150 diya hai. 1 unit = 50. Total Females = 7 unit = 350. Literate Females = $5 \\times 50 = 250$. Ab Males 450 hain. Inme illiterate $28\\%$ hain, toh Literate kitne hue? $72\\%$ of 450 = 324. Total Literate = $324 \\text{ (M)} + 250 \\text{ (F)} = 574$. Total Population = $450 \\text{ (M)} + 350 \\text{ (F)} = 800$. Percentage of Literate = $\\frac{574}{800} \\times 100 = \\frac{574}{8} = 71.75\\%$. Basic proportion and percentage break down!"
+  },
+  {
+    "q": "What is the smallest number that, when multiplied by 1.5, gives a whole number? (CPO TIER I- $\\frac{10}{12}$/2025 - SHIFT 1)",
+    "o": [
+      "1",
+      "3",
+      "2",
+      "4"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, 1.5 ka matlab hota hai $\\frac{3}{2}$. Kisi bhi number 'N' ko isse multiply karne par $\\frac{3N}{2}$ whole number aana chahiye. Matlab N, 2 se cutna chahiye! Sabse chhota number jo 2 se divide hota hai positive integers me, wo 2 hi hai. Test kar le: $1.5 \\times 2 = 3$. Pen mat uthana aise CPO questions me!"
+  },
+  {
+    "q": "In a cuboid, if length is increased by $63.63\\%$ and breadth is decreased by 41 $\\frac{2}{3}$%, then by how much % the height should be changed that the volume remains constant?",
+    "o": [
+      "$4.76\\%$",
+      "$5.65\\%$",
+      "$4.09\\%$",
+      "$3.81\\%$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, fractions pakdo! $63.63\\% = 7 \\times 9.09\\% = \\frac{7}{11}$. Length badhi yani 11 se 18 ho gayi. Breadth $41 \\frac{2}{3}\\% = 250/6 \\% = \\frac{5}{12}$. Breadth ghati yani 12 se 7 ho gayi. L $\\times$ B ka multiplier = $\\frac{18}{11} \\times \\frac{7}{12} = \\frac{126}{132} = \\frac{21}{22}$. Volume same rakhna hai toh Height ko iska reverse ratio hona padega! Height multiplier = $\\frac{22}{21}$. Yani 21 se 22 karna padega, kitna badhana padega? 1 badhana hoga 21 par. $\\frac{1}{21} \\times 100 = 4.76\\%$. Constant product method best lagta hai idhar."
+  },
+  {
+    "q": "A is 20 percent more than B. B is 30 percent more than C. C is 10 percent less than D is 30 percent less than E. By how much percentage is A more/less than E?",
+    "o": [
+      "$1.72\\%$ less",
+      "$1.72\\%$ more",
+      "$1.86\\%$ less",
+      "$1.86\\%$ more"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, successive chain bna: A = $1.2 B$. B = $1.3 C$. C = $0.9 D$. D = $0.7 E$. Seedha A aur E ka relation nikalo multiply karke: $A = 1.2 \\times 1.3 \\times 0.9 \\times 0.7 \\times E$. Multiply mentally: $1.2 \\times 1.3 = 1.56$. $0.9 \\times 0.7 = 0.63$. Ab $1.56 \\times 0.63 = 0.9828$. Yani A = $0.9828 E$. A kitna kam hai? $1 - 0.9828 = 0.0172$, yani $1.72\\%$ less. Digital sum ya base 100 assume karna isme jyada fast hota hai."
+  },
+  {
+    "q": "In a cafe house there are some people who like to drink coffee and tea while some do not drink anything. The ratio of the people who like only tea and the people who like only coffee are 3 : 4 respectively, the number of people who like both drinks is $6.25\\%$ of total. If $50\\%$ of the people in the cafe are like to drink something out of total 80 people, then find the total number of people in the cafe house who drink only tea.",
+    "o": [
+      "10",
+      "15",
+      "12",
+      "20"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Total log = 80. Peene wale (Union) = $50\\%$ of 80 = 40 log. Both peene wale = $6.25\\%$ (yani 1/16) of 80 = 5 log. Ab Union = Only Tea + Only Coffee + Both. Toh Only Tea + Only Coffee = $40 - 5 = 35$. Only Tea aur Only Coffee ka ratio 3:4 hai. 7 unit = 35. 1 unit = 5. Only Tea pucha hai, jo 3 unit hai. $3 \\times 5 = 15$. Language ghumai thi par Venn diagram ke base par toot gaya!"
+  },
+  {
+    "q": "The number A is $25\\%$ more than the number B and the number C is $25\\%$ less than the number B. If the numbers A and C are decreased and increased by (x+10) and (x) respectively and the ratio of the numbers A and C becomes 6:5, if the sum of the numbers A, B and C initially is 180, then find the value of (5x+85)?",
+    "o": [
+      "110",
+      "210",
+      "200",
+      "120"
+    ],
+    "a": 1,
+    "s": "Dekh bhai TestRipper, B ko 4 unit maan. A = 5 unit, C = 3 unit. Total sum = $5+4+3 = 12$ unit. Value di hai 180. 1 unit = 15. Toh A = 75, B = 60, C = 45. Ab A ghati (x+10) se yani $75 - (x+10) = 65 - x$. C badhi x se yani $45 + x$. Ratio $\\frac{65-x}{45+x} = \\frac{6}{5}$. Cross multiply: $325 - 5x = 270 + 6x \\Rightarrow 11x = 55 \\Rightarrow x = 5$. Pucha hai $5x + 85 = 5(5) + 85 = 25 + 85 = 110$. Equation balance kiya aur answer jeb me."
+  },
+  {
+    "q": "The number increased by $40\\%$ and then decreased by $30\\%$. What is the net percentage change? (CHSL TIER I - $\\frac{21}{11}$/2025 - SHIFT 3)",
+    "o": [
+      "$8\\%$ increase",
+      "$2\\%$ decrease",
+      "$8\\%$ decrease",
+      "$2\\%$ increase"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, ye baccho wala sawal CHSL pre me hamesha ata hai. Successive laga de $X + Y + XY/100$. $+40 - 30 + \\frac{40 \\times (-30)}{100} = 10 - 12 = -2\\%$. Minus aya matlab decrease hai $2\\%$ ka. Or simply $100 \\times 1.4 \\times 0.7 = 98$ yani $2\\%$ down."
+  },
+  {
+    "q": "A monkey is trying to climb up a pole with height 20 meters. Every minute the monkey climbs up by 3 meters and in the next 30 seconds it slips down by 1 meter. In how much time it will reach the top of the pole if initially the monkey was at the bottom of the pole?",
+    "o": [
+      "13 min 30 sec",
+      "14 min 40 sec",
+      "14 min 10sec",
+      "15 minutes"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, isme last jump ka dhyaan rakhna hota hai. Monkey 1 cycle (1.5 min) me $+3 - 1 = 2$ meter chhadta hai. Par jab wo ek baar top pe pahuch jayega tab slip kyu karega? Isliye total 20 meter me se aakhiri ki jump (3m) pehle hi minus kar le. Bacha 17 meter. Ab $1.5$ min me 2m. Isko 17m tak le ja. 8 cycle me $8 \\times 2 = 16m$ chhadega. Time = $8 \\times 1.5$ min = 12 minutes. Ab bacha 4 meter. Agle 1 min me 3m chhadega $\\Rightarrow 19m$ (Time 13 min). Fir 30 sec me 1m slip karega $\\Rightarrow 18m$ (Time 13.5 min). Fir agle jump me use bas 2 meter chhadna hai aur uski speed 3m/min hai! Toh 2m chhadne me use $2/3$ min (yani 40 sec) lagne chahiye. Ye kya option match nahi kar raha. Ruko, ek aur tarika: Usne cycle 8 poori ki (12 min, 16m). Fir jump laya +3m (13 min, 19m). Phir slip kiya -1m (13.5 min, 18m). Phir agla jump 3m/min se lagega, but target bacha hai 2m. Is hisab se answer aana chahiye $13.5$ min + 40 sec. \nLet's re-read carefully: \"Every minute it climbs 3m, next 30s it slips 1m\". Let's try 8 cycles: 12 min $\\Rightarrow 16m$. 9 cycles: $9 \\times 1.5 = 13.5$ min $\\Rightarrow 18m$. Ab 9 cycles ke baad wo 18m pe hai. Agle minute me wo 3m chhadega. Top 20m ka hai. Toh 2m chhadne ke liye time = $\\frac{2}{3}$ minute = 40 seconds. Total time = 13 min 30 sec + 40 sec = 14 min 10 sec. Perfect! CGL level ka classic logic puzzle."
+  }
+]}

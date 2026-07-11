@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Percentage-Set-15",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "In an Examination $80\\%$ students passed in physics, $70\\%$ in chemistry while $15\\%$ failed in both the subjects. If 325 students passed in both the subjects, then find the total number of students who appeared in the examination?",
+    "o": [
+      "450",
+      "520",
+      "480",
+      "500"
+    ],
+    "a": 3,
+    "s": "Dekh bhai TestRipper, Venn diagram ka ekdum standard question hai. Total $100\\%$ hote hain. Agar $15\\%$ dono me fail hain, toh at least ek me pass hone wale log $100\\% - 15\\% = 85\\%$ honge. Formula laga: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. Yani $85\\% = 80\\% + 70\\% - \\text{Both}$. Solve karega toh Both pass wale $65\\%$ aayenge. Sawal keh raha hai ki ye $65\\%$ value $325$ ke barabar hai. Toh $1\\% = 5$, aur total $100\\% = 500$. November 2026 CGL me aise lallu questions galat nahi hone chahiye!"
+  },
+  {
+    "q": "The square root of a number is increased by $40\\%$, and the result is 21. Find the original number. (CPO TIER I- $\\frac{12}{12}$/2025-SHIFT 1)",
+    "o": [
+      "324",
+      "400",
+      "256",
+      "225"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, equations likhne ki zaroorat nahi hai. Number ke square root ko $40\\%$ (yani $\\frac{2}{5}$) se badhaya gaya. Yani root $5$ unit se $7$ unit ho gaya. Sawal ke hisab se final result $21$ hai. Toh $7$ unit = $21$, matlab $1$ unit = $3$. Original root ($5$ unit) tha $15$. Agar square root $15$ tha, toh original number uska square yani $225$ hoga. Dimag me hi solve ho jata ye!"
+  },
+  {
+    "q": "In a city $40\\%$ of the men are married and $25\\%$ of women are married. Considering that nobody is married more than once. What percentage of population is married?",
+    "o": [
+      "$33.33\\%$",
+      "$30.8\\%$",
+      "$36.66\\%$",
+      "$28.4\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, ye concept samajh le! Jitne aadmi shadi-shuda hain, utni hi aurtein bhi hongi. Toh $40\\%$ of Men = $25\\%$ of Women. Ratio bana: $\\frac{M}{W} = \\frac{25}{40} = \\frac{5}{8}$. Total log ho gaye $5+8 = 13$ units. Married aadmi = $5$ ka $40\\%$ yani $2$ unit. Married aurtein bhi $2$ unit. Total married = $4$ unit. Percentage nikalo: $\\frac{4}{13} \\times 100 = 30.76\\%$. Approximation se $30.8\\%$ tick maar aur aage badh!"
+  },
+  {
+    "q": "If $25\\%$ of (P+Q) = $75\\%$(P-Q) then find the ratio P:Q. (CGL TIER I - $\\frac{18}{09}$/2025 - Shift 2)",
+    "o": [
+      "2:1",
+      "3:1",
+      "1:3",
+      "1:2"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, percentage se percentage seedha kaat. $25$ se $75$ gaya $3$ baar me. Equation bachi: $P + Q = 3(P - Q)$. Bracket khol aur terms alag kar: $P + Q = 3P - 3Q \\implies 4Q = 2P \\implies \\frac{P}{Q} = \\frac{4}{2} = \\frac{2}{1}$. Option 2:1 ko mark kar. Pen free questions hain ye!"
+  },
+  {
+    "q": "In an examination, there were two papers, X and Y, and the maximum mark in each of the two papers was 20. However, the weights assigned to papers X and Y were in the ratio 3: 2, respectively. Rohan scored 18 out of 20 in Paper X and an overall $70\\%$ in the examination. How much did he score in Paper Y out of 20?",
+    "o": [
+      "8",
+      "9",
+      "10",
+      "7"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, Weighted Average / JSM ka tagda use hai isme. Paper X ka score $18/20$ yani $90\\%$ hai. Overall $70\\%$ chahiye. Weights ka ratio $3:2$ hai. Equation bana: $\\frac{3 \\times 90 + 2 \\times Y}{5} = 70$. Yani $270 + 2Y = 350 \\implies 2Y = 80 \\implies Y = 40\\%$. Paper Y me usko $40\\%$ number laane hain. $20$ ka $40\\%$ hota hai $8$. Khatam!"
+  },
+  {
+    "q": "If $20\\%$ of (P+Q) = $50\\%$ of (P-Q), then find the ratio P:Q? (CGL TIER I - $\\frac{17}{09}$/2025-S2)",
+    "o": [
+      "2:5",
+      "3:7",
+      "7:3",
+      "5:2"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, zero aur percentage dono side se uda de. Bacha $2(P+Q) = 5(P-Q)$. Khol bracket: $2P + 2Q = 5P - 5Q$. Shift karega toh $7Q = 3P$ aayega. Matlab $\\frac{P}{Q} = \\frac{7}{3}$. CGL Tier 1 me aisi speed maintain karni padegi."
+  },
+  {
+    "q": "If $15\\%$ of a is equal to $25\\%$ of b, then find the ratio a: b. (CGL TIER I - $\\frac{16}{09}$/2025 - S3)",
+    "o": [
+      "3:5",
+      "5:4",
+      "5:3",
+      "4:5"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, seedha kaato $5$ ki table se! $3a = 5b$. Jo 'a' ke samne hai wo 'a' ki value, jo 'b' ke samne hai wo 'b' ki. Toh $a:b = 5:3$. Ek second me uda dena aise questions!"
+  },
+  {
+    "q": "P's monthly salary is 60,000. He spends $45\\%$ of his monthly salary on food and $25\\%$ of the remaining monthly salary on house rent. Additionally, he spends X on children's education and spends $15\\%$ of his monthly salary on travel. If he saved his remaining salary and his savings is 12,000 then find the value of X?",
+    "o": [
+      "3850",
+      "3750",
+      "3650",
+      "3550"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, dhyan se padh 'remaining' aur 'monthly salary' ke keywords. Food pe gaya $45\\%$ of 60k = 27k. Bacha 33k. Is 33k ka $25\\%$ (yani $\\frac{1}{4}$) rent pe gaya = 8250. Travel par wapas total salary ka $15\\%$ gaya = 9000. Total kharch = $27000 + 8250 + 9000 = 44250$. Salary me se ye ghataya toh $15750$ bacha. Usne $12000$ save kiye, iska matlab baaki bacha paisa Education (X) me lagaya tha. $15750 - 12000 = 3750$. Solid logic rakho!"
+  },
+  {
+    "q": "The price of rice falls by $35\\%$. How much extra quantity of rice can be bought with the money that was sufficient to buy 104 kg of rice previously?",
+    "o": [
+      "45.5kg",
+      "42kg",
+      "56kg",
+      "52kg"
+    ],
+    "a": 2,
+    "s": "Dekh bhai TestRipper, amount jab constant ho toh Price aur Consumption inversely proportional hote hain! Price $35\\%$ gira yani $100$ se $65$ hua. Ratio $20:13$. Toh Quantity ka ratio ulta ho jayega, $13:20$. Purani quantity $13$ unit thi jo sawal me $104$ kg di hai. Yani $1$ unit = $8$ kg. Pucha hai 'extra' kitni aayegi? Extra $7$ unit hai. Toh $7 \\times 8 = 56$ kg. Tricks aisi lagao ki examiner bhi ghabra jaye!"
+  },
+  {
+    "q": "$\\frac{11}{5}$ of a number A is $22\\%$ of a number B. The number B is equal to $2.5\\%$ of a third number C. If the value of C is 5500, then the sum of $80\\%$ of A and $40\\%$ of B is:",
+    "o": [
+      "48",
+      "88",
+      "66",
+      "75"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, peeche se solve kar! $C = 5500$ diya hai. B uska $2.5\\%$ hai. $5500 \\times 0.025 = 137.5$. Ab pehli equation pe aa: $2.2A = 0.22B$. Yani $A = 0.1B$. Toh $A = 13.75$. Pucha kya hai? $80\\%$ of A ($11$) + $40\\%$ of B ($55$). Dono ko jod de: $11 + 55 = 66$. Decimal se darna nahi hai, bas step by step chalna hai!"
+  },
+  {
+    "q": "The population of town B is $300\\%$ more than that of town A. For the next two years, the population of A increases by x% per year and that of B decreases by the same percentage per year. After 2 years, if the population of A and B become equal, then the value of x is:",
+    "o": [
+      "40",
+      "30 $\\frac{2}{3}$",
+      "33 $\\frac{1}{3}$",
+      "25"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, B ki population A se $300\\%$ zyada hai matlab $A:B = 1:4$ ka ratio hai. Successive lagao dono taraf. $A(1 + \\frac{x}{100})^2 = B(1 - \\frac{x}{100})^2$. B/A ki jagah 4 rakho aur dono taraf square root le lo. Ayega $\\frac{1 + x/100}{1 - x/100} = 2$. Cross multiply kar: $1 + \\frac{x}{100} = 2 - \\frac{2x}{100}$. Solve karne par $\\frac{3x}{100} = 1$, yani $x = \\frac{100}{3} = 33 \\frac{1}{3}$. Pattern ekdum fix hai CGL ka!"
+  },
+  {
+    "q": "The difference between $20\\%$ of a number and $10\\%$ of the same number is 120. What is the number? (CGL TIER 1 - $\\frac{22}{09}$/2025 - SHIFT 1)",
+    "o": [
+      "1200",
+      "1000",
+      "1400",
+      "1100"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, itna basic question pre me free ke numbers bant'ta hai. $20\\%$ aur $10\\%$ ka difference $10\\%$ hota hai. Agar number ka $10\\% = 120$ hai, toh pura number $100\\%$ nikalne ke liye ek zero aur laga de! $1200$ is the answer."
+  },
+  {
+    "q": "If m% of m + n% of n = $2\\%$ of (m x n), then what percentage of m is n?",
+    "o": [
+      "$75\\%$",
+      "$50\\%$",
+      "$100\\%$",
+      "Cannot be determined"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, algebra aur percentage ki mix sabji hai ye. Equation likh: $\\frac{m^2}{100} + \\frac{n^2}{100} = \\frac{2mn}{100}$. Denominator 100 sab taraf se kaat. Bacha $m^2 + n^2 - 2mn = 0$, jo ki $(m-n)^2 = 0$ ka formula hai. Matlab $m = n$ ho gaya. Agar dono barabar hain toh 'n', 'm' ka pura $100\\%$ hoga na! Free hit tha!"
+  },
+  {
+    "q": "In a class of 60 students, $40\\%$ are girls. The average weight of boys is 62 kg and that of girls is 55 kg. What is the average weight of the whole class?",
+    "o": [
+      "59 kg",
+      "58.5 kg",
+      "59.2 kg",
+      "58.8 kg"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, 60 students ka use karke mazdoori mat karna. Ratio pe khel! Girls $40\\%$, toh Boys $60\\%$. Ratio Boys:Girls = $3:2$. JSM laga do. Average assume kar lo $55$. Boys ka average $55$ se $7$ zyada hai, aur $3$ boys pe total $+21$ ka deviation aaya. Is $+21$ ko total $5$ (yani $3+2$) me baant de: $+4.2$ banega. Base me jodh de: $55 + 4.2 = 59.2$ kg. Time bacha, CGL nikal!"
+  },
+  {
+    "q": "In a mixture of 200 gms, quantity of water, spirit and alcohol is $20\\%$, $30\\%$ and $50\\%$ respectively, $40\\%$ of spirit from the mixture have been removed. If quantity of water is doubled then find the ratio of quantities in the mixture?",
+    "o": [
+      "9:20:3",
+      "30:20:9",
+      "20:30:9",
+      "20:9:25"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, initially water 40g, spirit 60g, alcohol 100g tha. Spirit me se $40\\%$ hata diya, yani $60$ ka $40\\%$ = $24$ nikal gaya, bacha $36$g. Water ko double kar diya, yani 40 se 80 ho gaya. Alcohol wahi ka wahi 100g. Naya ratio nikal W:S:A = $80 : 36 : 100$. Char (4) se divide karega toh $20 : 9 : 25$ aayega. Flow me chalte raho, ans kud aa jayega."
+  },
+  {
+    "q": "A landlord bought a flat for $\\text{Rs. } 8$,00,000. He wants to earn a $9\\%$ annual return on his investment after paying $\\text{Rs. } 2$,000 per month for maintenance. What should be the monthly rent he charges? (SSC CGL TIER I - $\\frac{12}{09}$/2025 - Shift 1)",
+    "o": [
+      "$\\text{Rs. } 8,000$",
+      "$\\text{Rs. } 7,000$",
+      "$\\text{Rs. } 8,500$",
+      "$\\text{Rs. } 7,500$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, saal ka hisaab lagao. 8,00,000 par $9\\%$ return chahiye, matlab saal ka $\\text{Rs. } 72,000$ jeb me aana chahiye. Lekin society wale $\\text{Rs. } 2,000$ har mahine maintainence lete hain yani saal ka $\\text{Rs. } 24,000$ wahan jayega. Toh kiraaye daar se total vasooli karni padegi $72,000 + 24,000 = 96,000$ ki pure saal me. Har mahine ka kitna hua? $\\frac{96,000}{12} = 8,000$. Common sense wali math hai!"
+  },
+  {
+    "q": "There are 2800 students in a school, out of which $75\\%$ participate in a sport competition. Out of those who participate, $60\\%$ are boys. $35\\%$ of the boys and $25\\%$ of the girls qualify for the final round of the competition. What percentage of the school will participate in the final round?",
+    "o": [
+      "22 $\\frac{1}{2}$%",
+      "20 $\\frac{1}{3}$%",
+      "23 $\\frac{1}{4}$%",
+      "21 $\\frac{1}{3}$%"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, $2800$ ko touch bhi mat kar! Base $100$ maan. $75$ log participate kar rahe. Usme $60\\%$ boys hain yani $45$ boys. Bachi $30$ girls. Boys qualify hue $45$ ka $35\\%$ = $15.75$. Girls qualify hui $30$ ka $25\\%$ = $7.5$. Total qualify hue $15.75 + 7.5 = 23.25$. Ye total $100$ ka direct $23.25\\%$ yani $23 \\frac{1}{4}\\%$ ban gaya. Absolute numbers se khelne me time waste hota hai!"
+  },
+  {
+    "q": "The base area of a prism is increased by $25\\%$, while the height remains the same. By what percentage does the volume increase? (CGL TIER I - $\\frac{20}{09}$/2025 - SHIFT 2)",
+    "o": [
+      "$30\\%$",
+      "$20\\%$",
+      "$10\\%$",
+      "$25\\%$"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, Prism ki Volume hoti hai $\\text{Base Area} \\times \\text{Height}$. Height constant hai iska matlab Volume completely Base Area pe depend karega. Agar Base Area $25\\%$ badha, toh Volume bhi bina kisi calculation ke direct $25\\%$ badhegi! Ye question 2 second ka tha bas."
+  },
+  {
+    "q": "The number of cars in a parking lot is $20\\%$ more than the number of trucks. What is the ratio of the number of trucks to the number of cars? (CHSL TIER I - $\\frac{14}{11}$/2025 - SHIFT 1)",
+    "o": [
+      "7:6",
+      "5:6",
+      "6:5",
+      "6:7"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, ye to basic fraction ka question hai. $20\\% = \\frac{1}{5}$. Agar Trucks 5 hain toh Cars usse 1 zyada yani 6 hongi. Ratio pucha hai Trucks to Cars ka yani T:C. Toh ans hoga 5:6. Jaldi baazi me 6:5 mat kar aana, exam me is choti mistake ki heavy price hoti hai!"
+  },
+  {
+    "q": "A man lost half of his initial amount in the gambling after playing 3 rounds. The rule of gambling is that if he wins he will receive $\\text{Rs. } 100$, but he has to give $50\\%$ of the total amount after each round. Luckily he won all the three rounds. The initial amount with which he had started the gambling was:",
+    "o": [
+      "600",
+      "$\\frac{500}{3}$",
+      "$\\frac{700}{3}$",
+      "300"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, reverse engineer karo equation se. Maan lo shuru me X the. Round 1: X+100 hue aur adhe bache $\\frac{X+100}{2}$. Round 2: Phir 100 jode aur adha kiya toh $\\frac{X+300}{4}$. Round 3: Fir 100 jod ke adha kiya toh $\\frac{X+700}{8}$ bacha. Question kehta hai ab uske paas initial ka aadha bacha hai yani $\\frac{X}{2}$. Equate kar do: $\\frac{X+700}{8} = \\frac{X}{2} \\implies X+700 = 4X \\implies 3X = 700$. Toh $X = \\frac{700}{3}$. Concept clear ho toh aise complex rule wale question bhi flat ho jate hain!"
+  },
+  {
+    "q": "The ratio between the expenditure and saving of Shyam is 4:5. when Shyam increases her expenditure by $12\\%$ and increases her saving by $5\\%$, what would have been the increase in her income?",
+    "o": [
+      "$9.25\\%$",
+      "$8.20\\%$",
+      "$9.45\\%$",
+      "$8.11\\%$"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, JSM method ka jadoo chalao! Income = Exp + Saving = $4+5=9$ units. Exp pe $12\\%$ hike, Sav pe $5\\%$ hike. Overall income pe hike pucha hai. $\\frac{4 \\times 12 + 5 \\times 5}{9} = \\frac{48 + 25}{9} = \\frac{73}{9}$. Isko divide karega toh $8.11\\%$ aayega. Weighted average se easy kuch nahi!"
+  },
+  {
+    "q": "Some students (only boys and girls) from different schools appeared for an Olympiad exam. $40\\%$ of the boys and $25\\%$ of the girls failed the exam. The number of boys who passed the exam was 30 more than that of the girls who passed the exam. A total of 170 students failed. Find the number of students that appeared for the exam?",
+    "o": [
+      "300",
+      "450",
+      "400",
+      "500"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, thoda calculation wala Q hai par linear equations se nikal jayega. Failed ki equation: $0.4B + 0.25G = 170$. Passed ki equation: $0.6B = 0.75G + 30$. Pehli equation ko 3 se multiply kar do: $1.2B + 0.75G = 510$. Isme passed wali eq jod do, $0.75G$ cancel hoga. Ayega $1.8B = 540 \\implies B = 300$. Kisi bhi ek eq me daal, G aa jayega $200$. Total log the $300 + 200 = 500$. Options se try karta toh bhi jaldi aa jata!"
+  },
+  {
+    "q": "During a division, Pranjal mistakenly took as the dividend a number that was $10\\%$ more than the original dividend. He also mistakenly took as the divisor a number that was $25\\%$ more than the original divisor. If the correct quotient of the original division problem was 25 and the remainder was 0, what was the quotient that Pranjal obtained, assuming his calculations had no error?",
+    "o": [
+      "28.15",
+      "21.75",
+      "21.25",
+      "22"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, Quotient hota hai Dividend / Divisor (kyunki remainder zero hai). Upar wala $10\\%$ badha yani $1.1$ time hua. Neeche wala $25\\%$ badha yani $1.25$ times hua. Naya Quotient banega: Purana Quotient $\\times \\frac{1.1}{1.25}$. Yani $25 \\times \\frac{110}{125} = 25 \\times \\frac{22}{25} = 22$. Basic multiplier ka concept hai!"
+  },
+  {
+    "q": "In a family the ratio of expenditure to the savings was 7: 4. But their expenditure is increased by $42.84\\%$ and income increased by only $20\\%$ thus there is a deficit of $\\text{Rs. } 6448$ in the savings. Find the increase in the income of the family.",
+    "o": [
+      "$\\text{Rs. } 18852$",
+      "$\\text{Rs. } 19332$",
+      "$\\text{Rs. } 17732$",
+      "$\\text{Rs. } 19968$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, khatarnaak fraction hai $42.84\\%$. Yaad kar $14.28\\%$ ki value $\\frac{1}{7}$ hoti hai, toh ye usaka 3 guna yani $\\frac{3}{7}$ hai! Maan le initial Exp $700$ aur Sav $400$ hai, Income bani $1100$. Exp me $\\frac{3}{7}$ ka increment yani $300$ badha, new Exp $= 1000$. Income me $20\\%$ ka increment yani $220$ badha, new Income $= 1320$. New Saving aayi $1320 - 1000 = 320$. Purani $400$ thi, deficit (kami) kitni hui? $80$ units ki. $80$ units = $6448$. Pucha hai Income increase (220 units). Calculate kar: $\\frac{6448}{80} \\times 220 = 80.6 \\times 220 = 17732$. Fraction strong hona zaroori hai!"
+  },
+  {
+    "q": "A school conducted a scholarship test where $60\\%$ of the students passed in English, $70\\%$ passed in Math, and $45\\%$ passed in both. What is the percentage of students who passed in at least one subject? (CHSL TIER I - $\\frac{15}{11}$/2025-SHIFT 1)",
+    "o": [
+      "$75\\%$",
+      "$90\\%$",
+      "$85\\%$",
+      "$80\\%$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, ye to direct formula-based saawal de diya examiner ne. 'At least one' ka matlab hota hai $A \\cup B$. Formula: $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$. Toh $60 + 70 - 45 = 130 - 45 = 85\\%$. Secondon me tick mark ke next question pe bhaag!"
+  }
+]
+}

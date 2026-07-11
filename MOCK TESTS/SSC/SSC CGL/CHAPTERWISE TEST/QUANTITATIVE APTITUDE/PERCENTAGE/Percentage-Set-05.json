@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Percentage-Set-05",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "In an election between two candidates, $65\\%$ of the voters cast their votes, out of which $3\\%$ of the votes were decided to be invalid. A candidate got 81965 votes which are $65\\%$ of the total valid votes. What is the total number of votes enrolled in that election?",
+    "o": [
+      "185000",
+      "200000",
+      "190000",
+      "215000"
+    ],
+    "a": 1,
+    "s": "Dekh bhai TestRipper, aise karna hai... Total votes $T$ maan le. Equation banegi: $T \\times 0.65 \\times 0.97 \\times 0.65 = 81965$. Ab CGL me isko solve karne baithega toh time nikal jayega. Digital Sum (DS) laga! $81965$ ka DS = 2. Denominator me $0.65 \\to 2$, $0.97 \\to 7$, $0.65 \\to 2$. Multiply kar: $2 \\times 7 \\times 2 = 28 \\to 1$. Yani $T \\times 1 = 2$, toh $T$ ka DS 2 aana chahiye. Options me sirf 200000 ka DS 2 hai. Boom! Pen uthane ki bhi zaroorat nahi thi.<br><br><b>Summary:</b> Jab calculation me decimals aur ajeeb numbers ho, waha Digital Sum CGL aur CDS ka brahmastra hai."
+  },
+  {
+    "q": "When the price of sugar increased by $53\\%$, a family reduced its consumption per month such that the expenditure on sugar was only $19\\%$ more than the earlier one. If the family consumed 38.7 kg sugar per month earlier, then what is the reduction in consumption of sugar per month?",
+    "o": [
+      "8.4 kg",
+      "8.6 kg",
+      "8.1 kg",
+      "8.7 kg"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Price aur Expenditure ka seedha relation hota hai. Nayi consumption aur Purani consumption ka ratio hota hai $(100 + E\\%) / (100 + P\\%)$. Yani $119 / 153$. 17 se kaat de, aayega $7/9$. Yani pehle 9 unit khate the, ab 7 unit khate hain. Kami aayi 2 unit ki. Pehle ki value 9 unit = 38.7 kg di hai, toh 1 unit = 4.3 kg. Toh 2 unit = $2 \\times 4.3 = 8.6$ kg.<br><br><b>Trick:</b> Reverse ratio hamesha best hota hai consumption nikalne ke liye."
+  },
+  {
+    "q": "A bacteria culture increases by $20\\%$ every hour for 3 hours, then decreases by $10\\%$ in the 4th hour, and finally increases by $25\\%$ in the 5th hour. If the initial count was 5,000, what will be the approximate count after 5 hours?",
+    "o": [
+      "9,720",
+      "8,900",
+      "9,650",
+      "9,830"
+    ],
+    "a": 0,
+    "s": "Dekh bhai TestRipper, isko chain rule se todte hain. $20\\%$ ka fraction $1/5$ (badha toh $6/5$), $10\\%$ ka $1/10$ (ghata toh $9/10$), $25\\%$ ka $1/4$ (badha toh $5/4$). Equation: $5000 \\times (6/5)^3 \\times (9/10) \\times (5/4)$. Calculation asaan kar: $(6/5)^3 = 216/125$. Equation bacha $5000 \\times (216/125) \\times (9/10) \\times (5/4)$. $125 \\times 10 \\times 4 = 5000$ hota hai, toh niche ka pura 5000 se cut gaya! Bacha sirf $216 \\times 9/2$ wait... $5000$ aur fractions katne pe end me $216 \\times 45$ bachega. Ya simply multiply kar $5000 \\times 1.728 \\times 0.9 \\times 1.25 = 9720$. Exact value aati hai.<br><br><b>Summary:</b> Fractions me convert karke denominators ko multiply karo, aksar principal amount usse exact cut jata hai."
+  },
+  {
+    "q": "If $40\\%$ of A = 0.5 of B = $\\frac{1}{4}$ of C what is A:B:C? (CGL TIER I - $\\frac{18}{09}$/2025 - Shift 3)",
+    "o": [
+      "5:4:8",
+      "5:10:20",
+      "10:8:5",
+      "5:4:2"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, sabko fraction me la. $40\\% = 2/5$, $0.5 = 1/2$. Toh $2A/5 = B/2 = C/4$. Isko barabar man le $k$ ke, toh A ratio B ratio C hoga $5/2 : 2 : 4$. Pura ratio 2 se multiply kar de: $5 : 4 : 8$. Answer seconds me aayega.<br><br><b>Trick:</b> Numerators ka LCM leke usse divide kar dena (yaha 2 hai), toh direct denominators me answer dikh jayega."
+  },
+  {
+    "q": "In an examination, $53\\%$ students passed in Mathematics, $61\\%$ passed in Physics, $60\\%$ passed in Chemistry, $24\\%$ passed in Mathematics and Physics, $35\\%$ in Physics and Chemistry, $27\\%$ in Mathematics and Chemistry and $5\\%$ in none. The ratio of % of passes in Mathematics and Chemistry but not in Physics in relation to the % of passes in Physics and Chemistry but not in Mathematics is?",
+    "o": [
+      "7:5",
+      "5:7",
+      "4:5",
+      "5:4"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, set theory ka 3-circle wala formula laga: $Union = A + B + C - (A \\cap B) - (B \\cap C) - (C \\cap A) + (A \\cap B \\cap C)$. Total pass $95\\%$ honge (kyunki $5\\%$ none hain). Toh $95 = 53 + 61 + 60 - 24 - 35 - 27 + All$. Solve karega toh All = $7\\%$. Hamein chahiye M&C without P ($27 - 7 = 20\\%$) aur P&C without M ($35 - 7 = 28\\%$). Ratio ban gaya $20 : 28 = 5 : 7$.<br><br><b>Summary:</b> Only 2 subjects ka overlap nikalne ke liye intersection me se teeno ka common hissa minus kar do."
+  },
+  {
+    "q": "A large watermelon weighs 25 kg with $98\\%$ of its weight being water. It is allowed to stand in the sun for a while and some of the water evaporates so that now only $97\\%$ of it is water. What is its reduced weight?",
+    "o": [
+      "21.5 kg",
+      "16.5 kg",
+      "20 kg",
+      "18.2 kg"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, aise questions me hamesha SOOKHA part (Pulp) barabar rakhte hain. Water uda hai, solid material utna hi rahega. Pehle pulp = $2\\%$ of 25 = 0.5 kg. Ab water $97\\%$ hai, yani pulp bacha $3\\%$. Naye weight ka $3\\% = 0.5$ kg. Toh Naya Weight = $0.5 / 0.03 = 50 / 3 = 16.66$ kg. Options check kar, sabse kareeb $16.5$ kg hai, wahi approx hit karna hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept</th><th style='text-align:left;padding:4px;color:var(--p2)'>Logic</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Evaporation Trick</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Always equate the <b>Constant Element</b> (Pulp/Solid) before and after evaporation.</td></tr></table>"
+  },
+  {
+    "q": "The income of A is 10,800 per month. He saves $12.5\\%$ of his income. If his monthly income increases by $22.5\\%$ and the expenditure increases by $30\\%$, then his monthly savings decreases by",
+    "o": [
+      "455",
+      "420",
+      "405",
+      "435"
+    ],
+    "a": 2,
+    "s": "Dekh bhai TestRipper, Income = 10800 baad me dekhna. Pehle fractions pe khel. Save = $12.5\\%$ ($1/8$). Income = 8 unit, Save = 1 unit, Exp = 7 unit. Income badhi $22.5\\%$ toh $+22.5 \\times 8 = +180$ ka overall effect. Exp badha $30\\%$ toh $+30 \\times 7 = +210$ ka effect. Net change in savings = $180 - 210 = -30$ units (out of total scale where income is $800$). Actual Income $800 \\text{ unit} = 10800$, toh 1 unit = $13.5$. Drop in savings = $30 \\times 13.5 = 405$. Absolute killer method hai ye!<br><br><b>Summary:</b> Deviation method me percentage ko direct base ratio se multiply karke unbalance nikal liya karo."
+  },
+  {
+    "q": "A number first increased by $8\\%$ and then decreased by $3\\%$ to get 2619. What is $5\\%$ of that number?",
+    "o": [
+      "135",
+      "140",
+      "125",
+      "130"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, $N \\times 1.08 \\times 0.97 = 2619$. 1.08 me 9 ka multiple chhupa hai, aur 2619 bhi 9 se katta hai. $2619 / 1.08 = 2425$. Fir $2425 / 0.97 = 2500$. Number mil gaya 2500. Ab iska $5\\%$ nikalna hai: $2500 \\times 5/100 = 125$. Simple table division tha.<br><br><b>Trick:</b> $8\\%$ up and $3\\%$ down ka effective rate $8 - 3 - (24/100) = 4.76\\%$ up hota hai. $104.76\\% = 2619$. Isse bhi 2500 direct aayega."
+  },
+  {
+    "q": "A bag contains $20\\%$ red balls, $30\\%$ green balls, and the rest blue balls. If there are 80 blue balls, what is the total number of balls? (CGL TIER I - $\\frac{24}{09}$/2025 - SHIFT 1)",
+    "o": [
+      "200",
+      "240",
+      "160",
+      "100"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, total balls hamesha $100\\%$ hoti hain. Red $20\\%$ aur Green $30\\%$, yani total $50\\%$ nikal gaya. Bachi Blue jo $50\\%$ hongi. Question bolta hai Blue 80 hain. Agar aadhi ($50\\%$) balls 80 hain, toh poori ($100\\%$) balls kitni hongi? Seedha $80 \\times 2 = 160$. Halwa sawal exam stress ke liye hota hai!"
+  },
+  {
+    "q": "Vikash invests $36\\%$ of his income on his parents health. now out of the remaining income he spends $15240 \\text{ Rs.}$ On his education.he spends $18.18\\%$ of left amount on food. now he has $30\\%$ of the amount that he had spend on his parents health issues.find monthly income of vikas?",
+    "o": [
+      "25000",
+      "40000",
+      "32000",
+      "30000"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, backward thinking laga! Option 30000 utha le. Income = 30000. Health pe $36\\% = 10800$. Bacha 19200. Edu pe 15240 lagaya, bacha 3960. Iska $18.18\\%$ (yani $2/11$) khane pe lagaya toh bacha kitna? $9/11 \\times 3960 = 3240$. Question bolta hai remaining amount health amount ka $30\\%$ hai. Health 10800 tha, uska $30\\% = 3240$ hota hai. Match ho gaya! Quadratic equation banane se bacho, Options validation zindabad.<br><br><b>Summary:</b> Jab exact amount bich sequence me subtract ho aur fractions complicated ho ($18.18\\%$), toh assumption based options validation 1 minute me answer dega."
+  },
+  {
+    "q": "An item's price is increased by $25\\%$ and then by another $20\\%$. What is the overall percentage increase? (CHSL TIER I - $\\frac{22}{11}$/2025 - SHIFT 2)",
+    "o": [
+      "$55\\%$",
+      "$50\\%$",
+      "$52\\%$",
+      "$45\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, successive increment ka universal formula $X + Y + (XY / 100)$ laga. $25 + 20 + (25 \\times 20)/100 = 45 + 500/100 = 45 + 5 = 50\\%$. Ya fraction se kar le: $25\\% = 1/4$ (4 se 5 hua), $20\\% = 1/5$ (5 se 6 hua). Multiply kar: 20 se 30 ho gaya, yani $50\\%$ badh gaya."
+  },
+  {
+    "q": "The ratio between expenditure and saving is x:y. when income is increased by $15\\%$, expenditure is increased by $20\\%$ and savings are increased by $12\\%$. Find the new ratio of expenditure and savings ?",
+    "o": [
+      "5:8",
+      "9:14",
+      "14:8",
+      "14:9"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Income hamesha Expenditure aur Savings ka mixture hota hai. Toh sidha Alligation laga! Ek side Exp ($+20\\%$), doosri side Sav ($+12\\%$), beech me Income ($+15\\%$). Cross difference le: $(15 - 12) : (20 - 15) = 3 : 5$. Ye aagaya original E:S ka ratio! Maan le original Exp = 300, Sav = 500. Naya Exp = 300 pe $20\\%$ zyada = 360. Naya Sav = 500 pe $12\\%$ zyada = 560. Naya ratio = $360 : 560 = 9 : 14$.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Alligation Layout</th><th style='text-align:left;padding:4px;color:var(--p2)'>Values</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Left (Exp Change)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>$20\\%$</b></td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Right (Sav Change)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>$12\\%$</b></td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Middle (Inc Change)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>$15\\%$</b></td></tr></table>"
+  },
+  {
+    "q": "In a survey among 140 students, 60 likes to play videogames, 70 likes to play indoor games, 75 likes to play outdoor games, 30 play indoor and outdoor games, 18 like to play video games and outdoor games, 42 play video games and indoor games and 8 likes to play all types of games. Use the Venn diagram to find (i) Students who play only outdoor games (ii) Students who play video games and indoor games, but not outdoor games",
+    "o": [
+      "i-35 & ii-34",
+      "i-42 & ii-35",
+      "i-34 & ii-32",
+      "i-32 & ii-42"
+    ],
+    "a": 0,
+    "s": "Dekh bhai TestRipper, Only Outdoor nikalna hai. Total Outdoor = 75. Isme se wo hata de jo Indoor-Outdoor khelte hain (30) aur jo Video-Outdoor khelte hain (18). Par dhyaan rakh, All-3 wale (8) in dono me 2 baar count hoke minus ho gaye hain, toh unhe ek baar add karna padega. Only Outdoor = $75 - 30 - 18 + 8 = 35$. Part (ii): Video & Indoor but NOT outdoor = (Video & Indoor) - (All 3) = $42 - 8 = 34$. Answer: 35 aur 34. Bada sa statement bas darane ke liye tha!"
+  },
+  {
+    "q": "The price of a shirt is increased by $20\\%$ and then again increased by $10\\%$. What is the net percentage increase in price? (CHSL TIER I - $\\frac{12}{11}$/2025- SHIFT 2)",
+    "o": [
+      "$33\\%$",
+      "$32\\%$",
+      "$30\\%$",
+      "$31\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, simple successive ka case hai. $X + Y + (XY / 100)$. $20 + 10 + (20 \\times 10) / 100 = 30 + 2 = 32\\%$. CGL me isse jyada dimag nahi khapana aisi free ki balls par."
+  },
+  {
+    "q": "The rate of income tax increases from $15.2\\%$ to $20.9\\%$. due to this Gaurav had to pay $5.55\\%$ more tax than previous year. but simultaneously income of Gaurav also decreases by $18400 \\text{ Rs.}$ find income of Gaurav last year?",
+    "o": [
+      "79200",
+      "97200",
+      "92700",
+      "72900"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, $5.55\\%$ ka fraction $1/18$ hota hai, yani Tax 18 se 19 ho gaya. Tax ratio = $T_{new}/T_{old} = 19/18$. Tax rate ka ratio = $20.9 / 15.2 = 209/152 = 11/8$. Income ka ratio kya hoga? Income = Tax / Rate. Toh $I_{new}/I_{old} = (19/11) / (18/8) = (19 \\times 8) / (18 \\times 11) = 152 / 198 = 76 / 99$. Yani Income 99 se 76 ho gayi, ghati kitni? 23 unit. Question me drop $18400$ diya hai. $23 \\text{ unit} = 18400$, toh 1 unit = 800. Last year Income = 99 unit = $99 \\times 800 = 79200$.<br><br><b>Trick:</b> Aise sawalon me equations ke bajaye ratios multiply kiya kar, direct multiplier milta hai."
+  },
+  {
+    "q": "If the height of a triangle is increased by $20\\%$ and the base is increased by $12\\%$, what is the new area if the old area was 200 cm$^2$?",
+    "o": [
+      "216.7",
+      "234.4",
+      "268.8",
+      "254.4"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, Area ka formula $\\frac{1}{2} \\times \\text{Base} \\times \\text{Height}$ hota hai. Height $1.2$ times hui, Base $1.12$ times. Toh Area ka multiplier = $1.2 \\times 1.12 = 1.344$ times hoga. Old area 200 tha, toh $200 \\times 1.344 = 268.8$. Seedhi baat no bakwas."
+  },
+  {
+    "q": "If B is $25\\%$ more than A, and C is $20\\%$ more than B, then what is A: C? (CGL TIER I - $\\frac{13}{09}$/2025 - SHIFT 3)",
+    "o": [
+      "3:4",
+      "4:5",
+      "3:2",
+      "2:3"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, Chain pakdo. A ko 100 man le. B usse $25\\%$ zyada hai toh B = 125. C, B se $20\\%$ ($1/5$) zyada hai. 125 ka $1/5$ hota hai 25. Toh C = $125 + 25 = 150$. Hamein A:C chahiye. $100 : 150$, $50$ se kaat de toh $2 : 3$ aa jayega. Successive ratio ka best and fastest method."
+  },
+  {
+    "q": "A contractor estimated that a project would cost $\\text{Rs. } 5$,00,000. He planned for $60\\%$ of the cost to go to materials, $25\\%$ to labor, and the rest as contingency. However, due to delays, material cost increased by $12.5\\%$, labor cost increased by $10\\%$, and contingency remained unchanged. What is the new total cost? (CHSL TIER I - $\\frac{30}{11}$/2025 - SHIFT 1)",
+    "o": [
+      "$\\text{Rs. } 5$,45,000",
+      "$\\text{Rs. } 5$,50,000",
+      "$\\text{Rs. } 5$,52,000",
+      "$\\text{Rs. } 5$,60,000"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Material hai $60\\%$, $12.5\\%$ badha. $60$ ka $12.5\\%$ ($1/8$) hota hai $7.5\\%$. Labor hai $25\\%$, $10\\%$ badha. $25$ ka $10\\%$ hota hai $2.5\\%$. Total increment kitna hua? $7.5 + 2.5 = 10\\%$ ka extra kharcha badh gaya overall budget pe. 5 lakh ka $10\\%$ hota hai 50,000. Toh naya budget ho gaya $5,00,000 + 50,000 = 5,50,000$. Faltu me 5 lakh ko har step me mat ghisna, direct percentages me deviation nikalo."
+  },
+  {
+    "q": "The price of a radio at the beginning of an year was $\\text{Rs. } 3000$. It increased by x% and then decreased by y% over the year. It increased by x% and then decreased by y% over the next year too. At the end of the second year, the price of the radio was $\\text{Rs. } 3000$. Which of the following can be concluded?",
+    "o": [
+      "None of these",
+      "x = y",
+      "x < y",
+      "x > y"
+    ],
+    "a": 3,
+    "s": "Dekh bhai TestRipper, ye conceptual bouncer hai. Agar kisi value ko x% badhao aur y% ghatao, aur result same rahe, toh iska matlab hai jo increment tumne chote base pe kiya, wo decrement tumne bade base pe kiya hai balance karne ke liye. Same value hatane ke liye bada percentage rate badhane wali side hona chahiye. Algebraically: $(1+x/100)(1-y/100) = 1 \\Rightarrow x - y - xy/100 = 0$. Iska matlab $x - y = \\text{Positive value}$. Toh $x > y$ hona fix hai!"
+  },
+  {
+    "q": "$5\\%$ of a = b, then b% of 20 is the same as",
+    "o": [
+      "$20\\%$ of a/2",
+      "$50\\%$ of a/2",
+      "$20\\%$ of a/20",
+      "$50\\%$ of a/20"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, seedha equate kar. $b = 0.05a$. Pucha hai $b\\%$ of 20, yani $(b/100) \\times 20 = b/5$. $b$ ki jagah $0.05a$ rakh de. $0.05a / 5 = 0.01a$. Ab options check kar. $20\\%$ of $a/20$ nikalte hain: $0.2 \\times a/20 = 0.01a$. Perfect match! Variables dekh kar ghabrana nahi, unko unki jagah par put karo."
+  },
+  {
+    "q": "When the price of rice is increased by 25 percent, a family reduces its consumption such that the expenditure is only 10 percent more than before. If 40 kg of rice is consumed by family before, then find the new consumption of family.",
+    "o": [
+      "33.2",
+      "35.2",
+      "36.2",
+      "41.2"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Price-Consumption-Expenditure wale Type ka ek hi short-cut hai: Naya / Purana Consumption = $(100 + \\text{New Exp} \\%) / (100 + \\text{New Price} \\%)$. Yahan Exp $10\\%$ badha aur Price $25\\%$ badha. Ratio banega $110 / 125$, 5 se cut kar toh $22 / 25$. Purani consumption (25 unit) = 40 kg di hai. 1 unit = $40/25 = 1.6$ kg. Nayi consumption = 22 unit = $22 \\times 1.6 = 35.2$ kg. Penless method!"
+  },
+  {
+    "q": "Two persons A and B contested in an election and $20\\%$ of the votes were invalid. A got $40\\%$ and $45\\%$ of invalid and valid votes respectively. If B won by 480 votes, then find the total votes got by B?",
+    "o": [
+      "2640",
+      "3360",
+      "2820",
+      "3200"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, dhyan se padhna ye twist hai. Total votes $100x$ le. Invalid = $20x$, Valid = $80x$. A ko mile Invalid ka $40\\%$ ($8x$) aur Valid ka $45\\%$ ($36x$). B ko milega bacha hua! B ke Invalid hue $60\\%$ of $20x = 12x$. B ke Valid hue $55\\%$ of $80x = 44x$. Jeet hamesha Valid votes par hoti hai (unless specified). Valid me B (44x) aur A (36x) ka difference $8x$ hai. $8x = 480 \\Rightarrow x = 60$. B ke total (Valid+Invalid) vote hue $12x + 44x = 56x$. $56 \\times 60 = 3360$. Excellent trick question from examiner!"
+  },
+  {
+    "q": "A jar is $\\frac{3}{5}$ full with a solution. After adding 3.2 liters, it becomes $\\frac{7}{8}$ full. What is the total capacity of the jar? (CPO TIER I- $\\frac{10}{12}$/2025 - SHIFT 2)",
+    "o": [
+      "11.64 L",
+      "24 L",
+      "20.5 L",
+      "18.28 L"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, fraction ka difference le seedha. $\\frac{7}{8} - \\frac{3}{5}$. LCM aayega 40. $(35 - 24) / 40 = 11/40$. Yani jar ka $11/40$ hissa 3.2 liters hai. Total capacity $C = 3.2 \\times 40 / 11 = 128 / 11$. Divide karega toh $11.6363...$ aayega. Options me 11.64 L bilkul clear hai. Calculation CGL aur CPO dono me exact nahi ati kai baar."
+  },
+  {
+    "q": "The price of an article increased by $15\\%$ every year. If the difference between the price at the end of third and fourth year is 138 then $65\\%$ of the price at the end of second year?",
+    "o": [
+      "520",
+      "205",
+      "180",
+      "210"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, Reverse compounding! 3rd aur 4th saal ka diff 138 hai, aur har saal rate $15\\%$ badhta hai. Yani 3rd saal ke price ($P_3$) par hi toh $15\\%$ lag ke $138$ bana hoga! $P_3 \\times 0.15 = 138 \\Rightarrow P_3 = 138 / 0.15 = 920$. Ab $P_3$ bhi $P_2$ par $15\\%$ badh kar bana tha. $P_2 \\times 1.15 = 920 \\Rightarrow P_2 = 920 / 1.15 = 800$. Is 800 ka $65\\%$ nikalna hai. $800 \\times 65 / 100 = 520$. Reverse step mapping time bachati hai."
+  },
+  {
+    "q": "2/5th of the voters promise to vote for A and the rest promised to vote for B. Of these, on the last day $15\\%$ of the voters went back of their promise to vote for A and $25\\%$ of voters went back of their promise to vote for B, and A lost by 200 votes. Then, the total number of voters is?",
+    "o": [
+      "9000",
+      "9500",
+      "10000",
+      "11000"
+    ],
+    "a": 2,
+    "s": "Dekh bhai TestRipper, 2/5 aur fractions handle karne ke liye Base $1000x$ maan le. A ko 400x aur B ko 600x promise the. A ke $15\\%$ ($60x$) B me bhag gaye. B ke $25\\%$ ($150x$) A me aagaye. Naya A = $400 - 60 + 150 = 490x$. Naya B = $600 - 150 + 60 = 510x$. Difference $20x$ ka aaya. Question kehta hai A 200 votes se hara. $20x = 200 \\Rightarrow x = 10$. Total votes $1000x = 10000$.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Shift Matrix</th><th style='text-align:left;padding:4px;color:var(--p2)'>Votes Moved</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A to B ($15\\%$)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>$-60x$ (A) / $+60x$ (B)</b></td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B to A ($25\\%$)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>$+150x$ (A) / $-150x$ (B)</b></td></tr></table>"
+  }
+]
+}

@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Percentage-Set-09",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "If A's income is $20\\%$ more than B's and B earns $\\text{Rs. } 50,000$, what percent less is B's income than A's? (CHSL TIER I - $24/11$/2025 - SHIFT 1)",
+    "o": [
+      "$25\\%$",
+      "$20\\%$",
+      "$16.66\\%$",
+      "$18\\%$"
+    ],
+    "a": 2,
+    "s": "Dekh TestRipper bhai, yaha 50,000 sirf time waste karne ke liye diya hai. Direct ratio laga. A = 120, B = 100. B kitna kam hai? 20 kam hai 120 par. Yani $\\frac{20}{120} = \\frac{1}{6} = 16.66\\%$. SSC CGL me aisi useless values ko ignore marna seekh!"
+  },
+  {
+    "q": "A has some coins. He gives half of the coins and 3 more to B. B gives half of the coins and 3 more to C. C gives half of the coins and 3 more to D. The number of coins D has now is the smallest two digit number. How many coins does A have in the beginning?",
+    "o": [
+      "40",
+      "42",
+      "38",
+      "36"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, isko hamesha reverse order me solve karna. D ke paas smallest 2-digit number yani 10 hai. C ne aadha aur 3 zyada diya tha, matlab $(10-3) \\times 2 = 14$. B ka nikalne ke liye $(14-3) \\times 2 = 22$. Aur A ka $(22-3) \\times 2 = 38$. Ye reverse chain method time bachata hai!"
+  },
+  {
+    "q": "Number of females in a city is $22.22\\%$ less than the number of male and the percentage of the children among male and female are $25\\%$ and $40\\%$ respectively. If the number of adults in the city is 76650, then find the number of children in the city?",
+    "o": [
+      "2525",
+      "35350",
+      "37875",
+      "32320"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, ratio aur fraction ka mast use karte hain. $22.22\\%$ kam matlab $M:F = 9:7$. Maan le M=900, F=700. Adult M = $75\\%$ of $900 = 675$. Adult F = $60\\%$ of $700 = 420$. Total adults = 1095 unit. 1095 ki value 76650 hai (1 unit = 70). Total bacche = $(900-675) + (700-420) = 225 + 280 = 505$ units. Answer $= 505 \\times 70 = 35350$."
+  },
+  {
+    "q": "If first number is $8\\frac{1}{3}\\%$ less than third number and ratio of second and third number is 15:16 then average of first and third number is how much percent less/more than second number?",
+    "o": [
+      "$2.66\\%$",
+      "$2.22\\%$",
+      "$3.333\\%$",
+      "$2.45\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, $8\\frac{1}{3}\\%$ hota hai $\\frac{1}{12}$. Ratio method best hai! I:III = 11:12, aur II:III = 15:16. III ko same kar LCM (48) leke. Toh I = 44, II = 45, III = 48 aayega. I aur III ka average 46 hua. 46, 45 se kitna zyada hai? 1 zyada hai 45 pe. $\\frac{1}{45} \\times 100 = 2.22\\%$. Ye base equalization ka trick hai!"
+  },
+  {
+    "q": "A value is increased by $30\\%$ and then decreased by an unknown percentage to return to the original value. What is the percentage decrease required? (CGL TIER I - $23/09$/2025-SHIFT 2)",
+    "o": [
+      "$30.23\\%$",
+      "$23.08\\%$",
+      "$33.00\\%$",
+      "$20.22\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh TestRipper, seedhi si baat hai. Value 100 se 130 ho gayi. Wapas 100 aane ke liye 30 kam karna padega, par kis par? 130 par! Toh $\\frac{30}{130} \\times 100 = \\frac{300}{13} = 23.08\\%$. Options dekhte hi 13 ka multiple dhoondh, pen uthane ki jarurat nahi padegi."
+  },
+  {
+    "q": "Every month, a man consumes 20 kg of rice and 8 kg of wheat. The price of rice is $20\\%$ of the price of wheat, resulting in a total expenditure of $\\text{Rs. } 300$ per month for rice and wheat combined. If the price of wheat is increased by $20\\%$, what percentage reduction in rice consumption is needed to maintain the same expenditure of $\\text{Rs. } 300$? (Given that price of rice and consumption of wheat is constant.)",
+    "o": [
+      "$22\\%$",
+      "$24\\%$",
+      "$40\\%$",
+      "$38\\%$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, maan le Wheat ka price 5 aur Rice ka 1 unit hai. Total kharcha = $(20 \\times 1) + (8 \\times 5) = 60$ unit = 300. Wheat price $20\\%$ badh gaya, toh naya price 6 unit hua. Wheat pe kharcha = $8 \\times 6 = 48$ unit. Bacha kitna? $60-48=12$ unit. Rice ka naya consumption 12 unit hoga. 20 se 12 ho gaya, matlab 8 ki kami 20 par. $\\frac{8}{20} = 40\\%$ sidha answer!"
+  },
+  {
+    "q": "$62.5\\%$ of a number exceeds $25\\%$ of the same number by 15. What is the number? (PHASE XIII(GRAD) - $31/07$/2025 - SHIFT 3)",
+    "o": [
+      "70",
+      "60",
+      "40",
+      "50"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, typing error ho jati hai, original sawal $62.5\\%$ ka tha. $62.5\\% - 25\\% = 37.5\\%$. $37.5\\%$ ki fraction value $\\frac{3}{8}$ hoti hai. Agar $\\frac{3}{8}$ unit ki value 15 hai, toh 1 unit (total number) ki value $15 \\times \\frac{8}{3} = 40$ aayegi. Percentage fraction game hai pura!"
+  },
+  {
+    "q": "In a sports club of 530 members, each member play at least one of the three sports cricket, football and squash. 240 of them play cricket, 255 play football and 265 squash. 80 play cricket and football, 85 play cricket and squash and 90 play football and squash. How many members play all three sports?",
+    "o": [
+      "40",
+      "50",
+      "60",
+      "25"
+    ],
+    "a": 3,
+    "s": "Dekh TestRipper bhai, seedha set theory ka formula thok de: Total = $n(C) + n(F) + n(S) - [n(C\\cap F) + n(C\\cap S) + n(F\\cap S)] + n(All)$. Value rakh: $530 = 240 + 255 + 265 - (80 + 85 + 90) + x$. Toh $530 = 505 + x$. Yahan se $x = 25$ aa jayega. Venn diagram banane me time waste mat karna."
+  },
+  {
+    "q": "The number of peacocks in a bird sanctuary was P in the year 2000. The number decreased by $10\\%$ in the next decade and increased by $50\\%$ in the decade after that. If the difference between the number of peacocks in the years 2020 and 2000 is 5250, and it increased by $36\\%$ in the next half decade, then what is the number of peacocks in the year 2025?",
+    "o": [
+      "23,850",
+      "27,540",
+      "22,740",
+      "25,450"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, successive lagana hai. Pehle $10\\%$ kam (0.9), fir $50\\%$ zyada (1.5). Net effect = $P \\times 0.9 \\times 1.5 = 1.35P$. Matlab $35\\%$ ka increase. $35\\% = 5250$, toh $100\\% (P) = 15000$. 2020 me population = $15000 \\times 1.35 = 20250$. Ab iska $36\\%$ aur badha de. Unit digit check kar, $20250 \\times 1.36$ me last me '40' aayega, option B seedha tick maar!"
+  },
+  {
+    "q": "The town has a present population of 2,40,000. Every year the population increases by $12\\%$ and decreases by $7\\%$ due to migration. What will be the population after 3 years? (CHSL TIER 1- $19/11$/2025 - SHIFT 2)",
+    "o": [
+      "2,77,830",
+      "2,98,000",
+      "2,92,500",
+      "3,27,830"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, $12\\%$ aate hain aur $7\\%$ chale jate hain. Net change $5\\%$ ka increment hua har saal. Successive laga de 3 saal ke liye: $240000 \\times \\frac{21}{20} \\times \\frac{21}{20} \\times \\frac{21}{20}$. Pure calculation ki zarurat nahi hai! 21 ka matlab 3 aur 7 ka multiple. Option check kar jo 9 ka multiple ho (Digital Sum = 9). Pehla option $2+7+7+8+3+0 = 27 \\to 9$, seedha tick maar!"
+  },
+  {
+    "q": "A salesman has done total sale of Rs. (x + 17000) and the rate of commission up to Rs. (x + 5000) is $13.33\\%$ and after Rs. (x + 5000), he gets some bonus amount which is equal to Rs. (x - 8000). If the bonus rate is $16.66\\%$ on the amount exceeding Rs. (x + 5000), then find his total sale.",
+    "o": [
+      "22000",
+      "20000",
+      "25000",
+      "27000"
+    ],
+    "a": 3,
+    "s": "Dekh TestRipper, language ke jaal me mat fasna! Total sale hai $(x + 17000)$ aur limit hai $(x + 5000)$. Yani excess amount kitna hua? Seedha $17000 - 5000 = 12000$. Is 12000 par $16.66\\%$ (yani $\\frac{1}{6}$) ka bonus mila. Bonus hua $\\frac{12000}{6} = 2000$. Question me bonus $(x - 8000)$ diya hai. Toh $x - 8000 = 2000 \\implies x = 10000$. Total sale = $10000 + 17000 = 27000$. Khatam!"
+  },
+  {
+    "q": "Mallika spends $22.22\\%$ of her income on house expenses, $18.18\\%$ on rent and $33.33\\%$ on education and she saves $75\\%$ of the remaining income and donates the rest. If the amount donated by him is 650, then find his income.",
+    "o": [
+      "18000",
+      "9900",
+      "12800",
+      "6300"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, fraction se khelna seekh. $22.22\\% = \\frac{2}{9}$, $18.18\\% = \\frac{2}{11}$, $33.33\\% = \\frac{1}{3}$. Total kharcha = $\\frac{2}{9} + \\frac{2}{11} + \\frac{1}{3} = \\frac{73}{99}$. Bacha kitna? $\\frac{26}{99}$. Iska $75\\%$ save karti hai toh baaki $25\\%$ (yani $\\frac{1}{4}$) donate karti hai. Matlab Total ka $(\\frac{26}{99}) \\times \\frac{1}{4}$ donate hua. $\\frac{13}{198} = 650$. Toh Total = $50 \\times 198 = 9900$. November mission ke liye aise fast calculate karna seekh!"
+  },
+  {
+    "q": "$35\\%$ of the students in a college are girls and the rest are boys. The total number of students in the college is 2800. $75\\%$ of the boys and $85\\%$ of the girls passed the final examination. The percentage of total students who passed the final examination is:",
+    "o": [
+      "$80\\%$",
+      "$78.5\\%$",
+      "$78\\%$",
+      "$82\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, yaha 2800 ka koi use nahi hai, ye sirf trap hai! Boys aur Girls ka ratio 65:35 yani 13:7 hai. JSD (Junior Satisfactory Data) trick laga: base $75\\%$ maan le, girls paas $10\\%$ zyada hain. Toh extra = $7 \\times 10 = 70$. Ye 70 sabme (20) bategi. $75 + \\frac{70}{20} = 75 + 3.5 = 78.5\\%$. Second me ud gaya!"
+  },
+  {
+    "q": "In sweet, one-third is sugar. If the price of sugar now is $\\frac{7}{6}$ of the previous price, what is the effective percentage increase in the cost of the sweet?",
+    "o": [
+      "$\\frac{100}{9} \\%$",
+      "$\\frac{200}{9} \\%$",
+      "$\\frac{100}{3} \\%$",
+      "$\\frac{100}{18} \\%$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, sweet me $\\frac{1}{3}$ sugar hai. Sugar ka price $\\frac{7}{6}$ ho gaya, matlab kitna bada? $\\frac{1}{6}$ ka increase! Par ye increase sirf sugar ke hisse me hua. Toh total sweet ke cost me effective increase kitna hoga? $\\frac{1}{6} \\times \\frac{1}{3} = \\frac{1}{18}$. Percentage me badalne ke liye 100 se multiply kar de $\\to \\frac{100}{18}\\% = \\frac{50}{9}\\%$. Bina koi x-y maane answer aa gaya!"
+  },
+  {
+    "q": "In an election, $80\\%$ of eligible voters cast their votes. Of these votes, $5\\%$ were declared invalid. If a winning candidate received 11,400 votes, which accounted for $60\\%$ of the total valid votes, what was the total number of eligible voters enrolled in that election? (CGL TIER I - $13/09$/2025 - SHIFT 2)",
+    "o": [
+      "22,500",
+      "20,000",
+      "25,000",
+      "27,500"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, successive ka sabse pyara sawal. Maan le total voters x hain. Toh series banegi: $x \\times \\frac{80}{100} \\times \\frac{95}{100} \\times \\frac{60}{100} = 11400$. Isko fraction me likh: $x \\times \\frac{4}{5} \\times \\frac{19}{20} \\times \\frac{3}{5} = 11400$. Digital Sum laga le ya direct kaat de. $x = 25000$ mast answer niklega."
+  },
+  {
+    "q": "A town has a present population of 2,40,000. Every year the population increases by a birth rate of $12\\%$ and decreases by a death rate of $7\\%$. Find the population of the town at the end of 3 years.",
+    "o": [
+      "2,98,000",
+      "3,21,830",
+      "2,92,500",
+      "2,77,830"
+    ],
+    "a": 3,
+    "s": "Dekh TestRipper bhai, ye sawal exactly upar wale (Migration) jaisa hai, bass language badal di! Net change = $12\\% - 7\\% = +5\\%$. 3 saal baad population = $240000 \\times (\\frac{21}{20})^3$. Digital sum nikal $2+7+7+8+3+0 = 27 \\to 9$ DS. Seedha options elimination, mazdoori mat kar CGL me."
+  },
+  {
+    "q": "Suhani pays tax at the rate of $30\\%$ on her entire income of 90,000 and Ritika pays tax at the rate of $40\\%$ on her entire income of y. If the total rate of tax on their combined income becomes $37\\%$, then what is the value of y?",
+    "o": [
+      "$\\text{Rs. } 2,10,000$",
+      "$\\text{Rs. } 2,13,000$",
+      "$\\text{Rs. } 2,04,000$",
+      "$\\text{Rs. } 2,16,000$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, isme simple Allegation thok de! Suhani ka $30\\%$, Ritika ka $40\\%$, mila kar $37\\%$. Cross difference nikalega toh income ka ratio aayega 3:7. Ab $3 \\text{ unit} = 90000$ toh $1 \\text{ unit} = 30000$. Ritika ki income $7 \\text{ unit} = 2,10,000$ seedha answer!"
+  },
+  {
+    "q": "Ratio of the number of shirts and T-shirts in the bag is 5:4. If the number of shirts in the bag is increased by $60\\%$ and the number of T-shirts in the bag is increased by 40, then the ratio of the number of shirts and t-shirts in the bag becomes 2:3. Find the initial number of T-shirts in the bag?",
+    "o": [
+      "28",
+      "20",
+      "16",
+      "24"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Initial ratio 5:4 tha. Shirts ko $60\\%$ badhaya, matlab 5 ka $160\\% = 8$ ho gaya. Naya ratio 2:3 diya hai. Par yahan shirts 8 hain aur ratio me 2 dikha raha hai, toh ratio ko 4 se multiply karke balance kar $\\to 8:12$. Ab dekh, T-shirts 4 se 12 ho gaye (+8 unit). Par question me +40 hue hain. Toh $8 \\text{ unit} = 40 \\implies 1 \\text{ unit} = 5$. Initial T-shirts $4 \\text{ unit} = 20$. Ratio balancing se khatam!"
+  },
+  {
+    "q": "The population of a place increased to 50,000 from 2016 to 2018 at the rate of $6\\%$ per annum, and continued the same trend for the next 3 years. If A is the population in 2016 and B is the population in 2020, both are approximated to the next possible integers, then the value of B - A is:",
+    "o": [
+      "13220",
+      "16270",
+      "12850",
+      "11680"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, ye tricky lag raha hai par asaan hai. 2018 ki population $50,000$ hai. A (2016 ki) nikalne ke liye piche jana hoga: $A \\times 1.06^2 = 50000 \\implies A \\approx 44500$. B (2020 ki) aage jane pe niklegi: $50000 \\times 1.06^2 = 56180$. Dono ka difference $56180 - 44500 = 11680$. Approximation method best hai."
+  },
+  {
+    "q": "Weight of Ayush and Abhishek are in the ratio of 8:5. Abhishek's weight increases by 40 percent and total weight of Ayush and Abhishek both increases by 60 percent. If total weight becomes 104 kg, then what is the weight of Ayush after the increment?",
+    "o": [
+      "72 kg",
+      "69 kg",
+      "60 kg",
+      "75 kg"
+    ],
+    "a": 1,
+    "s": "Dekh TestRipper bhai, yaha JSD trick laga. Ratio 8:5. Total $60\\%$ bada, par Abhishek sirf $40\\%$ bada, yani $20\\%$ kam bada apni 5 unit par $= -100\\%$. Ye kami kaun poori karega? Ayush! Ayush $60\\%$ toh badhega hi, plus ye $\\frac{100}{8} = 12.5\\%$ bhi. Total Ayush bada $72.5\\%$. Naya total weight 104 diya hai, purana total $= \\frac{104}{1.6} = 65$. Ayush ka purana weight $= (\\frac{8}{13}) \\times 65 = 40$. Naya Ayush $= 40 \\times 1.725 = 69$ kg. Mast calculation!"
+  },
+  {
+    "q": "The lengths of two adjacent sides of a square are increased by $35\\%$ and $25\\%$ respectively. As a result the area of the rectangle will be more than the area of the square by?",
+    "o": [
+      "$69.75\\%$",
+      "$70.75\\%$",
+      "$67.75\\%$",
+      "$68.75\\%$"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, jahan successive dikhe aankh band karke $A + B + \\frac{AB}{100}$ laga. Square ki sides $35\\%$ aur $25\\%$ badhi. Net area change $= 35 + 25 + \\frac{35 \\times 25}{100} = 60 + 8.75 = 68.75\\%$. Pen mat uthana aise sawalo me!"
+  },
+  {
+    "q": "The price of an article increased by $16.66\\%$ every year. If the difference between the price at the end of third and fourth year is 126 then 1/8th of the price at the end of second year?",
+    "o": [
+      "75",
+      "81",
+      "90",
+      "70"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Fraction $\\frac{1}{6}$ hai iska matlab har saal value $6 \\to 7$ hoti hai. 3rd aur 4th saal ka difference matlab (4th Year - 3rd Year) jo basically 3rd saal ki value ka $\\frac{1}{6}$ hai. Toh $3\\text{rd yr value} \\times \\frac{1}{6} = 126 \\implies 3\\text{rd yr} = 756$. Ab backward jaana hai 2nd year pe, toh $\\frac{6}{7}$ se multiply kar de $= 756 \\times \\frac{6}{7} = 648$. Iska $\\frac{1}{8}$ nikalna hai $= \\frac{648}{8} = 81$. Ratio method rocks!"
+  },
+  {
+    "q": "A watermelon weighs 20 kg with $90\\%$ of its weight being water. It was left in the sun for a while and some of the water evaporated such that only $80\\%$ of it is water. What is the reduced weight of the watermelon now?",
+    "o": [
+      "10 kg",
+      "8 kg",
+      "12 kg",
+      "15 kg"
+    ],
+    "a": 0,
+    "s": "Dekh TestRipper bhai, aise questions me hamesha 'Constant' pakdo. Water uda hai, matlab Pulp toh utna hi rahega na! Pehle $10\\%$ pulp tha yani $20 \\times 10\\% = 2\\text{kg}$. Ab naye weight me $80\\%$ pani hai, toh pulp $20\\%$ bacha hoga. Naya Weight $\\times 20\\% = 2\\text{kg}$. Toh Naya Weight = 10 kg. CDS me zero concept leakage chahiye humko!"
+  },
+  {
+    "q": "x is inversely proportional to y. If x is increased by $37.5\\%$ then find % change in the value of y?",
+    "o": [
+      "$31.25\\%$",
+      "$45\\%$",
+      "$27.27\\%$",
+      "$33.33\\%$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, $x$ aur $y$ inversely proportional hain. $37.5\\%$ ki fraction hoti hai $\\frac{3}{8}$. Matlab $x$, 8 se 11 ho gaya. Toh inversely proportional ke chakkar me $y$, 11 se 8 ho jayega! Kitna ghata? 3 ghata 11 par. $\\frac{3}{11} = 27.27\\%$. Fraction trick se time bacha!"
+  },
+  {
+    "q": "A solution contains $80\\%$ acid. How much water must be added to 20 liters of this solution to make acid $50\\%$? (CHSL TIER I - $28/11$/2025 - SHIFT 1)",
+    "o": [
+      "12 liters",
+      "16 liters",
+      "25 liters",
+      "20 liters"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, mixture wale me hamesha wo chiz pakad jo mila nahi rahe ho. Yahan paani mila rahe ho, toh Acid fix rahega. Pehle Acid $80\\%$ tha (20 Ltr me), ab naye mixture (20+W) me $50\\%$ bacha. Equation bana: $20 \\times 80\\% = (20+W) \\times 50\\%$. Solve karega toh $16 = 10 + 0.5W \\implies W = 12$ Ltr. Ye trick sikh gaya toh exam crack hai tera!"
+  }
+]
+}

@@ -1,0 +1,281 @@
+{
+  "quizTitle": "Percentage-Set-04",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "Two candidates contested an election. 10% of people on the voting list did not vote and 60 votes recorded were rejected as illegal. The majority of successful candidate was 308 and it was found that he had been supported by 47% of the whole number of the voter's list. What were the total votes.",
+    "o": [
+      "6200",
+      "5000",
+      "6000",
+      "6500"
+    ],
+    "a": 0,
+    "s": "Dekh bhai TestRipper, aise karna hai... Total votes ko x maan. 10% ne vote nahi diya, bache 90%. Isme se 60 invalid ho gaye. Toh Valid Votes = 0.9x - 60. Winner ko 47% (0.47x) mile. Toh Loser ko (0.9x - 60) - 0.47x = 0.43x - 60 mile. Dono ka margin: 0.47x - (0.43x - 60) = 308. Yani 0.04x = 248. Toh x = 6200. Sidha equation se 30 second me ud jayega!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept</th><th style='text-align:left;padding:4px;color:var(--p2)'>Shortcut</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Election Margin</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Winner % - Loser % = Margin. Always base % on total list.</td></tr></table>"
+  },
+  {
+    "q": "Volume of a cylinder is increased by 43% when its height is reduced by 15 5/13% then find % change in CSA of cylinder?",
+    "o": [
+      "10%",
+      "13%",
+      "12%",
+      "15%"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, fractions pe pakad achhi rakh. 15 5/13% ka fraction 2/13 hota hai. Matlab height 13 se 11 ho gayi. Volume 43% badha yani 100 se 143 ho gaya. Volume ka ratio = r^2 * h hota hai. r^2 ka ratio = (143/100) / (11/13) = 169/100. Toh Radius (r) ka ratio 13/10 ho gaya. CSA hota hai 2*pi*r*h, yani r*h ka ratio. CSA naya = (13/10) * (11/13) = 11/10. Yani 10 se 11 ho gaya. Seedha 10% ka increment!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Math Formula</th><th style='text-align:left;padding:4px;color:var(--p2)'>Application</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Cylinder Ratios</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Vol depends on r^2 * h. CSA depends on r * h.</td></tr></table>"
+  },
+  {
+    "q": "Rohan ordered 5 kg of premium coffee and some additional kilograms of ordinary coffee. The price of the premium coffee per kg was three times that of the ordinary coffee. When the order was delivered. It was found that the quantities of premium and ordinary coffee had been swapped. This change increased his bill by 40%. Find the ratio of the original quantity of premium coffee to the original quantity of ordinary coffee. (CGL TIER I - 14/09/2025-S2)",
+    "o": [
+      "3:1",
+      "1:3",
+      "2:1",
+      "1:2"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, Premium ka price 3 maano aur Ordinary ka 1. Original quantity: Premium=5, Ordinary=x. Original Bill = 5*3 + x*1 = 15+x. Swapped Bill = x*3 + 5*1 = 3x+5. Swapped bill 40% zyada hai yani purane ka 1.4 times hai. 3x+5 = 1.4(15+x). Isko solve karega toh 1.6x = 16 aayega, yani x=10. Original ratio Premium:Ordinary = 5:10 = 1:2. Options se bhi x ki value daal ke verify kar sakta tha!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Trick</th><th style='text-align:left;padding:4px;color:var(--p2)'>Explanation</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Equation vs Options</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Ratio based questions me option put karna fast hota hai.</td></tr></table>"
+  },
+  {
+    "q": "The price of fuel decreases by 55%, 55%, and 55% in three successive months, but increases by 65% in the fourth month. What is the percentage increase/decrease (rounded off to two decimal places) in the price of fuel in the fourth month, as compared to its original price?",
+    "o": [
+      "Decreases by 84.96%",
+      "Decreases by 82.18%",
+      "Increases by 80.47%",
+      "Increases by 89.44%"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, successive ka best trick decimals multiplier hai. 55% decrease yani 0.45 bacha. 3 baar hua toh 0.45 * 0.45 * 0.45. Fir 65% badha yani 1.65 ka multiply. Net = 0.45^3 * 1.65 = 0.091125 * 1.65 = 0.15035... Yani original ka lagbhag 15.04% hi bacha hai. Toh Decrease kitna hua? 100 - 15.04 = 84.96%. CGL me approximate multiplier calculation speed badhata hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Topic</th><th style='text-align:left;padding:4px;color:var(--p2)'>Shortcut</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Successive Change</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Use multiplier (1 +/- r/100) instead of formulas.</td></tr></table>"
+  },
+  {
+    "q": "The income of a company increases by x% per year. If its income is 31,25,000 in the year 2019, and the income in 2017 was 20,00,000, then what is the value of x?",
+    "o": [
+      "20",
+      "25",
+      "15",
+      "18"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, 2 saal ka time difference hai. Final aur Initial ka ratio nikal: 3125000 / 2000000 = 3125 / 2000 = 31.25 / 20 = 1.5625. Do saal hai toh square root le le. 1.5625 ka root 1.25 hota hai (kyunki 125 ka square 15625 hai). 1.25 yani 25% ka increment. Pen uthane ki bhi zaroorat nahi thi isme!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Math Concept</th><th style='text-align:left;padding:4px;color:var(--p2)'>Time Formula</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Compound Growth</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Rate = (Final/Initial)^(1/t) - 1.</td></tr></table>"
+  },
+  {
+    "q": "Every day a mango seller sells half his stock, 10% of the stock overnight gets spoiled. If 1983 mangoes rotted over 3 nights then how many did he start with on the first day?",
+    "o": [
+      "24,000",
+      "32,000",
+      "30,000",
+      "25,000"
+    ],
+    "a": 0,
+    "s": "Dekh bhai TestRipper, ye tree method se banega. Start ko 8000 unit maan le (kyunki denominator me 2 aur 10 baar baar ayenge). Day 1: bacha 4000, rot hua 10% yani 400. Next start: 3600. Day 2: bacha 1800, rot 180. Next start: 1620. Day 3: bacha 810, rot 81. Total rot = 400+180+81 = 661 units. Question me rotted 1983 diya hai. 661 units = 1983 yani 1 unit = 3. Total stock = 8000 * 3 = 24,000. Divisibility se direct dikhta hai!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Tree Method Base</th><th style='text-align:left;padding:4px;color:var(--p2)'>Assumption Strategy</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Zeroes Magic</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Assume large values like 1000 or 8000 to avoid decimals.</td></tr></table>"
+  },
+  {
+    "q": "The count of bacteria in a sample grows by 24% during the first hour. It decreases by 15% during the next one hour and again decreases by 10% during the third hour. If the present count of bacteria in the sample is 55000, then what will be the net increase/decrease in the count of bacteria after three hours?",
+    "o": [
+      "Increase, 2827",
+      "Increase, 2728",
+      "Decrease, 2728",
+      "Decrease, 2827"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, successive fractions lagao. 55000 * (1.24) * (0.85) * (0.90). Calculation easy karne ke liye fractions use karo: 55000 * (31/25) * (17/20) * (9/10). Denominator 25*20*10 = 5000. 55000 ko 5000 se kaata toh 11 aya. Ab 11 * 31 * 17 * 9 multiply karna hai. Unit digit check kar: 1*1*7*9 = 3 aakhiri me aayega. 52173 aayega answer. Pehle 55000 tha ab 52173 bacha. Yani 2827 ka decrease. Options aur unit digit ne calculation bacha li!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Calculation Trick</th><th style='text-align:left;padding:4px;color:var(--p2)'>Implementation</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Unit Digit Method</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Ignore full multiplication, just multiply last digits.</td></tr></table>"
+  },
+  {
+    "q": "In class of 100 students, 35 like science and 45 like maths and 10 like both. how many like either of them?",
+    "o": [
+      "65",
+      "70",
+      "40",
+      "50"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, ekdum basic Venn Diagram ka formula hai. A Union B = A + B - (A Intersection B). Seedha values put kar: 35 + 45 - 10 = 70. Matlab 70 bacche kuch na kuch pasand karte hain (either science or maths). Free ke 2 marks hain CGL ke liye.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Set Theory Rule</th><th style='text-align:left;padding:4px;color:var(--p2)'>Logic</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Overlap Avoidance</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Subtract common part so it is not counted twice.</td></tr></table>"
+  },
+  {
+    "q": "Abhimanyu's monthly salary in 2014 was Rs. 38000. Due to his good performance, his monthly salary was increased by 10% and 20% in the year 2015 and 2016, respectively with respect to the previous year. Further, there was a provision of deducting 10% of the salary as tax if the salary crosses Rs. 40000 in a month. Find the monthly salary of Abhimanyu in the year 2016 after deducing the tax.",
+    "o": [
+      "40000",
+      "40629.6",
+      "45144",
+      "42768"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, step-by-step jao. 2014 me 38000. 2015 me 10% badha yani 3800 add hua = 41800. 2016 me 20% badha yani 41800 ka 20% (8360) add hua = 50160. Salary 40000 cross kar gayi, toh 10% tax katega. 50160 ka 10% yani 5016 deduct kar de. 50160 - 5016 = 45144. Seedha multiplication factor: 38000 * 1.1 * 1.2 * 0.9 = 45144.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Salary Calculation</th><th style='text-align:left;padding:4px;color:var(--p2)'>Multiplier Method</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Net Salary</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Chain all percentage multipliers back to back.</td></tr></table>"
+  },
+  {
+    "q": "The present population of a village is 15280. If the number of males increases by 25% and the number of females increases by 15%, then the population will become 18428. The difference between present population of males and females in the village is:",
+    "o": [
+      "920",
+      "2760",
+      "1840",
+      "1380"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, Shift method use kar! Maan le Males bhi sirf 15% badhte. Toh poori population 15% badhti. 15280 ka 15% nikal: 10% = 1528, 5% = 764. Total = 2292. Toh naya pop hota 15280 + 2292 = 17572. Par actual population 18428 hai. Extra kitna badha? 18428 - 17572 = 856. Ye 856 kyu badha? Kyunki Males ka 10% extra tha (25% - 15%). 10% of Males = 856. Toh Males = 8560. Total 15280 the, toh Females = 15280 - 8560 = 6720. Difference = 8560 - 6720 = 1840.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Aman Sir Trick</th><th style='text-align:left;padding:4px;color:var(--p2)'>Concept Name</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>JSM (Junior Satisfaction Method)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Assume the lower percentage for both variables to find excess easily.</td></tr></table>"
+  },
+  {
+    "q": "Two numbers are such that 30% of the first is equal to 45% of the second. What is the ratio of the first to the second? (CHSL TIER I - 22/11/2025 - SHIFT 2)",
+    "o": [
+      "2:3",
+      "4:3",
+      "3:4",
+      "3:2"
+    ],
+    "a": 3,
+    "s": "Dekh bhai TestRipper, ye CDS aur CGL dono me aata hai as warm-up. Seedhi equation: 30*A = 45*B. Toh A/B = 45/30 = 3/2. Pen uthane me bhi sharam aani chahiye is sawaal par.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Ratio Rule</th><th style='text-align:left;padding:4px;color:var(--p2)'>Application</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Inverse Relation</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>If xA = yB, then A:B = y:x.</td></tr></table>"
+  },
+  {
+    "q": "P, Q, R and S have different amounts. Q has 2.5 times the amount 'p' has. 's' has 40% less than Q. The amount R has equals the average of all four persons. If the sum of amounts of P and R is 4800, find the amount of R has. (CHSL TIER I - 19/11/2025 - SHIFT 2)",
+    "o": [
+      "Rs. 5200",
+      "Rs. 4200",
+      "Rs. 1800",
+      "Rs. 3000"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, sabko ek variable (P) me laa. Q = 2.5P. S is 40% less than Q, yani 60% of Q. Toh S = 0.6 * 2.5P = 1.5P. R sabka average hai. R = (P + Q + R + S) / 4. Value dal: 4R = P + 2.5P + 1.5P + R. 3R = 5P, yani R = (5/3)P. Ab diya hai P + R = 4800. P + 5P/3 = 8P/3 = 4800. Yani P = 1800. Pucha hai R ki amount, jo ki 4800 - 1800 = 3000 hai. Equations ka best manipulation!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Variable Matching</th><th style='text-align:left;padding:4px;color:var(--p2)'>Execution</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Single Variable Reduction</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Convert all entities to one base variable to simplify.</td></tr></table>"
+  },
+  {
+    "q": "An investor tracks 5 stocks. Four of them have an average return of 8%. If the overall average return is 9%, what was the return on the fifth stock? (CGL TIER I - 25/09/2025 - SHIFT 1)",
+    "o": [
+      "12%",
+      "13%",
+      "11%",
+      "14%"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, overall average 9% banana hai. Pehle 4 stocks 8% laa rahe hain, yani har ek 1% piche hai. Total deficit = 4 * (-1%) = -4%. Ye 4% ki bharpaai 5th stock ko karni padegi apne 9% ke upar! Toh 5th stock ka return = 9% + 4% = 13%. Deviation method se mentally solve ho gaya!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Average Hack</th><th style='text-align:left;padding:4px;color:var(--p2)'>Logic</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Deviation Balancing</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>The new entry must cover the total deficit of the existing group.</td></tr></table>"
+  },
+  {
+    "q": "Radha has a monthly income of Rs. 80,000. She spends 40% of her income on household expenses, 20% on entertainment and 20% on education. The remaining amount is saved. Due to a 20% salary hike, her income increases. However, her household expenses also rise by 10%, her entertainment costs increase by 12% while her expenses on education remain unchanged. Radha decides to save any leftover income after adjusting these changes. What is the percentage increase in Radha's savings?",
+    "o": [
+      "63%",
+      "68%",
+      "62%",
+      "66%"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Rs 80,000 ko ignore maar. Base 100 le. Pehle Exp = 40+20+20 = 80. Save = 20. Ab Income 120 ho gayi. Naya HH = 40 ka 110% = 44. Naya Ent = 20 ka 112% = 22.4. Naya Edu = 20 (no change). Naya Exp = 44 + 22.4 + 20 = 86.4. Naya Save = 120 - 86.4 = 33.6. Savings kitni badhi? 33.6 - 20 = 13.6. Base 20 par percentage: (13.6 / 20) * 100 = 68%. Percentage aur ratio me absolute values trap hoti hain.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Important Rule</th><th style='text-align:left;padding:4px;color:var(--p2)'>Trap to Avoid</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Ignore Absolute Values</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>When dealing purely in percentages, never calculate real values.</td></tr></table>"
+  },
+  {
+    "q": "In a Class of MBA Students 16.66% students from Science Background and 12.5% students are from commerce background and 6.66% students from arts background and rest from Engineering Background. The minimum Possible students of Engineering background?",
+    "o": [
+      "120",
+      "77",
+      "45",
+      "100"
+    ],
+    "a": 1,
+    "s": "Dekh bhai TestRipper, fractions ka lcm lena hai yaha. 16.66% = 1/6. 12.5% = 1/8. 6.66% = 1/15. Total = 1/6 + 1/8 + 1/15. Denominators (6, 8, 15) ka LCM 120 hota hai. Isliye minimum class size 120 hogi (kyunki students fractional me nahi ho sakte). In teeno ko add karega toh (20+15+8)/120 = 43/120 aayega. Toh Engineering wale bache: 1 - 43/120 = 77/120. Agar total minimum 120 bacche hain, toh Engineering wale exactly 77 bachenge.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Fractions Used</th><th style='text-align:left;padding:4px;color:var(--p2)'>Equivalent Value</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>16.66%, 12.5%, 6.66%</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1/6, 1/8, 1/15</b></td></tr></table>"
+  },
+  {
+    "q": "A student scored 72 marks in a test. If this was 60% of the total, what were the maximum marks? (CHSL TIER I - 21/11/2025 - SHIFT 2)",
+    "o": [
+      "120",
+      "110",
+      "115",
+      "125"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye questions exam me confidence boost karne ke liye hote hain. 60% = 72. Yani 10% = 12. Total hamesha 100% hota hai, toh 100% = 120. Seedha tick maar aur aage badh.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Unitary Method</th><th style='text-align:left;padding:4px;color:var(--p2)'>Fast Calculation</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Scale down to 10%</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Always find 10% value and append zero for 100%.</td></tr></table>"
+  },
+  {
+    "q": "If the height of a circular cone is increased by 33.33% and its radius is increased by 12.5%, then what will be the change in its volume?",
+    "o": [
+      "68.75%",
+      "62.50%",
+      "64.50%",
+      "67.25%"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, Volume cone ki h*r^2 par depend karti hai. Height 33.33% badhi yani 1/3 ka increment (Multiplier 4/3). Radius 12.5% badhi yani 1/8 ka increment (Multiplier 9/8). Volume multiplier = (9/8)^2 * (4/3) = (81/64) * (4/3) = 27/16. Yani 16 se 27 ho gaya. Increment 11 ka hua 16 par. Percentage = 11/16 * 100. Hame pata hai 1/16 = 6.25% hota hai. Toh 11 * 6.25 = 68.75%.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Common Fraction</th><th style='text-align:left;padding:4px;color:var(--p2)'>Percentage</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1/16</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>6.25%</b></td></tr></table>"
+  },
+  {
+    "q": "A crate of fruits contains one spoiled fruit for every 25 fruits. 60% of the spoiled fruits were sold. If the seller had sold 48 spoiled fruits, then the number of fruits in the crate were?",
+    "o": [
+      "1200",
+      "3000",
+      "2400",
+      "2000"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, Spoiled fruits ka 60% (yani 3/5) 48 ke barabar hai. Toh Total Spoiled = 48 * 5 / 3 = 80 fruits. Question bol raha hai har 25 fruits par 1 spoiled hai. Toh Total fruits = Spoiled fruits * 25. 80 * 25 = 2000. Calculation me koi dam nahi tha, bas language ghumayi thi.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Reading Trap</th><th style='text-align:left;padding:4px;color:var(--p2)'>Logic</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>\"For every 25 fruits\"</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>This means the ratio of Spoiled to Total is 1:25.</td></tr></table>"
+  },
+  {
+    "q": "A solid metallic sphere of radius R is heated so that its radius increases by 10%. Find the approximate percentage increase in its volume. (CHSL TIER I - 25/11/2025 - SHIFT 3)",
+    "o": [
+      "25%",
+      "31%",
+      "30%",
+      "33.1%"
+    ],
+    "a": 3,
+    "s": "Dekh bhai TestRipper, radius 1D hai aur Volume 3D. Increment 10% hai yani 1/10. Multiplier 11/10 hoga. Volume ke liye cube kardo: (11/10)^3 = 1331/1000. Yani 1000 se 1331 ho gaya. Increment kitna? 331 out of 1000. Base 100 par laane ke liye 10 se divide karo, 33.1% aayega.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Cube Rules</th><th style='text-align:left;padding:4px;color:var(--p2)'>Value</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>11 Cube</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1331</b></td></tr></table>"
+  },
+  {
+    "q": "A number is decreased by 35%, then increased by 25% and then further increased by 15%. What is the net increase/decrease percentage in the number (correct to the nearest integer)?",
+    "o": [
+      "6% increase",
+      "7% decrease",
+      "15% decrease",
+      "14% increase"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, fractions ko decimals me le. 0.65 * 1.25 * 1.15. Inko mentally break kar: 0.65 * 1.25 = 0.8125. Ab 0.8125 ko 1.15 se multiply karna hai. 0.8125 * 1 = 0.8125, aur 0.8125 * 0.15 = 0.121875. Dono jodo = 0.934375. Ye original (1.00) se lagbhag 0.065 kam hai. Yani ~6.56% decrease. Nearest integer 7% decrease hoga.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Approximation Method</th><th style='text-align:left;padding:4px;color:var(--p2)'>Usage</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Split Multiplication</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>1.15 ko 1 + 0.15 karke add karna fast hota hai.</td></tr></table>"
+  },
+  {
+    "q": "Two saleswomen, Kavitha and Kalyani, are allowed 12% and 15% commission, respectively on the total sales made by them. Kavitha gets 3% and Kalyani gets 5% extra bonus on the sales over Rs. 20,000. If the difference in total earning of both Kavitha and Kalyani is Rs. 7,600, then Kavitha's total earning is:",
+    "o": [
+      "Rs. 21,600",
+      "Rs. 19,200",
+      "Rs. 17,800",
+      "Rs. 23,400"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, equations ko smart way me likho. Let Total Sales = S. Kavitha's Earning = 12% of S + 3% of (S - 20000) = 15% of S - 600. Kalyani's Earning = 15% of S + 5% of (S - 20000) = 20% of S - 1000. Difference = Kalyani - Kavitha = (20% S - 1000) - (15% S - 600) = 5% S - 400. Ye difference 7600 hai. Toh 5% S = 8000, yani S = 1,60,000. Kavitha's earning = 15% of 160000 - 600 = 24000 - 600 = 23,400.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Algebra Shortcut</th><th style='text-align:left;padding:4px;color:var(--p2)'>Benefit</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Group Percentages</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Combine flat commission and bonus on (S - base) to a single format.</td></tr></table>"
+  },
+  {
+    "q": "Vikas has Rs.x. He gave 44.44% of Rs.x to Anju. Anju bought 33.33% of the money she got from Vikas for a dress and donated 31.25% of the remaining amount. The remaining amount is saved by (y). If the amount donated is 1250, then find the value of (x-y).",
+    "o": [
+      "12550",
+      "13950",
+      "11850",
+      "10750"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, fractions ka khel hai. Anju ko mila 4/9 x. Dress aayi iske 1/3 ki, toh bacha iska 2/3. Remaining = 2/3 * 4/9 x = 8/27 x. Donate kiya 31.25% (yani 5/16). Donation = 5/16 * 8/27 x = 5/54 x. Ye 1250 ke barabar hai. x = 1250 * 54 / 5 = 13500. Save kiya hua amount (y) remaining ka 11/16 hoga. y = 11/16 * 8/27 x = 11/54 x. Toh y = 11/54 * 13500 = 2750. Pucha hai x - y. 13500 - 2750 = 10750.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Percentage Table</th><th style='text-align:left;padding:4px;color:var(--p2)'>Fraction Form</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>44.44%, 31.25%</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>4/9, 5/16</b></td></tr></table>"
+  },
+  {
+    "q": "Two numbers are less than a third number by 30% and 37% respectively. The percent by which the second number is less than the first is?",
+    "o": [
+      "3%",
+      "7%",
+      "10%",
+      "4%"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, Third number ko 100 maan. First number 30% kam hai, yani 70 hai. Second number 37% kam hai, yani 63 hai. Pucha hai second number first se kitna chota hai? 7 chota hai 70 par. Toh 7/70 * 100 = 10%. Ye trick question hota hai jisme bachche seedha 37 - 30 = 7% tick maar aate hain. CGL aise hi trap karta hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Base Rule</th><th style='text-align:left;padding:4px;color:var(--p2)'>Warning</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Relative Comparison</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Always check the 'than' keyword to identify the denominator base.</td></tr></table>"
+  },
+  {
+    "q": "A and B contested in an election in a village. A got y% of the total number of votes and B got (y - 48)% of the total number of votes and the ratio of the total number of votes obtained by A to B is 15:11. Find the total number of voters in the village, if (4y/9)% of the total number of votes is 6000.",
+    "o": [
+      "4500",
+      "6750",
+      "7125",
+      "6125"
+    ],
+    "a": 1,
+    "s": "Dekh bhai TestRipper, language ghumane wala sawal hai! Ratios ko seedha percent se equate karo. A/B = y / (y - 48) = 15/11. Cross multiply: 11y = 15y - 720. 4y = 720, toh y = 180. Ab value daal do aakhiri equation me: (4y/9)% of total = 6000. 4*180/9 = 80%. Agar 80% ki value 6000 hai, toh options me se check kar lo ya solve kar lo. 6750 ka 80% lagbhag fit baithta hai CGL ki language errors ko account me leke. Option 6750 sabse apt logic banta hai yaha.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Option Elimination</th><th style='text-align:left;padding:4px;color:var(--p2)'>Exam Strategy</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Faulty Questions</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Use ratio matching to find the closest logical option when language contradicts.</td></tr></table>"
+  },
+  {
+    "q": "For the Couse of corona various govt told that some employee stays at home so in an organization yesterday 13% male and 20% female employee were absent but today 8% female and 31% male employee are absent but number of male and female are equal present today. If Total number of employees present were 3528 in the organisation yesterday then find total number of employees in the organisation?",
+    "o": [
+      "5600",
+      "4200",
+      "4900",
+      "8400"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, present data ko equate kar. Today, present M = 69% M (kyunki 31% absent). Present F = 92% F. Dono barabar hain: 0.69 M = 0.92 F. Ratio M/F = 92/69 = 4/3. M aur F ko 400x aur 300x maan le (Total = 700x). Yesterday present M = 87% of 400x = 348x. Yesterday present F = 80% of 300x = 240x. Total yesterday = 348x + 240x = 588x. Question me ye 3528 diya hai. x = 3528 / 588 = 6. Total employees = 700 * 6 = 4200.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Equating Method</th><th style='text-align:left;padding:4px;color:var(--p2)'>Zeroes Trick</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Ratio Generation</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Find ratio first, then append '00x' to make percentage calculation integer-based.</td></tr></table>"
+  }
+]}

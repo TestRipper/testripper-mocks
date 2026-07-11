@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Percentage-Set-02",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "In an examination, $60\\%$ students failed in Hindi, $65\\%$ students failed in English, and $55\\%$ students failed in both Hindi and English. Find the number of students who failed in at least one subject.",
+    "o": [
+      "$25\\%$",
+      "$70\\%$",
+      "$35\\%$",
+      "$30\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai aise karna hai... Venn diagram ka basic concept hai. At least one = n(H) + n(E) - n(H $\\cap$ E). So, $60 + 65 - 55 = 70\\%$. Pen uthane ki jarurat nahi padegi, direct dimag me subtract kar. SSC CGL me aisi basic chizein seconds me udani hain!"
+  },
+  {
+    "q": "A's salary is $40\\%$ more than B's. If B's salary increases by $20\\%$ and A's increases by $x\\%$, then A's new salary becomes $25\\%$ more than B's new salary. What is the value of x?",
+    "o": [
+      "$10.63\\%$",
+      "$15.6\\%$",
+      "$2.5\\%$",
+      "$7.14\\%$"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, assume kar B = 100, toh A = 140. B badh kar hua 120. A naya hoga $120 \\times 1.25 = 150$. A badha 10 se (140 to 150). $x = \\frac{10}{140} \\times 100 = 7.14\\%$. Ratio trick se fraction $\\frac{1}{14}$ direct yaad hona chahiye, CGL me yahi time bachega!"
+  },
+  {
+    "q": "The income of a person first increases by $25\\%$ and then decreases by $25\\%$. What percentage is the new income of the original income?",
+    "o": [
+      "$93 \\frac{3}{4}\\%$",
+      "$95 \\frac{1}{4}\\%$",
+      "$91 \\frac{1}{4}\\%$",
+      "$92 \\frac{1}{4}\\%$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, jab same percentage increase aur decrease ho toh hamesha loss hota hai: $-\\frac{x^2}{100}\\%$. Yaha $\\frac{25^2}{100} = 6.25\\%$ decrease. Original 100 tha, toh bacha $100 - 6.25 = 93.75\\%$. Options me mixed fraction check kar le. CDS me ye standard trap hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept</th><th style='text-align:left;padding:4px;color:var(--p2)'>Net Change Formula</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Same $+x\\%$ and $-x\\%$</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $-\\frac{x^2}{100}\\%$ (Always Loss)</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Successive $+a\\%$ and $+b\\%$</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $a + b + \\frac{ab}{100}\\%$</td></tr></table>"
+  },
+  {
+    "q": "The price of an article decreased by $8\\%$ every year. If the difference between the price at the end of the third and fourth year is 69, then $40\\%$ of the price at the end of the second year is?",
+    "o": [
+      "325",
+      "350",
+      "375",
+      "380"
+    ],
+    "a": 2,
+    "s": "Dekh bhai aise karna hai... 3rd aur 4th year ka difference strictly 3rd year ke price ka $8\\%$ hoga! $8\\% = 69 \\implies 100\\% (P_3) = \\frac{69}{8} \\times 100$. Ab $P_2 \\times 0.92 = P_3$. Humein $40\\%$ of $P_2$ chahiye. Smart calculation laga: $0.4 \\times P_2 = 0.4 \\times \\frac{6900}{8 \\times 0.92} = 375$. Calculation ko end tak hold kar!"
+  },
+  {
+    "q": "A man's annual income has increased by 5000 but the tax on income that he has to pay has reduced from $15\\%$ to $12\\%$. While in both the situations, $30\\%$ of the income tax is tax-free. Find the initial income, if equal tax is paid in both cases?",
+    "o": [
+      "20000",
+      "30000",
+      "18000",
+      "25000"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, tax free portion dono taraf $30\\%$ hai toh use kaat de! Equation simply banegi: $15\\%$ of $x = 12\\%$ of $(x + 5000)$. Ratio of rates = 5:4, toh income ka ratio 4:5 hona chahiye to keep tax same. Gap 1 unit = 5000, toh 4 unit (initial) = 20000. Ye ratio method CGL Mains me aag laga dega!"
+  },
+  {
+    "q": "The income of X is $42\\%$ more than that of Y and the income of Z is $45\\%$ less than the sum of the incomes of X and Y. By what per cent is the income of Z less than the income of X (correct to one decimal place)?",
+    "o": [
+      "$5.6\\%$",
+      "$6.3\\%$",
+      "$6.7\\%$",
+      "$5.9\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, assume kar Y = 100, toh X = 142. Sum = 242. Z hoga $55\\%$ of 242 = 133.1. X aur Z ka difference 8.9 hai. Percentage = $\\frac{8.9}{142} \\times 100 \\approx 6.3\\%$. Approximation trick laga: 142 ka $1\\%$ 1.42 hai, $6\\%$ hoga $\\sim 8.52$. Humein 8.9 chahiye jo $6\\%$ se thoda upar hai. Option 6.3% directly tick maar!"
+  },
+  {
+    "q": "Rahul had to appear for a test in four subjects. In the first three subjects the maximum marks were 50 each, in which Rahul secured $60\\%$ on an average. In the fourth subject Rahul scored 54 marks and his overall percentage is $64\\%$. What were the maximum marks in the fourth subject?",
+    "o": [
+      "110",
+      "75",
+      "100",
+      "90"
+    ],
+    "a": 1,
+    "s": "Dekh bhai aise karna hai... Total marks in 3 subjects = $60\\%$ of 150 = 90. 4th me 54, total scored = 144. Overall percentage $64\\%$ hai, matlab $64\\% = 144$, toh $100\\% = 225$. Pehle 3 subjects ke max marks 150 hain, toh 4th ke honge $225 - 150 = 75$. Digital sum se bhi check kar sakta hai equation banne ke baad!"
+  },
+  {
+    "q": "The population of a town is 3,11,250. The ratio of women to men is 43:40. If there are $24\\%$ literate among men and $8\\%$ literate among women, the total number of literate persons in the town is?",
+    "o": [
+      "41800",
+      "56800",
+      "99600",
+      "48900"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, lamba calculation mat kar. W = 43x, M = 40x. Total 83x = 311250 $\\implies$ x = 3750. Literate men = $24\\%$ of $40x = 9.6x$. Literate women = $8\\%$ of $43x = 3.44x$. Total = $13.04x = 13.04 \\times 3750 = 48900$. Digital Sum laga ke bhi direct multiple dhoondh sakta hai. CDS me time bachana hi game hai!"
+  },
+  {
+    "q": "A and B contested in an election in a village. A got x% of the total number of votes and B got (x \u2013 20)% of the total number of votes and the ratio of the total number of votes obtained by A to B is 3:2. Find the total number of voters in the village, if (x/2)% of the total number of votes is 1200.",
+    "o": [
+      "3000",
+      "4000",
+      "4500",
+      "3600"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, question me hi answer chhipa hai. Ratio $\\frac{x}{x-20} = \\frac{3}{2}$ dekhte hi samajh aana chahiye ki $x = 60$ hoga (cross multiply kar le). Ab $\\frac{x}{2}\\%$ yani $30\\% = 1200$ diya hai. Toh $100\\%$ kitna hoga? Simply 4000. Options elimination aur ratio mapping se direct uda!"
+  },
+  {
+    "q": "A population falls by $12\\%$ in the first year. By what percentage must it increase in the second year so that at the end of the second year the population is exactly the same as the original?",
+    "o": [
+      "$10.6\\%$",
+      "$13.6\\%$",
+      "$14.6\\%$",
+      "$11.6\\%$"
+    ],
+    "a": 1,
+    "s": "Dekh bhai aise karna hai... Pop pehle 100 se 88 ho gayi. Wapas 100 karne ke liye 12 badhana padega 88 par. Required percentage = $\\frac{12}{88} \\times 100 = \\frac{3}{22} \\times 100 = 13.63\\%$. Approximation laga, $\\frac{1}{22}$ lagbhag $4.5\\%$ hota hai, toh $\\frac{3}{22}$ around $13.5\\%+$ hoga. Direct tick maar!"
+  },
+  {
+    "q": "A man spends $70\\%$ of his income. His income increases by $10\\%$ and his expenditure by $5\\%$. What is the percentage increase in his savings?",
+    "o": [
+      "$31.67\\%$",
+      "$41.67\\%$",
+      "$51.67\\%$",
+      "$21.67\\%$"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, ye weighted average ya allegation ka classic case hai. I = 100, E = 70, S = 30. Ratio 7:3. Shift method laga: Expenditure me $5\\%$ increase, Income me $10\\%$ total. Savings ko extra $(10-5) \\times 7 = 35$ distribute karna padega apne 3 unit me. So, $10\\% + \\frac{35}{3}\\% = 10 + 11.67 = 21.67\\%$. Ye approach CGL me top rank layegi!"
+  },
+  {
+    "q": "If the radius of a sphere is increased by 20 percent, by what percentage will its volume increase?",
+    "o": [
+      "60.5",
+      "72.8",
+      "76.6",
+      "78.4"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Volume $r^3$ par depend karta hai. $20\\%$ ka fraction $\\frac{1}{5}$ hota hai. Ratio banega $5 \\to 6$. Cube kar de: $125 \\to 216$. Increase = 91. Percentage = $\\frac{91}{125} \\times 100 = 72.8\\%$. Successive trick do baar lagane ki zaroorat nahi hai, direct cubes yaad rakh."
+  },
+  {
+    "q": "A man spends $80\\%$ of his income. His income has increased by $25\\%$, but his expenditure remains the same. By what percent have his savings increased?",
+    "o": [
+      "$125\\%$",
+      "$150\\%$",
+      "$200\\%$",
+      "$100\\%$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, Income = 100, Exp = 80, Sav = 20. Income ho gayi 125, Exp abhi bhi 80 hai. Savings kitni hui? $125 - 80 = 45$. Kitni badhi? 25. Base 20 par 25 ka jump! Percentage = $\\frac{25}{20} \\times 100 = 125\\%$. Pen uthane wala question nahi tha ye!"
+  },
+  {
+    "q": "In an exam $44\\%$ students passed in only History and $36\\%$ of students passed in only Economics. If $6\\%$ of the student failed in both subjects and number of students who failed in Economics are 125, then find the number of students who failed in History.",
+    "o": [
+      "105",
+      "125",
+      "135",
+      "145"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, Venn diagram banane ki zarurat nahi. Failed in Economics matlab jo History me 'only pass' hain aur jo dono me fail hain. Total $44\\% + 6\\% = 50\\%$. $50\\% = 125$. Failed in History nikalna hai matlab Only Eco pass + Failed both = $36\\% + 6\\% = 42\\%$. Ab agar $50\\% = 125$ hai, toh $42\\% = 105$ hoga. Dimag me uda!"
+  },
+  {
+    "q": "A heavy industrial machine was purchased for 2,00,000. Its value depreciated by b% in the first year and then appreciated by a% in the second year due to an upgrade. Both a and b are natural numbers. If the value of the machine after the second year was more than its original purchase price, and a - b = 8 find the lowest possible depreciated value of the machine at the end of the first year.",
+    "o": [
+      "154000",
+      "150000",
+      "152000",
+      "160000"
+    ],
+    "a": 2,
+    "s": "Dekh bhai aise karna hai... Khatarnak condition hai: $(1 - \\frac{b}{100})(1 + \\frac{a}{100}) > 1$. Solve karega toh aayega $ab < 100(a - b)$. Diya hai $a - b = 8$, toh $ab < 800$. Humein first year ke baad ki value lowest chahiye, matlab b ko maximum karna padega. $b(b+8) < 800$ satisfy karne wala max integer $b = 24$ hai. Value $= 200000 \\times (1 - \\frac{24}{100}) = 152000$. Ye SSC ka absolute hardest trap hai!"
+  },
+  {
+    "q": "A student secured 1080 marks in an exam out of 1800. What is their percentage?",
+    "o": [
+      "$70\\%$",
+      "$75\\%$",
+      "$60\\%$",
+      "$80\\%$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, ye nirlajjo wala aasan question hai! Direct ratio le: $\\frac{1080}{1800} = \\frac{108}{180} = \\frac{3}{5}$. Aur $1/5$ humesha $20\\%$ hota hai, toh $3/5$ ho gaya $60\\%$. Digital sum se bhi check kar sakta hai, par itne basic me pen uthana paap hai."
+  },
+  {
+    "q": "There are 70 students in a class but only 6/7th of the students plays at least one indoor game - chess, carom and scrabble. $28.56\\%$ play chess, $42.85\\%$ play scrabble and $57.14\\%$ play caroms. 6 plays both chess and scrabble but not carom, $14.28\\%$ play both scrabble and carom but not chess and 5 play all 3 games. Find the number of players who play chess and carom but not scrabble.",
+    "o": [
+      "6",
+      "4",
+      "8",
+      "5"
+    ],
+    "a": 1,
+    "s": "Dekh bhai aise karna hai... Percentages ka khel hai. Fractions yaad rakh: $28.56\\% = \\frac{2}{7}$, $42.85\\% = \\frac{3}{7}$. Total active players 60 hain. Venn diagram ka formula laga: Total = A + B + C - (A $\\cap$ B) - (B $\\cap$ C) - (C $\\cap$ A) + (All 3). Values rakh: $60 = 20 + 30 + 40 - (6+5) - (10+5) - (x+5) + 5$. Solve karke seedha $x = 4$. CGL Mains me ye direct set banega!"
+  },
+  {
+    "q": "A cuboid tank has dimensions: length = 25 cm, breadth = 20 cm, and height = 16 cm. If the length is increased by $10\\%$, the breadth is decreased by $20\\%$, and the height is increased by $10\\%$, what is the percentage change in volume?",
+    "o": [
+      "$20\\%$ decrease",
+      "$21.25\\%$ increase",
+      "$23.75\\%$ increase",
+      "$3.2\\%$ decrease"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, dimensions jo diye hain (25, 20, 16) woh sirf tera time waste karne ke liye hain! Seedha successive lagao: $+10\\%$, $-20\\%$, $+10\\%$. Pehle do ka net $-12\\%$ hua. Ab $-12\\%$ aur $+10\\%$ ka net nikalo: $-12 + 10 - \\frac{12 \\times 10}{100} = -3.2\\%$. Negative sign matlab decrease. CGL me mazdoori nahi, smart approach chahiye!"
+  },
+  {
+    "q": "A student appeared in 6 papers. The maximum marks are the same for each paper. His marks in these papers are in the proportion 5 : 6 : 7 : 8 : 9 : 10. Overall he scored $60\\%$. In how many papers he received less than $60\\%$ marks?",
+    "o": [
+      "3",
+      "2",
+      "4",
+      "5"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, sum of ratios $5+6+7+8+9+10 = 45x$. Ye $45x$ overall $60\\%$ ke barabar hai. Iska matlab total maximum marks $45x \\times \\frac{100}{60} = 75x$ honge. 6 subjects ke total max marks 75x, toh har subject ka max $12.5x$. $60\\%$ of $12.5x$ hota hai $7.5x$. Toh $7.5x$ se kam score wale 3 subjects hain (5, 6, aur 7)."
+  },
+  {
+    "q": "The population of country A decreased by p% and the population of country B decreased by q% from the year 2020 to 2021. Here 'p' is greater than 'q'. Let 'x' be the ratio of the population of country A to the population of country B in the given year. What is the percentage decrease in 'x' from 2020 to 2021?",
+    "o": [
+      "$\\frac{100(p-q)}{100-q}$",
+      "$\\frac{100(p-q)}{100+q}$",
+      "$\\frac{100(p-q)}{100-p}$",
+      "$\\frac{100(p-q)}{100}$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai aise karna hai... Fraction $\\frac{A}{B}$ ka net multiplier $\\frac{100-p}{100-q}$ banega. Decrease nikalne ke liye $1 - \\frac{100-p}{100-q}$ karna hai aur 100 se multiply karna hai. Simple algebra: $\\frac{p-q}{100-q} \\times 100$. Options elimination se directly $\\Delta \\%$ check kar, pen nahi chalana padega!"
+  },
+  {
+    "q": "Price of a ticket of a show of circus is 8. When the price of the ticket is reduced then the audience is increased by $60\\%$ and the total income is increased by $20\\%$. Find the price of the ticket after reduction.",
+    "o": [
+      "7",
+      "6",
+      "5",
+      "4"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Income = Price $\\times$ Sale (Audience). Income $20\\%$ badhi yani ratio $5 \\to 6$. Audience $60\\%$ badhi yani $5 \\to 8$. $\\text{Price} = \\frac{\\text{Income}}{\\text{Sale}}$. Toh price ka ratio $\\frac{5}{5} \\to \\frac{6}{8}$ yaani $1 \\to \\frac{3}{4}$ (Ratio 4:3). Original price 8 tha (4 units = 8), toh naya price 3 units = 6. Ye ratio approach har sawal me kaam aayegi."
+  },
+  {
+    "q": "The price of a product is decreased by x% and then increased by x%. The final price becomes $10\\%$ less than the original. What is the value of x (approximately)?",
+    "o": [
+      "31.6",
+      "39.6",
+      "33.6",
+      "30.6"
+    ],
+    "a": 0,
+    "s": "Dekh bhai aise karna hai... Formula yaad rakh, jab equal decrease aur increase ho toh hamesha loss $\\frac{x^2}{100}\\%$ hota hai. Yaha ye loss $10\\%$ ke barabar hai. Toh $\\frac{x^2}{100} = 10 \\implies x^2 = 1000$. Square root nikal, $30^2 = 900$ aur $31^2 = 961$. Yani value 31 se thodi upar hogi. Option 31.6 tick maar and aage badh."
+  },
+  {
+    "q": "A person has to pay $20\\%$ tax on the first Rs. 9,000 earned, for the amount earned between Rs. 9,000 and Rs. 15,000 the tax is $25\\%$, and for the amount earned more than Rs. 15,000 the tax is $30\\%$. If he paid $23.33\\%$ of his income as tax, then what is his income?",
+    "o": [
+      "Rs. 18,000",
+      "Rs. 21,000",
+      "Rs. 17,000",
+      "Rs. 20,000"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye weighted average ka advance version hai. Total tax approx $23.33\\%$ hai yani $7/30$. Basic calculation se dekh: Total tax at 18000 pe 4200 aayega (since 15k ke upar 3k par $30\\% = 900$, total $1800+1500+900=4200$). Aur $4200/18000 = 42/180 = 7/30 = 23.33\\%$. Equation banane ki jagah options se cross check karna easiest approach hai yahan. First option utha aur dhishum!"
+  },
+  {
+    "q": "The income of Amala is $20\\%$ more than that of Bimala and $20\\%$ less than that of Kamala. If Kamala's income goes down by $4\\%$ and Bimala's goes up by $10\\%$, then the percentage by which Kamala's income would exceed Bimala's is nearest to",
+    "o": [
+      "32",
+      "28",
+      "29",
+      "31"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, LCM le kar base fix kar de calculation aasan karne ke liye. A:B = 6:5 aur A:C = 4:5. A ko equal kar (LCM of 6,4 is 12). Toh A=120, B=100, C=150. Ab C ko $4\\%$ kam kar toh C' = 144. B ko $10\\%$ badha toh B' = 110. C kitna exceed karta hai B ko? 34 se. $\\%\\text{ excess} = \\frac{34}{110} \\times 100 \\approx 30.9\\%$, jo ki 31 ke nearest hai. Aise assume karega tabhi CGL pre clear hoga!"
+  },
+  {
+    "q": "If A is $25\\%$ more than B, and B is $20\\%$ more than C, then what is A:C?",
+    "o": [
+      "5:4",
+      "3:2",
+      "6:5",
+      "2:3"
+    ],
+    "a": 1,
+    "s": "Dekh bhai aise karna hai... Successive ratio lagana hai direct. A:B = 5:4, B:C = 6:5. Dono me B common hai. B ko same kar le ya direct $\\frac{A}{C} = \\frac{A}{B} \\times \\frac{B}{C}$ kar de. $\\frac{5}{4} \\times \\frac{6}{5} = \\frac{3}{2}$. Dimag me bina pen uthaye udane wala sawal tha."
+  }
+]
+}

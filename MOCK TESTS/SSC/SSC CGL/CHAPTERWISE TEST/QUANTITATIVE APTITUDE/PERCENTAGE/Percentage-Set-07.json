@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Percentage-Set-07",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "Vasu gave 12000 of the amount what he had to Nithi. Nithi gave 3/5th of what he received from Vasu to Sara. Sara after paying Rs. 500 to the taxi driver out of the amount she get from Nithi, Sara is now left with Rs. x+300. Find square root of x.",
+    "o": [
+      "Rs. 80",
+      "Rs. 64",
+      "Rs. 100",
+      "Rs. 121"
+    ],
+    "a": 0,
+    "s": "Dekh bhai TestRipper, aise karna hai... Ulta chalte hain (Reverse calculation). Nithi ko 12000 mila, Sara ko uska 3/5th mila yaani 12000 * 3/5 = 7200. Sara ne 500 taxi me uda diye, toh bache 7200 - 500 = 6700. Question kehta hai ye (x + 300) ke barabar hai. Toh x = 6400. Pucha hai x ka root, jo hota hai 80. <br><br><b>Best Approach:</b> Sidha mental math karo. 12k ka 60% = 7.2k. 500 gaye = 6.7k. 300 ghatao = 6.4k. Root = 80. Pen uthane ki jarurat nahi padegi!<br><br><b>Summary:</b> Jab value transfer ho rahi ho step-by-step, toh sequence ko follow karke end result nikalna sabse easy hota hai."
+  },
+  {
+    "q": "A student's marks in Mathematics were 20% more than in Physics. If he scored 72 in Physics, how many marks did he score in Mathematics? (CGL TIER I - 20/09/2025 - SHIFT 1)",
+    "o": [
+      "82.4",
+      "84.4",
+      "88.4",
+      "86.4"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, 20% ka fraction hota hai 1/5. Matlab agar Physics me 5 unit hai toh Maths me 6 unit hongi. Physics me 72 hain, toh seedha 72 ko 1.2 se multiply kar de. 72 * 1.2 = 86.4. Options dekh, sab close hain but calculation itni easy hai ki exact aayega.<br><br><b>Trick:</b> 72 ka 10% = 7.2, toh 20% = 14.4. 72 + 14.4 = 86.4. <br><br><b>Summary:</b> Base 10 percentage nikal ke add karna CGL me hamesha time bachata hai."
+  },
+  {
+    "q": "The price of sugar is reduced by 20%. Now a person can buy 500g more sugar for 36. The original price of the sugar per kilogram was",
+    "o": [
+      "14.40",
+      "18",
+      "15.60",
+      "16.50"
+    ],
+    "a": 1,
+    "s": "Dekh bhai aise karna hai... Price 20% gira (yaani 5 se 4 hua). Toh khapat (consumption) 4 se 5 ho jayegi. Difference aaya 1 unit ka, jo 500g (0.5 kg) ke barabar hai. Matlab pehle wo 4 unit * 0.5 = 2 kg khareedta tha. Rs. 36 me 2 kg aati thi, toh 1 kg ka price = 36 / 2 = Rs. 18.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept</th><th style='text-align:left;padding:4px;color:var(--p2)'>Logic</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Inverse Relation</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>When expenditure is constant, Price and Consumption are inversely proportional.</td></tr></table><br><b>Summary:</b> Ratio reverse method is the absolute best for 'price-consumption' questions."
+  },
+  {
+    "q": "In a company, the number of employees increases by x% and also their working hours increases by x%. Due to this, the production of company increases by 74.24%. Find the initial number of employees in company, if total 240 new employees joined the company.",
+    "o": [
+      "750",
+      "1500",
+      "1800",
+      "1200"
+    ],
+    "a": 0,
+    "s": "Dekh bhai TestRipper, Total production ka formula hota hai: Employees * Working Hours. Agar dono x% badhe hain, toh successive increase lagega: x + x + (x*x)/100 = 74.24%. Yani multiplier 1.7424 ho gaya. 1.7424 kiski square hai? 1.32 ki! Matlab x = 32% (seedha approximation se ya square root nikal ke dekho). Ab 32% ki value 240 (new employees) di hai. Toh 100% (initial) = (240/32)*100 = 750.<br><br><b>Best Approach:</b> Successive ka square form hamesha dhyan me rakhna, CGL me yahi traps aate hain.<br><br><b>Summary:</b> 1 se 50 tak squares yaad hain toh 74.24 dekh ke dimaag me ghanti bajegi ki ye 1.32 ka square (1.7424) ka format hai."
+  },
+  {
+    "q": "Raghav spends 80% of his income. If his income increases by 12% and his expenditure increases by 17.5%, then what is the percentage decrease in his saving?",
+    "o": [
+      "15%",
+      "10%",
+      "8%",
+      "12%"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, basic ratio se fod de isko. Income = 100, Exp = 80, Saving = 20. Income ho gayi 112 (+12). Expenditure 80 par 17.5% badha. 80 ka 10% = 8, 5% = 4, 2.5% = 2. Total = 14 badha. Toh Exp ho gaya 94. New Saving = 112 - 94 = 18. Saving 20 se 18 ho gayi, yaani 2 kam hui. 2/20 * 100 = 10% decrease.<br><br><b>Best Approach:</b> 100 maan ke sidha deviations add karo, fractions me time mat waste karna.<br><br><b>Summary:</b> Income-Exp-Saving me 100, 1000 maan ke chalna is safest and fastest."
+  },
+  {
+    "q": "Three-seventh of voters promise to vote for A and the rest promise to vote for B. Of these, on the last day 12% of the voters went back on their promise to vote for A and 20% of voters went back on their promise to vote for B and A lost by 234 votes. The total number of voters was:",
+    "o": [
+      "15,550",
+      "12,525",
+      "14,555",
+      "13,650"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, fractions ko simplify kar. 3/7th A ko vote denge, toh total 700 maan le. A = 300, B = 400. A ke 12% (36 log) bhag gaye B ke paas. B ke 20% (80 log) bhag gaye A ke paas. Final A = 300 - 36 + 80 = 344. Final B = 400 - 80 + 36 = 356. Difference aaya 12 units ka. 12 units = 234. Toh Total 700 units = (234/12) * 700. 12 aur 234 ko katne pe 19.5 aayega. 19.5 * 700 = 13650.<br><br><b>Trick:</b> Total 7 ka multiple hona chahiye. Options check kar, 13650 easily 7 se divide hota hai (7*1950). Baki verify karke Options elimination se urra de!<br><br><b>Summary:</b> Fraction denominator ko base multiple maan ke assumption lo."
+  },
+  {
+    "q": "The production of bottles rose to 26000 from 16000 in 2 years. Find the rate of growth per annum.",
+    "o": [
+      "37.47%",
+      "27.47%",
+      "28.47%",
+      "26.47%"
+    ],
+    "a": 1,
+    "s": "Dekh bhai aise karna hai... 2 saal ka time hai toh formula ya ratio me square root lagega. Ratio = Final/Initial = 26000/16000 = 26/16 = 1.625. Ab iska root nikalna hai: √1.625. Hum jaante hain 1.25 ka square 1.56 hota hai aur 1.30 ka 1.69. Toh answer 25% aur 30% ke beech aayega. Options me 27.47, 28.47, aur 26.47 hain. Exact approximation: 1.27 ka square 1.6129 hota hai. Matlab 27% se thoda jyada. Seedha 27.47% tick maar.<br><br><b>Best Approach:</b> Approximation zindabad! Exact root nikalne me paseene chhut jayenge.<br><br><b>Summary:</b> Compound interest / Growth ke sawaalo me square/cube roots hamesha approximation se estimate karo."
+  },
+  {
+    "q": "A survey of 200 people found that 120 read newspaper A, 150 read newspaper B, and 90 read both. How many read at least one of the newspapers?",
+    "o": [
+      "200",
+      "110",
+      "180",
+      "150"
+    ],
+    "a": 2,
+    "s": "Dekh bhai TestRipper, Venn Diagram ka sabse basic formula: n(A U B) = n(A) + n(B) - n(A n B). Seedha value rakh: 120 + 150 - 90 = 180. Matlab 180 log koi na koi paper padhte hain aur bache 20 log kuch nahi padhte.<br><br><b>Trick:</b> Pen bhi mat uthana isme. 120+150=270, usme se 90 dono taraf count hue hain, toh 90 minus kar de. Answer 180.<br><br><b>Summary:</b> Overlapping sets me hamesha intersection ko ek baar minus karna mat bhulna."
+  },
+  {
+    "q": "Volume of a sphere is increased by 119.7% when its radius is increased then find % change in TSA of sphere?",
+    "o": [
+      "96%",
+      "82.25%",
+      "69%",
+      "61.29%"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, Volume 3D hota hai aur TSA 2D. Volume 100 se 219.7 ho gaya (119.7% increase). Point hatane ke liye ratio 1000 : 2197 likh. Ab cube root le taaki Radius (1D) ka ratio aaye. 1000 ka root 10, aur 2197 hota hai 13 ka cube. Toh Radius = 10 : 13. TSA (2D) ke liye square kar de: 100 : 169. Change kitna aaya? Sidha 69%.<br><br><b>Trick:</b> 1 se 20 tak cubes yaad hone chahiye. 2197 dekhte hi 13 yaad aana chahiye. CGL CDS me speed yahi se banti hai.<br><br><b>Summary:</b> 1D se 3D jana ho toh cube, 3D se 1D aana ho toh cube root. Percentage change easily ratio se nikalta hai."
+  },
+  {
+    "q": "Every day a fruit seller sells 66.67% of the fruits he has and 50% of the fruits rot overnight. If a total of 688 fruits rot in three nights, then how many fruits did he start with on the first day.",
+    "o": [
+      "3478",
+      "3444",
+      "3456",
+      "3496"
+    ],
+    "a": 2,
+    "s": "Dekh bhai aise karna hai... 66.67% fraction me 2/3 hota hai. Har din 2/3 bik jate hain toh bachte hain 1/3. Aur overnight bache hue me se 50% (1/2) sad jaate hain. Yaani initial ke (1/3)*(1/2) = 1/6 hissa roj sadta hai! Agle din wo 1/6 se shuru karega. calculation easy karne ke liye denominator 6*6*6 = 216x maan lo. Day1 rot = 216 ka 1/6 = 36. Day2 rot = 36 ka 1/6 = 6. Day3 rot = 6 ka 1/6 = 1. Total rot = 36+6+1 = 43 units. Diya hai 43 units = 688. Toh 1 unit = 16. Total fruits = 216 * 16 = 3456. <br><br><b>Trick:</b> Unit digit check kar! 216 * 16. Last digit 6*6 = 36, yaani aakhri me 6 aayega. Ek hi option hai 3456. Option Elimination on fire!<br><br><b>Summary:</b> Tree method lagana aur fractional denominators ka LCM initial value assume karna is best for remaining items questions."
+  },
+  {
+    "q": "The monthly salary of a person was 80,000. He used to spend on Family Expenses (E), Taxes (T), Charity (C) and rest were his savings. E was 60% of the income, T was 20% of E, and C was 25% of T. When his salary got raised by 40%, he maintained the percentage level of E, but T became 25% of E and C became 25% of T. The ratio of the savings of his earlier salary to that of his present salary?",
+    "o": [
+      "119: 100",
+      "117: 119",
+      "119: 117",
+      "100: 119"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, actual 80k ko kachre me daal! Ratio ka sawaal hai, 100 base lekar chal. Pehle: Income=100. E=60. T(20% of 60)=12. C(25% of 12)=3. Savings = 100 - (60+12+3) = 25. Ab Naya: Income badhkar 140 hui. Naya E=60% of 140 = 84. Naya T(25% of 84)=21. Naya C(25% of 21)=5.25. Nayi Savings = 140 - (84+21+5.25) = 140 - 110.25 = 29.75. Ratio: 25 : 29.75. Point hata, 2500 : 2975. 25 se kaat de = 100 : 119.<br><br><b>Best Approach:</b> Jab ratios hi pucha ho toh actual numbers (80,000) ko use karna ek faaltu trap hota hai.<br><br><b>Summary:</b> Percentage values ke relative links ho toh chain system se sidha likhte jao base 100 par."
+  },
+  {
+    "q": "If due to a 12% decrease in the price of sugar, Akshat can buy 7 kg more sugar for Rs. 1200, then find the actual price (in rs) of sugar?",
+    "o": [
+      "28.25",
+      "23.38",
+      "25.79",
+      "26.35"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, ye bohot famous type hai. Agar price me 12% drop nahi hota, toh usko ₹1200 ka 12% yaani ₹144 bach jate! Inhi ₹144 ki wajah se use 7 kg sugar extra mil rahi hai. Toh New (reduced) price = 144 / 7 = approx 20.57 rs/kg. Pucha actual (old) price hai. New price old price ka 88% hai (12% decrease ke baad). Toh Actual Price = (144 / 7) / 0.88 = 14400 / (7 * 88) = 1800 / 77. Divide karne par aayega 23.376... jo options me 23.38 ke nearest hai.<br><br><b>Trick:</b> Concept fix kar lo: New Price = (Amount * %Change) / Extra Quantity.<br><br><b>Summary:</b> Reduced price nikalna bohot fast hai is method se, uske baad actual price reverse percentage se nikalo."
+  },
+  {
+    "q": "Which of the following is a terminating decimal? (CPO TIER I- 11/12/2025-SHIFT 1)",
+    "o": [
+      "13/45",
+      "11/30",
+      "8/33",
+      "7/20"
+    ],
+    "a": 3,
+    "s": "Dekh bhai aise karna hai... Terminating decimal ka ek universal rule hota hai. Denominator ke prime factors me sirf 2 aur 5 hone chahiye! Agar 3, 7, 11 jaise prime aagaye toh wo kabhi terminate nahi hoga (repeat hota rahega). Options dekho: 45 (9x5 -> 3 hai), 30 (3x10 -> 3 hai), 33 (3x11 -> 3,11 dono hain), 20 (4x5 -> 2 aur 5 hi hain). Toh 7/20 terminating hai. Pen uthane ki bhi zarurat nahi!<br><br><b>Summary:</b> Denominator break karke 2^n * 5^m form check kar lo hamesha."
+  },
+  {
+    "q": "The income of Manju is Rs. 6000 and his income is increased by 25%, then decreased by x% and there after increased by (x – 10)%. Find the income of Manju after a rise of (x – 10)%, If the income of Manju after a decrease of x% is the same as his initial salary.",
+    "o": [
+      "Rs. 7200",
+      "Rs. 6600",
+      "Rs. 6500",
+      "Rs. 7500"
+    ],
+    "a": 1,
+    "s": "Dekh bhai TestRipper, step-by-step todte hain. Manju ki income 6000 thi, 25% badhi yaani 6000 ka 1/4 (1500) add hua, ho gayi 7500. Ab kehta hai isko x% ghatane par wapas 6000 ho jati hai. 7500 se 6000 yaani 1500 ghati. Percentage kitna hua? 1500 / 7500 = 1/5 = 20%. Yaani x = 20 hai! Ab final step: 6000 me fir se (x - 10)% ka rise. x=20 toh (20-10)=10%. 6000 ka 10% = 600. Final Income = 6000 + 600 = 6600. Boom!<br><br><b>Summary:</b> Language ko portions me decode karo, x ki value direct fraction se nikal aayegi."
+  },
+  {
+    "q": "Income of A is 20 percent more than income of B and the income of B is 25 percent more than income of C. A's income is how much percentage more than C's income? (CHSL TIER I - 29/11/2025 - SHIFT 2)",
+    "o": [
+      "50 percent",
+      "60 percent",
+      "70 percent",
+      "75 percent"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye toh halwa type sawaal hai. Peeche se start kar, C ko 100 maan le. B 25% zyada hai toh B = 125 hua. A jo hai wo B se 20% (yaani 1/5) zyada hai. 125 ka 1/5 hota hai 25. Toh A = 125 + 25 = 150. Ab check kar A (150), C (100) se kitna zyada hai? Seedha 50 zyada hai 100 par, toh 50%.<br><br><b>Trick:</b> Successive change! 20% aur 25% ka successive net = 20 + 25 + (20*25)/100 = 45 + 5 = 50%. Bhaari shortcut hai ye!<br><br><b>Summary:</b> Chain percentages me backward assumption ya direct successive formula lagta hai."
+  },
+  {
+    "q": "A landlord bought a flat for Rs. 8,00,000. He wants to earn a (9%) annual return on his investment after paying 2,000 per month for maintenance. What should be the monthly rent he charges?",
+    "o": [
+      "Rs. 7000",
+      "Rs. 8500",
+      "Rs. 8000",
+      "Rs. 7500"
+    ],
+    "a": 2,
+    "s": "Dekh bhai aise karna hai... Investment ₹8,00,000 hai. Uspe 9% ka annually net return chahiye. 8 lakh ka 9% hota hai ₹72,000. Par usko har mahine ₹2,000 maintenance dena padta hai, saal ka hua ₹24,000. Yaani rent se usko 72000 (profit) + 24000 (kharcha) = ₹96,000 saal ka nikalna hoga. Toh Monthly rent hoga = 96000 / 12 = ₹8000.<br><br><b>Summary:</b> Net Return hamesha Cost ke upar expenses ko add karke calculate kiya jata hai gross nikalne ke liye."
+  },
+  {
+    "q": "The population of a village increases by 8% annually. If the current population is 58,320, what was it two years ago (approx)? (CGL TIER I - 21/09/2025 - SHIFT 2)",
+    "o": [
+      "49,900",
+      "49,800",
+      "49,980",
+      "50,000"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, 8% fraction me 2/25 hota hai. Matlab 25 se 27 ho gaya har saal. 2 saal ka ratio: 25^2 se 27^2 yaani 625 se 729. Current value 729 units = 58,320. Yaha dimaag laga, Unit digit dekh! 9 me kya multiply kare ki 2 aaye? 9*8=72. Yaani 80 se cut hoga direct. Check kar le: 729 * 80 = 58320. Toh pehle ki population = 625 * 80 = 50,000. Options dekh, ekdum exact aagaya!<br><br><b>Trick:</b> Divisibility rule! 58320 / 1.08 / 1.08... 58320 ka digital sum 9 hai, toh ye multiples me asaan baithega. Aur square method se calculation chhoti ho jayegi.<br><br><b>Summary:</b> Rate ko fraction me badal ke square/cube karne wali approach compound cases me game palat deti hai."
+  },
+  {
+    "q": "In an election for college president held in a college, the voting percentage was 83.33%. The winner got 33.33% of the polled votes, while the runner-up got 22.22% of the polled votes. If there were 216108 voters in the university, by how many votes did the winner win the election?",
+    "o": [
+      "16108",
+      "20010",
+      "22490",
+      "18572"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, percentages ko fractions me utha. 83.33% = 5/6. 33.33% = 1/3. 22.22% = 2/9. Polled votes hain 216108 ka 5/6 = 180090. Ab winner ko mila 1/3 (yani 3/9) aur loser ko 2/9. Margin of win = 3/9 - 2/9 = 1/9 of polled votes. Toh seedha 180090 ka 1/9 nikal de. 180090 / 9 = 20010. Answer aagaya!<br><br><b>Best Approach:</b> Har jagah multiply karne se bacho. Last stage pe simplify karo. Aur fractions yaad hona mandatory hai CGL ke liye.<br><br><b>Summary:</b> Election questions me hamesha 'Polled' aur 'Total' base ka dhyaan rakhna, fractions will make it cake walk."
+  },
+  {
+    "q": "The population of a village was (3x + 1000). In a year, with the increase in population of males by 9.33% and that of females by 8%, the population of the village became 17400. The number of males increased are (x + 4000), then find the value of x.",
+    "o": [
+      "5000",
+      "3000",
+      "4000",
+      "2000"
+    ],
+    "a": 0,
+    "s": "Dekh bhai TestRipper, aise questions options se udaye jaate hain bina quadratic banaye! Option 5000 utha. Total initially = 3(5000)+1000 = 16000. Nayi pop = 17400. Increase hua 1400. Initial males = x+4000 = 9000. Toh females = 16000 - 9000 = 7000. Males pe 9.33% (yani 28/3%) lagao: 9000 * 28/300 = 840. Females pe 8%: 7000 * 8/100 = 560. Total increase = 840 + 560 = 1400. Match ho gaya 100%! <br><br><b>Best Trick:</b> Algebraic variables dekh ke equation banane me time lagta. Option validation 1 minute me answer de dega.<br><br><b>Summary:</b> Mixed variable aur percentage wale complex problems me Options elimination is the ultimate key!"
+  },
+  {
+    "q": "Quantity I- A bar is creating a new signature drink. They are using two alcoholic ingredients in the drink: whisky and brandy. They are using two non-alcoholic ingredients in the drink: Apple juice and Grapes juice. The alcoholic ingredients contain 75% alcohol. The non-alcoholic ingredients contain no alcohol. How many liters of non-alcoholic ingredients must be added to 13 liters of alcoholic ingredients to produce a mixture that is 15% alcohol? Quantity II - Out of a total 108 children playing chess or ludo or both, total number of girls in the group is 80% of the total number of boys in the group. The number of boys playing only chess is 40% of the number of boys and the total number of boys playing chess is 60% of the total number of boys. The number of children playing only ludo is 50% of the total number of children and a total of 12 children play chess and ludo both. What is the number of girls playing only chess ?",
+    "o": [
+      "QI>=QII",
+      "QI>QII",
+      "QI<=QII",
+      "QI<QII"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Quantity I me Alligation laga. Alc part(75) aur Non-Alc part(0) ko mila ke 15 lana hai. Ratio: (15-0) : (75-15) = 15:60 = 1:4. 1 unit ki value 13 liters (Alcoholic) di hai. Toh Non-Alc (4 unit) = 52 liters. QI = 52. <br>Quantity II: Girls = 80% Boys, G/B = 4/5. 9 unit=108 toh 1 unit=12. Boys=60, Girls=48. Boys Only Chess = 40% of 60 = 24. Boys Total Chess = 60% of 60 = 36. Yaani Boys Both = 36-24=12. Question me Total Both = 12, toh Girls Both = 0! Total Only Ludo = 50% of 108 = 54. Boys Only Ludo = Total Boys(60) - Only Chess(24) - Both(12) = 24. Girls Only Ludo = 54 - 24 = 30. Girls Only Chess = Total Girls(48) - Girls Only Ludo(30) = 18. QII = 18. Result: 52 > 18 yaani QI > QII.<br><br><b>Summary:</b> Data sufficiency type questions me dono statements rapidly alag-alag framework me todne padte hain."
+  },
+  {
+    "q": "In a company, 65% of the employees are above 35 years of age. Among them, 80% are males and the rest are females. If there are 1560 female employees above 35 years, find the total number of employees in the company. (PHASE XIII(HS) - 02/08/2025 - SHIFT 2)",
+    "o": [
+      "7200",
+      "12000",
+      "7800",
+      "8400"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, simple tree bana le. Total = 100. Above 35 waale hain 65. Inme se 80% male hain toh female hui 20%. 65 ka 20% (yani 1/5) kitna hota hai? 13 units. Humari 13 units, actual me 1560 di hain. 1 unit = 1560/13 = 120. Total pucha hai jo 100 units tha, toh 100 * 120 = 12000.<br><br><b>Best Approach:</b> 100 maan kar direct chain follow karna sabse fast aur error-free method hai.<br><br><b>Summary:</b> 'Among them' wale statement pe focus rakho, base hamesha naya group ban jata hai."
+  },
+  {
+    "q": "If a number is first increased by 15%, then reduced by 15%, it results in 782. If the same number is first reduced by 25%, then increased by 25% and again reduced by 20%, then what will be the resulting number?",
+    "o": [
+      "900",
+      "750",
+      "600",
+      "800"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, pehle hisse se basic number nikalo. x% increase fir x% decrease hamesha loss (x^2/100) deta hai. Yaha 15^2/100 = 2.25% loss hua. Toh N ka 97.75% = 782 hai. Decimal hata, 9775 units = 78200. N aayega 800. Ab second part me is 800 par operations karne hain. Ratio method use kar: 25% kam (3/4), 25% jyada (5/4), 20% kam (4/5). Seedha likh: 800 * (3/4) * (5/4) * (4/5). 5 se 5 kata, 4 se 4 kata. Bacha 800 * 3 / 4 = 600. <br><br><b>Trick:</b> Chain rule me last tak calculations pending rakho, fractions ek doosre ko cancel kar dete hain.<br><br><b>Summary:</b> Successive percentages fraction form me convert hote hi aasan ho jaate hain."
+  },
+  {
+    "q": "Entry ticket of a cinema hall is 120 when the price is reduced by a certain percentage then the sales of ticket increases by 37.5%. whereas the overall collection is reduced by 25%. Find the percentage decrease in the price of ticket ?",
+    "o": [
+      "42%",
+      "45%",
+      "40.50%",
+      "45.45%"
+    ],
+    "a": 3,
+    "s": "Dekh bhai aise karna hai... Ye phir se Price * Sales = Collection ka format hai. Yaha 120 ticket price se hume koi matlab nahi, sirf gumrah karne ke liye hai! Collection = Price * Sales. Collection me 25% kami aayi (ratio 4 se 3). Sales 37.5% (yani 3/8) badh gayi (ratio 8 se 11). Price ka ratio hume chahiye. P_initial * 8 = 4, P_final * 11 = 3. Price ratio = 4/8 : 3/11 = 1/2 : 3/11. Cross multiply: 11 : 6. Price 11 se 6 ho gaya! Kami kitni? 5 ki 11 par. 5/11 * 100 = 45.45%.<br><br><b>Best Trick:</b> Formulas ke relative deviations ratio me direct rakhne se answer half time me nikalta hai.<br><br><b>Summary:</b> Absolute values are totally useless if the question asks for a percentage output."
+  },
+  {
+    "q": "If 45% of a number is 0.9 more than 30% of it, What is the number? (CGL TIER I - 14/09/2025-S2)",
+    "o": [
+      "7",
+      "9",
+      "6",
+      "8"
+    ],
+    "a": 2,
+    "s": "Dekh bhai TestRipper, CGL ke aise lallu questions me toh pen pakdna bhi paap hai. Number ek hi hai, usi ka 45% aur 30%. Inka seedha gap kitna hai? 15% ka. Question me difference 0.9 diya hai. Toh 15% = 0.9. 1% = 0.9/15 = 9/150 = 3/50. Hume number (yani 100%) chahiye. 100% = (3/50) * 100 = 6.<br><br><b>Trick:</b> Sidha multiply factor check karo. 15 chhakke 90 hota hai, toh seedha 6 hi banega decimal balance hone ke baad!<br><br><b>Summary:</b> Difference ko equate karo direct percentage term me."
+  },
+  {
+    "q": "A person wants to buy 10 chairs. The total cost of 10 chairs is Rs. 4,500. After bargaining, the shopkeeper agrees to decrease the cost of each chair by 20%. Then, the person purchased 10% more chairs. What will be the cost of the chairs that he purchased?",
+    "o": [
+      "Rs. 3,960",
+      "Rs. 3,900",
+      "Rs. 3,260",
+      "Rs. 4,100"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, total ₹4500 me 10 kursi, yani ek kursi ₹450 ki. 20% ka discount (yani ₹90 kam). Ab ek kursi mil rahi hai ₹360 me. Usne 10% zyada kursi khareedi (10 ka 10% 1 hota hai), yani usne 11 kursi li. Total cost = 11 * 360. 36 * 11 ki Vedic math trick laga: 3 (3+6) 6 = 396. Ek zero laga de = 3960.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Math Hack</th><th style='text-align:left;padding:4px;color:var(--p2)'>Example</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Multiplying by 11</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Write outer digits, add adjacent inner digits. 36*11 = 3 (3+6) 6 = 396.</td></tr></table><br><b>Summary:</b> Calculation hacks jaha applicable hon hamesha waha use karo, samay bohot bachega CGL exam me."
+  }
+]
+}
