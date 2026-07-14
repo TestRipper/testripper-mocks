@@ -1,282 +1,1109 @@
 {
-  "quizTitle": "Number-System-Set-07",
-  "quizTime": 18,
+  "quizTitle": "Opp",
+  "quizTime": 50,
   "totalMarks": 50,
   "questions": [
     {
-      "q": "Find the total number of prime factors in the expression $30^{15} \\times 22^{11} \\times 15^{24}$.",
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">How many distinct triangles can be formed by selecting any three vertices of a hexagon?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> ?</span></p>",
       "o": [
-        "110",
-        "115",
-        "125",
-        "130"
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">20</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">30</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">60</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">120</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The sum of the lengths of all edges of a cuboid is 64 cm. If its length is 8 cm and breadth is 4 cm, find the height.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 64 8 4 , </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 cm</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Amir goes to his college from his house at a speed of 4 km/hr and returns at a speed of 2 km/hr. If he takes 4 hours to go and come, find the distance between his house and school.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 4 / 2 / 4 , </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4.33 km</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.33 km</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 km</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.1 km</span></p>"
       ],
       "a": 1,
-      "s": "<b>Final Output:</b> $115$<br><br><b>Pen-Free Observation:</b> Options sab $110+$ hain. Prime factor sum base splitting par depend karega.<br><br><b>Method 1 (Ninja Technique):</b> Dekh bhai, sidha bases ko primes me tod: $30=2\\times3\\times5$ (3 primes), $22=2\\times11$ (2 primes), $15=3\\times5$ (2 primes). Total sum = $3(15) + 2(11) + 2(24) = 45 + 22 + 48 = 115$. Khatam.<br><br><b>Takeaway:</b> 'Total prime factors' bole to individual primes ki powers ka sum karte hain, distinct nahi."
+      "s": ""
     },
     {
-      "q": "What are the last two digits of $4^{4^4}$?",
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cubic box with a side length of 30 cm needs to be wrapped with decorative paper made of square pieces, each with a side of 6 cm. What is the minimum number of such square pieces required to cover the entire surface of the box?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">30 6 ?</span></p>",
       "o": [
-        "16",
-        "36",
-        "76",
-        "96"
-      ],
-      "a": 3,
-      "s": "<b>Final Output:</b> $96$<br><br><b>Pen-Free Observation:</b> Power tower with base $4$. Result will definitely be even, ruling out odd trap logic.<br><br><b>Method 1 (Ninja Technique):</b> $4^{256} = 2^{512}$. Initial logic validated. Leap directly to transformation: $2^{12} \\times (2^{10})^{50} = 4096 \\times (1024)^{\\text{Even}}$. Modulo $100$ extraction gives $96 \\times 76 \\equiv 96$.<br><br><b>Takeaway:</b> Any number ending in $76$ multiplied by $X$ retains the last two digits of $X$ (if $X$ is a power of $2$)."
-    },
-    {
-      "q": "Find the unit digit of $(1!)^{1!^{1!}} + (2!)^{2!^{2!}} + (3!)^{3!^{3!}} + (4!)^{4!^{4!}}$.",
-      "o": [
-        "1",
-        "3",
-        "7",
-        "9"
-      ],
-      "a": 3,
-      "s": "<b>Final Output:</b> $9$<br><br><b>Pen-Free Observation:</b> Factorial $>4!$ ends in $0$, to aage check hi nahi karna. Just evaluate $1!$ to $4!$.<br><br><b>Method 1 (Ninja Technique):</b> Standard processing applied for $1!$ to $3!$ giving unit sum $1+6+6=13$. Leap to $4!$: Base $24$, Power is even. $4^{\\text{Even}}$ ends in $6$. Total unit sum $13+6 = 19 \\implies 9$.<br><br><b>Takeaway:</b> SSC CGL trap! Factorial powers ko jaldi evaluate karo. $4^{\\text{Even}}$ hamesha $6$ deta hai."
-    },
-    {
-      "q": "Find the total number of factors of $(73^3 - 40^3 - 33^3)$.",
-      "o": [
-        "192",
-        "190",
-        "188",
-        "186"
-      ],
-      "a": 0,
-      "s": "<b>Final Output:</b> $192$<br><br><b>Pen-Free Observation:</b> $a+b+c = 73-40-33 = 0$. Identity alert!<br><br><b>Method 1 (Ninja Technique):</b> $a^3+b^3+c^3 = 3abc$. Transformation: $3 \\times 73 \\times 40 \\times 33 = 2^3 \\times 3^2 \\times 5^1 \\times 11^1 \\times 73^1$. Exponents jump: $4 \\times 3 \\times 2 \\times 2 \\times 2 = 192$.<br><br><b>Takeaway:</b> Algebra aur Number System ka deadly combo. Sum of bases zero ho to direct $3abc$ me tod do."
-    },
-    {
-      "q": "If a 9-digit number $897359y7x$ is divisible by $72$, then what is the value of $(3x + 4y)$ for the largest possible value of $y$?",
-      "o": [
-        "54",
-        "48",
-        "60",
-        "72"
-      ],
-      "a": 0,
-      "s": "<b>Final Output:</b> $54$<br><br><b>Pen-Free Observation:</b> Divisibility by $72$ means check $8$ and $9$. Target is 'largest' $y$.<br><br><b>Method 1 (Ninja Technique):</b> Assume max $y=9$. Last 3 digits $97x / 8 \\implies x=6$. Digital sum for $9$: $48 + x + y = 48+6+9 = 63$ (Divisible). Set $y=9, x=6$. Final equation: $18+36=54$.<br><br><b>Takeaway:</b> Largest/smallest word par dhyan de bhai, CGL yahi fasaega."
-    },
-    {
-      "q": "Find the number of proper divisors of $3^6 \\times 5^4$.",
-      "o": [
-        "34",
-        "35",
-        "36",
-        "33"
-      ],
-      "a": 0,
-      "s": "<b>Final Output:</b> $34$<br><br><b>Pen-Free Observation:</b> 'Proper' divisors pucha hai, total nahi. Formula is Total Factors - $1$.<br><br><b>Method 1 (Ninja Technique):</b> Powers me $+1$ karke multiply kar: $7 \\times 5 = 35$. Proper hone ke chakkar me $1$ minus kar de: $34$.<br><br><b>Takeaway:</b> Proper divisors me original number ko count nahi karte."
-    },
-    {
-      "q": "If the 8-digit number $8439x53y$ is divisible by $99$, then what is the value of $(x^2 + y^2)$?",
-      "o": [
-        "16",
-        "25",
-        "36",
-        "49"
-      ],
-      "a": 0,
-      "s": "<b>Final Output:</b> $16$<br><br><b>Pen-Free Observation:</b> Divisibility by $99$ means applying $11$ and $9$ rules simultaneously.<br><br><b>Method 1 (Ninja Technique):</b> $11$ rule leap: $x-y = 4$. $9$ rule leap: $32+x+y \\equiv 0 \\pmod 9 \\implies x+y = 4$. Simultaneous solve gives $x=4, y=0$. Result $4^2+0^2 = 16$.<br><br><b>Takeaway:</b> Variables set karte time check kar liya kar bhai ki digit $0-9$ ke bahar na jaye."
-    },
-    {
-      "q": "Let $y$ be the least number which is divisible by $22, 33, 36$, and $66$, and is also a perfect cube. Find the sum of the digits of the remainder when $y$ is divided by $179$.",
-      "o": [
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "a": 0,
-      "s": "<b>Final Output:</b> $4$<br><br><b>Pen-Free Observation:</b> Perfect cube aur LCM ka mix. Multipliers missing honge.<br><br><b>Method 1 (Ninja Technique):</b> LCM $= 396 = 2^2 \\times 3^2 \\times 11$. Cube completion needs $2^1 \\times 3^1 \\times 11^2 = 726$. Number $y = 396 \\times 726 = 287496$. Leap to division: $287496 \\pmod{179} = 22$. Digits sum $= 4$.<br><br><b>Takeaway:</b> Cube/Square banane ke liye factors ki power ko $3$ ya $2$ ke multiple tak push karte hain."
-    },
-    {
-      "q": "If $N = 4^{11} + 4^{12} + 4^{13} + 4^{14}$, then find the total number of positive factors of $N$.",
-      "o": [
-        "90",
-        "92",
-        "94",
-        "96"
-      ],
-      "a": 1,
-      "s": "<b>Final Output:</b> $92$<br><br><b>Pen-Free Observation:</b> Series of powers. Lowest power common niklegi.<br><br><b>Method 1 (Ninja Technique):</b> Pull out $4^{11}$. Inside: $(1+4+16+64) = 85$. Prime rep: $2^{22} \\times 5^1 \\times 17^1$. Powers $+1$ multiplication: $23 \\times 2 \\times 2 = 92$.<br><br><b>Takeaway:</b> Hamesha base ko absolute prime ($2, 3, 5$) me convert karna mat bhulna."
-    },
-    {
-      "q": "What are the last two digits of $31^{41^{51}}$?",
-      "o": [
-        "11",
-        "31",
-        "51",
-        "71"
-      ],
-      "a": 1,
-      "s": "<b>Final Output:</b> $31$<br><br><b>Pen-Free Observation:</b> Base ends in $1$. Aman Sir's universal rule for $X1$ applies.<br><br><b>Method 1 (Ninja Technique):</b> Unit digit is always $1$. Tens digit = (Tens of base $\\times$ Unit of power). $3 \\times (\\text{Last digit of } 41^{51})$. Since $41^{51}$ ends in $1$, $3 \\times 1 = 3$. Answer: $31$.<br><br><b>Takeaway:</b> $(\\dots x1)^y$ ke last two digits hamesha $(x \\times \\text{last digit of } y)$ aur $1$ hote hain."
-    },
-    {
-      "q": "How many composite numbers are there from $69$ to $91$?",
-      "o": [
-        "17",
-        "18",
-        "19",
-        "20"
-      ],
-      "a": 1,
-      "s": "<b>Final Output:</b> $18$<br><br><b>Pen-Free Observation:</b> Small range. Total numbers me se prime hatane hain.<br><br><b>Method 1 (Ninja Technique):</b> Total numbers $= 91-69+1 = 23$. Primes evaluated: $71, 73, 79, 83, 89$ (Total $5$). Composite $= 23 - 5 = 18$.<br><br><b>Takeaway:</b> Range formula $= (L - F + 1)$ and directly skip prime traps."
-    },
-    {
-      "q": "Remainder when $2025^{(2024^{3025})}$ is divided by $7$ is",
-      "o": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "a": 3,
-      "s": "<b>Final Output:</b> $4$<br><br><b>Pen-Free Observation:</b> Euler's totient theorem will collapse the massive exponent.<br><br><b>Method 1 (Ninja Technique):</b> Base transformation: $2025 \\equiv 2 \\pmod 7$. Totient of $7$ is $6$. Power transformation: $2024^{3025} \\equiv 2^{\\text{Odd}} \\equiv 2 \\pmod 6$. Final collapse: $2^2 \\pmod 7 = 4$.<br><br><b>Takeaway:</b> Fermat/Euler Totient is a cheat code for these massive power towers."
-    },
-    {
-      "q": "If a book has $250$ pages, how many digits have been used to number the pages.",
-      "o": [
-        "650",
-        "453",
-        "642",
-        "672"
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">125</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">350</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">150</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">250</span></p>"
       ],
       "a": 2,
-      "s": "<b>Final Output:</b> $642$<br><br><b>Pen-Free Observation:</b> $250$ pages standard pagination counting. $1$-digit, $2$-digit, $3$-digit slots.<br><br><b>Method 1 (Ninja Technique):</b> $1$ to $99$ takes exactly $189$ digits. Remaining $3$-digit pages $= 250 - 99 = 151$. Computation: $189 + (151 \\times 3) = 642$.<br><br><b>Takeaway:</b> Memorize: $1-99$ uses $189$ digits. $1-999$ uses $2889$ digits."
+      "s": ""
     },
     {
-      "q": "What is the remainder when $15^{400}$ is divided by $1309$?",
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cone and a hemisphere have equal curved surface areas and equal radii. Find the ratio of their volumes.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> </span></p>",
       "o": [
-        "1",
-        "15",
-        "1012",
-        "1308"
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">√3 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">√5 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 : 2</span></p>"
       ],
       "a": 0,
-      "s": "<b>Final Output:</b> $1$<br><br><b>Pen-Free Observation:</b> $1309$ is a composite of $7 \\times 11 \\times 17$. Chinese Remainder Theorem logic.<br><br><b>Method 1 (Ninja Technique):</b> Check mod $7, 11, 17$. $15^{400} \\equiv 1$ across all three prime bases using Fermat's Little Theorem. Recombination gives $1 \\pmod{1309}$.<br><br><b>Takeaway:</b> Large weird divisors are always product of primes. Break them and conquer."
+      "s": ""
     },
     {
-      "q": "Which of the following sets is a proper subset of rational numbers?",
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A regular right pyramid has a square base with a side length of 12 cm. Its slant height is 8 cm. What is its volume?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 12 8 ?</span></p>",
       "o": [
-        "Irrational numbers",
-        "Natural numbers",
-        "Real numbers",
-        "None of the above"
-      ],
-      "a": 1,
-      "s": "<b>Final Output:</b> Natural numbers<br><br><b>Pen-Free Observation:</b> Pure number system hierarchy.<br><br><b>Method 1 (Ninja Technique):</b> Natural $\\subset$ Whole $\\subset$ Integers $\\subset$ Rationals $\\subset$ Reals. Option validation complete. Natural numbers fit.<br><br><b>Takeaway:</b> Diagrammatic clarity of number sets saves time."
-    },
-    {
-      "q": "In how many ways can the number $11025$ be resolved into two factors which are co-prime to each other?",
-      "o": [
-        "2",
-        "4",
-        "6",
-        "8"
-      ],
-      "a": 1,
-      "s": "<b>Final Output:</b> $4$<br><br><b>Pen-Free Observation:</b> Number of co-prime factor pairs strictly depends on the count of distinct prime bases.<br><br><b>Method 1 (Ninja Technique):</b> Prime factorization of $11025 = 3^2 \\times 5^2 \\times 7^2$. Distinct bases $(n) = 3$. Jump to formula: $2^{n-1} = 2^2 = 4$.<br><br><b>Takeaway:</b> Direct hack: Co-prime ways $= 2^{n-1}$ jaha $n$ = distinct prime factors."
-    },
-    {
-      "q": "What is the value of $1006^2 - 1007 \\times 1005 + 1008 \\times 1004 - 1009 \\times 1003$?",
-      "o": [
-        "4",
-        "6",
-        "-6",
-        "9"
-      ],
-      "a": 1,
-      "s": "<b>Final Output:</b> $6$<br><br><b>Pen-Free Observation:</b> Numbers are strictly consecutive around $1006$. Algebraic substitution is the key.<br><br><b>Method 1 (Ninja Technique):</b> Let $x = 1006$. Pattern leap: $x^2 - (x^2-1) + (x^2-4) - (x^2-9) = 1 - 4 + 9 = 6$.<br><br><b>Takeaway:</b> Never multiply! Treat consecutive massive numbers as $(x-a)(x+a)$ forms."
-    },
-    {
-      "q": "What is the sum of the first $39$ odd numbers?",
-      "o": [
-        "1521",
-        "1541",
-        "1601",
-        "1421"
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">254 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">288 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">384 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">480 cm³</span></p>"
       ],
       "a": 0,
-      "s": "<b>Final Output:</b> $1521$<br><br><b>Pen-Free Observation:</b> AP sum of odds starting from $1$ is just the square of the count.<br><br><b>Method 1 (Ninja Technique):</b> Sum $= n^2 = 39^2 = 1521$.<br><br><b>Takeaway:</b> First $n$ odd numbers sum $= n^2$. First $n$ even $= n(n+1)$."
+      "s": ""
     },
     {
-      "q": "How many numbers between $200$ and $800$ are not divisible by $5$ and $7$?",
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If each exterior angle of a regular polygon measures </span><img src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1767270975540_image012.png\" width=\"28\" height=\"29\" alt=\"\" style=\"max-width:100%;\" referrerpolicy=\"no-referrer\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1767270975540_image012.png';\"><span style=\"font-family:'Cambria Math'\">°, find the ratio of the number of its diagonals to the number of its sides.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> </span><img src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1767270975540_image012.png\" width=\"28\" height=\"29\" alt=\"\" style=\"max-width:100%;\" referrerpolicy=\"no-referrer\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1767270975540_image012.png';\"><span style=\"font-family:'Nirmala UI'\">° , </span></p>",
       "o": [
-        "411",
-        "548",
-        "137",
-        "400"
-      ],
-      "a": 0,
-      "s": "<b>Final Output:</b> $411$<br><br><b>Pen-Free Observation:</b> Range is exactly $600$. Divisibility exclusions follow a fractional depletion pattern.<br><br><b>Method 1 (Ninja Technique):</b> Use consecutive block jump. Total $= 600$. Fraction remaining $= 600 \\times (4/5) \\times (6/7) \\approx 411.4$. Round down to $411$.<br><br><b>Takeaway:</b> Not divisible by $p, q$ over large uniform ranges is approximately Total $\\times (1 - 1/p)(1 - 1/q)$."
-    },
-    {
-      "q": "Find the last three digits of $2^{300}$.",
-      "o": [
-        "001",
-        "376",
-        "624",
-        "176"
-      ],
-      "a": 1,
-      "s": "<b>Final Output:</b> $376$<br><br><b>Pen-Free Observation:</b> Last $3$ digits mean $\\pmod{1000}$. Base $2$ and $1000$ share common factors. CRT is mandatory.<br><br><b>Method 1 (Ninja Technique):</b> Split $1000 = 8 \\times 125$. Mod $8$: $0$. Mod $125$: Euler jump $\\implies 2^{100} \\equiv 1 \\implies 2^{300} \\equiv 1$. Target is $125k + 1$ divisible by $8$. For $k=3$, $376$ fits perfectly.<br><br><b>Takeaway:</b> Extreme level hack! CRT for non-coprime modulus is CDS/CGL Mains material."
-    },
-    {
-      "q": "What is the ratio of the sum of the even factors to the sum of the odd factors of $240$?",
-      "o": [
-        "30:1",
-        "15:1",
-        "14:1",
-        "24:1"
-      ],
-      "a": 0,
-      "s": "<b>Final Output:</b> $30:1$<br><br><b>Pen-Free Observation:</b> Ratio of even to odd factor sums isolates the base-$2$ component.<br><br><b>Method 1 (Ninja Technique):</b> $240 = 2^4 \\times 3 \\times 5$. Odd part sum $= (1+3)(1+5) = 24$. Even part sum removes $2^0$: $(2+4+8+16) \\times 24 = 30 \\times 24$. Ratio $= 30:1$.<br><br><b>Takeaway:</b> Even factor sum me bas $2^0$ wala element ignore karna hota hai."
-    },
-    {
-      "q": "What is the remainder when a 6-digit number formed by repeating a 2-digit number three times (for example, $252525$) is divided by $10101$?",
-      "o": [
-        "1",
-        "25",
-        "0",
-        "101"
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2 : 9</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2 : 1</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 : 2</span></p>"
       ],
       "a": 2,
-      "s": "<b>Final Output:</b> $0$<br><br><b>Pen-Free Observation:</b> $ababab$ pattern itself is a multiple of $10101$.<br><br><b>Method 1 (Ninja Technique):</b> $ababab = ab(10101)$. Remainder when divided by $10101$ is inherently $0$.<br><br><b>Takeaway:</b> Place value expansion patterns ($ab \\to 101, abc \\to 1001$) are instant visual solves."
+      "s": ""
     },
     {
-      "q": "If $n = 8^{12}$, then how many perfect squares are there in its factors?",
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A rectangle of side 8 cm × 6 cm and a rhombus (side = 8 cm, acute angle 60°) are joined along one 8 cm side. What’s the ratio of their areas (rectangle : rhombus)?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">8 × 6 ( = 8 , 60°) 8 ( : )?</span></p>",
       "o": [
-        "18",
-        "19",
-        "20",
-        "21"
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : √3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 2√3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">√3 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 : √3</span></p>"
       ],
-      "a": 1,
-      "s": "<b>Final Output:</b> $19$<br><br><b>Pen-Free Observation:</b> Convert to prime base to trace all even exponents.<br><br><b>Method 1 (Ninja Technique):</b> $8^{12} = 2^{36}$. Perfect squares need even powers $\\{0, 2, 4 \\dots 36\\}$. Count leap: $36/2 + 1 = 19$.<br><br><b>Takeaway:</b> Total perfect squares $= (\\text{Highest even power} / 2) + 1$ (for $0$)."
+      "a": 2,
+      "s": ""
     },
     {
-      "q": "The 5-digit number $7x23y$ is divisible by $24$. Find the maximum possible value of $(x + y)$.",
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A vendor mixes two rice types costing Rs. 30/kg and Rs. 50/kg in the ratio 3 : 2, but he mistakenly sells it at a loss of 10%. What is the selling price per kg?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 30 50 3 : 2 , 10% ?</span></p>",
       "o": [
-        "7",
-        "9",
-        "11",
-        "5"
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 38.70</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 39.60</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 40.50</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 34.20</span></p>"
       ],
-      "a": 1,
-      "s": "<b>Final Output:</b> $9$<br><br><b>Pen-Free Observation:</b> Divisible by $24 \\implies 8$ and $3$. Target is MAX $(x+y)$.<br><br><b>Method 1 (Ninja Technique):</b> Rule of $8$ on $23y \\implies y=2$. Rule of $3$ on sum: $14+x$. Max single digit $x$ for multiple of $3$ is $7$ (sum $21$). Hence $7+2=9$.<br><br><b>Takeaway:</b> Divisibility me humesha pehle restrictive rule lagao (last digits), fir broad rule (sum)."
+      "a": 3,
+      "s": ""
     },
     {
-      "q": "What is the remainder when the $7$-digit number $4538291$ is divided by $101$?",
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A trader purchases 100 smartphones at Rs. 12,000 each. He spends Rs. 30,000 on transportation and Rs. 20,000 on advertising. 10 phones are damaged in transit and sold at 50% loss. The remaining are sold at a 25% profit. What is his net profit or loss?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 100 ₹12,000 ₹30,000 ₹20,000 10 50% 25% ?</span></p>",
       "o": [
-        "58",
-        "27",
-        "15",
-        "42"
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 1,60,000 profit</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 2,20,000 profit</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 1,90,000 loss</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 2,30,000 loss</span></p>"
       ],
       "a": 0,
-      "s": "<b>Final Output:</b> $58$<br><br><b>Pen-Free Observation:</b> Divisibility of $101$ works on $2$-digit alternating blocks from right.<br><br><b>Method 1 (Ninja Technique):</b> Blocks: $04, 53, 82, 91$. Alternating sum: $91 - 82 + 53 - 04 = 58$. Remainder directly $58$.<br><br><b>Takeaway:</b> Base $10^2+1$ (i.e. $101$) requires blocks of $2$. Base $10^3+1$ (i.e. $1001$) requires blocks of $3$."
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The volume of a prism is 960 cm³. If its base area is 80 cm², by what percentage should the height be increased to make the volume 1200 cm³?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 960 ³ 80 ² , 1200 ³ ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">20%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">25%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">30%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">33.33%</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A container holds 120 litres of a solution containing milk and water in the ratio 3 : 2. If 24 litres of this solution are taken out and replaced with pure milk, what is the new ratio of milk to water?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 3 : 2 120 24 , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">17 : 8</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 : 3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">19 : 4</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">11 : 4</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The lines 2x − 3y = 6 and kx + y = 4 are perpendicular. What is the value of k?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 2x − 3y = 6 kx + y = 4 k ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1/2 </span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3/2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1</span></p>"
+      ],
+      "a": 2,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the equation of a line is 2x + 3y = 6, what is the slope of the line?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 2x + 3y = 6 , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">−2/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4/3</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A triangular prism has a base formed by a triangle with side lengths 9 cm, 12 cm, and 15 cm. If the height of the prism (perpendicular to the base) is 10 cm, calculate its lateral surface area.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 9 , 12 15 10 , </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">360 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">420 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">480 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">540 cm²</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the area of the circular base of a hemisphere is 308 cm², find the volume of the hemisphere.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 308 , </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1235.33√2 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1658.33√2 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1537.33√2 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1437.33√2 cm³</span></p>"
+      ],
+      "a": 3,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A circle is inscribed in a right-angled triangle with legs of length 5 and 12. What is the area of the quadrilateral formed by the two legs and the two radii to the tangent points on the legs?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> , 5 12 ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 square units</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">14 square units</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">23 square units</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">24 square units</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The proportions of the dimensions of a rectangular parallelepiped are 2 : 3 : 4. If its volume is 768 cm³, what is its smallest dimension?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 2 : 3 : 4 768 ³ , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6.34 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8.45 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">12.25 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">16.89 cm</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A regular right pyramid has a square base. Its base area is 100 cm² and its lateral surface area is 260 cm². What is the height of the pyramid?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 100 260 ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">10 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">12 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">13 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">15 cm</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A circular field is surrounded by a path 2 m wide. If the inner radius is 10 m, find the cost to pave the path at ₹20 per m².</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 2 10 , ₹20 </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹2765.71</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹2654</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹2356.45</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹3456</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cylinder is half-filled with liquid. If the radius doubles and the height halves, what’s the new filled depth percentage-wise?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">25%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">50%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">75%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">100%</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A right circular cone is inscribed in a cube such that its base coincides with the base of the cube and vertex lies on the top face center. What fraction of the cube’s volume does the cone occupy?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">π/6</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">π/8</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">π/12</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">π/2</span></p>"
+      ],
+      "a": 2,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the height of a regular right pyramid with a square base is increased by 20% and the side length of its base is decreased by 10%, what is the percentage change in its volume?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 20% 10% , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.8% decrease</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1.2% increase</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.8% increase</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">No change</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A square garden is surrounded by a path 1 m wide on all sides. The area of the path alone is 36 m². What is the length of the garden’s side?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 1 36 ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 m</span></p>"
+      ],
+      "a": 3,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cylindrical candle (radius 3 cm, height 10 cm) burns evenly and reduces 1 cm in height every 2 hours. In how many hours will 70% of the candle’s volume be burned?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> ( 3 , 10 ) 2 1 70% ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">10 hours</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">14 hours</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">18 hours</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">20 hours</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The centroid of a triangle with vertices (0,0), (6,0), and (0,8) is:</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> (0,0), (6,0) (0,8) :</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(3, 4)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(2, 2.67)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(1.5, 2)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(6, 8)</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A circular pizza having a radius of 21 cm. If 75% of it is eaten, what is the area of pizza remaining?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 21 75% , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">173.2&nbsp;cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">346.5&nbsp;cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">432.2&nbsp;cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">115.5 cm²</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">In ΔABC, the angle bisector AD of ∠A divides side BC. If AB = 10 cm, AC = 12 cm, and BC = 11 cm, what is the length of the segment BD?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">△</span><span style=\"font-family:'Nirmala UI'\">ABC , </span><span style=\"font-family:'Cambria Math'\">∠</span><span style=\"font-family:'Nirmala UI'\">A AD BC AB = 10 , AC = 12 , BC = 11 , BD ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">11 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 cm</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A point P lies outside a circle with center O and radius r = 6 cm. Two tangents PA and PB are drawn from P to the circle, and the angle between the tangents ∠APB = 60°. What is the distance from point P to the center O?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> P, O r = 6 P PA PB , </span><span style=\"font-family:'Cambria Math'\">∠</span><span style=\"font-family:'Nirmala UI'\">APB = 60° P O ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6√3 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6√2 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">12 cm</span></p>"
+      ],
+      "a": 3,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A storage container in the shape of a cuboid has a square base with sides of 7 cm and height of 10 cm. What is the difference between its total surface area and its lateral surface area?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> , , 7 10 ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">49 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">98 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">140 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">196 cm²</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cone has base radius 6 cm and slant height 10 cm. If a conical frustum is cut from it, the top radius is 3 cm and height is proportionally scaled. Find the height of the frustum.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 6 10 , 3 </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">10 cm</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A jar is 3/5 full with a solution. After adding 3.2 liters, it becomes 7/8 full. What is the total capacity of the jar?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 3/5 3.2 7/8 ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">24 L</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">20.5 L</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">11.64 L</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">18.28 L</span></p>"
+      ],
+      "a": 2,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">An item is sold at a 20% profit. If the cost price and selling price are increased by Rs. 50 and Rs. 30 respectively, the profit percent becomes 10%. What is the original cost price?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 20% 50 30 , 10% ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 100</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 450</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 600</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 250</span></p>"
+      ],
+      "a": 3,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If a line intersects the x-axis at (6, 0) and the y-axis at (0, −4), what is the slope of the line?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> x- (6, 0) y- (0, −4) , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1/2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3/2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2/3</span></p>"
+      ],
+      "a": 3,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Find the diameter of a circle, if the length of the tangent is 9 m and 12 m is the distance between the center of the circle to the external point. Given √7 = 2.64 (approx).</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> , 9 12 </span><span style=\"font-family:'Cambria Math'\">√</span><span style=\"font-family:'Nirmala UI'\">7 = 2.64 </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.64 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.28 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">7.92 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">15.84 m</span></p>"
+      ],
+      "a": 3,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A small container for chemicals has dimensions 20 cm × 20 cm × 15 cm. If it is filled to 10% of its volume, what is the amount of liquid (in liters) inside?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 20 × 20 × 15 10% , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">0.06 liters</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">0.6 liters</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 liters</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">60 liters</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The height of a right circular cone is trisected by two planes parallel to its base. What is the ratio of the three volumes (top to bottom)?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 7 : 19</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 8 : 28</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 3 : 10</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">None of the above</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A quadrilateral is divided into two triangles by a diagonal of 13 cm. If both triangles have height 12 cm, find total area.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 13 12 , </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">156 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">312 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">240 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">280 cm²</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">In triangle ABC, the coordinates of the centroid are (4, 3). If the coordinates of two vertices are A(2, 1) and B(8, 4), find the coordinates of the third vertex C.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> ABC (4, 3) A(2, 1) B(8, 4) , C </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(2,4)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(6,4)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(4,6)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(2,3)</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The height of a cone is 30 cm. It is cut by a plane at height 10 cm from the base. What percent of the cone’s volume lies above the cut?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 30 10 ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">11.10%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">29.60%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">18.50%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">22.20%</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The sides of a trapezium are 8 cm, 10 cm, 12 cm and 14 cm, with 12 cm and 8 cm being the parallel sides. If height = 6 cm, find area.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 8 , 10 , 12 14 , 12 8 = 6 , </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">60 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">66 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">72 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">80 cm²</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A trapezium (bases 8 cm &amp; 12 cm, height 6 cm) is attached to a rectangle (8 cm × 10 cm) to form a wood panel. What is the total area?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> ( 8 12 , 6 ) (8 × 10 ) ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">96 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">108 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">120 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">140 cm²</span></p>"
+      ],
+      "a": 3,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the equation of a line is 3x − 5y = 15, what is the equation of the line perpendicular to that passes through the point (3, 2)?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 3x − 5y = 15 , (3, 2) ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">y = (5/3)x + 7</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">y = −(5/3)x + 7</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">y = (5/3)x − 7</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">y = −(3/5)x + 7</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If tan²θ + cot²θ = 50, then find sec⁴θ + cosec⁴θ.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> tan²</span><span>θ</span><span style=\"font-family:'Nirmala UI'\"> + cot²</span><span>θ</span><span style=\"font-family:'Nirmala UI'\"> = 50 , sec</span><span style=\"font-family:'Cambria Math'\">⁴θ</span><span style=\"font-family:'Nirmala UI'\"> + cosec</span><span style=\"font-family:'Cambria Math'\">⁴θ</span><span style=\"font-family:'Nirmala UI'\"> </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2600</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2800</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3200</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3000</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A hollow spherical shell is made of a metal with a density of 6 g/cm³. If the internal and external radii of the shell are 8 cm and 9 cm respectively, find the weight of the shell in kilograms.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 6 / 8 9 , </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">7.456 kg</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.656 kg</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6.456 kg</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.456 kg</span></p>"
+      ],
+      "a": 3,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The total number of edges in a rectangular parallelepiped is:</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> :</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">12</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A brass hemispherical bowl has an inner diameter of 10.5 cm. If the cost of tin-plating the inner surface is ₹15 per 100 cm², what will be the total cost (in whole number) of plating the inside of the bowl?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 10.5 - ₹15 100 , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹26</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹34</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹28</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹44</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A sphere is inscribed in a cube. If the total surface area of the cube is 600 cm², what is the volume of the sphere?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> 600 ² , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">500π/3 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">100π cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1000π/3 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">250π cm³</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">In a team of 75 employees, the average monthly sales per employee is ₹1.8 lakh. If 30 junior employees average ₹1.2 lakh each, what is the average monthly sales figure (in lakh) for the senior employees?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">75 , ₹1.8 30 ₹1.2 , ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4.2 lakh</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.2 lakh</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.8 lakh</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.7 lakh</span></p>"
+      ],
+      "a": 1,
+      "s": ""
+    },
+    {
+      "q": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the square root of a number is subtracted from the number, the result is 272. What is the number?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\"> , 272 ?</span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">289</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">324</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">361</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">400</span></p>"
+      ],
+      "a": 0,
+      "s": ""
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">How many distinct triangles can be formed by selecting any three vertices of a hexagon?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक षट्भुज के किसी तीन शीर्षों का चयन करके कितने भिन्न त्रिभुज बनाए जा सकते हैं?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">20</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">30</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">60</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">120</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The sum of the lengths of all edges of a cuboid is 64 cm. If its length is 8 cm and breadth is 4 cm, find the height.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक घनाभ के सभी भुजाओं की लंबाइयों का योग 64 सेमी है। यदि इसकी लंबाई 8 सेमीटर और चौड़ाई 4 सेमीटर है, तो ऊँचाई ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 cm</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Amir goes to his college from his house at a speed of 4 km/hr and returns at a speed of 2 km/hr. If he takes 4 hours to go and come, find the distance between his house and school.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">अमीर अपने घर से कॉलेज 4 किमी/घंटा की गति से जाता है और 2 किमी/घंटा की गति से लौटता है। अगर उसे जाने और आने में 4 घंटे लगते हैं, तो उसके घर और कॉलेज के बीच की दूरी ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4.33 km</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.33 km</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 km</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.1 km</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cubic box with a side length of 30 cm needs to be wrapped with decorative paper made of square pieces, each with a side of 6 cm. What is the minimum number of such square pieces required to cover the entire surface of the box?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">30 सेमी भुजा वाले एक घनाकार बॉक्स को 6 सेमी भुजा वाले वर्गाकार टुकड़ों से बने सजावटी कागज से लपेटना है। बॉक्स की पूरी सतह को ढकने के लिए ऐसे वर्गाकार टुकड़ों की न्यूनतम संख्या कितनी होगी?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">125</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">350</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">150</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">250</span></p>"
+      ],
+      "a": 2,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cone and a hemisphere have equal curved surface areas and equal radii. Find the ratio of their volumes.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक शंकु और एक अर्धगोले के वक्र पृष्ठीय क्षेत्रफल और त्रिज्या समान हैं। उनके आयतनों का अनुपात ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">√3 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">√5 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 : 2</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A regular right pyramid has a square base with a side length of 12 cm. Its slant height is 8 cm. What is its volume?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक समकोण पिरामिड का आधार वर्गाकार है और इसकी भुजा की लंबाई 12 सेमी है। इसकी तिर्यक ऊँचाई 8 सेमी है। इसका आयतन क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">254 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">288 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">384 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">480 cm³</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If each exterior angle of a regular polygon measures </span><img src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1767270975540_image012.png\" width=\"28\" height=\"29\" alt=\"\" style=\"max-width:100%;\" referrerpolicy=\"no-referrer\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1767270975540_image012.png';\"><span style=\"font-family:'Cambria Math'\">°, find the ratio of the number of its diagonals to the number of its sides.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">यदि एक नियमित बहुभुज के प्रत्येक बाह्य कोण का माप </span><img src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1767270975540_image012.png\" width=\"28\" height=\"29\" alt=\"\" style=\"max-width:100%;\" referrerpolicy=\"no-referrer\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1767270975540_image012.png';\"><span style=\"font-family:'Nirmala UI'\">° है, तो उसके विकर्णों की संख्या और उसकी भुजाओं की संख्या का अनुपात ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2 : 9</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2 : 1</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 : 2</span></p>"
+      ],
+      "a": 2,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A rectangle of side 8 cm × 6 cm and a rhombus (side = 8 cm, acute angle 60°) are joined along one 8 cm side. What’s the ratio of their areas (rectangle : rhombus)?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">8 सेमी × 6 सेमी भुजा वाला एक आयत और एक समचतुर्भुज (भुजा = 8 सेमी, न्यून कोण 60°) को 8 सेमी की एक भुजा के अनुदिश जोड़ा गया है। उनके क्षेत्रफलों का अनुपात क्या है (आयत : समचतुर्भुज)?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : √3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 2√3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">√3 : 2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 : √3</span></p>"
+      ],
+      "a": 2,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A vendor mixes two rice types costing Rs. 30/kg and Rs. 50/kg in the ratio 3 : 2, but he mistakenly sells it at a loss of 10%. What is the selling price per kg?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक विक्रेता 30 रुपये प्रति किलो और 50 रुपये प्रति किलो वाले दो प्रकार के चावल को 3 : 2 के अनुपात में मिलाता है, लेकिन गलती से उसे 10% की हानि पर बेच देता है। प्रति किलो विक्रय मूल्य क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 38.70</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 39.60</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 40.50</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 34.20</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A trader purchases 100 smartphones at Rs. 12,000 each. He spends Rs. 30,000 on transportation and Rs. 20,000 on advertising. 10 phones are damaged in transit and sold at 50% loss. The remaining are sold at a 25% profit. What is his net profit or loss?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक व्यापारी 100 स्मार्टफोन ₹12,000 प्रति स्मार्टफोन की दर से खरीदता है। वह परिवहन पर ₹30,000 और विज्ञापन पर ₹20,000 खर्च करता है। रास्ते में 10 फोन खराब हो जाते हैं और उन्हें 50% हानि पर बेच दिया जाता है। शेष फोन 25% लाभ पर बेचे जाते हैं। उसका शुद्ध लाभ या हानि क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 1,60,000 profit</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 2,20,000 profit</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 1,90,000 loss</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 2,30,000 loss</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The volume of a prism is 960 cm³. If its base area is 80 cm², by what percentage should the height be increased to make the volume 1200 cm³?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक प्रिज़्म का आयतन 960 सेमी³ है। यदि इसके आधार का क्षेत्रफल 80 सेमी² है, तो आयतन को 1200 सेमी³ करने के लिए ऊँचाई में कितने प्रतिशत की वृद्धि की जानी चाहिए?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">20%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">25%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">30%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">33.33%</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A container holds 120 litres of a solution containing milk and water in the ratio 3 : 2. If 24 litres of this solution are taken out and replaced with pure milk, what is the new ratio of milk to water?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक बर्तन में दूध और पानी का मिश्रण 3 : 2 के अनुपात में 120 लीटर है। यदि इस मिश्रण में से 24 लीटर निकालकर उसकी जगह शुद्ध दूध डाल दिया जाए, तो दूध और पानी का नया अनुपात क्या होगा?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">17 : 8</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 : 3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">19 : 4</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">11 : 4</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The lines 2x − 3y = 6 and kx + y = 4 are perpendicular. What is the value of k?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">रेखाएँ 2x − 3y = 6 और kx + y = 4 परस्पर लंबवत हैं। k का मान क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1/2 </span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3/2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1</span></p>"
+      ],
+      "a": 2,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the equation of a line is 2x + 3y = 6, what is the slope of the line?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">अगर किसी रेखा का समीकरण 2x + 3y = 6 है, तो उस रेखा का ढलान क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">−2/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4/3</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A triangular prism has a base formed by a triangle with side lengths 9 cm, 12 cm, and 15 cm. If the height of the prism (perpendicular to the base) is 10 cm, calculate its lateral surface area.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक त्रिभुजाकार प्रिज़्म का आधार 9 सेमी, 12 सेमी और 15 सेमी भुजाओं वाले त्रिभुज से बना है। यदि प्रिज़्म की ऊँचाई (आधार के लंबवत) 10 सेमी है, तो उसका पार्श्व पृष्ठीय क्षेत्रफल ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">360 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">420 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">480 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">540 cm²</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the area of the circular base of a hemisphere is 308 cm², find the volume of the hemisphere.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">यदि एक अर्धगोले के वृत्ताकार आधार का क्षेत्रफल 308 वर्ग सेमी है, तो अर्धगोले का आयतन ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1235.33√2 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1658.33√2 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1537.33√2 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1437.33√2 cm³</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A circle is inscribed in a right-angled triangle with legs of length 5 and 12. What is the area of the quadrilateral formed by the two legs and the two radii to the tangent points on the legs?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक वृत्त एक समकोण त्रिभुज के भीतर अंकित है, जिसकी भुजाओं की लंबाई 5 और 12 है। दो भुजाओं और भुजाओं पर स्पर्श बिंदुओं तक खींची गई दो त्रिज्याओं से बने चतुर्भुज का क्षेत्रफल क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 square units</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">14 square units</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">23 square units</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">24 square units</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The proportions of the dimensions of a rectangular parallelepiped are 2 : 3 : 4. If its volume is 768 cm³, what is its smallest dimension?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक आयताकार समांतर चतुर्भुज के विमाओं का अनुपात 2 : 3 : 4 है। यदि इसका आयतन 768 सेमी³ है, तो इसका सबसे छोटा विमा क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6.34 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8.45 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">12.25 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">16.89 cm</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A regular right pyramid has a square base. Its base area is 100 cm² and its lateral surface area is 260 cm². What is the height of the pyramid?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक समकोण पिरामिड का आधार वर्गाकार है। इसका आधार क्षेत्रफल 100 वर्ग सेमी है और पार्श्व पृष्ठीय क्षेत्रफल 260 वर्ग सेमी है। पिरामिड की ऊँचाई कितनी है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">10 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">12 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">13 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">15 cm</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A circular field is surrounded by a path 2 m wide. If the inner radius is 10 m, find the cost to pave the path at ₹20 per m².</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक वृत्ताकार मैदान 2 मीटर चौड़े पथ से घिरा हुआ है। यदि आंतरिक त्रिज्या 10 मीटर है, तो ₹20 प्रति वर्ग मीटर की दर से पथ बनाने की लागत ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹2765.71</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹2654</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹2356.45</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹3456</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cylinder is half-filled with liquid. If the radius doubles and the height halves, what’s the new filled depth percentage-wise?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक बेलन आधा तरल से भरा है। यदि उसकी त्रिज्या दोगुनी हो जाए और ऊँचाई आधी हो जाए, तो प्रतिशत के हिसाब से नया भरा हुआ स्तर कितना होगा?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">25%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">50%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">75%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">100%</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A right circular cone is inscribed in a cube such that its base coincides with the base of the cube and vertex lies on the top face center. What fraction of the cube’s volume does the cone occupy?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक समवृत्तीय शंकु एक घन में इस प्रकार अंकित है कि उसका आधार घन के आधार के साथ संपाती है और शीर्ष ऊपरी फलक के केंद्र पर स्थित है। शंकु घन के आयतन का कितना भाग घेरता है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">π/6</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">π/8</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">π/12</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">π/2</span></p>"
+      ],
+      "a": 2,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the height of a regular right pyramid with a square base is increased by 20% and the side length of its base is decreased by 10%, what is the percentage change in its volume?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">यदि वर्गाकार आधार वाले एक नियमित समकोण पिरामिड की ऊँचाई 20% बढ़ा दी जाए तथा उसके आधार की भुजा की लंबाई 10% कम कर दी जाए, तो उसके आयतन में प्रतिशत परिवर्तन क्या होगा?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.8% decrease</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1.2% increase</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.8% increase</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">No change</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A square garden is surrounded by a path 1 m wide on all sides. The area of the path alone is 36 m². What is the length of the garden’s side?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक वर्गाकार बगीचे को चारों ओर से 1 मीटर चौड़े रास्ते से घिरा हुआ है। अकेले रास्ते का क्षेत्रफल 36 वर्ग मीटर है। बगीचे की भुजा की लंबाई कितनी है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 m</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cylindrical candle (radius 3 cm, height 10 cm) burns evenly and reduces 1 cm in height every 2 hours. In how many hours will 70% of the candle’s volume be burned?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक बेलनाकार मोमबत्ती (त्रिज्या 3 सेमी, ऊँचाई 10 सेमी) समान रूप से जलती है और हर 2 घंटे में उसकी ऊँचाई 1 सेमी कम हो जाती है। कितने घंटों में मोमबत्ती का 70% आयतन जल जाएगा?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">10 hours</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">14 hours</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">18 hours</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">20 hours</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The centroid of a triangle with vertices (0,0), (6,0), and (0,8) is:</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">शीर्ष (0,0), (6,0) और (0,8) वाले त्रिभुज का केन्द्रक है:</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(3, 4)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(2, 2.67)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(1.5, 2)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(6, 8)</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A circular pizza having a radius of 21 cm. If 75% of it is eaten, what is the area of pizza remaining?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक गोलाकार पिज़्ज़ा जिसकी त्रिज्या 21 सेमी है। यदि उसका 75% भाग खा लिया जाता है, तो बचे हुए पिज़्ज़ा का क्षेत्रफल क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">173.2&nbsp;cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">346.5&nbsp;cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">432.2&nbsp;cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">115.5 cm²</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">In ΔABC, the angle bisector AD of ∠A divides side BC. If AB = 10 cm, AC = 12 cm, and BC = 11 cm, what is the length of the segment BD?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">△</span><span style=\"font-family:'Nirmala UI'\">ABC में, </span><span style=\"font-family:'Cambria Math'\">∠</span><span style=\"font-family:'Nirmala UI'\">A का कोण समद्विभाजक AD भुजा BC को विभाजित करता है। यदि AB = 10 सेमी, AC = 12 सेमी, और BC = 11 सेमी है, तो खंड BD की लंबाई क्या होगी?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">11 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 cm</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A point P lies outside a circle with center O and radius r = 6 cm. Two tangents PA and PB are drawn from P to the circle, and the angle between the tangents ∠APB = 60°. What is the distance from point P to the center O?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक बिंदु P, केंद्र O और त्रिज्या r = 6 सेमी वाले वृत्त के बाहर स्थित है। बिंदु P से वृत्त पर दो स्पर्श रेखाएँ PA और PB खींची गई हैं, और स्पर्श रेखाओं के बीच का कोण </span><span style=\"font-family:'Cambria Math'\">∠</span><span style=\"font-family:'Nirmala UI'\">APB = 60° है। बिंदु P से केंद्र O की दूरी क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6√3 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6√2 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">12 cm</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A storage container in the shape of a cuboid has a square base with sides of 7 cm and height of 10 cm. What is the difference between its total surface area and its lateral surface area?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक भंडारण कंटेनर का आकार एक आयताकार घनाभ है, जिसका आधार वर्गाकार है, जिसकी भुजा 7 सेमी और ऊँचाई 10 सेमी है। इसके कुल पृष्ठीय क्षेत्रफल और पार्श्व पृष्ठीय क्षेत्रफल में क्या अंतर है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">49 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">98 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">140 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">196 cm²</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A cone has base radius 6 cm and slant height 10 cm. If a conical frustum is cut from it, the top radius is 3 cm and height is proportionally scaled. Find the height of the frustum.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक शंकु के आधार की त्रिज्या 6 सेमी और तिर्यक ऊँचाई 10 सेमी है। यदि उसमें से एक शंक्वाकार शिखर काटा जाए, तो शीर्ष त्रिज्या 3 सेमी है और ऊँचाई समानुपातिक रूप से मापी गई है। शिखर की ऊँचाई ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8 cm</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">10 cm</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A jar is 3/5 full with a solution. After adding 3.2 liters, it becomes 7/8 full. What is the total capacity of the jar?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक जार 3/5 घोल से भरा है। 3.2 लीटर घोल डालने के बाद यह 7/8 भर जाता है। जार की कुल क्षमता क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">24 L</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">20.5 L</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">11.64 L</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">18.28 L</span></p>"
+      ],
+      "a": 2,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">An item is sold at a 20% profit. If the cost price and selling price are increased by Rs. 50 and Rs. 30 respectively, the profit percent becomes 10%. What is the original cost price?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक वस्तु 20% लाभ पर बेची जाती है। यदि लागत मूल्य और विक्रय मूल्य में क्रमशः 50 रुपये और 30 रुपये की वृद्धि कर दी जाए, तो लाभ प्रतिशत 10% हो जाता है। मूल लागत मूल्य क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 100</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 450</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 600</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Rs. 250</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If a line intersects the x-axis at (6, 0) and the y-axis at (0, −4), what is the slope of the line?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">अगर एक रेखा x-अक्ष को (6, 0) पर और y-अक्ष को (0, −4) पर प्रतिच्छेद करती है, तो उस रेखा का ढलान क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1/2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1/3</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3/2</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2/3</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">Find the diameter of a circle, if the length of the tangent is 9 m and 12 m is the distance between the center of the circle to the external point. Given √7 = 2.64 (approx).</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक वृत्त का व्यास ज्ञात कीजिए, यदि स्पर्श रेखा की लंबाई 9 मीटर है और वृत्त के केंद्र से बाह्य बिंदु के बीच की दूरी 12 मीटर है। दिया गया है </span><span style=\"font-family:'Cambria Math'\">√</span><span style=\"font-family:'Nirmala UI'\">7 = 2.64 (लगभग)।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.64 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.28 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">7.92 m</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">15.84 m</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A small container for chemicals has dimensions 20 cm × 20 cm × 15 cm. If it is filled to 10% of its volume, what is the amount of liquid (in liters) inside?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">रसायनों के लिए एक छोटे कंटेनर का आयाम 20 सेमी × 20 सेमी × 15 सेमी है। यदि इसे इसके आयतन के 10% तक भरा जाए, तो इसके अंदर तरल की मात्रा (लीटर में) क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">0.06 liters</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">0.6 liters</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6 liters</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">60 liters</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The height of a right circular cone is trisected by two planes parallel to its base. What is the ratio of the three volumes (top to bottom)?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक समवृत्तीय शंकु की ऊँचाई उसके आधार के समानांतर दो तलों द्वारा समत्रिभाजित की गई है। तीनों आयतनों (ऊपर से नीचे) का अनुपात क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 7 : 19</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 8 : 28</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1 : 3 : 10</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">None of the above</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A quadrilateral is divided into two triangles by a diagonal of 13 cm. If both triangles have height 12 cm, find total area.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक चतुर्भुज को 13 सेमी विकर्ण द्वारा दो त्रिभुजों में विभाजित किया गया है। यदि दोनों त्रिभुजों की ऊँचाई 12 सेमी है, तो कुल क्षेत्रफल ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">156 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">312 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">240 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">280 cm²</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">In triangle ABC, the coordinates of the centroid are (4, 3). If the coordinates of two vertices are A(2, 1) and B(8, 4), find the coordinates of the third vertex C.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">त्रिभुज ABC में केंद्रक के निर्देशांक (4, 3) हैं। यदि दो शीर्षों A(2, 1) और B(8, 4) के निर्देशांक हैं, तो तीसरे शीर्ष C के निर्देशांक ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(2,4)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(6,4)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(4,6)</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">(2,3)</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The height of a cone is 30 cm. It is cut by a plane at height 10 cm from the base. What percent of the cone’s volume lies above the cut?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक शंकु की ऊँचाई 30 सेमी है। इसे आधार से 10 सेमी ऊँचाई पर एक समतल से काटा गया है। शंकु के आयतन का कितना प्रतिशत भाग कटे हुए भाग के ऊपर स्थित है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">11.10%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">29.60%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">18.50%</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">22.20%</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The sides of a trapezium are 8 cm, 10 cm, 12 cm and 14 cm, with 12 cm and 8 cm being the parallel sides. If height = 6 cm, find area.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक समलम्ब चतुर्भुज की भुजाएँ 8 सेमी, 10 सेमी, 12 सेमी और 14 सेमी हैं, जिनमें 12 सेमी और 8 सेमी समांतर भुजाएँ हैं। यदि ऊँचाई = 6 सेमी है, तो क्षेत्रफल ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">60 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">66 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">72 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">80 cm²</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A trapezium (bases 8 cm &amp; 12 cm, height 6 cm) is attached to a rectangle (8 cm × 10 cm) to form a wood panel. What is the total area?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक समलम्ब चतुर्भुज (आधार 8 सेमी और 12 सेमी, ऊँचाई 6 सेमी) को एक आयत (8 सेमी × 10 सेमी) से जोड़कर लकड़ी का पैनल बनाया गया है। इसका कुल क्षेत्रफल कितना है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">96 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">108 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">120 cm²</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">140 cm²</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the equation of a line is 3x − 5y = 15, what is the equation of the line perpendicular to that passes through the point (3, 2)?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">अगर किसी रेखा का समीकरण 3x − 5y = 15 है, तो उस रेखा के लम्बवत रेखा का समीकरण क्या होगा जो बिंदु (3, 2) से होकर गुजरती है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">y = (5/3)x + 7</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">y = −(5/3)x + 7</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">y = (5/3)x − 7</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">y = −(3/5)x + 7</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If tan²θ + cot²θ = 50, then find sec⁴θ + cosec⁴θ.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">यदि tan²</span><span>θ</span><span style=\"font-family:'Nirmala UI'\"> + cot²</span><span>θ</span><span style=\"font-family:'Nirmala UI'\"> = 50 हो, तो sec</span><span style=\"font-family:'Cambria Math'\">⁴θ</span><span style=\"font-family:'Nirmala UI'\"> + cosec</span><span style=\"font-family:'Cambria Math'\">⁴θ</span><span style=\"font-family:'Nirmala UI'\"> ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2600</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2800</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3200</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">3000</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A hollow spherical shell is made of a metal with a density of 6 g/cm³. If the internal and external radii of the shell are 8 cm and 9 cm respectively, find the weight of the shell in kilograms.</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक खोखला गोलाकार खोल 6 ग्राम/घन सेमी घनत्व वाली धातु से बना है। यदि खोल की आंतरिक और बाह्य त्रिज्याएँ क्रमशः 8 सेमी और 9 सेमी हैं, तो खोल का भार किलोग्राम में ज्ञात कीजिए।</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">7.456 kg</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.656 kg</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6.456 kg</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">5.456 kg</span></p>"
+      ],
+      "a": 3,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">The total number of edges in a rectangular parallelepiped is:</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक आयताकार समांतर चतुर्भुज में भुजाओं की कुल संख्या है:</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">12</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">8</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">6</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A brass hemispherical bowl has an inner diameter of 10.5 cm. If the cost of tin-plating the inner surface is ₹15 per 100 cm², what will be the total cost (in whole number) of plating the inside of the bowl?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक पीतल के अर्धगोलाकार कटोरे का आंतरिक व्यास 10.5 सेंटीमीटर है। यदि आंतरिक सतह पर टिन-प्लेटिंग की लागत ₹15 प्रति 100 वर्ग सेंटीमीटर है, तो कटोरे के अंदर की सतह पर प्लेटिंग की कुल लागत (पूर्णांक में) कितनी होगी?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹26</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹34</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹28</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">₹44</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">A sphere is inscribed in a cube. If the total surface area of the cube is 600 cm², what is the volume of the sphere?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">एक घन के अंदर एक गोला अंकित है। यदि घन का कुल पृष्ठीय क्षेत्रफल 600 सेमी² है, तो गोले का आयतन क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">500π/3 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">100π cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">1000π/3 cm³</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">250π cm³</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">In a team of 75 employees, the average monthly sales per employee is ₹1.8 lakh. If 30 junior employees average ₹1.2 lakh each, what is the average monthly sales figure (in lakh) for the senior employees?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">75 कर्मचारियों की एक टीम में, प्रति कर्मचारी औसत मासिक बिक्री ₹1.8 लाख है। यदि 30 जूनियर कर्मचारियों की औसत बिक्री ₹1.2 लाख प्रति कर्मचारी है, तो वरिष्ठ कर्मचारियों की औसत मासिक बिक्री (लाख में) कितनी है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">4.2 lakh</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.2 lakh</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.8 lakh</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">2.7 lakh</span></p>"
+      ],
+      "a": 1,
+      "s_hi": ""
+    },
+    {
+      "q_hi": "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">If the square root of a number is subtracted from the number, the result is 272. What is the number?</span></p><p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Nirmala UI'\">यदि किसी संख्या का वर्गमूल उस संख्या से घटाया जाए, तो परिणाम 272 आता है। वह संख्या क्या है?</span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">289</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">324</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">361</span></p>",
+        "<p style=\"margin-top:0pt;margin-bottom:8pt;line-height:108%;font-size:12pt\"><span style=\"font-family:'Cambria Math'\">400</span></p>"
+      ],
+      "a": 0,
+      "s_hi": ""
     }
   ]
 }
