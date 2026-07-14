@@ -114,15 +114,15 @@
     "s": "Dekh bhai, ulta chalte hain. Jo scholarship HOLD nahi karte unka % pucha hai. Boys me $100 - 65 = 35\\%$ honge, Girls me $100 - 81 = 19\\%$ hongi. Ab JSM (Weighted Average) laga de. $(7 \\times 35 + 5 \\times 19) / 12 = (245 + 95) / 12 = 340 / 12 = 85 / 3$. Isko mixed fraction me likhenge toh $28 \\frac{1}{3}\\%$ aayega. direct approach se paper nikalta hai!"
   },
   {
-    "q": "The present population of a village is 45,840. If the number of males increases by $25\\%$ and that of females increases by $15\\%$, then the population of the village will become 55,284. What is the difference between the number of males and that of females in the present population of the village?",
+    "q": "A metallurgist mixes two alloys, A and B, to make a total of 80 kg of a new mixture. Alloy A contains 15% copper, and Alloy B contains 25% copper. If the final mixture contains a total of 15 kg of copper, what is the difference in the weights of Alloy A and Alloy B used?",
     "o": [
-      "1500",
-      "1600",
-      "1800",
-      "1700"
+      "10 kg",
+      "20 kg",
+      "30 kg",
+      "40 kg"
     ],
-    "a": 0,
-    "s": "Dekh bhai TestRipper, ye data SSC ke ek flawed paper se hai! Concept JSM ka hai: Total increase = $55284 - 45840 = 9444$. Agar sab $15\\%$ se badhte toh $45840 \\times 15\\% = 6876$ ka increase aata. Jo extra increase ($9444 - 6876 = 2568$) aaya, wo Males ke extra $10\\%$ ki wajah se aaya! Toh $10\\%$ of Males = 2568 $\\implies$ Males = 25680. Females = $45840 - 25680 = 20160$. Exact diff = 5520 aayega, jo options me hai hi nahi! Aise question ko exam me chhodna ya koi ek mark karke challenge karna hota hai. Yahan Option elimination irrelevant hai."
+    "a": 1,
+    "s": "<b>Core Conceptual Tool: 3. JSM (Junior Satisfaction Method) / Deviation</b><br><br>Dekh bhai, mixture dekh ke Alligation yaad aata hai, lekin JSM jyada tez hai kyunki values total ki di hain ratio ki nahi!<br><br><b>The 'Pen-Free' Observation First:</b> Minimum copper 15\\% toh dono me hai na? Toh 80kg ka 15\\% nikal aur actual se compare maar.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Base copper = $15\\%$<br>Assumed copper = $80 \\times 15\\% = 12$ kg<br>Actual copper = $15$ kg<br>Extra copper = $15 - 12 = 3$ kg<br>Extra rate of Alloy B = $25\\% - 15\\% = 10\\%$<br>$10\\%$ of B = $3 \\Rightarrow B = 30$ kg<br>A = $80 - 30 = 50$ kg<br>Difference = $50 - 30 = 20$ kg"
   },
   {
     "q": "In a village there are two candidate in an election . If $20\\%$ of the total voters do not cast their vote and 1792 votes are invaild than the winner candidate got $42\\%$ of total votes and won by 3584 votes . If there is a city Lucknow and the number of voters in Lucknow is 3 times the number of total voters of the village and in city election 4400 votes are invaild and the winner candidate out of the two candidate got $58\\%$ of the total vaild votes than what is the difference between the number of vaild votes got by the winner and the looser candidate?",

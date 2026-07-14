@@ -70,17 +70,6 @@
     "s": "Dekh bhai, Volume 3D hoti hai, isliye radius ya diameter ka change cube ($r^3$) me effect karta hai. Agar diameter 50% (yani $\\frac{1}{2}$) kam hua hai, toh wo 2 se 1 ban gaya. Volume $2^3$ se $1^3$ banega, yani 8 se 1. Decrease kitna hua? 7 ka decrease 8 par. $\\frac{7}{8}$ ki direct percentage value 87.5% hoti hai. Secondon me uda!"
   },
   {
-    "q": "Which of the following numbers is NOT a perfect square?",
-    "o": [
-      "185",
-      "169",
-      "144",
-      "121"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, free ke marks hain ye! 121 = $11^2$, 144 = $12^2$, aur 169 = $13^2$. Lekin 185 kisi integer ka square nahi hota. Options elimination is ultimate!"
-  },
-  {
     "q": "In an election, there were four candidates and 95% of voters cast their votes. One candidate got 25% of the votes while the other three shared the remaining votes in the ratio of 6:7:2. The difference of votes secured by the candidate standing 3rd to the candidate standing 4th is equal to 69198. Find the votes secured by the winning candidate.",
     "o": [
       "138396",
@@ -167,17 +156,6 @@
     ],
     "a": 3,
     "s": "Dekh bhai, statement by statement crack kar! 120% number 540 ke barabar hai, yani $1.2N = 540 \\implies N = 450$. Pehli statement keh rahi hai ki Number ka kuch hissa + 180 mila kar wapis Number ban jata hai. Matlab jo hissa bacha, wo exactly 180 hai. Pura number 100% hota hai. Agar (A+10)% me 180 add ho raha hai, matlab 180 us number ka $(100 - (A+10))\\%$ hai. Toh $450 - 180 = 270$. Number ka (A+10)% part 270 hona chahiye. $\\frac{270}{450} = \\frac{3}{5} = 60\\%$. Toh $A+10 = 60 \\implies A = 50$. Pucha hai (A-26)% of N, yani 24% of 450. Result aaya 108. Dimag ko tez daudao!"
-  },
-  {
-    "q": "The area of a rectangle increases by 8 m2 if its length is increased by 5 m and breadth is decreased by 7 m. If the length is decreased by 5 m and breadth is increased by 8 m, then its area increases by 33 m2. What is the perimeter of the original rectangle (in m)?",
-    "o": [
-      "575",
-      "576",
-      "573",
-      "574"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, linear equations fast solve karni hain. Original Area $LB$ hai. Pehli condition: $(L+5)(B-7) = LB + 8 \\implies -7L + 5B = 43$. Dusri condition: $(L-5)(B+8) = LB + 33 \\implies 8L - 5B = 73$. Dono equations ko seedha add kar de! $5B$ cut jayega. Bacha $L = 116$. Ab L ki value kisi me bhi daal, $B = 171$ aayega. Perimeter pucha hai: $2(L+B) = 2(116+171) = 2(287) = 574$. Unit digit check kar: $2(6+1)$ me last me 4 aayega, jo ki ek hi option me hai!"
   },
   {
     "q": "In an election between two candidates, y% of the voters did not vote. 10% of the votes cast were declared invalid, while all the valid votes were cast in favour of either of the two candidates. The candidate who got 59.375% of the valid votes cast was declared elected by 2484 votes. If the number of people eligible to vote in that election was 16,000, what is the value of y?",
