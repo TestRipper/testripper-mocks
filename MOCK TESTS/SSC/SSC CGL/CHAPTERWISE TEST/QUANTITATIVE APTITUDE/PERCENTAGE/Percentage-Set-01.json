@@ -279,6 +279,4 @@
     "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, ratio pakad. Final / Initial = $\\frac{44850}{30000} = 1.495$. Matlab lagbhag $50\\%$ ka growth hua hai successive badha ke. Equation hai: $(1 + \\frac{2k}{100})(1 + \\frac{k}{100}) = 1.495$. Hit and trial best hai. Agar $k=10$ manoge, toh $+20\\%$ aur $+10\\%$ ka net change $32\\%$ hota hai (nahi chalega). $k=15$ lo, toh $+30\\%$ aur $+15\\%$ ka net change: $30 + 15 + 4.5 = 49.5\\%$. Oh, ye perfect baith gaya! $k=15$. Ab pucha kya hai? Decrease by $30\\%$ aur $15\\%$. Successive decrease laga: 30000 pehle $-30\\%$ hua toh 21000 bacha. Ab uspe $-15\\%$ laga, toh $21000 \\times 0.85 = 17850$. Ninja trick with hit and trial wins the race!<br><br><b>Method 1 (Smart Assumption):</b><br>Step 1: Net increase % = $\\frac{14850}{30000} \\times 100 = 49.5\\%$<br>Step 2: Formula $2k + k + \\frac{2k^2}{100} = 49.5$. Clearly $k=15$ fits this ($30 + 15 + 4.5 = 49.5$).<br>Step 3: Required is successive decrease of $30\\%$ and $15\\%$.<br>$30000 \\times 0.70 \\times 0.85$<br>$= 21000 \\times 0.85 = 17850$.</div>"
   }
 ]
-
-  
 }
