@@ -1,0 +1,559 @@
+{
+  "quizTitle": "Number-System-PYQs Set-20",
+  "quizTime": "15",
+  "totalMarks": "50",
+  "questions": [
+    {
+      "q": "<p>8. If the number 583p2310q2 is divisible by 11, then what is the value of p×<span style=\"font-family: Times New Roman;\">q , where p &gt; q?</span></p>\n<p><span style=\"font-family: Times New Roman;\">SSC CHSL 13/4/2021 , Evening</span></p>",
+      "o": [
+        "<p>4</p>",
+        "<p>2</p>",
+        "<p>0</p>",
+        "<p>6</p>"
+      ],
+      "a": 2,
+      "s": "<p>8.(c)</p>\n<p><span style=\"font-family: Times New Roman;\">11 divisibility rule: if the difference between the sum of the digits at the odd and even places equals 0 or divisible by 11, then the number is divisible by 11.</span></p>\n<p><span style=\"font-family: Times New Roman;\">Sum of odd digit number = 5 + 3 +2+1+q = 11 + q</span></p>\n<p><span style=\"font-family: Times New Roman;\">Sum of even digit number = 8+p +3+0+2 = 13 + p</span></p>\n<p><span style=\"font-family: Times New Roman;\">13 + p - (11 + q) = 0 or multiple of 11</span></p>\n<p><span style=\"font-family: Times New Roman;\">2 + p - q = 11 (multiple of 11 not taken because p&gt; q)</span></p>\n<p><span style=\"font-family: Times New Roman;\"> p - q = 9</span></p>\n<p><span style=\"font-family: Times New Roman;\">Only possible way is p = 9 and q = 0</span></p>\n<p><span style=\"font-family: Times New Roman;\">p ×q = 0</span></p>"
+    },
+    {
+      "q": "<p>4.<span style=\"font-family: Cambria Math;\"> If the 11-digit number 79x6402087y is divisible by 72, then for the smallest value of x, what is the value of (x + 2y)?</span></p>",
+      "o": [
+        "<p>4</p>",
+        "<p>9</p>",
+        "<p>2</p>",
+        "<p>6</p>"
+      ],
+      "a": 0,
+      "s": "<p>4.(a) <span style=\"font-family: Cambria Math;\">72 = 9</span><span style=\"font-family: Cambria Math;\">8 × 8,</span></p>\n<p><span style=\"font-family: Cambria Math;\">For 79x6402087y to be divisible by 8, last 3 digits i.e. 87y must be divisible by 8.</span></p>\n<p><span style=\"font-family: Cambria Math;\">For this only y = 2 is possible.</span></p>\n<p><span style=\"font-family: Cambria Math;\">Now, digital sum of the number = 7+9+x+6+4+0+2+0+8+7+2 = 45 + x</span></p>\n<p><span style=\"font-family: Cambria Math;\">For 79x6402087y to be divisible by 9, 45 + x should be a multiple of 9,</span></p>\n<p><span style=\"font-family: Cambria Math;\">x = 0 or 9, for minimum value x = 0,</span></p>"
+    },
+    {
+      "q": "<style> @font-face { font-family: 'Mangal';src: url('https://appxcontent.kaxa.in/fonts/MANGAL.ttf') format('truetype');} </style><style> img, svg {vertical-align: middle; max-width:100%; } *{overflow-wrap: break-word;}  </style> <span> </span><span style=\"font-weight:bold\"> </span><span>Find the remainder when 9</span><span style=\"line-height:115%;font-size:7.33pt;vertical-align:super\">20</span><span> + 2 is divided by 4.</span><p style=\"margin-top:0pt;margin-bottom:10pt\"><span style=\"color:#800000\">9</span><span style=\"line-height:115%;font-size:7.33pt;vertical-align:super;color:#800000\">20</span><span style=\"color:#800000\"> + 2 </span><span style=\"color:#800000;font-family:'Mangal'\">को </span><span style=\"color:#800000\">4 </span><span style=\"color:#800000;font-family:'Mangal'\">से विभाजित करने पर शेषफल क्या आएगा</span><span style=\"color:#800000\">?</span></p>",
+      "o": [
+        "<span style=\"color:#4224e9\"> 3</span>",
+        "<span style=\"color:#4224e9\"> 1</span>",
+        "<span style=\"color:#4224e9\"> 0</span>",
+        "<span style=\"color:#4224e9\"> 2</span>"
+      ],
+      "a": 0,
+      "s": "<span> </span><img alt=\"\" height=\"205\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750330842219_image055.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750330842219_image055.png\" style=\"max-width:100%;\" width=\"307\"/><p></p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>How many values does the integer N take if √N lies between 12 and 18?</p></span><span class=\"hqt\" style=\"display:none\"><p>यदि √N, 12 और 18 के बीच स्थित है, तो पूर्णांक N के कितने मान हो सकते हैं?</p></span>",
+      "o": [
+        "<span class=\"eqt\">181</span><span class=\"hqt\" style=\"display:none\">181</span>",
+        "<span class=\"eqt\">180</span><span class=\"hqt\" style=\"display:none\">180</span>",
+        "<span class=\"eqt\">179</span><span class=\"hqt\" style=\"display:none\">179</span>",
+        "<span class=\"eqt\">178</span><span class=\"hqt\" style=\"display:none\">178</span>"
+      ],
+      "a": 2,
+      "s": "<p>Number of values that N can take = [18<sup>2</sup>  -  12<sup>2</sup>]  -  1 = 179</p>"
+    },
+    {
+      "q": "<p>12. <span style=\"font-family: Cambria Math;\">Find the value of k such that the equations,  <span style=\"font-weight: 400;\">2x + 3y + 11= 0 and 6x + ky + 33 = 0  </span></span><span style=\"font-family: Cambria Math;\">and </span><span style=\"font-family: Cambria Math;\">represent coincident lines. </span></p>",
+      "o": [
+        "<p>5</p>",
+        "<p>12</p>",
+        "<p>9</p>",
+        "<p>6</p>"
+      ],
+      "a": 2,
+      "s": "<p>12.(c)  <span style=\"font-family: Cambria Math;\">For coincident lines </span><span style=\"font-family: Cambria Math;\"> = <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub></mfrac><mo> </mo><mo>=</mo><mo> </mo><mfrac><msub><mi>b</mi><mn>1</mn></msub><mrow><mi>b</mi><msub><mrow><mn>2</mn><mo> </mo></mrow><mrow></mrow></msub></mrow></mfrac><mo>=</mo><mo> </mo><mfrac><msub><mi>c</mi><mn>1</mn></msub><msub><mi>c</mi><mn>2</mn></msub></mfrac></math> </span><span style=\"font-family: Cambria Math;\"> </span><br/>⇒<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo> </mo><mfrac><mn>2</mn><mn>6</mn></mfrac><mo>=</mo><mfrac><mn>3</mn><mi>k</mi></mfrac></math> =<span style=\"font-family: Cambria Math;\"> k = 9</span></p>"
+    },
+    {
+      "q": "<p><span style=\"font-family: Cambria Math;\">13. </span><span style=\"font-family: Cambria Math;\">What is the remainder when <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mn>3</mn><mn>8</mn></msup></math></span><span style=\"font-family: Cambria Math;\"> is divided by 7?</span></p>",
+      "o": [
+        "<p>5</p>",
+        "<p>4</p>",
+        "<p>6</p>",
+        "<p>2</p>"
+      ],
+      "a": 3,
+      "s": "<p><span style=\"font-family: Cambria Math;\">13.(</span><span style=\"font-family: Cambria Math;\">d)</span></p>\n<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><msup><mn>3</mn><mn>8</mn></msup><mn>7</mn></mfrac><mo> </mo><mo>=</mo><mo> </mo><mfrac><mrow><msup><mn>3</mn><mn>3</mn></msup><mo>×</mo><msup><mn>3</mn><mn>3</mn></msup><mo>×</mo><msup><mn>3</mn><mn>2</mn></msup></mrow><mn>7</mn></mfrac><mo> </mo><mo> </mo><mo>=</mo><mfrac><mrow><mo> </mo><mn>27</mn><mo>×</mo><mn>27</mn><mo>×</mo><mn>9</mn></mrow><mn>7</mn></mfrac><mo> </mo><mo> </mo><mspace linebreak=\"newline\"></mspace><mo>=</mo><mo> </mo><mi>R</mi><mi>e</mi><mi>m</mi><mo>.</mo><mfrac><mrow><mo>(</mo><mo>-</mo><mn>1</mn><mo>)</mo><mo>×</mo><mo>(</mo><mo>-</mo><mn>1</mn><mo>)</mo><mo>×</mo><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mn>7</mn></mfrac><mspace linebreak=\"newline\"></mspace><mo>=</mo><mo> </mo><mi>R</mi><mi>e</mi><mi>m</mi><mo>.</mo><mo> </mo><mfenced><mn>2</mn></mfenced></math></p>"
+    },
+    {
+      "q": "<p>5.<span style=\"font-family: Cambria Math;\"> How many times is digit 3 passed in counting from 301 to 399?</span></p>",
+      "o": [
+        "<p>121</p>",
+        "<p>119</p>",
+        "<p>11</p>",
+        "<p>21</p>"
+      ],
+      "a": 1,
+      "s": "<p>5.(b)</p>\n<p><span style=\"font-family: Cambria Math;\">301 to 399  ⇒ </span><span style=\"font-family: Cambria Math;\">in first place = 99 times</span></p>\n<p><span style=\"font-family: Cambria Math;\">330 to 339 </span><span style=\"font-family: Cambria Math;\"> in ⇒ 2nd place = 10 times</span></p>\n<p><span style=\"font-family: Cambria Math;\">In 3rd place = 10 times </span></p>\n<p><span style=\"font-family: Cambria Math;\">Total = 99 + 10 + 10 = 119</span></p>"
+    },
+    {
+      "q": "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} @font-face { font-family: 'Nirmala UI'; src: url('https://appx-content-v2.classx.co.in/fonts/Nirmala.ttf') format('truetype');} </style><style> img, svg {vertical-align: middle; max-width:100%; } *{overflow-wrap: break-word;}  </style> <span style=\"font-family:'Cambria Math'\"> Find the last 3 digits of </span><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Nirmala UI'\">अंतिम 3 अंक ज्ञात कीजिए</span></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">1001 * 1003 * 999 * 1002 * 996 * 998 </span><span style=\"width:1.95pt;display:inline-block;font-family:'Cambria Math'\"> </span></p>",
+      "o": [
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 952</span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 956</span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 953</span><span style=\"width:1.32pt;display:inline-block;font-family:'Cambria Math'\"> </span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 951</span>"
+      ],
+      "a": 0,
+      "s": "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> </span><span style=\"font-weight:bold;font-family:'Cambria Math'\">Video Solution available in detailed maths course.</span><p style=\"margin-top:0pt;margin-bottom:8pt\"><img alt=\"\" height=\"221\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419188259_image052.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419188259_image052.png\" style=\"max-width:100%;\" width=\"296\"/></p><p></p>"
+    },
+    {
+      "q": "<p>9. <span style=\"font-family: Cambria Math;\">When m is divided by 7, the remainder is 5. When 3m is divided by 7, the remainder is:</span></p>",
+      "o": [
+        "<p>3</p>",
+        "<p>2</p>",
+        "<p>1</p>",
+        "<p>0</p>"
+      ],
+      "a": 2,
+      "s": "<p>9.(c)</p>\n<p><span style=\"font-family: Cambria Math;\">According to question,</span></p>\n<p><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>m</mi><mn>7</mn></mfrac><mo>→</mo></math>Remainder = 5</span></p>\n<p><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>3</mn><mi>m</mi></mrow><mn>7</mn></mfrac><mo>→</mo></math>Remainder <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mo>(</mo><mn>5</mn><mo>×</mo><mn>3</mn><mo>)</mo></mrow><mn>7</mn></mfrac></math> </span><span style=\"font-family: Cambria Math;\">= Remainder 1</span></p>"
+    },
+    {
+      "q": "<p>10. When <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mn>2</mn><mn>256</mn></msup></math> is divided by 17, the remainder would be:</p>",
+      "o": [
+        "<p>2</p>",
+        "<p>0</p>",
+        "<p>1</p>",
+        "<p>5</p>"
+      ],
+      "a": 2,
+      "s": "<p>10.(c) <br/>Rem(<math display=\"inline\"><mfrac><mrow><msup><mrow><mn>2</mn></mrow><mrow><mn>256</mn></mrow></msup></mrow><mrow><mn>17</mn></mrow></mfrac></math>) = Rem<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>(</mo><mfrac><msup><mrow><mo>(</mo><msup><mn>2</mn><mn>4</mn></msup><mo>)</mo></mrow><mn>64</mn></msup><mn>17</mn></mfrac><mo>)</mo><mo>=</mo><mfrac><msup><mrow><mo>(</mo><mo>-</mo><mn>1</mn><mo>)</mo></mrow><mn>64</mn></msup><mn>17</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>17</mn></mfrac><mo>=</mo><mn>1</mn></math></p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>The HCF of two numbers is 30 and their sum is 300. Find possible number of pairs.</p></span><span class=\"hqt\" style=\"display:none\"><p>दो संख्याओं का HCF 30 है और उनका योग 300 है। संभावित युग्मों की संख्या ज्ञात कीजिए।</p></span>",
+      "o": [
+        "<span class=\"eqt\">1</span><span class=\"hqt\" style=\"display:none\">1</span>",
+        "<span class=\"eqt\">0</span><span class=\"hqt\" style=\"display:none\">0</span>",
+        "<span class=\"eqt\">2</span><span class=\"hqt\" style=\"display:none\">2</span>",
+        "<span class=\"eqt\">6</span><span class=\"hqt\" style=\"display:none\">6</span>"
+      ],
+      "a": 2,
+      "s": "<p>Let the numbers be 30u and 30v, where u and v are co-primes.</p><p>ATQ,</p><p>30u + 30v = 300</p><p>30 (u + v) = 300</p><p>u + v = 10</p><p>Thus,</p><p>(u=1, v=9), (u=3, v=7)</p><p>Possible number of pairs = 2</p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p><div> If L.C.M of 32 and 12 is L and H.C.F of 15 and 36 is H, then find <div style=\"display: inline-block;position: relative;vertical-align: middle;\"><span style=\"text-align:center;display: block; padding: 0;\">L</span><span style=\"display: block; padding: 0;position: absolute; top: 0em; display: none;letter-spacing: -0.1em;\">_________</span><span style=\"display: block; padding: 0;border-top: thin solid black; text-align:center\">2</span></div> + <div style=\"display: inline-block;position: relative;vertical-align: middle;\"><span style=\"text-align:center;display: block; padding: 0;\">H</span><span style=\"display: block; padding: 0;position: absolute; top: 0em; display: none;letter-spacing: -0.1em;\">_________</span><span style=\"display: block; padding: 0;border-top: thin solid black; text-align:center\">3</span></div> . </div></p><p></p></span><span class=\"hqt\" style=\"display:none\"><p>यदि 32 और 12 का लघुत्तम समापवर्त्य L है तथा 15 और 36 का महत्तम समापवर्त्तक H है, तो L/2 + H/3 ज्ञात कीजिए।</p></span>",
+      "o": [
+        "<span class=\"eqt\">28</span><span class=\"hqt\" style=\"display:none\">28</span>",
+        "<span class=\"eqt\">99</span><span class=\"hqt\" style=\"display:none\">99</span>",
+        "<span class=\"eqt\">49</span><span class=\"hqt\" style=\"display:none\">49</span>",
+        "<span class=\"eqt\">98</span><span class=\"hqt\" style=\"display:none\">98</span>"
+      ],
+      "a": 2,
+      "s": "<p>According to the Question,</p><p>LCM of 32 and 12 = L</p><p>32 = 2x2x2x2x2</p><p>12 = 2x2x3</p><p>Taking common factors only once we have LCM= 2x2x2x2x2x3 = 96</p><p>L/2 = 96/2 = 48</p><p>HCF of 15 and 36 = H</p><p>15 = 3x5</p><p>36 = 2x2x3x3</p><p>Taking only common factors we have HCF = 3</p><p>H/3 = 3/3 = 1</p><p>Now, L/2 + H/3 = 48+1 = 49</p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>The last digit in the expansion of 17</p></span><span><sup>256</sup></span><span>  is – </span><span class=\"hqt\" style=\"display:none\"><p>17<sup>256</sup> के विस्तार में अंतिम अंक है -</p></span>",
+      "o": [
+        "<span class=\"eqt\">9</span><span class=\"hqt\" style=\"display:none\">9</span>",
+        "<span class=\"eqt\">7</span><span class=\"hqt\" style=\"display:none\">7</span>",
+        "<span class=\"eqt\">3</span><span class=\"hqt\" style=\"display:none\">3</span>",
+        "<span class=\"eqt\">1</span><span class=\"hqt\" style=\"display:none\">1</span>"
+      ],
+      "a": 3,
+      "s": "\"<p> <span> 17</span><span><sup>256</sup> </span><span>= 17</span><span><sup>4 × 64</sup></span></p><p><span>= 17</span><span><sup>4</sup></span></p><p>Last digit = 1</p><p><span>[17</span><span><sup>1</sup></span><span> = 7; 17</span><span><sup>2</sup></span><span> = 9; 17</span><span><sup>3</sup></span><span> = 3; 17</span><span><sup>4</sup></span><span> = 1]</span></p>\""
+    },
+    {
+      "q": "<span class=\"eqt\"><p>If (2x<sup>2</sup> + 5x  -  3) is completely divisible by (x + 3), then find the value of 'a' if (x  -  a) also divides the given equation completely. (a ≠ 3)</p></span><span class=\"hqt\" style=\"display:none\"><p>यदि (2x<sup>2</sup> + 5x - 3), (x + 3) से पूर्णतः विभाज्य है और यदि (x - a) भी दिए गए समीकरण को पूर्ण रूप से विभाजित करता है, तो 'a' का मान ज्ञात कीजिए। (a ≠ 3)</p></span>",
+      "o": [
+        "<span class=\"eqt\">1/2</span><span class=\"hqt\" style=\"display:none\">1/2</span>",
+        "<span class=\"eqt\">2/3</span><span class=\"hqt\" style=\"display:none\">2/3</span>",
+        "<span class=\"eqt\">1/4</span><span class=\"hqt\" style=\"display:none\">1/4</span>",
+        "<span class=\"eqt\">2/5</span><span class=\"hqt\" style=\"display:none\">2/5</span>"
+      ],
+      "a": 0,
+      "s": "<p>Since (x + 3) and (x  -  a) both divides the equation completely.</p><p>So, (x + 3)(x  -  a) = 2x<sup>2</sup> + 5x  -  3</p><p>=&gt; (x<sup>2</sup>  -  ax + 3x  -  3a) = (2x<sup>2</sup> + 5x  -  3)</p><p>=&gt; (x<sup>2</sup> + (3  -  a)x  -  3a) = (2x<sup>2</sup> + 5x  -  3)</p><p>=&gt; 2x<sup>2</sup> + (6  -  2a)x  -  6a = 2x<sup>2</sup> + 5x  -  3</p><p>After comparing-</p><p>=&gt; 6a = 3</p><p>=&gt; a = 3/6 = 1/2</p>"
+    },
+    {
+      "q": "<p>7.<span style=\"font-family: Cambria Math;\"> If the sum of squares of two positive numbers is 2437 and square root of one number is 7. Find the other number.</span></p>",
+      "o": [
+        "<p>6</p>",
+        "<p>16</p>",
+        "<p>12</p>",
+        "<p>8</p>"
+      ],
+      "a": 0,
+      "s": "<p>7.(a) <span style=\"font-family: Cambria Math;\">Let both the numbers be, a and b.</span><br/><span style=\"font-family: Cambria Math;\">ATQ, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></math></span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">= 2437 -----(1)</span><br/><span style=\"font-family: Cambria Math;\">And <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mi>a</mi></msqrt></math> </span><span style=\"font-family: Cambria Math;\"> = 7 -----(2)</span><br/><span style=\"font-family: Cambria Math;\">Squaring both sides we get,</span><br/><span style=\"font-family: Cambria Math;\">a = </span><span style=\"font-family: Cambria Math;\">49</span><br/><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>⇒</mo><msup><mi>a</mi><mn>2</mn></msup></math></span><span style=\"font-family: Cambria Math;\">= 2401</span><br/><span style=\"font-family: Cambria Math;\">From equation (1),</span><br/><span style=\"font-family: Cambria Math;\">2401 + <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>b</mi><mn>2</mn></msup></math> </span><span style=\"font-family: Cambria Math;\">= 2437</span><br/><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>⇒</mo><msup><mi>b</mi><mn>2</mn></msup></math></span><span style=\"font-family: Cambria Math;\">= 2437 - 2401 = 36</span><br/><span style=\"font-family: Cambria Math;\">∴ b = 6</span></p>"
+    },
+    {
+      "q": "<p>4. Which of the following numbers is divisible by 6?</p>\n<p><span style=\"font-family: Times New Roman;\">SSC CHSL 13-10-2020 (Morning)</span></p>",
+      "o": [
+        "<p>23,408</p>",
+        "<p>43,923</p>",
+        "<p>1,00,246</p>",
+        "<p>3,49,722</p>"
+      ],
+      "a": 3,
+      "s": "<p>4.(d) When the number is divisible by 2 and 3 both, then numbers are divisible by 6.</p>\n<p><span style=\"font-family: Times New Roman;\">By 2:- When the last digit is 0 or an even number.</span></p>\n<p><span style=\"font-family: Times New Roman;\">By 3:- Sum of digits is divisible by </span></p>\n<p><span style=\"font-family: Times New Roman;\">Now, </span></p>\n<p><span style=\"font-family: Times New Roman;\">a.23,408 = not divisible by 3.</span></p>\n<p><span style=\"font-family: Times New Roman;\">b.43,923 = not divisible by 2.</span></p>\n<p><span style=\"font-family: Times New Roman;\">c.1,00,246 = not divisible by 3.</span></p>\n<p><span style=\"font-family: Times New Roman;\">d.3,49,722 = divisible by both 2 and 3, so it is divisible by 6.</span></p>"
+    },
+    {
+      "q": "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} @font-face { font-family: 'Nirmala UI'; src: url('https://appx-content-v2.classx.co.in/fonts/Nirmala.ttf') format('truetype');} </style><style> img, svg {vertical-align: middle; max-width:100%; } *{overflow-wrap: break-word;}  </style> <span style=\"font-family:'Cambria Math'\"> Find the remainder </span><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Nirmala UI'\">शेषफल ज्ञात करें</span></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">(i) </span><img alt=\"\" height=\"27\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image010.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image010.png\" style=\"max-width:100%;\" width=\"114\"/></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">(ii) </span><img alt=\"\" height=\"27\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image011.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image011.png\" style=\"max-width:100%;\" width=\"114\"/><span style=\"font-family:'Cambria Math'\"> </span></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">(iii) </span><img alt=\"\" height=\"27\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image012.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image012.png\" style=\"max-width:100%;\" width=\"107\"/></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">(iv) </span><img alt=\"\" height=\"27\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image013.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image013.png\" style=\"max-width:100%;\" width=\"142\"/><span style=\"width:15.85pt;display:inline-block;font-family:'Cambria Math'\"> </span></p>",
+      "o": [
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 0; 16; 13; 1 </span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 0; 16; 13; 0</span><span style=\"width:1.91pt;display:inline-block;font-family:'Cambria Math'\"> </span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 0; 15; 14; 0 </span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 1; 16; 87; 0</span>"
+      ],
+      "a": 1,
+      "s": "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> </span><span style=\"font-weight:bold;font-family:'Cambria Math'\">Video Solution available in detailed maths course.</span><p style=\"margin-top:0pt;margin-bottom:8pt\"><img alt=\"\" height=\"501\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image014.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image014.png\" style=\"max-width:100%;\" width=\"339\"/></p><p></p>"
+    },
+    {
+      "q": "<p><span style=\"font-family: Cambria Math;\">14.</span><span style=\"font-family: Cambria Math;\"> The smallest number that must be subtracted from 2800 so that the obtained number is a perfect square is:</span></p>",
+      "o": [
+        "<p>69</p>",
+        "<p>9</p>",
+        "<p>73</p>",
+        "<p>96</p>"
+      ],
+      "a": 3,
+      "s": "<p><span style=\"font-family: Cambria Math;\">14.(</span><span style=\"font-family: Cambria Math;\">d)</span></p>\n<p><span style=\"font-family: Cambria Math;\">In order to solve this question, </span></p>\n<p><span style=\"font-family: Cambria Math;\">we have to find the closest perfect square to 2800. </span></p>\n<p><span style=\"font-family: Cambria Math;\">so, we </span><span style=\"font-family: Cambria Math;\">have :</span></p>\n<p><span style=\"font-family: Cambria Math;\">51² = 2601</span></p>\n<p><span style=\"font-family: Cambria Math;\">52² = 2704</span></p>\n<p><span style=\"font-family: Cambria Math;\">53² = 2809</span></p>\n<p><span style=\"font-family: Cambria Math;\">Clearly, we can see that 2800 - 2704 = 96. </span></p>\n<p><span style=\"font-family: Cambria Math;\">so, to get the perfect square no, 96 must be subtracted from 2800.</span></p>"
+    },
+    {
+      "q": "<p>7. <span style=\"font-family: Cambria Math;\">The sum of 3-digit numbers </span><span style=\"font-family: Cambria Math;\">abc, bca and cab is always divisible by :</span></p>",
+      "o": [
+        "<p>35</p>",
+        "<p>41</p>",
+        "<p>37</p>",
+        "<p>31</p>"
+      ],
+      "a": 2,
+      "s": "<p>7.(c)</p>\n<p><span style=\"font-family: Cambria Math;\">abc = 100a + 10b + c</span></p>\n<p><span style=\"font-family: Cambria Math;\">bca = 100b + 10c + a</span></p>\n<p><span style=\"font-family: Cambria Math;\">cab = 100c + 10a + b</span></p>\n<p><span style=\"font-family: Cambria Math;\">abc + bca + cab = 100(a + b + c) + 10(a + b + c) + (a + b + c)</span></p>\n<p><span style=\"font-family: Cambria Math;\">abc + bca + cab = 111(a + b + c)</span></p>\n<p><span style=\"font-family: Cambria Math;\">abc + bca + cab = </span><span style=\"font-family: Cambria Math;\"><strong>37</strong> × </span><span style=\"font-family: Cambria Math;\">3(a + b + c)</span></p>\n<p><strong><span style=\"font-family: Cambria Math;\">Tricky method:</span></strong></p>\n<p><span style=\"font-family: Cambria Math;\">Put a = b = c = 1</span></p>\n<p><span style=\"font-family: Cambria Math;\">abc + bca + cab = 333 = 3 × </span><span style=\"font-family: Cambria Math;\">3 ×<strong> </strong></span><strong><span style=\"font-family: Cambria Math;\">37</span></strong></p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>What is the number of trailing zeros in 308!?</p></span><span class=\"hqt\" style=\"display:none\"><p>308 में अंतिम शून्यों की संख्या क्या है?</p></span>",
+      "o": [
+        "<span class=\"eqt\">80</span><span class=\"hqt\" style=\"display:none\">80</span>",
+        "<span class=\"eqt\">68</span><span class=\"hqt\" style=\"display:none\">68</span>",
+        "<span class=\"eqt\">75</span><span class=\"hqt\" style=\"display:none\">75</span>",
+        "<span class=\"eqt\">92</span><span class=\"hqt\" style=\"display:none\">92</span>"
+      ],
+      "a": 2,
+      "s": "<p>Number of zeroes = number of pairs of 2 * 5</p><p>Quotient of 308/5 = 61</p><p>Quotient of 61/5 = 12</p><p>Quotient of 12/5 = 2</p><p>Total number of zeroes = 61 + 12 + 2 = 75</p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>What is the cube root of the product of all positive multiples of 8 less than 45? </p></span><span class=\"hqt\" style=\"display:none\"><p>45 से कम 8 के सभी धनात्मक गुणजों के गुणनफल का घनमूल क्या है?</p></span>",
+      "o": [
+        "<span class=\"eqt\">64∛15</span><span class=\"hqt\" style=\"display:none\">64∛15</span>",
+        "<span class=\"eqt\">32∛15</span><span class=\"hqt\" style=\"display:none\">32∛15</span>",
+        "<span class=\"eqt\">64∛5</span><span class=\"hqt\" style=\"display:none\">64∛5</span>",
+        "<span class=\"eqt\">16∛15</span><span class=\"hqt\" style=\"display:none\">16∛15</span>"
+      ],
+      "a": 0,
+      "s": "<p>For perfect cube, number of zeroes should be 3, 6, 9 etc.</p><p>(a) 1000000, since it has 6 zeroes, so cube root = 10<sup>3</sup></p><p>(b) 2160000 - 4 zeroes</p><p>(c) 194000 = 194 * 1000 =&gt; 194 is not a perfect cube)</p><p>(d) 12500000  -  5 zeroes</p><p>Hence, option 'a' is correct.</p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>A milk vendor has 75 litres of cow milk, 45 litres of toned milk and 30 litres of full cream milk. These should be placed in different trays such that each tray contains the same quantity of milk and two kinds of milk should not be mixed in a tray. What is the least number of trays required to place all the milk?</p></span><span class=\"hqt\" style=\"display:none\"><p>एक दूध विक्रेता के पास 75 लीटर गाय का दूध, 45 लीटर टोंड दूध और 30 लीटर फुल क्रीम दूध है। इन्हें अलग-अलग ट्रे में इस तरह रखना चाहिए कि प्रत्येक ट्रे में दूध की मात्रा समान हो और एक ट्रे में दो तरह के दूध न मिलें। सभी दूध रखने के लिए कम से कम कितनी ट्रे की आवश्यकता होगी?</p></span>",
+      "o": [
+        "<span class=\"eqt\">25</span><span class=\"hqt\" style=\"display:none\">25</span>",
+        "<span class=\"eqt\">20</span><span class=\"hqt\" style=\"display:none\">20</span>",
+        "<span class=\"eqt\">15</span><span class=\"hqt\" style=\"display:none\">15</span>",
+        "<span class=\"eqt\">10</span><span class=\"hqt\" style=\"display:none\">10</span>"
+      ],
+      "a": 3,
+      "s": "<p>HCF of 75, 45, 30 = 15</p><p>Trays:</p><p>Cow: 75 / 15 = 5</p><p>Toned: 45 / 15 = 3</p><p>Full cream: 30 / 15 = 2</p><p>Total = 5 + 3 + 2 = 10</p><p>Option (d) is the correct answer.</p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>Find the least number which when divided by 10, 12, 15 and 18 leaves 2 as remainder, but when divided by 13 leaves no remainder.</p></span><span class=\"hqt\" style=\"display:none\"><p>वह सबसे छोटी संख्या ज्ञात कीजिए जिसे 10, 12, 15 और 18 से विभाजित करने पर 2 शेष बचे, लेकिन 13 से विभाजित करने पर कोई शेष न बचे।</p></span>",
+      "o": [
+        "<span class=\"eqt\">156</span><span class=\"hqt\" style=\"display:none\">156</span>",
+        "<span class=\"eqt\">182</span><span class=\"hqt\" style=\"display:none\">182</span>",
+        "<span class=\"eqt\">308</span><span class=\"hqt\" style=\"display:none\">308</span>",
+        "<span class=\"eqt\">234</span><span class=\"hqt\" style=\"display:none\">234</span>"
+      ],
+      "a": 1,
+      "s": "<p>Factor of 10 = 2 * 5</p><p>Factor of 12 = 2<sup>2</sup> * 3</p><p>Factor of 15 = 3 * 5</p><p>Factor of 18 = 2 * 3<sup>2</sup></p><p>LCM = 4 * 9 * 5 = 180</p><p>Required number = 180k + 2 (k is an integer)</p><p>When k = 1</p><p>180 * 1 + 2 = 182 (divisible by 13)</p>"
+    },
+    {
+      "q": "<p>5.<span style=\"font-family: Cambria Math;\"> Which of the following numbers is divisible by 7,11 and 13?</span></p>",
+      "o": [
+        "<p>1002001</p>",
+        "<p><span style=\"font-weight: 400;\">1003001</span><span style=\"font-weight: 400;\"><br/></span></p>",
+        "<p><span style=\"font-weight: 400;\">1005001</span><span style=\"font-weight: 400;\"><br/></span></p>",
+        "<p><span style=\"font-weight: 400;\">1004001</span></p>"
+      ],
+      "a": 0,
+      "s": "<p>5.(a)</p>\n<p><span style=\"font-family: Cambria Math;\">LCM of 7, 11 and 13 = 1001</span></p>\n<p><span style=\"font-family: Cambria Math;\">(1001)²= 1002001</span></p>\n<p><span style=\"font-family: Cambria Math;\">So, option (a) is divisible by 7, 11 and 13.</span></p>"
+    },
+    {
+      "q": "<p>3.<span style=\"font-family: Cambria Math;\"> Which type of numbers are NOT co-prime?</span></p>",
+      "o": [
+        "<p>Any two consecutive even numbers</p>",
+        "<p>Any two consecutive odd numbers</p>",
+        "<p>Any two <span style=\"font-family: Cambria Math;\">consecutive numbers</span></p>",
+        "<p>Any two prime numbers</p>"
+      ],
+      "a": 0,
+      "s": "<p><span style=\"font-family: Cambria Math;\">3.(</span><span style=\"font-family: Cambria Math;\">a) </span><span style=\"font-family: Cambria Math;\">Any two consecutive even numbers as 2, 4 is not co-prime numbers</span></p>"
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "<p>8. <span style=\"font-family: Baloo;\">यदि संख्या</span><span style=\"font-family: Times New Roman;\"> 583p2310q2, 11 </span><span style=\"font-family: Baloo;\">से विभाज्य है, तो</span><span style=\"font-family: Times New Roman;\"> p×</span><span style=\"font-family: Times New Roman;\">q </span><span style=\"font-family: Baloo;\">का मान क्या है, </span><span style=\"font-family: Baloo;\">जहां</span><span style=\"font-family: Times New Roman;\"> p&gt;q</span><span style=\"font-family: Times New Roman;\">?</span></p>\n<p><span style=\"font-family: Times New Roman;\">CHSL 13/4/2021 , Evening</span></p>",
+      "o_hi": [
+        "<p>4</p>",
+        "<p>2</p>",
+        "<p>0</p>",
+        "<p>6</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>8 .(c) 11 <span style=\"font-family: Baloo;\">विभाज्यता नियम: यदि विषम और सम स्थानों पर अंकों के योग के बीच का अंतर</span><span style=\"font-family: Times New Roman;\"> 0 </span><span style=\"font-family: Baloo;\">या</span><span style=\"font-family: Times New Roman;\"> 11 </span><span style=\"font-family: Baloo;\">से विभाज्य हो, तो संख्या </span><span style=\"font-family: Times New Roman;\">11 </span><span style=\"font-family: Baloo;\">से विभाज्य होती है।</span></p>\n<p><span style=\"font-family: Baloo;\">विषम अंकों की संख्या का योग =</span><span style=\"font-family: Times New Roman;\"> 5 + 3 +2+1+q = 11 + q</span></p>\n<p><span style=\"font-family: Baloo;\">सम अंकों की संख्या का योग =</span><span style=\"font-family: Times New Roman;\"> 8+p +3+0+2 = 13 + p</span></p>\n<p><span style=\"font-family: Times New Roman;\">13 + p - (11 + q) = 0 </span><span style=\"font-family: Baloo;\">या</span><span style=\"font-family: Times New Roman;\"> 11 </span><span style=\"font-family: Baloo;\">का गुणज</span></p>\n<p><span style=\"font-family: Times New Roman;\">2 + p - q = 11 (11 </span><span style=\"font-family: Baloo;\">का गुणज नहीं लिया गया क्योंकि</span><span style=\"font-family: Times New Roman;\"> p&gt; q)</span></p>\n<p><span style=\"font-family: Times New Roman;\">p - q = 9</span></p>\n<p><span style=\"font-family: Baloo;\">केवल संभव तरीका है</span><span style=\"font-family: Times New Roman;\"> p = 9 </span><span style=\"font-family: Baloo;\">और</span><span style=\"font-family: Times New Roman;\"> q = 0</span></p>\n<p><span style=\"font-family: Times New Roman;\">p × q = 0</span></p>"
+    },
+    {
+      "q_hi": "<p>4.<span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">यदि</span><span style=\"font-family: Cambria Math;\"> 11 </span><span style=\"font-family: Nirmala UI;\">अंकों</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">की</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संख्या</span><span style=\"font-family: Cambria Math;\"> 79x6402087y, 72 </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">विभाज्य</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Nirmala UI;\">तो</span><span style=\"font-family: Cambria Math;\"> x </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">सबसे</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">छोटे</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">मान</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिए</span><span style=\"font-family: Cambria Math;\"> (x + 2y) </span><span style=\"font-family: Nirmala UI;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">मान</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">क्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">होगा</span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>4</p>",
+        "<p>9</p>",
+        "<p>2</p>",
+        "<p>6</p>"
+      ],
+      "a": 0,
+      "s_hi": "<p>4.(a) <span style=\"font-family: Cambria Math;\">72 = 9 × 8,</span></p>\n<p><span style=\"font-family: Cambria Math;\">79x6402087y </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> 8 </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">विभाज्य</span><span style=\"font-family: Cambria Math;\"> करने</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिए</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Nirmala UI;\">अंतिम</span><span style=\"font-family: Cambria Math;\"> 3 </span><span style=\"font-family: Nirmala UI;\">अंक</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">यानी</span><span style=\"font-family: Cambria Math;\"> 87y </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> 8 </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">विभाज्य</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">होना</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">चाहिए</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">और</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">यह</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">केवल</span><span style=\"font-family: Cambria Math;\"> y = 2 </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिए</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संभव</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है।</span></p>\n<p><span style=\"font-family: Nirmala UI;\">अब</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Nirmala UI;\">संख्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">अंकीय</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">योग</span><span style=\"font-family: Cambria Math;\"> =  </span><span style=\"font-family: Cambria Math;\">7 + 9 + x + 6 + 4 + 0 + 2 + 0 + 8 + 7 + 2 = 45 + x</span></p>\n<p><span style=\"font-family: Cambria Math;\">79x6402087y </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> 9 </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">विभाज्य</span><span style=\"font-family: Cambria Math;\"> करने</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिए</span><span style=\"font-family: Cambria Math;\">, 45 + x, 9 </span><span style=\"font-family: Nirmala UI;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">गुणज</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">होना</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">चाहिए</span><span style=\"font-family: Cambria Math;\">,</span></p>\n<p><span style=\"font-family: Cambria Math;\">x = 0 </span><span style=\"font-family: Nirmala UI;\">या</span><span style=\"font-family: Cambria Math;\"> 9, </span></p>\n<p><span style=\"font-family: Nirmala UI;\">अतः</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रश्न</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">अनुसार</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Nirmala UI;\">न्यूनतम</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">मान</span><span style=\"font-family: Cambria Math;\"> x = 0 </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिए</span><span style=\"font-family: Cambria Math;\">,</span></p>\n<p><span style=\"font-family: Cambria Math;\">x + 2y = 0 + 2 × 2 = 4</span></p>"
+    },
+    {
+      "q_hi": "<style> @font-face { font-family: 'Mangal';src: url('https://appxcontent.kaxa.in/fonts/MANGAL.ttf') format('truetype');} </style><style> img, svg {vertical-align: middle; max-width:100%; } *{overflow-wrap: break-word;}  </style> <span> </span><span style=\"font-weight:bold\"> </span><span>Find the remainder when 9</span><span style=\"line-height:115%;font-size:7.33pt;vertical-align:super\">20</span><span> + 2 is divided by 4.</span><p style=\"margin-top:0pt;margin-bottom:10pt\"><span style=\"color:#800000\">9</span><span style=\"line-height:115%;font-size:7.33pt;vertical-align:super;color:#800000\">20</span><span style=\"color:#800000\"> + 2 </span><span style=\"color:#800000;font-family:'Mangal'\">को </span><span style=\"color:#800000\">4 </span><span style=\"color:#800000;font-family:'Mangal'\">से विभाजित करने पर शेषफल क्या आएगा</span><span style=\"color:#800000\">?</span></p>",
+      "o_hi": [
+        "<span style=\"color:#4224e9\"> 3</span>",
+        "<span style=\"color:#4224e9\"> 1</span>",
+        "<span style=\"color:#4224e9\"> 0</span>",
+        "<span style=\"color:#4224e9\"> 2</span>"
+      ],
+      "a": 0,
+      "s_hi": "<span> </span><img alt=\"\" height=\"205\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750330842219_image055.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750330842219_image055.png\" style=\"max-width:100%;\" width=\"307\"/><p></p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>How many values does the integer N take if √N lies between 12 and 18?</p></span><span class=\"hqt\" style=\"display:none\"><p>यदि √N, 12 और 18 के बीच स्थित है, तो पूर्णांक N के कितने मान हो सकते हैं?</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">181</span><span class=\"hqt\" style=\"display:none\">181</span>",
+        "<span class=\"eqt\">180</span><span class=\"hqt\" style=\"display:none\">180</span>",
+        "<span class=\"eqt\">179</span><span class=\"hqt\" style=\"display:none\">179</span>",
+        "<span class=\"eqt\">178</span><span class=\"hqt\" style=\"display:none\">178</span>"
+      ],
+      "a": 2,
+      "s_hi": "<p>Number of values that N can take = [18<sup>2</sup>  -  12<sup>2</sup>]  -  1 = 179</p>"
+    },
+    {
+      "q_hi": "<p>12. <span style=\"font-family: Cambria Math;\">k </span><span style=\"font-family: Nirmala UI;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">मान</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">ज्ञात</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कीजिये</span><span style=\"font-family: Cambria Math;\">,</span><span style=\"font-family: Nirmala UI;\">इस</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रकार</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कि</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">समीकरण</span><span style=\"font-family: Cambria Math;\"> <span style=\"font-weight: 400;\">2x + 3y + 11 = 0 </span></span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">और</span><span style=\"font-family: Cambria Math;\"> <span style=\"font-weight: 400;\">6x + ky + 33 = 0 </span></span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संपाती</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">रेखाओं</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रतिनिधित्व</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">करते</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">हैं</span><span style=\"font-family: Nirmala UI;\">।</span><span style=\"font-family: Cambria Math;\"> </span></p>",
+      "o_hi": [
+        "<p>5</p>",
+        "<p>12</p>",
+        "<p>9</p>",
+        "<p>6</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>12.(c) <span style=\"font-family: Nirmala UI;\">संपाती</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">रेखाओं</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिए</span><span style=\"font-family: Cambria Math;\">  <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub></mfrac><mo> </mo><mo>=</mo><mo> </mo><mfrac><msub><mi>b</mi><mn>1</mn></msub><mrow><mi>b</mi><msub><mrow><mn>2</mn><mo> </mo></mrow><mrow></mrow></msub></mrow></mfrac><mo>=</mo><mo> </mo><mfrac><msub><mi>c</mi><mn>1</mn></msub><msub><mi>c</mi><mn>2</mn></msub></mfrac></math></span><br/><span style=\"font-family: Cambria Math;\">⇒ <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>2</mn><mn>6</mn></mfrac><mo> </mo><mo>=</mo><mo> </mo><mfrac><mn>3</mn><mi>k</mi></mfrac></math> =</span><span style=\"font-family: Cambria Math;\"> k = 9</span></p>"
+    },
+    {
+      "q_hi": "<p><span style=\"font-family: Cambria Math;\">13. </span><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mn>3</mn><mn>8</mn></msup></math> </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> 7 </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">भाग</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">देने</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">पर</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">शेषफल</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">क्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">होगा</span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>5</p>",
+        "<p>4</p>",
+        "<p>6</p>",
+        "<p>2</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p><span style=\"font-family: Cambria Math;\">13.(</span><span style=\"font-family: Cambria Math;\">d)</span></p>\n<p><math style=\"font-family:Verdana\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><msup><mn>3</mn><mn>8</mn></msup><mn>7</mn></mfrac><mo> </mo><mo>=</mo><mo> </mo><mfrac><mrow><msup><mn>3</mn><mn>3</mn></msup><mo>×</mo><msup><mn>3</mn><mn>3</mn></msup><mo>×</mo><msup><mn>3</mn><mn>2</mn></msup></mrow><mn>7</mn></mfrac><mo> </mo><mo> </mo><mo>=</mo><mfrac><mrow><mo> </mo><mn>27</mn><mo>×</mo><mn>27</mn><mo>×</mo><mn>9</mn></mrow><mn>7</mn></mfrac><mo> </mo><mo> </mo><mspace linebreak=\"newline\"></mspace><mo>=</mo><mo> </mo><mi>शेष</mi><mo>.</mo><mfrac><mrow><mfenced><mrow><mo>-</mo><mn>1</mn></mrow></mfenced><mo>×</mo><mfenced><mrow><mo>-</mo><mn>1</mn></mrow></mfenced><mo>×</mo><mfenced><mn>2</mn></mfenced></mrow><mn>7</mn></mfrac><mspace linebreak=\"newline\"></mspace><mo>=</mo><mo> </mo><mi>शेष</mi><mo>.</mo><mo> </mo><mfenced><mn>2</mn></mfenced></math></p>"
+    },
+    {
+      "q_hi": "<p>5.<span style=\"font-family:Cambria Math\"> 301 </span><span style=\"font-family:Nirmala UI\">से</span><span style=\"font-family:Cambria Math\"> 399 </span><span style=\"font-family:Nirmala UI\">तक</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">की</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">गणना</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">में</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">कितनी</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">बार</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">अंक</span><span style=\"font-family:Cambria Math\"> 3 </span><span style=\"font-family:Nirmala UI\">आता</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">है</span><span style=\"font-family:Cambria Math\">?</span></p>",
+      "o_hi": [
+        "<p>121</p>",
+        "<p>119</p>",
+        "<p>11</p>",
+        "<p>21</p>"
+      ],
+      "a": 1,
+      "s_hi": "<p>5.(b)</p> <p><span style=\"font-family:Cambria Math\">301 </span><span style=\"font-family:Nirmala UI\">से</span><span style=\"font-family:Cambria Math\"> 399 </span><span style=\"font-family:Nirmala UI\">पहले</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">स्थान</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">पर</span><span style=\"font-family:Cambria Math\"> = 99 </span><span style=\"font-family:Nirmala UI\">गुना</span></p> <p><span style=\"font-family:Cambria Math\">330 </span><span style=\"font-family:Nirmala UI\">से</span><span style=\"font-family:Cambria Math\"> 339 </span><span style=\"font-family:Nirmala UI\">दूसरे</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">स्थान</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">पर</span><span style=\"font-family:Cambria Math\"> = 10 </span><span style=\"font-family:Nirmala UI\">गुना</span></p> <p><span style=\"font-family:Nirmala UI\">तीसरे</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">स्थान</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Nirmala UI\">पर</span><span style=\"font-family:Cambria Math\"> = 10 </span><span style=\"font-family:Nirmala UI\">गुना</span></p> <p><span style=\"font-family:Nirmala UI\">कुल</span><span style=\"font-family:Cambria Math\"> = 99+ 10+ 10 = 119</span></p>"
+    },
+    {
+      "q_hi": "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} @font-face { font-family: 'Nirmala UI'; src: url('https://appx-content-v2.classx.co.in/fonts/Nirmala.ttf') format('truetype');} </style><style> img, svg {vertical-align: middle; max-width:100%; } *{overflow-wrap: break-word;}  </style> <span style=\"font-family:'Cambria Math'\"> Find the last 3 digits of </span><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Nirmala UI'\">अंतिम 3 अंक ज्ञात कीजिए</span></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">1001 * 1003 * 999 * 1002 * 996 * 998 </span><span style=\"width:1.95pt;display:inline-block;font-family:'Cambria Math'\"> </span></p>",
+      "o_hi": [
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 952</span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 956</span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 953</span><span style=\"width:1.32pt;display:inline-block;font-family:'Cambria Math'\"> </span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 951</span>"
+      ],
+      "a": 0,
+      "s_hi": "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> </span><span style=\"font-weight:bold;font-family:'Cambria Math'\">Video Solution available in detailed maths course.</span><p style=\"margin-top:0pt;margin-bottom:8pt\"><img alt=\"\" height=\"221\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419188259_image052.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419188259_image052.png\" style=\"max-width:100%;\" width=\"296\"/></p><p></p>"
+    },
+    {
+      "q_hi": "<p>9. <span style=\"font-family: Cambria Math;\">जब</span><span style=\"font-family: Cambria Math;\"> m </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> 7 </span><span style=\"font-family: Cambria Math;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">विभाजित</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जाता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Cambria Math;\">तो</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">शेषफल</span><span style=\"font-family: Cambria Math;\"> 5 </span><span style=\"font-family: Cambria Math;\">होता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है।</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जब</span><span style=\"font-family: Cambria Math;\"> 3m </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> 7 </span><span style=\"font-family: Cambria Math;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">विभाजित</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जाएगा</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Cambria Math;\">तो</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">शेषफल</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">क्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">होगा </span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>3</p>",
+        "<p>2</p>",
+        "<p>1</p>",
+        "<p>0</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>9.(c)</p>\n<p><span style=\"font-family: Cambria Math;\">प्रश्न</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">अनुसार</span><span style=\"font-family: Cambria Math;\">,</span></p>\n<p><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>m</mi><mn>7</mn></mfrac><mo>→</mo></math>शेष</span><span style=\"font-family: Cambria Math;\"> = 5</span></p>\n<p><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>3</mn><mi>m</mi></mrow><mn>7</mn></mfrac><mo>→</mo></math>शेष <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mo>(</mo><mn>5</mn><mo>×</mo><mn>3</mn><mo>)</mo></mrow><mn>7</mn></mfrac></math></span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\"> = </span><span style=\"font-family: Cambria Math;\">शेष</span><span style=\"font-family: Cambria Math;\"> 1</span></p>"
+    },
+    {
+      "q_hi": "<p>10. <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mn>2</mn><mn>256</mn></msup></math> को 17 से भाग देने पर कितना शेषफल बचेगा ?</p>",
+      "o_hi": [
+        "<p>2</p>",
+        "<p>0</p>",
+        "<p>1</p>",
+        "<p>5</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>10.(c) <br/>शेषफल(<math display=\"inline\"><mfrac><mrow><msup><mrow><mn>2</mn></mrow><mrow><mn>256</mn></mrow></msup></mrow><mrow><mn>17</mn></mrow></mfrac></math>) = शेषफल<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>(</mo><mfrac><msup><mrow><mo>(</mo><msup><mn>2</mn><mn>4</mn></msup><mo>)</mo></mrow><mn>64</mn></msup><mn>17</mn></mfrac><mo>)</mo><mo>=</mo><mfrac><msup><mrow><mo>(</mo><mo>-</mo><mn>1</mn><mo>)</mo></mrow><mn>64</mn></msup><mn>17</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>17</mn></mfrac><mo>=</mo><mn>1</mn></math></p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>The HCF of two numbers is 30 and their sum is 300. Find possible number of pairs.</p></span><span class=\"hqt\" style=\"display:none\"><p>दो संख्याओं का HCF 30 है और उनका योग 300 है। संभावित युग्मों की संख्या ज्ञात कीजिए।</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">1</span><span class=\"hqt\" style=\"display:none\">1</span>",
+        "<span class=\"eqt\">0</span><span class=\"hqt\" style=\"display:none\">0</span>",
+        "<span class=\"eqt\">2</span><span class=\"hqt\" style=\"display:none\">2</span>",
+        "<span class=\"eqt\">6</span><span class=\"hqt\" style=\"display:none\">6</span>"
+      ],
+      "a": 2,
+      "s_hi": "<p>Let the numbers be 30u and 30v, where u and v are co-primes.</p><p>ATQ,</p><p>30u + 30v = 300</p><p>30 (u + v) = 300</p><p>u + v = 10</p><p>Thus,</p><p>(u=1, v=9), (u=3, v=7)</p><p>Possible number of pairs = 2</p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p><div> If L.C.M of 32 and 12 is L and H.C.F of 15 and 36 is H, then find <div style=\"display: inline-block;position: relative;vertical-align: middle;\"><span style=\"text-align:center;display: block; padding: 0;\">L</span><span style=\"display: block; padding: 0;position: absolute; top: 0em; display: none;letter-spacing: -0.1em;\">_________</span><span style=\"display: block; padding: 0;border-top: thin solid black; text-align:center\">2</span></div> + <div style=\"display: inline-block;position: relative;vertical-align: middle;\"><span style=\"text-align:center;display: block; padding: 0;\">H</span><span style=\"display: block; padding: 0;position: absolute; top: 0em; display: none;letter-spacing: -0.1em;\">_________</span><span style=\"display: block; padding: 0;border-top: thin solid black; text-align:center\">3</span></div> . </div></p><p></p></span><span class=\"hqt\" style=\"display:none\"><p>यदि 32 और 12 का लघुत्तम समापवर्त्य L है तथा 15 और 36 का महत्तम समापवर्त्तक H है, तो L/2 + H/3 ज्ञात कीजिए।</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">28</span><span class=\"hqt\" style=\"display:none\">28</span>",
+        "<span class=\"eqt\">99</span><span class=\"hqt\" style=\"display:none\">99</span>",
+        "<span class=\"eqt\">49</span><span class=\"hqt\" style=\"display:none\">49</span>",
+        "<span class=\"eqt\">98</span><span class=\"hqt\" style=\"display:none\">98</span>"
+      ],
+      "a": 2,
+      "s_hi": "<p>According to the Question,</p><p>LCM of 32 and 12 = L</p><p>32 = 2x2x2x2x2</p><p>12 = 2x2x3</p><p>Taking common factors only once we have LCM= 2x2x2x2x2x3 = 96</p><p>L/2 = 96/2 = 48</p><p>HCF of 15 and 36 = H</p><p>15 = 3x5</p><p>36 = 2x2x3x3</p><p>Taking only common factors we have HCF = 3</p><p>H/3 = 3/3 = 1</p><p>Now, L/2 + H/3 = 48+1 = 49</p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>The last digit in the expansion of 17</p></span><span><sup>256</sup></span><span>  is – </span><span class=\"hqt\" style=\"display:none\"><p>17<sup>256</sup> के विस्तार में अंतिम अंक है -</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">9</span><span class=\"hqt\" style=\"display:none\">9</span>",
+        "<span class=\"eqt\">7</span><span class=\"hqt\" style=\"display:none\">7</span>",
+        "<span class=\"eqt\">3</span><span class=\"hqt\" style=\"display:none\">3</span>",
+        "<span class=\"eqt\">1</span><span class=\"hqt\" style=\"display:none\">1</span>"
+      ],
+      "a": 3,
+      "s_hi": "\"<p> <span> 17</span><span><sup>256</sup> </span><span>= 17</span><span><sup>4 × 64</sup></span></p><p><span>= 17</span><span><sup>4</sup></span></p><p>Last digit = 1</p><p><span>[17</span><span><sup>1</sup></span><span> = 7; 17</span><span><sup>2</sup></span><span> = 9; 17</span><span><sup>3</sup></span><span> = 3; 17</span><span><sup>4</sup></span><span> = 1]</span></p>\""
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>If (2x<sup>2</sup> + 5x  -  3) is completely divisible by (x + 3), then find the value of 'a' if (x  -  a) also divides the given equation completely. (a ≠ 3)</p></span><span class=\"hqt\" style=\"display:none\"><p>यदि (2x<sup>2</sup> + 5x - 3), (x + 3) से पूर्णतः विभाज्य है और यदि (x - a) भी दिए गए समीकरण को पूर्ण रूप से विभाजित करता है, तो 'a' का मान ज्ञात कीजिए। (a ≠ 3)</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">1/2</span><span class=\"hqt\" style=\"display:none\">1/2</span>",
+        "<span class=\"eqt\">2/3</span><span class=\"hqt\" style=\"display:none\">2/3</span>",
+        "<span class=\"eqt\">1/4</span><span class=\"hqt\" style=\"display:none\">1/4</span>",
+        "<span class=\"eqt\">2/5</span><span class=\"hqt\" style=\"display:none\">2/5</span>"
+      ],
+      "a": 0,
+      "s_hi": "<p>Since (x + 3) and (x  -  a) both divides the equation completely.</p><p>So, (x + 3)(x  -  a) = 2x<sup>2</sup> + 5x  -  3</p><p>=&gt; (x<sup>2</sup>  -  ax + 3x  -  3a) = (2x<sup>2</sup> + 5x  -  3)</p><p>=&gt; (x<sup>2</sup> + (3  -  a)x  -  3a) = (2x<sup>2</sup> + 5x  -  3)</p><p>=&gt; 2x<sup>2</sup> + (6  -  2a)x  -  6a = 2x<sup>2</sup> + 5x  -  3</p><p>After comparing-</p><p>=&gt; 6a = 3</p><p>=&gt; a = 3/6 = 1/2</p>"
+    },
+    {
+      "q_hi": "<p>7.<span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">यदि</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">दो</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">धनात्मक</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">सं</span><span style=\"font-family: Cambria Math;\">ख्याओं</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">वर्गों</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">योग</span><span style=\"font-family: Cambria Math;\"> 2437 </span><span style=\"font-family: Cambria Math;\">है</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">एक</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">संख्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">वर्गमूल</span><span style=\"font-family: Cambria Math;\"> 7 </span><span style=\"font-family: Cambria Math;\">है</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Cambria Math;\">तो</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">दूसरी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">संख्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">ज्ञात</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कीजिए</span></p>",
+      "o_hi": [
+        "<p>6</p>",
+        "<p>16</p>",
+        "<p>12</p>",
+        "<p>8</p>"
+      ],
+      "a": 0,
+      "s_hi": "<p>7.(a) <span style=\"font-family: Cambria Math;\">माना</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">दोनों</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">संख्याएँ</span><span style=\"font-family: Cambria Math;\"> a </span><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\"> b </span><span style=\"font-family: Cambria Math;\">हैं</span><span style=\"font-family: Cambria Math;\">,</span><br/><span style=\"font-family: Cambria Math;\">प्रश्न</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">अनुसार</span><span style=\"font-family: Cambria Math;\">, <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></math></span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">= 2437 -----(1)</span><br/><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\">  <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mi>a</mi></msqrt></math>= 7 -----(2)</span><br/><span style=\"font-family: Cambria Math;\">दोनों</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">पक्षों</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">वर्ग</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">करने</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">पर</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">हमें</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">प्राप्त</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">होता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है</span><span style=\"font-family: Cambria Math;\">,</span><br/><span style=\"font-family: Cambria Math;\">a = 49</span><br/><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>⇒</mo><msup><mi>a</mi><mn>2</mn></msup></math></span><span style=\"font-family: Cambria Math;\">= 2401</span><br/><span style=\"font-family: Cambria Math;\">समीकरण</span><span style=\"font-family: Cambria Math;\"> (1) </span><span style=\"font-family: Cambria Math;\">से</span><span style=\"font-family: Cambria Math;\">,</span><br/><span style=\"font-family: Cambria Math;\">2401 +<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>b</mi><mn>2</mn></msup></math> </span><span style=\"font-family: Cambria Math;\">= 2437</span><br/><span style=\"font-family: Cambria Math;\"> <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>⇒</mo><msup><mi>b</mi><mn>2</mn></msup></math></span><span style=\"font-family: Cambria Math;\">= 2437 - 2401 = 36</span><br/><span style=\"font-family: Cambria Math;\">∴ b = 6</span></p>"
+    },
+    {
+      "q_hi": "<p>4. <span style=\"font-family: Baloo;\">निम्न</span><span style=\"font-family: Baloo;\"> में से कौन सा संख्या </span><span style=\"font-family: Times New Roman;\">6 </span><span style=\"font-family: Baloo;\">से </span><span style=\"font-family: Baloo;\">विभाजय</span><span style=\"font-family: Baloo;\"> है </span></p>\n<p><span style=\"font-family: Times New Roman;\">CHSL 13-10-2020 (Morning)</span></p>",
+      "o_hi": [
+        "<p>23,408</p>",
+        "<p>43,923</p>",
+        "<p>1,00,246</p>",
+        "<p>3,49,722</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>4.(d) <span style=\"font-family: Baloo;\">जब संख्या</span><span style=\"font-family: Times New Roman;\"> 2 </span><span style=\"font-family: Baloo;\">और</span><span style=\"font-family: Times New Roman;\"> 3 </span><span style=\"font-family: Baloo;\">दोनों से विभाज्य होती है, तो संख्याएँ</span><span style=\"font-family: Times New Roman;\"> 6 </span><span style=\"font-family: Baloo;\">से विभाज्य होती हैं।</span></p>\n<p><span style=\"font-family: Times New Roman;\">2 </span><span style=\"font-family: Baloo;\">से विभाजित होने के लिए :- जब अंतिम अंक</span><span style=\"font-family: Times New Roman;\"> 0 </span><span style=\"font-family: Baloo;\">या सम संख्या हो।</span></p>\n<p><span style=\"font-family: Times New Roman;\">3 </span><span style=\"font-family: Baloo;\">से विभाजित होने के लिए :- अंकों का योग </span><span style=\"font-family: Times New Roman;\">3 </span><span style=\"font-family: Baloo;\">द्वारा विभाज्य होता है |</span></p>\n<p><span style=\"font-family: Baloo;\">अब,</span></p>\n<p><span style=\"font-family: Times New Roman;\">a. 23,408 = 3 </span><span style=\"font-family: Baloo;\">से विभाज्य नहीं है।</span></p>\n<p><span style=\"font-family: Times New Roman;\">b. 43,923 = 2 </span><span style=\"font-family: Baloo;\">से विभाज्य नहीं है।</span></p>\n<p><span style=\"font-family: Times New Roman;\">c. 1,00,246 = 3 </span><span style=\"font-family: Baloo;\">से विभाज्य नहीं है।</span></p>\n<p><span style=\"font-family: Times New Roman;\">d. 3,49,722 = 2 </span><span style=\"font-family: Baloo;\">और</span><span style=\"font-family: Times New Roman;\"> 3 </span><span style=\"font-family: Baloo;\">दोनों से विभाज्य है, इसलिए यह</span><span style=\"font-family: Times New Roman;\"> 6 </span><span style=\"font-family: Baloo;\">से विभाज्य है।</span></p>"
+    },
+    {
+      "q_hi": "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} @font-face { font-family: 'Nirmala UI'; src: url('https://appx-content-v2.classx.co.in/fonts/Nirmala.ttf') format('truetype');} </style><style> img, svg {vertical-align: middle; max-width:100%; } *{overflow-wrap: break-word;}  </style> <span style=\"font-family:'Cambria Math'\"> Find the remainder </span><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Nirmala UI'\">शेषफल ज्ञात करें</span></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">(i) </span><img alt=\"\" height=\"27\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image010.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image010.png\" style=\"max-width:100%;\" width=\"114\"/></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">(ii) </span><img alt=\"\" height=\"27\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image011.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image011.png\" style=\"max-width:100%;\" width=\"114\"/><span style=\"font-family:'Cambria Math'\"> </span></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">(iii) </span><img alt=\"\" height=\"27\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image012.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image012.png\" style=\"max-width:100%;\" width=\"107\"/></p><p style=\"margin-top:0pt;margin-bottom:8pt\"><span style=\"font-family:'Cambria Math'\">(iv) </span><img alt=\"\" height=\"27\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image013.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image013.png\" style=\"max-width:100%;\" width=\"142\"/><span style=\"width:15.85pt;display:inline-block;font-family:'Cambria Math'\"> </span></p>",
+      "o_hi": [
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 0; 16; 13; 1 </span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 0; 16; 13; 0</span><span style=\"width:1.91pt;display:inline-block;font-family:'Cambria Math'\"> </span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 0; 15; 14; 0 </span>",
+        "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> 1; 16; 87; 0</span>"
+      ],
+      "a": 1,
+      "s_hi": "<style> @font-face { font-family: 'Cambria Math'; src: url('https://appx-content-v2.classx.co.in/fonts/cambriamath.ttf') format('truetype');} </style><span style=\"font-family:'Cambria Math'\"> </span><span style=\"font-weight:bold;font-family:'Cambria Math'\">Video Solution available in detailed maths course.</span><p style=\"margin-top:0pt;margin-bottom:8pt\"><img alt=\"\" height=\"501\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image014.png';\" referrerpolicy=\"no-referrer\" src=\"https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1750419090410_image014.png\" style=\"max-width:100%;\" width=\"339\"/></p><p></p>"
+    },
+    {
+      "q_hi": "<p><span style=\"font-family: Cambria Math;\">14.</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">निम्न</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">में</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कौन</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">सी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">सबसे</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">छोटी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संख्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जिसे</span><span style=\"font-family: Cambria Math;\"> 2800 </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">घटाया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जाए</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">तो</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्राप्त</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संख्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">एक</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">पूर्ण</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">वर्ग</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">होगी</span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>69</p>",
+        "<p>9</p>",
+        "<p>73</p>",
+        "<p>96</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p><span style=\"font-family: Cambria Math;\">14.(</span><span style=\"font-family: Cambria Math;\">d)</span></p>\n<p><span style=\"font-family: Nirmala UI;\">इस</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रश्न</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">हल</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">करने</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिए</span><span style=\"font-family: Cambria Math;\">,</span></p>\n<p><span style=\"font-family: Nirmala UI;\">हमें</span><span style=\"font-family: Cambria Math;\"> 2800 </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">निकटतम</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">पूर्ण</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">वर्ग</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">पता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लगाना</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है</span><span style=\"font-family: Nirmala UI;\">।</span></p>\n<p><span style=\"font-family: Nirmala UI;\">तो</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">हमारे</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">पास</span><span style=\"font-family: Cambria Math;\"> :</span></p>\n<p><span style=\"font-family: Cambria Math;\">51² = 2601</span></p>\n<p><span style=\"font-family: Cambria Math;\">52² = 2704</span></p>\n<p><span style=\"font-family: Cambria Math;\">53² = 2809</span></p>\n<p><span style=\"font-family: Nirmala UI;\">स्पष्ट</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">रूप</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Nirmala UI;\">हम</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">देख</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">सकते</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">हैं</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कि</span><span style=\"font-family: Cambria Math;\"> 2800 – 2704 = 96</span></p>\n<p><span style=\"font-family: Nirmala UI;\">इसलिए</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Nirmala UI;\">पूर्ण</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">वर्ग</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संख्या</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्राप्त</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">करने</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिए</span><span style=\"font-family: Cambria Math;\">, 96 </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> 2800 </span><span style=\"font-family: Nirmala UI;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">घटाया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जाना</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">चाहिए</span><span style=\"font-family: Nirmala UI;\">।</span></p>"
+    },
+    {
+      "q_hi": "<p>7. <span style=\"font-family: Cambria Math;\">3-</span><span style=\"font-family: Nirmala UI;\">अंकीय</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संख्याओं</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">योग</span><span style=\"font-family: Cambria Math;\"> abc, bca </span><span style=\"font-family: Nirmala UI;\">और</span><span style=\"font-family: Cambria Math;\"> cab </span><span style=\"font-family: Nirmala UI;\">सदैव</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">विभाज्य</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">होता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है</span><span style=\"font-family: Cambria Math;\"> :</span></p>",
+      "o_hi": [
+        "<p>35</p>",
+        "<p>41</p>",
+        "<p>37</p>",
+        "<p>31</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>7.(c)</p>\n<p><span style=\"font-family: Cambria Math;\">abc = 100a + 10b + c</span></p>\n<p><span style=\"font-family: Cambria Math;\">bca = 100b + 10c + a</span></p>\n<p><span style=\"font-family: Cambria Math;\">cab = 100c + 10a + b</span></p>\n<p><span style=\"font-family: Cambria Math;\">abc + bca + cab = 100(a + b + c) + 10(a + b + c) + (a + b + c)</span></p>\n<p><span style=\"font-family: Cambria Math;\">abc + bca + cab = 111(a + b + c)</span></p>\n<p><span style=\"font-family: Cambria Math;\">abc + bca + cab = </span><span style=\"font-family: Cambria Math;\"><strong>37</strong> × </span><span style=\"font-family: Cambria Math;\">3(a + b + c)</span></p>\n<p><strong><span style=\"font-family: Nirmala UI;\">ट्रिक</span><span style=\"font-family: Cambria Math;\"> :</span></strong></p>\n<p><span style=\"font-family: Cambria Math;\">a = b = c = 1 </span><span style=\"font-family: Nirmala UI;\">रखे</span><span style=\"font-family: Cambria Math;\"> </span></p>\n<p><span style=\"font-family: Cambria Math;\">abc + bca + cab = 333 = 3 × </span><span style=\"font-family: Cambria Math;\">3 ×<strong> </strong></span><strong><span style=\"font-family: Cambria Math;\">37</span></strong></p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>What is the number of trailing zeros in 308!?</p></span><span class=\"hqt\" style=\"display:none\"><p>308 में अंतिम शून्यों की संख्या क्या है?</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">80</span><span class=\"hqt\" style=\"display:none\">80</span>",
+        "<span class=\"eqt\">68</span><span class=\"hqt\" style=\"display:none\">68</span>",
+        "<span class=\"eqt\">75</span><span class=\"hqt\" style=\"display:none\">75</span>",
+        "<span class=\"eqt\">92</span><span class=\"hqt\" style=\"display:none\">92</span>"
+      ],
+      "a": 2,
+      "s_hi": "<p>Number of zeroes = number of pairs of 2 * 5</p><p>Quotient of 308/5 = 61</p><p>Quotient of 61/5 = 12</p><p>Quotient of 12/5 = 2</p><p>Total number of zeroes = 61 + 12 + 2 = 75</p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>What is the cube root of the product of all positive multiples of 8 less than 45? </p></span><span class=\"hqt\" style=\"display:none\"><p>45 से कम 8 के सभी धनात्मक गुणजों के गुणनफल का घनमूल क्या है?</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">64∛15</span><span class=\"hqt\" style=\"display:none\">64∛15</span>",
+        "<span class=\"eqt\">32∛15</span><span class=\"hqt\" style=\"display:none\">32∛15</span>",
+        "<span class=\"eqt\">64∛5</span><span class=\"hqt\" style=\"display:none\">64∛5</span>",
+        "<span class=\"eqt\">16∛15</span><span class=\"hqt\" style=\"display:none\">16∛15</span>"
+      ],
+      "a": 0,
+      "s_hi": "<p>For perfect cube, number of zeroes should be 3, 6, 9 etc.</p><p>(a) 1000000, since it has 6 zeroes, so cube root = 10<sup>3</sup></p><p>(b) 2160000 - 4 zeroes</p><p>(c) 194000 = 194 * 1000 =&gt; 194 is not a perfect cube)</p><p>(d) 12500000  -  5 zeroes</p><p>Hence, option 'a' is correct.</p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>A milk vendor has 75 litres of cow milk, 45 litres of toned milk and 30 litres of full cream milk. These should be placed in different trays such that each tray contains the same quantity of milk and two kinds of milk should not be mixed in a tray. What is the least number of trays required to place all the milk?</p></span><span class=\"hqt\" style=\"display:none\"><p>एक दूध विक्रेता के पास 75 लीटर गाय का दूध, 45 लीटर टोंड दूध और 30 लीटर फुल क्रीम दूध है। इन्हें अलग-अलग ट्रे में इस तरह रखना चाहिए कि प्रत्येक ट्रे में दूध की मात्रा समान हो और एक ट्रे में दो तरह के दूध न मिलें। सभी दूध रखने के लिए कम से कम कितनी ट्रे की आवश्यकता होगी?</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">25</span><span class=\"hqt\" style=\"display:none\">25</span>",
+        "<span class=\"eqt\">20</span><span class=\"hqt\" style=\"display:none\">20</span>",
+        "<span class=\"eqt\">15</span><span class=\"hqt\" style=\"display:none\">15</span>",
+        "<span class=\"eqt\">10</span><span class=\"hqt\" style=\"display:none\">10</span>"
+      ],
+      "a": 3,
+      "s_hi": "<p>HCF of 75, 45, 30 = 15</p><p>Trays:</p><p>Cow: 75 / 15 = 5</p><p>Toned: 45 / 15 = 3</p><p>Full cream: 30 / 15 = 2</p><p>Total = 5 + 3 + 2 = 10</p><p>Option (d) is the correct answer.</p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>Find the least number which when divided by 10, 12, 15 and 18 leaves 2 as remainder, but when divided by 13 leaves no remainder.</p></span><span class=\"hqt\" style=\"display:none\"><p>वह सबसे छोटी संख्या ज्ञात कीजिए जिसे 10, 12, 15 और 18 से विभाजित करने पर 2 शेष बचे, लेकिन 13 से विभाजित करने पर कोई शेष न बचे।</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">156</span><span class=\"hqt\" style=\"display:none\">156</span>",
+        "<span class=\"eqt\">182</span><span class=\"hqt\" style=\"display:none\">182</span>",
+        "<span class=\"eqt\">308</span><span class=\"hqt\" style=\"display:none\">308</span>",
+        "<span class=\"eqt\">234</span><span class=\"hqt\" style=\"display:none\">234</span>"
+      ],
+      "a": 1,
+      "s_hi": "<p>Factor of 10 = 2 * 5</p><p>Factor of 12 = 2<sup>2</sup> * 3</p><p>Factor of 15 = 3 * 5</p><p>Factor of 18 = 2 * 3<sup>2</sup></p><p>LCM = 4 * 9 * 5 = 180</p><p>Required number = 180k + 2 (k is an integer)</p><p>When k = 1</p><p>180 * 1 + 2 = 182 (divisible by 13)</p>"
+    },
+    {
+      "q_hi": "<p>5.<span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">निम्नलिखित</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कौन</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">सी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">संख्या</span><span style=\"font-family: Cambria Math;\"> 7, 11 </span><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\"> 13 </span><span style=\"font-family: Cambria Math;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">विभाज्य</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है</span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>1002001</p>",
+        "<p><span style=\"font-weight: 400;\">1003001</span><span style=\"font-weight: 400;\"><br/></span></p>",
+        "<p><span style=\"font-weight: 400;\">1005001</span><span style=\"font-weight: 400;\"><br/></span></p>",
+        "<p><span style=\"font-weight: 400;\">1004001</span></p>"
+      ],
+      "a": 0,
+      "s_hi": "<p>5.(a)</p>\n<p><span style=\"font-family: Cambria Math;\">7, 11 </span><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\"> 13 </span><span style=\"font-family: Cambria Math;\">का</span><span style=\"font-family: Cambria Math;\"> LCM = 1001</span></p>\n<p><span style=\"font-family: Cambria Math;\">(1001)² = 1002001</span></p>\n<p><span style=\"font-family: Cambria Math;\">अतः</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Cambria Math;\">विकल्प</span><span style=\"font-family: Cambria Math;\"> (a) 7, 11 </span><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\"> 13 </span><span style=\"font-family: Cambria Math;\">से</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">विभाज्य</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है।</span></p>"
+    },
+    {
+      "q_hi": "<p>3.<span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">किस</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रकार</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">की</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संख्याएँ</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">सह</span><span style=\"font-family: Cambria Math;\">- </span><span style=\"font-family: Nirmala UI;\">अभाज्य</span><span style=\"font-family: Cambria Math;\"> (</span><span style=\"font-family: Nirmala UI;\">कोप्राइम</span><span style=\"font-family: Cambria Math;\">) </span><span style=\"font-family: Nirmala UI;\">नहीं</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">होती</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">हैं</span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>Any two consecutive even numbers</p>",
+        "<p>Any two consecutive odd numbers</p>",
+        "<p>Any two <span style=\"font-family: Cambria Math;\">consecutive numbers</span></p>",
+        "<p>Any two prime numbers</p>"
+      ],
+      "a": 0,
+      "s_hi": "<p><span style=\"font-family: Cambria Math;\">3.(</span><span style=\"font-family: Cambria Math;\">a) </span><span style=\"font-family: Nirmala UI;\">कोई</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">दो</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">क्रमागत</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">सम</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संख्याएँ</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जैसे</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> 2, 4 </span><span style=\"font-family: Nirmala UI;\">सह</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Nirmala UI;\">अभाज्य</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">संख्याएँ</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">नहीं</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">हैं</span></p>"
+    }
+  ]
+}
