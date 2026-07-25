@@ -4,7 +4,7 @@
   "totalMarks": 50,
   "questions":[
   {
-    "q": "What will come in the place of '?' in the following equation, if '+' is changed with '-', '-' is changed with '\\div', '\\div' is changed with '+', and '\\times' is unchanged? $120-6+31\\div8\\times11=$ ?",
+    "q": "What will come in the place of '?' in the following equation, if '+' is changed with '-', '-' is changed with '$\\div$', '$\\div$' is changed with '+', and '$\\times$' is unchanged? $120-6+31\\div8\\times11=$ ?",
     "o": [
       "69",
       "73",
@@ -12,10 +12,10 @@
       "55"
     ],
     "a": 2,
-    "s": "Dekh bhai, aise questions me direct mind me symbols replace karna aana chahiye, yahi tera active recall test hai! Nayi equation banegi: $120\\div6-31+8\\times11$. Ab strictly BODMAS rule apply kar. Pehle division: $20-31+8\\times11$. Phir multiplication uda de: $20-31+88$. Ab addition aur subtraction solve karega toh $108-31=77$ aayega. SSC CGL me jaldbazi me calculation mistake karna sabse bada trap hai!<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (BODMAS Concept)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Execution Order)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> B / O</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Brackets & Orders</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> D / M</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> Division & Multiplication</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>C.</b> A / S</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>3.</b> Addition & Subtraction</td></tr></table>"
+    "s": "Dekh bhai, aise questions me direct mind me symbols replace karna aana chahiye, yahi tera active recall test hai! Nayi equation banegi: $120\\div6-31+8\\times11$. Ab strictly BODMAS rule apply kar. Pehle division: $20-31+8\\times11$. Phir multiplication uda de: $20-31+88$. Ab addition aur subtraction solve karega toh $108-31=77$ aayega. SSC CGL me jaldbazi me calculation mistake karna sabse bada trap hai!"
   },
   {
-    "q": "If A stands for '-', B stands for '+', C stands for '\\times' and D stands for '\\div', then what is the value of $21A3C6(75D15C2B8)A4$?",
+    "q": "If A stands for '-', B stands for '+', C stands for '$\\times$' and D stands for '$\\div$', then what is the value of $21A3C6(75D15C2B8)A4$?",
     "o": [
       "345",
       "-307",
@@ -26,7 +26,7 @@
     "s": "Mera dost, isme letters ko as mathematical operators decode karna hai. Ye direct observation ka khel hai. Equation me values rakh: $21-3\\times6(75\\div15\\times2+8)-4$. Sabse pehle bracket ke andar ki duniya suljha: $75\\div15=5$, phir $5\\times2=10$, aur $10+8=18$. Ab bracket ke bahar aa: $21-3\\times6\\times18-4$. Multiplication nikaal: $3\\times6=18$, aur $18\\times18=324$. Equation bachi: $21-324-4$. Isko solve karega toh seedha $-307$ aayega. Negative answers dekh kar dar mat jana!"
   },
   {
-    "q": "If '+' means '-', '\\times' means '+', '-' means '\\div' and '\\div' means '\\times', then what will come in place of '?' in the given expression? $72\\times19\\times13\\div16\\div?\\times15\\times7=266$",
+    "q": "If '+' means '-', '$\\times$' means '+', '-' means '$\\div$' and '$\\div$' means '$\\times$', then what will come in place of '?' in the given expression? $72\\times19\\times13\\div16\\div?\\times15\\times7=266$",
     "o": [
       "16",
       "32",
@@ -39,10 +39,10 @@
   {
     "q": "Select the correct combination of mathematical signs to sequentially replace the * signs and to balance the given equation: $11*15*78*6*18=160$",
     "o": [
-      "+, \\times, -, \\div, =",
-      "\\times, +, -, \\div, =",
-      "\\times, +, \\div, -, =",
-      "+, -, \\div, -, ="
+      "$+, \\times, -, \\div, =$",
+      "$\\times, +, -, \\div, =$",
+      "$\\times, +, \\div, -, =$",
+      "$+, -, \\div, -, =$"
     ],
     "a": 2,
     "s": "Aise hit and trial wale questions me hamesha 'Division' ($\\div$) wale sign ki position track kar. Jahaan perfectly divide ho raha ho, wahi option sabse pehle utha! Option C check karte hain jisme division teesre number par hai: $11\\times15+78\\div6-18$. Step 1: $78\\div6=13$. Step 2: $11\\times15=165$. Equation bani: $165+13-18=160$. LHS = RHS ho gaya match! Feynman technique kehti hai ki pattern ko complex banne se pehle uske core unit ko pakdo."
@@ -50,10 +50,10 @@
   {
     "q": "Which two signs should be interchanged to make the given equation correct? $588\\div28\\times32+72-160=760$",
     "o": [
-      "- and +",
-      "+ and \\times",
-      "\\div and -",
-      "\\div and +"
+      "$-$ and $+$",
+      "$+$ and $\\times$",
+      "$\\div$ and $-$",
+      "$\\div$ and $+$"
     ],
     "a": 0,
     "s": "Dekh bhai, option checking me thodi smartness laga. Pehle normal solve karke dekh kitna gap hai. $588\\div28=21$, uske baad $21\\times32=672$. Ab bacha $672+72-160$, jo $584$ dega, target $760$ se kafi dur. Hamein value badhani hai! Agar hum '-' aur '+' ko aapas me badal dein, toh equation aisi dikhegi: $672-72+160$. Solve karega toh $600+160=760$ aayega. Bilkul perfect! Spaced repetition me aise hacks ko fix kar le ki target bada ho toh subtraction ko chota aur addition ko bada karna padta hai."
@@ -61,10 +61,10 @@
   {
     "q": "Which two signs should be interchanged to make the given equation correct? $13+145\\div29\\times52-11=106$",
     "o": [
-      "- and \\times",
-      "\\times and +",
-      "\\div and -",
-      "\\div and +"
+      "$-$ and $\\times$",
+      "$\\times$ and $+$",
+      "$\\div$ and $-$",
+      "$\\div$ and $+$"
     ],
     "a": 1,
     "s": "Mera dost, CPO ka classical trap hai ye! Division yahan perfectly ho raha hai ($145\\div29=5$), toh isko mat chedo. Agar hum multiplication ko waise hi rehne de toh $5\\times52$ bahot bada number ($260$) bana dega, aur target sirf $106$ hai. Isliye '$\\times$' aur '+' ko interchange kar ke dekhte hain. New Equation: $13\\times145\\div29+52-11$. Bodmas laga: $13\\times5+52-11$. Phir $65+52-11=106$ aa gaya na perfect answer! Dimag laga kar badi values ko control karna aana chahiye."
@@ -105,16 +105,16 @@
   {
     "q": "Which two numbers and two signs should be interchanged in the following equation to make it correct? $18-6+11\\times5+18=113$",
     "o": [
-      "6 and 5, + and \\times",
-      "18 and 5, + and \\times",
-      "6 and 5, - and \\times",
-      "18 and 5, - and \\times"
+      "6 and 5, $+$ and $\\times$",
+      "18 and 5, $+$ and $\\times$",
+      "6 and 5, $-$ and $\\times$",
+      "18 and 5, $-$ and $\\times$"
     ],
     "a": 2,
-    "s": "Dekh mere bhai, yahan signs ke sath-sath numbers bhi swap karne hain. Double trap! RHS $113$ hai jo ki kaafi bada hai. Iska matlab hume multiplication se value ko boost karna hoga. Agar hum '-' aur '\\times' ko badal dein, aur '6' aur '5' ko swap kardein, toh equation banegi: $18\\times5+11-6+18$. Isko calculate karega toh: $90+11-6+18=113$ aayega. Seedha nishane pe teer! Aise options ko track karne ke liye unit digits ya divisibility check karna best approach rehti hai.<br><br><b>Key Trick:</b> Hamesha us operator pe attack kar jo value ko exponential jump de sake!"
+    "s": "Dekh mere bhai, yahan signs ke sath-sath numbers bhi swap karne hain. Double trap! RHS $113$ hai jo ki kaafi bada hai. Iska matlab hume multiplication se value ko boost karna hoga. Agar hum '-' aur '$\\times$' ko badal dein, aur '6' aur '5' ko swap kardein, toh equation banegi: $18\\times5+11-6+18$. Isko calculate karega toh: $90+11-6+18=113$ aayega. Seedha nishane pe teer! Aise options ko track karne ke liye unit digits ya divisibility check karna best approach rehti hai. Hamesha us operator pe attack kar jo value ko exponential jump de sake!"
   },
   {
-    "q": "What will come in the place of '?' in the following equation, if '+' and '-' are interchanged and '\\times' and '\\div' are interchanged? $109+55\\times605\\times77\\div93=$ ?",
+    "q": "What will come in the place of '?' in the following equation, if '+' and '-' are interchanged and '$\\times$' and '$\\div$' are interchanged? $109+55\\times605\\times77\\div93=$ ?",
     "o": [
       "82",
       "23",
@@ -136,7 +136,7 @@
     "s": "Bhai mere, isko kehte hain 'Approximation ka hack'! Jab bhi decimals aisi over-complex values dein, closest integers me round off kar le. $18.01 \\approx 18$, $21.99 \\approx 22$, $2.08 \\approx 2$. Nayi clean equation banegi: $(18+22)\\div2\\times4-42+644$. Bracket ko jod: $40$. Phir $40\\div2\\times4-42+644$. Ye dega $20\\times4-42+644$. Yani ki $80-42+644$. Solve karke dekhega toh $38+644=682$ aayega. Ye trick tere pure 2 minute bacha sakti hai exam me!"
   },
   {
-    "q": "By interchanging the signs '-' and '\\div' as well as the numbers '8' and '2', which of the following equations will NOT be correct? I. $5+7\\div2\\times4-8=9$ II. $3+2\\times4\\div8-1=3$",
+    "q": "By interchanging the signs '$-$' and '$\\div$' as well as the numbers '8' and '2', which of the following equations will NOT be correct? I. $5+7\\div2\\times4-8=9$ II. $3+2\\times4\\div8-1=3$",
     "o": [
       "Neither I nor II",
       "Only II",
@@ -144,7 +144,8 @@
       "Only I"
     ],
     "a": 2,
-    "s": "Dekh bhai, ye statement wala sawal hai jisme pucha hai ki kaunsa 'correct nahi hoga' (NOT correct). Pehle dono ko swap karke test karte hain.<br>Eq I change hogi: $5+7-8\\times4\\div2$. Isko solve kar: $5+7-8\\times2=12-16=-4$. Jo ki $9$ ke equal nahi hai. (So Eq I is incorrect).<br>Eq II change hogi: $3+8\\times4-2\\div1$. Solve kar: $3+32-2=33$. Jo ki $3$ ke equal nahi hai. (So Eq II is also incorrect).<br>Kyunki dono equations LHS = RHS hold nahi karti swap ke baad, dono hi galat hain. Isliye answer 'Both I and II' hoga."
+    "s": "Dekh bhai, ye statement wala sawal hai jisme pucha hai ki kaunsa 'correct nahi hoga' (NOT correct). Pehle dono ko swap karke test karte hain. Eq I change hogi: $5+7-8\\times4\\div2$. Isko solve kar: $5+7-8\\times2=12-16=-4$. Jo ki $9$ ke equal nahi hai. (So Eq I is incorrect). Eq II change hogi: $3+8\\times4-2\\div1$. Solve kar: $3+32-2=33$. Jo ki $3$ ke equal nahi hai. (So Eq II is also incorrect). Kyunki dono equations LHS = RHS hold nahi karti swap ke baad, dono hi galat hain. Isliye answer 'Both I and II' hoga."
   }
 ]
+
 }
