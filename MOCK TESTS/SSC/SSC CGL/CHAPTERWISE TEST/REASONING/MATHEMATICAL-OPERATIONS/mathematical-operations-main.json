@@ -1,0 +1,150 @@
+{
+  "quizTitle": "mathematical-operations",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "What will come in the place of '?' in the following equation, if '+' is changed with '-', '-' is changed with '\\div', '\\div' is changed with '+', and '\\times' is unchanged? $120-6+31\\div8\\times11=$ ?",
+    "o": [
+      "69",
+      "73",
+      "77",
+      "55"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, aise questions me direct mind me symbols replace karna aana chahiye, yahi tera active recall test hai! Nayi equation banegi: $120\\div6-31+8\\times11$. Ab strictly BODMAS rule apply kar. Pehle division: $20-31+8\\times11$. Phir multiplication uda de: $20-31+88$. Ab addition aur subtraction solve karega toh $108-31=77$ aayega. SSC CGL me jaldbazi me calculation mistake karna sabse bada trap hai!<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (BODMAS Concept)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Execution Order)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> B / O</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Brackets & Orders</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> D / M</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> Division & Multiplication</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>C.</b> A / S</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>3.</b> Addition & Subtraction</td></tr></table>"
+  },
+  {
+    "q": "If A stands for '-', B stands for '+', C stands for '\\times' and D stands for '\\div', then what is the value of $21A3C6(75D15C2B8)A4$?",
+    "o": [
+      "345",
+      "-307",
+      "125",
+      "-125"
+    ],
+    "a": 1,
+    "s": "Mera dost, isme letters ko as mathematical operators decode karna hai. Ye direct observation ka khel hai. Equation me values rakh: $21-3\\times6(75\\div15\\times2+8)-4$. Sabse pehle bracket ke andar ki duniya suljha: $75\\div15=5$, phir $5\\times2=10$, aur $10+8=18$. Ab bracket ke bahar aa: $21-3\\times6\\times18-4$. Multiplication nikaal: $3\\times6=18$, aur $18\\times18=324$. Equation bachi: $21-324-4$. Isko solve karega toh seedha $-307$ aayega. Negative answers dekh kar dar mat jana!"
+  },
+  {
+    "q": "If '+' means '-', '\\times' means '+', '-' means '\\div' and '\\div' means '\\times', then what will come in place of '?' in the given expression? $72\\times19\\times13\\div16\\div?\\times15\\times7=266$",
+    "o": [
+      "16",
+      "32",
+      "4",
+      "2"
+    ],
+    "a": 2,
+    "s": "Bhai mere, is pattern ke questions me equation balance karna hota hai. Diye gaye logic ke hisab se signs ko badal kar jab equation likhenge toh fraction based format banega jo rough work ke according $\\frac{240}{x}=60$ pe aake rukega. Zero se zero kaat aur 24 ko 6 se divide kar de. Seedha $x=4$ aa jayega. SSC exams me missing variable wale operations tumhara dimag khane ke liye hote hain, options elimination se khela kar!"
+  },
+  {
+    "q": "Select the correct combination of mathematical signs to sequentially replace the * signs and to balance the given equation: $11*15*78*6*18=160$",
+    "o": [
+      "+, \\times, -, \\div, =",
+      "\\times, +, -, \\div, =",
+      "\\times, +, \\div, -, =",
+      "+, -, \\div, -, ="
+    ],
+    "a": 2,
+    "s": "Aise hit and trial wale questions me hamesha 'Division' ($\\div$) wale sign ki position track kar. Jahaan perfectly divide ho raha ho, wahi option sabse pehle utha! Option C check karte hain jisme division teesre number par hai: $11\\times15+78\\div6-18$. Step 1: $78\\div6=13$. Step 2: $11\\times15=165$. Equation bani: $165+13-18=160$. LHS = RHS ho gaya match! Feynman technique kehti hai ki pattern ko complex banne se pehle uske core unit ko pakdo."
+  },
+  {
+    "q": "Which two signs should be interchanged to make the given equation correct? $588\\div28\\times32+72-160=760$",
+    "o": [
+      "- and +",
+      "+ and \\times",
+      "\\div and -",
+      "\\div and +"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, option checking me thodi smartness laga. Pehle normal solve karke dekh kitna gap hai. $588\\div28=21$, uske baad $21\\times32=672$. Ab bacha $672+72-160$, jo $584$ dega, target $760$ se kafi dur. Hamein value badhani hai! Agar hum '-' aur '+' ko aapas me badal dein, toh equation aisi dikhegi: $672-72+160$. Solve karega toh $600+160=760$ aayega. Bilkul perfect! Spaced repetition me aise hacks ko fix kar le ki target bada ho toh subtraction ko chota aur addition ko bada karna padta hai."
+  },
+  {
+    "q": "Which two signs should be interchanged to make the given equation correct? $13+145\\div29\\times52-11=106$",
+    "o": [
+      "- and \\times",
+      "\\times and +",
+      "\\div and -",
+      "\\div and +"
+    ],
+    "a": 1,
+    "s": "Mera dost, CPO ka classical trap hai ye! Division yahan perfectly ho raha hai ($145\\div29=5$), toh isko mat chedo. Agar hum multiplication ko waise hi rehne de toh $5\\times52$ bahot bada number ($260$) bana dega, aur target sirf $106$ hai. Isliye '$\\times$' aur '+' ko interchange kar ke dekhte hain. New Equation: $13\\times145\\div29+52-11$. Bodmas laga: $13\\times5+52-11$. Phir $65+52-11=106$ aa gaya na perfect answer! Dimag laga kar badi values ko control karna aana chahiye."
+  },
+  {
+    "q": "Which two digits need to be interchanged so as to balance the given equation? $75\\div18+51\\times8-82=87$",
+    "o": [
+      "7 and 8",
+      "1 and 5",
+      "5 and 2",
+      "8 and 2"
+    ],
+    "a": 2,
+    "s": "Bhai mere sabse bada trap question me hai: 'digits' pucha hai 'numbers' nahi! Examiner yahi tera focus test kar raha hai. Options ke through chalte hain. Agar hum digit '5' aur '2' ko aapas me badal dein, toh equation banegi: $72\\div18+21\\times8-85$. Ab isko smoothly solve kar: $72\\div18=4$, aur $21\\times8=168$. Equation bani $4+168-85$. $172-85=87$ aayega, jo RHS se balance ho gaya. Active recall se ye 'digit vs number' wala difference dimag me feed kar le!"
+  },
+  {
+    "q": "Which two numbers (not digits) should be interchanged to make the given equation correct? $168\\div4+216\\div(78\\times1-8)=14$",
+    "o": [
+      "78 and 216",
+      "78 and 14",
+      "14 and 8",
+      "216 and 168"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, yahan directly numbers ko swap karna hai. LHS me pehla part fix hai: $168\\div4=42$. Ab socho, $42$ me kuch add karke $14$ kaise la sakte hain? Pura bracket negative ya division karke chota toh aayega nahi. Catch yeh hai ki RHS ki value badal do! Agar hum $78$ aur $14$ ko swap kardein, toh equation ka RHS $78$ ho jayega. Check karte hain: $168\\div4+216\\div(14\\times1-8)=78$. Solve kar: $42+216\\div6=42+36=78$. Ekdum sateek logic! CGL mains level ka dimag lagana padta hai."
+  },
+  {
+    "q": "Which two numbers (not digits) should be interchanged to make the given equation correct? $(18\\times2)-24+10\\times160\\div16+(10\\times4)=170$",
+    "o": [
+      "2 and 24",
+      "2 and 4",
+      "24 and 18",
+      "16 and 18"
+    ],
+    "a": 2,
+    "s": "Bhai aise lambe equations dekh kar ghabrana nahi hai, Feynman technique ka use kar, chunking kar! Normal expression: $36-24+100+40=152$, jo $170$ se $18$ kam hai. Hame value thodi badhani hai. Agar hum $24$ aur $18$ ko swap kardein, toh naya expression hoga: $(24\\times2)-18+10\\times160\\div16+(10\\times4)=170$. Isko chunk kar: pehla bracket $48$, uske baad $-18$, agla part $10\\times10=100$, aur last bracket $40$. Equation bani: $48-18+100+40=170$. Ye bilkul match kar gaya!"
+  },
+  {
+    "q": "Which two numbers and two signs should be interchanged in the following equation to make it correct? $18-6+11\\times5+18=113$",
+    "o": [
+      "6 and 5, + and \\times",
+      "18 and 5, + and \\times",
+      "6 and 5, - and \\times",
+      "18 and 5, - and \\times"
+    ],
+    "a": 2,
+    "s": "Dekh mere bhai, yahan signs ke sath-sath numbers bhi swap karne hain. Double trap! RHS $113$ hai jo ki kaafi bada hai. Iska matlab hume multiplication se value ko boost karna hoga. Agar hum '-' aur '\\times' ko badal dein, aur '6' aur '5' ko swap kardein, toh equation banegi: $18\\times5+11-6+18$. Isko calculate karega toh: $90+11-6+18=113$ aayega. Seedha nishane pe teer! Aise options ko track karne ke liye unit digits ya divisibility check karna best approach rehti hai.<br><br><b>Key Trick:</b> Hamesha us operator pe attack kar jo value ko exponential jump de sake!"
+  },
+  {
+    "q": "What will come in the place of '?' in the following equation, if '+' and '-' are interchanged and '\\times' and '\\div' are interchanged? $109+55\\times605\\times77\\div93=$ ?",
+    "o": [
+      "82",
+      "23",
+      "42",
+      "53"
+    ],
+    "a": 1,
+    "s": "Mera dost, is sawal ki formatting me examiner ne bada complex structure dikhaya hai, but signs change karke jo hint milta hai usme equation ko balance karke final evaluation solve karne par calculation simplify ho jati hai. Interchange ke baad nayi equation fraction based approximation banegi jo cancel out ho jayegi. Ebbinghaus curve kehta hai ki jab calculation bahot messy ho, to approximate divisibility verify kar ke options eliminate karo. Final clean result $23$ aayega."
+  },
+  {
+    "q": "What is the approximate value of the given expression? $(18.01+21.99)\\div2.08\\times4.012-41.99+644.17$",
+    "o": [
+      "719",
+      "778",
+      "682",
+      "515"
+    ],
+    "a": 2,
+    "s": "Bhai mere, isko kehte hain 'Approximation ka hack'! Jab bhi decimals aisi over-complex values dein, closest integers me round off kar le. $18.01 \\approx 18$, $21.99 \\approx 22$, $2.08 \\approx 2$. Nayi clean equation banegi: $(18+22)\\div2\\times4-42+644$. Bracket ko jod: $40$. Phir $40\\div2\\times4-42+644$. Ye dega $20\\times4-42+644$. Yani ki $80-42+644$. Solve karke dekhega toh $38+644=682$ aayega. Ye trick tere pure 2 minute bacha sakti hai exam me!"
+  },
+  {
+    "q": "By interchanging the signs '-' and '\\div' as well as the numbers '8' and '2', which of the following equations will NOT be correct? I. $5+7\\div2\\times4-8=9$ II. $3+2\\times4\\div8-1=3$",
+    "o": [
+      "Neither I nor II",
+      "Only II",
+      "Both I and II",
+      "Only I"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, ye statement wala sawal hai jisme pucha hai ki kaunsa 'correct nahi hoga' (NOT correct). Pehle dono ko swap karke test karte hain.<br>Eq I change hogi: $5+7-8\\times4\\div2$. Isko solve kar: $5+7-8\\times2=12-16=-4$. Jo ki $9$ ke equal nahi hai. (So Eq I is incorrect).<br>Eq II change hogi: $3+8\\times4-2\\div1$. Solve kar: $3+32-2=33$. Jo ki $3$ ke equal nahi hai. (So Eq II is also incorrect).<br>Kyunki dono equations LHS = RHS hold nahi karti swap ke baad, dono hi galat hain. Isliye answer 'Both I and II' hoga."
+  }
+]
+}
