@@ -12,7 +12,7 @@
         "$6$"
       ],
       "a": 2,
-      "s": "<b>Answer is 5.</b><br>Dekh bhai, seedhi si baat hai... 7 ki divisibility mein 6 digits ka cycle chalta hai ($1001$ ka logic). Yahan 999, 99 times hai, toh total digits hue $99 \\times 3 = 297$. Ab 297 ko 6 se divide karega toh remainder aayega 3. Matlab shuru ki 294 digits 7 se poori divide ho jayengi. Bachenge sirf aakhiri 3 digits yani $999$. Direct $999 \\pmod 7$ nikal le, remainder $5$ aayega. Best method hai yeh time bachane ka!"
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br><br>Dekh bhai, seedhi si baat hai... ye cyclicity ka question hai jise dekh ke solve karna hai.<br><br><b>Pen-Free Observation:</b> 7 ki divisibility mein 6 digits ka cycle chalta hai ($1001 \\times 999 = 999999$). Yaani har 6 same digit block 7 se zero remainder deta hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Yahan 999, 99 times hai, toh total digits hue $99 \\times 3 = 297$.<br>Ab 297 ko 6 se divide karega toh remainder aayega 3. Matlab shuru ki 294 digits 7 se poori divide ho jayengi.<br>Bachenge sirf aakhiri 3 digits yani $999$. Direct $999 \\pmod 7$ nikal le, remainder $5$ aayega. Best method hai yeh time bachane ka!<br><br><b>Future Exam Takeaway:</b> $10^6 \\equiv 1 \\pmod 7$, so digits repeating in blocks of 6 give remainder 0. Hamesha total digits nikal kar 6 se divide karo."
     },
     {
       "q": "What is the remainder when $(123456789101112\\dots 444546)$ is divided by $16$?",
@@ -23,7 +23,7 @@
         "14"
       ],
       "a": 0,
-      "s": "<b>Answer is 2.</b><br>Dekh bhai! $16 = 2^4$, toh 16 ki divisibility check karne ke liye sirf aakhiri 4 digits chahiye hote hain. Yeh counting series chal rahi hai $44, 45, 46$ tak. Toh last 4 digits hue $4546$. Ab bas $4546 \\div 16$ kar. $16 \\times 284 = 4544$ hota hai. Remainder kya bacha? 2 bacha. Options eliminate kar aur aage badh!"
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Tail Limit Observation)</b><br><br>Dekh bhai! Pura number dekh kar panic nahi hona hai, sirf base ki power pakad.<br><br><b>Pen-Free Observation:</b> $16 = 2^4$, toh 16 ki divisibility check karne ke liye sirf number ki aakhiri 4 digits chahiye hote hain.<br><br><b>Method 1 (Ninja Technique):</b><br>Yeh counting series chal rahi hai $44, 45, 46$ tak. Toh last 4 digits hue $4546$.<br>Ab bas $4546 \\div 16$ kar. $16 \\times 284 = 4544$ hota hai.<br>Remainder kya bacha? 2 bacha. Options eliminate kar aur aage badh!<br><br><b>Future Exam Takeaway:</b> Divisibility of $2^n$ depends entirely on the last $n$ digits. Aage ke saare digits sirf daraane ke liye hote hain."
     },
     {
       "q": "What are the last two digits of $3^{2019}$?",
@@ -34,7 +34,7 @@
         "47"
       ],
       "a": 1,
-      "s": "<b>Answer is 67.</b><br>Dekh bhai aise karna hai... Last 2 digits ke liye modulus 100 nikalte hain. Euler's Totient of $100 = 40$ hota hai. Power 2019 ko 40 se divide kar, remainder 19 aayega. So, expression ban gaya $3^{19}$. Ise tod de: $(3^4)^4 \\times 3^3 = 81^4 \\times 27$. 81 ki koi bhi power ho, unit digit 1 hoga aur tens digit $8 \\times 4 = 32$ se 2 banega. Toh $81^4$ ke last two digits hue 21. Finally, $21 \\times 27 = 567$, so last 2 digits 67 hain."
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Euler's Totient)</b><br><br>Dekh bhai aise karna hai... jab bhi last 2 digits pooche, toh silently mod 100 nikalna hota hai.<br><br><b>Pen-Free Observation:</b> Euler's Totient of $100 = 40$ hota hai. Power ko 40 se chota karna hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Power 2019 ko 40 se divide kar, remainder 19 aayega. So, expression ban gaya $3^{19}$.<br>Ise tod de: $(3^4)^4 \\times 3^3 = 81^4 \\times 27$.<br>81 ki koi bhi power ho, unit digit 1 hoga aur tens digit $8 \\times 4 = 32$ se 2 banega. Toh $81^4$ ke last two digits hue 21.<br>Finally, $21 \\times 27 = 567$, so last 2 digits 67 hain.<br><br><b>Future Exam Takeaway:</b> Euler's totient is the fastest way to shrink large powers. Last 2 digits ke liye divide power by 40 directly if base is coprime to 10."
     },
     {
       "q": "What is the value of $7/2 + 11/3 + 7/6 + 11/15 + 7/12 + 11/35 \\dots + 7/156 + 11/575$?",
@@ -45,7 +45,7 @@
         "3816/325"
       ],
       "a": 3,
-      "s": "<b>Answer is 3816/325.</b><br>Bhai, dhyan se dekh! Yeh do mixed telescoping series ka jhol hai. Isko 7 aur 11 wale terms mein split kar le. Series 1: $7 \\times (1/2 + 1/6 + 1/12 + \\dots + 1/156) = 7 \\times (1 - 1/13) = 84/13$. Series 2: $11 \\times (1/3 + 1/15 + \\dots + 1/575)$. Yahan difference 2 ka hai denominators ke factors mein ($1\\times3, 3\\times5$), so $11 \\times \\frac{1}{2} \\times (1 - 1/25) = 132/25$. Dono ko jod de: $84/13 + 132/25 = 3816/325$. CGL mains ka trap hai yeh!"
+      "s": "<b>Core Tool Triggered: JSM (Series Splitting)</b><br><br>Bhai, dhyan se dekh! Yeh do mixed telescoping series ka jhol hai. Ek flow mein add karne gaya toh fass jayega.<br><br><b>Pen-Free Observation:</b> Isko 7 aur 11 wale numerators mein alag-alag split kar le.<br><br><b>Method 1 (Ninja Technique):</b><br>Series 1: $7 \\times (1/2 + 1/6 + 1/12 + \\dots + 1/156) = 7 \\times (1 - 1/13) = 84/13$.<br>Series 2: $11 \\times (1/3 + 1/15 + \\dots + 1/575)$. Yahan difference 2 ka hai denominators ke factors mein ($1\\times3, 3\\times5$), so formula lagega $\\frac{1}{\\text{diff}} \\times (\\text{first} - \\text{last})$. $11 \\times \\frac{1}{2} \\times (1 - 1/25) = 132/25$.<br>Dono ko jod de: $84/13 + 132/25 = 3816/325$.<br><br><b>Future Exam Takeaway:</b> Mixed series are CGL mains traps designed to induce panic; separate them to reveal standard telescoping patterns."
     },
     {
       "q": "The non-terminating repeating decimal among the following fractions is:",
@@ -56,7 +56,7 @@
         "597/8"
       ],
       "a": 1,
-      "s": "<b>Answer is 679/76.</b><br>Dekh bhai... Fraction tabhi terminate hota hai jab uske denominator ke prime factors sirf 2, 5, ya dono hon ($2^n \\times 5^m$). Option B dekh, $76 = 4 \\times 19$. Isme prime number 19 aa gaya, jo fraction ko non-terminating bana dega kyunki 679 bhi 19 se completely divide nahi hota. Direct hack!"
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Base Properties)</b><br><br>Dekh bhai... fraction ko evaluate nahi karna, sirf denominator ke DNA ko padhna hai.<br><br><b>Pen-Free Observation:</b> Fraction tabhi terminate hota hai jab uske denominator ke prime factors sirf 2, 5, ya dono hon ($2^n \\times 5^m$).<br><br><b>Method 1 (Ninja Technique):</b><br>Option B dekh, $76 = 4 \\times 19$.<br>Isme prime number 19 aa gaya, jo fraction ko non-terminating bana dega kyunki numerator 679 bhi 19 se completely divide nahi hota. Direct hack!<br><br><b>Future Exam Takeaway:</b> Hunt for primes other than 2 and 5 in the denominator to instantly spot non-terminating fractions."
     },
     {
       "q": "Find the remainder when a 50-digit number formed by writing $123456789101112\\dots$ is divided by $16$.",
@@ -67,7 +67,7 @@
         "14"
       ],
       "a": 1,
-      "s": "<b>Answer is 5.</b><br>Dekh bhai... Pehle 9 numbers mein 9 digits cover ho gaye. Bachi $50 - 9 = 41$ digits. Ab sab 2-digit numbers hain ($10, 11, \\dots$). 41 digits matlab 20 pure numbers aur ek single digit ($41/2$ = 20 remainder 1). 10 se shuru karke 20 numbers $29$ tak aayenge. Agla number 30 hona tha par ek hi digit leni hai, so sirf '3'. String ends at $28293$. 16 se check karna hai, so last 4 digits: $8293 \\pmod{16} = 5$. Khatam!"
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Digit Counting)</b><br><br>Dekh bhai... aise sawalon mein pura number nahi likhna hota, sirf aakhiri tak jump karna hai.<br><br><b>Pen-Free Observation:</b> 16 se check karna hai, so only last 4 digits matter. Hume 50th digit locate karni hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Pehle 9 numbers mein 9 digits cover ho gaye. Bachi $50 - 9 = 41$ digits.<br>Ab sab 2-digit numbers hain ($10, 11, \\dots$). 41 digits matlab 20 pure numbers aur ek single digit ($41/2 = 20$ remainder 1).<br>10 se shuru karke 20 numbers $29$ tak aayenge. Agla number 30 hona tha par ek hi digit leni hai, so sirf '3'.<br>String ends at $28293$. 16 se last 4 digits: $8293 \\pmod{16} = 5$. Khatam!<br><br><b>Future Exam Takeaway:</b> Jump to the end of the series using digit block counts (1-9, 10-99) instead of writing it out sequentially."
     },
     {
       "q": "Which of the following expressions is a factor of $(10^{12} - 1)$ but NOT a factor of $(10^6 - 1)$?",
@@ -78,7 +78,7 @@
         "$101$"
       ],
       "a": 3,
-      "s": "<b>Answer is 101.</b><br>Dekh bhai, basic algebra zindabad! $(a^2 - b^2)$ ka formula laga. $(10^{12} - 1) = (10^6 - 1)(10^6 + 1)$. Question mein condition hai ki $(10^6 - 1)$ ka factor nahi hona chahiye. Matlab humein $(10^6 + 1)$ ka factor dhoondhna hai. $(10^6 + 1) = (10^2)^3 + 1$. Ise $(x^3+1)$ wale formula se kholega toh ek factor $(10^2 + 1) = 101$ aayega. Seedha nishana!"
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Algebraic Factorization)</b><br><br>Dekh bhai, basic algebra zindabad! Badi values dekh ke darna nahi hai.<br><br><b>Pen-Free Observation:</b> $10^{12} - 1$ ek $(a^2 - b^2)$ ka format hai jise tod ke answers milenge.<br><br><b>Method 1 (Ninja Technique):</b><br>$(10^{12} - 1) = (10^6 - 1)(10^6 + 1)$.<br>Question mein condition hai ki $(10^6 - 1)$ ka factor nahi hona chahiye. Matlab humein $(10^6 + 1)$ ka factor dhoondhna hai.<br>$(10^6 + 1) = (10^2)^3 + 1$. Ise $(x^3+1)$ wale formula se kholega toh ek factor $(10^2 + 1) = 101$ aayega. Seedha nishana!<br><br><b>Future Exam Takeaway:</b> $a^n \\pm b^n$ basic identities break down the biggest numbers instantly. Difference of squares laga kar factors isolate karo."
     },
     {
       "q": "$xy$ is a number that is divided by $ab$ where $xy < ab$ and gives a result $0.xyxyxy\\dots$ then $ab$ equals",
@@ -89,7 +89,7 @@
         "33"
       ],
       "a": 0,
-      "s": "<b>Answer is 99.</b><br>Dekh bhai... Bar wale decimals ka logic yaad kar. $0.xyxyxy\\dots = 0.\\overline{xy} = \\frac{xy}{99}$. Question ke mutabiq yeh value $\\frac{xy}{ab}$ ke barabar hai. Dono ko equate kar de: $\\frac{xy}{ab} = \\frac{xy}{99}$. Clear cut $ab = 99$ aa gaya. Isme toh pen uthane ki bhi zarurat nahi thi!"
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Fraction Conversion)</b><br><br>Dekh bhai... Isme toh pen uthane ki bhi zarurat nahi thi! Bar wale decimals ka logic seedha apply hota hai.<br><br><b>Pen-Free Observation:</b> Two-digit repeating cycle $xyxyxy$ means the denominator must be based on 99.<br><br><b>Method 1 (Ninja Technique):</b><br>$0.xyxyxy\\dots = 0.\\overline{xy} = \\frac{xy}{99}$.<br>Question ke mutabiq yeh value $\\frac{xy}{ab}$ ke barabar hai.<br>Dono ko equate kar de: $\\frac{xy}{ab} = \\frac{xy}{99}$. Clear cut $ab = 99$ aa gaya.<br><br><b>Future Exam Takeaway:</b> An $n$-digit repeating decimal pattern is always that number divided by $10^n - 1$ (e.g., 9, 99, 999). Direct observation gives the answer."
     },
     {
       "q": "In a farm, the ratio of the total number of heads to the total number of legs of pigs and ducks is 7:20. If there are 20 ducks in the farm, find the total number of pigs.",
@@ -100,7 +100,7 @@
         "25"
       ],
       "a": 1,
-      "s": "<b>Answer is 15.</b><br>Dekh bhai, ratio method lagate hain. Maan le Pigs $P$ hain. Total heads = $P + 20$. Pig ke 4 pair, Duck ke 2. Total legs = $4P + 40$. Question ne diya hai: $\\frac{P + 20}{4P + 40} = \\frac{7}{20}$. Cross multiply karega toh $20P + 400 = 28P + 280$. Solve kar, $8P = 120$, so $P = 15$. Approximation ya options rakh ke bhi check kar sakta hai."
+      "s": "<b>Core Tool Triggered: Cross-Product Method</b><br><br>Dekh bhai, jab fractions/ratios directly linked ho toh basic ratio method linear variables nikal deta hai.<br><br><b>Pen-Free Observation:</b> Pig ke 4 pair, Duck ke 2 pair hote hain. Duck count fixed hai 20.<br><br><b>Method 1 (Ninja Technique):</b><br>Maan le Pigs $P$ hain. Total heads = $P + 20$.<br>Total legs = $4P + 40$.<br>Question ne diya hai: $\\frac{P + 20}{4P + 40} = \\frac{7}{20}$.<br>Cross multiply karega toh $20P + 400 = 28P + 280$.<br>Solve kar, $8P = 120$, so $P = 15$. Approximation ya options rakh ke bhi check kar sakta tha.<br><br><b>Future Exam Takeaway:</b> Simple linear ratios on 'Heads & Legs' problems equate directly. Don't overcomplicate with mixtures unless required."
     },
     {
       "q": "What is the sum of all the individual digits of the first 100 natural numbers (1 to 100)?",
@@ -111,7 +111,7 @@
         "903"
       ],
       "a": 1,
-      "s": "<b>Answer is 901.</b><br>Dekh bhai... Smart approach lagao. 00 se 99 tak har digit (0-9) apne place par exactly 20 baar aati hai (10 baar tens par, 10 baar units par, total 10 sets mein). Sum of digits = $20 \\times (0+1+2+\\dots+9) = 20 \\times 45 = 900$. Bacha 100, iske digits ka sum hai 1. Total ho gaya $900 + 1 = 901$. CGL level logic!"
+      "s": "<b>Core Tool Triggered: JSM (Symmetry Counting)</b><br><br>Dekh bhai... series add nahi karni, smart approach lagao. 0 to 99 ek perfect symmetric block hota hai.<br><br><b>Pen-Free Observation:</b> 00 se 99 tak har digit (0-9) apne place par equally repeat karti hai.<br><br><b>Method 1 (Ninja Technique):</b><br>00 se 99 tak har digit exactly 20 baar aati hai (10 baar tens par, 10 baar units par, total 10 sets mein).<br>Sum of digits = $20 \\times (0+1+2+\\dots+9) = 20 \\times 45 = 900$.<br>Bacha 100, iske digits ka sum hai 1.<br>Total ho gaya $900 + 1 = 901$. CGL level logic!<br><br><b>Future Exam Takeaway:</b> Exploit symmetry in counting problems. The block 00-99 is your best friend for digit frequencies."
     },
     {
       "q": "If $732XY$ is a number which is divisible by 70, then find minimum value of $(X+Y)/2$.",
@@ -122,7 +122,7 @@
         "1"
       ],
       "a": 3,
-      "s": "<b>Answer is 1.</b><br>Dekh bhai... Number 70 se divisible hai toh 10 se bhi hoga, matlab $Y$ strictly 0 ho gaya. Ab bacha 7. $732X$ ko 7 se divide karna hai. $7320 \\pmod 7 = 5$. Toh $5 + X$ ko 7 se divisible banana hai. Minimum $X$ aayega 2. Value maangi hai $\\frac{X+Y}{2}$ ki, toh $\\frac{2+0}{2} = 1$. Option elimination aur digital hacks ka sahi prayog kar."
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Base Isolation)</b><br><br>Dekh bhai... composite rules ko humesha unit digit set karne ke liye pehle kaatna chahiye.<br><br><b>Pen-Free Observation:</b> Number 70 se divisible hai toh 10 se bhi hoga, matlab aakhiri digit $Y$ strictly 0 ho gaya.<br><br><b>Method 1 (Ninja Technique):</b><br>Ab bacha 7. $732X$ ko 7 se divide karna hai.<br>$7320 \\pmod 7 = 5$. Toh $(5 + X)$ ko 7 se divisible banana hai.<br>Minimum $X$ aayega 2.<br>Value maangi hai $\\frac{X+Y}{2}$ ki, toh $\\frac{2+0}{2} = 1$. Option elimination aur digital hacks ka sahi prayog kar.<br><br><b>Future Exam Takeaway:</b> Always satisfy the 10, 5, or 2 divisibility rule first to lock the unit digit, then solve for the remaining primes."
     },
     {
       "q": "If the 6-digit number $213x4y$ is divisible by 99, find the value of $(x + y)$.",
@@ -133,7 +133,7 @@
         "10"
       ],
       "a": 1,
-      "s": "<b>Answer is 8.</b><br>Dekh bhai... 99 matlab 11 aur 9 dono se divisible hona chahiye. 11 ka rule laga: Alternate sum $(2+3+4) - (1+x+y) = 9 - (1+x+y) = 8 - (x+y)$. Yeh 11 se divisible tabhi hoga jab yeh 0 bane, kyunki $x, y$ digits hain aur inka max sum 18 ho sakta hai. So $x+y = 8$. Cross check with 9: Sum of digits = $10+x+y = 18$, jo 9 se divisible hai. Done!"
+      "s": "<b>Core Tool Triggered: JSM (Balancing)</b><br><br>Dekh bhai... 99 matlab 11 aur 9 dono se divisible hona chahiye. Aise case mein 11 ki condition hamesha linear equation deti hai.<br><br><b>Pen-Free Observation:</b> 11 ka rule alternate digit sum hota hai, jo humein variables mein direct relation dega.<br><br><b>Method 1 (Ninja Technique):</b><br>11 ka rule laga: Alternate sum $(2+3+4) - (1+x+y) = 9 - (1+x+y) = 8 - (x+y)$.<br>Yeh 11 se divisible tabhi hoga jab yeh 0 bane, kyunki $x, y$ digits hain aur inka max sum 18 ho sakta hai (so -3 possible nahi). So $x+y = 8$.<br>Cross check with 9: Sum of digits = $10+x+y = 18$, jo 9 se divisible hai. Done!<br><br><b>Future Exam Takeaway:</b> For composite divisors like 99, 88, 72, always hit the 11 or 8 divisibility rule first. It locks the variables instantly."
     },
     {
       "q": "Find the total number of distinct prime factors of the product: $10! \\times 11! \\times 12! \\times \\dots \\times 20!$",
@@ -144,7 +144,7 @@
         "10"
       ],
       "a": 1,
-      "s": "<b>Answer is 8.</b><br>Dekh bhai, seedha logic! Factorials multiplication mein highest prime sirf boundary ke andar aayega. Yahan limit 20! hai, matlab jo prime numbers 20 tak hain, sirf wahi is pure product mein honge. Primes $\\le 20$ nikal: 2, 3, 5, 7, 11, 13, 17, 19. Count karega toh exact 8 aayenge. Aise questions ko second mein uda."
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br><br>Dekh bhai, seedha logic! Pura calculate karna hi nahi hai, numbers ka behavior samajh.<br><br><b>Pen-Free Observation:</b> Factorials multiplication mein naye primes generate nahi hote, jo sabse bada boundary number hota hai, highest prime bas uske andar ka hota hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Yahan limit 20! hai, matlab jo prime numbers 20 tak hain, sirf wahi is pure product mein honge.<br>Primes $\\le 20$ nikal: 2, 3, 5, 7, 11, 13, 17, 19.<br>Count karega toh exact 8 aayenge. Aise questions ko second mein uda.<br><br><b>Future Exam Takeaway:</b> Factorial products don't introduce new primes, they just increase the power of existing ones up to the highest boundary."
     },
     {
       "q": "What is the smallest number which when divided by 6, 8, and 10 leaves remainder 4, 6, and 8 respectively?",
@@ -155,7 +155,7 @@
         "88"
       ],
       "a": 1,
-      "s": "<b>Answer is 118.</b><br>Dekh bhai... Negative remainder ka basic hack. Divisor aur Remainder ke beech ka difference check kar: $6-4=2$, $8-6=2$, $10-8=2$. Sabme common negative offset -2 aa raha hai. Aise cases mein LCM(6, 8, 10) nikal aur usme se difference minus kar de. LCM hai 120. Answer = $120 - 2 = 118$. Option se bhi direct remainder check kar sakta hai."
+      "s": "<b>Core Tool Triggered: JSM (Deviation / Negative Remainder)</b><br><br>Dekh bhai... Jab har number pe alag remainder aaye toh unke gaps observe kiya kar, wahan hack chhupa hota hai.<br><br><b>Pen-Free Observation:</b> Divisor aur Remainder ke beech ka difference check kar: $6-4=2$, $8-6=2$, $10-8=2$. Sabme common negative offset -2 aa raha hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Aise cases mein seedha LCM(6, 8, 10) nikal aur usme se constant difference minus kar de.<br>LCM hai 120.<br>Answer = $120 - 2 = 118$. Option se bhi har number ko divide karke direct remainder check kar sakta tha.<br><br><b>Future Exam Takeaway:</b> Constant difference between divisor and remainder implies the answer format is $K \\times \\text{LCM} - \\text{Difference}$."
     },
     {
       "q": "Find the number of factors of 14400 divisible by 18 but not by 36.",
@@ -166,7 +166,7 @@
         "6"
       ],
       "a": 0,
-      "s": "<b>Answer is 3.</b><br>Dekh bhai aise karna hai... $14400 = 2^6 \\times 3^2 \\times 5^2$. Divisible by $18$ matlab ($2^1 \\times 3^2$) hona chahiye. Not divisible by $36$ matlab ($2^2 \\times 3^2$) nahi hona chahiye. Matlab humari requirement strict ho gayi: 2 ki power sirf $1$ ho sakti hai, 2 ya usse zyada nahi. 3 ki power exactly $2$ rahegi. 5 ki power kuch bhi $(0, 1, 2)$ ho sakti hai. Combinations: 1(choice of $2^1$) $\\times$ 1(choice of $3^2$) $\\times$ 3(choices of 5) = 3. Brilliant question!"
+      "s": "<b>Core Tool Triggered: Combinatorics / Unitary Scaling</b><br><br>Dekh bhai aise karna hai... factors mein conditions set hain, iska matlab bas powers ko lock karna hai.<br><br><b>Pen-Free Observation:</b> $18 = 2^1 \\times 3^2$ and $36 = 2^2 \\times 3^2$. Difference sirf power of 2 ka hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Prime factorize $14400 = 2^6 \\times 3^2 \\times 5^2$.<br>Divisible by $18$ matlab at least ($2^1 \\times 3^2$) hona chahiye.<br>Not divisible by $36$ matlab ($2^2 \\times 3^2$) nahi hona chahiye.<br>Requirement strict ho gayi: 2 ki power sirf $1$ ho sakti hai (1 choice). 3 ki power exactly $2$ rahegi kyunki max $3^2$ hi hai (1 choice). 5 ki power kuch bhi $0, 1, 2$ ho sakti hai (3 choices).<br>Combinations: $1 \\times 1 \\times 3 = 3$. Brilliant question!<br><br><b>Future Exam Takeaway:</b> 'Divisible by X, not by Y' means lock the exact power of the prime that differs between X and Y."
     },
     {
       "q": "Find the maximum power of 3 in 60!",
@@ -177,7 +177,7 @@
         "30"
       ],
       "a": 2,
-      "s": "<b>Answer is 28.</b><br>Dekh bhai... Legendre's Formula lagana padega. Successive division ka best trick. 60 ko 3 se divide kar: quotient 20. Phir 20 ko 3 se kar: quotient 6. Phir 6 ko 3 se kar: quotient 2. Bas in quotients ko add kar de: $20 + 6 + 2 = 28$. Is hack se kabhi calculation error nahi aayega!"
+      "s": "<b>Core Tool Triggered: Successive Change (Legendre's Formula)</b><br><br>Dekh bhai... Factorials mein prime powers nikalne ka universally fastest tareeqa lagana hai.<br><br><b>Pen-Free Observation:</b> Divisors ko baar baar 3 se divide kar aur quotients ko add kar.<br><br><b>Method 1 (Ninja Technique):</b><br>60 ko 3 se divide kar: quotient 20.<br>Phir 20 ko 3 se kar: quotient 6.<br>Phir 6 ko 3 se kar: quotient 2.<br>Bas in quotients ko add kar de: $20 + 6 + 2 = 28$. Is hack se kabhi calculation error nahi aayega!<br><br><b>Future Exam Takeaway:</b> Don't rely on complex summation notations; just successively divide the quotient by the prime and add the results."
     },
     {
       "q": "In a parking lot, there are only two-wheelers and four-wheelers. The total number of vehicles is 60 and the total number of wheels is 200. How many two-wheelers are parked there?",
@@ -188,7 +188,7 @@
         "50"
       ],
       "a": 0,
-      "s": "<b>Answer is 20.</b><br>Dekh bhai... Shift method ya assumption best hai yahan. Maan le sabke paas 4 pahiye hain. Toh total wheels $= 60 \\times 4 = 240$ hone the. Lekin asal mein wheels sirf 200 hain. Yeh 40 wheels jyada kyu aaye? Kyunki humne 2-wheelers ko bhi 4-wheeler ginn liya (matlab 2 extra per bike). Extra wheels ko 2 se divide kar de: $40 / 2 = 20$. So, 20 two-wheelers the."
+      "s": "<b>Core Tool Triggered: JSM (Shift Method)</b><br><br>Dekh bhai... Linear equations $x$ aur $y$ wali equations banayega toh time nikal jayega. Shift method se bina pen chalaye solve kar.<br><br><b>Pen-Free Observation:</b> Maan le parking lot mein sabke paas 4 pahiye hain.<br><br><b>Method 1 (Ninja Technique):</b><br>Toh total wheels $= 60 \\times 4 = 240$ hone the. Lekin asal mein wheels sirf 200 hain.<br>Yeh 40 wheels jyada kyu aaye? Kyunki humne 2-wheelers ko bhi 4-wheeler ginn liya (matlab har 2-wheeler pe 2 extra pahiye assume kiye).<br>Extra wheels ko extra factor 2 se divide kar de: $40 / 2 = 20$. So, 20 two-wheelers the.<br><br><b>Future Exam Takeaway:</b> Shift method avoids simultaneous equations completely. Shift all entities to the higher value and divide the error gap."
     },
     {
       "q": "Determine the last three digits of $9^{100}$.",
@@ -199,7 +199,7 @@
         "801"
       ],
       "a": 0,
-      "s": "<b>Answer is 001.</b><br>Dekh bhai aise karna hai... Binomial Theorem zindabad. $9^{100} = (10 - 1)^{100}$. Expand karega toh aakhiri terms hongi: $\\dots - \\binom{100}{97} 10^3 + \\binom{100}{98} 10^2 - \\binom{100}{99} 10 + 1$. Modulo 1000 karna hai, so higher powers cancel. Third last term $4950 \\times 100 = 495000 \\equiv 0 \\pmod{1000}$. Second last $-1000 \\equiv 0$. Aakhiri bacha sirf $+1$. So last 3 digits lock ho gaye $001$ par."
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Binomial Expansion)</b><br><br>Dekh bhai aise karna hai... Last 3 digits matlab calculation mod 1000 ki karni hai. Jab base 10 ke aas paas ho toh Binomial Theorem zindabad.<br><br><b>Pen-Free Observation:</b> $9^{100} = (10 - 1)^{100}$. Expansion mein aakhiri 3 terms hi bachenge, baki sab 1000 se multiply hoke end mein $000$ denge.<br><br><b>Method 1 (Ninja Technique):</b><br>Expand karega toh aakhiri terms hongi: $\\dots - \\binom{100}{97} 10^3 + \\binom{100}{98} 10^2 - \\binom{100}{99} 10 + 1$.<br>Modulo 1000 karna hai, so higher powers cancel. Third last term $4950 \\times 100 = 495000 \\equiv 0 \\pmod{1000}$.<br>Second last $-1000 \\equiv 0$.<br>Aakhiri bacha sirf $+1$. So last 3 digits lock ho gaye $001$ par.<br><br><b>Future Exam Takeaway:</b> For last 3 digits, shift the base to $\\pm 1$ of a power of 10 and expand binomially. Most terms become zero instantly."
     },
     {
       "q": "If a number is divided by a divisor D leaves remainder 17. If the number 3N is divided by D leaves a remainder 5. Find the remainder when 4N is divided by D?",
@@ -210,7 +210,7 @@
         "22"
       ],
       "a": 3,
-      "s": "<b>Answer is 22.</b><br>Dekh bhai... Agar $N$ par remainder 17 hai, toh $3N$ par theoretically $3 \\times 17 = 51$ hona chahiye. Par question kehta hai 5 bacha. Matlab $(51 - 5) = 46$ divisor $D$ ka multiple hai. Since remainder 17 tha, $D > 17$ hoga. $46$ ke factors hain 23, 46. So $D$ is purely $23$ or $46$. Ab $4N$ par aate hain, $4 \\times 17 = 68$. Agar usko $D$ se divide kare (say 23), toh $68 = 23 \\times 2 + 22$. Remainder hamesha 22 aayega. Mast concept!"
+      "s": "<b>Core Tool Triggered: JSM (Remainder Balancing)</b><br><br>Dekh bhai... Remainder theorem mein equations banayi toh phasega. Seedha operation remainders pe karna hota hai.<br><br><b>Pen-Free Observation:</b> Number 3 times hua toh remainder bhi $3 \\times 17 = 51$ hona chahiye tha, par 5 aa raha hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Agar theoretical remainder 51 hai aur actual 5, matlab inka difference $(51 - 5) = 46$ divisor $D$ se cut gaya (multiple hai).<br>Since initial remainder 17 tha, toh rules ke according $D > 17$ hoga.<br>$46$ ke factors hain 23, 46. So $D$ is purely $23$ or $46$.<br>Ab $4N$ par aate hain, remainder should be $4 \\times 17 = 68$.<br>Agar usko $D$ se divide kare (let's say 23), toh $68 = 23 \\times 2 + 22$. Remainder hamesha 22 aayega. Mast concept!<br><br><b>Future Exam Takeaway:</b> Theoretical remainder minus actual remainder is always a multiple of the divisor. Ek baar Divisor nikal gaya toh koi bhi multiple poch le."
     },
     {
       "q": "The simplification of $(1.\\bar{3} \\times 1.\\bar{3} \\times 1.\\bar{3} - 1) / (1.\\bar{3} \\times 1.\\bar{3} \\times 1.\\bar{3} + 1)$ is:",
@@ -221,7 +221,7 @@
         "37/130"
       ],
       "a": 0,
-      "s": "<b>Answer is 37/91.</b><br>Dekh bhai... Bar repeating logic basic pata hona chahiye. $1.\\bar{3} = 1 + 3/9 = 4/3$. Direct substitution kar de. Equation banegi $\\frac{(4/3)^3 - 1}{(4/3)^3 + 1}$. Ise khol: $\\frac{64/27 - 1}{64/27 + 1} = \\frac{37/27}{91/27}$. Denominators cancel hue, answer aa gaya $37/91$. Basic identity trap thi bas!"
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br><br>Dekh bhai... Bar decimals ko algebraically handle karna sikho.<br><br><b>Pen-Free Observation:</b> Expression is just $(x^3 - 1) / (x^3 + 1)$. Bar repeat logic laga kar fraction le lo.<br><br><b>Method 1 (Ninja Technique):</b><br>$1.\\bar{3} = 1 + 3/9 = 4/3$. Direct substitution kar de.<br>Equation banegi $\\frac{(4/3)^3 - 1}{(4/3)^3 + 1}$.<br>Ise khol: $\\frac{64/27 - 1}{64/27 + 1} = \\frac{37/27}{91/27}$.<br>Denominators (27) cancel hue, answer aa gaya $37/91$. Basic identity trap thi bas!<br><br><b>Future Exam Takeaway:</b> Convert repeating decimals to fractions immediately before applying any algebraic identities to avoid calculation nightmares."
     },
     {
       "q": "What is the remainder when $(1^{49} + 2^{49} + 3^{49} + \\dots + 49^{49})$ is divided by 50?",
@@ -232,7 +232,7 @@
         "49"
       ],
       "a": 0,
-      "s": "<b>Answer is 25.</b><br>Dekh bhai... Algebraic symmetric grouping. Formula yaad kar: $(a^n + b^n)$ hamesha $(a+b)$ se divide hota hai agar $n$ odd ho. Yahan $1^{49} + 49^{49}$ banayega 50, toh yeh divisible hai. Aise hi $2+48$, $3+47$ sab pairs zero ban jayenge. Beech mein sirf ek bichara bachega: $25^{49}$. $25^n$ ko $50$ se divide karo toh remainder hamesha 25 aata hai (for any $n \\ge 1$). Ans is 25."
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Symmetry Grouping)</b><br><br>Dekh bhai... Itni badi series add hone ke liye nahi bani hoti, ye sirf pairs mein cutne ke liye hoti hai.<br><br><b>Pen-Free Observation:</b> Algebraic symmetric grouping. Formula yaad kar: $(a^n + b^n)$ hamesha $(a+b)$ se divide hota hai agar $n$ odd ho.<br><br><b>Method 1 (Ninja Technique):</b><br>First aur last term pakdo: $1^{49} + 49^{49}$. Sum of bases $1+49 = 50$. Toh yeh 50 se divisible hai.<br>Aise hi $2+48$, $3+47$ sab pairs zero remainder ban jayenge.<br>Beech mein sirf ek bichara bachega: $25^{49}$ kyunki iska pair nahi hai.<br>$25^n$ ko $50$ se divide karo toh remainder hamesha 25 aata hai (for any $n \\ge 1$). Ans is 25.<br><br><b>Future Exam Takeaway:</b> In massive series, look for first and last term symmetry to collapse the series into zero remainders."
     },
     {
       "q": "What is largest six digit number divisible by 52?",
@@ -243,7 +243,7 @@
         "999984"
       ],
       "a": 0,
-      "s": "<b>Answer is 999960.</b><br>Dekh bhai... Standard bounded constraint approach. Sabse bada 6-digit number $999999$ ko $52$ se direct divide kar. Remainder aayega 39. Matlab original number mein 39 extra hai division rule break karne ke liye. Subtraction mar de: $999999 - 39 = 999960$. Solid hit, no time waste!"
+      "s": "<b>Core Tool Triggered: Approximation & Range Definition</b><br><br>Dekh bhai... Option se divide mat karne lag jana, standard bounded constraint approach best hai.<br><br><b>Pen-Free Observation:</b> Sabse bada 6-digit number fix kar lo (999999) aur usko 52 se adjust kar do.<br><br><b>Method 1 (Ninja Technique):</b><br>Sabse bada 6-digit number $999999$ ko $52$ se direct divide kar. Remainder aayega 39.<br>Matlab original number mein 39 extra hai division rule break karne ke liye.<br>Subtraction mar de: $999999 - 39 = 999960$. Solid hit, no time waste!<br><br><b>Future Exam Takeaway:</b> Direct division of the boundary number (like 999... or 100...) is faster than building multiples from scratch."
     },
     {
       "q": "What is the least common multiple (LCM) of $x^2-8x+15$ and $x^2-5x+6$?",
@@ -254,7 +254,7 @@
         "$(x-2)(x-3)(x-5)$"
       ],
       "a": 3,
-      "s": "<b>Answer is (x-2)(x-3)(x-5).</b><br>Dekh bhai... Dono quadratics ko factorize kar. Pehla: $x^2-8x+15 = (x-3)(x-5)$. Doosra: $x^2-5x+6 = (x-2)(x-3)$. LCM lene ke liye saare unique factors likh lo, jo common ho use ek baar likho. Toh highest superset ban gaya $(x-2)(x-3)(x-5)$. Simple school level algebra."
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br><br>Dekh bhai... Polynomials ka LCM unke roots mein chupa hota hai. Isko normal numbers ki prime factorization ki tarah treat kar.<br><br><b>Pen-Free Observation:</b> Dono quadratics ke basic factors dekhne hain jo visually clear hain.<br><br><b>Method 1 (Ninja Technique):</b><br>Dono quadratics ko factorize kar.<br>Pehla: $x^2-8x+15 = (x-3)(x-5)$.<br>Doosra: $x^2-5x+6 = (x-2)(x-3)$.<br>LCM lene ke liye saare unique factors likh lo, jo common ho use ek baar likho.<br>Toh highest superset ban gaya $(x-2)(x-3)(x-5)$. Simple school level algebra.<br><br><b>Future Exam Takeaway:</b> Treat polynomials like prime factorization of numbers. LCM combines all distinct roots to their highest power."
     },
     {
       "q": "If $N = 3^{14} + 3^{13} - 12$, What is the largest prime factor of N?",
@@ -265,7 +265,7 @@
         "73"
       ],
       "a": 3,
-      "s": "<b>Answer is 73.</b><br>Dekh bhai aise karna hai... Common le pehle. $N = 3^{13}(3 + 1) - 12 = 4 \\times 3^{13} - 12$. 12 common le le: $12(3^{12} - 1)$. Ab $3^{12} - 1$ ko algebra se tod $(3^6 - 1)(3^6 + 1)$. $3^6$ hota hai 729. Bracket ho gaye $728 \\times 730$. Factors break kar: $728 = 8 \\times 7 \\times 13$, aur $730 = 10 \\times 73$. Maximum bound prime factor perfectly 73 nikal gaya!"
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Algebraic Factorization)</b><br><br>Dekh bhai aise karna hai... Jab constants aur powers mix hon, toh factors isolate karke algebra laga.<br><br><b>Pen-Free Observation:</b> 12 extract karke format ko square identities jaisa banaya ja sakta hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Common le pehle. $N = 3^{13}(3 + 1) - 12 = 4 \\times 3^{13} - 12$.<br>12 common le le: $12(3^{12} - 1)$.<br>Ab $3^{12} - 1$ ko algebra se tod $(3^6 - 1)(3^6 + 1)$. $3^6$ hota hai 729.<br>Bracket ho gaye $728 \\times 730$.<br>Factors break kar: $728 = 8 \\times 7 \\times 13$, aur $730 = 10 \\times 73$.<br>Maximum bound prime factor perfectly 73 nikal gaya!<br><br><b>Future Exam Takeaway:</b> Extract common constants to reveal standard $a^n - b^n$ algebraic identities. The largest prime is always hidden inside the factored brackets."
     },
     {
       "q": "If a 10-digit number $2094x843y2$, is divisible by 88, for the maximum possible value of x the value of (5x-7y) is?",
@@ -276,283 +276,7 @@
         "8"
       ],
       "a": 0,
-      "s": "<b>Answer is 5.</b><br>Dekh bhai... 88 matlab 8 aur 11. Div by 8: last 3 digits $3y2$ chahiye. $y=1$ (312), $y=5$ (352), $y=9$ (392) satisfy karenge. Ab 11 ka alternate sum: $(15+x+y) - 17 = x+y-2$. Yeh $0$ ya $11$ hona chahiye. Max $x$ ke liye $y=5$ par $x=8$ perfectly set hota hai. Equation mein dal: $5(8) - 7(5) = 40 - 35 = 5$. Question tod diya!"
+      "s": "<b>Core Tool Triggered: JSM (Base Divisibility Balancing)</b><br><br>Dekh bhai... 88 jaisi badi values composite hoti hain. Inhe 8 aur 11 mein tod ke constraints satisfy karo.<br><br><b>Pen-Free Observation:</b> Hamesha last 3 digits rule (8) pehle lagao taaki 'y' ki limited values mil jayein.<br><br><b>Method 1 (Ninja Technique):</b><br>88 matlab 8 aur 11.<br>Div by 8: last 3 digits $3y2$ chahiye. $y=1$ (312), $y=5$ (352), $y=9$ (392) satisfy karenge.<br>Ab 11 ka alternate sum: $(15+x+y) - 17 = x+y-2$. Yeh $0$ ya $11$ hona chahiye.<br>Max $x$ ke liye $x+y-2=11 \\implies x+y=13$. Agar hum $y=5$ lenge toh $x=8$ perfectly set hota hai.<br>Equation mein dal: $5(8) - 7(5) = 40 - 35 = 5$. Question tod diya!<br><br><b>Future Exam Takeaway:</b> Always find all possibilities for the unit digit from the $2^n$ rule before blindly applying the alternate sum 11's rule."
     }
-  ],
-  "questions_hin": [
-    {
-      "q_hi": "एक संख्या $N$, $999$ को एक साथ ठीक $99$ बार लिखकर बनाई गई है। $N$ को $7$ से विभाजित करने पर शेषफल क्या होगा?",
-      "o_hi": [
-        "$0$",
-        "$2$",
-        "$5$",
-        "$6$"
-      ],
-      "a": 2,
-      "s_hi": "<b>उत्तर 5 है।</b><br>देखिए, यह चक्रीय पैटर्न का सीधा सवाल है! 7 की विभाज्यता में 6 अंकों का चक्र चलता है ($1001$ का लॉजिक)। यहाँ 999, 99 बार है, तो कुल अंक हुए $99 \\times 3 = 297$। अब 297 को 6 से विभाजित करें तो शेषफल 3 बचेगा। इसका मतलब है कि शुरू के 294 अंक 7 से पूरी तरह कट जाएंगे। बचेंगे सिर्फ आखिरी 3 अंक यानी $999$। सीधा $999 \\pmod 7$ निकालें, उत्तर $5$ आएगा।"
-    },
-    {
-      "q_hi": "जब $(123456789101112\\dots 444546)$ को $16$ से विभाजित किया जाता है, तो शेषफल क्या होता है?",
-      "o_hi": [
-        "2",
-        "6",
-        "10",
-        "14"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 2 है।</b><br>देखिए! $16 = 2^4$, तो 16 की विभाज्यता जांचने के लिए सिर्फ आखिरी 4 अंकों की आवश्यकता होती है। यह गिनती की श्रृंखला $44, 45, 46$ तक चल रही है। तो अंतिम 4 अंक हुए $4546$। अब बस $4546 \\div 16$ करें। $16 \\times 284 = 4544$ होता है। शेषफल 2 बचेगा। समय बचाने के लिए यह सबसे बेहतरीन तरीका है!"
-    },
-    {
-      "q_hi": "$3^{2019}$ के अंतिम दो अंक क्या हैं?",
-      "o_hi": [
-        "27",
-        "67",
-        "87",
-        "47"
-      ],
-      "a": 1,
-      "s_hi": "<b>उत्तर 67 है।</b><br>देखिए, अंतिम 2 अंकों के लिए हम modulo 100 निकालते हैं। $100$ का Euler's Totient $40$ होता है। घात 2019 को 40 से भाग दें, शेषफल 19 आएगा। तो समीकरण बन गया $3^{19}$। इसे विभाजित करें: $(3^4)^4 \\times 3^3 = 81^4 \\times 27$। 81 की कोई भी घात हो, इकाई अंक 1 होगा और दहाई अंक $8 \\times 4 = 32$ से 2 बनेगा। तो $81^4$ के अंतिम दो अंक 21 हुए। अंत में, $21 \\times 27 = 567$, इसलिए अंतिम 2 अंक 67 हैं।"
-    },
-    {
-      "q_hi": "$7/2 + 11/3 + 7/6 + 11/15 + 7/12 + 11/35 \\dots + 7/156 + 11/575$ का मान क्या है?",
-      "o_hi": [
-        "3216/315",
-        "3714/345",
-        "3917/355",
-        "3816/325"
-      ],
-      "a": 3,
-      "s_hi": "<b>उत्तर 3816/325 है।</b><br>देखिए! इसे 7 और 11 वाले अंशों में विभाजित करें। पहली श्रृंखला: $7 \\times (1/2 + 1/6 + 1/12 + \\dots + 1/156) = 7 \\times (1 - 1/13) = 84/13$। दूसरी श्रृंखला: $11 \\times (1/3 + 1/15 + \\dots + 1/575)$। यहाँ हर (denominator) के गुणनखंडों में 2 का अंतर है ($1\\times3, 3\\times5$), इसलिए $11 \\times \\frac{1}{2} \\times (1 - 1/25) = 132/25$। दोनों को जोड़ दें: $84/13 + 132/25 = 3816/325$।"
-    },
-    {
-      "q_hi": "निम्नलिखित भिन्नों में से गैर-समाप्त होने वाला आवर्ती (non-terminating repeating) दशमलव कौन सा है:",
-      "o_hi": [
-        "879/16",
-        "679/76",
-        "979/40",
-        "597/8"
-      ],
-      "a": 1,
-      "s_hi": "<b>उत्तर 679/76 है।</b><br>देखिए... भिन्न तभी समाप्त (terminate) होता है जब उसके हर के अभाज्य गुणनखंडों में केवल 2, 5, या दोनों हों ($2^n \\times 5^m$)। विकल्प B देखिए, $76 = 4 \\times 19$। इसमें अभाज्य संख्या 19 आ गई, जो भिन्न को गैर-समाप्त बना देगी क्योंकि 679 भी 19 से पूरी तरह विभाजित नहीं होता है।"
-    },
-    {
-      "q_hi": "$123456789101112\\dots$ लिखकर बनाई गई 50 अंकों की एक संख्या को $16$ से विभाजित करने पर शेषफल ज्ञात कीजिए।",
-      "o_hi": [
-        "2",
-        "5",
-        "10",
-        "14"
-      ],
-      "a": 1,
-      "s_hi": "<b>उत्तर 5 है।</b><br>देखिए... पहले 9 संख्याओं में 9 अंक कवर हो गए। बचे $50 - 9 = 41$ अंक। अब सभी 2-अंकीय संख्याएँ हैं ($10, 11, \\dots$)। 41 अंकों का अर्थ है 20 पूरी संख्याएँ और एक अकेला अंक ($41/2 = 20$ शेष 1)। 10 से शुरू करके 20 संख्याएँ $29$ तक आएँगी। अगली संख्या 30 होनी थी लेकिन केवल एक ही अंक लेना है, इसलिए सिर्फ '3'। संख्या $28293$ पर समाप्त होती है। 16 से जांचना है, इसलिए अंतिम 4 अंक: $8293 \\pmod{16} = 5$।"
-    },
-    {
-      "q_hi": "निम्नलिखित में से कौन सा व्यंजक $(10^{12} - 1)$ का गुणनखंड है लेकिन $(10^6 - 1)$ का गुणनखंड नहीं है?",
-      "o_hi": [
-        "$7$",
-        "$11$",
-        "$13$",
-        "$101$"
-      ],
-      "a": 3,
-      "s_hi": "<b>उत्तर 101 है।</b><br>देखिए, मूल बीजगणित! $(a^2 - b^2)$ का सूत्र लगाएँ। $(10^{12} - 1) = (10^6 - 1)(10^6 + 1)$। प्रश्न में शर्त है कि $(10^6 - 1)$ का गुणनखंड नहीं होना चाहिए। अर्थात हमें $(10^6 + 1)$ का गुणनखंड ढूंढना है। $(10^6 + 1) = (10^2)^3 + 1$। इसे $(x^3+1)$ वाले सूत्र से खोलेंगे तो एक गुणनखंड $(10^2 + 1) = 101$ आएगा।"
-    },
-    {
-      "q_hi": "$xy$ एक संख्या है जिसे $ab$ से विभाजित किया जाता है जहाँ $xy < ab$ और परिणाम $0.xyxyxy\\dots$ मिलता है, तो $ab$ किसके बराबर है?",
-      "o_hi": [
-        "99",
-        "11",
-        "66",
-        "33"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 99 है।</b><br>देखिए... बार (bar) वाले दशमलवों का लॉजिक। $0.xyxyxy\\dots = 0.\\overline{xy} = \\frac{xy}{99}$। प्रश्न के अनुसार, यह मान $\\frac{xy}{ab}$ के बराबर है। दोनों को बराबर करें: $\\frac{xy}{ab} = \\frac{xy}{99}$। स्पष्ट रूप से $ab = 99$ आ गया। इसमें पेन उठाने की भी जरूरत नहीं थी!"
-    },
-    {
-      "q_hi": "एक खेत में, सूअरों और बत्तखों के सिरों की कुल संख्या और पैरों की कुल संख्या का अनुपात 7:20 है। यदि खेत में 20 बत्तखें हैं, तो सूअरों की कुल संख्या ज्ञात कीजिए।",
-      "o_hi": [
-        "10",
-        "15",
-        "20",
-        "25"
-      ],
-      "a": 1,
-      "s_hi": "<b>उत्तर 15 है।</b><br>देखिए, अनुपात विधि लगाते हैं। मान लें कि सूअर $P$ हैं। कुल सिर = $P + 20$। सूअर के 4 पैर, बत्तख के 2। कुल पैर = $4P + 40$। प्रश्न ने दिया है: $\\frac{P + 20}{4P + 40} = \\frac{7}{20}$। क्रॉस गुणा करेंगे तो $20P + 400 = 28P + 280$। हल करें, $8P = 120$, इसलिए $P = 15$।"
-    },
-    {
-      "q_hi": "पहली 100 प्राकृत संख्याओं (1 से 100) के सभी व्यक्तिगत अंकों का योग क्या है?",
-      "o_hi": [
-        "900",
-        "901",
-        "902",
-        "903"
-      ],
-      "a": 1,
-      "s_hi": "<b>उत्तर 901 है।</b><br>देखिए... 00 से 99 तक हर अंक (0-9) अपने स्थान पर बिल्कुल 20 बार आता है (10 बार दहाई पर, 10 बार इकाई पर)। अंकों का योग = $20 \\times (0+1+2+\\dots+9) = 20 \\times 45 = 900$। बची 100, इसके अंकों का योग 1 है। कुल हो गया $900 + 1 = 901$। शानदार लॉजिक!"
-    },
-    {
-      "q_hi": "यदि $732XY$ एक संख्या है जो 70 से विभाज्य है, तो $(X+Y)/2$ का न्यूनतम मान ज्ञात कीजिए।",
-      "o_hi": [
-        "2",
-        "3",
-        "0",
-        "1"
-      ],
-      "a": 3,
-      "s_hi": "<b>उत्तर 1 है।</b><br>देखिए... संख्या 70 से विभाज्य है तो 10 से भी होगी, मतलब $Y$ शून्य (0) होगा। अब बचा 7। $732X$ को 7 से विभाजित करना है। $7320 \\pmod 7 = 5$। तो $5 + X$ को 7 से विभाज्य बनाना है। न्यूनतम $X$ आएगा 2। मान माँगा है $\\frac{X+Y}{2}$ का, तो $\\frac{2+0}{2} = 1$।"
-    },
-    {
-      "q_hi": "यदि 6-अंकीय संख्या $213x4y$, 99 से विभाज्य है, तो $(x + y)$ का मान ज्ञात कीजिए।",
-      "o_hi": [
-        "7",
-        "8",
-        "9",
-        "10"
-      ],
-      "a": 1,
-      "s_hi": "<b>उत्तर 8 है।</b><br>देखिए... 99 का मतलब है 11 और 9 दोनों से विभाज्य होना चाहिए। 11 का नियम लगाएँ: एकांतर (alternate) योग $(2+3+4) - (1+x+y) = 9 - (1+x+y) = 8 - (x+y)$। यह 11 से विभाज्य तभी होगा जब यह 0 बने। इसलिए $x+y = 8$। 9 के साथ क्रॉस चेक करें: अंकों का योग = $10+x+y = 18$, जो 9 से विभाज्य है।"
-    },
-    {
-      "q_hi": "गुणनफल: $10! \\times 11! \\times 12! \\times \\dots \\times 20!$ के कुल कितने भिन्न अभाज्य गुणनखंड (distinct prime factors) हैं?",
-      "o_hi": [
-        "7",
-        "8",
-        "9",
-        "10"
-      ],
-      "a": 1,
-      "s_hi": "<b>उत्तर 8 है।</b><br>देखिए, क्रमगुणित (factorials) के गुणन में उच्चतम अभाज्य सीमा के भीतर ही आएगा। यहाँ सीमा 20! है, मतलब जो अभाज्य संख्याएँ 20 तक हैं, केवल वही इस पूरे गुणनफल में होंगी। अभाज्य $\\le 20$ निकालें: 2, 3, 5, 7, 11, 13, 17, 19। गिनेंगे तो ठीक 8 आएँगी।"
-    },
-    {
-      "q_hi": "वह सबसे छोटी संख्या कौन सी है जिसे 6, 8 और 10 से विभाजित करने पर क्रमशः 4, 6 और 8 शेष बचता है?",
-      "o_hi": [
-        "120",
-        "118",
-        "112",
-        "88"
-      ],
-      "a": 1,
-      "s_hi": "<b>उत्तर 118 है।</b><br>देखिए... भाजक और शेषफल के बीच का अंतर जांचें: $6-4=2$, $8-6=2$, $10-8=2$। सब में समान नकारात्मक ऑफसेट -2 आ रहा है। ऐसे मामलों में LCM(6, 8, 10) निकालें और उसमें से अंतर घटा दें। LCM है 120। उत्तर = $120 - 2 = 118$।"
-    },
-    {
-      "q_hi": "14400 के उन गुणनखंडों की संख्या ज्ञात कीजिए जो 18 से विभाज्य हैं लेकिन 36 से नहीं।",
-      "o_hi": [
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 3 है।</b><br>देखिए... $14400 = 2^6 \\times 3^2 \\times 5^2$। 18 से विभाज्य मतलब ($2^1 \\times 3^2$) होना चाहिए। 36 से विभाज्य नहीं मतलब ($2^2 \\times 3^2$) नहीं होना चाहिए। इसका मतलब है: 2 की घात केवल 1 हो सकती है। 3 की घात ठीक 2 रहेगी। 5 की घात कुछ भी (0, 1, 2) हो सकती है। संयोजन: 1(विकल्प) $\\times$ 1(विकल्प) $\\times$ 3(विकल्प) = 3।"
-    },
-    {
-      "q_hi": "60! में 3 की अधिकतम घात ज्ञात कीजिए।",
-      "o_hi": [
-        "18",
-        "27",
-        "28",
-        "30"
-      ],
-      "a": 2,
-      "s_hi": "<b>उत्तर 28 है।</b><br>देखिए... यह लीजेंड्रे (Legendre's) फॉर्मूला का सीधा सवाल है। क्रमिक विभाजन (Successive division) की ट्रिक लगाएं। 60 को 3 से भाग दें: भागफल 20। फिर 20 को 3 से दें: भागफल 6। फिर 6 को 3 से दें: भागफल 2। बस इन भागफलों को जोड़ दें: $20 + 6 + 2 = 28$।"
-    },
-    {
-      "q_hi": "एक पार्किंग स्थल में केवल दोपहिया और चौपहिया वाहन हैं। वाहनों की कुल संख्या 60 है और पहियों की कुल संख्या 200 है। वहाँ कितने दोपहिया वाहन खड़े हैं?",
-      "o_hi": [
-        "20",
-        "30",
-        "40",
-        "50"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 20 है।</b><br>देखिए... शिफ्ट विधि (Shift method)। मान लें सबके पास 4 पहिये हैं। तो कुल पहिये $= 60 \\times 4 = 240$ होने चाहिए थे। लेकिन असल में पहिये 200 हैं। 40 अतिरिक्त पहिये इसलिए आए क्योंकि हमने दोपहिया वाहनों को भी चौपहिया मान लिया। अतिरिक्त पहियों को 2 से भाग दें: $40 / 2 = 20$। अतः, 20 दोपहिया वाहन थे।"
-    },
-    {
-      "q_hi": "$9^{100}$ के अंतिम तीन अंक ज्ञात कीजिए।",
-      "o_hi": [
-        "001",
-        "201",
-        "401",
-        "801"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 001 है।</b><br>देखिए... द्विपद प्रमेय (Binomial Theorem)। $9^{100} = (10 - 1)^{100}$। इसे खोलेंगे तो आखिरी पद होंगे: $\\dots - \\binom{100}{97} 10^3 + \\binom{100}{98} 10^2 - \\binom{100}{99} 10 + 1$। मॉड्यूलो 1000 करना है, इसलिए उच्च घात रद्द हो जाएंगी। तीसरा अंतिम पद $4950 \\times 100 = 495000 \\equiv 0 \\pmod{1000}$। दूसरा अंतिम $-1000 \\equiv 0$। केवल $+1$ बचा। इसलिए अंतिम 3 अंक $001$ पर लॉक हो गए।"
-    },
-    {
-      "q_hi": "यदि एक संख्या को भाजक D से विभाजित किया जाता है तो 17 शेष बचता है। यदि संख्या 3N को D से विभाजित किया जाता है तो 5 शेष बचता है। 4N को D से विभाजित करने पर शेषफल ज्ञात कीजिए?",
-      "o_hi": [
-        "20",
-        "26",
-        "28",
-        "22"
-      ],
-      "a": 3,
-      "s_hi": "<b>उत्तर 22 है।</b><br>देखिए... यदि $N$ पर शेष 17 है, तो $3N$ पर सैद्धांतिक रूप से $3 \\times 17 = 51$ होना चाहिए। पर प्रश्न कहता है 5 बचा। मतलब $(51 - 5) = 46$ भाजक $D$ का गुणज है। चूँकि शेष 17 था, $D > 17$ होगा। $46$ के गुणनखंड हैं 23, 46। तो $D$ पूर्णतः 23 या 46 है। अब $4N$ पर आते हैं, $4 \\times 17 = 68$। यदि उसे $D$ (मान लें 23) से विभाजित करें, तो $68 = 23 \\times 2 + 22$। शेषफल 22 आएगा।"
-    },
-    {
-      "q_hi": "$(1.\\bar{3} \\times 1.\\bar{3} \\times 1.\\bar{3} - 1) / (1.\\bar{3} \\times 1.\\bar{3} \\times 1.\\bar{3} + 1)$ का सरलीकरण है:",
-      "o_hi": [
-        "37/91",
-        "37/128",
-        "37/129",
-        "37/130"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 37/91 है।</b><br>देखिए... $1.\\bar{3} = 1 + 3/9 = 4/3$। सीधा प्रतिस्थापित (substitute) कर दें। समीकरण बनेगी $\\frac{(4/3)^3 - 1}{(4/3)^3 + 1}$। इसे खोलें: $\\frac{64/27 - 1}{64/27 + 1} = \\frac{37/27}{91/27}$। हर (denominators) कट गए, उत्तर आ गया $37/91$।"
-    },
-    {
-      "q_hi": "जब $(1^{49} + 2^{49} + 3^{49} + \\dots + 49^{49})$ को 50 से विभाजित किया जाता है, तो शेषफल क्या होता है?",
-      "o_hi": [
-        "25",
-        "1",
-        "0",
-        "49"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 25 है।</b><br>देखिए... सममित समूहन (symmetric grouping)। सूत्र याद करें: $(a^n + b^n)$ हमेशा $(a+b)$ से विभाज्य होता है यदि $n$ विषम हो। यहाँ $1^{49} + 49^{49}$ मिलकर 50 बनाएगा, तो यह विभाज्य है। इसी तरह $2+48$, $3+47$ सब जोड़े शून्य बन जाएंगे। बीच में सिर्फ एक बचेगा: $25^{49}$। $25^n$ को $50$ से भाग दें तो शेष हमेशा 25 आता है। उत्तर 25 है।"
-    },
-    {
-      "q_hi": "52 से विभाज्य 6 अंकों की सबसे बड़ी संख्या कौन सी है?",
-      "o_hi": [
-        "999960",
-        "999999",
-        "100000",
-        "999984"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 999960 है।</b><br>देखिए... 6 अंकों की सबसे बड़ी संख्या $999999$ को $52$ से सीधा भाग दें। शेषफल 39 आएगा। इसका मतलब है मूल संख्या में विभाजन नियम तोड़ने के लिए 39 अतिरिक्त है। बस घटा दें: $999999 - 39 = 999960$।"
-    },
-    {
-      "q_hi": "$x^2-8x+15$ और $x^2-5x+6$ का लघुत्तम समापवर्त्य (LCM) क्या है?",
-      "o_hi": [
-        "$(x-6)^2(x+1)(x-3)$",
-        "$(x+6)(x+1)(x-3)$",
-        "$(x-6)(x+1)(x-3)$",
-        "$(x-2)(x-3)(x-5)$"
-      ],
-      "a": 3,
-      "s_hi": "<b>उत्तर (x-2)(x-3)(x-5) है।</b><br>देखिए... दोनों द्विघात (quadratics) का गुणनखंडन करें। पहला: $x^2-8x+15 = (x-3)(x-5)$। दूसरा: $x^2-5x+6 = (x-2)(x-3)$। LCM लेने के लिए सारे अद्वितीय गुणनखंड लिख लें, जो सामान्य हो उसे एक बार लिखें। तो यह बन गया $(x-2)(x-3)(x-5)$।"
-    },
-    {
-      "q_hi": "यदि $N = 3^{14} + 3^{13} - 12$, तो N का सबसे बड़ा अभाज्य गुणनखंड क्या है?",
-      "o_hi": [
-        "11",
-        "79",
-        "13",
-        "73"
-      ],
-      "a": 3,
-      "s_hi": "<b>उत्तर 73 है।</b><br>देखिए... पहले कॉमन लें। $N = 3^{13}(3 + 1) - 12 = 4 \\times 3^{13} - 12$। 12 कॉमन ले लें: $12(3^{12} - 1)$। अब $3^{12} - 1$ को बीजगणित से तोड़ें $(3^6 - 1)(3^6 + 1)$। $3^6$ होता है 729। कोष्ठक हो गए $728 \\times 730$। गुणनखंड तोड़ें: $728 = 8 \\times 7 \\times 13$, और $730 = 10 \\times 73$। अधिकतम अभाज्य गुणनखंड पूरी तरह से 73 निकल गया!"
-    },
-    {
-      "q_hi": "यदि 10-अंकीय संख्या $2094x843y2$, 88 से विभाज्य है, तो x के अधिकतम संभावित मान के लिए (5x-7y) का मान क्या है?",
-      "o_hi": [
-        "5",
-        "3",
-        "2",
-        "8"
-      ],
-      "a": 0,
-      "s_hi": "<b>उत्तर 5 है।</b><br>देखिए... 88 मतलब 8 और 11। 8 से विभाज्य: अंतिम 3 अंक $3y2$ चाहिए। $y=1$ (312), $y=5$ (352), $y=9$ (392) संतुष्ट करेंगे। अब 11 का एकांतर योग: $(15+x+y) - 17 = x+y-2$। यह $0$ या $11$ होना चाहिए। Max $x$ के लिए $y=5$ पर $x=8$ बिल्कुल सेट होता है। समीकरण में डालें: $5(8) - 7(5) = 40 - 35 = 5$। प्रश्न हल हो गया!"
-    }
-  ]}
+  ]
+}
