@@ -927,7 +927,7 @@ function showPendingApprovalUI(user) {
     if (mainContent) mainContent.style.display = 'none';
 
     // WhatsApp Message Format (Pre-filled)
-    let msg = `Hello Malik,\n\nI am preparing for exams and need access to the TestRipper Platform.\n\n*Name:* ${user.displayName}\n*Email:* ${user.email}\n\nPlease approve my request!`;
+    let msg = `Hello Malik,\n\n हमरो के एक्सेस द मालिक and I am preparing for exams and need access to the TestRipper Platform.\n\n*Name:* ${user.displayName}\n*Email:* ${user.email}\n\nPlease approve my request!`;
     let encodedMsg = encodeURIComponent(msg);
     let waLink = `https://wa.me/919793513539?text=${encodedMsg}`;
 
