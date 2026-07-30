@@ -1262,8 +1262,9 @@ auth.onAuthStateChanged(async (user) => {
      document.getElementById('an-rank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
      
      // Default 'You' Table Data
-     let myScoreStr = String(att.score).split(' /')[0];
-     let myScore = parseFloat(myScoreStr);
+let scoreParts = String(att.score).split(' /');
+let myScore = parseFloat(scoreParts[0]);
+let actualTotalMarks = scoreParts.length > 1 ? parseFloat(scoreParts[1]) : (att.snap.length * 2);
      let myAcc = (att.correct + att.incorrect) > 0 ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) : 0;
      let myTime = (att.minutes || 0);
      
@@ -1274,7 +1275,7 @@ auth.onAuthStateChanged(async (user) => {
      document.getElementById('cmp-you-time').innerText = myTime + "m";
      
      // Init Rank Predictor Slider
-     document.getElementById('rp-slider').max = att.snap.length * 2; // Approximating max score
+document.getElementById('rp-slider').max = actualTotalMarks; 
      document.getElementById('rp-slider').value = myScore;
      
      db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
@@ -1302,7 +1303,7 @@ auth.onAuthStateChanged(async (user) => {
             
             // Populate Basic Summary
             document.getElementById('an-rank').innerHTML = `${myRank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${totalStudents}</span>`;
-            document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${att.snap.length * 2}</span>`;
+            document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${actualTotalMarks}</span>`;
             document.getElementById('an-avg-score').innerText = avgScore;
             document.getElementById('an-top-score').innerText = topScore;
             document.getElementById('an-percentile').innerText = percentile + "%";
