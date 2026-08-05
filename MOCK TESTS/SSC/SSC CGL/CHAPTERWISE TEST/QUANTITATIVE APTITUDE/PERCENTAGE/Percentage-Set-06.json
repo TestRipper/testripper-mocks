@@ -4,17 +4,6 @@
   "totalMarks": 50,
   "questions":[
   {
-    "q": "If the radius of a sphere is increased by $125\\%$ then by what percentage will its surface area increase?",
-    "o": [
-      "$509.54\\%$",
-      "$406.25\\%$",
-      "$409.76\\%$",
-      "$506.25\\%$"
-    ],
-    "a": 1,
-    "s": "Dekh bhai TestRipper, aise karna hai... $125\\%$ ka fraction hota hai $\\frac{5}{4}$. Matlab radius 4 thi, toh 5 badh kar 9 ho gayi. Surface area 2D hota hai, toh seedha square kar de: $4^2$ se $9^2$ yani 16 se 81 ho gaya. Kitna badha? 65 badha 16 par. Percentage = $\\frac{65}{16} \\times 100$. Ab pura solve mat kar, $\\frac{6500}{16} = 406.25\\%$.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Dimension</th><th style='text-align:left;padding:4px;color:var(--p2)'>Effect</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1D (Radius, Side)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Ratio $a : b$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2D (Area, Surface)</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Ratio $a^2 : b^2$</td></tr></table><br><b>Summary:</b> 1D se 2D aane ke liye hamesha square ratio use kiya kar, calculation fractional form me asaan ho jayegi."
-  },
-  {
     "q": "In an election between three candidates, the third-placed candidate received 1000 valid votes. From the remaining votes, the elected candidate received 5000 more votes than the runner-up candidate, accounting for $52\\%$ of the total votes cast. If $16\\%$ of votes were declared invalid (given that all the voters cast their vote), then the total number of cast votes was?",
     "o": [
       "20000",
@@ -147,17 +136,6 @@
     "s": "Dekh bhai, percentages nikal lo sabka. B ko har 45 me se 18 vote mile, yani $\\frac{18}{45} = \\frac{2}{5} = 40\\%$. A ke paas $38\\%$ hain. Toh C bacha $100 - (38+40) = 22\\%$. Winner B ($40\\%$) hai, aur least C ($22\\%$) hai. Inka gap hai $18\\%$. Diya hai $18\\% = 5760$. Toh $1\\% = 320$. Total $100\\% = 32000$.<br><br><b>Trick:</b> B ka fraction dekhte hi dimag me $40\\%$ strike karna chahiye.<br><br><b>Summary:</b> Jab total values share ho rahi hon, toh sabko percentages ke ek common scale par le aao calculation easy ho jayegi."
   },
   {
-    "q": "The sum of $25\\%$ of a number and $40\\%$ of the same number is 325. What is $120\\%$ of that number? (PHASE XIII(GRAD) - $\\frac{29}{07}$/2025 - SHIFT 3)",
-    "o": [
-      "550",
-      "500",
-      "600",
-      "650"
-    ],
-    "a": 2,
-    "s": "Dekh bhai TestRipper, isme toh number nikalne ki bhi aukaat nahi puchi. $25\\% + 40\\% = 65\\%$. Yani $65\\%$ ki value 325 hai. $65 \\times 5 = 325$ hota hai, toh $1\\% = 5$. Pucha $120\\%$ hai. Toh $120 \\times 5 = 600$.<br><br><b>Best Approach:</b> Unitary method without finding the $100\\%$ base.<br><br><b>Summary:</b> CGL me aise traps aate hain jaha bache pehle original number nikalte hain fir required value, seedha multiplier lagao."
-  },
-  {
     "q": "Last year, Geeta's monthly salary was 12,000 and Seeta's monthly salary was 10,000. This year, Geeta's monthly salary is $\\text{Rs. } 14$,400, while Seeta's monthly salary is $\\text{Rs. } 12$,500. If the percentage increase in Seeta's monthly salary this year over her monthly salary last year is denoted by x%, and the percentage increase in Geeta's monthly salary this year over her monthly salary last year is denoted by y%, then what is the value of ((x-y)/y * 100) % ?",
     "o": [
       "25",
@@ -167,17 +145,6 @@
     ],
     "a": 0,
     "s": "Dekh bhai aise karna hai... Geeta 12k se 14.4k gayi, badhotari hui 2.4k ki. $y = \\frac{2.4}{12} \\times 100 = 20\\%$. Seeta 10k se 12.5k gayi, badhotari 2.5k. $x = \\frac{2.5}{10} \\times 100 = 25\\%$. Nikaalna kya hai? $\\frac{x - y}{y} \\times 100$. Yahan values put kar: $\\frac{25 - 20}{20} \\times 100 = \\frac{5}{20} \\times 100 = 25\\%$.<br><br><b>Trick:</b> Zeroes ignore kar. 12 se 14.4 (1.2 times yani $20\\%$) aur 10 se 12.5 (1.25 times yani $25\\%$).<br><br><b>Summary:</b> Aise lambe statements ko short chunks me process kar ke directly variable values find out karo."
-  },
-  {
-    "q": "A salesman gets commission on total sales at $9\\%$. If the sale is exceeded 10,000 he gets an additional commission as bonus of $3\\%$ on the excess of sales over 10,000. If he gets total commission of 1380, then the bonus he received is:",
-    "o": [
-      "$\\text{Rs. } 120$",
-      "$\\text{Rs. } 180$",
-      "$\\text{Rs. } 480$",
-      "Data insufficient"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, Shift method zindabad! Maan le usko shuru ke 10,000 pe bhi $3\\%$ bonus mil gaya. Toh uska commission Rs. 300 aur badh jata. Naya imaginary total commission = $1380 + 300 = 1680$. Ab use poore sales pe $9+3 = 12\\%$ mil raha hai. $12\\% = 1680$, toh $1\\% = 140$. Total sales = 14000. Bonus sirf 10000 ke oopar milta hai yani 4000 pe. $3\\%$ of $4000 = \\text{Rs. } 120$.<br><br><b>Best Approach:</b> Hypothetical equal percentage assumption method.<br><br><b>Summary:</b> Commission wale saare types ek uniform percentage create karke aasani se tode jaa sakte hain."
   },
   {
     "q": "A metallic conical bowl with base radius 10 cm and height 24 cm is uniformly heated, increasing all dimensions by $10\\%$. By how much does the volume increase? (CHSL TIER I - $\\frac{30}{11}$/2025 - SHIFT 2)",
@@ -202,17 +169,6 @@
     "s": "Dekh bhai, Savings percentage nikal. A = $30\\%$, B = $25\\%$, C = $20\\%$. Inki ratio 4:5:6 di hai. Incomes ki ratio nikalne ke liye savings ki absolute ratio ko percentages se divide kar de. $A = \\frac{4}{0.3} = \\frac{40}{3}$. $B = \\frac{5}{0.25} = 20$. $C = \\frac{6}{0.2} = 30$. Ratio banegi $40/3 : 20 : 30$, 3 se multiply karke simplify kar le = $40:60:90$ yani $4:6:9$. Total ratio sum = 19. 19 unit = 57000. 1 unit = 3000. C ki income (9 unit) = $9 \\times 3000 = 27000$.<br><br><b>Trick:</b> Income = Savings Ratio / Savings Percentage. Ekdum direct hit!<br><br><b>Summary:</b> Jab absolute numbers ka ratio and percentages diye hon toh equivalent factors nikalke scale up karna asaan hota hai."
   },
   {
-    "q": "The population falls by $12\\%$ in the first year. By what percentage must it increase in the second year so that at the end of the second year the population is exactly the same as the original? (CHSL TIER I - $\\frac{18}{11}$/2025 - SHIFT 2)",
-    "o": [
-      "$11.6\\%$",
-      "$14.6\\%$",
-      "$13.6\\%$",
-      "$10.6\\%$"
-    ],
-    "a": 2,
-    "s": "Dekh bhai TestRipper, 100 maan le. Pehle saal $12\\%$ giri, toh 88 bachi. Ab wapas original laana hai, toh 88 ko 100 banana hoga. Kitna badhayega? 12. Kispe badhayega? Base ab 88 hai. Percentage = $\\frac{12}{88} \\times 100 = \\frac{3}{22} \\times 100 = \\frac{150}{11}$. Solve karega toh $13.6363...\\%$ aayega. Options me closest 13.6% hai.<br><br><b>Best Approach:</b> Inverse percentage method. Drop hua hai $x/y$, toh wapas aane ke liye $x/(y-x)$ ka formula bhi lag sakta hai.<br><br><b>Summary:</b> Base change concept me hamesha dhyaan rakha karo ki ab operation nayi value (88) par hoga, original 100 par nahi."
-  },
-  {
     "q": "Due to an increase of $32\\%$ in the price of pulse, a person reduces his consumption in such a way that his expenditure increases only by $10\\%$. If he consumes 150 kg of pulse after the price has increased, then how much pulse was consumed by him initially?",
     "o": [
       "175 kg",
@@ -233,28 +189,6 @@
     ],
     "a": 0,
     "s": "Dekh bhai, mixed percentages aur absolute values ka tagda combo hai. $41\\frac{2}{3}\\%$ ka fraction $\\frac{5}{12}$ hota hai. Calculation asaan banane ke liye Initial Population ko $12x$ maan le. Year 1 badhkar ho gayi $17x$. (Yahi $5x$ hume nikalna hai!). Year 2 me ho gayi $17x + 92000$. Year 3 me $10\\%$ ghir gayi yani $0.9$ (multiplier) bachi. Final: $0.9(17x + 92000) = 3 \\times 12x$ (thrice of initial). Isko solve karega: $17x + 92000 = 40x$. Toh $23x = 92000 \\Rightarrow x = 4000$. Year 1 increment ($5x$) = $5 \\times 4000 = 20000$.<br><br><b>Best Approach:</b> Fractional base ko total initial assume karna calculation halwa kar deta hai.<br><br><b>Summary:</b> Variables waha introduce karo jaha absolute aur percentage mix ho jayein aapas me equations balance karne ke liye."
-  },
-  {
-    "q": "In a survey conducted at a university, it was found that $55\\%$ of the students like Mathematics, $45\\%$ like Physics, and $30\\%$ like both Mathematics and Physics. Among the remaining students, $25\\%$ prefer Computer Science, while the rest have no preference. If the total number of students surveyed is 800, how many students had no preference for any of the three subjects?",
-    "o": [
-      "160",
-      "220",
-      "180",
-      "200"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, pehle ye nikal ki Math/Physics kitne log pasand karte hain. Formula $A + B - Both$. $55 + 45 - 30 = 70\\%$. Remaining kitne bache? $30\\%$. Total 800 ka $30\\% = 240$ students. Ab in remaining me se $25\\%$ CS me gaye. No preference wale bache $75\\%$ of these remaining. $240$ ka $75\\%$ (yani $\\frac{3}{4}$) nikal le. $\\frac{3}{4} \\times 240 = 180$ students.<br><br><b>Trick:</b> Sequential percentages ko chain me step by step tod liya karo, Venn Diagram ke baad simple tree method hai.<br><br><b>Summary:</b> 'Among the remaining' word me hamesha dhyaan rakhna, naya base create ho jata hai."
-  },
-  {
-    "q": "In a group of 120 people, 54 like Coca-Cola and 84 like Pepsi and each person likes at least one beverages. How many like both Coca-Cola and Pepsi ?",
-    "o": [
-      "30",
-      "24",
-      "20",
-      "18"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, ye toh basic Venn diagram hai. Formula hamesha kaam karta hai: $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$. Yaha har koi kuch na kuch pita hai, toh Union total 120 hi hoga. $120 = 54 + 84 - Both$. Solve kar: $Both = 138 - 120 = 18$. Ans aa gaya, itna sochna hi nahi hai.<br><br><b>Best Approach:</b> Direct addition karke total me se minus kar do, common log nikal aate hain.<br><br><b>Summary:</b> Jab overlap pakadna ho, individual totals ko jod kar overall limit se jitna upar gaya wahi overlap hota hai."
   },
   {
     "q": "Ridhi scored 65 marks in Mathematics. He scored $70\\%$ marks in Hindi and $(X^3 + 20)$ marks in English. The maximum marks for each subject is 80. The overall percentage of marks obtained by Riddhi in all three subjects together is $70\\%$. Find X?",

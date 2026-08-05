@@ -4,17 +4,6 @@
   "totalMarks": 50,
   "questions":[
   {
-    "q": "In an Examination $80\\%$ students passed in physics, $70\\%$ in chemistry while $15\\%$ failed in both the subjects. If 325 students passed in both the subjects, then find the total number of students who appeared in the examination?",
-    "o": [
-      "450",
-      "520",
-      "480",
-      "500"
-    ],
-    "a": 3,
-    "s": "Dekh bhai TestRipper, Venn diagram ka ekdum standard question hai. Total $100\\%$ hote hain. Agar $15\\%$ dono me fail hain, toh at least ek me pass hone wale log $100\\% - 15\\% = 85\\%$ honge. Formula laga: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. Yani $85\\% = 80\\% + 70\\% - \\text{Both}$. Solve karega toh Both pass wale $65\\%$ aayenge. Sawal keh raha hai ki ye $65\\%$ value $325$ ke barabar hai. Toh $1\\% = 5$, aur total $100\\% = 500$. November 2026 CGL me aise lallu questions galat nahi hone chahiye!"
-  },
-  {
     "q": "The square root of a number is increased by $40\\%$, and the result is 21. Find the original number. (CPO TIER I- $\\frac{12}{12}$/2025-SHIFT 1)",
     "o": [
       "324",
@@ -37,17 +26,6 @@
     "s": "Dekh bhai, ye concept samajh le! Jitne aadmi shadi-shuda hain, utni hi aurtein bhi hongi. Toh $40\\%$ of Men = $25\\%$ of Women. Ratio bana: $\\frac{M}{W} = \\frac{25}{40} = \\frac{5}{8}$. Total log ho gaye $5+8 = 13$ units. Married aadmi = $5$ ka $40\\%$ yani $2$ unit. Married aurtein bhi $2$ unit. Total married = $4$ unit. Percentage nikalo: $\\frac{4}{13} \\times 100 = 30.76\\%$. Approximation se $30.8\\%$ tick maar aur aage badh!"
   },
   {
-    "q": "If $25\\%$ of (P+Q) = $75\\%$(P-Q) then find the ratio P:Q. (CGL TIER I - $\\frac{18}{09}$/2025 - Shift 2)",
-    "o": [
-      "2:1",
-      "3:1",
-      "1:3",
-      "1:2"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, percentage se percentage seedha kaat. $25$ se $75$ gaya $3$ baar me. Equation bachi: $P + Q = 3(P - Q)$. Bracket khol aur terms alag kar: $P + Q = 3P - 3Q \\implies 4Q = 2P \\implies \\frac{P}{Q} = \\frac{4}{2} = \\frac{2}{1}$. Option 2:1 ko mark kar. Pen free questions hain ye!"
-  },
-  {
     "q": "In an examination, there were two papers, X and Y, and the maximum mark in each of the two papers was 20. However, the weights assigned to papers X and Y were in the ratio 3: 2, respectively. Rohan scored 18 out of 20 in Paper X and an overall $70\\%$ in the examination. How much did he score in Paper Y out of 20?",
     "o": [
       "8",
@@ -68,17 +46,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai, zero aur percentage dono side se uda de. Bacha $2(P+Q) = 5(P-Q)$. Khol bracket: $2P + 2Q = 5P - 5Q$. Shift karega toh $7Q = 3P$ aayega. Matlab $\\frac{P}{Q} = \\frac{7}{3}$. CGL Tier 1 me aisi speed maintain karni padegi."
-  },
-  {
-    "q": "If $15\\%$ of a is equal to $25\\%$ of b, then find the ratio a: b. (CGL TIER I - $\\frac{16}{09}$/2025 - S3)",
-    "o": [
-      "3:5",
-      "5:4",
-      "5:3",
-      "4:5"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, seedha kaato $5$ ki table se! $3a = 5b$. Jo 'a' ke samne hai wo 'a' ki value, jo 'b' ke samne hai wo 'b' ki. Toh $a:b = 5:3$. Ek second me uda dena aise questions!"
   },
   {
     "q": "P's monthly salary is 60,000. He spends $45\\%$ of his monthly salary on food and $25\\%$ of the remaining monthly salary on house rent. Additionally, he spends X on children's education and spends $15\\%$ of his monthly salary on travel. If he saved his remaining salary and his savings is 12,000 then find the value of X?",
@@ -123,17 +90,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai, B ki population A se $300\\%$ zyada hai matlab $A:B = 1:4$ ka ratio hai. Successive lagao dono taraf. $A(1 + \\frac{x}{100})^2 = B(1 - \\frac{x}{100})^2$. B/A ki jagah 4 rakho aur dono taraf square root le lo. Ayega $\\frac{1 + x/100}{1 - x/100} = 2$. Cross multiply kar: $1 + \\frac{x}{100} = 2 - \\frac{2x}{100}$. Solve karne par $\\frac{3x}{100} = 1$, yani $x = \\frac{100}{3} = 33 \\frac{1}{3}$. Pattern ekdum fix hai CGL ka!"
-  },
-  {
-    "q": "The difference between $20\\%$ of a number and $10\\%$ of the same number is 120. What is the number? (CGL TIER 1 - $\\frac{22}{09}$/2025 - SHIFT 1)",
-    "o": [
-      "1200",
-      "1000",
-      "1400",
-      "1100"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, itna basic question pre me free ke numbers bant'ta hai. $20\\%$ aur $10\\%$ ka difference $10\\%$ hota hai. Agar number ka $10\\% = 120$ hai, toh pura number $100\\%$ nikalne ke liye ek zero aur laga de! $1200$ is the answer."
   },
   {
     "q": "If m% of m + n% of n = $2\\%$ of (m x n), then what percentage of m is n?",
@@ -202,17 +158,6 @@
     "s": "Dekh bhai, Prism ki Volume hoti hai $\\text{Base Area} \\times \\text{Height}$. Height constant hai iska matlab Volume completely Base Area pe depend karega. Agar Base Area $25\\%$ badha, toh Volume bhi bina kisi calculation ke direct $25\\%$ badhegi! Ye question 2 second ka tha bas."
   },
   {
-    "q": "The number of cars in a parking lot is $20\\%$ more than the number of trucks. What is the ratio of the number of trucks to the number of cars? (CHSL TIER I - $\\frac{14}{11}$/2025 - SHIFT 1)",
-    "o": [
-      "7:6",
-      "5:6",
-      "6:5",
-      "6:7"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, ye to basic fraction ka question hai. $20\\% = \\frac{1}{5}$. Agar Trucks 5 hain toh Cars usse 1 zyada yani 6 hongi. Ratio pucha hai Trucks to Cars ka yani T:C. Toh ans hoga 5:6. Jaldi baazi me 6:5 mat kar aana, exam me is choti mistake ki heavy price hoti hai!"
-  },
-  {
     "q": "A man lost half of his initial amount in the gambling after playing 3 rounds. The rule of gambling is that if he wins he will receive $\\text{Rs. } 100$, but he has to give $50\\%$ of the total amount after each round. Luckily he won all the three rounds. The initial amount with which he had started the gambling was:",
     "o": [
       "600",
@@ -222,17 +167,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai, reverse engineer karo equation se. Maan lo shuru me X the. Round 1: X+100 hue aur adhe bache $\\frac{X+100}{2}$. Round 2: Phir 100 jode aur adha kiya toh $\\frac{X+300}{4}$. Round 3: Fir 100 jod ke adha kiya toh $\\frac{X+700}{8}$ bacha. Question kehta hai ab uske paas initial ka aadha bacha hai yani $\\frac{X}{2}$. Equate kar do: $\\frac{X+700}{8} = \\frac{X}{2} \\implies X+700 = 4X \\implies 3X = 700$. Toh $X = \\frac{700}{3}$. Concept clear ho toh aise complex rule wale question bhi flat ho jate hain!"
-  },
-  {
-    "q": "The ratio between the expenditure and saving of Shyam is 4:5. when Shyam increases her expenditure by $12\\%$ and increases her saving by $5\\%$, what would have been the increase in her income?",
-    "o": [
-      "$9.25\\%$",
-      "$8.20\\%$",
-      "$9.45\\%$",
-      "$8.11\\%$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, JSM method ka jadoo chalao! Income = Exp + Saving = $4+5=9$ units. Exp pe $12\\%$ hike, Sav pe $5\\%$ hike. Overall income pe hike pucha hai. $\\frac{4 \\times 12 + 5 \\times 5}{9} = \\frac{48 + 25}{9} = \\frac{73}{9}$. Isko divide karega toh $8.11\\%$ aayega. Weighted average se easy kuch nahi!"
   },
   {
     "q": "Some students (only boys and girls) from different schools appeared for an Olympiad exam. $40\\%$ of the boys and $25\\%$ of the girls failed the exam. The number of boys who passed the exam was 30 more than that of the girls who passed the exam. A total of 170 students failed. Find the number of students that appeared for the exam?",
@@ -266,17 +200,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai, khatarnaak fraction hai $42.84\\%$. Yaad kar $14.28\\%$ ki value $\\frac{1}{7}$ hoti hai, toh ye usaka 3 guna yani $\\frac{3}{7}$ hai! Maan le initial Exp $700$ aur Sav $400$ hai, Income bani $1100$. Exp me $\\frac{3}{7}$ ka increment yani $300$ badha, new Exp $= 1000$. Income me $20\\%$ ka increment yani $220$ badha, new Income $= 1320$. New Saving aayi $1320 - 1000 = 320$. Purani $400$ thi, deficit (kami) kitni hui? $80$ units ki. $80$ units = $6448$. Pucha hai Income increase (220 units). Calculate kar: $\\frac{6448}{80} \\times 220 = 80.6 \\times 220 = 17732$. Fraction strong hona zaroori hai!"
-  },
-  {
-    "q": "A school conducted a scholarship test where $60\\%$ of the students passed in English, $70\\%$ passed in Math, and $45\\%$ passed in both. What is the percentage of students who passed in at least one subject? (CHSL TIER I - $\\frac{15}{11}$/2025-SHIFT 1)",
-    "o": [
-      "$75\\%$",
-      "$90\\%$",
-      "$85\\%$",
-      "$80\\%$"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, ye to direct formula-based saawal de diya examiner ne. 'At least one' ka matlab hota hai $A \\cup B$. Formula: $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$. Toh $60 + 70 - 45 = 130 - 45 = 85\\%$. Secondon me tick mark ke next question pe bhaag!"
   }
 ]
 }

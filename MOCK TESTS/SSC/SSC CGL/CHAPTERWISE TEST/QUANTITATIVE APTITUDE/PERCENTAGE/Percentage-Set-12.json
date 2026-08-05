@@ -15,17 +15,6 @@
     "s": "Dekh bhai, jab bhi area me change ho aur radius me decrease ho, AB rule (Successive) lagta hai: $x + y - \\frac{xy}{100}$. Area $= \\pi r^2$, isliye do baar $-35\\%$ hoga. Net change $= 35 + 35 - \\frac{35 \\times 35}{100} = 70 - 12.25 = 57.75\\%$. Ab options ko dhyan se dekh, $57.75$ ko fraction me $57 \\frac{3}{4}\\%$ bolte hain. Examiner ne sirf decimal ko fraction me badal ke daraya hai!"
   },
   {
-    "q": "The radius of the base of a right circular cylinder is increased by $20\\%$. By what percent should its height be reduced so that its volume remains the same as before?",
-    "o": [
-      "28",
-      "$30 \\frac{5}{9}$",
-      "$30 \\frac{2}{9}$",
-      "25"
-    ],
-    "a": 1,
-    "s": "Dekh bhai aise karna hai... Cylinder ka volume $V = \\pi r^2 h$ hota hai. Agar Volume constant rakhna hai, toh height $h \\propto \\frac{1}{r^2}$ hogi. Radius $20\\%$ ($1/5$) se badha, yani 5 se 6 hua. Toh $r^2$ ka ratio 25 se 36 ho gaya. Height ko iska ulta hona padega, yani 36 se 25! Kitni kami aayi? 11 ki kami aayi 36 par. Percent change $= \\frac{11}{36} \\times 100 = \\frac{1100}{36} = \\frac{275}{9} = 30 \\frac{5}{9}\\%$. Base strong rakho bas!"
-  },
-  {
     "q": "If decreasing 80 by $x\\%$ gives the same result as increasing 16 by $x\\%$, then $x\\%$ of 120 is how much percentage more than $33.33\\%$ of 210?",
     "o": [
       "$14.28\\%$",
@@ -114,17 +103,6 @@
     "s": "Dekh bhai, Prime Cost = Raw Material + Manufacturing. Initial prime cost 6 di hai, jo Raw ka 3 guna hai. Yani RM = 2, toh Mfg = 4 hoga (Tabhi $2+4=6$ banega). RM 5:12 me badha, yani agar RM pehle 5 tha toh 12 hua, yahan 2 tha toh $\\frac{12}{5} \\times 2 = 4.8$ ho jayega. Mfg 4:5 me badha, yani 4 tha toh 5 ho jayega. Nayi Final Cost = Naya RM + Naya Mfg = $4.8 + 5 = 9.8$. Seedha aur sateek!"
   },
   {
-    "q": "In an examination, $52\\%$ of the candidates failed in English and $42\\%$ failed in Mathematics. If $17\\%$ failed in both the subjects, then the percentage of candidates who passed in both the subjects was?",
-    "o": [
-      "$22\\%$",
-      "$23\\%$",
-      "$25\\%$",
-      "$21\\%$"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, Set theory ka bahut basic sawal. Total fail nikal: Fail in Eng + Fail in Math - Fail in Both. Yani $52 + 42 - 17 = 94 - 17 = 77\\%$. Total $77\\%$ log kisi na kisi subject me fail hue hain. Toh pass kitne hue dono me? Total $100\\%$ me se in fail hone walo ko nikal de. $100 - 77 = 23\\%$. Options ko dekho aur tick maro!"
-  },
-  {
     "q": "Income of a person increases by $x\\%$ and $x/2\\%$ during first and third year but decreases by $x\\%$ and $x/2\\%$ 2nd year and 4th year respectively if the total decrement during four year is $\\text{Rs. } 3340.8$. then find the initial income of person if during first two-year, total salary decreases by $36\\%$",
     "o": [
       "$\\text{Rs. } 8000$",
@@ -156,17 +134,6 @@
     ],
     "a": 0,
     "s": "Dekh bhai, present ka data nikalte hain pehle. 10,000 ka $5\\%$ yani $500$ vote khrab ho gaye. Valid bache $9500$. Equation: $A + B = 9500$ aur margin $A - B = 500$. Dono add kar de: $2A = 10000 \\implies A = 5000$. Toh B ko abhi $4500$ mile hain. TV prediction 5 saal baad ki: Total voter $50\\%$ badh kar 15000 ho jayenge (aur sab valid hain). A ko is baar $10\\%$ kam (yani $5000$ ka $90\\% = 4500$) milenge. B ke vote nikalne ke liye total me se A ke hata de: $15000 - 4500 = 10500$. Aaram se solve hota hai."
-  },
-  {
-    "q": "If the price of petrol increased by $6\\%$, then by what percentage should the consumption be decreased by the consumer, if the expenditure on petrol remains unchanged?",
-    "o": [
-      "$5.66\\%$",
-      "$5.53\\%$",
-      "$5.23\\%$",
-      "$4.33\\%$"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, jab expenditure constant hota hai, Price aur Consumption inversely related hote hain! Price $6\\%$ badha yani $100$ se $106$ hua. Ratio $50:53$. Toh Consumption ko $53$ se $50$ pe aana padega. Kami kitni karni padi? 3 ki, 53 par. Percentage me $= \\frac{3}{53} \\times 100 = \\frac{300}{53}$. Ab $53 \\times 5 = 265$ hota hai, toh answer $5.algo$ hoga. Options pass hain. Divide karenge toh $5.66\\%$ tak jayega. Approximation works well here!"
   },
   {
     "q": "A fraction in reduced form is such that when it is squared and then its numerator is increased by $25\\%$ and the denominator is reduced to $80\\%$ it results in $\\frac{5}{8}$ of the original fraction. The product of the numerator and denominator is:",
@@ -224,17 +191,6 @@
     "s": "Dekh bhai, isey peeche se aage ki taraf solve kar (Reverse Line Method). C3 ko $90\\%$ becha aur fir bhi 5 bache hain. Yani jo $10\\%$ bacha uski value 5 hai. Toh C3 ke aane se theek pehle total $50$ oranges the. C2 ke time: usne $20\\%$ beche aur 2 extra diye. Agar 2 extra nahi diye hote, toh $50+2=52$ hote. Ye 52, remaining ka $80\\%$ the. Toh C2 ke aane se pehle total = $52 / 0.8 = 65$ the. C1 ke time: usne $45\\%$ beche aur 1 extra diya. Agar 1 extra nahi diya hota, toh $65+1=66$ bachte, jo initial ka $55\\%$ hote. Toh Initial Total = $66 / 0.55 = 120$. Piche se socho, asaan padega."
   },
   {
-    "q": "The population of a village was 12650. If the males and females are increased by $7\\%$ and $5\\%$. The population will become 13409 after 1 year. Find the number of males at present.",
-    "o": [
-      "6235",
-      "6325",
-      "6523",
-      "6532"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, JSM ka baap method. Population kitni badhi? $13409 - 12650 = 759$. Maan le sab log (Male aur Female dono) minimal base yaani $5\\%$ se badhte, toh total increase kitna hota? $12650 \\times 5\\% = 632.5$. Par asli increase 759 hai. Ye extra $(759 - 632.5 = 126.5)$ kahan se aaya? Ye extra increase un bache hue $2\\%$ males (kyunki $7\\% = 5\\% + 2\\%$) ki wajah se hai. Toh Males ka $2\\% = 126.5$ hai. Males $100\\% = 126.5 \\times 50 = 6325$. Ekdum makkhan approach!"
-  },
-  {
     "q": "A number is divided into two parts in such a way that $75\\%$ of the first part is 6 more than $90\\%$ of the second part and $80\\%$ of the second part is 12 more than $45\\%$ of the first part. Then the number is?",
     "o": [
       "80",
@@ -266,17 +222,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai, successive me jab barabar increment ho 2 baar toh seedha Compound Interest wala Square Root concept lagta hai! Salary initial $100\\%$ thi ab $156.25\\%$ ho gayi. Ratio nikal: $156.25 / 100 = 1.5625$. Iska square root nikal do! $\\sqrt{1.5625} = 1.25$. Yani har saal ka multiplier $1.25$ tha. $1$ pe $0.25$ ki badhotri ka sidha matalab hai ki $25\\%$ ka increment tha har stage pe. Pen free question!"
-  },
-  {
-    "q": "The value of a machine depreciates by $10\\%$ per annum. If its present value is $\\text{Rs. } 72,900$, find its value 2 years ago. (PHASE XIII(HS) - $\\frac{02}{08}$/2025 - SHIFT 2)",
-    "o": [
-      "$\\text{Rs. } 80,000$",
-      "$\\text{Rs. } 85,000$",
-      "$\\text{Rs. } 95,000$",
-      "$\\text{Rs. } 90,000$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, simple successive depreciation hai. $10\\%$ kam hona yani value $\\frac{9}{10}$ bachna. 2 saal ka case hai toh equation banegi: $\\text{Old Value} \\times (\\frac{9}{10})^2 = \\text{New Value}$. $\\text{Old Value} \\times \\frac{81}{100} = 72,900$. 81 se 729 seedha 9 bar me katta hai! Toh $\\text{Old Value} = 900 \\times 100 = 90,000$. Examiner ne data calculations aasan di hain taaki speed test ho!"
   }
 ]
 }

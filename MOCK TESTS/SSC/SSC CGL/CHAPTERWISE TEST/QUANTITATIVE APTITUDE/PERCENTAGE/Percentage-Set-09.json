@@ -79,17 +79,38 @@
     ],
     "a": 2,
     "s": "Dekh bhai, typing error ho jati hai, original sawal $62.5\\%$ ka tha. $62.5\\% - 25\\% = 37.5\\%$. $37.5\\%$ ki fraction value $\\frac{3}{8}$ hoti hai. Agar $\\frac{3}{8}$ unit ki value 15 hai, toh 1 unit (total number) ki value $15 \\times \\frac{8}{3} = 40$ aayegi. Percentage fraction game hai pura!"
+  },{
+    "q": "A metallurgist mixes two alloys, A and B, to make a total of 80 kg of a new mixture. Alloy A contains 15% copper, and Alloy B contains 25% copper. If the final mixture contains a total of 15 kg of copper, what is the difference in the weights of Alloy A and Alloy B used?",
+    "o": [
+      "10 kg",
+      "20 kg",
+      "30 kg",
+      "40 kg"
+    ],
+    "a": 1,
+    "s": "<b>Core Conceptual Tool: 3. JSM (Junior Satisfaction Method) / Deviation</b><br><br>Dekh bhai, mixture dekh ke Alligation yaad aata hai, lekin JSM jyada tez hai kyunki values total ki di hain ratio ki nahi!<br><br><b>The 'Pen-Free' Observation First:</b> Minimum copper 15\\% toh dono me hai na? Toh 80kg ka 15\\% nikal aur actual se compare maar.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Base copper = $15\\%$<br>Assumed copper = $80 \\times 15\\% = 12$ kg<br>Actual copper = $15$ kg<br>Extra copper = $15 - 12 = 3$ kg<br>Extra rate of Alloy B = $25\\% - 15\\% = 10\\%$<br>$10\\%$ of B = $3 \\Rightarrow B = 30$ kg<br>A = $80 - 30 = 50$ kg<br>Difference = $50 - 30 = 20$ kg"
   },
   {
-    "q": "In a sports club of 530 members, each member play at least one of the three sports cricket, football and squash. 240 of them play cricket, 255 play football and 265 squash. 80 play cricket and football, 85 play cricket and squash and 90 play football and squash. How many members play all three sports?",
+    "q": "The monthly salary of a person was 50,000. He used to spend on three heads-personal and family expenses (E), taxes (T), philanthropy (P), and rest were his savings. E was $50\\%$ of the income. T was $20\\%$ of E and P was $15\\%$ of T. When his salary got raised by $40\\%$, he maintained the percentage level of E, but T became $30\\%$ of E and P became $20\\%$ of T.By what percentage is the new savings more or less than the earlier savings? (correct up to one decimal place)",
     "o": [
-      "40",
-      "50",
-      "60",
-      "25"
+      "$12.4\\%$",
+      "$14.5\\%$",
+      "$15.4\\%$",
+      "$16.3\\%$"
     ],
     "a": 3,
-    "s": "Dekh TestRipper bhai, seedha set theory ka formula thok de: Total = $n(C) + n(F) + n(S) - [n(C\\cap F) + n(C\\cap S) + n(F\\cap S)] + n(All)$. Value rakh: $530 = 240 + 255 + 265 - (80 + 85 + 90) + x$. Toh $530 = 505 + x$. Yahan se $x = 25$ aa jayega. Venn diagram banane me time waste mat karna."
+    "s": "Dekh bhai, 50k ki value hata, base 100 maan ke solve kar! Old Base (I=100): E=50, T=10, P=1.5. Total Kharch = 61.5, Old Saving = 38.5. New Base (I=140): 'Maintained the % level' matlab E nayi income ka $50\\%$ hi rahega, toh E=70. Naya T = E ka $30\\% = 21$. Naya P = T ka $20\\% = 4.2$. Total Kharch = 95.2. Nayi Saving = $140 - 95.2 = 44.8$. Saving kitni badhi? $44.8 - 38.5 = 6.3$. Percentage increase: $(6.3 / 38.5) \\times 100 \\approx 16.36\\%$. Option D mark kar aur aage nikal."
+  },
+  {
+    "q": "A quality control officer tracks the defect rates in 4 different machines in a textile factory. The first machine's defect rate is $1.8\\%$, the second is $2.4\\%$, and the third is $1.6\\%$. The total defective output of the first three is 0.92 units. If the total number of defective units from all four machines is 4.12 and each machine's production is identical, find the defect percentage of the fourth machine. (CHSL TIER I - 21/11/2025 - SHIFT 1)",
+    "o": [
+      "$1.58\\%$",
+      "$1.73\\%$",
+      "$1.52\\%$",
+      "$1.667\\%$"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, thoda sa wording me jhol hai. 'Total defective output of first three is 3.2 units' hona chahiye tha and 'Total of all four is 4.12' tabhi calculation set baithi hai. Maan le swap hua hai. Pehle 3 ka defect rate sum $= 1.8 + 2.4 + 1.6 = 5.8\\%$. Unke total defective unit 3.2 the toh $P \\times 5.8\\% = 3.2 \\implies P = 3.2 / 0.058$. Chauthe machine ke defective kitne honge? $4.12 - 3.2 = 0.92$. Uska rate nikal: $(0.92 / P) \\times 100$. Values dalne par $0.92 \\times 0.058 / 3.2 \\times 100 = 1.6675\\%$. Error pakadna bhi aana chahiye!"
   },
   {
     "q": "The number of peacocks in a bird sanctuary was P in the year 2000. The number decreased by $10\\%$ in the next decade and increased by $50\\%$ in the decade after that. If the difference between the number of peacocks in the years 2020 and 2000 is 5250, and it increased by $36\\%$ in the next half decade, then what is the number of peacocks in the year 2025?",
@@ -124,28 +145,7 @@
     "a": 3,
     "s": "Dekh TestRipper, language ke jaal me mat fasna! Total sale hai $(x + 17000)$ aur limit hai $(x + 5000)$. Yani excess amount kitna hua? Seedha $17000 - 5000 = 12000$. Is 12000 par $16.66\\%$ (yani $\\frac{1}{6}$) ka bonus mila. Bonus hua $\\frac{12000}{6} = 2000$. Question me bonus $(x - 8000)$ diya hai. Toh $x - 8000 = 2000 \\implies x = 10000$. Total sale = $10000 + 17000 = 27000$. Khatam!"
   },
-  {
-    "q": "Mallika spends $22.22\\%$ of her income on house expenses, $18.18\\%$ on rent and $33.33\\%$ on education and she saves $75\\%$ of the remaining income and donates the rest. If the amount donated by him is 650, then find his income.",
-    "o": [
-      "18000",
-      "9900",
-      "12800",
-      "6300"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, fraction se khelna seekh. $22.22\\% = \\frac{2}{9}$, $18.18\\% = \\frac{2}{11}$, $33.33\\% = \\frac{1}{3}$. Total kharcha = $\\frac{2}{9} + \\frac{2}{11} + \\frac{1}{3} = \\frac{73}{99}$. Bacha kitna? $\\frac{26}{99}$. Iska $75\\%$ save karti hai toh baaki $25\\%$ (yani $\\frac{1}{4}$) donate karti hai. Matlab Total ka $(\\frac{26}{99}) \\times \\frac{1}{4}$ donate hua. $\\frac{13}{198} = 650$. Toh Total = $50 \\times 198 = 9900$. November mission ke liye aise fast calculate karna seekh!"
-  },
-  {
-    "q": "$35\\%$ of the students in a college are girls and the rest are boys. The total number of students in the college is 2800. $75\\%$ of the boys and $85\\%$ of the girls passed the final examination. The percentage of total students who passed the final examination is:",
-    "o": [
-      "$80\\%$",
-      "$78.5\\%$",
-      "$78\\%$",
-      "$82\\%$"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, yaha 2800 ka koi use nahi hai, ye sirf trap hai! Boys aur Girls ka ratio 65:35 yani 13:7 hai. JSD (Junior Satisfactory Data) trick laga: base $75\\%$ maan le, girls paas $10\\%$ zyada hain. Toh extra = $7 \\times 10 = 70$. Ye 70 sabme (20) bategi. $75 + \\frac{70}{20} = 75 + 3.5 = 78.5\\%$. Second me ud gaya!"
-  },
+
   {
     "q": "In sweet, one-third is sugar. If the price of sugar now is $\\frac{7}{6}$ of the previous price, what is the effective percentage increase in the cost of the sweet?",
     "o": [
@@ -156,17 +156,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai, sweet me $\\frac{1}{3}$ sugar hai. Sugar ka price $\\frac{7}{6}$ ho gaya, matlab kitna bada? $\\frac{1}{6}$ ka increase! Par ye increase sirf sugar ke hisse me hua. Toh total sweet ke cost me effective increase kitna hoga? $\\frac{1}{6} \\times \\frac{1}{3} = \\frac{1}{18}$. Percentage me badalne ke liye 100 se multiply kar de $\\to \\frac{100}{18}\\% = \\frac{50}{9}\\%$. Bina koi x-y maane answer aa gaya!"
-  },
-  {
-    "q": "In an election, $80\\%$ of eligible voters cast their votes. Of these votes, $5\\%$ were declared invalid. If a winning candidate received 11,400 votes, which accounted for $60\\%$ of the total valid votes, what was the total number of eligible voters enrolled in that election? (CGL TIER I - $13/09$/2025 - SHIFT 2)",
-    "o": [
-      "22,500",
-      "20,000",
-      "25,000",
-      "27,500"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, successive ka sabse pyara sawal. Maan le total voters x hain. Toh series banegi: $x \\times \\frac{80}{100} \\times \\frac{95}{100} \\times \\frac{60}{100} = 11400$. Isko fraction me likh: $x \\times \\frac{4}{5} \\times \\frac{19}{20} \\times \\frac{3}{5} = 11400$. Digital Sum laga le ya direct kaat de. $x = 25000$ mast answer niklega."
   },
   {
     "q": "A town has a present population of 2,40,000. Every year the population increases by a birth rate of $12\\%$ and decreases by a death rate of $7\\%$. Find the population of the town at the end of 3 years.",
@@ -244,17 +233,6 @@
     ],
     "a": 1,
     "s": "Dekh bhai, Fraction $\\frac{1}{6}$ hai iska matlab har saal value $6 \\to 7$ hoti hai. 3rd aur 4th saal ka difference matlab (4th Year - 3rd Year) jo basically 3rd saal ki value ka $\\frac{1}{6}$ hai. Toh $3\\text{rd yr value} \\times \\frac{1}{6} = 126 \\implies 3\\text{rd yr} = 756$. Ab backward jaana hai 2nd year pe, toh $\\frac{6}{7}$ se multiply kar de $= 756 \\times \\frac{6}{7} = 648$. Iska $\\frac{1}{8}$ nikalna hai $= \\frac{648}{8} = 81$. Ratio method rocks!"
-  },
-  {
-    "q": "A watermelon weighs 20 kg with $90\\%$ of its weight being water. It was left in the sun for a while and some of the water evaporated such that only $80\\%$ of it is water. What is the reduced weight of the watermelon now?",
-    "o": [
-      "10 kg",
-      "8 kg",
-      "12 kg",
-      "15 kg"
-    ],
-    "a": 0,
-    "s": "Dekh TestRipper bhai, aise questions me hamesha 'Constant' pakdo. Water uda hai, matlab Pulp toh utna hi rahega na! Pehle $10\\%$ pulp tha yani $20 \\times 10\\% = 2\\text{kg}$. Ab naye weight me $80\\%$ pani hai, toh pulp $20\\%$ bacha hoga. Naya Weight $\\times 20\\% = 2\\text{kg}$. Toh Naya Weight = 10 kg. CDS me zero concept leakage chahiye humko!"
   },
   {
     "q": "x is inversely proportional to y. If x is increased by $37.5\\%$ then find % change in the value of y?",

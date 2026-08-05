@@ -4,17 +4,6 @@
   "totalMarks": 50,
   "questions":[
   {
-    "q": "In a competitive exam with 120 questions, there are three sections: General knowledge (20 questions), Reasoning (50 questions), and English (50 questions). A candidate answered $70\\%$ of General knowledge, $50\\%$ of Reasoning, and $30\\%$ of English questions correctly. If the minimum passing score is $60\\%$, how many more questions did the candidate need to answer correctly to pass?",
-    "o": [
-      "18",
-      "20",
-      "15",
-      "12"
-    ],
-    "a": 0,
-    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, bina pen uthaye seedha observation lagani hai! Total questions 120 hain, passing marks $60\\%$ chahiye, matlab $120 \\times 0.6 = 72$ marks. Bande ne score kya kiya? $70\\%$ of 20 (yani 14), $50\\%$ of 50 (yani 25), aur $30\\%$ of 50 (yani 15). Mental math se add kar: $14 + 25 + 15 = 54$. Chahiye 72, aaye 54. Difference sidha 18. Khel khatam!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Step 1: Target Score = $60\\%$ of $120 = 72$.<br>Step 2: Obtained Score = $(0.7 \\times 20) + (0.5 \\times 50) + (0.3 \\times 50) = 14 + 25 + 15 = 54$.<br>Step 3: Deficit = $72 - 54 = 18$.<br>Seedha 18 aur questions sahi karne the. CGL me aise lallu sawal me 15 second se zyada nahi dena!<br><br><b>Future Exam Takeaway:</b><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem;margin-top:10px;'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Concept)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Application)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Base Distribution</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Break down total into parts, calculate quickly without writing full equations.</td></tr></table></div>"
-  },
-  {
     "q": "In a school, $50\\%$ of the students play cricket, $40\\%$ of the students play football and the number of students who play both games is 420. The number of students who play neither cricket nor football is $45\\%$. Find the total number of students in the school.",
     "o": [
       "1200",
@@ -35,28 +24,6 @@
     ],
     "a": 1,
     "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, ₹6,000 aur ₹12,000 ke beech ka difference ₹6,000 hai. Ye extra ₹6,000 purntah $y\\%$ slab (above ₹2,000) mein aayega. Tax difference = ₹680 - ₹320 = ₹360. Yani ₹6,000 ka $y\\% = 360$. Sidha $y = 6$. Pehle case mein ₹6,000 pe 320 tax laga. ₹4,000 (above ₹2k) pe $6\\%$ se ₹240 tax lag gaya. Bacha ₹80 tax ₹2,000 par laga hoga, yani $x = 4$. Toh $(x - y) = 4 - 6 = -2$. Solid Hacker mindset!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Step 1: Difference in Total Goods Value = $12000 - 6000 = 6000$<br>Step 2: Difference in Total Tax = $680 - 320 = 360$<br>Step 3: $y\\%$ of $6000 = 360 \\implies y = 6$.<br>Step 4: For ₹6000 good, Tax on upper ₹4000 = $4000 \\times 6\\% = 240$<br>Step 5: Remaining tax for first ₹2000 = $320 - 240 = 80$<br>$x\\%$ of $2000 = 80 \\implies x = 4$.<br>Step 6: $(x - y) = 4 - 6 = -2$.</div>"
-  },
-  {
-    "q": "$20\\%$ of the registered voters did not cast their vote in an election between two candidates. $10\\%$ of the votes polled were found invalid. The successful candidate got $56\\%$ of the valid votes and won by a majority of 1728 votes. The total number of voters enrolled on the voters list was:",
-    "o": [
-      "24000",
-      "22000",
-      "20000",
-      "18000"
-    ],
-    "a": 2,
-    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, successive percentage ka khel hai. Total $T$. Cast = $0.8T$. Valid = $0.9 \\times 0.8T = 0.72T$. Winner ko $56\\%$ mila valid ka, toh loser ko $44\\%$ milega. Difference kitna aaya? $12\\%$ of Valid Votes. Toh equation banegi: $0.12 \\times 0.72T = 1728$. Digital sum check kar le ya approximate maar le. $12 \\times 72 = 864$. $864 \\times 2 = 1728$ hota hai, toh base multiplier 2 wala aayega. Yani 20000. Boom!<br><br><b>Method 1 (Exam Approach):</b><br>Step 1: Total = $100x$. Polled = $80x$. Valid = $80x \\times \\frac{90}{100} = 72x$.<br>Step 2: Winner = $56\\%$, Loser = $44\\%$. Margin = $12\\%$.<br>Step 3: $12\\%$ of $72x = 1728 \\implies \\frac{12}{100} \\times 72x = 1728$.<br>Step 4: $8.64x = 1728 \\implies x = 200$.<br>Step 5: Total Voters = $100 \\times 200 = 20000$.<br><br><b>Future Exam Takeaway:</b><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem;margin-top:10px;'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Concept)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Application)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Successive Multiplication</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $T \\times \\frac{80}{100} \\times \\frac{90}{100} \\times \\frac{12}{100} = 1728$. One single line solution.</td></tr></table></div>"
-  },
-  {
-    "q": "If the length of a rectangle is increased by $12\\%$ and the width is decreased by $8\\%$, what is the net effect on the area of the rectangle?",
-    "o": [
-      "Increase by $3.04\\%$",
-      "Decrease by $4\\%$",
-      "Increase by $4\\%$",
-      "Decrease by $3.04\\%$"
-    ],
-    "a": 0,
-    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, $x + y + \\frac{xy}{100}$ lagana hai. Length badhi 12, width kam hui 8. Toh roughly $12 - 8 = +4\\%$. But successive mein $\\frac{12 \\times (-8)}{100} = -0.96$ bhi aayega. Toh $4 - 0.96 = 3.04\\%$ aayega, aur positive hai toh increase. Options dekh, ekdum free ke number hain ye CGL Prelims me!<br><br><b>Method 1 (Successive Formula):</b><br>$A = L \\times B$. Hence area undergoes successive change.<br>Net Change = $12 + (-8) + \\frac{12 \\times (-8)}{100}$<br>$= 4 - 0.96 = +3.04\\%$. Since sign is positive, it's an increase.</div>"
   },
   {
     "q": "The profits of three partners in a business are initially in the ratio 2 : 3 : 4. If their respective profits are increased by $50\\%$, $40\\%$, and $30\\%$ respectively, what is the new simplified ratio of their profits?",
@@ -169,28 +136,6 @@
     "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, CPR (Constant Product Ratio) laga. Price badha by $+28\\% = +\\frac{28}{100} = +\\frac{7}{25}$. Jab fraction $+\\frac{x}{y}$ se badhti hai aur product same rakhna ho, toh dusra factor $-\\frac{x}{x+y}$ se girana padta hai. Yani Consumption giregi $\\frac{7}{25+7} = \\frac{7}{32}$ se. Ab fraction ko percentage me convert kar: $\\frac{7}{32} \\times 100 = \\frac{700}{32} = \\frac{175}{8} = 21.875\\%$. Second method lagaoge toh 1 minute waste hoga, CPR lagaya toh 10 second me answer! Flexi-Frac bhi lagaoge toh time lega dekho agar num me value asaan bai toh and denom me bhi toh simply bhag deso tumhe sahi time pe sahi method execute karna hi padega.<br><br><b>Method 1 (CPR - Ninja Technique):</b><br>Price Increment = $+28\\% = +\\frac{28}{100} = +\\frac{7}{25}$<br>Corresponding Decrease = $-\\frac{7}{25 + 7} = -\\frac{7}{32}$<br>Percentage = $\\frac{7}{32} \\times 100 = 21.875\\%$</div>"
   },
   {
-    "q": "In a class of 212 students, each student studies at least one of the three languages: Mandarin, French, and Spanish. There are 96 students studying Mandarin, 102 studying French, and 106 studying Spanish. Furthermore, 32 study both Mandarin and French, 34 study both Mandarin and Spanish, and 36 study both French and Spanish. How many students study all three languages?",
-    "o": [
-      "6",
-      "8",
-      "10",
-      "12"
-    ],
-    "a": 2,
-    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, Set theory ka direct union formula hai. Total = sum of singles - sum of doubles + triples. Har bachha kuch na kuch padh raha hai, toh Union 212 hi hai. Equation kya banegi? $212 = (96 + 102 + 106) - (32 + 34 + 36) + x$. Mind mein add kar: $304 - 102 = 202$. Ab 202 mein kya jodu ki 212 ban jaaye? 10. Seedha answer 10. Paper pe ek line mat likhna iske liye!<br><br><b>Method 1 (Standard Formula):</b><br>$n(M \\cup F \\cup S) = n(M) + n(F) + n(S) - [n(M \\cap F) + n(M \\cap S) + n(F \\cap S)] + n(M \\cap F \\cap S)$<br>$212 = (96 + 102 + 106) - (32 + 34 + 36) + x$<br>$212 = 304 - 102 + x$<br>$212 = 202 + x \\implies x = 10$.</div>"
-  },
-  {
-    "q": "The combined salary of P and Q is ₹9,60,000. P saves $64\\%$ of his salary and Q saves $44\\%$ of his salary. If P's expenditure is 1.5 times Q's expenditure, what is the ratio of P's salary to Q's salary?",
-    "o": [
-      "2 : 3",
-      "3 : 2",
-      "3 : 7",
-      "7 : 3"
-    ],
-    "a": 3,
-    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, question mein total salary ka ek dummy data (₹9,60,000) de rakha hai jiska ratio nikalne me koi kaam nahi hai! Jaisa ki hum percentage se \\%  se \\% me value nikalne ke liye karte the !! .  P saves $64\\%$, matlab P ka expense $36\\%$ hai. Q saves $44\\%$, matlab Q ka expense $56\\%$ hai. Condition kya hai? $Exp(P) = 1.5 \\times Exp(Q)$. Sidha equation bano: $36\\% \\text{ of } P = 1.5 \\times 56\\% \\text{ of } Q$. Decimal hatao $36P = 84Q$. Ratio nikalo $\\frac{P}{Q} = \\frac{84}{36} = \\frac{7}{3}$. SSC ye dummy data isiliye deta hai taaki tum calculation mein phas jao!<br><br><b>Method 1 (Exam Approach):</b><br>Step 1: P's Expenditure = $100\\% - 64\\% = 36\\%$ of P.<br>Step 2: Q's Expenditure = $100\\% - 44\\% = 56\\%$ of Q.<br>Step 3: Given $0.36P = 1.5 \\times 0.56Q$<br>$0.36P = 0.84Q \\implies \\frac{P}{Q} = \\frac{84}{36} = \\frac{7}{3}$.<br><br><b>Future Exam Takeaway:</b><br>Beware of redundant absolute values in Ratio/Percentage based questions.</div>"
-  },
-  {
     "q": "The income of A is $45\\%$ more than that of B. The income of C is $60\\%$ less than the sum of the incomes of A and B. The income of D is $20\\%$ more than that of C. If the difference between the incomes of B and D is ₹13,200, then find the income of C.",
     "o": [
       "72000",
@@ -213,17 +158,6 @@
     "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, fractions strong hone chahiye. $14.28\\% = \\frac{1}{7}$ and $71.42\\% = \\frac{5}{7}$. Company B ke total log $14.28\\%$ less hain A se. Yani $B = \\frac{6}{7} \\times A$. Diya hai $B = 84$, toh $A = 84 \\times \\frac{7}{6} = 98$. Ab A ke andar males kitne hain? $\\frac{5}{7}$ of 98, yani 70. Bachi hui females = $98 - 70 = 28$. Difference kitna hai male aur female ka? $70 - 28 = 42$. Aur question keh raha hai diff $(x + 12)$ hai. Toh $x + 12 = 42 \\implies x = 30$. Ek line me solve karne ki aadat daal!<br><br><b>Method 1 (Exam Approach):</b><br>Step 1: Fraction values: $14.28\\% = 1/7$ and $71.42\\% = 5/7$<br>Step 2: $B = (1 - 1/7)A = 6/7 A$<br>$84 = 6/7 A \\implies A = 98$<br>Step 3: Male in A = $5/7 \\times 98 = 70$. Female in A = $98 - 70 = 28$.<br>Step 4: Difference = $70 - 28 = 42$<br>Step 5: $x + 12 = 42 \\implies x = 30$.</div>"
   },
   {
-    "q": "A person's expenditure ratio on Food, Clothing, and Entertainment is 2:4:4. If the price of Food decreases by $10\\%$, the price of Clothing increases by $5\\%$, and the price of Entertainment decreases by $15\\%$, what is the net percentage change in his total expenditure?",
-    "o": [
-      "$5\\% \\text{ decrease}$",
-      "$6\\% \\text{ decrease}$",
-      "$5\\% \\text{ increase}$",
-      "$6\\% \\text{ increase}$"
-    ],
-    "a": 1,
-    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, Weighted average ka lallu sawal hai. Ratios ko weights maan le: 2, 4, aur 4. Total weight ho gaya 10. Net effect nikalna hai toh seedha multiply kar change se. Food = $2 \\times (-10) = -20$. Clothing = $4 \\times (+5) = +20$. Entertainment = $4 \\times (-15) = -60$. Sum kar: $-20 + 20 - 60 = -60$. Is total effect ko overall 10 base pe divide kar de. $-\\frac{60}{10} = -6\\%$. Minus sign ka matlab hai overall $6\\%$ ka decrease aaya hai.<br><br><b>Method 1 (Deviation / Weighted Average):</b><br>Net % Change = $\\frac{W_1X_1 + W_2X_2 + W_3X_3}{W_1 + W_2 + W_3}$<br>$= \\frac{2(-10) + 4(+5) + 4(-15)}{2 + 4 + 4}$<br>$= \\frac{-20 + 20 - 60}{10} = \\frac{-60}{10} = -6\\%$</div>"
-  },
-  {
     "q": "Ram's income is $1.25$ times Shyam's expenditure. Shyam's income is $1.33$ times Ram's expenditure. The difference between Shyam's savings and Ram's savings is ₹$3750$. If the ratio of Ram's income to his savings is $5 : 1$, find the value of $3x$ given that Shyam's income is $2x + 10000$.",
     "o": [
       "75000",
@@ -233,28 +167,6 @@
     ],
     "a": 0,
     "s": "<b>Tool Triggered:</b> 5. Unitary Scaling.<br><br><b>The 'Pen-Free' Observation First:</b> Dekh bhai, teri galti ye thi ki tune $1.33$ ko exact value le liya tha jabki SSC me ye hamesha $\\frac{4}{3}$ hota hai. Decimal se bachne ke liye tera logic best tha, bas denominator $3$ ko dekh kar base ko $100$ ki jagah $300$ maan le! future me jab kabhi aise relation dekhne ko mile 1.25 1.33 or 12.75 then dekho base me kya fractions aa rhe hain unka relation if ek dusre ke multipliers ke form me hai toh bas fractions ka LCM or unke multiply result ko main base or total quantity maan lena. <br><br><b>Method 1 (Ninja Technique / Tera Optimized Way):</b><br>Let Shyam Exp = $300$<br>Ram Income = $1.25 \\times 300 = 375$<br>Ram Savings = $\\frac{375}{5} = 75$<br>Ram Exp = $375 - 75 = 300$<br>Shyam Income = $\\frac{4}{3} \\times 300 = 400$<br>Shyam Savings = $400 - 300 = 100$<br><br>Savings Diff = $100 - 75 = 25$ units.<br>$25 \\text{ units} = 3750 \\implies 1 \\text{ unit} = 150$<br><br>Shyam Income = $400 \\times 150 = 60000$<br>$2x + 10000 = 60000 \\implies 2x = 50000 \\implies x = 25000$<br>So, $3x = 75000$."
-  },
-  {
-    "q": "In an examination, $24\\%$ of the candidates fail in Mathematics, and $27\\%$ fail in Reasoning. If $12\\%$ fail in both subjects, what is the percentage of candidates who passed in both the subjects?",
-    "o": [
-      "$36\\%$",
-      "$42\\%$",
-      "$52\\%$",
-      "$61\\%$"
-    ],
-    "a": 3,
-    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, fail hone walo ka union nikal le jaldi se. Total Failures = Fail in Maths + Fail in Reasoning - Fail in Both. $24 + 27 - 12 = 39\\%$. Yani $39\\%$ log kisi na kisi me fail zaroor hue hain. Toh totally pass (dono me) hone wale log honge $100\\% - 39\\% = 61\\%$. Seedha orally hone wala question thha!<br><br><b>Method 1 (Venn Diagram Principle):</b><br>$n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$<br>$\\% \\text{ of failed students} = 24\\% + 27\\% - 12\\% = 39\\%$<br>$\\% \\text{ of students passed in both} = 100\\% - 39\\% = 61\\%$.</div>"
-  },
-  {
-    "q": "The price of an article is first decreased by $x\\%$ and then increased by $x\\%$. If the final price is $10\\%$ less than the original price, find the approximate value of x.",
-    "o": [
-      "30.6",
-      "31.62",
-      "33.6",
-      "39.6"
-    ],
-    "a": 1,
-    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, jab bhi ek hi percentage se pehle decrease aur phir increase karo, overall hamesha net decrease hota hai jiski value hoti hai $\\frac{x^2}{100}\\%$. Diya hai ki final price $10\\%$ less hai. Yani $\\frac{x^2}{100} = 10$. Solve karenge toh $x^2 = 1000$ aayega. $x = \\sqrt{1000}$. Hame pata hai $31^2 = 961$ aur $32^2 = 1024$. Yani value 31 aur 32 ke beech me hogi. Options me 31.62 ek hi valid fit hai. Seedha tick!<br><br><b>Method 1 (Net Change Formula):</b><br>Successive change of $-x$ and $+x$ is $\\frac{-x^2}{100}\\%$.<br>So, $\\frac{x^2}{100} = 10$<br>$x^2 = 1000$<br>$x = \\sqrt{1000} = 10\\sqrt{10} \\approx 31.62$.</div>"
   },
   {
     "q": "$25\\%$ of half of x is equal to $2.5$ times of ($30\\%$ of one-fourth of y). Then x is what percent more or less than y?",

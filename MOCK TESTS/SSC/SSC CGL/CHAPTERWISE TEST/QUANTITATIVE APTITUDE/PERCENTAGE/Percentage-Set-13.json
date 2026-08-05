@@ -15,28 +15,6 @@
     "s": "Dekh bhai TestRipper, isko bina x-y ke linear gap se samjho. Pehle number me $120\\%$ ka increase hua aur phir $80\\%$ ka increase hua. In dono cases ke beech me gap kitna hai? $40\\%$ ka gap hai. Aur dusri side, ye gap 70 aur 130 ke beech ka hai, yani $130 - 70 = 60$ ka farq hai. Seedhi baat: pehle number ka $40\\%$ barabar hai $60$ ke. Toh $100\\%$ (pehla number) banega $150$. Agar pehla number $150$ hai, aur isme $120\\%$ (yani $180$) jod do toh $330$ banta hai, jo dusre number se 70 kam hai. Matlab dusra number $330 + 70 = 400$ hai. Dono ka difference pucha hai: $400 - 150 = 250$. Simple logic, CGL level speed!"
   },
   {
-    "q": "$30\\%$ of the students in a college are girls and the rest are boys. The total number of students in the college is 3200. $80\\%$ of the boys and $50\\%$ of the girls passed the final examination. The number of total students who passed the final examination is?",
-    "o": [
-      "2272",
-      "2262",
-      "2372",
-      "2255"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, options match karne ke liye question me typo theek karni padegi, percentages ko reverse karke check kar! Agar girls $30\\%$ hain toh boys $70\\%$ hue. JSM lagao: overall pass percentage = $70\\% \\times 80\\% + 30\\% \\times 50\\% = 56\\% + 15\\% = 71\\%$. Ab direct $3200$ ka $71\\%$ nikal do. $32 \\times 71 = 32 \\times (70 + 1) = 2240 + 32 = 2272$. Unit digit se bhi $2 \\times 1 = 2$ aayega. Pen free solve karna seekh le!"
-  },
-  {
-    "q": "A reduction of $\\text{Rs. } 30$ / kg enables a man to purchase 2 kg more rice for $\\text{Rs. } 720$. Find the original price?",
-    "o": [
-      "110",
-      "90",
-      "120",
-      "130"
-    ],
-    "a": 2,
-    "s": "Dekh bhai aise karna hai... Options ka use kar, quadratic equation mat banana! Hame pata hai $720$ ko initial price se divide karna padega taaki quantity aaye. Option C dekho: agar purana price $\\text{Rs. } 120$ tha, toh $720/120 = 6$ kg aata tha. Naya price $\\text{Rs. } 30$ kam yani $\\text{Rs. } 90$ hua. Nayi quantity: $720/90 = 8$ kg. Kya $8$ kg aur $6$ kg ka gap $2$ kg hai? Haan! Condition perfectly satisfy ho gayi. Options elimination is the ultimate key yaha par!"
-  },
-  {
     "q": "Weight of a container is $11.11\\%$ of the weight of the container when filled with milk. If some of the milk is sold and the weight of the container with remaining milk becomes $55.55\\%$ of the original weight what percentage of milk was sold?",
     "o": [
       "$50\\%$",
@@ -46,17 +24,6 @@
     ],
     "a": 0,
     "s": "Dekh bhai, fractions strong rakhne padenge. $11.11\\% = \\frac{1}{9}$ aur $55.55\\% = \\frac{5}{9}$. Maan le total bhari hui container ka weight $9$ unit hai. Toh khali container ka weight $1$ unit hua. Milk ka weight kitna bacha? $9 - 1 = 8$ unit. Ab question kehta hai naya total weight $5$ unit ho gaya (kyunki $55.55\\%$ ho gaya). Container toh abhi bhi $1$ unit ka hi hoga na? Toh naya milk bacha $5 - 1 = 4$ unit. Pehle $8$ tha, ab $4$ bacha, yani adha bech diya! Seedha $50\\%$ answer. Mazdoori mat kar, conceptual speed la!"
-  },
-  {
-    "q": "If $25\\%$ of a number is 80, what is $40\\%$ of that number? (CHSL TIER I - $\\frac{25}{11}$/2025 - SHIFT 2)",
-    "o": [
-      "128",
-      "124",
-      "120",
-      "132"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, pura number nikalne ki murkhta mat karna. Unitary method laga! Agar $25\\%$ barabar hai 80 ke, toh $5\\%$ barabar hoga 16 ke (dono ko 5 se divide kar). Hame $40\\%$ chahiye, jo ki $5\\%$ ka 8 guna hota hai. Toh $16 \\times 8 = 128$. SSC tumhari speed test karta hai, gyan nahi!"
   },
   {
     "q": "Khushi scores $33.33\\%$ in an examination and after review, even though her score is increased by $40\\%$, she fails by 10 marks. If her post - review score is increased by $14.28\\%$, she will have 10 marks more than the passing score. Find the percentage score needed for passing the examination.",
@@ -69,17 +36,7 @@
     "a": 2,
     "s": "Dekh bhai, percentage fraction aur ratio ka game hai. Base $300$ unit maan le. Khushi ka score $\\frac{1}{3}$ yani $100$ unit hai. Review me $40\\%$ bada toh $140$ unit hua. Fails by 10 matlab Passing Marks = $140\\text{ unit} + 10$. Agle case me $140$ ko $14.28\\%$ (yani $\\frac{1}{7}$) se badhaya, toh $140 + 20 = 160$ unit hua. Ab ye passing se 10 jyada hai, yani Passing Marks = $160\\text{ unit} - 10$. Equate kar de: $140u + 10 = 160u - 10 \\implies 20u = 20 \\implies u = 1$. Total marks $300$ hue. Passing marks $140(1) + 10 = 150$ hue. Ye total ka exactly adha (yani $50\\%$) hai!"
   },
-  {
-    "q": "A shopkeeper increases the price of a product by $10\\%$. If the original price was $\\text{Rs. } 500$, what is the new price? (CHSL TIER I - $\\frac{26}{11}$/2025 - SHIFT 2)",
-    "o": [
-      "$\\text{Rs. } 520$",
-      "$\\text{Rs. } 550$",
-      "$\\text{Rs. } 530$",
-      "$\\text{Rs. } 540$"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, isme pen chhuna bhi paap hai! $500$ ka $10\\%$ seedha 50 hota hai. Add karega toh $550$ aayega. Pre level ke easy sawalo pe time bacha aur aage nikal."
-  },
+
   {
     "q": "If house tax is paid before the due date, one gets a reduction of $12\\%$ on the amount of the bill. By paying the tax before the due date, a person got a reduction of $\\text{Rs. } 2,100$. The amount (in Rs) of house tax paid was:",
     "o": [
@@ -90,17 +47,6 @@
     ],
     "a": 3,
     "s": "Dekh bhai, aakhiri line dhyan se padh 'amount of house tax PAID'. Agar $12\\% = 2100$ hai, toh $1\\% = 175$ aayega. Total bill $100\\% = 17500$ ka tha. Par usne reduction ke baad pay kiya hai. Toh usne pay kiya $17500 - 2100 = 15400$. Jaldbazi me 17500 mat mark kar dena, language samajh!"
-  },
-  {
-    "q": "The population of a village is 9720. If number of males increases by $12\\%$ and females increases by $30\\%$ then population of village becomes 11664. Number of males is what percentage of the number of females in the village?",
-    "o": [
-      "$100\\%$",
-      "$150\\%$",
-      "$200\\%$",
-      "$125\\%$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, tagda Alligation lagega isme. Population me increase kitna hua? $11664 - 9720 = 1944$. Overall percentage increase nikal: $(1944 / 9720) \\times 100 = 20\\%$. Ek taraf Males ($12\\%$), ek taraf Females ($30\\%$), aur beech me overall ($20\\%$). Cross difference nikal: Ratio banega $(30 - 20) : (20 - 12) = 10 : 8 = 5 : 4$. Hamein pucha hai Males Females ka kitna percent hai: $\\frac{5}{4} \\times 100 = 125\\%$. Ekdum systematic flow rakh!"
   },
   {
     "q": "In a group of 50 people, 28 have traveled to Europe, 31 have traveled to Asia, and 10 have traveled to both continents. How many people have not traveled to either continent?",
@@ -213,17 +159,6 @@
     "s": "Dekh bhai, logical samasya hai! Tie ka matlab hai $Q_{new} = P_{new}$. Q ke votes $25\\%$ (yani $\\frac{1}{4}$) badh gaye, toh Q ne $1.25 Q$ le liye. Aur ye aadhe-aadhe ke barabar honge. Jisse nikalta hai $P = 1.5Q$. Ab initial difference dekho: $P - Q = 1.5Q - Q = 0.5Q$. Aur margin 160 de rakha hai. Agar $0.5Q = 160$ hai toh $Q = 320$. Toh $P = 480$. Total vote kitne pade? $320 + 480 = 800$. Ye 800 total registered ka $80\\%$ the. Toh bache hue $20\\%$ (jinhone vote nahi diya) kitne honge? $800$ ka $\\frac{1}{4}$ yani 200 honge. Shandar sawal tha ye!"
   },
   {
-    "q": "Cooking oil price increased by $8\\%$. Family uses 12 L/month at $\\text{Rs. } 150$/L initially. Additional annual expenditure (nearest ₹)? (PHASE XIII(GRAD) - $\\frac{26}{07}$/2025 - SHIFT 3)",
-    "o": [
-      "1,789",
-      "1,765",
-      "1,728",
-      "1,700"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, isme poori cost nikal ke mat ghata! Sirf extra cost calculate kar. Price $\\text{Rs. } 150$ se $8\\%$ badha. $150$ ka $8\\%$ hota hai $\\text{Rs. } 12$. Har liter pe $\\text{Rs. } 12$ extra lagenge. Mahine me 12 liter use hote hain, toh mahine ka extra kharch = $12 \\times 12 = 144$ Rs. Annual pucha hai, toh 12 se ek aur baar multiply kar do: $144 \\times 12 = 1728$. Dimag ka istemaal CGL me time bachayega."
-  },
-  {
     "q": "In a society 500 people are living $45\\%$ play cricket, $29\\%$ play hockey and $48\\%$ play badminton, $18\\%$ didn't any play game while $5\\%$ people play all three games. If $6\\%$ people play cricket and hockey both and $27\\%$ play cricket and badminton both find the number of people who play only badminton?",
     "o": [
       "100",
@@ -266,17 +201,6 @@
     ],
     "a": 1,
     "s": "Dekh bhai, word problem hai par ghabrana nahi. Q ki seats $33.33\\%$ (yani $\\frac{1}{3}$) badhi. Matlab purani seats $3$ unit thi, ab $4$ unit ho gayi. Pehle P = $500 - 3u$, aur ab P = $500 - 4u$ hui. Pehle P ki majority thi: $(500 - 3u) - 3u = 500 - 6u$. Ab Q ki majority hai: $4u - (500 - 4u) = 8u - 500$. Sawal ke mutabik nayi majority purani ki double hai: $8u - 500 = 2(500 - 6u)$. Solve karega toh $8u - 500 = 1000 - 12u \\implies 20u = 1500 \\implies u = 75$. Nayi government me Q ki seats = $4u = 4 \\times 75 = 300$. Bawal logical approach!"
-  },
-  {
-    "q": "After two successive increments, a man's salary becomes $156.25\\%$ of the original salary. If the second increment was equal to that of the first increment, then what was the percentage of each increment? (CHSL TIER I - $\\frac{19}{11}$/2025 - SHIFT 2)",
-    "o": [
-      "$22\\%$",
-      "$20\\%$",
-      "$25\\%$",
-      "$30\\%$"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, successive me same jump maara hai toh Square root lagega! Salary 1 se $1.5625$ ho gayi. Iska under root nikal: $\\sqrt{1.5625} = 1.25$. Yani har baar salary 1 se $1.25$ ho rahi thi. $\\text{Growth} = 0.25$, jisko percentage me hum $25\\%$ kehte hain. Secondon me question solve karke nikal le aage!"
   }
 ]
 }

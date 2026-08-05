@@ -4,17 +4,6 @@
   "totalMarks": 50,
   "questions":[
   {
-    "q": "In an examination, 60% students failed in Hindi, 65% students failed in English, and 55% students failed in both Hindi and English. Find the number of students who failed in at least one subject.",
-    "o": [
-      "25%",
-      "70%",
-      "35%",
-      "30%"
-    ],
-    "a": 1,
-    "s": "<b>Core Conceptual Tool Triggered: Unitary Scaling (Set Shifting)</b><br><br><b>The 'Pen-Free' Observation First:</b> Dekh bhai, options aur data me sidha addition-subtraction chal raha hai. Overlap 55 ka hai jo 60 aur 65 dono me ghusa hua hai. Dimag me hi overlap minus kar aur aage badh.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... <i>At least one = Total in A + Total in B - Intersection</i>. Seedha dimag me jod: 60 + 65 = 125. Ab 55 hata de: 125 - 55 = 70%. 5 second ka game tha!<br><br><b>Method 2 (Concept Builder):</b> Venn diagram ka basic rule hai. Jo 55% dono me fail hue, wo 60 me bhi gine gaye aur 65 me bhi. Double counting hatane ke liye ek baar subtract karna padta hai.<br><br><b>Best Exam Approach:</b> Method 1. SSC CGL me aisi basic chizein seconds me pen uthaye bina udani hain!"
-  },
-  {
     "q": "A's salary is 40% more than B's. If B's salary increases by 20% and A's increases by x%, then A's new salary becomes 25% more than B's new salary. What is the value of x?",
     "o": [
       "10.63%",
@@ -59,17 +48,6 @@
     "s": "<b>Core Conceptual Tool Triggered: CPR (Constant Product Ratio)</b><br><br><b>The 'Pen-Free' Observation First:</b> Tax = Income $\\times$ Tax Rate. Jab Tax (Product) constant hai, toh Income aur Tax Rate inversely proportional honge. Rate 15 se 12 hua (Ratio 5:4). Toh Income 4 se 5 hui hogi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... Tax free portion (30%) dono taraf cut jayega, ignore kar. Tax rate ratio = 15:12 = 5:4. CPR lagao: Tax same hai toh Income ratio = 4:5. Gap 1 unit ka hai. 1 unit = 5000 (increase). Toh initial income 4 units = 20000. Pen nahi uthana tha isme!<br><br><b>Method 2 (Concept Builder):</b> Equation: $70\\% \\text{ of } 15\\% \\text{ of } x = 70\\% \\text{ of } 12\\% \\text{ of } (x + 5000)$. $15x = 12x + 60000 \\implies 3x = 60000 \\implies x = 20000$.<br><br><b>Future Exam Takeaway:</b> CPR method CGL Mains me aag laga dega! Product constant dekhte hi cross-ratio lagao."
   },
   {
-    "q": "The income of X is 42% more than that of Y and the income of Z is 45% less than the sum of the incomes of X and Y. By what per cent is the income of Z less than the income of X (correct to one decimal place)?",
-    "o": [
-      "5.6%",
-      "6.3%",
-      "6.7%",
-      "5.9%"
-    ],
-    "a": 1,
-    "s": "<b>Core Conceptual Tool Triggered: Unitary Scaling</b><br><br><b>The 'Pen-Free' Observation First:</b> Base fix kar Y=100. X=142. Z ki value (X+Y) ka 55% hai. Calculation thodi hogi, par approximation se option ud jayega kyuki options me 0.4% ka gap hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... Y = 100 $\\implies$ X = 142. Sum = 242. Z = $55\\% \\text{ of } 242 = 133.1$. X aur Z ka gap = $142 - 133.1 = 8.9$. Percentage = $\\frac{8.9}{142} \\times 100$.  Yahan dekho flexi fraction lgayenge kyunki denom bada hai so Approximation trick: 142 ka 1% hai 1.42. Toh 6% hoga lagbhag $1.42 \\times 6 = 8.52$. 8.9 chahiye jo 6% se thoda sa zyada hai. Option 6.3% directly tick maar!<br><br><b>Method 2 (Concept Builder):</b> Exact calculation karega toh $\\frac{890}{142} = 6.267...$ aayega jo round off hoke 6.3 banega. Time waste hoga.<br><br><b>Best Exam Approach:</b> Method 1 ka smart approximation is the only way to beat the clock in CGL."
-  },
-  {
     "q": "Rahul had to appear for a test in four subjects. In the first three subjects the maximum marks were 50 each, in which Rahul secured 60% on an average. In the fourth subject Rahul scored 54 marks and his overall percentage is 64%. What were the maximum marks in the fourth subject?",
     "o": [
       "110",
@@ -103,39 +81,6 @@
     "s": "<b>Core Conceptual Tool Triggered: Cross-Product Method / Unitary Scaling</b><br><br><b>The 'Pen-Free' Observation First:</b> Ratio 3:2 dekhte hi dimag me aana chahiye ki inka gap 1 unit ka hai. Percent me gap x aur (x-20) ka 20% hai. 1 unit = 20%!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai, question me hi answer chhipa hai. Gap ratio me 1 unit hai, aur percent me 20. Toh A ka vote 3 unit = 60%, B ka vote 2 unit = 40%. Direct mil gaya x = 60. Ab diya hai $(x/2)\\%$ of Total = 1200. Matlab $30\\%$ of Total = 1200. Toh $10\\% = 400$, and $100\\% = 4000$. Pen chhoone ki saza-e-maut hai is question me!<br><br><b>Method 2 (Concept Builder):</b> Equation banayega: $\\frac{x}{x-20} = \\frac{3}{2}$. Cross multiply: $2x = 3x - 60 \\implies x = 60$. Fir wahi same steps.<br><br><b>Future Exam Takeaway:</b> Ratio scaling is king. Jab relative gap percentage me diya ho, direct ratio parts se equate kar de."
   },
   {
-    "q": "A population falls by 12% in the first year. By what percentage must it increase in the second year so that at the end of the second year the population is exactly the same as the original?",
-    "o": [
-      "10.6%",
-      "13.6%",
-      "14.6%",
-      "11.6%"
-    ],
-    "a": 1,
-    "s": "<b>Core Conceptual Tool Triggered: CPR (Constant Product Ratio - Base Shift)</b><br><br><b>The 'Pen-Free' Observation First:</b> 100 se 88 hua. Wapas 100 jana hai. Badhana toh 12 hi hai, par ab base 88 ban gaya. Denominator chhota hua toh fraction ki value badi hogi. Answer 12% se thoda upar hoga.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... Required jump = $\\frac{12}{88} \\times 100 = \\frac{3}{22} \\times 100$. Approximation laga: $\\frac{1}{22}$ lagbhag $4.5\\%$ hota hai, toh $\\frac{3}{22}$ hoga $4.5 \\times 3 = 13.5\\%$. Options dekh, 13.6% ekdum samne khada hai. Direct tick maar aur aage bhag!<br><br><b>Method 2 (Concept Builder):</b> CPR rule $\\frac{x}{y}$ decrease hua (yani $\\frac{12}{100} = \\frac{3}{25}$ decrease). Toh increase kitna chahiye? $\\frac{x}{y-x} = \\frac{3}{25-3} = \\frac{3}{22}$. Exact answer: $13.63\\%$.<br><br><b>Best Exam Approach:</b> Base shift with CPR and Fraction approximation."
-  },
-  {
-    "q": "A man spends 70% of his income. His income increases by 10% and his expenditure by 5%. What is the percentage increase in his savings?",
-    "o": [
-      "31.67%",
-      "41.67%",
-      "51.67%",
-      "21.67%"
-    ],
-    "a": 3,
-    "s": "<b>Core Conceptual Tool Triggered: JSM (Junior Satisfaction Method) / Deviation</b><br><br><b>The 'Pen-Free' Observation First:</b> Ye weighted average ya Alligation ka sabse classic case hai. Ratio 70:30 yaani 7:3 hai. Dimag me JSM laga: Sabko 10% milna tha, Expenditure 5% leke gaya, uska bacha hua 5% Savings ke hisse me aayega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai, I = 100, E = 70, S = 30. Ratio 7:3. Shift method (JSM) laga: Income 10% badhi (yani dono parts average 10% badhne the). Expenditure sirf 5% badha. Toh isne $10 - 5 = 5\\%$ kam liya apne 7 units par. Total bachat = $5 \\times 7 = 35$. Ye 35 kon lega? Savings ke 3 units! So, Savings ka increase = $10\\% + \\frac{35}{3}\\% = 10 + 11.67 = 21.67\\%$.<br><br><b>Method 2 (Concept Builder):</b> Basic mazdoori: I=100, E=70, S=30. New I=110, New E=73.5. New S = 110 - 73.5 = 36.5. Increase = 6.5. Percentage = $\\frac{6.5}{30} \\times 100 = 21.67\\%$.<br><br><b>Future Exam Takeaway:</b> JSM Deviation CGL me top rank layega. Basic se bach!"
-  },
-  {
-    "q": "If the radius of a sphere is increased by 20 percent, by what percentage will its volume increase?",
-    "o": [
-      "60.5",
-      "72.8",
-      "76.6",
-      "78.4"
-    ],
-    "a": 1,
-    "s": "<b>Core Conceptual Tool Triggered: Successive Change (The Chain Reaction)</b><br><br><b>The 'Pen-Free' Observation First:</b> Volume radius ke cube ($r^3$) par depend karta hai. 20% = 1/5. Toh 5 se 6 ho gaya 3 baar. 125 se 216 ka safar. Pen ki zarurat kaha hai?<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... Ratio banega $5 \\to 6$. Volume ke liye cube kar de: $125 \\to 216$. Increase kitna hua? 91 ka. Kispe? 125 par. Percentage = $\\frac{91}{125} \\times 100 = 72.8\\%$.<br><br><b>Method 2 (Concept Builder):</b> Successive ka formula 3 baar lagana: Pehle 20 aur 20 ka net $20+20+4 = 44\\%$. Fir 44 aur 20 ka net: $44+20+\\frac{44 \\times 20}{100} = 64 + 8.8 = 72.8\\%$.<br><br><b>Future Exam Takeaway:</b> Jab bhi 3D figure (Volume) ho, successive addition ki jagah cubes ratio method use kar, mistakes kam hongi."
-  },
-  {
     "q": "A man spends 80% of his income. His income has increased by 25%, but his expenditure remains the same. By what percent have his savings increased?",
     "o": [
       "125%",
@@ -166,17 +111,6 @@
     ],
     "a": 2,
     "s": "<b>Core Conceptual Tool Triggered: Successive Change (The Chain Reaction) / Number Theory</b><br><br><b>The 'Pen-Free' Observation First:</b> Ye sawal purely CAT level trap hai jo SSC Mains me aa sakta hai. Net change positive hona chahiye, yaani $a - b - \\frac{ab}{100} > 0$. $a - b = 8$ diya hai. So, $8 - \\frac{ab}{100} > 0 \\implies ab < 800$. Humein first year ke baad ki value lowest chahiye, yaani depreciation 'b' maximum hona chahiye.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... $ab < 800$ and $a = b + 8$. Put kar: $b(b+8) < 800$. Ab options se hint le ya hit & trial kar. Agar $b=20$ rakha toh $20 \\times 28 = 560$ (aur bada ho sakta hai). Agar $b=25$ rakha toh $25 \\times 33 = 825$ (800 cross kar gaya, fail). Agar $b=24$ rakha toh $24 \\times 32 = 768 < 800$. Perfect! Max possible natural number $b = 24$. Toh 1st year depreciation 24% hai. Value = $200000 \\times (1 - 0.24) = 152000$.<br><br><b>Method 2 (Concept Builder):</b> Mathematically quadratic inequality solve karni padegi: $b^2 + 8b - 800 < 0$. Roots are around 24.something. Since b is a natural number, largest integer $b = 24$.<br><br><b>Future Exam Takeaway:</b> Absolute hardest trap! Hamesha Net successive change formula me inequalities laga kar extreme case pakdo."
-  },
-  {
-    "q": "A student secured 1080 marks in an exam out of 1800. What is their percentage?",
-    "o": [
-      "70%",
-      "75%",
-      "60%",
-      "80%"
-    ],
-    "a": 2,
-    "s": "<b>Core Conceptual Tool Triggered: Unitary Scaling (Basic Fractions)</b><br><br><b>The 'Pen-Free' Observation First:</b> 108 aur 18 dono 9 aur 18 ke table me aate hain. Seedha kat'ta hua dikh raha hai. Aise lallu questions me pen nahi uthana hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai, nirlajjo wala aasan question hai! Direct ratio le: $\\frac{1080}{1800} = \\frac{108}{180} = \\frac{3}{5}$. Aur $\\frac{1}{5}$ humesha 20% hota hai, toh $\\frac{3}{5}$ ho gaya 60%.<br><br><b>Method 2 (Concept Builder):</b> Digital sum se bhi check kar sakta hai: 1080 ka DS 9 hai. Toh percentage me bhi aisa factor aana chahiye jo 3 ka multiple maintain kare. But yaha direct division 1 second ka hai.<br><br><b>Future Exam Takeaway:</b> SSC CGL Pre me kuch questions purely confidence boost karne aate hain, inpe 3 second se zyada mat de."
   },
   {
     "q": "There are 70 students in a class, but only 6/7 of them play at least one indoor game (Chess, Carrom, and Scrabble). It is given that 28.56% of the total students play Chess, 42.85% play Scrabble, and 57.14% play Carrom. Exactly 6 students play both Chess and Scrabble but not Carrom, 14.28% play both Scrabble and Carrom but not Chess, and 5 students play all 3 games. Find the number of students who play Chess and Carrom but not Scrabble.",
@@ -222,17 +156,7 @@
     "a": 0,
     "s": "<b>Core Conceptual Tool Triggered: Successive Change / Variable Ratio Algebra</b><br><br><b>The 'Pen-Free' Observation First:</b> Formula based hai. Ratio $x = \\frac{A}{B}$. New ratio banega $x' = \\frac{A(1 - \\frac{p}{100})}{B(1 - \\frac{q}{100})}$. Yaani old ke sath ek multiplier chipka hai $\\frac{100-p}{100-q}$. Bas yahi se decrease fraction nikal lena hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... New $x' = x \\times \\frac{100-p}{100-q}$. Decrease kitna hua? $(1 - \\frac{100-p}{100-q}) \\times x = \\frac{(100-q) - (100-p)}{100-q} \\times x = \\frac{p-q}{100-q} \\times x$. Percentage me badalne ke liye 100 se multiply karo base (x) ke respect me: $\\frac{p-q}{100-q} \\times 100$. Option A tick maar bina darr ke!<br><br><b>Method 2 (Concept Builder):</b> Value assume karlo. Let A=100, B=100. Let p=20, q=10. Original x=1. New A=80, New B=90. New x = $\\frac{80}{90} = \\frac{8}{9}$. Decrease = $1 - \\frac{8}{9} = \\frac{1}{9}$. Percentage decrease = $\\frac{100}{9}\\%$. Options me p=20, q=10 dalo. A) $\\frac{100(10)}{90} = \\frac{100}{9}$. Match! Baki options match nahi karenge.<br><br><b>Future Exam Takeaway:</b> Variables dekh ke blank mat ho, assumption method (Method 2) hamesha zinda rakhega."
   },
-  {
-    "q": "Price of a ticket of a show of circus is 8. When the price of the ticket is reduced then the audience is increased by 60% and the total income is increased by 20%. Find the price of the ticket after reduction.",
-    "o": [
-      "7",
-      "6",
-      "5",
-      "4"
-    ],
-    "a": 1,
-    "s": "<b>Core Conceptual Tool Triggered: CPR (Constant Product Ratio - Modified)</b><br><br><b>The 'Pen-Free' Observation First:</b> Basic economics, Revenue = Price $\\times$ Volume. Income me net change given hai, aur volume (audience) me given hai. Price ka ratio easily dono ke division se aayega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... Income 20% badhi yani ratio $5 \\to 6$. Audience 60% badhi yani $5 \\to 8$. $\\text{Price} = \\frac{\\text{Income}}{\\text{Audience}}$. Toh Price ka ratio $\\frac{5}{5} \\to \\frac{6}{8}$ yaani $1 \\to \\frac{3}{4}$, jisko hum $4 \\to 3$ likh sakte hain. Original price 8 tha (4 units = 8), toh naya price 3 units = 6. Khel khatam!<br><br><b>Method 2 (Concept Builder):</b> $P \\times A = I$. New $P \\times (1.6 A) = 1.2 I$. Substitute $I = P \\times A$: New $P \\times 1.6 A = 1.2 (P \\times A) \\implies \\text{New P} = P \\times \\frac{1.2}{1.6} = P \\times \\frac{3}{4}$. Toh $8 \\times \\frac{3}{4} = 6$.<br><br><b>Best Exam Approach:</b> Ratio shifting (Method 1) me dimag me fractions jaldi kat'te hain."
-  },
+  
   {
     "q": "The price of a product is decreased by x% and then increased by x%. The final price becomes 10% less than the original. What is the value of x (approximately)?",
     "o": [
@@ -265,17 +189,6 @@
     ],
     "a": 3,
     "s": "<b>Core Conceptual Tool Triggered: Unitary Scaling / Ratio Equalization</b><br><br><b>The 'Pen-Free' Observation First:</b> Amala (A) common link hai. A aur B ka relation diya hai, fir A aur C (Kamala) ka. A ko barabar karne ke liye LCM lekar starting base fix kar, aage ki percentages smooth ho jayengi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... A:B = 120:100 = 6:5. A:C = 80:100 = 4:5. A ko common kar (6 aur 4 ka LCM 12 hai). Ratio A:B:C = 12:10:15. Zero laga kar 120, 100, 150 kar le calculation aasan hogi. Ab C ko 4% down kar toh $150 - 6 = 144$. B ko 10% up kar toh $100 + 10 = 110$. Kamala Bimala ko kitne se exceed kar rhi hai? $144 - 110 = 34$. Percentage = $\\frac{34}{110} \\times 100 = \\frac{340}{11} \\approx 30.9\\%$. Nearest 31%.<br><br><b>Method 2 (Concept Builder):</b> Direct fractions se ratio set karna, same logic. Agar variables loge (Let C = x) toh time waste hoga.<br><br><b>Future Exam Takeaway:</b> 3 party relative percentage me hamesha 'Common Link' ka LCM le kar standard 100/1000 ki series banalo."
-  },
-  {
-    "q": "If A is 25% more than B, and B is 20% more than C, then what is A:C?",
-    "o": [
-      "5:4",
-      "3:2",
-      "6:5",
-      "2:3"
-    ],
-    "a": 1,
-    "s": "<b>Core Conceptual Tool Triggered: Successive Change (Ratio Multiplication)</b><br><br><b>The 'Pen-Free' Observation First:</b> Chain A to B to C ja rahi hai aur extreme ends (A and C) puche hain. Beech wale terms ko katne ke liye successive ratio multiplication is the best approach.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... A:B = $5:4$ (kyuki 25% jyada). B:C = $6:5$ (kyuki 20% jyada). Humein $\\frac{A}{C}$ chahiye, jo hota hai $\\frac{A}{B} \\times \\frac{B}{C}$. Toh $\\frac{5}{4} \\times \\frac{6}{5}$ kar. 5 se 5 katta, bacha $\\frac{6}{4}$ yaani $\\frac{3}{2}$. Dimag me bina pen uthaye udane wala sawal tha!<br><br><b>Method 2 (Concept Builder):</b> Let C = 100. B = 120. A = $120 \\times 1.25 = 150$. A:C = 150:100 = 3:2. Ye method is specific case me aasan hai, par fractional percentages me fasa dega.<br><br><b>Best Exam Approach:</b> Successive multiplication fraction method is always superior and universal."
   }
 ]
 }

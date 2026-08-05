@@ -15,28 +15,6 @@
     "s": "Dekh bhai TestRipper, aise karna hai... Ulta chalte hain (Reverse calculation). Nithi ko 12000 mila, Sara ko uska 3/5th mila yaani 12000 * 3/5 = 7200. Sara ne 500 taxi me uda diye, toh bache 7200 - 500 = 6700. Question kehta hai ye (x + 300) ke barabar hai. Toh x = 6400. Pucha hai x ka root, jo hota hai 80. <br><br><b>Best Approach:</b> Sidha mental math karo. 12k ka 60% = 7.2k. 500 gaye = 6.7k. 300 ghatao = 6.4k. Root = 80. Pen uthane ki jarurat nahi padegi!<br><br><b>Summary:</b> Jab value transfer ho rahi ho step-by-step, toh sequence ko follow karke end result nikalna sabse easy hota hai."
   },
   {
-    "q": "A student's marks in Mathematics were 20% more than in Physics. If he scored 72 in Physics, how many marks did he score in Mathematics? (CGL TIER I - 20/09/2025 - SHIFT 1)",
-    "o": [
-      "82.4",
-      "84.4",
-      "88.4",
-      "86.4"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, 20% ka fraction hota hai 1/5. Matlab agar Physics me 5 unit hai toh Maths me 6 unit hongi. Physics me 72 hain, toh seedha 72 ko 1.2 se multiply kar de. 72 * 1.2 = 86.4. Options dekh, sab close hain but calculation itni easy hai ki exact aayega.<br><br><b>Trick:</b> 72 ka 10% = 7.2, toh 20% = 14.4. 72 + 14.4 = 86.4. <br><br><b>Summary:</b> Base 10 percentage nikal ke add karna CGL me hamesha time bachata hai."
-  },
-  {
-    "q": "The price of sugar is reduced by 20%. Now a person can buy 500g more sugar for 36. The original price of the sugar per kilogram was",
-    "o": [
-      "14.40",
-      "18",
-      "15.60",
-      "16.50"
-    ],
-    "a": 1,
-    "s": "Dekh bhai aise karna hai... Price 20% gira (yaani 5 se 4 hua). Toh khapat (consumption) 4 se 5 ho jayegi. Difference aaya 1 unit ka, jo 500g (0.5 kg) ke barabar hai. Matlab pehle wo 4 unit * 0.5 = 2 kg khareedta tha. Rs. 36 me 2 kg aati thi, toh 1 kg ka price = 36 / 2 = Rs. 18.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept</th><th style='text-align:left;padding:4px;color:var(--p2)'>Logic</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Inverse Relation</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>When expenditure is constant, Price and Consumption are inversely proportional.</td></tr></table><br><b>Summary:</b> Ratio reverse method is the absolute best for 'price-consumption' questions."
-  },
-  {
     "q": "In a company, the number of employees increases by x% and also their working hours increases by x%. Due to this, the production of company increases by 74.24%. Find the initial number of employees in company, if total 240 new employees joined the company.",
     "o": [
       "750",
@@ -47,28 +25,7 @@
     "a": 0,
     "s": "Dekh bhai TestRipper, Total production ka formula hota hai: Employees * Working Hours. Agar dono x% badhe hain, toh successive increase lagega: x + x + (x*x)/100 = 74.24%. Yani multiplier 1.7424 ho gaya. 1.7424 kiski square hai? 1.32 ki! Matlab x = 32% (seedha approximation se ya square root nikal ke dekho). Ab 32% ki value 240 (new employees) di hai. Toh 100% (initial) = (240/32)*100 = 750.<br><br><b>Best Approach:</b> Successive ka square form hamesha dhyan me rakhna, CGL me yahi traps aate hain.<br><br><b>Summary:</b> 1 se 50 tak squares yaad hain toh 74.24 dekh ke dimaag me ghanti bajegi ki ye 1.32 ka square (1.7424) ka format hai."
   },
-  {
-    "q": "Raghav spends 80% of his income. If his income increases by 12% and his expenditure increases by 17.5%, then what is the percentage decrease in his saving?",
-    "o": [
-      "15%",
-      "10%",
-      "8%",
-      "12%"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, basic ratio se fod de isko. Income = 100, Exp = 80, Saving = 20. Income ho gayi 112 (+12). Expenditure 80 par 17.5% badha. 80 ka 10% = 8, 5% = 4, 2.5% = 2. Total = 14 badha. Toh Exp ho gaya 94. New Saving = 112 - 94 = 18. Saving 20 se 18 ho gayi, yaani 2 kam hui. 2/20 * 100 = 10% decrease.<br><br><b>Best Approach:</b> 100 maan ke sidha deviations add karo, fractions me time mat waste karna.<br><br><b>Summary:</b> Income-Exp-Saving me 100, 1000 maan ke chalna is safest and fastest."
-  },
-  {
-    "q": "Three-seventh of voters promise to vote for A and the rest promise to vote for B. Of these, on the last day 12% of the voters went back on their promise to vote for A and 20% of voters went back on their promise to vote for B and A lost by 234 votes. The total number of voters was:",
-    "o": [
-      "15,550",
-      "12,525",
-      "14,555",
-      "13,650"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, fractions ko simplify kar. 3/7th A ko vote denge, toh total 700 maan le. A = 300, B = 400. A ke 12% (36 log) bhag gaye B ke paas. B ke 20% (80 log) bhag gaye A ke paas. Final A = 300 - 36 + 80 = 344. Final B = 400 - 80 + 36 = 356. Difference aaya 12 units ka. 12 units = 234. Toh Total 700 units = (234/12) * 700. 12 aur 234 ko katne pe 19.5 aayega. 19.5 * 700 = 13650.<br><br><b>Trick:</b> Total 7 ka multiple hona chahiye. Options check kar, 13650 easily 7 se divide hota hai (7*1950). Baki verify karke Options elimination se urra de!<br><br><b>Summary:</b> Fraction denominator ko base multiple maan ke assumption lo."
-  },
+  
   {
     "q": "The production of bottles rose to 26000 from 16000 in 2 years. Find the rate of growth per annum.",
     "o": [
@@ -80,17 +37,7 @@
     "a": 1,
     "s": "Dekh bhai aise karna hai... 2 saal ka time hai toh formula ya ratio me square root lagega. Ratio = Final/Initial = 26000/16000 = 26/16 = 1.625. Ab iska root nikalna hai: √1.625. Hum jaante hain 1.25 ka square 1.56 hota hai aur 1.30 ka 1.69. Toh answer 25% aur 30% ke beech aayega. Options me 27.47, 28.47, aur 26.47 hain. Exact approximation: 1.27 ka square 1.6129 hota hai. Matlab 27% se thoda jyada. Seedha 27.47% tick maar.<br><br><b>Best Approach:</b> Approximation zindabad! Exact root nikalne me paseene chhut jayenge.<br><br><b>Summary:</b> Compound interest / Growth ke sawaalo me square/cube roots hamesha approximation se estimate karo."
   },
-  {
-    "q": "A survey of 200 people found that 120 read newspaper A, 150 read newspaper B, and 90 read both. How many read at least one of the newspapers?",
-    "o": [
-      "200",
-      "110",
-      "180",
-      "150"
-    ],
-    "a": 2,
-    "s": "Dekh bhai TestRipper, Venn Diagram ka sabse basic formula: n(A U B) = n(A) + n(B) - n(A n B). Seedha value rakh: 120 + 150 - 90 = 180. Matlab 180 log koi na koi paper padhte hain aur bache 20 log kuch nahi padhte.<br><br><b>Trick:</b> Pen bhi mat uthana isme. 120+150=270, usme se 90 dono taraf count hue hain, toh 90 minus kar de. Answer 180.<br><br><b>Summary:</b> Overlapping sets me hamesha intersection ko ek baar minus karna mat bhulna."
-  },
+  
   {
     "q": "Volume of a sphere is increased by 119.7% when its radius is increased then find % change in TSA of sphere?",
     "o": [
@@ -145,28 +92,6 @@
     ],
     "a": 1,
     "s": "Dekh bhai TestRipper, step-by-step todte hain. Manju ki income 6000 thi, 25% badhi yaani 6000 ka 1/4 (1500) add hua, ho gayi 7500. Ab kehta hai isko x% ghatane par wapas 6000 ho jati hai. 7500 se 6000 yaani 1500 ghati. Percentage kitna hua? 1500 / 7500 = 1/5 = 20%. Yaani x = 20 hai! Ab final step: 6000 me fir se (x - 10)% ka rise. x=20 toh (20-10)=10%. 6000 ka 10% = 600. Final Income = 6000 + 600 = 6600. Boom!<br><br><b>Summary:</b> Language ko portions me decode karo, x ki value direct fraction se nikal aayegi."
-  },
-  {
-    "q": "Income of A is 20 percent more than income of B and the income of B is 25 percent more than income of C. A's income is how much percentage more than C's income? (CHSL TIER I - 29/11/2025 - SHIFT 2)",
-    "o": [
-      "50 percent",
-      "60 percent",
-      "70 percent",
-      "75 percent"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, ye toh halwa type sawaal hai. Peeche se start kar, C ko 100 maan le. B 25% zyada hai toh B = 125 hua. A jo hai wo B se 20% (yaani 1/5) zyada hai. 125 ka 1/5 hota hai 25. Toh A = 125 + 25 = 150. Ab check kar A (150), C (100) se kitna zyada hai? Seedha 50 zyada hai 100 par, toh 50%.<br><br><b>Trick:</b> Successive change! 20% aur 25% ka successive net = 20 + 25 + (20*25)/100 = 45 + 5 = 50%. Bhaari shortcut hai ye!<br><br><b>Summary:</b> Chain percentages me backward assumption ya direct successive formula lagta hai."
-  },
-  {
-    "q": "A landlord bought a flat for Rs. 8,00,000. He wants to earn a (9%) annual return on his investment after paying 2,000 per month for maintenance. What should be the monthly rent he charges?",
-    "o": [
-      "Rs. 7000",
-      "Rs. 8500",
-      "Rs. 8000",
-      "Rs. 7500"
-    ],
-    "a": 2,
-    "s": "Dekh bhai aise karna hai... Investment ₹8,00,000 hai. Uspe 9% ka annually net return chahiye. 8 lakh ka 9% hota hai ₹72,000. Par usko har mahine ₹2,000 maintenance dena padta hai, saal ka hua ₹24,000. Yaani rent se usko 72000 (profit) + 24000 (kharcha) = ₹96,000 saal ka nikalna hoga. Toh Monthly rent hoga = 96000 / 12 = ₹8000.<br><br><b>Summary:</b> Net Return hamesha Cost ke upar expenses ko add karke calculate kiya jata hai gross nikalne ke liye."
   },
   {
     "q": "The population of a village increases by 8% annually. If the current population is 58,320, what was it two years ago (approx)? (CGL TIER I - 21/09/2025 - SHIFT 2)",

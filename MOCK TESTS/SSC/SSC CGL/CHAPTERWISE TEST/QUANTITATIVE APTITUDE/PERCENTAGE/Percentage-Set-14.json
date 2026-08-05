@@ -4,28 +4,6 @@
   "totalMarks": 50,
   "questions":[
   {
-    "q": "In a survey conducted at a university, it was found that 55% of the students like Mathematics, 45% like Physics, and 30% like both Mathematics and Physics. Among the remaining students, 25% prefer Computer Science, while the rest have no preference. If the total number of students surveyed is 800, how many students had no preference for any of the three subjects? (CHSL TIER I - 17/11/2025-SHIFT 1)",
-    "o": [
-      "200",
-      "180",
-      "160",
-      "220"
-    ],
-    "a": 1,
-    "s": "Dekh bhai TestRipper, basic Venn diagram se uda isko. Math ya Physics pasand karne wale = 55 + 45 - 30 = 70%. Baki bache hue = 30%. Ab is 30% me se 25% (yani 1/4th) CS pasand karte hain, toh no preference wale hue remaining 75% (yani 3/4th). Seedha 30% ka 3/4 nikal = 22.5%. Total 800 students hain, unka 22.5% nikalna hai. 800 * 22.5 / 100 = 180. Smart calculation hamesha time bachati hai!"
-  },
-  {
-    "q": "The difference between 20% of a number and 10% of the same number is 120. What is the number? (CGL TIER I - 26/09/2025 - SHIFT 1)",
-    "o": [
-      "1100",
-      "1400",
-      "1000",
-      "1200"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, isme pen uthane wala fail hai. 20% aur 10% ka difference 10% hota hai. Agar kisi number ka 10% = 120 hai, toh pura number (100%) nikalne ke liye bas ek zero aage laga de. Answer 1200. Free ke 2 number!"
-  },
-  {
     "q": "The population of bacteria in a culture prepared in a lab is 8 * 10^8. Their birth and death rates per hour are 12.75% and 10.75% respectively. Find their population in the culture after 3 hours.",
     "o": [
       "8,48,96,640",
@@ -35,17 +13,6 @@
     ],
     "a": 1,
     "s": "Dekh bhai, exact calculation mat karna, unit digit aur DS laga! Net increase har ghante = 12.75 - 10.75 = 2%. Yani har ghante population 102% ho jayegi. 3 ghante baad: 8 * (102/100)^3. Upar numbers dekho: 8 * 102 * 102 * 102. Unit digit check kar: 8 * 2 = 16 (6), 6 * 2 = 12 (2), 2 * 2 = 4. Zeroes se pehle 4 aana chahiye. Aur zeroes ke base hisab se option 2 perfect fit hai. Examiner mazdoori nahi smartness check kar raha hai."
-  },
-  {
-    "q": "A reduction of 20% in the price of sugar enables a person to buy 5 kg more for Rs. 200. What is the original price per kg? (CGL TIER 1 - 26/09/2025 - SHIFT 2)",
-    "o": [
-      "Rs. 20",
-      "Rs. 15",
-      "Rs. 5",
-      "Rs. 10"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, discount wala jabardast shortcut le. 200 Rs leke dukan gaya, 20% discount mila yani 40 Rs bach gaye! In 40 Rs me dukan wale ne 5 kg sugar extra di. Toh naya price hua 40 / 5 = 8 Rs per kg. Ye 8 Rs original price ka 80% hai (kyunki 20% reduction tha). Agar 80% = 8 hai, toh original 100% = 10 Rs. Pen-free approach!"
   },
   {
     "q": "A mixture of milk and water contains 8 liters of water. On adding 6 liters of milk and 8 liters of water, the amount of milk becomes 75% of the new mixture. Now 10 liters of mixture is removed, then find the quantity of milk in the final mixture.",
@@ -70,17 +37,6 @@
     "s": "Dekh bhai, iska all-time favorite shortcut hai: Tax * % Increase = Net Income * % Decrease. Yani Tax * 18 = Net Income * 2. Ratio nikal: Tax / Net Income = 2 / 18 = 1/9. Total Income hoti hai = Tax + Net Income = 1 + 9 = 10 units. Tax rate humesha Total Income pe nikalta hai, toh (1 / 10) * 100 = 10%. Ye pattern SSC ka damad hai!"
   },
   {
-    "q": "The production of bottles rose to 26000 from 16000 in 2 years. Find the rate of growth per annum. (CGL TIER I - 26/09/2025 - SHIFT 3)",
-    "o": [
-      "31.25%",
-      "27.47%",
-      "28.47%",
-      "26.47%"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, 2 saal ka growth hai toh successive (compound) logic lagega. Multiplier nikalo: 26000 / 16000 = 26/16 = 13/8 = 1.625. Do saal hai isliye square root lena padega. 1.625 ka square root approx 1.2747 hota hai. Yani 1 + r/100 = 1.2747, jisse rate 27.47% aayega. Options close the, thoda precision zaruri tha."
-  },
-  {
     "q": "The salaries of Prashant and Sujal together amount to 24000. Prashant spends (x - 5)% of his salary and Sujal, (x + 5)% of his. If ratio of their income is 3 : 5 and their savings are same, then what is difference between their expenditure?",
     "o": [
       "9000",
@@ -90,17 +46,6 @@
     ],
     "a": 1,
     "s": "Dekh bhai, Income ratio 3:5 hai, total 8 unit = 24000. Toh Prashant = 9000, Sujal = 15000. Dono ki saving barabar hai. Prashant (x-5)% kharch karta hai toh bachata 100-(x-5) = (105-x)% hai. Sujal (x+5)% kharchta hai toh bachata (95-x)% hai. Equation: 9000 * (105-x) = 15000 * (95-x). Zero kaato, 3(105-x) = 5(95-x). Solve karke x = 80 aayega. P ki exp = 75% of 9000 = 6750. S ki exp = 85% of 15000 = 12750. Difference = 12750 - 6750 = 6000. Basic equation fast solve karni hoti hai!"
-  },
-  {
-    "q": "The value of a machine depreciates 10% in the first year, 20% in the second year, and 30% in the third year. If the initial value was Rs. 10,000, what is its value at the end of 3 years? (CGL TIER I - 22/09/2025 - SHIFT 2)",
-    "o": [
-      "Rs. 5040",
-      "Rs. 6200",
-      "Rs. 5800",
-      "Rs. 5600"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, seedha successive fractions laga. 10000 * 0.9 * 0.8 * 0.7 karna hai. 9 * 8 * 7 = 504 hota hai. Decimal adjust karke 5040 aayega. Digital Sum se bhi 9 ka multiple check kar sakta tha, 5040 me sum 9 ban raha hai, ek hi option hai!"
   },
   {
     "q": "If the area of a square is decreased by 19%, then the diagonal of the square is decreased by:",
@@ -147,17 +92,6 @@
     "s": "Dekh bhai, weighted average ya JSM laga! Base ratio weights ka 4:5:1 hai. Multiply karde unke score se: (75*4 + 80*5 + 60*1) / 10. Yani (300 + 400 + 60) / 10 = 760 / 10 = 76%. Ye marks free ke hote hain paper me!"
   },
   {
-    "q": "A quality control officer tracks the defect rates in 4 different machines in a textile factory. The first machine produces fabrics with an average defect rate of 1.8%, the second with 2.4%, and the third with 1.6%. The fourth machine operated for 5 fewer hours than the average runtime of the first three, yet its total defective output was 0.92 units. If the total number of defective units from all four machines is 4.12, and each machine's total production was identical, find the defect percentage of the fourth machine.",
-    "o": [
-      "1.73%",
-      "1.52%",
-      "1.58%",
-      "1.667%"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, ghuma raha hai examiner! Runtime ka line faltu hai kyunki likha hai 'production was identical'. Maan le sabka production P hai. M1, M2, M3 ke defects = P(1.8% + 2.4% + 1.6%) = P(5.8%). Total defects 4.12 diye hain jisme se M4 ke 0.92 hain. Toh pehle 3 machines ke defect 4.12 - 0.92 = 3.2 hue. P(5.8%) = 3.2 => P = 3.2 / 5.8%. M4 ka defect percentage x% hai jiski value 0.92 di hai. P(x%) = 0.92. P ki jagah dal de: x = 0.92 / (3.2 / 5.8) = 1.6675%. Faltu data ignore karna aana chahiye!"
-  },
-  {
     "q": "The ticket of an IPL match in Chennai was Rs. 2,500. When the price of the ticket was lowered, the sale (number of tickets) of the tickets was increased by 50%, but the revenue noticed a reduction of 15%. What was the reduced price of the ticket (rounded off to two decimal places)?",
     "o": [
       "Rs. 1,450.33",
@@ -201,17 +135,7 @@
     "a": 3,
     "s": "Dekh bhai, multiplier method zindabad! Capital badha 12.5% (yani 9/8 ho gaya). Fir donate kiya 33.33% (yani 1/3 hataya, bacha 2/3). Net effect 1 saal ka = 9/8 * 2/3 = 3/4. Ye process 3 baar hua, toh Initial * (3/4)^3 = 82944. Initial * 27/64 = 82944. Cut kar 27 se: 82944 / 27 = 3072. Initial = 3072 * 64. Unit digit dekho: 2 * 4 = 8 end me aayega. Ek hi option me 8 hai last me! 196608."
   },
-  {
-    "q": "If 25% of A = 20% of B = 10% of C, find A:B:C. (CGL TIER I - 19/09/2025 - SHIFT 1)",
-    "o": [
-      "4:5:10",
-      "10:5:4",
-      "2:3:5",
-      "5:4:10"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, seedha fraction bana le. A/4 = B/5 = C/10. Jo denominator me hai, wahi ratio hai. A:B:C = 4:5:10. Pen chhoo liya toh pap lagega isme!"
-  },
+
   {
     "q": "In an election only two candidates contested. 70% of the voters casted their votes and 425 casted votes declared invalid. Winner got 980 valid votes more than his opponent, if the number of valid votes received by the winner 38% of the number of registered total voters, then find how many registered voters cast their votes?",
     "o": [
@@ -233,17 +157,6 @@
     ],
     "a": 0,
     "s": "Dekh bhai, set theory ka classic case hai. Both = 28. Neither = 3 * Both = 84. Total 400 hai. Math_Only + English_Only + Both + Neither = 400. Math_Only ko 2E maan le aur English_Only ko E. 3E + 28 + 84 = 400 => 3E = 288 => E = 96. Yani English_only = 96. Math padhne wale (Total Math) = Math_Only + Both = 192 + 28 = 220. Pehla hi option match kar raha hai!"
-  },
-  {
-    "q": "The union of rational and irrational numbers is equal to: (CPO TIER I- 10/12/2025-SHIFT 2)",
-    "o": [
-      "Natural Numbers",
-      "Complex Numbers",
-      "Real Numbers",
-      "Whole Numbers"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, isme koi trick nahi bas fact hai. Number system tree me Real numbers ke hi do bete hote hain: Rational aur Irrational. Dono ka union hamesha Real Numbers hi banata hai."
   },
   {
     "q": "In an election between two candidates , (x + 15) % of the voters cast their votes, out of which 13,875 votes were declared invalid. A candidate got 55,500 votes which were (x-5)% of the total voters in the voter list. Total number of voters enrolled in the voter list is 1,38,750, then find how many valid votes were casted?",
