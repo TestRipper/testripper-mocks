@@ -26,28 +26,6 @@
     "s": "Dekh bhai, ye basic weighted average ya tree method ka sawal hai. Total $100$ maan le. Females $40$, toh Males $60$. Males jo English jante hain = $60\\%$ of $60 = 36$. Total English wale $66$ hain, toh Females kitni bachi? $66 - 36 = 30$. Ab ye $30$ total females ($40$) ka kitna percent hai? $\\frac{30}{40} \\times 100 = 75\\%$. Simple subtraction aur percentage, free ke $2$ number!"
   },
   {
-    "q": "If a price is reduced by $10\\%$ and then again reduced by $20\\%$, what is the overall percentage decrease? (PHASE XIII(HS) - 26/07/2025-SHIFT 2)",
-    "o": [
-      "$28\\%$",
-      "$30\\%$",
-      "$32\\%$",
-      "None of the above"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, jab lagatar decrease ho toh Successive ka formula $x + y - \\frac{xy}{100}$ lagate hain. $10 + 20 - \\frac{200}{100} = 28\\%$.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Case</th><th style='text-align:left;padding:4px;color:var(--p2)'>Formula</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Both Increase</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>$x + y + \\frac{xy}{100}$</b></td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> Both Decrease</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>$x + y - \\frac{xy}{100}$</b> (Net Decrease)</td></tr></table>"
-  },
-  {
-    "q": "A number is first increased by $12.5\\%$ and then decreased by $25\\%$. The number so obtained is now increased by $20\\%$. What is the net increase or decrease percentage in the original number?",
-    "o": [
-      "$1.5\\%$ dec",
-      "$1.5\\%$ inc",
-      "$1.25\\%$ dec",
-      "$1.25\\%$ inc"
-    ],
-    "a": 3,
-    "s": "Dekh bhai aise karna hai... Ratio method se best hoga kyunki fractions standard hain. $12.5\\% = +\\frac{1}{8}$ (yani $8 \\to 9$), $25\\% = -\\frac{1}{4}$ (yani $4 \\to 3$), $20\\% = +\\frac{1}{5}$ (yani $5 \\to 6$). Multiply maar: $8 \\times 4 \\times 5 = 160$ aur $9 \\times 3 \\times 6 = 162$. Initial $160$ se final $162$ hua, matlab $+2$ ka change $160$ par. $\\frac{2}{160} = \\frac{1}{80} = 1.25\\%$ ka net increase. Exact fractions yaad hone chahiye boss!"
-  },
-  {
     "q": "If the price of a product increases by $25\\%$, by what percent should the consumption be reduced to keep the expenditure same? (CHSL TIER I - 28/11/2025 - SHIFT 1)",
     "o": [
       "$10\\%$",
@@ -57,39 +35,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai, isme AB Rule zindabad! Agar Price $\\frac{1}{4}$ se badha hai ($+25\\%$), toh Expenditure constant rakhne ke liye Consumption hamesha $\\frac{1}{4+1} = \\frac{1}{5}$ se ghatega. Aur $\\frac{1}{5}$ matlab $20\\%$ hota hai. Pen uthane ki bhi zarurat nahi thi!"
-  },
-  {
-    "q": "The price of an article is reduced by $25\\%$ but the daily sale of the article is increased by $30\\%$. The net effect on the daily sale receipts is?",
-    "o": [
-      "$5\\%$ decrease",
-      "$2.5\\%$ decrease",
-      "$2.5\\%$ increase",
-      "$5\\%$ increase"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, receipt directly Price $\\times$ Sale par depend karti hai. Aise questions me direct successive lagao: $x + y + \\frac{xy}{100}$. Yahan $-25 + 30 - \\frac{25 \\times 30}{100} = 5 - 7.5 = -2.5\\%$. Minus sign ka matlab Decrease. Aise lallu questions ko secondon mein udana hai CGL me!"
-  },
-  {
-    "q": "In an election between two candidates, $5\\%$ of the registered voters did not cast their vote. $10\\%$ of the total votes polled were found to be either invalid or of NOTA. The winning candidate received $60\\%$ votes in his favor and won the election by $17,271$ votes. Find the number of registered voters.",
-    "o": [
-      "101000",
-      "100000",
-      "90525",
-      "102500"
-    ],
-    "a": 0,
-    "s": "Dekh bhai aise karna hai... Ek line me equation likh: $\\text{Total} \\times \\frac{19}{20} \\times \\frac{9}{10} \\times \\frac{20}{100} = 17271$. Left side me $19 \\times 9 = 171$ ban raha hai. Aur numerator mein samne $17271$ hai, saf saf dikh raha hai ki $171 \\times 101 = 17271$ hota hai. Seedha $\\text{Total} = 1,01,000$. Digital Sum bhi laga sakte the, par direct divisibility jyada tez hai yahan."
-  },
-  {
-    "q": "The monthly salary of a person was $\\text{Rs. } 1,60,000$. He used to spend on three heads - Personal and family expenses (P), Taxes (T) and Education loan (E). The rest were his savings. P was $50\\%$ of the income, E was $20\\%$ of P, and T was $15\\%$ of E. When his salary got raised by $30\\%$, he maintained the percentage level of P, but E became $30\\%$ of P and T became $20\\%$ of E. The sum of the two savings (in Rs.) is:",
-    "o": [
-      "1,28,160",
-      "1,18,620",
-      "1,62,810",
-      "2,11,680"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, question lamba zaroor hai par basic percentage ka hai. P, E, aur T ka structure bana le. Pehli condition me Total Exp: $50\\% + 20\\%(50\\%) + 15\\%(10\\%) = 50\\% + 10\\% + 1.5\\% = 61.5\\%$ of Income. Toh S1 = $38.5\\%$ of $1,60,000 = 61,600$. Dusri baar naya Income $2,08,000$ hai. Exp = $50\\% + 30\\%(50\\%) + 20\\%(15\\%) = 50\\% + 15\\% + 3\\% = 68\\%$. Toh S2 = $32\\%$ of $2,08,000 = 66,560$. Dono ka sum $= 1,28,160$. Base values sahi rakhoge toh calculation me galti nahi hogi."
   },
   {
     "q": "A student scores $75\\%$ marks in an exam. If he scored 450 marks and the remaining $25\\%$ were for practicals, what were the total marks? (PHASE XIII(GRAD) - 31/07/2025 - SHIFT 3)",
@@ -158,39 +103,6 @@
     "s": "Dekh bhai, ulta chalte hain. Arun ne $25,000$ tax bhara aur vo $10\\%$ slab me aaya. Matlab usne $\\text{Rs. } 2,50,000$ income declare ki. Sawal keh raha hai ki usne original ka $\\frac{4}{9}$ hissa chhupaya tha, yani usne $\\frac{5}{9}$ hissa declare kiya. Agar $\\frac{5}{9} = 2,50,000$, toh total original income $= 4,50,000$. Niyam ke hisab se $3$ lakh se upar pe $15\\%$ tax lagta hai. Toh $4,50,000$ ka $15\\% = 67,500$. Language ko todna aana chahiye!"
   },
   {
-    "q": "A town has males and females in a ratio of $3:2$. After 5 years, the male population increases by $10\\%$, and the female population increases by $25\\%$. What is the new ratio? (CGL TIER I - 21/09/2025-SHIFT 1)",
-    "o": [
-      "66: 65",
-      "6:5",
-      "3.2: 2.5",
-      "33: 25"
-    ],
-    "a": 3,
-    "s": "Dekh bhai aise karna hai... Ratio $3:2$ ko ease ke liye $300:200$ maan le. Males badhe $10\\%$, toh naye Males $= 330$. Females badhi $25\\%$, toh nayi Females $= 250$. Naya ratio $330:250 = 33:25$. Basic simplification the, percentage me zero leke assume karne se galati hone ke chance zero ho jate hain."
-  },
-  {
-    "q": "If a student multiplies a number by $\\frac{7}{10}$ instead of $\\frac{10}{7}$, then find the error percentage in the calculation?",
-    "o": [
-      "$49\\%$",
-      "$63\\%$",
-      "$70\\%$",
-      "$51\\%$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, fractions se darne ki jarurat nahi. Base values (denominator) $10$ aur $7$ ka LCM le. Number ko $70$ maan. Sahi answer aana chahiye tha: $70 \\times \\frac{10}{7} = 100$. Lekin gadhe ne kiya: $70 \\times \\frac{7}{10} = 49$. Error kitne ka aaya? $51$ ka. Base sahi answer ($100$) hota hai, toh seedha $51\\%$ error ho gaya. LCM method OP!"
-  },
-  {
-    "q": "If A is $50\\%$ more than B, and C is $30\\%$ less than the sum of A and B, then C is what percent of A? (CHSL TIER I - 18/11/2025 - SHIFT 3)",
-    "o": [
-      "$111.14\\%$",
-      "$125.57\\%$",
-      "$116.67\\%$",
-      "$134.26\\%$"
-    ],
-    "a": 2,
-    "s": "Dekh bhai aise karna hai... Ratio set kar. A aur B ka ratio $3:2$ hai (kyunki A $50\\%$ jyada hai). Unka sum hua $5$. C is sum se $30\\%$ kam hai, yani C $= 5 \\times \\frac{7}{10} = 3.5$. Pucha hai C, A ka kitna percent hai: $\\frac{3.5}{3} \\times 100 = \\frac{350}{3} = 116.67\\%$. Decimal fractions strong rakh apne!"
-  },
-  {
     "q": "Sum of A and B is $100\\%$ more than the sum of C and D. C is $20\\%$ more than D. If A is $200\\%$ more than B and D=500, then what is the value of A? (CHSL TIER I - 24/11/2025 - SHIFT 3)",
     "o": [
       "1700",
@@ -244,17 +156,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai aise karna hai... Equations set kar. $\\frac{a \\times 240}{100} = c \\implies c = 2.4a$. Dusri equation: $\\frac{a \\times c}{100} = 117.6 \\implies ac = 11760$. Yahan par $c$ ki value rakh de toh $2.4a^2 = 11760$ banega. Is se $a^2 = 4900$ aayega, toh $a = 70$. $a$ ki value se $c = 168$ aa jayega. Pucha $a+c$ hai toh $70 + 168 = 238$. Approximation yahan fail ho sakti thi par Digital sum se check kar sakte ho!"
-  },
-  {
-    "q": "If each side of a square is increased by $50\\%$ then what is the percentage change in its area?",
-    "o": [
-      "$90\\%$",
-      "$110\\%$",
-      "$75\\%$",
-      "$125\\%$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, Successive percentage ka sabse standard question. $x+y+\\frac{xy}{100}$ laga aur answer nikal. $50 + 50 + \\frac{2500}{100} = 125\\%$. Ya ratio se $2 \\to 3$ hua. Area $4 \\to 9$ ho gaya. Increment aaya $5$ ka $4$ par, $\\frac{5}{4} \\times 100 = 125\\%$. Free ka number hai ye!"
   },
   {
     "q": "What will be the difference in population 3 years ago and 2 years ago of a town whose current population of $2,60,000$ is increasing at a rate of $25\\%$ every year?",

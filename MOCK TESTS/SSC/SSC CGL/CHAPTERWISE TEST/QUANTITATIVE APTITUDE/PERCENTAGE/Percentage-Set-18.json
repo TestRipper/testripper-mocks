@@ -4,28 +4,6 @@
   "totalMarks": 50,
   "questions":[
   {
-    "q": "A man's annual income has increased by $1.8$ lakhs but the tax on income that he has to pay has reduced from $15\\%$ to $12\\%$. He now pays the same amount of tax as before. What is his increased income (in lakhs)?",
-    "o": [
-      "9 lakh",
-      "8.5 lakh",
-      "8 lakh",
-      "9.5 lakh"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, jab tax amount same hai toh Income aur Tax Rate ka ratio inversely proportional hoga. Tax rate ka ratio $15:12 = 5:4$ hai. Toh Income ka ratio inverse yani $4:5$ ho jayega. Difference aya $1$ unit ka, jo sawal me $1.8$ lakh ke barabar diya hai. Pucha kya hai? Nayi (increased) income, jo ki $5$ unit hai. Seedha multiply maar: $5 \\times 1.8 = 9$ lakh. Pen uthane ki jarurat hi nahi thi, basic ratio ka khel hai!"
-  },
-  {
-    "q": "In a group of 50 people, 28 like tea, 26 like coffee, and 12 like both. Find the number of people who like only coffee.",
-    "o": [
-      "12",
-      "26",
-      "18",
-      "14"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, ye question bas dara raha hai. Hame 'Only coffee' nikalna hai. Iska matlab total coffee peene walo mein se unko hata do jo dono peete hain. Seedha $26 - 12 = 14$. Venn diagram ka sabse basic concept! SSC CGL me aise free ke marks mat chhodna!"
-  },
-  {
     "q": "In an examination a candidate had to sit for three papers A, B, and C. The candidate secured $70\\%$ marks in Paper A, $80\\%$ marks in Paper B, and $50\\%$ marks in Paper C. If the weightage assigned to Papers A, B, and C were $30\\%$, $60\\%$ and $20\\%$, respectively, then find the weighted percentage of marks obtained by the candidate, when all the three papers were taken together?",
     "o": [
       "$71.81\\%$",
@@ -35,17 +13,6 @@
     ],
     "a": 0,
     "s": "Dekh bhai, weighted average ka jalwa dekh! Weightage percentages ko direct ratio bana le: $30:60:20$ yani $3:6:2$. Ab deviation method ya direct average laga de: $\\frac{3 \\times 70 + 6 \\times 80 + 2 \\times 50}{3+6+2} = \\frac{210 + 480 + 100}{11} = \\frac{790}{11}$. Pura divide mat kar! $11 \\times 7 = 77$, bacha $20$, $11 \\times 1 = 11$. laghbhag $71.81\\%$. Options dekh ke hi eliminations se tick maar de!"
-  },
-  {
-    "q": "If the length of a rectangular field is increased by $25\\%$, then by what percentage should its breadth be reduced so that the area of the field remains constant? (CHSL TIER I - $\\frac{29}{11}$/2025-SHIFT 3)",
-    "o": [
-      "$25\\%$",
-      "$18\\%$",
-      "$20\\%$",
-      "$22\\%$"
-    ],
-    "a": 2,
-    "s": "Dekh bhai aise karna hai... AB Rule zindabad! Area constant hai, isliye agar length fraction me $\\frac{1}{4}$ se badhti hai ($+25\\%$), toh breadth hamesha $\\frac{1}{4+1}$ yaani $\\frac{1}{5}$ se ghategi. $\\frac{1}{5}$ ka standard percentage value $20\\%$ hota hai. Ye pattern har shift me aayega, rat lo is trick ko!"
   },
   {
     "q": "Raman saves $x\\%$ of her income. If her income increases by $16\\%$ and expenditure increases by $10\\%$ then her savings increased by $50\\%$. What is the value of x?",
@@ -59,17 +26,6 @@
     "s": "Dekh bhai, jab bhi Income, Expenditure aur Saving ka percentage increase/decrease de, aankh band karke Alligation laga de! Expenditure increase ($10\\%$) aur Saving increase ($50\\%$) mix hoke overall Income increase ($16\\%$) banate hain. Ratio of Exp to Sav $= (50-16) : (16-10) = 34:6$, jisko simplify kar ke $17:3$ banayenge. Total income = $17+3 = 20$ units. Saving ka percentage $= \\frac{3}{20} \\times 100 = 15\\%$. Secondon ka game hai!"
   },
   {
-    "q": "A contractor estimated that a project would cost $\\text{Rs. } 5,00,000$. He planned for $60\\%$ of the cost to go to materials, $25\\%$ to labor, and the rest as contingency. However, due to delays, material cost increased by $12.5\\%$, labor cost increased by $10\\%$, and contingency remained unchanged. What is the new total cost?",
-    "o": [
-      "$\\text{Rs. } 5,52,000$",
-      "$\\text{Rs. } 5,45,000$",
-      "$\\text{Rs. } 5,50,000$",
-      "$\\text{Rs. } 5,60,000$"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, gadho ki tarah badi calculations mat kar! Sirf extra cost (increase) nikal. Material tha $60\\%$, uspe $12.5\\%$ (yani $\\frac{1}{8}$) badha $\\implies \\frac{60}{8} = 7.5\\%$ overall increase. Labour tha $25\\%$, uspe $10\\%$ badha $\\implies 2.5\\%$ overall increase. Contingency par koi farq nahi pada. Total cost badhi $= 7.5\\% + 2.5\\% = 10\\%$. Base $5,00,000$ ka $10\\% = 50,000$ hota hai. Nayi cost ho gayi $5,00,000 + 50,000 = 5,50,000$."
-  },
-  {
     "q": "A fruit seller had some apples and oranges. He sold $25\\%$ apples to person A, $30\\%$ of the remaining to person B and had 42 apples left. Similarly, he sold $30\\%$ oranges to A, 60 oranges to B and had $20\\%$ Oranges left. What is the total number of apples and oranges that the fruit seller had initially?",
     "o": [
       "150",
@@ -79,28 +35,6 @@
     ],
     "a": 2,
     "s": "Dekh bhai, isko tukdo me tod. Apples ke liye Successive laga: Initial $\\times \\frac{3}{4} \\times \\frac{7}{10} = 42 \\implies$ Initial Apples $= 80$. Oranges ke liye line method socho: $30\\%$ shuru me becha, bache hue me se $60$ aur beche toh end me $20\\%$ bacha. Matlab $(100\\% - 30\\% - 20\\%) = 50\\%$ ki actual value $60$ oranges hai. Agar $50\\% = 60$, toh total $100\\%$ oranges $= 120$. Total fruits $= 80 + 120 = 200$. Concept ki clarity speed banayegi!"
-  },
-  {
-    "q": "Sujata spends $22\\%$ of her monthly income on house rent, $45\\%$ of the income on groceries and $60\\%$ of the remaining on her children education and others. If her only savings is 6,300 then her expenditure on 'education and others' is?",
-    "o": [
-      "8540",
-      "9450",
-      "9540",
-      "8450"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, successive ka best shortcut use karte hain. Total direct kharch $22\\% + 45\\% = 67\\%$ ho gaya. Bacha $33\\%$. Ab iss $33\\%$ ka $60\\%$ education pe gaya aur $40\\%$ saving ($\\text{Rs. } 6300$) bani. Education aur Saving ka aapas me ratio $60:40$ yaani $3:2$ hai. Agar $2$ unit ki value $6300$ hai, toh hume $3$ unit nikalna hai: $3150 \\times 3 = 9450$. Tum isme Digital Sum bhi laga sakte the, $3$ ka multiple $\\times 3 = 9$ ka multiple! Ek hi option $9$ se kat raha hai!"
-  },
-  {
-    "q": "A number is mistakenly multiplied by $\\frac{7}{5}$ instead of being multiplied by $\\frac{3}{2}$. What is the percentage change in the result due to this mistake?",
-    "o": [
-      "$3 \\frac{2}{3}\\%$",
-      "$7 \\frac{2}{3}\\%$",
-      "$5 \\frac{2}{3}\\%$",
-      "$6 \\frac{2}{3}\\%$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, fractions ko seedha integers me badal le. Dono denominators $2$ aur $5$ ka LCM le kar original number ko $10$ maan le. Sahi answer aana chahiye tha: $10 \\times \\frac{3}{2} = 15$. Galat answer aaya: $10 \\times \\frac{7}{5} = 14$. Error kitne ka aaya? $1$ ka error aaya $15$ par. $\\frac{1}{15}$ fraction ki direct percentage value $6 \\frac{2}{3}\\%$ hoti hai. Standard fractions tips pe yaad hone chahiye CGL nikalne ke liye!"
   },
   {
     "q": "B's required target was $20\\%$ more than A's. However, A completed his target but B completed only $80\\%$ of his target. If B completed 96 units, what was A's target?",
@@ -158,17 +92,6 @@
     "s": "Dekh bhai, fractions ka magic lagate hain yahan! $8.33\\% = \\frac{1}{12}$, $18.18\\% = \\frac{2}{11}$, aur $31.25\\% = \\frac{5}{16}$. Denominators $12, 11, 16$ ka LCM leke Total Voters $528$ units maan le jisse decimal na aaye. Vote dale gaye $= 528 \\times \\frac{11}{12} = 484$. Valid Votes $= 484 \\times \\frac{9}{11} = 396$. A ko mila list ka $\\frac{5}{16}$ yani $165$. B ko valid me se bache hue mile: $396 - 165 = 231$. Unka margin: $231 - 165 = 66$ units. Question me $66$ units $= 100$ votes diya hai. Toh total voters ($528$ units) barabar honga: $8 \\times 100 = 800$ votes! Khatarnaak shortcut!"
   },
   {
-    "q": "Out of his total income, Mr. Kapoor spends $20\\%$ on house rent and $70\\%$ of the rest on household expenses. If he saves $\\text{Rs. } 1800$, what is his total income?",
-    "o": [
-      "$\\text{Rs. } 8500$",
-      "$\\text{Rs. } 8000$",
-      "$\\text{Rs. } 7000$",
-      "$\\text{Rs. } 7500$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, Successive percentage ka sabse basic sawal hai. $20\\%$ (yani $\\frac{1}{5}$) kharch kiya toh $\\frac{4}{5}$ bacha. Fir $70\\%$ kharch kiya toh us bache hue ka $30\\%$ (yani $\\frac{3}{10}$) saving hui. Overall bachat hui: $\\frac{4}{5} \\times \\frac{3}{10} = \\frac{12}{50}$ yaani $24\\%$. Ab is $24\\%$ ki value hi $\\text{Rs. } 1800$ hai. Toh $100\\%$ income barabar hogi: $\\frac{1800}{24} \\times 100 = 75 \\times 100 = 7500$. Approximation se options aise hi eliminate ho jayenge."
-  },
-  {
     "q": "What will be the difference in population 3 years ago and 2 years ago of a town, whose current population is 190000 and which is increasing at a rate of $25\\%$ every year?",
     "o": [
       "23570",
@@ -200,17 +123,6 @@
     ],
     "a": 3,
     "s": "Dekh bhai, percentage ko ratio se tod do. Saving ko agar $100$ maano, toh Expenditure usse $40\\%$ jyada yani $140$ hoga. Ratio hua $5:7$. Total Income $5 + 7 = 12$ units hui. $12$ unit barabar hai $\\text{Rs. } 72,000$ ke, matlab ek unit $\\text{Rs. } 6000$ ke. Humne Saving $5$ units maani thi na? $5 \\times 6000 = 30000$. Secondon me solved bina algebra ke!"
-  },
-  {
-    "q": "If the surface area of a sphere is increased by $44\\%$, by what percentage does the volume of the sphere increase? (CHSL TIER I - $\\frac{22}{11}$/2025 - SHIFT 1)",
-    "o": [
-      "$44.21\\%$",
-      "$66.3\\%$",
-      "$20.5\\%$",
-      "$72.8\\%$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, Surface Area $r^2$ pe chalta hai aur Volume $r^3$ par. Area badha $44\\%$, yani $100$ se $144$ ho gaya. Toh iska square root nikalo, Radius $10$ se $12$ ho jayegi (jo ki $20\\%$ ki pure vridhi hai). Volume me yahi radius ka cube karna padta hai: $(1.2)^3 = 1.728$. Yani ki final volume me seedha $72.8\\%$ ka jump ayega! Ye standard successive values yaad honi chahiye CGL crack karne ke liye."
   },
   {
     "q": "Kavita buys 2 apples and 5 mangoes for 239. When the cost of an apple is decreased by $50\\%$ and that of a mango remains the same, then the cost of 2 apples and 4 mangoes is 184. What is the original cost of 8 apples and 8 mangoes?",
