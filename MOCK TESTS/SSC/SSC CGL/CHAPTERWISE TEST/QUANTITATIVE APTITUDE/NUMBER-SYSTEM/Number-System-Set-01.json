@@ -34,7 +34,7 @@
         "47"
       ],
       "a": 1,
-      "s": "<b>Core Tool Triggered: Unitary Scaling (Euler's Totient)</b><br><br>Dekh bhai aise karna hai... jab bhi last 2 digits pooche, toh silently mod 100 nikalna hota hai.<br><br><b>Pen-Free Observation:</b> Euler's Totient of $100 = 40$ hota hai. Power ko 40 se chota karna hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Power 2019 ko 40 se divide kar, remainder 19 aayega. So, expression ban gaya $3^{19}$.<br>Ise tod de: $(3^4)^4 \\times 3^3 = 81^4 \\times 27$.<br>81 ki koi bhi power ho, unit digit 1 hoga aur tens digit $8 \\times 4 = 32$ se 2 banega. Toh $81^4$ ke last two digits hue 21.<br>Finally, $21 \\times 27 = 567$, so last 2 digits 67 hain.<br><br><b>Future Exam Takeaway:</b> Euler's totient is the fastest way to shrink large powers. Last 2 digits ke liye divide power by 40 directly if base is coprime to 10."
+      "s": "<b>Bhai isko 3⁴)⁵⁰⁴.3³ karke 81)⁵⁰⁴ .27 \\= 8×4.27 \\=567"
     },
     {
       "q": "What is the value of $7/2 + 11/3 + 7/6 + 11/15 + 7/12 + 11/35 \\dots + 7/156 + 11/575$?",
@@ -155,7 +155,7 @@
         "88"
       ],
       "a": 1,
-      "s": "<b>Core Tool Triggered: JSM (Deviation / Negative Remainder)</b><br><br>Dekh bhai... Jab har number pe alag remainder aaye toh unke gaps observe kiya kar, wahan hack chhupa hota hai.<br><br><b>Pen-Free Observation:</b> Divisor aur Remainder ke beech ka difference check kar: $6-4=2$, $8-6=2$, $10-8=2$. Sabme common negative offset -2 aa raha hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Aise cases mein seedha LCM(6, 8, 10) nikal aur usme se constant difference minus kar de.<br>LCM hai 120.<br>Answer = $120 - 2 = 118$. Option se bhi har number ko divide karke direct remainder check kar sakta tha.<br><br><b>Future Exam Takeaway:</b> Constant difference between divisor and remainder implies the answer format is $K \\times \\text{LCM} - \\text{Difference}$."
+      "s": "<b>Core Tool Triggered: JSM (Deviation / Negative Remainder)</b><br><br>Dekh bhai... Jab har number pe alag remainder aaye toh unke gaps observe kiya kar, wahan hack chhupa hota hai.<br><br><b>Pen-Free Observation:</b> Divisor aur Remainder ke beech ka difference check kar: $6-4=2$, $8-6=2$, $10-8=2$. Sabme common negative offset -2 aa raha hai.<br><br><b>Method 1 (Ninja Technique):</b><br>Aise cases mein seedha LCM(6, 8, 10) nikal aur usme se constant difference minus kar de.<br>LCM hai 120.<br>Answer = $120 - 2 = 118$. Option se bhi har number ko divide karke direct remainder check kar sakta tha.<br><br><b>Future Exam Takeaway:</b> Constant difference between divisor and remainder implies the answer format is $K \\times \\text{LCM} - \\text{Difference}$. Block bana ke division method tab lagate hain jab successively divide kare mtlb jo quotient aaye usko divide karte jaaye but yahan koi number N hai usko hi sabse sivide karna hai."
     },
     {
       "q": "Find the number of factors of 14400 divisible by 18 but not by 36.",
@@ -243,7 +243,7 @@
         "999984"
       ],
       "a": 0,
-      "s": "<b>Core Tool Triggered: Approximation & Range Definition</b><br><br>Dekh bhai... Option se divide mat karne lag jana, standard bounded constraint approach best hai.<br><br><b>Pen-Free Observation:</b> Sabse bada 6-digit number fix kar lo (999999) aur usko 52 se adjust kar do.<br><br><b>Method 1 (Ninja Technique):</b><br>Sabse bada 6-digit number $999999$ ko $52$ se direct divide kar. Remainder aayega 39.<br>Matlab original number mein 39 extra hai division rule break karne ke liye.<br>Subtraction mar de: $999999 - 39 = 999960$. Solid hit, no time waste!<br><br><b>Future Exam Takeaway:</b> Direct division of the boundary number (like 999... or 100...) is faster than building multiples from scratch."
+      "s": "<b>Core Tool Triggered: Approximation & Range Definition</b><br><br>Dekh bhai... Option se divide mat karne lag jana, standard bounded constraint approach best hai.<br><br><b>3-3 KE PAIR BNA LO AND DIFF FIND KARLOLAST WALA REMAINDER 15 DEGA AND FIRST WALA 39 AND BAKI TOH 4 SE DIV BHI NAHI HAI EK BAHUT CHHOTA HAI<br><br><b>Future Exam Takeaway:</b> Direct division of the boundary number (like 999... or 100...) is faster than building multiples from scratch."
     },
     {
       "q": "What is the least common multiple (LCM) of $x^2-8x+15$ and $x^2-5x+6$?",

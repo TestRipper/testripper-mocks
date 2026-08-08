@@ -180,17 +180,6 @@
     "s": "<b>Final Output:</b> $54$<br><br><b>Pen-Free Observation:</b> Divisibility by $72$ means check $8$ and $9$. Target is 'largest' $y$.<br><br><b>Method 1 (Ninja Technique):</b> Assume max $y=9$. Last 3 digits $97x / 8 \\implies x=6$. Digital sum for $9$: $48 + x + y = 48+6+9 = 63$ (Divisible). Set $y=9, x=6$. Final equation: $18+36=54$.<br><br><b>Takeaway:</b> Largest/smallest word par dhyan de bhai, CGL yahi fasaega."
   },
   {
-    "q": "Find the last three digits of $2^{300}$.",
-    "o": [
-      "001",
-      "376",
-      "624",
-      "176"
-    ],
-    "a": 1,
-    "s": "<b>Final Output:</b> $376$<br><br><b>Pen-Free Observation:</b> Last $3$ digits mean $\\pmod{1000}$. Base $2$ and $1000$ share common factors. CRT is mandatory.<br><br><b>Method 1 (Ninja Technique):</b> Split $1000 = 8 \\times 125$. Mod $8$: $0$. Mod $125$: Euler jump $\\implies 2^{100} \\equiv 1 \\implies 2^{300} \\equiv 1$. Target is $125k + 1$ divisible by $8$. For $k=3$, $376$ fits perfectly.<br><br><b>Takeaway:</b> Extreme level hack! CRT for non-coprime modulus is CDS/CGL Mains material."
-  },
-  {
     "q": "In how many ways can the number $11025$ be resolved into two factors which are co-prime to each other?",
     "o": [
       "2",
