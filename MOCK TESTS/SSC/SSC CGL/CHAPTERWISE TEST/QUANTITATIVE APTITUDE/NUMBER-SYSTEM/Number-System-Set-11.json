@@ -4,16 +4,16 @@
   "totalMarks": 50,
   "questions": [
     {
-      "q": "Find the remainder when $16!$ is divided by 19.",
-      "o": [
-        "1",
-        "9",
-        "10",
-        "18"
-      ],
-      "a": 1,
-      "s": "<b>The 'Pen-Free' Observation First:</b><br>Dekh bhai, options me 1, 9, 10, 18 hain. Wilson's theorem se $18!$ ka remainder -1 ya 18 hota hai, toh backward calculate karke seedha 9 hit kar sakte hain bina poori calculation ke.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Step</th><th style='text-align:left;padding:4px;color:var(--p2)'>Action</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1. Wilson's</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$18! \\equiv -1 \\pmod{19}$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2. Expand</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$18 \\times 17 \\times 16! \\equiv -1$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>3. Neg Remainders</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$(-1)(-2) \\times 16! \\equiv -1$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>4. Solve</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$2 \\times 16! \\equiv 18 \\implies 16! \\equiv 9$</td></tr></table><br><b>Method 2 (Concept Builder):</b><br>Bhai mere, Wilson's Theorem kehti hai ki $(P-1)! + 1$ humesha P se completely divisible hoga (agar P prime hai). Yaha P=19 hai, toh $(19-1)! \\implies 18! \\equiv -1 \\pmod{19}$. Phir sequence ko piche kholte jao jab tak $16!$ na mil jaye.<br><br><b>Future Exam Takeaway:</b><br>Prime divisors ke factorial remainder me hamesha Wilson's ka hi jalwa hota hai, 10 second lagne chahiye bas!"
-    },
+    "q": "What is the remainder when $1012^{(2002^{55})}$ is divided by $13$?",
+    "o": [
+      "2",
+      "3",
+      "4",
+      "11"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, ye hai SSC CGL Mains level ka proper trap. Core conceptual tool: <b>Tool 5: Unitary Scaling (Base Shifting / Cancellation Theorem)</b>.<br><br><b>The 'Pen-Free' Observation First:</b><br>13 ka divisibility rule (7, 11, 13 wala) 1001 pe lagta hai. Base direct chota hoga. Power me $13$ ka Totient 12 lagega, aur power ko 12 se divide karte waqt common factor cancel karke scale down karna padega.<br><br><b>Method 1: Ninja Technique / Exam Approach</b><br><b>Step 1:</b> Shift the Base.<br>$1012 = 13 \\times 77 + 11$. Remainder aaya 11. JSM/Deviation concept se hum 11 ko <b>-2</b> likh sakte hain computation easy karne ke liye.<br><b>Step 2:</b> Find the Totient.<br>13 ek prime number hai, $\\phi(13) = 12$. Toh power $2002^{55}$ ko 12 se divide karo.<br><b>Step 3:</b> Simplify exponent base.<br>$2002 \\pmod{12} \\rightarrow 2002 = 12 \\times 166 + 10$. Remainder 10. <br>Hume nikalna hai: $10^{55} \\pmod{12}$.<br><b>Step 4:</b> Cancellation Remainder Theorem lagao.<br>$\\frac{10^{55}}{12} = \\frac{100 \\times 10^{53}}{12}$.<br>Upar-neeche <b>4</b> se cancel kar do. Bacha: $\\frac{25 \\times 10^{53}}{3}$.<br><b>Step 5:</b> Chote fraction ko solve karo.<br>$25 \\pmod 3 = 1$, and $10 \\pmod 3 = 1$.<br>Toh expression bana $1 \\times 1^{53} = 1$. Remainder aaya 1.<br><b>Step 6:</b> Scale Up.<br>Kyunki humne 4 se cancel kiya tha, final remainder ke liye 4 se multiply karo: $1 \\times 4 = 4$.<br><b>Step 7:</b> Put it all together.<br>Hamara base $-2$ tha aur power 4 aagayi. $(-2)^4 = 16$. <br>$16 \\pmod{13} = 3$.<br><br><b>Method 2: Concept Builder</b><br>Bhai agar koi bina cancellation lagaye soche ki '$10^{55} \\pmod{12}$' kaise nikalun, toh wo pattern dhoondhne me hi time waste kar dega. Notice kar, $10^1 \\pmod{12} = 10$, aur $10^2 \\pmod{12} = 100 \\pmod{12} = 4$. Iske baad har power pe remainder 4 hi aata hai. Cancellation theorem is pattern ko formally prove karta hai aur galti ke chance zero kar deta hai! Future exam takeaway: Jab bhi Modulo aur Base me common factor ho, aakhiri dum tak cancel karo!"
+  },
     {
       "q": "What is the remainder when $1^1 + 2^2 + 3^3 + \\dots + 10^{10}$ is divided by 4?",
       "o": [
