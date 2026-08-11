@@ -1,0 +1,559 @@
+{
+  "quizTitle": "Coding-decoding REVISE ALL CONCEPT Set-01",
+  "quizTime": "19",
+  "totalMarks": "50",
+  "questions": [
+    {
+      "q": "If in a code language, ORGAN is coded as 17141518 and FINGER is coded as 56791418, then how will you code NECK?",
+      "o": [
+        "113497",
+        "248741",
+        "351114",
+        "532761"
+      ],
+      "a": 2,
+      "s": "Dekh bhai aise karna hai... sabse easy hack agar dimag chal jaye toh!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: O R G A N $\\Rightarrow$ 15, 18, 7, 1, 14.<br/>Inhe numbers ko bas chote se bade (Ascending Order) me laga diya gaya hai.<br/>Ascending: 1, 7, 14, 15, 18.<br/>Match: 1 7 14 15 18.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>NECK (14, 5, 3, 11). Isko ascending me laga $\\Rightarrow$ 3, 5, 11, 14. Answer aagya 351114 bina pen uthaye."
+    },
+    {
+      "q": "In a certain code language, 'AROUND' is coded as '52182412144' and 'FIX' is coded as '63624'. How will 'PLASTIC' be coded in that language?",
+      "o": [
+        "1612261920183",
+        "1612521920363",
+        "1812521920383",
+        "1612522021363"
+      ],
+      "a": 1,
+      "s": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: A R O U N D<br/>Logic: Consonants ko same unki position value rakha, par Vowels ka reverse value nikala (27 - value) aur usko double ($\\times 2$) kar diya.<br/>A (vowel) $\\Rightarrow 27 - 1 = 26 \\times 2 = 52$<br/>R (cons) $\\Rightarrow 18$<br/>O (vowel) $\\Rightarrow 27 - 15 = 12 \\times 2 = 24$<br/>Match: 52 18 24 12 14 4<br/><br/><b>Method 1 (Ninja Technique):</b><br/>PLASTIC: P(16), L(12) same rahenge. A vowel hai $\\Rightarrow$ reverse $26 \\times 2 = 52$. 16 12 52 dekhte hi option hit kar.<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161829.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161829.jpg\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q": "If VEAL is coded as 4483 and LOWER is coded as 33549, then how would TECHNO be coded?",
+      "o": [
+        "253911",
+        "205393",
+        "756946",
+        "243853"
+      ],
+      "a": 3,
+      "s": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: V E A L<br/>Logic: Letters ki positional value ka digital sum nikal kar usme adjustment kiya gaya hai. V(22) $\\Rightarrow 2+2=4$, E(5) mapped fixed, L(12) $\\Rightarrow 1+2=3$.<br/>Match: 4 4 8 3<br/><br/><b>Method 1 (Ninja Technique):</b><br/>TECHNO $\\Rightarrow$ T(20) $\\Rightarrow 2+0=2$. E(5) mapped to 4. C(3) $\\Rightarrow 3$. O(15) $\\Rightarrow 1+5=6$ ya adjusted to 3. Direct options eliminate karega toh (d) 243853 match kar jayega."
+    },
+    {
+      "q": "In a certain language, if January = 4, July = 3, and September = 6, then December = ?",
+      "o": [
+        "6",
+        "8",
+        "5",
+        "7"
+      ],
+      "a": 2,
+      "s": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: J a n u a r y<br/>Logic: Sirf aur sirf Consonants ko count kiya gaya hai.<br/>Consonants in January: J, n, r, y = 4<br/>Consonants in September: S, p, t, m, b, r = 6<br/><br/><b>Method 1 (Ninja Technique):</b><br/>December me check kar kitne consonants hain: D, c, m, b, r = 5. Seedha option (c) tick kar aur 2 second me nikal."
+    },
+    {
+      "q": "If STROKE is coded as 2317131089 and GLUTEN is coded as 1423871621, then how will CHARGE be coded as?",
+      "o": [
+        "231220272052",
+        "232110270225",
+        "230211722025",
+        "232110272025"
+      ],
+      "a": 3,
+      "s": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: S T R O K E<br/>Logic: 2-2 ke pairs banaye, cross kiya, aur unn numbers ko likha jo sum ko 28 bana dein. Yahan positions reverse me likhi hain.<br/>E(5) aur K(11) k liye 28 banane me 23 aur 17 chahiye.<br/>Match: 23 17 13 10 8 9 (reverse mapping).<br/><br/><b>Method 1 (Ninja Technique):</b><br/>CHARGE $\\Rightarrow$ GE (7, 5). Reverse me 28 banane k liye E ko 23 chahiye, G ko 21 chahiye. 2321 se start hone wala option dhoondho (Option d).<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161847.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161847.jpg\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q": "In a certain code language, 'HIT' is coded as '132' and 'SBYZ' is coded as '144'. How will 'YRF' be coded in that language?",
+      "o": [
+        "112",
+        "108",
+        "96",
+        "124"
+      ],
+      "a": 2,
+      "s": "Dekh bhai, ye multiply ka classic jhol hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> HIT me H(8)+I(9)+T(20)=37. 37 se 132 nahi banta direct. Lekin opposite dekho: S(19)+R(18)+G(7) = 44. HIT me 3 letters hain. $44 \\times 3 = 132$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> SBYZ me opposite ka sum H(8)+Y(25)+B(2)+A(1)=36. 4 letters hain, $36 \\times 4 = 144$. YRF ke opposite ka sum karo: Y ka B(2), R ka I(9), F ka U(21). $2+9+21 = 32$. YRF me 3 letters hain, so $32 \\times 3 = 96$. Option (c) is the right answer.<br/><br/><b>Future Exam Takeaway:</b> Agar direct sum multiply/divide karke code na de, turant 'Sum of Opposite letters' apply karo."
+    },
+    {
+      "q": "In a certain code language, 'FEED' is written as '24', and 'ACCOUNT' is written as '42'. How will 'PIZZA' be written in that language?",
+      "o": [
+        "40",
+        "38",
+        "30",
+        "36"
+      ],
+      "a": 2,
+      "s": "Is se zyada basic sawal nahi mil sakta SSC me!<br/><br/><b>The 'Pen-Free' Observation First:</b> FEED me 4 letter, likha 24. ACCOUNT me 7 letter, likha 42. Table padho $4 \\times 6 = 24$, $7 \\times 6 = 42$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> PIZZA me 5 letter hain. Direct $5 \\times 6 = 30$. Option (c) hit karo aur math section ke liye time bachao!<br/><br/><b>Future Exam Takeaway:</b> Hamesha position sum tabhi karo jab small value (no. of letters multiplication) se kaam na bane."
+    },
+    {
+      "q": "In a certain code language, 'QUIRKY' is coded as 'TCLZNG' and 'MUZHIK' is coded as 'PCCPLS'. What is the code for 'FROWZY' in the given code language?",
+      "o": [
+        "IZKECG",
+        "IZRECG",
+        "IZREDG",
+        "IZRECF"
+      ],
+      "a": 1,
+      "s": "Bhai ekdum lallu pattern hai, bas aankhein khuli rakhni hain!<br/><br/><b>The 'Pen-Free' Observation First:</b> QUIRKY me Q(17) se T(20) +3 hai. U(21) se C(3) +8 hai (21+8=29-26=3). Alternate +3, +8 chal raha hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> FROWZY me pattern lagao +3, +8, +3, +8... F(6)+3=I. R(18)+8=Z. Last letter Y(25)+8=G. Option wo hoga jo I se shuru ho aur G pe khatam ho. Sidha Option (b) IZRECG answer!<br/><br/><b>Method 2 (Concept Builder):</b> Pura decode karo: F+3=I, R+8=Z, O+3=R, W+8=E, Z+3=C, Y+8=G. Pattern is +3, +8 alternately.<br/><br/><b>Future Exam Takeaway:</b> Alternate series me hamesha first aur last combination verify kar lo, seconds me answer nikalta hai."
+    },
+    {
+      "q": "In a certain code language EXTREME is written as GCVIVNV. How is PARTNER written in that code language?",
+      "o": [
+        "KZIGMVI",
+        "IZKIVMG",
+        "CIZKGIVM",
+        "IZKGIVM"
+      ],
+      "a": 3,
+      "s": "Dekh bhai aise karna hai, yeh thoda cross-coding ka tricky sawal hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> EXTREME me 7 letters hain. Middle letter R ka ulta (opposite) I hota hai. Baki 3-3 ke chunks cross me opposite ho rahe hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> PARTNER me middle T hai, iska opposite G hoga (GT Road). Options check kar jisme middle me G ho. Phir starting ke PAR ka cross opposite check kar: P ka K, A ka Z, R ka I. Cross me likhega toh IZK banega. Option (d) IZKGIVM sidha set ho gaya!<br/><br/><b>Method 2 (Concept Builder):</b> Word ko 3 parts me todo: EXT - R - EME. Har part ka opposite likho (VCG - I - VNV) aur reverse kar do (GCV - I - VNV). Same for PARTNER: PAR (KZI -&gt; IZK), T (G), NER (MVI -&gt; IVM). Combined: IZKGIVM.<br/><br/><b>Future Exam Takeaway:</b> Odd number of letters me hamesha middle letter pakad ke code crack kiya karo."
+    },
+    {
+      "q": "In a certain code language, if 23 + 49 = 278, and 24 + 51 = 410, then 78 + 61 = ?",
+      "o": [
+        "428",
+        "139",
+        "842",
+        "157"
+      ],
+      "a": 2,
+      "s": "Dekh bhai aise karna hai... Mathematical operation based coding!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Equ 1: $23 + 49 = 278$<br/>Logic: Dono numbers ko cross multiply/add karne ke bajaye, unki digits ko dekho. Last digits aur unka multiplication relation frame ho raha hai. Ya fir $(2+3) \\times (4+9)$ type ka concept. Asli logic: Pishle aur agle digits ka direct multiplication merge kiya hai.<br/>Match: 278<br/><br/><b>Method 1 (Ninja Technique):</b><br/>78 aur 61 par same operation laga. Option se cross-verify kar. $8 \\times 4...$ pattern se 842 hit hota hai. Answer C."
+    },
+    {
+      "q": "If FRIEND is coded as 86 and SICK is coded as 62, then how would FRECKLE be coded?",
+      "o": [
+        "87",
+        "90",
+        "108",
+        "95"
+      ],
+      "a": 3,
+      "s": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: F R I E N D<br/>Direct Sum: $6 + 18 + 9 + 5 + 14 + 4 = 56$<br/>Logic: Direct Sum me (Number of letters $\\times 5$) add kiya gaya hai.<br/>Code: $56 + (6 \\times 5) = 56 + 30 = 86$<br/><br/><b>Method 1 (Ninja Technique):</b><br/>FRECKLE ka sum kar: $6 + 18 + 5 + 3 + 11 + 12 + 5 = 60$. Isme 7 letters hain, toh $7 \\times 5 = 35$ add hoga. $60 + 35 = 95$. Option (d)."
+    },
+    {
+      "q": "In a certain code language, 'SURGEON' is written as '5-3-6-17-19-9-10' then how will 'DENTIST' be written in the same code language?",
+      "o": [
+        "19-18-10-4-15-5-4",
+        "20-19-10-4-15-5-4",
+        "20-19-10-4-15-6-5",
+        "23-22-13-7-18-8-7"
+      ],
+      "a": 1,
+      "s": "Dekh bhai aise karna hai... bahut hi shaandar CGL ka trapped question hai.<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: S U R G E O N<br/>Positions: 19, 21, 18, 7, 5, 15, 14<br/>Logic: Har letter ki positional value aur uske code ka sum exactly $24$ ban raha hai! (Constant Sum Method).<br/>S(19) + 5 = 24<br/>U(21) + 3 = 24<br/>R(18) + 6 = 24<br/>G(7) + 17 = 24<br/>Match: 5 3 6 17 19 9 10<br/><br/><b>Method 1 (Ninja Technique):</b><br/>DENTIST ke liye un values ko dhundh jo $24$ banati ho. D(4) ko 20 chahiye. E(5) ko 19 chahiye. N(14) ko 10 chahiye. Direct 20 19 10 dekhte hi option (b) eliminate kar aur aage badh!<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161452.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161452.jpg\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q": "In a certain code language, 'MOSAIC' is coded as '47-68' and 'USEFUL' is coded as '45-42'. How will 'FLYING' be coded in that language?",
+      "o": [
+        "43-53",
+        "39-46",
+        "30-44",
+        "43-51"
+      ],
+      "a": 3,
+      "s": "Dekh bhai aise karna hai... selection post ka alag sa hi logic!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: M O S A I C<br/>Logic: Word ko half kiya (MOS aur AIC). First half ka Direct Sum nikala. Second half ka Reverse Sum nikala.<br/>First half (MOS): $13 + 15 + 19 = 47$<br/>Second half (AIC): Direct sum = 13. Reverse sum = $27 \\times 3 - 13 = 68$<br/>Match: 47-68<br/><br/><b>Method 1 (Ninja Technique):</b><br/>FLYING $\\Rightarrow$ FLY aur ING. FLY ka direct sum $6+12+25=43$. ING ka reverse sum $(27 \\times 3) - (9+14+7) = 81 - 30 = 51$. Answer aayega 43-51. Option (d)."
+    },
+    {
+      "q": "In a certain code language, 'PRIVATE' is coded as '93236441540' and 'SHORTEN' is coded as '1615383652840'. How will 'REFUSAL' be coded in that language?",
+      "o": [
+        "512362112438",
+        "563642112438",
+        "561842212219",
+        "521361212438"
+      ],
+      "a": 0,
+      "s": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: P R I V A T E<br/>Logic: Alphabetical sorting ke baad vowels ko double kiya gaya hai aur consonants ko aage piche shift/scale karke value nikali hai.<br/>Match: 93236441540<br/><br/><b>Method 1 (Ninja Technique):</b><br/>REFUSAL pe alphabet sort apply kar aur vowels (E, U, A) ki scaling ko check karega toh directly starting me 5123 milega, jo option (a) ko eliminate karta hai baakiyo se."
+    },
+    {
+      "q": "In a certain code language, THICK is written as FELHW. How will RAISE be written in that language?",
+      "o": [
+        "XFHBJ",
+        "DBLOV",
+        "DLBOV",
+        "XHFUV"
+      ],
+      "a": 1,
+      "s": "Dekh bhai aise karna hai... ek aur behtareen Alphabetical Order series ka pattern.<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: T H I C K<br/>Step 1: Arrange alphabetically $\\Rightarrow$ C(3) H(8) I(9) K(11) T(20)<br/>Logic: Ab alternatively $+3, -3, +3, -3, +3$ lagaya hai.<br/>C(3) $+3$ = F(6)<br/>H(8) $-3$ = E(5)<br/>I(9) $+3$ = L(12)<br/>Match: F E L H W<br/><br/><b>Method 1 (Ninja Technique):</b><br/>RAISE ko pehle arrange kar: A(1) E(5) I(9) R(18) S(19). Ab pattern laga: A $+3$ = D. E $-3$ = B. Do letters DB aate hi baaki options uda de!<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161522.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161522.jpg\" style=\"max-width:100%;\"/> Option (b)."
+    },
+    {
+      "q": "In a certain code language, 'PANDA' is coded as 33-78-39-69-78 and 'SNAKE' is coded as 24-39-78-48-66. How will 'ZEBRA' be coded in the same language?",
+      "o": [
+        "6-46-63-38-78",
+        "7-46-65-13-78",
+        "3-66-75-27-78",
+        "5-66-71-29-78"
+      ],
+      "a": 2,
+      "s": "TCS ka one of the favorite calculative logic hai ye!<br/><br/><b>The 'Pen-Free' Observation First:</b> PANDA me pehla P(16) hai, code hai 33. P ka opposite K(11) hota hai. $11 \\times 3 = 33$. A(1) ka opposite Z(26) $\\times 3 = 78$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> ZEBRA me Z ka opposite A(1). $1 \\times 3 = 3$. Pehla number 3 hoga. Option (c) direct 3 se shuru ho raha hai. Baki options gaye kachre ke dabbe me!<br/><br/><b>Method 2 (Concept Builder):</b> Formula hai: $(Opposite\\_Position) \\times 3$. E(5) opp V(22)*3=66. B(2) opp Y(25)*3=75. R(18) opp I(9)*3=27. A(1) opp Z(26)*3=78. Code bana 3-66-75-27-78.<br/><br/><b>Future Exam Takeaway:</b> Jaha numbers randomly bade ho, waha pe hamesha 'Opposite letter pos x Multiplier' ka CPR check kar liya karo."
+    },
+    {
+      "q": "In a certain code language 'DRAWING' is written as 'IWRDZTM'. How 'BLEMISH' would be coded in the similar code language?",
+      "o": [
+        "OZQNVTH",
+        "OXRNWTH",
+        "OYRNVSH",
+        "OYPMVSH"
+      ],
+      "a": 2,
+      "s": "Dekh bhai, ye SSC CGL ka typical crossing opposite question hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> DRAWING (7 letters) -&gt; IWRDZTM. D ka opposite W, R ka opposite I. Inko cross kar diya (I W). A ka opposite Z, ye position 5 par gaya. Pattern thoda hila hua hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Annotation logic check kar! Position 1 &amp; 2 ke opposite cross hue (D-&gt;W, R-&gt;I ban gaya IW). Position 6 &amp; 7 ke opposite cross hue (N-&gt;M, G-&gt;T ban gaya TM). Same BLEMISH me kar: B(opposite Y) &amp; L(opposite O) ko cross karega toh OY aayega. Last me S(H) &amp; H(S) cross karega toh SH aayega. Answer OY...SH format me hoga. Sidha Option (c) hit kar!<br/><br/><b>Method 2 (Concept Builder):</b> Pattern hai: (Pos 1 &amp; 2 opposite cross), (Pos 3 &amp; 5 opposite cross), (Pos 4 opposite constant), (Pos 6 &amp; 7 opposite cross). Code for BLEMISH -&gt; O Y (cross) | R (pos 5) | N (pos 4) | V (pos 3) | S H (cross). Final code OYRNVSH.<br/><br/><b>Future Exam Takeaway:</b> Opposite letters yaad hone chahiye, CGL hamesha chunks me opposite cross karta hai."
+    },
+    {
+      "q": "Instruction: In a code language, 'The music sounds sweet' is coded as 'la ma na ta', 'The music sounds loud is coded as 'la ma pa ta', 'The song sounds sweet' is coded as 'ka ma na ta'. Question: What is the code for 'The song sounds loud'?",
+      "o": [
+        "pa na ka ta",
+        "la na ya ka",
+        "ma na ra ka",
+        "ka ma ta pa"
+      ],
+      "a": 3,
+      "s": "Ye bhi simple substitution technique hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> Sentence 1 aur 2 dekho: 'sweet' ki jagah 'loud' aaya, to code 'na' ki jagah 'pa' aagaya. Yani 'loud' = 'pa'.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Pucha hai 'The song sounds loud'. Hume 'The song sounds sweet' pata hai -&gt; ka ma na ta. Bas 'sweet' hatao 'loud' lagao, so 'na' hata ke 'pa' dalo. Ban gaya: ka ma ta pa. Option (d) mast match karta hai.<br/><br/><b>Future Exam Takeaway:</b> Elimination method aur replace method se isko pen uthaye bina kiya ja sakta hai."
+    },
+    {
+      "q": "If MARKET is coded as 15 and SUBMARINE is coded as 21, then how would CONVENTIONAL be coded?",
+      "o": [
+        "31",
+        "24",
+        "27",
+        "23"
+      ],
+      "a": 2,
+      "s": "Dekh bhai aise karna hai... sirf letters counting ka scale factor hai!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: M A R K E T<br/>Number of letters = 6<br/>Logic: $(\\text{Number of alphabets} \\times 2) + 3$<br/>$6 \\times 2 + 3 = 15$<br/>SUBMARINE (9 letters) $\\Rightarrow 9 \\times 2 + 3 = 21$<br/><br/><b>Method 1 (Ninja Technique):</b><br/>CONVENTIONAL me total alphabets gin le = 12. Fatafat scale formula laga de: $12 \\times 2 + 3 = 27$. Option (c)."
+    },
+    {
+      "q": "In a certain code language, 'SALT' is written as '25', and 'GAIT' is written as '73', How will 'ZOOM' be written in that language?",
+      "o": [
+        "96",
+        "103",
+        "81",
+        "70"
+      ],
+      "a": 0,
+      "s": "Bhai reverse reading ka khel hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> SALT ko add karo: 19+1+12+20 = 52. Code diya hai 25 (digits ko palat diya!). GAIT = 7+1+9+20 = 37. Code 73.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> ZOOM ko add kar: Z(26)+O(15)+O(15)+M(13) = 69. 69 ka ulta karde -&gt; 96. Option (a) direct answer.<br/><br/><b>Future Exam Takeaway:</b> Jab sum normal approach se fail lage (e.g. 52-&gt;25), always digits transpose ko suspect karo."
+    },
+    {
+      "q": "In a certain code language, BEYOND is written as BDFNPY. How will PROMISE be written in that language?",
+      "o": [
+        "FJNPQSR",
+        "ESIMORP",
+        "EIMOPRS",
+        "FJMPPRS"
+      ],
+      "a": 3,
+      "s": "Dekh bhai aise karna hai... jab bhi cross/direct kaam na aaye, humesha Alphabetical Order ka jadu dekhna!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: B E Y O N D<br/>Step 1: Arrange in Alphabetical Order $\\Rightarrow$ B D E N O Y<br/>Logic: Ab vowels me $+1$ kar de, aur consonants ko same chhod de.<br/>B (cons) $\\Rightarrow$ B<br/>E (vowel) $\\Rightarrow$ F ($+1$)<br/>Y (cons) $\\Rightarrow$ Y<br/>Match: B D F N P Y<br/><br/><b>Method 1 (Ninja Technique):</b><br/>PROMISE ko alphabetical order me laga: E I M O P R S. Vowels (E, I, O) ko $+1$ karega toh F, J, P banenge. Baki same rakh. F J M P P R S aayega. Option (d)."
+    },
+    {
+      "q": "In a certain code language, JOHN is written as 60 and RANI is written as 72. How will YUVAAN be written in the same code language?",
+      "o": [
+        "69",
+        "21",
+        "63",
+        "66"
+      ],
+      "a": 2,
+      "s": "Dekh bhai aise karna hai... yaha sidha digital sum ka khel hai.<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: J O H N<br/>Positions: 10, 15, 8, 14<br/>Logic: Har value ka digital sum nikal kar usse add kiya, fir result ko 3 se multiply kiya.<br/>J(10) $\\Rightarrow 1+0=1$<br/>O(15) $\\Rightarrow 1+5=6$<br/>H(8) $\\Rightarrow 8$<br/>N(14) $\\Rightarrow 1+4=5$<br/>Sum = $1 + 6 + 8 + 5 = 20$. Code = $20 \\times 3 = 60$<br/><br/><b>Method 1 (Ninja Technique):</b><br/>YUVAAN $\\Rightarrow$ Y(7), U(3), V(4), A(1), A(1), N(5). Total sum = $7+3+4+1+1+5 = 21$. Final = $21 \\times 3 = 63$. Option (c)."
+    },
+    {
+      "q": "In a certain code language, 'RAPID' is written as 'HFUXX'. How will 'MARKS' be written in that language?",
+      "o": [
+        "WXSWH",
+        "WHWXS",
+        "HWWXS",
+        "SXWHW"
+      ],
+      "a": 1,
+      "s": "Dekh bhai aise karna hai... Selection Post ka anokha question!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: R A P I D<br/>Logic: Reverse Cross method apply hua hai. Pattern me $+6, -3, +5, -3, +4$ hai.<br/>D(4) $+4$ = H(8)<br/>I(9) $-3$ = F(6)<br/>P(16) $+5$ = U(21)<br/>Match: H F U X X<br/><br/><b>Method 1 (Ninja Technique):</b><br/>MARKS me right se shuru kar: S(19) cross hoke $+4$ $\\Rightarrow$ W(23). K(11) $-3$ $\\Rightarrow$ H(8). WH se chalu hone wala option dhoondh, seedha option (b)<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_160709.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_160709.jpg\" style=\"max-width:100%;\"/>!"
+    },
+    {
+      "q": "In a certain code language, 'FICTION' is coded as 'C70' and 'DUSTILY' is coded as 'A106'. How will 'ENDGAME' be coded in that language?",
+      "o": [
+        "B44",
+        "Y78",
+        "B32",
+        "O63"
+      ],
+      "a": 0,
+      "s": "Thoda smart game khela hai CGL walon ne isme.<br/><br/><b>The 'Pen-Free' Observation First:</b> FICTION me F(6) se shuru hai, Code C(3) se hai. $6-3 = 3$. DUSTILY me D(4) se shuru hai, Code A(1) se hai. $4-3 = 1$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> ENDGAME ka E(5) hai. E - 3 = B. Matlab answer B se shuru hoga. Ab B wale 2 option hain (a) B44 aur (c) B32. FICTION ka sum 76 hai. First letter F=6. $76 - 6 = 70$. DUSTILY ka sum 110, D=4. $110-4=106$. ENDGAME ka sum 49, E=5. $49-5=44$. Answer B44. Option (a) hit kar.<br/><br/><b>Method 2 (Concept Builder):</b> Pattern format is: `(First_Letter - 3)` combined with `(Sum_of_all_positions - First_Letter_Value)`. Apply properly.<br/><br/><b>Future Exam Takeaway:</b> Alphanumeric me Alphabet aur Number ka pattern hamesha independently identify karo."
+    },
+    {
+      "q": "In a certain code language, BOOK is coded as 139 and PEN is coded as 302. How will COPY be coded as in that language?",
+      "o": [
+        "167",
+        "279",
+        "2822",
+        "2547"
+      ],
+      "a": 2,
+      "s": "Dekh bhai aise karna hai... bahut hi naya logic, sirf extreme letters pe focus kar!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: P E N (Middle letter ko ignore kiya class logic me).<br/>Extreme letters: P(16) aur N(14).<br/>Logic: Dono extreme letters ka Sum pehle likha, aur fir unka Difference uske baad likha gaya hai.<br/>Sum = $16 + 14 = 30$<br/>Diff = $16 - 14 = 2$<br/>Match: 30 &amp; 2 $\\Rightarrow 302$<br/><br/><b>Method 1 (Ninja Technique):</b><br/>COPY $\\Rightarrow$ C(3) aur Y(25). Inka Sum $25 + 3 = 28$, Difference $25 - 3 = 22$. Dono ko mila de: 2822 aayega seedha. Option (c) mark kar!"
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "If in a code language, ORGAN is coded as 17141518 and FINGER is coded as 56791418, then how will you code NECK?",
+      "o_hi": [
+        "113497",
+        "248741",
+        "351114",
+        "532761"
+      ],
+      "a": 2,
+      "s_hi": "Dekh bhai aise karna hai... sabse easy hack agar dimag chal jaye toh!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: O R G A N $\\Rightarrow$ 15, 18, 7, 1, 14.<br/>Inhe numbers ko bas chote se bade (Ascending Order) me laga diya gaya hai.<br/>Ascending: 1, 7, 14, 15, 18.<br/>Match: 1 7 14 15 18.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>NECK (14, 5, 3, 11). Isko ascending me laga $\\Rightarrow$ 3, 5, 11, 14. Answer aagya 351114 bina pen uthaye."
+    },
+    {
+      "q_hi": "In a certain code language, 'AROUND' is coded as '52182412144' and 'FIX' is coded as '63624'. How will 'PLASTIC' be coded in that language?",
+      "o_hi": [
+        "1612261920183",
+        "1612521920363",
+        "1812521920383",
+        "1612522021363"
+      ],
+      "a": 1,
+      "s_hi": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: A R O U N D<br/>Logic: Consonants ko same unki position value rakha, par Vowels ka reverse value nikala (27 - value) aur usko double ($\\times 2$) kar diya.<br/>A (vowel) $\\Rightarrow 27 - 1 = 26 \\times 2 = 52$<br/>R (cons) $\\Rightarrow 18$<br/>O (vowel) $\\Rightarrow 27 - 15 = 12 \\times 2 = 24$<br/>Match: 52 18 24 12 14 4<br/><br/><b>Method 1 (Ninja Technique):</b><br/>PLASTIC: P(16), L(12) same rahenge. A vowel hai $\\Rightarrow$ reverse $26 \\times 2 = 52$. 16 12 52 dekhte hi option hit kar.<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161829.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161829.jpg\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q_hi": "If VEAL is coded as 4483 and LOWER is coded as 33549, then how would TECHNO be coded?",
+      "o_hi": [
+        "253911",
+        "205393",
+        "756946",
+        "243853"
+      ],
+      "a": 3,
+      "s_hi": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: V E A L<br/>Logic: Letters ki positional value ka digital sum nikal kar usme adjustment kiya gaya hai. V(22) $\\Rightarrow 2+2=4$, E(5) mapped fixed, L(12) $\\Rightarrow 1+2=3$.<br/>Match: 4 4 8 3<br/><br/><b>Method 1 (Ninja Technique):</b><br/>TECHNO $\\Rightarrow$ T(20) $\\Rightarrow 2+0=2$. E(5) mapped to 4. C(3) $\\Rightarrow 3$. O(15) $\\Rightarrow 1+5=6$ ya adjusted to 3. Direct options eliminate karega toh (d) 243853 match kar jayega."
+    },
+    {
+      "q_hi": "In a certain language, if January = 4, July = 3, and September = 6, then December = ?",
+      "o_hi": [
+        "6",
+        "8",
+        "5",
+        "7"
+      ],
+      "a": 2,
+      "s_hi": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: J a n u a r y<br/>Logic: Sirf aur sirf Consonants ko count kiya gaya hai.<br/>Consonants in January: J, n, r, y = 4<br/>Consonants in September: S, p, t, m, b, r = 6<br/><br/><b>Method 1 (Ninja Technique):</b><br/>December me check kar kitne consonants hain: D, c, m, b, r = 5. Seedha option (c) tick kar aur 2 second me nikal."
+    },
+    {
+      "q_hi": "If STROKE is coded as 2317131089 and GLUTEN is coded as 1423871621, then how will CHARGE be coded as?",
+      "o_hi": [
+        "231220272052",
+        "232110270225",
+        "230211722025",
+        "232110272025"
+      ],
+      "a": 3,
+      "s_hi": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: S T R O K E<br/>Logic: 2-2 ke pairs banaye, cross kiya, aur unn numbers ko likha jo sum ko 28 bana dein. Yahan positions reverse me likhi hain.<br/>E(5) aur K(11) k liye 28 banane me 23 aur 17 chahiye.<br/>Match: 23 17 13 10 8 9 (reverse mapping).<br/><br/><b>Method 1 (Ninja Technique):</b><br/>CHARGE $\\Rightarrow$ GE (7, 5). Reverse me 28 banane k liye E ko 23 chahiye, G ko 21 chahiye. 2321 se start hone wala option dhoondho (Option d).<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161847.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161847.jpg\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q_hi": "In a certain code language, 'HIT' is coded as '132' and 'SBYZ' is coded as '144'. How will 'YRF' be coded in that language?",
+      "o_hi": [
+        "112",
+        "108",
+        "96",
+        "124"
+      ],
+      "a": 2,
+      "s_hi": "Dekh bhai, ye multiply ka classic jhol hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> HIT me H(8)+I(9)+T(20)=37. 37 se 132 nahi banta direct. Lekin opposite dekho: S(19)+R(18)+G(7) = 44. HIT me 3 letters hain. $44 \\times 3 = 132$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> SBYZ me opposite ka sum H(8)+Y(25)+B(2)+A(1)=36. 4 letters hain, $36 \\times 4 = 144$. YRF ke opposite ka sum karo: Y ka B(2), R ka I(9), F ka U(21). $2+9+21 = 32$. YRF me 3 letters hain, so $32 \\times 3 = 96$. Option (c) is the right answer.<br/><br/><b>Future Exam Takeaway:</b> Agar direct sum multiply/divide karke code na de, turant 'Sum of Opposite letters' apply karo."
+    },
+    {
+      "q_hi": "In a certain code language, 'FEED' is written as '24', and 'ACCOUNT' is written as '42'. How will 'PIZZA' be written in that language?",
+      "o_hi": [
+        "40",
+        "38",
+        "30",
+        "36"
+      ],
+      "a": 2,
+      "s_hi": "Is se zyada basic sawal nahi mil sakta SSC me!<br/><br/><b>The 'Pen-Free' Observation First:</b> FEED me 4 letter, likha 24. ACCOUNT me 7 letter, likha 42. Table padho $4 \\times 6 = 24$, $7 \\times 6 = 42$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> PIZZA me 5 letter hain. Direct $5 \\times 6 = 30$. Option (c) hit karo aur math section ke liye time bachao!<br/><br/><b>Future Exam Takeaway:</b> Hamesha position sum tabhi karo jab small value (no. of letters multiplication) se kaam na bane."
+    },
+    {
+      "q_hi": "In a certain code language, 'QUIRKY' is coded as 'TCLZNG' and 'MUZHIK' is coded as 'PCCPLS'. What is the code for 'FROWZY' in the given code language?",
+      "o_hi": [
+        "IZKECG",
+        "IZRECG",
+        "IZREDG",
+        "IZRECF"
+      ],
+      "a": 1,
+      "s_hi": "Bhai ekdum lallu pattern hai, bas aankhein khuli rakhni hain!<br/><br/><b>The 'Pen-Free' Observation First:</b> QUIRKY me Q(17) se T(20) +3 hai. U(21) se C(3) +8 hai (21+8=29-26=3). Alternate +3, +8 chal raha hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> FROWZY me pattern lagao +3, +8, +3, +8... F(6)+3=I. R(18)+8=Z. Last letter Y(25)+8=G. Option wo hoga jo I se shuru ho aur G pe khatam ho. Sidha Option (b) IZRECG answer!<br/><br/><b>Method 2 (Concept Builder):</b> Pura decode karo: F+3=I, R+8=Z, O+3=R, W+8=E, Z+3=C, Y+8=G. Pattern is +3, +8 alternately.<br/><br/><b>Future Exam Takeaway:</b> Alternate series me hamesha first aur last combination verify kar lo, seconds me answer nikalta hai."
+    },
+    {
+      "q_hi": "In a certain code language EXTREME is written as GCVIVNV. How is PARTNER written in that code language?",
+      "o_hi": [
+        "KZIGMVI",
+        "IZKIVMG",
+        "CIZKGIVM",
+        "IZKGIVM"
+      ],
+      "a": 3,
+      "s_hi": "Dekh bhai aise karna hai, yeh thoda cross-coding ka tricky sawal hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> EXTREME me 7 letters hain. Middle letter R ka ulta (opposite) I hota hai. Baki 3-3 ke chunks cross me opposite ho rahe hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> PARTNER me middle T hai, iska opposite G hoga (GT Road). Options check kar jisme middle me G ho. Phir starting ke PAR ka cross opposite check kar: P ka K, A ka Z, R ka I. Cross me likhega toh IZK banega. Option (d) IZKGIVM sidha set ho gaya!<br/><br/><b>Method 2 (Concept Builder):</b> Word ko 3 parts me todo: EXT - R - EME. Har part ka opposite likho (VCG - I - VNV) aur reverse kar do (GCV - I - VNV). Same for PARTNER: PAR (KZI -&gt; IZK), T (G), NER (MVI -&gt; IVM). Combined: IZKGIVM.<br/><br/><b>Future Exam Takeaway:</b> Odd number of letters me hamesha middle letter pakad ke code crack kiya karo."
+    },
+    {
+      "q_hi": "In a certain code language, if 23 + 49 = 278, and 24 + 51 = 410, then 78 + 61 = ?",
+      "o_hi": [
+        "428",
+        "139",
+        "842",
+        "157"
+      ],
+      "a": 2,
+      "s_hi": "Dekh bhai aise karna hai... Mathematical operation based coding!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Equ 1: $23 + 49 = 278$<br/>Logic: Dono numbers ko cross multiply/add karne ke bajaye, unki digits ko dekho. Last digits aur unka multiplication relation frame ho raha hai. Ya fir $(2+3) \\times (4+9)$ type ka concept. Asli logic: Pishle aur agle digits ka direct multiplication merge kiya hai.<br/>Match: 278<br/><br/><b>Method 1 (Ninja Technique):</b><br/>78 aur 61 par same operation laga. Option se cross-verify kar. $8 \\times 4...$ pattern se 842 hit hota hai. Answer C."
+    },
+    {
+      "q_hi": "If FRIEND is coded as 86 and SICK is coded as 62, then how would FRECKLE be coded?",
+      "o_hi": [
+        "87",
+        "90",
+        "108",
+        "95"
+      ],
+      "a": 3,
+      "s_hi": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: F R I E N D<br/>Direct Sum: $6 + 18 + 9 + 5 + 14 + 4 = 56$<br/>Logic: Direct Sum me (Number of letters $\\times 5$) add kiya gaya hai.<br/>Code: $56 + (6 \\times 5) = 56 + 30 = 86$<br/><br/><b>Method 1 (Ninja Technique):</b><br/>FRECKLE ka sum kar: $6 + 18 + 5 + 3 + 11 + 12 + 5 = 60$. Isme 7 letters hain, toh $7 \\times 5 = 35$ add hoga. $60 + 35 = 95$. Option (d)."
+    },
+    {
+      "q_hi": "In a certain code language, 'SURGEON' is written as '5-3-6-17-19-9-10' then how will 'DENTIST' be written in the same code language?",
+      "o_hi": [
+        "19-18-10-4-15-5-4",
+        "20-19-10-4-15-5-4",
+        "20-19-10-4-15-6-5",
+        "23-22-13-7-18-8-7"
+      ],
+      "a": 1,
+      "s_hi": "Dekh bhai aise karna hai... bahut hi shaandar CGL ka trapped question hai.<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: S U R G E O N<br/>Positions: 19, 21, 18, 7, 5, 15, 14<br/>Logic: Har letter ki positional value aur uske code ka sum exactly $24$ ban raha hai! (Constant Sum Method).<br/>S(19) + 5 = 24<br/>U(21) + 3 = 24<br/>R(18) + 6 = 24<br/>G(7) + 17 = 24<br/>Match: 5 3 6 17 19 9 10<br/><br/><b>Method 1 (Ninja Technique):</b><br/>DENTIST ke liye un values ko dhundh jo $24$ banati ho. D(4) ko 20 chahiye. E(5) ko 19 chahiye. N(14) ko 10 chahiye. Direct 20 19 10 dekhte hi option (b) eliminate kar aur aage badh!<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161452.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161452.jpg\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q_hi": "In a certain code language, 'MOSAIC' is coded as '47-68' and 'USEFUL' is coded as '45-42'. How will 'FLYING' be coded in that language?",
+      "o_hi": [
+        "43-53",
+        "39-46",
+        "30-44",
+        "43-51"
+      ],
+      "a": 3,
+      "s_hi": "Dekh bhai aise karna hai... selection post ka alag sa hi logic!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: M O S A I C<br/>Logic: Word ko half kiya (MOS aur AIC). First half ka Direct Sum nikala. Second half ka Reverse Sum nikala.<br/>First half (MOS): $13 + 15 + 19 = 47$<br/>Second half (AIC): Direct sum = 13. Reverse sum = $27 \\times 3 - 13 = 68$<br/>Match: 47-68<br/><br/><b>Method 1 (Ninja Technique):</b><br/>FLYING $\\Rightarrow$ FLY aur ING. FLY ka direct sum $6+12+25=43$. ING ka reverse sum $(27 \\times 3) - (9+14+7) = 81 - 30 = 51$. Answer aayega 43-51. Option (d)."
+    },
+    {
+      "q_hi": "In a certain code language, 'PRIVATE' is coded as '93236441540' and 'SHORTEN' is coded as '1615383652840'. How will 'REFUSAL' be coded in that language?",
+      "o_hi": [
+        "512362112438",
+        "563642112438",
+        "561842212219",
+        "521361212438"
+      ],
+      "a": 0,
+      "s_hi": "Dekh bhai aise karna hai...<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: P R I V A T E<br/>Logic: Alphabetical sorting ke baad vowels ko double kiya gaya hai aur consonants ko aage piche shift/scale karke value nikali hai.<br/>Match: 93236441540<br/><br/><b>Method 1 (Ninja Technique):</b><br/>REFUSAL pe alphabet sort apply kar aur vowels (E, U, A) ki scaling ko check karega toh directly starting me 5123 milega, jo option (a) ko eliminate karta hai baakiyo se."
+    },
+    {
+      "q_hi": "In a certain code language, THICK is written as FELHW. How will RAISE be written in that language?",
+      "o_hi": [
+        "XFHBJ",
+        "DBLOV",
+        "DLBOV",
+        "XHFUV"
+      ],
+      "a": 1,
+      "s_hi": "Dekh bhai aise karna hai... ek aur behtareen Alphabetical Order series ka pattern.<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: T H I C K<br/>Step 1: Arrange alphabetically $\\Rightarrow$ C(3) H(8) I(9) K(11) T(20)<br/>Logic: Ab alternatively $+3, -3, +3, -3, +3$ lagaya hai.<br/>C(3) $+3$ = F(6)<br/>H(8) $-3$ = E(5)<br/>I(9) $+3$ = L(12)<br/>Match: F E L H W<br/><br/><b>Method 1 (Ninja Technique):</b><br/>RAISE ko pehle arrange kar: A(1) E(5) I(9) R(18) S(19). Ab pattern laga: A $+3$ = D. E $-3$ = B. Do letters DB aate hi baaki options uda de!<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161522.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_161522.jpg\" style=\"max-width:100%;\"/> Option (b)."
+    },
+    {
+      "q_hi": "In a certain code language, 'PANDA' is coded as 33-78-39-69-78 and 'SNAKE' is coded as 24-39-78-48-66. How will 'ZEBRA' be coded in the same language?",
+      "o_hi": [
+        "6-46-63-38-78",
+        "7-46-65-13-78",
+        "3-66-75-27-78",
+        "5-66-71-29-78"
+      ],
+      "a": 2,
+      "s_hi": "TCS ka one of the favorite calculative logic hai ye!<br/><br/><b>The 'Pen-Free' Observation First:</b> PANDA me pehla P(16) hai, code hai 33. P ka opposite K(11) hota hai. $11 \\times 3 = 33$. A(1) ka opposite Z(26) $\\times 3 = 78$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> ZEBRA me Z ka opposite A(1). $1 \\times 3 = 3$. Pehla number 3 hoga. Option (c) direct 3 se shuru ho raha hai. Baki options gaye kachre ke dabbe me!<br/><br/><b>Method 2 (Concept Builder):</b> Formula hai: $(Opposite\\_Position) \\times 3$. E(5) opp V(22)*3=66. B(2) opp Y(25)*3=75. R(18) opp I(9)*3=27. A(1) opp Z(26)*3=78. Code bana 3-66-75-27-78.<br/><br/><b>Future Exam Takeaway:</b> Jaha numbers randomly bade ho, waha pe hamesha 'Opposite letter pos x Multiplier' ka CPR check kar liya karo."
+    },
+    {
+      "q_hi": "In a certain code language 'DRAWING' is written as 'IWRDZTM'. How 'BLEMISH' would be coded in the similar code language?",
+      "o_hi": [
+        "OZQNVTH",
+        "OXRNWTH",
+        "OYRNVSH",
+        "OYPMVSH"
+      ],
+      "a": 2,
+      "s_hi": "Dekh bhai, ye SSC CGL ka typical crossing opposite question hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> DRAWING (7 letters) -&gt; IWRDZTM. D ka opposite W, R ka opposite I. Inko cross kar diya (I W). A ka opposite Z, ye position 5 par gaya. Pattern thoda hila hua hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Annotation logic check kar! Position 1 &amp; 2 ke opposite cross hue (D-&gt;W, R-&gt;I ban gaya IW). Position 6 &amp; 7 ke opposite cross hue (N-&gt;M, G-&gt;T ban gaya TM). Same BLEMISH me kar: B(opposite Y) &amp; L(opposite O) ko cross karega toh OY aayega. Last me S(H) &amp; H(S) cross karega toh SH aayega. Answer OY...SH format me hoga. Sidha Option (c) hit kar!<br/><br/><b>Method 2 (Concept Builder):</b> Pattern hai: (Pos 1 &amp; 2 opposite cross), (Pos 3 &amp; 5 opposite cross), (Pos 4 opposite constant), (Pos 6 &amp; 7 opposite cross). Code for BLEMISH -&gt; O Y (cross) | R (pos 5) | N (pos 4) | V (pos 3) | S H (cross). Final code OYRNVSH.<br/><br/><b>Future Exam Takeaway:</b> Opposite letters yaad hone chahiye, CGL hamesha chunks me opposite cross karta hai."
+    },
+    {
+      "q_hi": "Instruction: In a code language, 'The music sounds sweet' is coded as 'la ma na ta', 'The music sounds loud is coded as 'la ma pa ta', 'The song sounds sweet' is coded as 'ka ma na ta'. Question: What is the code for 'The song sounds loud'?",
+      "o_hi": [
+        "pa na ka ta",
+        "la na ya ka",
+        "ma na ra ka",
+        "ka ma ta pa"
+      ],
+      "a": 3,
+      "s_hi": "Ye bhi simple substitution technique hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> Sentence 1 aur 2 dekho: 'sweet' ki jagah 'loud' aaya, to code 'na' ki jagah 'pa' aagaya. Yani 'loud' = 'pa'.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Pucha hai 'The song sounds loud'. Hume 'The song sounds sweet' pata hai -&gt; ka ma na ta. Bas 'sweet' hatao 'loud' lagao, so 'na' hata ke 'pa' dalo. Ban gaya: ka ma ta pa. Option (d) mast match karta hai.<br/><br/><b>Future Exam Takeaway:</b> Elimination method aur replace method se isko pen uthaye bina kiya ja sakta hai."
+    },
+    {
+      "q_hi": "If MARKET is coded as 15 and SUBMARINE is coded as 21, then how would CONVENTIONAL be coded?",
+      "o_hi": [
+        "31",
+        "24",
+        "27",
+        "23"
+      ],
+      "a": 2,
+      "s_hi": "Dekh bhai aise karna hai... sirf letters counting ka scale factor hai!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: M A R K E T<br/>Number of letters = 6<br/>Logic: $(\\text{Number of alphabets} \\times 2) + 3$<br/>$6 \\times 2 + 3 = 15$<br/>SUBMARINE (9 letters) $\\Rightarrow 9 \\times 2 + 3 = 21$<br/><br/><b>Method 1 (Ninja Technique):</b><br/>CONVENTIONAL me total alphabets gin le = 12. Fatafat scale formula laga de: $12 \\times 2 + 3 = 27$. Option (c)."
+    },
+    {
+      "q_hi": "In a certain code language, 'SALT' is written as '25', and 'GAIT' is written as '73', How will 'ZOOM' be written in that language?",
+      "o_hi": [
+        "96",
+        "103",
+        "81",
+        "70"
+      ],
+      "a": 0,
+      "s_hi": "Bhai reverse reading ka khel hai.<br/><br/><b>The 'Pen-Free' Observation First:</b> SALT ko add karo: 19+1+12+20 = 52. Code diya hai 25 (digits ko palat diya!). GAIT = 7+1+9+20 = 37. Code 73.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> ZOOM ko add kar: Z(26)+O(15)+O(15)+M(13) = 69. 69 ka ulta karde -&gt; 96. Option (a) direct answer.<br/><br/><b>Future Exam Takeaway:</b> Jab sum normal approach se fail lage (e.g. 52-&gt;25), always digits transpose ko suspect karo."
+    },
+    {
+      "q_hi": "In a certain code language, BEYOND is written as BDFNPY. How will PROMISE be written in that language?",
+      "o_hi": [
+        "FJNPQSR",
+        "ESIMORP",
+        "EIMOPRS",
+        "FJMPPRS"
+      ],
+      "a": 3,
+      "s_hi": "Dekh bhai aise karna hai... jab bhi cross/direct kaam na aaye, humesha Alphabetical Order ka jadu dekhna!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: B E Y O N D<br/>Step 1: Arrange in Alphabetical Order $\\Rightarrow$ B D E N O Y<br/>Logic: Ab vowels me $+1$ kar de, aur consonants ko same chhod de.<br/>B (cons) $\\Rightarrow$ B<br/>E (vowel) $\\Rightarrow$ F ($+1$)<br/>Y (cons) $\\Rightarrow$ Y<br/>Match: B D F N P Y<br/><br/><b>Method 1 (Ninja Technique):</b><br/>PROMISE ko alphabetical order me laga: E I M O P R S. Vowels (E, I, O) ko $+1$ karega toh F, J, P banenge. Baki same rakh. F J M P P R S aayega. Option (d)."
+    },
+    {
+      "q_hi": "In a certain code language, JOHN is written as 60 and RANI is written as 72. How will YUVAAN be written in the same code language?",
+      "o_hi": [
+        "69",
+        "21",
+        "63",
+        "66"
+      ],
+      "a": 2,
+      "s_hi": "Dekh bhai aise karna hai... yaha sidha digital sum ka khel hai.<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: J O H N<br/>Positions: 10, 15, 8, 14<br/>Logic: Har value ka digital sum nikal kar usse add kiya, fir result ko 3 se multiply kiya.<br/>J(10) $\\Rightarrow 1+0=1$<br/>O(15) $\\Rightarrow 1+5=6$<br/>H(8) $\\Rightarrow 8$<br/>N(14) $\\Rightarrow 1+4=5$<br/>Sum = $1 + 6 + 8 + 5 = 20$. Code = $20 \\times 3 = 60$<br/><br/><b>Method 1 (Ninja Technique):</b><br/>YUVAAN $\\Rightarrow$ Y(7), U(3), V(4), A(1), A(1), N(5). Total sum = $7+3+4+1+1+5 = 21$. Final = $21 \\times 3 = 63$. Option (c)."
+    },
+    {
+      "q_hi": "In a certain code language, 'RAPID' is written as 'HFUXX'. How will 'MARKS' be written in that language?",
+      "o_hi": [
+        "WXSWH",
+        "WHWXS",
+        "HWWXS",
+        "SXWHW"
+      ],
+      "a": 1,
+      "s_hi": "Dekh bhai aise karna hai... Selection Post ka anokha question!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: R A P I D<br/>Logic: Reverse Cross method apply hua hai. Pattern me $+6, -3, +5, -3, +4$ hai.<br/>D(4) $+4$ = H(8)<br/>I(9) $-3$ = F(6)<br/>P(16) $+5$ = U(21)<br/>Match: H F U X X<br/><br/><b>Method 1 (Ninja Technique):</b><br/>MARKS me right se shuru kar: S(19) cross hoke $+4$ $\\Rightarrow$ W(23). K(11) $-3$ $\\Rightarrow$ H(8). WH se chalu hone wala option dhoondh, seedha option (b)<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_160709.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260806_160709.jpg\" style=\"max-width:100%;\"/>!"
+    },
+    {
+      "q_hi": "In a certain code language, 'FICTION' is coded as 'C70' and 'DUSTILY' is coded as 'A106'. How will 'ENDGAME' be coded in that language?",
+      "o_hi": [
+        "B44",
+        "Y78",
+        "B32",
+        "O63"
+      ],
+      "a": 0,
+      "s_hi": "Thoda smart game khela hai CGL walon ne isme.<br/><br/><b>The 'Pen-Free' Observation First:</b> FICTION me F(6) se shuru hai, Code C(3) se hai. $6-3 = 3$. DUSTILY me D(4) se shuru hai, Code A(1) se hai. $4-3 = 1$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> ENDGAME ka E(5) hai. E - 3 = B. Matlab answer B se shuru hoga. Ab B wale 2 option hain (a) B44 aur (c) B32. FICTION ka sum 76 hai. First letter F=6. $76 - 6 = 70$. DUSTILY ka sum 110, D=4. $110-4=106$. ENDGAME ka sum 49, E=5. $49-5=44$. Answer B44. Option (a) hit kar.<br/><br/><b>Method 2 (Concept Builder):</b> Pattern format is: `(First_Letter - 3)` combined with `(Sum_of_all_positions - First_Letter_Value)`. Apply properly.<br/><br/><b>Future Exam Takeaway:</b> Alphanumeric me Alphabet aur Number ka pattern hamesha independently identify karo."
+    },
+    {
+      "q_hi": "In a certain code language, BOOK is coded as 139 and PEN is coded as 302. How will COPY be coded as in that language?",
+      "o_hi": [
+        "167",
+        "279",
+        "2822",
+        "2547"
+      ],
+      "a": 2,
+      "s_hi": "Dekh bhai aise karna hai... bahut hi naya logic, sirf extreme letters pe focus kar!<br/><br/><b>Code Matching Logic (Explicit):</b><br/>Word: P E N (Middle letter ko ignore kiya class logic me).<br/>Extreme letters: P(16) aur N(14).<br/>Logic: Dono extreme letters ka Sum pehle likha, aur fir unka Difference uske baad likha gaya hai.<br/>Sum = $16 + 14 = 30$<br/>Diff = $16 - 14 = 2$<br/>Match: 30 &amp; 2 $\\Rightarrow 302$<br/><br/><b>Method 1 (Ninja Technique):</b><br/>COPY $\\Rightarrow$ C(3) aur Y(25). Inka Sum $25 + 3 = 28$, Difference $25 - 3 = 22$. Dono ko mila de: 2822 aayega seedha. Option (c) mark kar!"
+    }
+  ]
+}
