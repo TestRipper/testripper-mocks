@@ -2,182 +2,193 @@
   "quizTitle": "Percentage-Set-18",
   "quizTime": 18,
   "totalMarks": 50,
-  "questions":[
+  "questions": [
+    {
+      "q": "In an examination a candidate had to sit for three papers A, B, and C. The candidate secured $70\\%$ marks in Paper A, $80\\%$ marks in Paper B, and $50\\%$ marks in Paper C. If the weightage assigned to Papers A, B, and C were $30\\%$, $60\\%$ and $20\\%$, respectively, then find the weighted percentage of marks obtained by the candidate, when all the three papers were taken together?",
+      "o": [
+        "$71.81\\%$",
+        "$70.5\\%$",
+        "$70\\%$",
+        "$72.80\\%$"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> 3. JSM (Junior Satisfaction Method) / Deviation<br><br><b>Pen-Free Observation:</b> Dekh bhai, options $70\\%$ ke aaspas ghoom rahe hain. Weightage ratio $3:6:2$ hai. Paper B ($80\\%$) ka wazan sabse jyada hai, toh average pakka $70$ se upar khiskega aur $80$ ki taraf inclined hoga.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Weightage ka ratio bana le $3:6:2$. Base average $70\\%$ maan le. A pe deviation $0$, B par deviation $+10\\%$ hai ($6$ weight pe = $+60$), C par deviation $-20\\%$ hai ($2$ weight pe = $-40$). Net deviation $+20$ aaya. Isko total weight $11$ me baant de: $70 + \\frac{20}{11} = 70 + 1.81 = 71.81\\%$. Khatam!<br><br><b>Method 2 (Concept Builder):</b> Basic weighted average laga: $\\frac{3 \\times 70 + 6 \\times 80 + 2 \\times 50}{3+6+2} = \\frac{790}{11}$. Pura divide mat kar, $11 \\times 71$ hota hai $781$, uske thoda aage $71.81$ dikh raha hai.<br><br><b>Exam Takeaway:</b> Hamesha percentages ya weights ko chote ratio me kaat liya kar, calculation aadhi ho jayegi aur time bachega!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Variable)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Value)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Base Average</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $70\\%$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Net Deviation Shift</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $+\\frac{20}{11}$</td></tr></table>"
+    },
+    {
+      "q": "Raman saves $x\\%$ of her income. If her income increases by $16\\%$ and expenditure increases by $10\\%$ then her savings increased by $50\\%$. What is the value of x?",
+      "o": [
+        "$12\\%$",
+        "$17\\%$",
+        "$18\\%$",
+        "$15\\%$"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> 3. JSM / Deviation (Cross-Product Alligation)<br><br><b>Pen-Free Observation:</b> Dekh bhai, Income me bas $16\\%$ ka hike hai, aur Saving achanak $50\\%$ ud gayi, jabki Expenditure me halka sa $10\\%$ change hai. Iska seedha matlab hai initially saving ka share total income me bahut kam tha.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Seedha Alligation laga! Exp ($10\\%$) aur Sav ($50\\%$) mix hokar total Income ($16\\%$) ka change banate hain. Cross difference nikal: $(50-16) : (16-10) = 34:6 = 17:3$. Toh Exp aur Sav ka ratio aaya $17:3$. Total income $= 20$ units. Saving ka $\\% = \\frac{3}{20} \\times 100 = 15\\%$. Secondon ka game hai!<br><br><b>Method 2 (Concept Builder):</b> Maan le Total Income $= 100$, Sav $= x$, Exp $= 100-x$. Equation set kar: Naya Exp $+$ Nayi Sav $=$ Nayi Income. Yani $(100-x) \\times 1.1 + 1.5x = 116$. Isko solve karega toh $x = 15$ aayega. Par ye gadha majdoori hai.<br><br><b>Exam Takeaway:</b> Jab bhi $3$ components (A, B, aur unka combined total) ka percentage increase/decrease diya ho, Alligation se fast kuch nahi hota!<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Component Change)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Ratio Share)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Expenditure ($10\\%$)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $17$ units</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Savings ($50\\%$)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $3$ units</td></tr></table>"
+    },
+    {
+      "q": "A fruit seller had some apples and oranges. He sold $25\\%$ apples to person A, $30\\%$ of the remaining to person B and had 42 apples left. Similarly, he sold $30\\%$ oranges to A, 60 oranges to B and had $20\\%$ Oranges left. What is the total number of apples and oranges that the fruit seller had initially?",
+      "o": [
+        "150",
+        "220",
+        "200",
+        "180"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> 2. Successive Change & 5. Unitary Scaling<br><br><b>Pen-Free Observation:</b> Apples me 'remaining' shabd hai matlab successive multiplication chalega. Oranges me flat value ($60$) hai matlab normal line method (unitary scaling) lagega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Apples ke liye: $X \\times \\frac{3}{4} \\times \\frac{7}{10} = 42 \\implies X = 80$ apples. Oranges ke liye: $30\\%$ pehle bika, last me $20\\%$ bacha. Toh beech me B ko kitna $\\%$ mila? $100\\% - (30\\% + 20\\%) = 50\\%$. Is $50\\%$ ki value $60$ oranges given hai. Agar $50\\% = 60$, toh total $100\\% = 120$ oranges. Total fruits $= 80 + 120 = 200$. Free ke marks hain!<br><br><b>Method 2 (Concept Builder):</b> Apples ko $100x$ maan. A ko $25x$ mila, bacha $75x$. B ko iska $30\\%$ yani $22.5x$ mila. Bacha $52.5x = 42$, yaha decimals me phasega. Fractions isilye best hote hain.<br><br><b>Exam Takeaway:</b> Question ki language padhte hi samajh aana chahiye ki chain rule (successive) lagana hai ya absolute line scaling lagani hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Fruit Calculation)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Result)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Apples ($X \\times \\frac{3}{4} \\times \\frac{7}{10} = 42$)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $80$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Oranges ($50\\% = 60$)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $120$</td></tr></table>"
+    },
+    {
+      "q": "B's required target was $20\\%$ more than A's. However, A completed his target but B completed only $80\\%$ of his target. If B completed 96 units, what was A's target?",
+      "o": [
+        "100 units",
+        "90 units",
+        "110 units",
+        "120 units"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling<br><br><b>Pen-Free Observation:</b> Dekh bhai, bina pen uthaye options se game khel! B ne 96 complete kiye, jo uske original (badhe hue) target ka 80% hai. Toh A ka target 100 ke aas-paas hi hoga.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Maan le A ka target $100$ unit hai. Toh B ka target usse $20\\%$ jyada yani $120$ unit hoga. B ne sirf $80\\%$ hi complete kiya, yani $120 \\times \\frac{80}{100} = 96$ units. Question me bhi completion exactly $96$ units hi de rakha hai! Jab tumhara assumed ratio aur question ki exact value match ho jaye toh A ka assumed target $100$ units hi absolute correct hai. Exam me wahi ruk ja aur tick maar!<br><br><b>Method 2 (Concept Builder):</b> Algebra use karle agar dar lagta hai. Let A target $= x$. B target $= 1.2x$. Completed by B $= 0.8 \\times 1.2x = 0.96x$. Given $0.96x = 96 \\implies x = 100$. Same baat hui na!<br><br><b>Exam Takeaway:</b> Hamesha percentage scaling ko $100$ base se start kar, max time exact value direct match ho jati hai SSC exams me.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Variable Base)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Assumed Value)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> A's Target</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $100$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> B's Target ($20\\%$ extra)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $120$</td></tr></table>"
+    },
+    {
+      "q": "After sports day in a college, the college awarded medals in different categories. 72 medals in Athletics, 24 medals in weightlifting and 36 medals in swimming. If these medals went to a total of 90 persons and only 8 persons got medals in all the three sports, how many received medals in exactly two of these sports?",
+      "o": [
+        "6",
+        "10",
+        "26",
+        "8"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling (Set Theory Equations)<br><br><b>Pen-Free Observation:</b> Dekh bhai, yeh Venn diagram ka hardcore mains question hai. Circles banayega toh fans jayega. Isme total medals aur total logon ke beech ka logic formula dimaag me chhapna chahiye.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Maan le: Exactly 1 sport wale $= x$, Exactly 2 wale $= y$, aur Exactly 3 wale $= z$. Total log: $x + y + z = 90$ (Eq 1). Total Medals ka sum karo: $x + 2y + 3z = 72 + 24 + 36 = 132$ (Eq 2). Ab seedha Eq 2 me se Eq 1 ghata de! Aayega: $y + 2z = 132 - 90 = 42$. Hame given hai $z = 8$ (all three sports). Toh $y + 16 = 42 \\implies y = 26$. Exactly two wale $26$ nikal ke aa gaye. Boom!<br><br><b>Method 2 (Concept Builder):</b> Proper venn diagram banake, $A \\cup B \\cup C$ formula lagao: $n(A) + n(B) + n(C) - (n(A \\cap B) + ...) + n(A \\cap B \\cap C)$. Bohot lamba padega aur minus-plus me confuse hoke answer galat mark kar dega.<br><br><b>Exam Takeaway:</b> Medals distribution type ke 3-set problem me hamesha 'Sum of Medals' aur 'Sum of Persons' ki 2 linear equations ka setup use karna hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Equations Profile)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Sum Value)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Total Persons ($x+y+z$)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $90$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Total Medals ($x+2y+3z$)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $132$</td></tr></table>"
+    },
+    {
+      "q": "In an election between A and B, every fifth vote polled was marked as invalid by the machine. In the remaining votes, A wins the election with a margin of 2500 votes or $10\\%$ of the total valid votes polled, over B. If $90\\%$ of the invalid votes would have been in favour of B, then which of the following would have been the result of the election?",
+      "o": [
+        "A would have won by $3\\%$",
+        "B would have won by $8\\%$",
+        "A would have won by $8\\%$",
+        "B would have won by $3\\%$"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling (Margin Shifting)<br><br><b>Pen-Free Observation:</b> Dekh bhai, \"every fifth vote\" ka matlab hai $20\\%$ vote invalid hue. A ka pura margin sirf $2500$ hai, aur achanak se B ko invalid votes ka bada chunk ($90\\%$) mil raha hai, toh pakka baazi paltegi aur B hi jeetega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Margin $= 2500$ votes, jo 'valid votes' ka $10\\%$ hai. Toh Valid votes hue $25000$. Invalid votes $1/5$ the, yani Valid $4/5$ the. Iska matlab Total Votes hue $31250$, jisme se Invalid the $6250$. Pehle A $+2500$ aage tha. Nayi shart me B ko invalid ka $90\\%$ ($5625$ votes) mila aur A ko bacha $10\\%$ ($625$ votes). Is shift se B ko $+5000$ votes ka fayda hua! Pehle B $2500$ peeche tha, ab usne gap cover karke $+2500$ ka lead le liya. Total $31250$ pe $2500$ ka margin matlab $\\frac{2500}{31250} \\times 100 = 8\\%$. B jeet gaya $8\\%$ se!<br><br><b>Method 2 (Concept Builder):</b> Har vote share ko alag calculate kar. A ke current votes = $(25000 + 2500)/2 = 13750$. B ke votes = $11250$. Ab naye votes add kar: A ko $625$ aur B ko $5625$ de. Naya share A = $14375$, B = $16875$. Diff aya $2500$. Fir percentage nikal.<br><br><b>Exam Takeaway:</b> Vote distribution me sab kuch reset mat kar! Sirf margin differences (deltas) par khelo, time bach jayega.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Vote Parameters)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Count)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Total Votes</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $31250$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Invalid Votes Shift to B</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $+5000$ (Net Gain)</td></tr></table>"
+    },
+    {
+      "q": "A spider climbed $62.5\\%$ of the height of the pole in one hour and in the next hour it covered $12.5\\%$ of the remaining height. If the pole's height is 192 m, then the distance climbed in the second hour is?",
+      "o": [
+        "3 m",
+        "9 m",
+        "5 m",
+        "7 m"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> 2. Successive Change (The Chain Reaction)<br><br><b>Pen-Free Observation:</b> Dekh bhai, fraction ka magic hai yahan. $62.5\\%$ dekh ke dimaag me turant $\\frac{5}{8}$ aur $12.5\\%$ dekh ke $\\frac{1}{8}$ flash hona chahiye. 'Remaining' likha hai matlab direct chain baneagi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Pehle ghante me makdi $\\frac{5}{8}$ height cover kar chuki. Bachi kitni? Seedha $1 - \\frac{5}{8} = \\frac{3}{8}$. Agle ghante me is bachi hui height ka sirf $\\frac{1}{8}$ cover kiya hai. Toh total height ke respect me usne $\\frac{3}{8} \\times \\frac{1}{8} = \\frac{3}{64}$ hissa cover kiya dusre ghante me. Base height $192$ m de rakhi hai. Bus iska $\\frac{3}{64}$ nikal de $\\implies 192 \\times \\frac{3}{64} = 9$ meters. Kata-kuti me bhi time nahi lagta!<br><br><b>Method 2 (Concept Builder):</b> Absolute values pe ja! $192$ ka $62.5\\%$ nikal, aayega $120$ m. Bacha hua distance hua $192 - 120 = 72$ m. Ab is $72$ m ka $12.5\\%$ (yani $\\frac{1}{8}$) nikal $\\implies 72 / 8 = 9$ m. Ye bhi chalega par fraction method se pen nahi chalana padta.<br><br><b>Exam Takeaway:</b> Successive percentage questions jisme 'remaining' likha ho, unhe hamesha fractional shifts banakar hi karna chahiye.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Action Phase)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Fraction of Total)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Left after 1st Hour</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $\\frac{3}{8}$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Climbed in 2nd Hour</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $\\frac{3}{64}$</td></tr></table>"
+    },
+    {
+      "q": "In an election between two candidates A and B, $8.33\\%$ of voters did not cast their vote, and $18.18\\%$ of votes of the casted votes were declared invalid. Candidate A gets $31.25\\%$ of the votes of total voters and he lost by 100 votes. Find the total number of voters?",
+      "o": [
+        "900",
+        "750",
+        "800",
+        "600"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling (LCM Base Assumption)<br><br><b>Pen-Free Observation:</b> Dekh bhai, percentages bahut khatarnak diye hain. In sabke fractions denominator me $12, 11, 16$ denge. Inka LCM lekar start karna padega warna decimal me aisi fasaega ki exam hi khatam ho jayega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Fractions decode kar: $8.33\\% = \\frac{1}{12}$, $18.18\\% = \\frac{2}{11}$, aur $31.25\\% = \\frac{5}{16}$. Denominators $12, 11, 16$ ka LCM leke Total Voters $528$ units maan le. Vote cast hue $= 528 \\times \\frac{11}{12} = 484$. Valid Votes hue $= 484 \\times \\frac{9}{11} = 396$. A ko mila poori list ka $\\frac{5}{16}$ yani $528 \\times \\frac{5}{16} = 165$ votes. B ko valid me se bache hue milenge: $396 - 165 = 231$ votes. Unka aapas me margin aaya: $231 - 165 = 66$ units. Question ne isi ki value $100$ di hai! Toh total voters ($528$ units) nikalne ke liye: $\\frac{528}{66} \\times 100 = 8 \\times 100 = 800$ voters. Khatarnaak bouncer par sixer!<br><br><b>Method 2 (Concept Builder):</b> Agar $100x$ maan kar chalega, toh step 1 me hi $100x \\times \\frac{11}{12}$ phasega aur equation raita phaila degi. Never use $100x$ for weird percentages.<br><br><b>Exam Takeaway:</b> Jab ajeeb percentages ek hi sequence me ho, unke corresponding fractions ke denominators ka LCM hi sabse best base number hota hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Voter Base Stage)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Units assumed = 528)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Valid Votes</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $396$ units</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Candidate A's Share</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $165$ units</td></tr></table>"
+    },
+    {
+      "q": "What will be the difference in population 3 years ago and 2 years ago of a town, whose current population is 190000 and which is increasing at a rate of $25\\%$ every year?",
+      "o": [
+        "23570",
+        "24670",
+        "23770",
+        "24320"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> 2. Successive Change (The Chain Reaction)<br><br><b>Pen-Free Observation:</b> Har saal $25\\%$ growth hai matlab values $4$ se $5$ ke ratio me badh rahi hain. Previous years ka puch raha hai toh ulta calculate karne se accha hai base units assumptions ka power play karo.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Timeframe dekho: $3$ saal ka cycle. Base $4$ ka cube ($64$) maan lo aur current pop ko $5$ ka cube ($125$) maan lo. $125$ units given hai $= 190000$. Toh $1$ unit $= \\frac{190000}{125} = 1520$. Hame chaiye $3$ years ago aur $2$ years ago ka farq. $3$ years ago population thi $64$ units, usme $25\\%$ ki growth aayi (yani agle saal $80$ ho gayi). In dono ka difference $16$ units hi toh hai! Toh seedha nikal: $16 \\times 1520 = 24320$. Option me Unit digit $2$ match kar ke aage nikal jao!<br><br><b>Method 2 (Concept Builder):</b> Reverse formula lagao: $P_{-3} = \\frac{190000}{(1.25)^3}$, phir $P_{-2} = \\frac{190000}{(1.25)^2}$ nikalo aur dono ko minus karo. Gadha majdoori karna exam nikalne ki nishani nahi hai.<br><br><b>Exam Takeaway:</b> Compound rate me $n$ years ka scaling hamesha base aur increment ratios ke $n$th powers lekar assumed units me nipatna chahiye.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Timeline Stage)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Scale Units)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> 3 Years Ago (Base)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $64$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Current Population</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $125$</td></tr></table>"
+    },{
+  "q": "A reduction of $7.5\\%$ in the cost price of a commodity enables a shopkeeper to purchase 15 kg more than what he previously purchased for a sum of $\\text{Rs. } 7,400$. In order to make a profit of $32.5\\%$ on the pre-reduction cost price of the commodity, at what price (in Rs) per kg should the commodity be sold?",
+  "o": [
+    "52",
+    "51",
+    "54",
+    "53"
+  ],
+  "a": 3,
+  "s": "<b>Core Conceptual Tool:</b> 1. CPR (Constant Product Ratio)<br><br><b>Pen-Free Observation:</b> Dekh bhai, ye SSC ka all-time favorite format hai. Jab kharcha fixed (Rs 7400) rakha ho, toh price me aayi girawat ka sidha faida hume bachay gye paison me hota hai. Wahin se naya price nikalta hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Paise fixed hain $\\text{Rs. } 7400$. Usme se $7.5\\%$ price gira. Yaani buyer ne $7400 \\times 7.5\\% = \\text{Rs. } 555$ bacha liye hote agar wo utna hi quantity leta. Par usne un bache hue Rs $555$ me extra $15$ kg samaan utha liya. Toh Naya (reduced) price hua $\\frac{555}{15} = \\text{Rs. } 37$ per kg. Ab ye $37$ rate, original ka $92.5\\%$ hai. Base (original) price nikla $\\text{Rs. } 40$ per kg. Hame is $\\text{Rs. } 40$ original par $32.5\\%$ ka profit chahiye. Smart calculation: $32.5\\% = \\frac{13}{40}$. Toh profit Rs $13$ ka hua. Final SP aayega $40 + 13 = 53$.<br><br><b>Method 2 (Concept Builder):</b> Basic variables banao. $7400 / P_{new} - 7400 / P_{old} = 15$. Ratio solve karo lamba root method aayega.<br><br><b>Exam Takeaway:</b> Jab bhi Quantity increase pucha ho, seedha \"Total Amount ka $\\%$ girawat / Extra Quantity\" = \"Current Reduced Price\" nikal kar base shift karo.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Price Phase)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Value per kg)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Reduced Cost Price</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $\\text{Rs. } 37$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Original Cost Price</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $\\text{Rs. } 40$</td></tr></table>"
+},
+{
+      "q": "If an employee's income is $\\text{Rs. } 72,000$, the amount he spends is $40\\%$ higher than his savings. Therefore, his savings (in Rs.) is:",
+      "o": [
+        "34000",
+        "32000",
+        "28000",
+        "30000"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling<br><br><b>Pen-Free Observation:</b> Percentage ko sidha ratio me phenk de. Agar savings aur expenditure ka relation fraction me pata lag gaya toh income automatically sum me tut jayegi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Saving ko $100$ maan le. Expenditure usse $40\\%$ jyada yani $140$ hoga. Ratio ban gaya $140:100 = 7:5$. Matlab Exp $7$ unit, Saving $5$ unit. Total Income bani $7 + 5 = 12$ units. Ye $12$ unit barabar hai $\\text{Rs. } 72,000$ ke, toh $1$ unit ki value aayi $\\text{Rs. } 6000$. Pucha kya hai? Savings! Saving humne $5$ units mani thi. Bas $5 \\times 6000 = 30000$ tick maar. Secondon me uda diya bina algebra lagaye!<br><br><b>Method 2 (Concept Builder):</b> Algebra use karoge toh aise likhoge: let Saving = $x$, then Expenditure = $1.4x$. Total Income = $x + 1.4x = 2.4x$. Given $2.4x = 72000$, phir isko kaato. Wahi answer aayega par likhna jyada padega.<br><br><b>Exam Takeaway:</b> Jab simple parts ka connection diya ho, decimals ki jagah $100$ maankar ratio bana lene se speed double ho jati hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Variable)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Unit Scale)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Expenditure</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $7$ units</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Savings</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $5$ units</td></tr></table>"
+    },
+    {
+      "q": "Kavita buys 2 apples and 5 mangoes for 239. When the cost of an apple is decreased by $50\\%$ and that of a mango remains the same, then the cost of 2 apples and 4 mangoes is 184. What is the original cost of 8 apples and 8 mangoes?",
+      "o": [
+        "$\\text{Rs. } 441$",
+        "$\\text{Rs. } 440$",
+        "$\\text{Rs. } 436$",
+        "$\\text{Rs. } 438$"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling (Linear Equations Shift)<br><br><b>Pen-Free Observation:</b> Dekh bhai, condition shift hone ke baad Apple ka cost aadha ho raha hai. Seedha substitution laga kar equations ko minus karke multiple variables gayab ho jayenge.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Pehli condition me cost hai $2A + 5M = 239$. Dusri condition me Apple ka cost aadha ho gaya, toh $(2 \\times 0.5A) + 4M = 184$, yani $1A + 4M = 184$. Is equation ko poora double kar de: $2A + 8M = 368$. Ab is nayi double ki hui equation me se original pehli wali hata de: $(2A+8M) - (2A+5M) = 368 - 239 \\implies 3M = 129$. Ek Mango ki price $M = 43$. Isko put kar, toh Apple ki cost $A = 12$ niklegi. Pucha kya hai? $8$ apples aur $8$ mangoes! Yani $8(A+M) = 8 \\times (12+43) = 8 \\times 55 = 440$. Aur bhai, $55$ aa gaya matlab result $11$ ka multiple hona tha, jo sirf $\\text{Rs. } 440$ hai!<br><br><b>Method 2 (Concept Builder):</b> Normal bachon ki tarah step-by-step $A = 184 - 4M$ substitute kar ke bracket solve kar.<br><br><b>Exam Takeaway:</b> System of equations type ke cost-price sawalo me hamesha coefficient same karke udana best approach hoti hai, special trick of multiples of 11 check karne ke baad.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Item)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Original Price)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Apple</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $\\text{Rs. } 12$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Mango</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $\\text{Rs. } 43$</td></tr></table>"
+    },
+    {
+      "q": "In a factory with 400 employees, the ratio of the number of male employees to that of female employees is 5:3. There are $87.5\\%$ regular employees in the factory. If $92\\%$ of male employees are regular employees, then what is the percentage of regular female employees?",
+      "o": [
+        "$78\\%$",
+        "$85\\%$",
+        "$80\\%$",
+        "$87.5\\%$"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> 3. JSM (Junior Satisfaction Method) / Deviation<br><br><b>Pen-Free Observation:</b> Dekh bhai, total $400$ employees sirf daraane aur exam ka time kharab karne ke liye diye hain. Jab final answer percentage me pucha ho aur initial data ratio aur $\\%$ me ho, absolute value chhuo bhi mat.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> M:F ka ratio $5:3$ hai, toh total base log hum $8$ maanenge. Overall regular average $87.5\\%$ hona mangta hai. Males $92\\%$ hain, yani average se $+4.5\\%$ upar chal rahe hain! Ye $5$ males apne upar ek extra $+22.5\\%$ deviation jama kar rahe hain. Average maintain karne ke liye females ko yeh minus me jhelna padega. Is $+22.5\\%$ ko $3$ females me barabar banto: $-7.5\\%$. Yani females actual average se $-7.5\\%$ kam hongi. Toh Female ka required $\\% = 87.5 - 7.5 = 80\\%$. Bin pen ud gaya sawal!<br><br><b>Method 2 (Concept Builder):</b> Gadha mazdoori mode on kar: pehle $400$ ka $\\frac{5}{8}$ males nikal ($250$), fir uska $92\\%$ nikal. Overall regular nikal ($350$). Minus karke bachi hui regular females nikal, fir unko total females ($150$) ke against divide karke percentage nikal. Bahot lamba.<br><br><b>Exam Takeaway:</b> JSM aur deviation weighted mean ka baap hai, jab absolute figure ki jarurat na ho, ratio pe chipke raho.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Group Variable)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Deviation Score)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Male Surplus Shift</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $+22.5\\%$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Female Required Adjustment</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $-7.5\\%$</td></tr></table>"
+    },
+    {
+      "q": "Three candidates P, Q and R contested an election. Out of the total votes on a voter list $25\\%$ did not vote and $20\\%$ of the polled votes were invalid. R got 7500 votes which were $25\\%$ more than that of what Q got. If P got only $45\\%$ of the total votes, then find out the number of votes the winner got?",
+      "o": [
+        "40500",
+        "41500",
+        "42000",
+        "40000"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling (Chain Process Breakdown)<br><br><b>Pen-Free Observation:</b> Dekh bhai, 'Valid votes' ka distribution bada lamba fraction set le raha hai. Ulta mat soch, percentage flow ke order me bas fractions kaat-te ja.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Total list maan lo $100\\%$. $25\\%$ ne vote diya nahi, bache $75\\%$. Is cast vote ka $20\\%$ invalid nikal gaya, yani $75\\%$ ka bacha hua $\\frac{4}{5}$ valid hai. $75 \\times 0.8 = 60\\%$. Toh total valid votes list ka exactly $60\\%$ hain. R ko $7500$ vote mile, jo Q se $25\\%$ jyada hain (yani $5/4$ guna). Toh Q ke vote $= \\frac{7500}{1.25} = 6000$. Q+R total mila kar $13500$ votes ban gaye. Ab P ka share pura list ka exactly $45\\%$ diya hai, aur wo toh valid me hi se milega. Total valid $60\\%$ the, $45\\%$ P le gaya, toh bacha hua $15\\%$ valid vote obviously Q aur R ko mila hoga! Matlab humara $15\\%$ hi $13500$ ke barabar hai! Jeeta koun? P jeeta $45\\%$ ke sath. $15\\%$ ki value pata hai $13500$, seedha teen guna mar: $13500 \\times 3 = 40500$. Boom!<br><br><b>Method 2 (Concept Builder):</b> Pure equations maan: $x$ voters, $0.75x$ cast, $0.6x$ valid. P ka $= 0.45x$. Fir Q aur R calculate karke add kar. Phir usko $0.15x$ ke against substitute kar. Exam nikalne ki umeed chod dena tab!<br><br><b>Exam Takeaway:</b> Aise lambe statements ko line diagram aur valid % residual calculation se todna sabse powerful technique hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Vote Split Share)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Percentage out of Total List)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Valid Votes</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $60\\%$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Candidate P's Share</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $45\\%$</td></tr></table>"
+    },
+    {
+      "q": "The cost of a washing machine is $25\\%$ less than the cost of a TV. If the cost of the washing machine increases by $66\\%$ and that of the TV decreases by $40\\%$, then what is the percentage change in the total cost of 7 washing machines and 8 TVs?",
+      "o": [
+        "Increase by $1\\%$",
+        "Decrease by $6\\%$",
+        "Decrease by $3\\%$",
+        "Increase by $2\\%$"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> 3. JSM (Junior Satisfaction Method) / Deviation<br><br><b>Pen-Free Observation:</b> Quantity multiply ho rahi hai original price ke changes se. Ye directly weighted average ka special application form hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Washing Machine (W) TV (T) se $25\\%$ sasti hai, ratio $3:4$ ban gaya. Hamein leni hain $7W$ aur $8T$. Inke original costs ka combined base (weights) banega: $7 \\times 3 = 21$ aur $8 \\times 4 = 32$. Ab laga JSM weighted mean: W me price $+66\\%$ change, T me $-40\\%$ change. Overall effect nikal: $\\frac{21 \\times 66 + 32 \\times (-40)}{21 + 32}$. Calculation simplify kar: $\\frac{1386 - 1280}{53} = \\frac{106}{53} = 2\\%$. Positive answer aaya matlab poore set ka price $2\\%$ se badh gaya. Mains me calculation is level se hack karni padegi!<br><br><b>Method 2 (Concept Builder):</b> Pure raw amount assume karo. TV = $400$, WM = $300$. Naya TV = $240$, Naya WM = $498$. Initial total $7(300) + 8(400) = 5300$. Naya total $= 7(498) + 8(240) = 3486 + 1920 = 5406$. Farq aya $+106$. $106/5300 \\times 100 = 2\\%$.<br><br><b>Exam Takeaway:</b> Combined quantity-cost increases hamesha components aur unke shift percentages ka net weighted mean hote hain.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Commodity Set)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Combined Initial Weight Base)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> 7 Washing Machines</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $21$ Units</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> 8 TVs</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $32$ Units</td></tr></table>"
+    },
   {
-    "q": "In an examination a candidate had to sit for three papers A, B, and C. The candidate secured $70\\%$ marks in Paper A, $80\\%$ marks in Paper B, and $50\\%$ marks in Paper C. If the weightage assigned to Papers A, B, and C were $30\\%$, $60\\%$ and $20\\%$, respectively, then find the weighted percentage of marks obtained by the candidate, when all the three papers were taken together?",
-    "o": [
-      "$71.81\\%$",
-      "$70.5\\%$",
-      "$70\\%$",
-      "$72.80\\%$"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, weighted average ka jalwa dekh! Weightage percentages ko direct ratio bana le: $30:60:20$ yani $3:6:2$. Ab deviation method ya direct average laga de: $\\frac{3 \\times 70 + 6 \\times 80 + 2 \\times 50}{3+6+2} = \\frac{210 + 480 + 100}{11} = \\frac{790}{11}$. Pura divide mat kar! $11 \\times 7 = 77$, bacha $20$, $11 \\times 1 = 11$. laghbhag $71.81\\%$. Options dekh ke hi eliminations se tick maar de!"
-  },
-  {
-    "q": "Raman saves $x\\%$ of her income. If her income increases by $16\\%$ and expenditure increases by $10\\%$ then her savings increased by $50\\%$. What is the value of x?",
-    "o": [
-      "$12\\%$",
-      "$17\\%$",
-      "$18\\%$",
-      "$15\\%$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, jab bhi Income, Expenditure aur Saving ka percentage increase/decrease de, aankh band karke Alligation laga de! Expenditure increase ($10\\%$) aur Saving increase ($50\\%$) mix hoke overall Income increase ($16\\%$) banate hain. Ratio of Exp to Sav $= (50-16) : (16-10) = 34:6$, jisko simplify kar ke $17:3$ banayenge. Total income = $17+3 = 20$ units. Saving ka percentage $= \\frac{3}{20} \\times 100 = 15\\%$. Secondon ka game hai!"
-  },
-  {
-    "q": "A fruit seller had some apples and oranges. He sold $25\\%$ apples to person A, $30\\%$ of the remaining to person B and had 42 apples left. Similarly, he sold $30\\%$ oranges to A, 60 oranges to B and had $20\\%$ Oranges left. What is the total number of apples and oranges that the fruit seller had initially?",
-    "o": [
-      "150",
-      "220",
-      "200",
-      "180"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, isko tukdo me tod. Apples ke liye Successive laga: Initial $\\times \\frac{3}{4} \\times \\frac{7}{10} = 42 \\implies$ Initial Apples $= 80$. Oranges ke liye line method socho: $30\\%$ shuru me becha, bache hue me se $60$ aur beche toh end me $20\\%$ bacha. Matlab $(100\\% - 30\\% - 20\\%) = 50\\%$ ki actual value $60$ oranges hai. Agar $50\\% = 60$, toh total $100\\%$ oranges $= 120$. Total fruits $= 80 + 120 = 200$. Concept ki clarity speed banayegi!"
-  },
-  {
-    "q": "B's required target was $20\\%$ more than A's. However, A completed his target but B completed only $80\\%$ of his target. If B completed 96 units, what was A's target?",
-    "o": [
-      "100 units",
-      "90 units",
-      "110 units",
-      "120 units"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, bina pen chalae dimag me figure out kar! Maan le A ka target $100$ hai. Toh B ka target usse $20\\%$ jyada yaani $120$ hoga. B ne sirf apne target ka $80\\%$ hi complete kiya, yani $120$ ka $80\\% = 96$ units. Question me bhi completion exactly $96$ units hi diya hai! Jab ratio aur exact value match ho jaye toh A ka target $100$ units hi tha. Free marks the ye!"
-  },
-  {
-    "q": "After sports day in a college, the college awarded medals in different categories. 72 medals in Athletics, 24 medals in weightlifting and 36 medals in swimming. If these medals went to a total of 90 persons and only 8 persons got medals in all the three sports, how many received medals in exactly two of these sports?",
-    "o": [
-      "6",
-      "10",
-      "26",
-      "8"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, Venn diagram ki standard property lagayenge jo mains me aati hai. Maan lo exactly 1 wale $x$, exactly 2 wale $y$, aur exactly 3 wale $z$ log hain. Total Log: $x + y + z = 90$. Total Medals ka sum: $x + 2y + 3z = 72 + 24 + 36 = 132$. Hame given hai $z = 8$. Dusri equation me se pehli equation minus karega toh aayega: $y + 2z = 42 \\implies y + 16 = 42 \\implies y = 26$. Exactly two sports wale $26$ nikle!"
-  },
-  {
-    "q": "In an election between A and B, every fifth vote polled was marked as invalid by the machine. In the remaining votes, A wins the election with a margin of 2500 votes or $10\\%$ of the total valid votes polled, over B. If $90\\%$ of the invalid votes would have been in favour of B, then which of the following would have been the result of the election?",
-    "o": [
-      "A would have won by $3\\%$",
-      "B would have won by $8\\%$",
-      "A would have won by $8\\%$",
-      "B would have won by $3\\%$"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, tagda twist hai isme! Margin $= 2500$ votes, jo 'valid votes' ka $10\\%$ hai. Toh Valid votes hue $25000$. Har $5$ me se $1$ invalid tha, yani $4/5$ valid the. Toh Total Votes $= 31250$, isme se Invalid hue $6250$. Pehle A jeet raha tha $2500$ ke margin se. Ab agar invalid count ho jayein toh B ko $90\\%$ ($5625$ votes) milte hain aur A ko bache $10\\%$ ($625$ votes). Naya advantage B ko gaya $5000$ votes ka. Pehle A $2500$ aage tha, toh ab B overall $+2500$ aage ho jayega. Total $31250$ pe $2500$ ka margin matlab $\\frac{2500}{31250} \\times 100 = 8\\%$. Shandaar elimination round!"
-  },
-  {
-    "q": "A spider climbed $62.5\\%$ of the height of the pole in one hour and in the next hour it covered $12.5\\%$ of the remaining height. If the pole's height is 192 m, then the distance climbed in the second hour is?",
-    "o": [
-      "3 m",
-      "9 m",
-      "5 m",
-      "7 m"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, fractions yaad honge toh question makhan ki tarah banega. $62.5\\% = \\frac{5}{8}$ height cover ho chuki. Bachi kitni? $\\frac{3}{8}$. Agle ghante me is bachi hui height ka $12.5\\%$ yani $\\frac{1}{8}$ cover kiya. Total height ka ratio kitna bana? $\\frac{3}{8} \\times \\frac{1}{8} = \\frac{3}{64}$. Base height $192$ hai, uska $\\frac{3}{64}$ hissa nikal de $\\implies 192 \\times \\frac{3}{64} = 9$ meters. Direct multiple hai!"
-  },
-  {
-    "q": "In an election between two candidates A and B, $8.33\\%$ of voters did not cast their vote, and $18.18\\%$ of votes of the casted votes were declared invalid. Candidate A gets $31.25\\%$ of the votes of total voters and he lost by 100 votes. Find the total number of voters?",
-    "o": [
-      "900",
-      "750",
-      "800",
-      "600"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, fractions ka magic lagate hain yahan! $8.33\\% = \\frac{1}{12}$, $18.18\\% = \\frac{2}{11}$, aur $31.25\\% = \\frac{5}{16}$. Denominators $12, 11, 16$ ka LCM leke Total Voters $528$ units maan le jisse decimal na aaye. Vote dale gaye $= 528 \\times \\frac{11}{12} = 484$. Valid Votes $= 484 \\times \\frac{9}{11} = 396$. A ko mila list ka $\\frac{5}{16}$ yani $165$. B ko valid me se bache hue mile: $396 - 165 = 231$. Unka margin: $231 - 165 = 66$ units. Question me $66$ units $= 100$ votes diya hai. Toh total voters ($528$ units) barabar honga: $8 \\times 100 = 800$ votes! Khatarnaak shortcut!"
-  },
-  {
-    "q": "What will be the difference in population 3 years ago and 2 years ago of a town, whose current population is 190000 and which is increasing at a rate of $25\\%$ every year?",
-    "o": [
-      "23570",
-      "24670",
-      "23770",
-      "24320"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, peeche se socho time bachane ke liye. Har saal $25\\%$ hike matlab population $4$ se $5$ ho rahi hai. $3$ saal pehle agar wo $4^3 = 64$ units thi, toh current me badh kar $5^3 = 125$ units ho gayi. Diya gaya hai $125$ units $= 190000$, toh $1$ unit $= 1520$. Difference between $3$ years ago ($64$ units) and $2$ years ago ($64 \\times 1.25 = 80$ units) is $16$ units. Direct nikal: $16 \\times 1520 = 24320$. Option me Unit digit verify kar ke aage badho!"
-  },
-  {
-    "q": "A reduction of $7.5\\%$ in the cost price of a commodity enables a shopkeeper to purchase 15 kg more than what he previously purchased for a sum of $\\text{Rs. } 7,400$. In order to make a profit of $32.5\\%$ on the pre-reduction cost price of the commodity, at what price (in Rs) per kg should the commodity be sold?",
-    "o": [
-      "52",
-      "51",
-      "54",
-      "53"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, SSC ka all-time favorite format! Kharch fixed hai $\\text{Rs. } 7400$. Usme se $7.5\\%$ bachata hai, yani $\\text{Rs. } 555$ uske bache! In $\\text{Rs. } 555$ me $15$ kg extra samaan aata hai, toh naya (reduced) price hua $\\frac{555}{15} = \\text{Rs. } 37$/kg. Yeh price original ka $92.5\\%$ hai. Toh base (original) price nikla $\\text{Rs. } 40$/kg. Hame is original par $32.5\\%$ ka profit chahiye. Smartly fraction lo: $32.5\\% = \\frac{13}{40}$. Toh profit $\\text{Rs. } 13$ ka hua, jisse SP aayega $40 + 13 = 53$."
-  },
-  {
-    "q": "If an employee's income is $\\text{Rs. } 72,000$, the amount he spends is $40\\%$ higher than his savings. Therefore, his savings (in Rs.) is:",
-    "o": [
-      "34000",
-      "32000",
-      "28000",
-      "30000"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, percentage ko ratio se tod do. Saving ko agar $100$ maano, toh Expenditure usse $40\\%$ jyada yani $140$ hoga. Ratio hua $5:7$. Total Income $5 + 7 = 12$ units hui. $12$ unit barabar hai $\\text{Rs. } 72,000$ ke, matlab ek unit $\\text{Rs. } 6000$ ke. Humne Saving $5$ units maani thi na? $5 \\times 6000 = 30000$. Secondon me solved bina algebra ke!"
-  },
-  {
-    "q": "Kavita buys 2 apples and 5 mangoes for 239. When the cost of an apple is decreased by $50\\%$ and that of a mango remains the same, then the cost of 2 apples and 4 mangoes is 184. What is the original cost of 8 apples and 8 mangoes?",
-    "o": [
-      "$\\text{Rs. } 441$",
-      "$\\text{Rs. } 440$",
-      "$\\text{Rs. } 436$",
-      "$\\text{Rs. } 438$"
-    ],
-    "a": 1,
-    "s": "Dekh bhai, equations likh kar lamba mat kheechna. Pehli condition me cost $2A + 5M = 239$ thi. Dusri me Apple aadha hua toh $1A + 4M = 184$. Is dusri equation ko double kar de: $2A + 8M = 368$. Ab isme se pehli ($2A + 5M = 239$) ghata de. Farq aya $3$ Mangoes ka $\\text{Rs. } 129$, yani Ek Mango $= 43$. Apple ki cost niklegi $\\text{Rs. } 12$. Pucha kya hai? $8(A+M)$. Toh $8 \\times (12+43) = 8 \\times 55 = 440$. Exact value aur 11 ka multiple concept ek saath!"
-  },
-  {
-    "q": "In a factory with 400 employees, the ratio of the number of male employees to that of female employees is 5:3. There are $87.5\\%$ regular employees in the factory. If $92\\%$ of male employees are regular employees, then what is the percentage of regular female employees?",
-    "o": [
-      "$78\\%$",
-      "$85\\%$",
-      "$80\\%$",
-      "$87.5\\%$"
-    ],
-    "a": 2,
-    "s": "Dekh bhai, 400 ki value se calculate karega toh mazdoor kahlaga. JSM ya Weighted Average laga! Male:Female ka ratio $5:3$ hai, total base hua $8$. Overall $87.5\\%$ log regular hain. Deviation check kar: Male ka average se $+4.5\\%$ deviation hai, 5 males par total net $+22.5\\%$ ho gaya. Isko balance karne ke liye Females ko average se minus me jana padega. $22.5$ ko $3$ (Females) pe baant do: $-7.5\\%$. Toh Female ki exact regular $\\% = 87.5 - 7.5 = 80\\%$. Smart bano, CGL inspector post maangta hai mehnat nahi!"
-  },
-  {
-    "q": "Seventy-five percent of a number is 15 more than two-thirds of that number. Find the number. (CGL TIER I $\\frac{16}{09}$/2025-S2)",
-    "o": [
-      "180",
-      "120",
-      "210",
-      "150"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, fraction aur percentage ko mix karne ka badhiya sawal. $75\\%$ ko hum fraction me $\\frac{3}{4}$ bolte hain, aur two-thirds toh $\\frac{2}{3}$ hai hi. Dono fractions ka denominator barabar kar: $\\frac{9}{12}$ aur $\\frac{8}{12}$. Inka farq (difference) kitna aaya? $\\frac{1}{12}$ aaya. Question kehta hai yahi difference $15$ ka hai. Toh poora number (yani total $12$ units) $= 12 \\times 15 = 180$. Approximation aur common LCM se pen-free solution milta hai."
-  },
-  {
-    "q": "Three candidates P, Q and R contested an election. Out of the total votes on a voter list $25\\%$ did not vote and $20\\%$ of the polled votes were invalid. R got 7500 votes which were $25\\%$ more than that of what Q got. If P got only $45\\%$ of the total votes, then find out the number of votes the winner got?",
-    "o": [
-      "40500",
-      "41500",
-      "42000",
-      "40000"
-    ],
-    "a": 0,
-    "s": "Dekh bhai, logic lagayenge! Total list ka $25\\%$ vote daalne nahi gaye, bache $75\\%$. Iska bhi $20\\%$ invalid hua, yani sirf $\\frac{4}{5} \\times 75\\% = 60\\%$ vote valid thhe. R ko $7500$ votes mile, jo Q se $25\\%$ (yani $\\frac{1}{4}$) jyada the $\\implies$ Q ko $6000$ vote mile. P ko poori list ka $45\\%$ mila. Toh valid votes mein se P ka share $45\\%$ hata de, toh $15\\%$ bacha. Ye $15\\%$ share Q aur R ($7500 + 6000 = 13500$) ka hoga. Agar $15\\% = 13500$, hamein P (winner) ke vote (yani $45\\%$) nikalne hain. Seedha $3$ guna kar! $13500 \\times 3 = 40500$!"
-  },
-  {
-    "q": "The cost of a washing machine is $25\\%$ less than the cost of a TV. If the cost of the washing machine increases by $66\\%$ and that of the TV decreases by $40\\%$, then what is the percentage change in the total cost of 7 washing machines and 8 TVs?",
-    "o": [
-      "Increase by $1\\%$",
-      "Decrease by $6\\%$",
-      "Decrease by $3\\%$",
-      "Increase by $2\\%$"
-    ],
-    "a": 3,
-    "s": "Dekh bhai, isko JSM (Junior Satisfactory Method) ya Weighted Average method se fodenge! Ratio diya hai W:T = $3:4$. Hame chahiye quantity ratio $7W$ aur $8T$, toh inka price ratio multiply ho jayega: $7 \\times 3 = 21$ aur $8 \\times 4 = 32$. W me $+66\\%$ ka change hai, T me $-40\\%$ ka change hai. Overall change: $\\frac{21 \\times 66 + 32 \\times (-40)}{21 + 32} = \\frac{1386 - 1280}{53} = \\frac{106}{53} = +2\\%$. Positive answer ka matlab Increase by $2\\%$. Mains me time aur paper dono bachega is trick se!"
-  }
-]
+      "q": "A person spends $16.66\\%$ of his income on house rent and $16.25\\%$ of the remaining income on children's education. Now he spends ₹4700 on entertainment. Out of the remaining income, he spends $15\\%$ on food. Now he gives ₹1480 to his wife for her beauty parlor and he deposits the remaining ₹23,000 in ICICI Bank. Find his monthly income?",
+      "o": [
+        "₹48,000",
+        "₹45,000",
+        "₹42,000",
+        "₹54,000"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> 2. Successive Change (The Chain Reaction) & 5. Unitary Scaling<br><br><b>Pen-Free Observation:</b> Dekh bhai, beech me ek absolute flat deduction (₹4700) aa gayi hai percentage chain ke beech. Iska matlab poora sawaal ek single fraction ratio me nahi banega, isko do parts me todna padega. Peeche se reverse calculations karte hue upar aana sabse fastest hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b> Ulta chalo (Bottom-to-Top approach)! End me wife ko diya ₹1480 aur bank me dala ₹23000. Iska matlab, $15\\%$ food par kharchne ke theek baad uske paas total bacha = $23000 + 1480 = 24480$. $15\\%$ (yani $\\frac{3}{20}$) kharch hua toh bacha $\\frac{17}{20}$. Toh food se pehle uske paas kitna paisa tha? Seedha ulta multiply mar: $24480 \\times \\frac{20}{17} = 28800$. Ab isme ₹4700 (entertainment) jo gaya tha, wo wapas add kar de $\\implies 28800 + 4700 = 33500$. Ab shuru ke percentages dekh: $16.66\\% = \\frac{1}{6}$ (bacha $\\frac{5}{6}$) aur $16.25\\% = \\frac{13}{80}$ (bacha $\\frac{67}{80}$). Toh equation set kar: Total Income $\\times \\frac{5}{6} \\times \\frac{67}{80} = 33500$. Yani Income $\\times \\frac{67}{96} = 33500$. $67$ se $33500$ ko direct kaatega toh $500$ aayega. Income $= 500 \\times 96 = 48000$. Secondon me uda diya bina dimaag pe zor daale!<br><br><b>Method 2 (Tutor's Method):</b> Tutor ne reference image '22179.jpg' me Ratio Break method use kiya hai jo achha hai. Pehle 2 percentages ka net ratio banaya Initial:Final $= 6:5$ aur $80:67$, inko multiply karke combined $96:67$ laya. Fir beech ka 4700 rupees break rakha. Fir aakhri $15\\%$ ka ratio $20:17$ banaya. Neeche se units ko exact rupees se equate kiya: $17 \\text{ units} = 24480 \\implies 1 \\text{ unit} = 1440$. Toh $20 \\text{ units} = 28800$. Isme 4700 joda toh $33500$ aaya. Fir us upar wale ratio me $67 \\text{ units} = 33500 \\implies 1 \\text{ unit} = 500$. Toh original $96 \\text{ units} = 48000$. Dono methods solid hain, par reverse equation me likhna thoda fast hota hai.<br><br><b>Exam Takeaway:</b> Jab successive percentages ki chain ke beech me flat absolute values (Rs) aa jayein, toh unitary ratio method ko wahi todkar reverse shift kar liya kar.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Timeline)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Value / Multiplier)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> After 15% Food spend</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> ₹24,480</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Combined Multiplier (16.66% & 16.25%)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $\\frac{67}{96}$</td></tr></table>"
+    },
+    {
+      "q": "The income of Raman is ₹75400. He saves $23\\%$ of his income. If his income increases by $27\\%$ and expenditure increases by $50\\%$, then his savings will:",
+      "o": [
+        "Decrease by ₹8671",
+        "Increase by ₹8670",
+        "Increase by ₹8667",
+        "Decrease by ₹8666"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> 3. JSM (Junior Satisfaction Method) / Deviation<br><br><b>Pen-Free Observation:</b> Dekh bhai, ₹75400 ek ajeeb sa calculation-heavy figure hai. Hume JSM laga kar units me absolute deviation nikalna hai. Uske baad end me gadha-mazdoori wali multiplication karne ke bajaye Digital Sum (C9) method se options uda denge, kyunki saare options ke digital sums alag hain!<br><br><b>Method 1 (Ninja Technique / Exam Approach) & Method 2 (Tutor's Method):</b> Mera aur tutor (from reference image '22181.jpg') ka dimaag bilkul same chala hai is sawal me! JSM Masterclass: Base income ko seedha $100$ units maan le. Savings = $23$, toh Expenditure = $77$ hoga. Ab absolute change calculate kar: Income $+27\\%$ badhi yani net $+27$ units ka influx aaya. Expenditure $+50\\%$ badha yani $77$ ka aadha $= +38.5$ units ka outflux ho gaya. Saving me net change = Income Change - Exp Change = $27 - 38.5 = -11.5$ units. Iska seedha matlab hai ki net Saving, original total income ($75400$) ke $-11.5\\%$ se giri hai. Decrease to pakka hai, B aur C cut gaye. Ab $11.5\\% \\times 75400$ mat karna! Digital Sum (DS) uthao: $11.5$ ka DS $= 1+1+5 = 7$. $75400$ ka DS $= 7+5+4 = 16 \\implies 1+6 = 7$. Final Result ka DS $= 7 \\times 7 = 49 \\implies 4+9 = 13 \\implies 1+3 = 4$. Option (A) ka DS check kar: $8671 \\implies 8+6+7+1 = 22 \\implies 2+2 = 4$. Baaki 8670 ka 3, 8666 ka 8 hai. Exact match! Option A ko tick maar aur exam center se bahar nikal ja!<br><br><b>Exam Takeaway:</b> Jab final absolute value nikalni ho aur initial ajeeb amount diya ho, toh hamesha pehle Unitary/JSM shift percentage find karo aur end equation me direct C9 (Digital sum) lagao. Multiply sirf wahi karega jisko agle saal wapas exam dena hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Parameter)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Unit Shift)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Net Savings Shift</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $-11.5$ Units</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Digital Sum Check ($7 \\times 7$)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $4$ (Matches Opt A)</td></tr></table>"
+    }
+  ]
 }
+
