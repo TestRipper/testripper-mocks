@@ -244,6 +244,39 @@
     ],
     "a": 0,
     "s": "Dekh bhai, seedha logic hai CDS aur CGL ka. 'No man marries more than one woman' ka simply matlab hai Married Men = Married Women. Toh $40\\% M = 30\\% F \\Rightarrow M:F = 3:4$. Total population $7$ units ban gayi. Ab yahan weightage formula mat lagana, seedha Tool 3: JSM (Junior Satisfaction Method) trigger kar! Base $30\\%$ pakad le. Men ke $3$ units pe $10\\%$ extra hai, toh total extra $= 3 \\times 10\\% = 30\\%$. Is $30\\%$ ko total $7$ units me baant de: \\frac{30}{7} = 4\\frac{2}{7}\\%. Base me add kar de: $30\\% + 4\\frac{2}{7}\\% = 34\\frac{2}{7}\\%. Pen-free observation se 10 second me hack ho gaya!"
+  }, 
+  {
+    "q": "The total count of premium and standard seats in a theater remains constant over two months. On Monday, premium seats were in the majority by '$x$'. On Tuesday, due to some restructuring, standard seats became the majority by '$3x$'. If the standard seats strictly increased by $40\\%$, and the total capacity of the theater is $5500$, find the original number of premium seats.",
+    "o": [
+      "2500",
+      "3000",
+      "3500",
+      "4000"
+    ],
+    "a": 1,
+    "s": "<b>Core Concept Triggered: JSM (Junior Satisfaction Method) / Constant Sum Shifting</b><br><br><b>The 'Pen-Free' Observation First:</b><br>Dekh bhai, jab sum constant hota hai (Total seats 5500 fix hain), toh ek variable jitna badhega, doosra utna hi ghatega. Image waali theory yaad kar: Agar initial difference $x$ tha, aur final difference palat ke $3x$ ho gaya (favoring the other side), toh gap of difference $4x$ bana. Is gap ka aadha ($\\frac{4x}{2} = 2x$) har ek entity ka absolute shift hota hai! Seedhi baat.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Step 1: Gap in majority = $x - (-3x) = 4x$.<br>Step 2: Increase in Standard seats = $\\frac{4x}{2} = 2x$.<br>Step 3: Question kehta hai Standard seats $40\\%$ badhi. Matlab kisi original number ka $40\\%$ (yani $\\frac{2}{5}$) $2x$ ke barabar hai. So, Initial Standard $(S) = 2x \\times \\frac{5}{2} = 5x$.<br>Step 4: Initial Premium $(P)$ seat $x$ zyada thi, toh $P = 5x + x = 6x$.<br>Step 5: Total seats = $S + P = 11x = 5500 \\rightarrow x = 500$.<br>Step 6: Original Premium $P = 6 \\times 500 = 3000$.<br><br><b>Future Exam Takeaway:</b> Election waale sum-constant models ko kisi bhi $A+B=K$ scenario (jaha sum constant ho) mein chipkaya jaa sakta hai. 'Difference of differences divided by 2' wala hack hamesha lagta hai jab interchanging shifts ho!"
+  },
+  {
+    "q": "In a biological study of 2023, a mutant virus colony had a total population of 8,57,432, and exactly 14.1% of them were highly active. In 2024, the total population surged to 11,48,958 and the active percentage rate bumped to 17.2%. What is the approximate percentage change in the absolute number of highly active viruses?",
+    "o": [
+      "58%",
+      "64%",
+      "72%",
+      "49%"
+    ],
+    "a": 1,
+    "s": "<b>Core Concept Triggered: Successive Change (The Chain Reaction) & Approximation</b><br><br><b>The 'Pen-Free' Observation First:</b><br>Dekh bhai, TCS exam mein aise gande numbers ($857432$ aur $1148958$) sirf tumhara time kharab karne ke liye deta hai. Active viruses = Population $\\times$ Rate ($A \\times B = K$). Jab dono multiplier change hote hain, toh net effect successive formula ($x + y + \\frac{xy}{100}$) se nikalta hai. Options mein gap acha hai, toh hum exact values ko goli maarenge aur sirf approximate percentage shifts nikalenge!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Step 1: Population ka increase approx kar. $8.57$ lakh se $11.48$ lakh. Increase lagbhag $2.91$ lakh ka hai. $8.57$ ka $10\\%$ hota hai $0.85$, $30\\%$ hua $2.55$. Bacha $0.36$, jo lagbhag $4\\%$ hai. So, Pop. Increase $(x) \\approx 34\\%$.<br>Step 2: Rate ka increase dekh. $14.1\\%$ se $17.2\\%$. Gap $3.1$ ka hai base $14.1$ pe. $14.1$ ka $10\\%$ = $1.41$, $20\\%$ = $2.82$. Toh yeh exact $22\\%$ ke bahut close hai. Rate Increase $(y) \\approx 22\\%$.<br>Step 3: Successive formula laga de: $x + y + \\frac{xy}{100}$.<br>$\\Rightarrow 34 + 22 + \\frac{34 \\times 22}{100}$<br>$\\Rightarrow 56 + \\frac{748}{100} \\approx 56 + 7.48 = 63.48\\%$.<br>Nearest aur sabse best option is $64\\%$. Tick maar aur aage badh!<br><br><b>Future Exam Takeaway:</b> Data Interpretation (DI) aur Percentage ke gande sums jahan $A \\times B = K$ lag raha ho, wahan exact calculation pap hai. Hamesha base aur shift ka approximate ratio nikal ke successive change lapaad diya kar."
+  },
+  {
+    "q": "In a corporate restructuring, the total number of employees in Division A and Division B remains strictly constant. Initially, Division A has '$x$' more employees than Division B, and it is given that Division A has exactly $13x$ employees. After a transfer drive, Division B becomes the majority with '$5x$' more employees than Division A. Meanwhile, the average revenue generated per employee in Division B increased from ₹7,12,400 to ₹8,54,880. What is the exact percentage change in the total revenue generated by Division B?",
+    "o": [
+      "45%",
+      "50%",
+      "55%",
+      "60%"
+    ],
+    "a": 1,
+    "s": "<b>Core Concepts Triggered: JSM (Constant Sum Shifting) + Successive Change (The Chain Reaction)</b><br><br><b>The 'Pen-Free' Observation First:</b><br>Dekh bhai, yeh hai TCS ka asli jaal! Total Revenue = (No. of Employees) $\\times$ (Revenue per Employee). Yahan multiply ho raha hai, toh end mein Successive (Theory 2) lagega. Lekin Division B ke employees ka increase directly nahi diya, usko unhone Theory 1 ($A+B=K$) mein chhupa diya hai. Dono ka percentage shift nikal aur formula me daal de!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Step 1: <b>Find Employee Shift (%) using JSM:</b><br>Initial difference = $x$ (A majority). Final difference = $5x$ (B majority).<br>Gap = $x - (-5x) = 6x$.<br>Absolute increase in Div B employees = $\\frac{6x}{2} = 3x$.<br>Agar Div A ke paas initially $13x$ log the, aur wo B se $x$ zyada tha, matlab Div B ke paas $12x$ log the.<br>Employee increase % = $\\frac{3x}{12x} = \\frac{1}{4} = 25\\%$.<br><br>Step 2: <b>Find Revenue/Employee Shift (%) using Observation:</b><br>Values hain 7,12,400 se 8,54,880. Zeros hata de.<br>Base = 7124. Change = $85488 - 71240 = 14248$.<br>Dhyan se dekh, 7124 ka double hota hai 14248! Yani seedha $20\\%$ ka increase hai.<br><br>Step 3: <b>The Chain Reaction:</b><br>Employees badhe $25\\%$, Revenue/Emp badha $20\\%$.<br>Net Change = $25 + 20 + \\frac{25 \\times 20}{100} = 45 + 5 = 50\\%$.<br><br><b>Future Exam Takeaway:</b> Jab bhi do concepts mix hon, unko isolation mein solve kar. Total number ya exact variables ($x$) nikalne ki koshish mat kar, hamesha base fractional values aur percentages pe khel."
   }
 ]
 }
