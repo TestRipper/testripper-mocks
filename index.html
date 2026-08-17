@@ -1261,7 +1261,10 @@ auth.onAuthStateChanged(async (user) => {
      // Reset UI to Analysis Tab
      document.querySelectorAll('.tab-btn')[0].click();
      document.getElementById('dash-snap').classList.add('show');
-document.getElementById('global-quiz-title').innerText = att.testName;
+     document.getElementById('global-quiz-title').innerHTML = `
+        <div style="margin-bottom: 4px;">${att.testName}</div>
+        <span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900; letter-spacing: 0px; text-transform: capitalize;">Attempt ${att.attemptNumber}</span>
+     `;
      window.currentLbStats = null;
      window.currentLbDocs = [];
      document.getElementById('an-rank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
@@ -1492,9 +1495,8 @@ document.getElementById('rp-slider').max = actualTotalMarks;
                     else secStats.w++;
                 });
 
-                // Cyan Badge addition for Attempt Number
-                let attNum = dSnapS.meta.attemptNumber || 1;
-                document.getElementById('snapTitle').innerHTML = `Attempt Review <span style="background:#06b6d4; color:#fff; border-radius:6px; padding:2px 8px; font-size:1rem; margin-left:4px; font-weight:900;">${attNum}</span> <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:600; margin-left:6px;">— Q${curDashIdx()+1}/${dSnapS.arr.length}</span>`;
+                                // Updated Title without Attempt Number (Moved to Global Title)
+                document.getElementById('snapTitle').innerHTML = `Attempt Review <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:600; margin-left:6px;">— Q${curDashIdx()+1}/${dSnapS.arr.length}</span>`;
       
       let badgeArr = [ badge(dSnapS.meta.ts, 'ok'), badge(dSnapS.meta.score) ];
       if (dSnapS.currentSection === 'all') badgeArr.push(linkBadge('all', 'All'));
