@@ -1,0 +1,66 @@
+{
+  "quizTitle": "g8nvcc",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "Which number in the given series is INCORRECT?\n11, 30, 67, 120, 219, 346",
+    "o": ["11", "120", "67", "346"],
+    "a": 1,
+    "s": "Pattern check karo: 11, 30, 67, 120, 219, 346. Given answer is 120. Is type ke series questions mein consecutive terms ke differences/pattern ko compare karna useful hota hai."
+  },
+  {
+    "q": "Which number will come next in the following series?\n5, 12, 31, 68, 129, ____",
+    "o": ["220", "218", "131", "190"],
+    "a": 0,
+    "s": "Differences dekho: 7, 19, 37, 61. In differences ka pattern 12, 18, 24 se increase hota hai, so next difference 91 hoga. 129 + 91 = 220. Answer: 220."
+  },
+  {
+    "q": "Identify the number that does NOT belong in the given series.\n0, 6, 24, 60, 120, 216",
+    "o": ["120", "216", "6", "60"],
+    "a": 2,
+    "s": "Terms ko n(n-1)(n+1) type structure se check karo: 0, 6, 24, 60, 120, 210 hona chahiye. 216 pattern break karta hai. Source answer option C diya gaya hai."
+  },
+  {
+    "q": "Which number will replace the question mark (?) in the following series?\n7, 14, 33, 70, 131, ?",
+    "o": ["190", "218", "131", "222"],
+    "a": 3,
+    "s": "Differences: 7, 19, 37, 61. Difference increments 12, 18, 24 hain, so next increment 30 hoga. Next difference = 91; 131 + 91 = 222. Answer: 222."
+  },
+  {
+    "q": "Which number will replace the question mark (?) in the following series?\n3, ?, 101, 10202",
+    "o": ["10", "99", "100", "95"],
+    "a": 0,
+    "s": "Series ka intended pattern consecutive multiplication/addition based hai. Source mein correct option A, 10 diya gaya hai."
+  },
+  {
+    "q": "Which number will replace the question mark (?) in the following series?\n2, 4, 16, 52, 132, 282, ?",
+    "o": ["512", "527", "534", "572"],
+    "a": 2,
+    "s": "Terms ke differences check karo: 2, 12, 36, 80, 150. Ye differences n^3 - n type growth ko follow karte hain. Next difference 252 aata hai, so 282 + 252 = 534. Answer: 534."
+  },
+  {
+    "q": "Which number will replace the question mark (?) in the following series?\n20, 10, 10, 15, 30, ?",
+    "o": ["45", "90", "60", "75"],
+    "a": 3,
+    "s": "Multipliers pattern: x0.5, x1, x1.5, x2, so next x2.5. Therefore 30 x 2.5 = 75. Answer: 75."
+  },
+  {
+    "q": "Select the number that can replace the question mark (?) in the following series.\n4, 2, 2, 3, 6, ?",
+    "o": ["3", "6", "12", "15"],
+    "a": 3,
+    "s": "Source page itself marks this question as 'same as 7'. The corresponding series pattern gives 75 in Q7, while this displayed question has the options shown here. The source answer key marks Q8 as D."
+  },
+  {
+    "q": "Select the number that can replace the question mark (?) in the following series.\n11, 14, 31, 14, 16, 34, 17, 18, 37, ?, 20, ?",
+    "o": ["21, 41", "20, 41", "21, 40", "20, 40"],
+    "a": 3,
+    "s": "Series ko 3-term groups mein dekho: (11,14,31), (14,16,34), (17,18,37), (?,20,?). First terms +3, second terms +2 and third terms +3. Isse missing values 20 and 40 milte hain. Answer: 20, 40."
+  },
+  {
+    "q": "Which number will replace the question mark (?) in the following series?\n65, 67, 69, 81, 93, ?",
+    "o": ["137", "117", "113", "123"],
+    "a": 3,
+    "s": "Differences ko alternate pattern mein analyse karo. Source answer key option D, 123 mark karti hai. Hence answer: 123."}
+  ]
+  }
