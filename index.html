@@ -1261,9 +1261,15 @@ auth.onAuthStateChanged(async (user) => {
      // Reset UI to Analysis Tab
      document.querySelectorAll('.tab-btn')[0].click();
      document.getElementById('dash-snap').classList.add('show');
+          // Set Global Quiz Title (Hide badge if Attempt 1)
+     let attemptBadgeHTML = "";
+     if (att.attemptNumber && att.attemptNumber > 1) {
+         attemptBadgeHTML = `<span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900; letter-spacing: 0px; text-transform: capitalize;">Attempt ${att.attemptNumber}</span>`;
+     }
+     
      document.getElementById('global-quiz-title').innerHTML = `
         <div style="margin-bottom: 4px;">${att.testName}</div>
-        <span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900; letter-spacing: 0px; text-transform: capitalize;">Attempt ${att.attemptNumber}</span>
+        ${attemptBadgeHTML}
      `;
      window.currentLbStats = null;
      window.currentLbDocs = [];
