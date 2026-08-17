@@ -843,13 +843,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             }).then(()=>console.log("Cloud Sync Done!"))
               .catch(e=>console.error("Sync Error", e));
 
-            // Save to Leaderboard
-            db.collection("leaderboards").doc(QUIZ_TITLE).collection("rankings").doc(user.uid).set({
-                name: user.displayName || "Warrior",
-                score: marksEarned,
-                timeArray: rec.snap.map(q => q.timeTaken || 0),
-                userArray: rec.snap.map(q => q.user),
-                correctArray: rec.snap.map(q => q.correct)
+            // Save to Leaderboard ONLY IF FIRST ATTEMPT
+            const lbRef = db.collection("leaderboards").doc(QUIZ_TITLE).collection("rankings").doc(user.uid);
+            lbRef.get().then(doc => {
+                if (!doc.exists) {
+                    lbRef.set({
+                        name: user.displayName || "Warrior",
+                        score: marksEarned,
+                        timeArray: rec.snap.map(q => q.timeTaken || 0),
+                        userArray: rec.snap.map(q => q.user),
+                        correctArray: rec.snap.map(q => q.correct)
+                    });
+                }
             });
         }
 
