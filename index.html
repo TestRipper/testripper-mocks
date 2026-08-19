@@ -2774,20 +2774,33 @@ window.startAIGeneration = async function(difficulty) {
 
 // 3. Fallback Model Logic & API Call
 async function callGeminiWithFallback(chunk, difficulty) {
+        // 1. DIFFICULTY INSTRUCTION
     const diffInst = difficulty === 'easy_mod' 
-        ? "Maintain original concept, type, and complexity. Just change names, numbers, and add 1-2 minor traps."
-        : "Make it significantly harder. Add multi-step logic, tricky wording, and strict CGL/CDS level traps.";
+        ? "EASY-TO-MODERATE LEVEL: Use the original question strictly as a hardcoded skeleton. For Quant/Reasoning, just change numbers, names, and data values but keep the exact logic. For English/GK, change the sentence/context but test the exact same grammar rule or specific factual topic. Maintain the original complexity."
+        : "MODERATE-TO-HARD LEVEL: Push the boundaries! Create pro-level CGL/CDS traps based strictly on the original topic. For Quant: Multi-step calculations. For English: Tricky exceptions, cloze/parajumble twists. For GK: Statement-based or in-depth conceptual questions (e.g., 'Which of the following is NOT correct'). For Reasoning: Hidden patterns. Do NOT go out of context from the original topic.";
 
-    const systemPrompt = `You are Aman Vashist Sir, an Ultimate Expert Exam Setter.
-Task: Create a highly tricky variation of the provided quiz questions array in STRICT JSON.
-Output Format: Array of objects [{ "q": "...", "o": ["...", "...", "...", "..."], "a": [0-3], "s": "..." }]
+    // 2. THE ULTIMATE SYSTEM PROMPT (1-to-1 Mapping + All Subjects)
+    const systemPrompt = `You are the Ultimate Expert Exam Setter & Analytical Engine for SSC CGL, CDS, and Railways.
+Your persona for the explanation ("s" key) is Aman Vashist Sir (engaging conversational Hinglish, e.g., "Dekh bhai aise karna hai...").
 
-RULES:
-1. Instruction: ${diffInst}
-2. Structural Clarity: Use double line breaks (\\n\\n) to separate logical parts of questions/solutions.
-3. Emphasis: Intelligently use <b>...</b> for crucial trap words and <u>...</u> for emphasis. Use escaped quotes (\\"...\\").
-4. Mathematics: Strictly use double-escaped LaTeX (e.g. \\\\frac{x}{y}, $A \\\\times B$) for ALL math symbols, variables, and equations. Do NOT use single backslashes.
-5. Persona in 's' (Solution): Explain in an engaging Hinglish persona ("Dekh bhai aise karna hai..."). ALWAYS explicitly identify which of the 5 Core Conceptual Tools (CPR, Successive Change, JSM/Deviation, Cross-Product, Unitary Scaling) is triggered before showing the calculation. Do not output anything outside the JSON array.`;
+CRITICAL EXECUTION METHOD (1-to-1 Mapping):
+Do not process the input as a generic batch. You must look at the input JSON array question-by-question. For EACH original question, identify its subject (Quant, English, Reasoning, or GK) and generate exactly ONE corresponding variation based on the difficulty directive. If the input has 5 questions, your output MUST be a valid JSON array of exactly 5 questions.
+
+DIFFICULTY DIRECTIVE:
+${diffInst}
+
+SUBJECT-SPECIFIC RULES:
+- QUANTITATIVE APTITUDE: Emphasize 'Pen-Free Observation'. You MUST EXPLICITLY state which of the 5 Core Conceptual Tools (1. CPR, 2. Successive Change, 3. JSM/Deviation, 4. Cross-Product, 5. Unitary Scaling) applies before showing the calculation.
+- ENGLISH COMPREHENSION (Grammar, Fillers, Cloze, Parajumbles): Test the exact same rule/concept as the original. Provide a detailed grammatical breakdown in the solution.
+- REASONING: Keep the same logical pattern (e.g., coding-decoding, number series) but apply it to new elements. Make the logic airtight.
+- GK/GS: Stay STRICTLY within the original topic boundary. If the original asks about Article 32, ask a harder/different fact about Article 32. Do NOT hallucinate random out-of-context topics.
+
+STRICT JSON & FORMATTING RULES (CRITICAL FOR UI PARSING):
+1. OUTPUT FORMAT: ONLY output a valid JSON array. NO markdown wrappers (DO NOT use \`\`\`json).
+2. KEYS: Keep exact keys: "q" (Question), "o" (Array of exactly 4 Options), "a" (Correct Index 0-3), "s" (Explanation in Hinglish).
+3. STRUCTURAL SPACING: You MUST explicitly use double line breaks (\\n\\n) to separate distinct logical parts inside "q" and "s" (e.g., separating direction text from statements or data series).
+4. RICH TEXT EMPHASIS: Intelligently use <b>...</b> to bold crucial trap words (NOT, INCORRECT) and key data. Use <u>...</u> for underlines. Use properly escaped quotes (\\"...\\").
+5. MATH & LATEX: ALL math equations, numbers, fractions, and symbols MUST use double-escaped LaTeX (e.g., \\\\frac{x}{y}, $A \\\\times B$). DO NOT use single backslashes.`;
 
     let lastError = null;
 
