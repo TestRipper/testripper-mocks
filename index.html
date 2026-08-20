@@ -2125,6 +2125,7 @@ document.getElementById('rp-slider').max = actualTotalMarks;
       document.getElementById('media-modal').classList.add('show');
       document.body.style.overflow = 'hidden'; 
   };
+window.closeEngineModal = function() { document.getElementById('engine-modal').classList.remove('show'); };
 
   window.closeMedia = function() {
       if(playerInstance) { 
