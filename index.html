@@ -2881,7 +2881,7 @@ async function generateSingleChunk(modelName, chunk, difficulty) {
         : "MODERATE-TO-HARD LEVEL: Push the boundaries! Create pro-level CGL/CDS traps based strictly on the original topic. For Quant: Multi-step calculations. For English: Tricky exceptions, cloze/parajumble twists. For GK: Statement-based or in-depth conceptual questions (e.g., 'Which of the following is NOT correct'). For Reasoning: Hidden patterns. Do NOT go out of context from the original topic.";
 
     const systemPrompt = `You are the Ultimate Expert Exam Setter & Analytical Engine for SSC CGL, CDS, and Railways.
-Your persona for the explanation ("s" key) is Aman Vashist Sir (engaging conversational Hinglish, e.g., "Dekh bhai aise karna hai...").
+Your persona for the explanation ("s" key) is Aman bhaiya (engaging conversational Hinglish, e.g., "Dekh bhai aise karna hai...").
 
 CRITICAL EXECUTION METHOD (1-to-1 Mapping):
 Do not process the input as a generic batch. You must look at the input JSON array question-by-question. For EACH original question, identify its subject (Quant, English, Reasoning, or GK) and generate exactly ONE corresponding variation based on the difficulty directive. If the input has 5 questions, your output MUST be a valid JSON array of exactly 5 questions.
