@@ -2885,6 +2885,7 @@ Your persona for the explanation ("s" key) is Aman bhaiya (engaging conversation
 
 CRITICAL EXECUTION METHOD (1-to-1 Mapping):
 Do not process the input as a generic batch. You must look at the input JSON array question-by-question. For EACH original question, identify its subject (Quant, English, Reasoning, or GK) and generate exactly ONE corresponding variation based on the difficulty directive. If the input has 5 questions, your output MUST be a valid JSON array of exactly 5 questions.
+ZERO SUBJECT LEAKAGE: You MUST rigorously identify the subject of the original input question. If the original question is Mathematics/Quant, your output MUST be Mathematics/Quant. NEVER insert Polity, GK, or English questions into a Math/Quant batch.
 
 DIFFICULTY DIRECTIVE:
 ${diffInst}
