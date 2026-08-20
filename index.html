@@ -2125,7 +2125,6 @@ document.getElementById('rp-slider').max = actualTotalMarks;
       document.getElementById('media-modal').classList.add('show');
       document.body.style.overflow = 'hidden'; 
   };
-window.closeEngineModal = function() { document.getElementById('engine-modal').classList.remove('show'); };
 
   window.closeMedia = function() {
       if(playerInstance) { 
@@ -2637,7 +2636,8 @@ window.closeEngineModal = function() { document.getElementById('engine-modal').c
           a: item.correct,
           s: item.sol || 'No solution provided.', s_hi: item.s_hi || ''
       }));
-      launchCustomEngine(exportData, title);
+            openEngineModal("", title, exportData);
+      
   };
 
   window.launchSavedQsMock = function() {
@@ -2656,7 +2656,7 @@ window.closeEngineModal = function() { document.getElementById('engine-modal').c
           a: item.a,
           s: item.s || 'No solution provided.', s_hi: item.s_hi || ''
       }));
-      launchCustomEngine(exportData, title);
+            openEngineModal("", title, exportData);
   };
 
   /* =========================================
@@ -2664,19 +2664,31 @@ window.closeEngineModal = function() { document.getElementById('engine-modal').c
      ========================================= */
     let currentTargetJsonUrl = "";
   let currentTargetTitle = "";
-
+  
   const GEMINI_API_KEY = atob("QVEuQWI4Uk42Smt3LXBRYUhnZ0NxSnFTdkJ2N2o1ZUxEcU45NmwweXpXNlZDWU11LS1JekE="); 
 const FALLBACK_MODELS = [
+    "gemini-3.7-flash",
     "gemini-3.6-flash",
+    "gemini-3.5-flash-lite"
 ];
 
 let pendingFileUrl = "";
 let pendingFileTitle = "";
+let pendingCustomQuestions = null; // Naya: Mistake aur Saved Qs ka data hold karega
+let isGeneratingAI = false;        // Naya: Stop button ke liye
+let currentModelIndex = 0;         // Naya: Track karega kaunsa model chal raha hai
+let accumulatedErrors = [];        // Naya: Teeno models ke errors save karega
+
+// Engine Modal Cancel Button Fix
+window.closeEngineModal = function() {
+    document.getElementById('engine-modal').classList.remove('show');
+};
 
 // 1. Updated Engine Modal Opener
-window.openEngineModal = function(fileUrl, fileTitle) {
+window.openEngineModal = function(fileUrl, fileTitle, customQs = null) {
     pendingFileUrl = fileUrl;
     pendingFileTitle = fileTitle || "";
+    pendingCustomQuestions = customQs; // Data save kar liya
     
     let normalizedTitle = normalizeStringForMatch(fileTitle);
     let hasAttempted = globalUserAttempts.some(att => normalizeStringForMatch(att.testName) === normalizedTitle);
@@ -2701,6 +2713,27 @@ window.chooseRetakeMode = function(mode) {
     }
 };
 
+window.launchEngine = function(engineType) {
+    let encodedTitle = encodeURIComponent(currentTargetTitle);
+    
+    // 1. Agar ye Mistake/Saved Quiz hai, toh hamesha Mock-fetcher khulega
+    if (pendingCustomQuestions) {
+        const payload = { title: currentTargetTitle, questions: pendingCustomQuestions };
+        sessionStorage.setItem('customEngineData', JSON.stringify(payload));
+        window.location.href = "Mock-fetcher.html";
+        return; 
+    }
+    
+    // 2. Agar ye AI Variant hai ya Normal mock hai, toh Quiz-Engine 1 ya 2 khulega
+    if (!currentTargetJsonUrl) {
+        window.location.href = engineType === 1 ? `Quiz-Engine-1.html?title=${encodedTitle}` : `Quiz-Engine-2.html?title=${encodedTitle}`;
+        return;
+    }
+
+    let encodedUrl = encodeURIComponent(currentTargetJsonUrl);
+    window.location.href = engineType === 1 ? `Quiz-Engine-1.html?data=${encodedUrl}&title=${encodedTitle}` : `Quiz-Engine-2.html?data=${encodedUrl}&title=${encodedTitle}`;
+};
+
 // 2. Main Generation Function
 window.startAIGeneration = async function(difficulty) {
     document.getElementById('ai-level-modal').classList.remove('show');
@@ -2709,76 +2742,144 @@ window.startAIGeneration = async function(difficulty) {
     const progStatus = document.getElementById('ai-progress-status');
     const progPercent = document.getElementById('ai-progress-percent');
     
+    // Cancel Generation Button Modal ke andar
+    if (!document.getElementById('ai-cancel-btn')) {
+        progModal.querySelector('.result').insertAdjacentHTML('beforeend', 
+            `<button id="ai-cancel-btn" onclick="isGeneratingAI = false; document.getElementById('ai-progress-status').innerText = 'Cancelling... Saving ready questions!';" style="margin-top:15px; background:rgba(239, 68, 68, 0.1); border:1px solid #ef4444; color:#ef4444; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:bold;">Stop & Play Ready Qs</button>`
+        );
+    }
+    
     progModal.classList.add('show');
-    progFill.style.width = '10%'; progPercent.innerText = '10%';
-    progStatus.innerText = 'Fetching original JSON skeleton...';
+    isGeneratingAI = true; 
+    currentModelIndex = 0; // Test start hote hi Model 1 (index 0) par set karo
+    accumulatedErrors = [];
+    
+    progFill.style.width = '5%'; progPercent.innerText = '5%';
+    
+    let attemptNum = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === normalizeStringForMatch(pendingFileTitle)).length + 1;
+    let cacheKey = `${normalizeStringForMatch(pendingFileTitle)}_att${attemptNum}_${difficulty}`;
 
     try {
-        let cleanPath = pendingFileUrl.startsWith('/') ? pendingFileUrl.substring(1) : pendingFileUrl;
-        let fetchUrl = `https://raw.githubusercontent.com/TestRipper/testripper-mocks/main/${cleanPath}`;
-        let res = await fetch(fetchUrl);
-        let originalJson = await res.json();
+        // 1. CHECK FIREBASE CACHE FIRST
+        progStatus.innerText = 'Checking Database Cache...';
+        const cacheDoc = await db.collection("ai_variants_cache").doc(cacheKey).get();
         
-        let questionsToProcess = originalJson.questions || [];
-        if (!questionsToProcess.length && originalJson.questionsData) {
-            originalJson.questionsData.forEach(sec => {
-                if (sec.questions) questionsToProcess.push(...sec.questions);
-            });
+        let quizTime = 18; let totalMarks = 50;
+        let questionsToProcess = [];
+        
+        if (pendingCustomQuestions) {
+            questionsToProcess = pendingCustomQuestions;
+        } else {
+            let cleanPath = pendingFileUrl.startsWith('/') ? pendingFileUrl.substring(1) : pendingFileUrl;
+            let res = await fetch(`https://raw.githubusercontent.com/TestRipper/testripper-mocks/main/${cleanPath}`);
+            let originalJson = await res.json();
+            quizTime = originalJson.quizTime || 18; totalMarks = originalJson.totalMarks || 50;
+            
+            questionsToProcess = originalJson.questions || [];
+            if (!questionsToProcess.length && originalJson.questionsData) {
+                originalJson.questionsData.forEach(sec => {
+                    if (sec.questions) questionsToProcess.push(...sec.questions);
+                });
+            }
         }
         
-        if (questionsToProcess.length === 0) throw new Error("No valid questions found.");
+        if (questionsToProcess.length === 0) throw new Error("No questions found.");
 
+        if (cacheDoc.exists && cacheDoc.data().questions.length === questionsToProcess.length) {
+            progFill.style.width = '100%'; progPercent.innerText = '100%';
+            progStatus.innerText = 'Found in Cache! Launching...';
+            return launchAITestFinal(cacheDoc.data().questions, pendingFileTitle, quizTime, totalMarks);
+        }
+
+        // 2. START GENERATION WITH CHAIN-FALLBACK
         let generatedQuestions = [];
         const BATCH_SIZE = 5; 
         let totalBatches = Math.ceil(questionsToProcess.length / BATCH_SIZE);
 
         for (let b = 0; b < totalBatches; b++) {
-            let percentDone = Math.round(((b) / totalBatches) * 85) + 10;
+            if (!isGeneratingAI) break; // User ne stop daba diya
+            
+            let percentDone = Math.round(((b) / totalBatches) * 80) + 10;
             progFill.style.width = percentDone + '%'; progPercent.innerText = percentDone + '%';
-            progStatus.innerText = `Transforming Batch ${b + 1} of ${totalBatches}...`;
-
+            
             let chunk = questionsToProcess.slice(b * BATCH_SIZE, (b + 1) * BATCH_SIZE);
-            let batchResult = await callGeminiWithFallback(chunk, difficulty);
-            generatedQuestions.push(...batchResult);
+            let chunkSuccess = false;
+
+            // CHAIN LOGIC: Ek model fail hua toh currentModelIndex badhega, aur wahi chunk naye model ko jayega
+            while (currentModelIndex < FALLBACK_MODELS.length) {
+                let activeModel = FALLBACK_MODELS[currentModelIndex];
+                progStatus.innerText = `[${activeModel}] Generating Batch ${b + 1} of ${totalBatches}...`;
+                
+                try {
+                    let batchResult = await generateSingleChunk(activeModel, chunk, difficulty);
+                    generatedQuestions.push(...batchResult);
+                    chunkSuccess = true;
+                    break; // Chunk pass ho gaya, 'while' loop todo aur agle batch par jao
+                } catch (apiError) {
+                    accumulatedErrors.push(`[${activeModel} on Batch ${b+1}]: ${apiError.message}`);
+                    console.warn(`${activeModel} failed. Passing remaining questions to next model...`);
+                    currentModelIndex++; // Current model fail, shift to next model permanently
+                }
+            }
+
+            // Agar teeno models fail ho gaye is chunk par
+            if (!chunkSuccess) {
+                throw new Error(`All 3 Models Exhausted! Partial questions saved: ${generatedQuestions.length}.\nErrors:\n` + accumulatedErrors.join("\n"));
+            }
         }
 
+        if (generatedQuestions.length === 0) throw new Error("API completely failed. No questions generated.");
+
         progFill.style.width = '100%'; progPercent.innerText = '100%';
-        progStatus.innerText = 'Finalizing quiz payload...';
+        progStatus.innerText = 'Finalizing and Caching...';
+
+        // 3. SAVE FULL TEST TO CACHE
+        if (generatedQuestions.length === questionsToProcess.length) {
+            await db.collection("ai_variants_cache").doc(cacheKey).set({
+                questions: generatedQuestions,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+        }
 
         setTimeout(() => {
-            progModal.classList.remove('show');
-            let aiTitle = `${pendingFileTitle} [AI Variant]`;
-            
-            // EXACT JSON FORMAT REQUIRED BY ENGINE
-            const finalPayload = {
-                quizTitle: aiTitle,
-                quizTime: originalJson.quizTime || 18,
-                totalMarks: originalJson.totalMarks || 50,
-                questions: generatedQuestions
-            };
-            
-            sessionStorage.setItem('customEngineData', JSON.stringify(finalPayload));
-            
-            currentTargetJsonUrl = ""; // Empty string triggers session storage logic
-            currentTargetTitle = aiTitle;
-            document.getElementById('engine-modal').classList.add('show');
+            launchAITestFinal(generatedQuestions, pendingFileTitle, quizTime, totalMarks);
         }, 800);
 
     } catch (err) {
-        console.error("AI Gen Error:", err);
-        alert("Failed: " + err.message);
+        console.error("Chain Process Error:", err);
+        alert("Process Halted:\n" + err.message);
         progModal.classList.remove('show');
     }
 };
 
-// 3. Fallback Model Logic & API Call
-async function callGeminiWithFallback(chunk, difficulty) {
-        // 1. DIFFICULTY INSTRUCTION
+window.launchAITestFinal = function(generatedQs, title, qTime, qMarks) {
+    document.getElementById('ai-progress-modal').classList.remove('show');
+    
+    // IMPORTANT: No [AI Variant] text added here to maintain "Attempt 2" tracking
+    const finalPayload = {
+        quizTitle: title, 
+        quizTime: qTime,
+        totalMarks: qMarks,
+        questions: generatedQs
+    };
+    
+    sessionStorage.setItem('customEngineData', JSON.stringify(finalPayload));
+    currentTargetJsonUrl = ""; 
+    currentTargetTitle = title;
+    
+    // Seedha test mat shuru kar, Engine Modal khol taaki "Normal / Sectional" select kar sake
+    document.getElementById('engine-modal').classList.add('show');
+};
+
+
+// ==========================================
+// 1. THE ULTIMATE API CALLER (WITH CHAIN LOGIC SUPPORT)
+// ==========================================
+async function generateSingleChunk(modelName, chunk, difficulty) {
     const diffInst = difficulty === 'easy_mod' 
         ? "EASY-TO-MODERATE LEVEL: Use the original question strictly as a hardcoded skeleton. For Quant/Reasoning, just change numbers, names, and data values but keep the exact logic. For English/GK, change the sentence/context but test the exact same grammar rule or specific factual topic. Maintain the original complexity."
         : "MODERATE-TO-HARD LEVEL: Push the boundaries! Create pro-level CGL/CDS traps based strictly on the original topic. For Quant: Multi-step calculations. For English: Tricky exceptions, cloze/parajumble twists. For GK: Statement-based or in-depth conceptual questions (e.g., 'Which of the following is NOT correct'). For Reasoning: Hidden patterns. Do NOT go out of context from the original topic.";
 
-    // 2. THE ULTIMATE SYSTEM PROMPT (1-to-1 Mapping + All Subjects)
     const systemPrompt = `You are the Ultimate Expert Exam Setter & Analytical Engine for SSC CGL, CDS, and Railways.
 Your persona for the explanation ("s" key) is Aman Vashist Sir (engaging conversational Hinglish, e.g., "Dekh bhai aise karna hai...").
 
@@ -2801,53 +2902,48 @@ STRICT JSON & FORMATTING RULES (CRITICAL FOR UI PARSING):
 4. RICH TEXT EMPHASIS: Intelligently use <b>...</b> to bold crucial trap words (NOT, INCORRECT) and key data. Use <u>...</u> for underlines. Use properly escaped quotes (\\"...\\").
 5. MATH & LATEX: ALL math equations, numbers, fractions, and symbols MUST use double-escaped LaTeX (e.g., \\\\frac{x}{y}, $A \\\\times B$). DO NOT use single backslashes.`;
 
-    let lastError = null;
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent`;
+    
+    const payload = {
+        contents: [{ parts: [{ text: systemPrompt }, { text: JSON.stringify(chunk) }] }],
+        generationConfig: { responseMimeType: "application/json", temperature: 0.8 }
+    };
 
-    for (let model of FALLBACK_MODELS) {
-        try {
-            console.log(`Pinging model: ${model}`);
-                        // Naya URL (bina key ke)
-            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
-            
-            const payload = {
-                contents: [{ parts: [{ text: systemPrompt }, { text: JSON.stringify(chunk) }] }],
-                generationConfig: { responseMimeType: "application/json", temperature: 0.8 }
-            };
+    const response = await fetch(endpoint, {
+        method: "POST", 
+        headers: { 
+            "Content-Type": "application/json",
+            "x-goog-api-key": GEMINI_API_KEY 
+        }, 
+        body: JSON.stringify(payload)
+    });
 
-            // Naya Fetch method (Key ab Headers mein jayegi)
-            const response = await fetch(endpoint, {
-                method: "POST", 
-                headers: { 
-                    "Content-Type": "application/json",
-                    "x-goog-api-key": GEMINI_API_KEY 
-                }, 
-                body: JSON.stringify(payload)
-            });
-
-                        if (!response.ok) {
-                const errText = await response.text();
-                throw new Error(`Model ${model} Error: ${response.status} - ${errText}`);
-            }
-
-            const aiData = await response.json();
-            const rawText = aiData.candidates[0].content.parts[0].text;
-            return JSON.parse(rawText.replace(/```json/g, '').replace(/```/g, '').trim());
-
-        } catch (error) {
-            console.warn(`Model ${model} failed, shifting gears...`);
-            lastError = error;
-            await new Promise(r => setTimeout(r, 1000));
-        }
+    if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`HTTP ${response.status} - ${errText}`);
     }
-    throw new Error("Saare APIs limit cross kar chuke hain. " + lastError.message);
+
+    const aiData = await response.json();
+    const rawText = aiData.candidates[0].content.parts[0].text;
+    return JSON.parse(rawText.replace(/```json/g, '').replace(/```/g, '').trim());
 }
 
-// 4. Update Engine Launcher to support customSessionData
+// ==========================================
+// 2. ENGINE LAUNCHER (ROUTING LOGIC)
+// ==========================================
 window.launchEngine = function(engineType) {
     let encodedTitle = encodeURIComponent(currentTargetTitle);
     
+    // CUSTOM MISTAKE/SAVED QUIZ ROUTING
+    if (pendingCustomQuestions) {
+        const payload = { title: currentTargetTitle, questions: pendingCustomQuestions };
+        sessionStorage.setItem('customEngineData', JSON.stringify(payload));
+        window.location.href = "Mock-fetcher.html";
+        return; 
+    }
+    
+    // NORMAL YA AI VARIANT TESTS ROUTING
     if (!currentTargetJsonUrl) {
-        // Directing to Engine; it will automatically fetch from sessionStorage
         if(engineType === 1) {
             window.location.href = `Quiz-Engine-1.html?title=${encodedTitle}`;
         } else {
@@ -2862,6 +2958,13 @@ window.launchEngine = function(engineType) {
     } else {
         window.location.href = `Quiz-Engine-2.html?data=${encodedUrl}&title=${encodedTitle}`;
     }
+};
+
+// ==========================================
+// 3. ENGINE MODAL CANCEL BUTTON FIX
+// ==========================================
+window.closeEngineModal = function() {
+    document.getElementById('engine-modal').classList.remove('show');
 };
 </script>
 
