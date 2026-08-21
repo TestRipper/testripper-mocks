@@ -3,28 +3,17 @@
   "quizTime": 18,
   "totalMarks": 50,
   "questions": [
-    {
-      "q": "When a number is increased by $120\\%$ then it becomes 70 less than another number, but if that number is increased by $80\\%$ then it becomes 130 less than that second number. Find the difference of both the numbers.",
-      "o": [
-        "250",
-        "175",
-        "125",
-        "200"
-      ],
-      "a": 0,
-      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling\n\n<b>Pen-Free Observation:</b> Dekh bhai, seedha $120\\%$ aur $80\\%$ ka farq dekh, aur udhar $130$ aur $70$ ke gap ko pakad. Ek linear equation dimag me ban jani chahiye bina pen uthaye.\n\n<b>Method 1 (Ninja Technique / Exam Approach):</b> $120\\%$ aur $80\\%$ ke beech ka gap hai $40\\%$. Udhar numbers ka gap hai $130 - 70 = 60$. Seedha equate maar: $40\\%$ barabar hai $60$ ke. Toh $100\\%$ (pehla number) hua $150$. Ab $150$ ka $120\\%$ badhayega ($+180$) toh $330$ aayega. Ye dusre number se $70$ kam hai, matlab dusra number $330 + 70 = 400$ hai. Dono ka difference pucha hai: $400 - 150 = 250$. Uda diya secondon me!\n\n<b>Method 2 (Concept Builder):</b> Chal basic se samajh. Pehla number maan le $100x$. Usme $120\\%$ joda toh ban gaya $220x$. Question kehta hai ye dusre number ($Y$) se 70 kam hai, yani $220x = Y - 70$. Jab $80\\%$ joda toh ban gaya $180x$, jo $Y$ se 130 kam hai, yani $180x = Y - 130$. Dono equations ko ghata de, $40x = 60$ aayega, $x = 1.5$ banega. Toh $100x = 150$. Y ki value nikalega toh $400$ aayegi. Farq nikal le $250$ aayega.\n\n<b>Exam Takeaway:</b> Aise sawalo me x aur y mat maan, percentage gap aur value gap ko barabar rakh ke questions ko hawa me uda diya kar!\n\n<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Step</th><th style='text-align:left;padding:4px;color:var(--p2)'>Calculation</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Percentage Gap</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$120\\% - 80\\% = <b>40\\%</b>$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> Value Gap</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$130 - 70 = <b>60</b>$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>3.</b> 1st Number</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$40\\% \\to 60 \\implies 100\\% \\to <b>150</b>$</td></tr></table>"
-    },
-    {
-      "q": "Weight of a container is $11.11\\%$ of the weight of the container when filled with milk. If some of the milk is sold and the weight of the container with remaining milk becomes $55.55\\%$ of the original weight what percentage of milk was sold?",
-      "o": [
-        "$50\\%$",
-        "$20\\%$",
-        "$40\\%$",
-        "$60\\%$"
-      ],
-      "a": 0,
-      "s": "<b>Core Conceptual Tool:</b> 1. CPR (Constant Product Ratio) & Fractional Shift\n\n<b>Pen-Free Observation:</b> Dekh bhai, fractions strong rakhne padenge. $11.11\\%$ dekhte hi $\\frac{1}{9}$ chamakna chahiye aur $55.55\\%$ dekhte hi $\\frac{5}{9}$. Container ka vajan toh constant hi rahega na!\n\n<b>Method 1 (Ninja Technique / Exam Approach):</b> Total weight $9$ unit maan le. Khali dabba $1$ unit ka hua. Doodh bacha $8$ unit. Naya total weight ban gaya $5$ unit (kyunki $55.55\\%$ ho gaya). Dabba toh abhi bhi $1$ unit ka hai, yani naya doodh bacha $4$ unit. Pehle doodh $8$ tha, ab $4$ hai. Seedha adha doodh bech diya. Answer $50\\%$. Bina pen uthaye tick kar!\n\n<b>Method 2 (Concept Builder):</b> Fraction $\\frac{1}{9}$ ka matlab hai, agar (Container + Milk) = $9x$, toh Container = $1x$. Milk ki original quantity ho gayi $8x$. Baad me total weight $55.55\\%$ yani $\\frac{5}{9}$ of $9x = 5x$ ho gaya. Container ka vajan $1x$ fixed hai. Toh remaining milk = $5x - 1x = 4x$. Sold milk = $8x - 4x = 4x$. Percentage sold = $\\frac{4x}{8x} \\times 100 = 50\\%$.\n\n<b>Exam Takeaway:</b> Jab bhi weights kam jyada ho, hamesha constant cheez (yahan container) ko pakad kar baaki ratios balance kar le.\n\n<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Component</th><th style='text-align:left;padding:4px;color:var(--p2)'>Units</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Original Total</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>9</b> (Container 1 + Milk 8)</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> New Total</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>5</b> (Container 1 + Milk 4)</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>3.</b> Milk Sold</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$\\frac{8 - 4}{8} \\times 100 = <b>50\\%</b>$</td></tr></table>"
-    },
+  {
+    "q": "When a number is increased by 120\\% then it becomes 70 less than another number, but if that number is increased by 80\\% then it becomes 130 less than that second number. Find the difference of both the numbers.",
+    "o": [
+      "250",
+      "175",
+      "125",
+      "200"
+    ],
+    "a": 0,
+    "s": "<b>Core Conceptual Tool: 5. Unitary Scaling</b>\n\n<b>Pen-Free Observation:</b> Dekh bhai, seedha $120\\%$ aur $80\\%$ ka farq dekh, aur udhar $130$ aur $70$ ke gap ko pakad. Ek linear equation dimag me ban jani chahiye bina pen uthaye. Language trap me nahi fasna hai.\n\n<b>Method 1 (Ninja Technique / Exam Approach - Highly Recommended):</b>\n$120\\%$ aur $80\\%$ ke beech ka gap hai $40\\%$. Udhar numbers ka gap hai $130 - 70 = 60$.\nSeedha equate maar: $40\\% \\equiv 60$.\nToh $100\\%$ (pehla number) hua $150$.\nAb $150$ ka $120\\%$ badhayega ($+180$) toh $330$ aayega. Ye dusre number se $70$ kam hai, matlab dusra number $= 330 + 70 = 400$ hai.\nDono ka difference pucha hai: $400 - 150 = 250$. <u>Uda diya secondon me!</u>\n\n<b>Method 2 (Algebraic Approach - Tera Corrected $2.2x$ & $1.8x$ method):</b>\nMaan le pehla number $x$ aur dusra $y$ hai.\n<b>Condition 1:</b> $x$ ko $120\\%$ badhaya toh $100\\% + 120\\% = 220\\%$ hua, yani $2.2x$.\nEquation: $y - 2.2x = 70$\n<b>Condition 2:</b> $x$ ko $80\\%$ badhaya toh wo $1.8x$ banega.\nEquation: $y - 1.8x = 130$\nDono ko subtract karne par: $-0.4x = -60 \\Rightarrow x = 150$.\nIsko first equation me rakh: $y - 2.2(150) = 70 \\Rightarrow y - 330 = 70 \\Rightarrow y = 400$.\nDifference $= 400 - 150 = 250$.\n\n<b>Method 3 (Concept Builder - $100x$ Assumption):</b>\nPehla number maan le $100x$. Usme $120\\%$ joda toh ban gaya $220x$.\nQuestion kehta hai ye dusre number ($y$) se $70$ kam hai, yani $220x = y - 70$.\nJab $80\\%$ joda toh ban gaya $180x$, jo $y$ se $130$ kam hai, yani $180x = y - 130$.\nDono equations ko ghata de, $40x = 60$ aayega, $x = 1.5$ banega.\nToh $100x = 150$. $y$ ki value nikalega toh $400$ aayegi.\nFarq nikal le $400 - 150 = 250$ aayega.\n\n<b>Exam Takeaway:</b> Bhai meri ek baat dhyan se sun, agar exam me Method 2 ($2.2x, 1.8x$) ya Method 3 ($100x, y$) laga ke aisi equations likhega, toh <b>time bohot khichega aur selection door chala jayega</b>. SSC CGL aur CDS me time hi sab kuch hai. Aisi word problems ko hawa me udane ke liye humesha <b>Method 1 (Unitary Scaling)</b> ko hi prefer karna. Percentage gap ko value gap ke barabar rakh aur direct answer nikal!"
+  },
     {
       "q": "Khushi scores $33.33\\%$ in an examination and after review, even though her score is increased by $40\\%$, she fails by 10 marks. If her post - review score is increased by $14.28\\%$, she will have 10 marks more than the passing score. Find the percentage score needed for passing the examination.",
       "o": [
