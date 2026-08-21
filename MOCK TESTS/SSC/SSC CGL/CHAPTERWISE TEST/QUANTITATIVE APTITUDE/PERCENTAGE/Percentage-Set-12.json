@@ -3,6 +3,29 @@
   "quizTime": 18,
   "totalMarks": 50,
   "questions": [
+  {
+    "q": "The annual festival bonus of a company is distributed entirely between two top managers, X and Y. Last year, X's bonus was ₹40,000 less than Y's bonus. This year, the total bonus pool remains exactly the same, but X's performance improved, increasing his share by 20%. As a result, X now receives ₹20,000 more than Y. What is the total bonus pool of the company?",
+    "o": [
+      "₹3,00,000",
+      "₹3,20,000",
+      "₹3,40,000",
+      "₹3,60,000"
+    ],
+    "a": 2,
+    "s": "<b>Core Conceptual Tool Triggered:</b> 3. JSM / Deviation: $A + B = K$ (Total bonus is constant. We will use the $\\frac{D_2 - D_1}{2}$ Difference Hack).\n\n<b>The \"Pen-Free\" Observation First:</b>\nDekh bhai aise karna hai... Pura question dekh Pehle X peeche tha, ab X aage hai. Aur total sum fix hai! Seedha difference ka shift dekh aur 2 se divide maar, X ka exact increment bahar aa jayega.\n\n<b>Method 1 (Ninja Technique / Exam Approach):</b>\nLet's apply the Ultimate Difference Hack:\nPurana Difference ($X - Y$) = <b>-40,000</b> (Kyuki X kam tha Y se).\nNaya Difference ($X - Y$) = <b>+20,000</b> (Kyuki X ab Y se aage hai).\n\nIs pure transaction mein X ka actual profit (Net Change) kitna hua?\n$\\text{Increment in X} = \\frac{\\text{New Diff} - \\text{Old Diff}}{2}$\n$\\text{Increment in X} = \\frac{20000 - (-40000)}{2} = \\frac{60000}{2} = <b>30,000</b>.\n\nToh bhai, X ka bonus ₹30,000 badha hai. \nLekin question kehta hai ki X ka bonus <b>20%</b> (yani $1/5$) badha hai.\nSeedha equate kar de:\nX ka $1/5 = 30,000$\n$\\Rightarrow \\text{Purana X} = 30,000 \\times 5 = <b>1,50,000</b>.\n\nAb Y nikal le:\nPurane case mein X, Y se ₹40,000 kam tha. Toh Y kitna hoga? \n$\\text{Purana Y} = 1,50,000 + 40,000 = <b>1,90,000</b>.\n\nTotal Bonus = $\\text{Purana X} + \\text{Purana Y}$\n$\\Rightarrow 1,50,000 + 1,90,000 = <b>3,40,000</b>. (Option 3 is correct. 10 seconds flat!)\n\n<b>Method 2 (Concept Builder - Basics):</b>\nLet Total Bonus = $K$.\nInitial Case: $X + Y = K$ aur $Y - X = 40000$.\nSolve karne par: $X = \\frac{K - 40000}{2}$.\n\nNew Case: X gets 20% more, so New X = $1.2X$. \nSince total is $K$, New Y = $K - 1.2X$.\nGiven condition: New X - New Y = $20000$.\n$\\Rightarrow 1.2X - (K - 1.2X) = 20000$\n$\\Rightarrow 2.4X - K = 20000$\nSubstitute $K = 2X + 40000$:\n$\\Rightarrow 2.4X - (2X + 40000) = 20000$\n$\\Rightarrow 0.4X = 60000 \\Rightarrow X = 150000$.\n$K = 2(150000) + 40000 = 340000$.\n\n<b>Future Exam Takeaway:</b> Elections ho, profit sharing ho, ya salary distribution—agar \"Total Sum\" fix hai aur do logon ka \"Lead/Deficit\" diya hai, toh seedha <b>$\\frac{D_2 - D_1}{2}$</b> lagao. Ye hack tujhe equation banane se bacha lega aur time bacha ke dega!"
+  },
+  {
+    "q": "A farmer allocates his entire fixed farm land to grow only two fodder crops: Bajra and Jowar. In the last season, the land allocated to Bajra was 14.28\\% less than the land allocated to Jowar. This season, he increases the land for Jowar by 28.56\\%. If the total cultivated farm area remains exactly the same and the new area for Bajra becomes 120 acres, what is the total area of the farm?",
+    "o": [
+      "420 acres",
+      "390 acres",
+      "360 acres",
+      "455 acres"
+    ],
+    "a": 1,
+    "s": "<b>Core Conceptual Tool Triggered:</b> 3. JSM (Junior Satisfaction Method) / Deviation: $A + B = K$ (Total farm land is constant. Fodder area gain in one crop = Exact absolute area loss in the other).\n\n<b>The \"Pen-Free\" Observation First:</b>\nDekh bhai aise karna hai... Kheti-baari aur chaare (fodder) ka simple logic laga. Total zameen toh fix hai na? Agar ek fasal ka area badhega, toh doosri ka utna hi kam hona padega. Percentages dekh kar darna nahi hai: $14.28\\%$ dekhte hi dimaag mein $1/7$ aana chahiye aur $28.56\\%$ dekhte hi $2/7$ aana chahiye.\n\n<b>Method 1 (Ninja Technique / Exam Approach):</b>\nRatio likh aur secondon mein uda de:\n$14.28\\% = \\frac{1}{7}$. Matlab base Jowar ($J$) ka $7$ unit maan le.\nBajra ($B$) $1/7$ kam hai $\\Rightarrow B = 7 - 1 = 6$ units.\nTotal Area ($K$) = $B + J = 6 + 7 = <b>13 units</b>. (Matlab answer 13 ka multiple hoga, options dekh ke hi 390 mark kar sakta tha!)\n\nLekin cross-verify kar lete hain:\nAb question kehta hai Jowar $28.56\\%$ (yani $\\frac{2}{7}$) badha.\nJowar ka area $7$ units tha, usme $\\frac{2}{7}$ badha = <b>$+2$ units</b>.\nKyuki total zameen utni hi hai ($A+B=K$), Jowar ne jo $2$ unit zameen li, wo Bajra ke hisse se aayi hogi! Toh Bajra exactly <b>$-2$ units</b> kam hoga.\n\nNaya Bajra = $6 - 2 = 4$ units.\nQuestion mein naya Bajra $120$ acres diya hai.\n$\\Rightarrow 4 \\text{ units} = 120 \\text{ acres}$\n$\\Rightarrow 1 \\text{ unit} = 30 \\text{ acres}$\n\nTotal Area = $13 \\text{ units} = 13 \\times 30 = 390 \\text{ acres}$. Boom! Khatam.\n\n<b>Method 2 (Concept Builder):</b>\nLet Total Area = $K$.\n$B + J = K$.\nInitial setup: $B = J - 0.1428 J = \\frac{6}{7} J$.\n$\\Rightarrow \\frac{B}{J} = \\frac{6}{7}$. Let $B = 6x$, $J = 7x$. Total $K = 13x$.\nNew $J = 7x + (\\frac{2}{7} \\times 7x) = 9x$.\nSince Total $K = 13x$ is constant:\nNew $B = K - \\text{New } J = 13x - 9x = 4x$.\nGiven $4x = 120 \\Rightarrow x = 30$.\nTotal area = $13x = 13(30) = 390$.\n\n<b>Future Exam Takeaway:</b> $A+B=K$ ka rule sirf elections ya expenditure mein nahi lagta. Land, Mixture, ya Investment—jahan bhi <b>\"Total\"</b> constant ho aur ek component badhe, toh direct doosre ko same absolute ratio unit se gira do! Koi $x$ nahi manna."
+  },
+
     {
       "q": "If the radius of a circle is decreased by $35\\%$ then its area decreases by?",
       "o": [
@@ -44,7 +67,7 @@
         "700",
         "775"
       ],
-      "a": 1,
+      "a": 0,
       "s": "<b>Core Conceptual Tool:</b> Unitary Scaling\n\n<b>Pen-Free Observation:</b> Dekh bhai, bhasha bhayankar hai par logic lallu hai. Ratio 8:9:10 ka sum 27 hota hai, jo 810 ke barabar diya hai. Pura khel wapas back-track karne ka hai.\n\n<b>Method 1 (Ninja Technique / Exam Approach):</b> $27 \\text{ units} = 810 \\implies 1 \\text{ unit} = 30$. Max marks nikal gaye: QA=240, DI=270, VA=300. Ab ulta chalo, question keh raha hai ki itne percentage zyada aate toh 100% (max) aate. Toh purane marks the: QA = $\\frac{240}{1.2} = 200$. DI = $\\frac{270}{1.08} = 250$. VA me $7.14\\%$ (yani $\\frac{1}{14}$) zyada aate. Matlab $\\frac{15}{14}$ score hota max marks. Toh asli score $\\frac{14}{15} \\times 300 = 280$ raha hoga. Total marks = $200 + 250 + 280 = 730$.\n\n<b>Method 2 (Concept Builder):</b> Agar percentage fraction conversion me dikkat hai: $20\\%$ zyada matlab 120% = 240, toh 100% = 200. Wahi basic logic fraction se fast hota hai.\n\n<b>Exam Takeaway:</b> Lamba paragraph dekh kar darna mana hai. Reverse engineering se question 20 second me toot'ta hai.\n\n<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Section</th><th style='text-align:left;padding:4px;color:var(--p2)'>Max Marks</th><th style='text-align:left;padding:4px;color:var(--p2)'>Multiplier</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>QA</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>240</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$\\frac{1}{1.2}$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>VA</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>300</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$\\frac{14}{15}$</td></tr></table>"
     },
     {
