@@ -3,6 +3,17 @@
   "quizTime": 18,
   "totalMarks": 50,
   "questions": [
+  {
+    "q": "The number of bacteria in a petri dish was <b>1,20,000</b>. It increased by <b>10%</b> in the first hour and changed by <b>x</b> in the second hour. In the third hour, it increases by <b>10%</b>. If the current number is <b>1,16,160</b>, then determine the change in population in the second hour.",
+    "o": [
+      "The population decreased by 20%",
+      "The population decreased by 26,000",
+      "The population decreased by 29,040",
+      "The population decreased by 22%"
+    ],
+    "a": 0,
+    "s": "<b>Core Conceptual Tool:</b> Successive Change (CI, Area, Successive discounts)\\n\\n<b>Pen-Free Observation:</b> Dekh bhai, options pe nazar maar. First aur 3rd hour me 10% increase hai, par overall population 120k se gir ke 116k ho gayi hai. Iska matlab beech me ek tagda decrease hua hoga. Reverse calculating using 11 unit multiple is the fastest hack here!\\n\\n<b>Method 1 (Ninja Technique / Exam Approach):</b> Ulta chalo (Reverse process)! Final value 1,16,160 tab aayi jab 3rd hour me 10% increase (11/10 multiplier) lag chuka tha. Yani ye 11 unit ki value hai. Isko reverse marke 10 unit pe laao to 2nd hour ke end ki value milegi.\\n\\nMathematically :-<br>\\\\begin{aligned} 11 &\\\\rightarrow 116160 \\\\\\\\ 10 &\\\\rightarrow 116160 \\\\times \\\\frac{10}{11} = 105600 \\\\\\\\ 120000 \\\\times \\\\frac{11}{10} &= 132000 \\\\\\\\ \\\\frac{132000 - 105600}{132000} \\\\times 100\\\\% &= 20\\\\% \\\\end{aligned}\\n\\n<b>Method 2 (Concept Builder):</b> Seedha successive lagao, unknown multiplier ko 't' maan lo. Ek line me equation likho aur solve kar do.\\n\\nMathematically :-<br>\\\\begin{aligned} 120000 \\\\times \\\\frac{11}{10} \\\\times t \\\\times \\\\frac{11}{10} &= 116160 \\\\\\\\ 145200 \\\\times t &= 116160 \\\\\\\\ t &= \\\\frac{116160}{145200} = \\\\frac{4}{5} \\\\\\\\ 1 - \\\\frac{4}{5} &= 20\\\\% \\\\downarrow \\\\end{aligned}\\n\\n<b>Exam Takeaway:</b> Jab initial aur final dono diya ho, aur intermediate change pucha ho, toh Method 1 (Reverse scaling) mind me jaldi click karta hai aur calculations bacha leta hai. Hamesha reverse unit mapping seekho!\\n\\n<table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Trick / Concept</th><th style='text-align:left;padding:4px;color:var(--p2)'>Application</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Reverse Unit Scaling</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>\\\\( \\\\times \\\\frac{Old\\\\_Base}{New\\\\_Ratio} \\\\)</td></tr></table>"
+  },
     {
       "q": "In a solution the quantity of common salt in 320 gm water is 31 gm. Calculate the concentration \\% of the solution in context of mass by mass percentage.",
       "o": [
