@@ -1072,6 +1072,7 @@ auth.onAuthStateChanged(async (user) => {
         if (history.state && history.state.view === 'profile') renderProfileAnalytics();
     } catch(e) { 
         console.error("Firebase fetch error", e); 
+        alert("Bhai VPN ya Network ka lafda hai. Exact Error: " + e.message);
     }
 
     // Live Saved Questions Tracker
