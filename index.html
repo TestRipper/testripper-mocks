@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-<script>eruda.init();</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=no">
@@ -960,20 +958,9 @@ body[data-theme="light"] .glass-card {
     appId: "1:344935856479:web:26014707272cb8bd7e1eea"
   };
 
-    if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
+  if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
   const auth = firebase.auth();
   const db = firebase.firestore();
-  
-  // 🛡️ NINJA HACK 1: Shielded Long-Polling for VPN Bypass
-  try {
-      db.settings({ 
-          experimentalForceLongPolling: true, 
-          merge: true 
-      });
-  } catch (err) {
-      console.warn("Firebase Settings Warn:", err);
-  }
-
   const provider = new firebase.auth.GoogleAuthProvider();
 
   let globalUserAttempts = [];
@@ -1044,33 +1031,45 @@ auth.onAuthStateChanged(async (user) => {
   if (user) {
     document.getElementById('prof-login-sec').style.display = 'none';
 
-        try {
-        // ... (Tera Malik's Authentication Engine wala code yahan rahega) ...
+    try {
+        // --- MALIK's AUTHENTICATION ENGINE ---
+        const userRef = db.collection("users").doc(user.uid);
+        const userDoc = await userRef.get();
+        let isApproved = false;
 
-        // ⏱️ NINJA HACK 2: Anti-Freeze Timeout (10 seconds)
-        const attemptsPromise = db.collection("users").doc(user.uid).collection("attempts").orderBy("serverTime", "asc").get();
-        const timeoutPromise = new Promise((_, reject) => 
-            setTimeout(() => reject(new Error("VPN_TIMEOUT")), 10000)
-        );
+        // Ultimate Admin Access
+        if (user.email === "amansinghyadav539@gmail.com") {
+            isApproved = true;
+        } else if (userDoc.exists && userDoc.data().isApproved === true) {
+            isApproved = true; // Firestore me boolean "true" hona chahiye
+        }
 
-        // Jo pehle pura hoga (Data ya Timeout), code wo manega
-        const snap = await Promise.race([attemptsPromise, timeoutPromise]);
-        
+        if (!isApproved) {
+            // Agar pehli baar aaya hai toh entry maar do Firestore me
+            if (!userDoc.exists) {
+                await userRef.set({
+                    name: user.displayName,
+                    email: user.email,
+                    isApproved: false, // Default false rahega
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge: true });
+            }
+            // Block user and show UI
+            showPendingApprovalUI(user);
+            return; // Execution yahin rok do, aage data fetch mat karo
+        }
+        // --- END AUTHENTICATION ENGINE ---
+
+        // Agar approved hai, toh normal Dashboard data fetch karo
+        const snap = await db.collection("users").doc(user.uid).collection("attempts").orderBy("serverTime", "asc").get();
         globalUserAttempts = snap.docs.map(doc => doc.data());
         
-        // Sab kuch front page pe load karao
         renderRecentLogic();
 
         if (history.state && history.state.view === 'folder') renderFolderView(history.state.path, false);
         if (history.state && history.state.view === 'profile') renderProfileAnalytics();
-
     } catch(e) { 
-        console.error("Firebase fetch error:", e);
-        if (e.message === "VPN_TIMEOUT") {
-            alert("Bhai tera VPN Firestore ka data completely block kar rha hai! Data sync nahi ho paya. Mocks access karne ke liye VPN hata de.");
-        }
-        // Fallback: Agar data na aaye toh bhi UI load ho
-        renderRecentLogic(); 
+        console.error("Firebase fetch error", e); 
     }
 
     // Live Saved Questions Tracker
