@@ -964,7 +964,7 @@ body[data-theme="light"] .glass-card {
   const auth = firebase.auth();
   const db = firebase.firestore();
    // NINJA HACK: Bypass VPN restrictions by forcing Long-Polling
-  db.settings({ experimentalForceLongPolling: true });
+  db.settings({ experimentalForceLongPolling: true, merge: true });
   const provider = new firebase.auth.GoogleAuthProvider();
 
   let globalUserAttempts = [];
