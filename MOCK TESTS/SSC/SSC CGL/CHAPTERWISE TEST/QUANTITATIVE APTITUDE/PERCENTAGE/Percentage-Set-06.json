@@ -111,7 +111,7 @@
         "265"
       ],
       "a": 3,
-      "s": "Core Conceptual Tool: Unitary Scaling.<br><br>Pen-Free Observation: Dekh bhai, 2 linear equations ban rahi hain, G ko $(B + 15)$ rakh aur substitution maar ke khatam kar.<br><br>Method 1 (Ninja Technique / Exam Approach): Variable elimination. Mathematically :-<br>$$1.1(B + 15) - 1.16B = 9$$<br>$$16.5 - 0.06B = 9$$<br>$$0.06B = 7.5 \\Rightarrow B = 125$$<br>$$Total = 125 + (125+15) = 265$$<br><br>Method 2 (Concept Builder): Base assumptions from options. Mathematically :-<br>$$Total = 265$$<br>$$G + B = 265 \\text{ and } G - B = 15$$<br>$$G = 140, B = 125$$<br>$$140 \\times 1.1 - 125 \\times 1.16 = 154 - 145 = 9$$<br><br>Exam Takeaway: Option split karke mentally verify karna linear equations se bhi fast hota hai kai baar.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Option validation</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Check pairs that sum to option and difference is 15.</td></tr></table>"
+      "s": "Core Conceptual Tool: Unitary Scaling.<br><b>Pen-Free Observation<b> : Dekh bhai, difference 15 se 9 ho gaya matlab 6 ka gap boys ne apne extra 6% growth se cover kiya. Sath mein unhone 15 extra girls ka 10% (1.5) bhi nullify kiya hoga. So 6% of Boys is directly 7.5!<br><br>Method 1 (Ninja Technique): Mental Deviation. Mathematically :-<br><br>$$ \\Delta \\text{Diff} = 15 - 9 = 6 \\\\ 16\\% B - 10\\% G = 6 \\\\ 16\\% B - 10\\% (B + 15) = 6 \\\\ 6\\% B - 1.5 = 6 \\\\ 6\\% B = 7.5 \\implies B = 125 \\\\ \\text{Total} = 125 + (125 + 15) = 265 $$<br> <br><br>Pen-Free Observation: Dekh bhai, 2 linear equations ban rahi hain, G ko $(B + 15)$ rakh aur substitution maar ke khatam kar.<br><br>Method 1 (Ninja Technique / Exam Approach): Variable elimination. Mathematically :-<br>$$1.1(B + 15) - 1.16B = 9$$<br>$$16.5 - 0.06B = 9$$<br>$$0.06B = 7.5 \\Rightarrow B = 125$$<br>$$Total = 125 + (125+15) = 265$$<br><br>Method 2 (Concept Builder): Base assumptions from options. Mathematically :-<br>$$Total = 265$$<br>$$G + B = 265 \\text{ and } G - B = 15$$<br>$$G = 140, B = 125$$<br>$$140 \\times 1.1 - 125 \\times 1.16 = 154 - 145 = 9$$<br><br>Exam Takeaway: Option split karke mentally verify karna linear equations se bhi fast hota hai kai baar.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Option validation</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Check pairs that sum to option and difference is 15.</td></tr></table>"
     },
     {
       "q": "Ramesh can save $30\\%$ of his income but after 4 years, his income increases by $42\\%$ and he still manages to save the same amount as before. What is the percent increase in his expenditure ?",
@@ -179,17 +179,61 @@
       "a": 3,
       "s": "Core Conceptual Tool: CPR.<br><br>Pen-Free Observation: Dekh bhai, Constant Product Ratio (CPR) ki ninja trick laga, Initial aur Final consumption ka seedha fraction nikal.<br><br>Method 1 (Ninja Technique / Exam Approach): CPR direct fraction. Mathematically :-<br>$$\\frac{Initial}{Final} = \\frac{100 + P\\%}{100 + E\\%} = \\frac{132}{110} = \\frac{6}{5}$$<br>$$5 \\rightarrow 150 \\Rightarrow 1 \\rightarrow 30$$<br>$$6 \\rightarrow 180$$<br><br>Method 2 (Concept Builder): Traditional formula. Mathematically :-<br>$$P_{new} = 1.32 P_{old}$$<br>$$E_{new} = 1.10 E_{old}$$<br>$$C_{new} = \\frac{E_{new}}{P_{new}} = \\frac{1.10}{1.32} C_{old} = \\frac{5}{6} C_{old}$$<br>$$\\frac{5}{6} C_{old} = 150 \\Rightarrow C_{old} = 180$$<br><br>Exam Takeaway: Price aur Expenditure ke percentages diye hon toh formula me base swap karke consumption ka ratio instantly ban jata hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Ratio Direct Hack</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>C1 / C2 = (100 + E2\\%) / (100 + P2\\%) doesn't hold. Right hack is Initial/Final = (100+New Price) / (100+New Exp).</td></tr></table>"
     },
-    {
-      "q": "Population a city increases by $41\\frac{2}{3}\\%$, 92000 in first and second year respectively but, in third year it decreases by $10\\%$ and now population is thrice of initial population. Find the total increment in the population during the first year?",
-      "o": [
-        "20000",
-        "15000",
-        "10000",
-        "12000"
-      ],
-      "a": 0,
-      "s": "Core Conceptual Tool: Successive Change.<br><br>Pen-Free Observation: Dekh bhai, fractional $41\\frac{2}{3}\\%$ dekhte hi denominator 12 strike karna chahiye. Initial population ko $12x$ man kar line by line change apply kar de.<br><br>Method 1 (Ninja Technique / Exam Approach): Scaled base assumption. Mathematically :-<br>$$41\\frac{2}{3}\\% = \\frac{5}{12}$$<br>$$I_1 = 12x, I_2 = 17x$$<br>$$0.9(17x + 92000) = 3(12x)$$<br>$$17x + 92000 = 40x \\Rightarrow 23x = 92000$$<br>$$x = 4000 \\Rightarrow Inc = 5x = 20000$$<br><br>Method 2 (Concept Builder): Standard equation flow. Mathematically :-<br>$$P \\times \\left(1+\\frac{5}{12}\\right) = P + \\frac{5}{12}P$$<br>$$\\left(\\frac{17P}{12} + 92000\\right) \\times 0.9 = 3P$$<br>$$\\frac{17P}{12} + 92000 = \\frac{10}{9} \\times 3P = \\frac{10P}{3}$$<br>$$92000 = \\frac{40P - 17P}{12} = \\frac{23P}{12}$$<br>$$P = 48000$$<br>$$Inc = \\frac{5}{12} \\times 48000 = 20000$$<br><br>Exam Takeaway: Fractional increments me original variable ko denominator ka perfect multiple assume karne se equations smooth banti hain.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Fractions Magic</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Always set variable base to LCM of fractional denominators.</td></tr></table>"
-    },
+  {
+    "q": "A startup's valuation increases by $$ 41 \\frac{2}{3}\\% $$ in 2023, increases by $92,000 in 2024, but decreases by $$ 10\\% $$ in 2025. Now the valuation is thrice the initial valuation. Find the <b>total increment</b> in the valuation during 2023?",
+    "o": [
+      "$20,000",
+      "$15,000",
+      "$10,000",
+      "$12,000"
+    ],
+    "a": 0,
+    "s": "Core Conceptual Tool: Successive Change.<br><br>Pen-Free Observation: Dekh bhai, fractional $$ 41 \\frac{2}{3}\\% $$ dekhte hi denominator 12 strike karna chahiye. Initial valuation ko $$ 12x $$ man kar line by line change apply kar de.<br><br>Method 1 (Ninja Technique): Scaled base assumption.<br><br>Mathematically :-<br><br>$$ 41 \\frac{2}{3}\\% = \\frac{5}{12} \\\\ I_1 = 12x, I_2 = 17x \\\\ 0.9(17x + 92000) = 3(12x) \\\\ 17x + 92000 = 40x \\\\ 23x = 92000 \\\\ x = 4000 \\\\ Inc = 5x = 20000 $$<br><br>Method 2 (Concept Builder): Reverse Gear.<br><br>Mathematically :-<br><br>$$ \\frac{10P}{3} - \\frac{17P}{12} = 92000 \\\\ \\frac{23P}{12} = 92000 \\\\ P = 48000 \\\\ Inc = \\frac{5}{12} \\times 48000 = 20000 $$<br><br>Exam Takeaway: Jab final multiple direct ho toh reverse aana fast hota hai. Themes (Population ho ya Valuation) se concept nahi badalta.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Condition</th><th style='text-align:left;padding:4px;color:var(--p2)'>Action</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Clean Final Multiple</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Use Reverse Gear</td></tr></table>"
+  },
+  {
+    "q": "The water volume in a reservoir increases by $$ 16 \\frac{2}{3}\\% $$ in January, decreases by 20,000 liters in February, and increases by $$ 25\\% $$ in March. If the final volume is exactly $$ 25\\% $$ more than the initial volume, find the <b>total increment</b> in the volume during January.",
+    "o": [
+      "20,000 L",
+      "24,000 L",
+      "16,000 L",
+      "25,000 L"
+    ],
+    "a": 0,
+    "s": "Core Conceptual Tool: Successive Change.<br><br>Pen-Free Observation: Dekh bhai, final $$ 25\\% $$ zyada hai aur last step (March) bhi $$ 25\\% $$ increase hai. Iska matlab March start hone se pehle volume wapas Initial ke barabar thi. Seedha mind me strike karna chahiye ki February end me volume P thi.<br><br>Method 1 (Ninja Technique): Reverse Gear.<br><br>Mathematically :-<br><br>$$ Final = 1.25P \\\\ Before\\_Mar = \\frac{1.25P}{1.25} = P \\\\ Before\\_Feb = P + 20000 \\\\ Jan\\_Inc = 16 \\frac{2}{3}\\% = \\frac{1}{6} \\\\ \\frac{7P}{6} = P + 20000 \\\\ \\frac{P}{6} = 20000 $$<br><br>Method 2 (Concept Builder): Forward Equation.<br><br>Mathematically :-<br><br>$$ \\left(\\frac{7P}{6} - 20000\\right) \\times \\frac{5}{4} = \\frac{5P}{4} \\\\ \\frac{7P}{6} - 20000 = P \\\\ \\frac{P}{6} = 20000 $$<br><br>Exam Takeaway: Language ghumane ke liye exam me volume ya fuel de dega, par percentages ko aas paas ki absolute value se link karna same rahega.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Step</th><th style='text-align:left;padding:4px;color:var(--p2)'>Logic</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Reverse 25%</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Cancels out the final 25% increase</td></tr></table>"
+  },
+  {
+    "q": "A YouTube channel starts with 10,000 subscribers. The subscriber count increases by $$ 20\\% $$ in the first month, increases by X in the second month, and decreases by $$ 10\\% $$ in the third month. If the final subscriber count is $$ 35\\% $$ more than the initial count, find the <b>ratio</b> of the increment in the 1st month to the increment in the 2nd month.",
+    "o": [
+      "1:2",
+      "2:3",
+      "3:4",
+      "3:2"
+    ],
+    "a": 1,
+    "s": "Core Conceptual Tool: Successive Change with Absolute Base.<br><br>Pen-Free Observation: Bhai, initial directly given hai 10k. 20% increase toh seedha 2k ho gaya. Final 13.5k hai, jisko 0.9 (10% dec) se divide marke peeche aaja. X second month me hi nikal jayega.<br><br>Method 1 (Ninja Technique): Absolute Scaling.<br><br>Mathematically :-<br><br>$$ P = 10000 \\\\ M1\\_Inc = 2000 \\\\ M1\\_End = 12000 \\\\ Final = 13500 \\\\ Before\\_M3 = \\frac{13500}{0.9} = 15000 \\\\ M2\\_Inc = 15000 - 12000 = 3000 \\\\ Ratio = 2000:3000 = 2:3 $$<br><br>Method 2 (Concept Builder): Variable Equation.<br><br>Mathematically :-<br><br>$$ (12000 + X) \\times 0.9 = 13500 \\\\ 12000 + X = 15000 \\\\ X = 3000 \\\\ Ratio = 2000:3000 = 2:3 $$<br><br>Exam Takeaway: Jab base 10k jaisa actual number ho, toh subscriber count ko sidhe numbers par process kar, variables avoid kar.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Initial Subs</th><th style='text-align:left;padding:4px;color:var(--p2)'>Final Target</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>10,000</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>13,500</td></tr></table>"
+  },
+  {
+    "q": "The value of a crypto portfolio increases by $$ 37.5\\% $$ in week 1, then drops by $21,000 in week 2, and again surges by $$ 14 \\frac{2}{7}\\% $$ in week 3. If the final value is exactly $$ 50\\% $$ more than the initial invested amount, find the <b>initial investment</b>.",
+    "o": [
+      "$300,000",
+      "$320,000",
+      "$336,000",
+      "$350,000"
+    ],
+    "a": 2,
+    "s": "Core Conceptual Tool: Successive Change with Fractional Algebra.<br><br>Pen-Free Observation: Bhai, 37.5% matlab 3/8 aur 14 2/7% matlab 1/7. Yahan $21,000 ek fractional trap hai kyunki third week ka multiplier 8/7 jab bracket kholkar 21,000 se multiply hoga to denominator ka 7 usko perfect 3000 bana dega.<br><br>Method 1 (Ninja Technique): Forward Scaling.<br><br>Mathematically :-<br><br>$$ \\frac{8}{7} \\times \\left(\\frac{11P}{8} - 21000\\right) = \\frac{3P}{2} \\\\ \\frac{11P}{7} - 24000 = \\frac{3P}{2} \\\\ \\frac{11P}{7} - \\frac{3P}{2} = 24000 \\\\ \\frac{P}{14} = 24000 \\\\ P = 336000 $$<br><br>Method 2 (Concept Builder): Step-by-Step Variables.<br><br>Mathematically :-<br><br>$$ W_1 = P + \\frac{3P}{8} = \\frac{11P}{8} \\\\ W_2 = \\frac{11P}{8} - 21000 \\\\ W_3 = W_2 \\times \\frac{8}{7} = \\frac{3P}{2} \\\\ P = 336000 $$<br><br>Exam Takeaway: Chahe city ho ya crypto portfolio, jab initial aur final dono unknown hon par unka relation (50% more) diya ho, toh forward equation banakar bracket open karna sabse fast nikalta hai.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Fraction</th><th style='text-align:left;padding:4px;color:var(--p2)'>Multiplier</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>37.5% inc</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>11/8</td></tr></table>"
+  },
+  {
+    "q": "A train's speed increases by $$ 8.33\\% $$ at the first station, changes by x% at the second station, and decreases by $$ 23.07\\% $$ at the third station. If the overall net change in the speed is an increase of $$ 25\\% $$, find the <b>value of x</b>.",
+    "o": [
+      "40%",
+      "45%",
+      "50%",
+      "60%"
+    ],
+    "a": 2,
+    "s": "Core Conceptual Tool: Successive Multiplier.<br><br>Pen-Free Observation: Dekh bhai, speed ki original value gayi bhaad me! Sirf percentages hain. 8.33% matlab 1/12 (multiplier 13/12), aur 23.07% matlab 3/13 drop (multiplier 10/13). 13 aur 13 mentally kat jayenge.<br><br>Method 1 (Ninja Technique): Chain Reaction Ratio.<br><br>Mathematically :-<br><br>$$ \\frac{13}{12} \\times t \\times \\frac{10}{13} = \\frac{5}{4} \\\\ \\frac{10}{12} \\times t = \\frac{5}{4} \\\\ \\frac{5}{6} \\times t = \\frac{5}{4} \\\\ t = \\frac{5}{4} \\times \\frac{6}{5} = \\frac{3}{2} $$<br><br>Method 2 (Concept Builder): Value Assumption.<br><br>Mathematically :-<br><br>$$ 100 \\times \\frac{13}{12} \\times t \\times \\frac{10}{13} = 125 \\\\ 100 \\times \\frac{10}{12} \\times t = 125 \\\\ t = 1.5 \\Rightarrow 50\\% \\text{ inc} $$<br><br>Exam Takeaway: Net effect hamesha intermediate factors ka direct multiple hota hai, object (train, machine ya population) matter nahi karta.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Percentage</th><th style='text-align:left;padding:4px;color:var(--p2)'>Fraction</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>8.33%</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>1/12</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>23.07%</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>3/13</td></tr></table>"
+  },
     {
       "q": "Ridhi scored 65 marks in Mathematics. He scored $70\\%$ marks in Hindi and $(X^3 + 20)$ marks in English. The maximum marks for each subject is 80. The overall percentage of marks obtained by Riddhi in all three subjects together is $70\\%$. Find X?",
       "o": [
