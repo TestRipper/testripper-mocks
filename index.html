@@ -1628,16 +1628,17 @@ document.getElementById('rp-slider').max = actualTotalMarks;
       document.getElementById('sPrev').disabled = (dSnapS.curIndexInOrder === 0);
       document.getElementById('sNext').disabled = (dSnapS.curIndexInOrder === dSnapS.order.length-1);
       
-      if (window.renderMathInElement) {
-          renderMathInElement(document.body, {
-              delimiters: [
-                  {left: '$$', right: '$$', display: true},
-                  {left: '\\(', right: '\\)', display: false},
-                  {left: '\\[', right: '\\]', display: true}
-              ],
-              throwOnError: false
-          });
-      }
+              if (window.renderMathInElement) {
+            renderMathInElement(document.getElementById('quizWrap'), { // container tera jo bhi ho yahan
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+            });
+        }
       drawDashMini();
   }
   document.getElementById('sPrev').onclick = () => { if(dSnapS.curIndexInOrder > 0){ dSnapS.curIndexInOrder--; drawDashSnap(); } };
@@ -1780,9 +1781,17 @@ document.getElementById('rp-slider').max = actualTotalMarks;
       }
       
       document.getElementById('error-book-modal').classList.add('show');
-      if (window.renderMathInElement) {
-          renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
-      }
+        if (window.renderMathInElement) {
+            renderMathInElement(document.getElementById('quizWrap'), { // container tera jo bhi ho yahan
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+            });
+        }
   }
 
   function formatWeekLabel(mondayTs) {
@@ -2546,9 +2555,17 @@ document.getElementById('rp-slider').max = actualTotalMarks;
       });
       listArea.innerHTML = html;
       
-      if (window.renderMathInElement) {
-          renderMathInElement(listArea, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
-      }
+              if (window.renderMathInElement) {
+            renderMathInElement(document.getElementById('quizWrap'), { // container tera jo bhi ho yahan
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+            });
+        }
   };
 
   window.downloadSavedQs = function(format) {
@@ -2969,6 +2986,8 @@ window.closeEngineModal = function() {
 </script>
 
 <style>
+/* KaTeX Gap Fix */
+.katex-display { margin: 4px 0 !important; }
   /* Google ka zabardasti wala top frame hide karne ke liye */
   .goog-te-banner-frame.skiptranslate { display: none !important; }
   body { top: 0px !important; }
