@@ -1632,7 +1632,6 @@ document.getElementById('rp-slider').max = actualTotalMarks;
           renderMathInElement(document.body, {
               delimiters: [
                   {left: '$$', right: '$$', display: true},
-                  {left: '$', right: '$', display: false},
                   {left: '\\(', right: '\\)', display: false},
                   {left: '\\[', right: '\\]', display: true}
               ],
@@ -1782,7 +1781,7 @@ document.getElementById('rp-slider').max = actualTotalMarks;
       
       document.getElementById('error-book-modal').classList.add('show');
       if (window.renderMathInElement) {
-          renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
+          renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
       }
   }
 
@@ -2548,7 +2547,7 @@ document.getElementById('rp-slider').max = actualTotalMarks;
       listArea.innerHTML = html;
       
       if (window.renderMathInElement) {
-          renderMathInElement(listArea, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
+          renderMathInElement(listArea, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}], throwOnError: false });
       }
   };
 
