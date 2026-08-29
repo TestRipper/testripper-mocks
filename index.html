@@ -286,7 +286,7 @@
   body[data-theme="dark"] .badge{ background:linear-gradient(90deg,var(--accent-purple),var(--accent-green));color:#fff; box-shadow:0 0 0 1px rgba(0,0,0,.05) inset; }
   body[data-theme="dark"] .badge.min{background:color-mix(in oklab,var(--accent-green) 70%, black)}
   body[data-theme="dark"] .mini-chip.cur { outline: 3px solid #eab308 !important; }
-  body[data-theme="dark"] .btn-modal{ background:rgba(0,0,0,.08); color:#111;}
+  body[data-theme="dark"] .btn-modal{ background:rgba(255,255,255,.1); color:#fff;}
 
   /* ====== BOTTOM NAV ====== */
   .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-nav); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); z-index: 100; }
@@ -856,9 +856,9 @@ body[data-theme="light"] .glass-card {
        Ye test attempt ho chuka hai. Original test wapas dena hai ya fresh AI-generated variant try karega?
     </p>
     <div style="display: flex; flex-direction: column; gap: 12px;">
-      <button onclick="chooseRetakeMode('original')" style="background: var(--bg-nav); color: var(--text-primary); border: 1px solid var(--border-color); padding: 12px 16px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer;">
-        Original Test
-      </button>
+      <button onclick="chooseRetakeMode('original')" style="background: linear-gradient(90deg, #fef474, #a3e635); color: #000; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(163, 230, 53, 0.3);">
+  <i class="fa-regular fa-file-lines"></i> Original Test
+</button>
       <button onclick="chooseRetakeMode('ai')" style="background: linear-gradient(90deg, #3b82f6, #a855f7); color: #fff; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);">
         <i class="fa-solid fa-brain"></i> AI Fresh Variant
       </button>
