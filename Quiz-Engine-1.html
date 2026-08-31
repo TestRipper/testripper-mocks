@@ -34,6 +34,7 @@ body[data-theme="light"]{
   --mark:#7c3aed;--blue:#2563eb;
 }
 body{
+  font:size: 14px;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased;
 }
@@ -225,13 +226,16 @@ body[data-theme="light"] .vs-icon{ background:#0f172a; }
 <div id="appWrap" style="display:none;">
 
   <div class="dock" id="dock" style="display:none">
-    <div class="d-left">
-      <span class="chip" id="timer">--:--</span>
-      <span class="chip" id="qInfo">Q0/0</span>
-      <button class="btn" id="gridBtn" title="Question Navigator"><i class="fas fa-th"></i></button>
-      <button class="btn" id="themeBtn" title="Dark/Light"><i class="fa fa-moon"></i></button>
-      <button class="btn" id="langBtn" title="Switch Language" style="background:var(--mark)"><i class="fa-solid fa-language"></i> <span id="langText">EN</span></button>
-    </div>
+<div class="d-left">
+  <span class="chip" id="timer">--:--</span>
+  <span class="chip" id="qInfo">Q0/0</span>
+  <button class="btn" id="gridBtn" title="Question Navigator"><i class="fas fa-th"></i></button>
+  <button class="btn" id="themeBtn" title="Dark/Light"><i class="fa fa-moon"></i></button>
+  <button class="btn" id="langBtn" title="Switch Language" style="background:var(--mark)"><i class="fa-solid fa-language"></i> <span id="langText">EN</span></button>
+  
+  <button class="btn" id="zoomOutBtn" title="Zoom Out" style="background:var(--p2)"><i class="fa fa-minus"></i></button>
+  <button class="btn" id="zoomInBtn" title="Zoom In" style="background:var(--p1)"><i class="fa fa-plus"></i></button>
+</div>
     <button class="btn p" id="subBtn">Submit</button>
   </div>
 
@@ -867,6 +871,31 @@ document.addEventListener('DOMContentLoaded', async () => {
       $('closeOvr').onclick = () => { window.location.href = "index.html"; };
   }
 });
+      /* --- DYNAMIC ZOOM LOGIC --- */
+      // Default size ko 16px se ghatakar 13px kar diya (Toh apne aap 0.8x jaisa chota dikhega)
+      let currentZoom = 13; 
+      document.documentElement.style.fontSize = currentZoom + 'px';
+
+      const zoomInBtn = document.getElementById('zoomInBtn');
+      const zoomOutBtn = document.getElementById('zoomOutBtn');
+
+      if(zoomInBtn) {
+          zoomInBtn.addEventListener('click', () => {
+              if(currentZoom < 24) { // Max kitna bada karna hai
+                  currentZoom += 1.5; 
+                  document.documentElement.style.fontSize = currentZoom + 'px';
+              }
+          });
+      }
+
+      if(zoomOutBtn) {
+          zoomOutBtn.addEventListener('click', () => {
+              if(currentZoom > 9) { // Min kitna chota karna hai
+                  currentZoom -= 1.5; 
+                  document.documentElement.style.fontSize = currentZoom + 'px';
+              }
+          });
+      }
 </script>
 </body>
 </html>
