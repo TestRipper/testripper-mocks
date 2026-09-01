@@ -1279,27 +1279,26 @@ auth.onAuthStateChanged(async (user) => {
       document.getElementById('rp-tooltip').innerText = `Rank: ${simulatedRank}`;
   };
 
-    window.openDashboardSnap = function(globalIdx) {
+      window.openDashboardSnap = function(globalIdx) {
      const user = auth.currentUser;
      const att = globalUserAttempts[globalIdx];
      if(!att || !att.snap) return alert("Attempt data missing.");
      
-     // Ye 4 lines wapas add karni hain
      dSnapS.arr = att.snap;
      dSnapS.meta = att;
      dSnapS.curIndexInOrder = 0;
      dSnapS.currentSection = 'all';
      
-                     // --- NEW ATTEMPT TRACKING LOGIC ---
-                let tName = normalizeStringForMatch(att.testName);
-                let allAttsForThis = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === tName);
-                
-                let attemptNumber = allAttsForThis.indexOf(att) + 1;
-                att.attemptNumber = attemptNumber > 0 ? attemptNumber : 1;
-                
-                let firstAttempt = allAttsForThis[0] || att;
-                let att1Score = parseFloat(String(firstAttempt.score).split(' /')[0]);
-                // ----------------------------------
+     // --- NEW ATTEMPT TRACKING LOGIC ---
+     let tName = normalizeStringForMatch(att.testName);
+     let allAttsForThis = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === tName);
+     let attemptNumber = allAttsForThis.indexOf(att) + 1;
+     att.attemptNumber = attemptNumber > 0 ? attemptNumber : 1;
+     let firstAttempt = allAttsForThis[0] || att;
+     let att1Score = parseFloat(String(firstAttempt.score).split(' /')[0]);
+     
+     // 🔥 ASYNC COLLISION FIX: Track the active attempt uniquely
+     window.activeAttemptTs = att.ts;
 
      let sections = [...new Set(att.snap.map(q => q.secName).filter(Boolean))];
      let tabsContainer = document.getElementById('sectionalTabsContainer');
@@ -1313,91 +1312,90 @@ auth.onAuthStateChanged(async (user) => {
      }
 
      window.setDashFilter('all');
-     
-     // Reset UI to Analysis Tab
-     document.querySelectorAll('.tab-btn')[0].click();
+     document.querySelectorAll('.tab-btn')[0].click(); // Go to Analysis tab
      document.getElementById('dash-snap').classList.add('show');
-          // Set Global Quiz Title (Hide badge if Attempt 1)
-     let attemptBadgeHTML = "";
-     if (att.attemptNumber && att.attemptNumber > 1) {
-         attemptBadgeHTML = `<span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900; letter-spacing: 0px; text-transform: capitalize;">Attempt ${att.attemptNumber}</span>`;
-     }
      
-     document.getElementById('global-quiz-title').innerHTML = `
-        <div style="margin-bottom: 4px;">${att.testName}</div>
-        ${attemptBadgeHTML}
-     `;
-     window.currentLbStats = null;
-     window.currentLbDocs = [];
-     document.getElementById('an-rank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+     let attemptBadgeHTML = (att.attemptNumber && att.attemptNumber > 1) ? `<span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900;">Attempt ${att.attemptNumber}</span>` : "";
      
-     // Default 'You' Table Data
-let scoreParts = String(att.score).split(' /');
-let myScore = parseFloat(scoreParts[0]);
-let actualTotalMarks = scoreParts.length > 1 ? parseFloat(scoreParts[1]) : (att.snap.length * 2);
-     let myAcc = (att.correct + att.incorrect) > 0 ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) : 0;
+     document.getElementById('global-quiz-title').innerHTML = `<div style="margin-bottom: 4px;">${att.testName}</div>${attemptBadgeHTML}`;
+     
+     // 🔥 LEGACY VS NEW TEST LOGIC
+     let scoreParts = String(att.score).split(' /');
+     let myScore = parseFloat(scoreParts[0]);
+     let actualTotalMarks = scoreParts.length > 1 ? parseFloat(scoreParts[1]) : (att.snap.length * 2);
+     let myAcc = att.accuracy !== undefined ? Math.round(att.accuracy) : ((att.correct + att.incorrect) > 0 ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) : 0);
      let myTime = (att.minutes || 0);
+     let isProTest = att.rank !== undefined && att.percentile !== undefined;
      
+     // Instant UI Update (Prevents blank screens)
      document.getElementById('cmp-you-score').innerText = myScore;
      document.getElementById('cmp-you-acc').innerText = myAcc + "%";
      document.getElementById('cmp-you-c').innerText = att.correct || 0;
      document.getElementById('cmp-you-w').innerText = att.incorrect || 0;
      document.getElementById('cmp-you-time').innerText = myTime + "m";
+     document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${actualTotalMarks}</span>`;
+     document.getElementById('an-accuracy').innerText = myAcc + "%";
      
-     // Init Rank Predictor Slider
-document.getElementById('rp-slider').max = actualTotalMarks; 
+     if (isProTest) {
+         document.getElementById('an-rank').innerHTML = `${att.rank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${att.globalTotalStudents || 49000}</span>`;
+         document.getElementById('an-percentile').innerText = att.percentile + "%";
+         document.getElementById('an-avg-score').innerText = att.globalAvgMarks ? att.globalAvgMarks.toFixed(2) : "--";
+     } else {
+         document.getElementById('an-rank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+         document.getElementById('an-percentile').innerText = `--%`;
+         document.getElementById('an-avg-score').innerText = "--";
+     }
+
+     document.getElementById('rp-slider').max = actualTotalMarks; 
      document.getElementById('rp-slider').value = myScore;
      
+     // Fetch Leaderboard
      db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
+        // 🔥 ASYNC GUARD: Agar user ne dusra test khol liya hai, toh data overwrite mat karo
+        if (window.activeAttemptTs !== att.ts) return;
+
         const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
         window.currentLbDocs = docs;
         
-                        if (docs.length > 0) {
-                    // Force Attempt 1 Rank Calculation
-                    let totalStudents = docs.length;
-                    let myRank = 1;
-                    let foundSelf = false;
+        if (docs.length > 0) {
+            let topDoc = docs[0];
+            let topScore = parseFloat(topDoc.score);
+            let totalStudents = isProTest ? (att.globalTotalStudents || docs.length) : docs.length;
+            let myRank = isProTest ? att.rank : 1;
+            let percentile = isProTest ? att.percentile : "100.00";
+            let avgScore = isProTest && att.globalAvgMarks ? att.globalAvgMarks.toFixed(2) : (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
 
-                    docs.forEach(d => {
-                        if (d.id === user.uid) foundSelf = true;
-                        if (d.id !== user.uid && parseFloat(d.score) > att1Score) {
-                            myRank++;
-                        }
-                    });
-                    if (!foundSelf) totalStudents += 1; // If user not yet synced
+            // Legacy Test Fallback Calculation
+            if (!isProTest) {
+                let foundSelf = false;
+                docs.forEach(d => {
+                    if (d.id === user.uid) foundSelf = true;
+                    if (d.id !== user.uid && parseFloat(d.score) > att1Score) myRank++;
+                });
+                if (!foundSelf) totalStudents += 1;
+                percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
+                
+                document.getElementById('an-rank').innerHTML = `${myRank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${totalStudents}</span>`;
+                document.getElementById('an-percentile').innerText = percentile + "%";
+                document.getElementById('an-avg-score').innerText = avgScore;
+            }
 
-                    let topDoc = docs[0];
-                    let topScore = parseFloat(topDoc.score);
-                    let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
-                    let percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
-            
-            // Populate Basic Summary
-            document.getElementById('an-rank').innerHTML = `${myRank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${totalStudents}</span>`;
-            document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${actualTotalMarks}</span>`;
-            document.getElementById('an-avg-score').innerText = avgScore;
             document.getElementById('an-top-score').innerText = topScore;
-            document.getElementById('an-percentile').innerText = percentile + "%";
-            document.getElementById('an-accuracy').innerText = myAcc + "%";
 
-            // Update Score Comparison Table for TOPPER & AVG
+            // Score Comparison Calculations
             let sumC = 0, sumW = 0, sumT = 0;
             docs.forEach(d => {
                 let c = 0, w = 0, t = 0;
                 if(d.correctArray && d.userArray) {
-                    d.userArray.forEach((u, idx) => {
-                        if(u !== -1) { if(u === d.correctArray[idx]) c++; else w++; }
-                    });
+                    d.userArray.forEach((u, idx) => { if(u !== -1) { if(u === d.correctArray[idx]) c++; else w++; } });
                 }
                 if(d.timeArray) t = d.timeArray.reduce((a,b)=>a+b, 0);
                 sumC += c; sumW += w; sumT += Math.round(t/60);
             });
 
-            // Topper Stats Calculation
             let topC=0, topW=0, topT = topDoc.timeArray ? Math.round(topDoc.timeArray.reduce((a,b)=>a+b,0)/60) : 0;
             if(topDoc.correctArray && topDoc.userArray) {
-                topDoc.userArray.forEach((u, idx) => {
-                    if(u !== -1) { if(u === topDoc.correctArray[idx]) topC++; else topW++; }
-                });
+                topDoc.userArray.forEach((u, idx) => { if(u !== -1) { if(u === topDoc.correctArray[idx]) topC++; else topW++; } });
             }
             let topAcc = (topC+topW)>0 ? Math.round((topC/(topC+topW))*100) : 0;
             document.getElementById('cmp-top-score').innerText = topScore;
@@ -1406,10 +1404,9 @@ document.getElementById('rp-slider').max = actualTotalMarks;
             document.getElementById('cmp-top-w').innerText = topW;
             document.getElementById('cmp-top-time').innerText = topT + "m";
 
-            // Avg Stats Calculation
-            let avgC = Math.round(sumC / totalStudents);
-            let avgW = Math.round(sumW / totalStudents);
-            let avgT = Math.round(sumT / totalStudents);
+            let avgC = Math.round(sumC / docs.length);
+            let avgW = Math.round(sumW / docs.length);
+            let avgT = Math.round(sumT / docs.length);
             let avgAcc = (avgC+avgW)>0 ? Math.round((avgC/(avgC+avgW))*100) : 0;
             document.getElementById('cmp-avg-score').innerText = avgScore;
             document.getElementById('cmp-avg-acc').innerText = avgAcc + "%";
@@ -1417,7 +1414,7 @@ document.getElementById('rp-slider').max = actualTotalMarks;
             document.getElementById('cmp-avg-w').innerText = avgW;
             document.getElementById('cmp-avg-time').innerText = avgT + "m";
 
-            // Populate Leaderboard Tab
+            // Podium
             let podHtml = '';
             if(docs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${docs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${docs[1].name.split(' ')[0]}</div><div class="pod-score">${docs[1].score}</div></div>`;
             if(docs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${docs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${docs[0].name.split(' ')[0]}</div><div class="pod-score">${docs[0].score}</div></div>`;
@@ -1430,11 +1427,10 @@ document.getElementById('rp-slider').max = actualTotalMarks;
             });
             document.getElementById('lb-list').innerHTML = listHtml;
 
-                      // Sticky You (Forced Attempt 1 Stats)
             let safeName = user.displayName || 'Warrior';
-            document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score}</div>`;
+            document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${myScore}</div>`;
 
-            // Prepare Question Stats for Review Tab
+            // Question Stats for Attempt Review
             window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
             for (let i = 0; i < dSnapS.arr.length; i++) {
                 let totalTime = 0, correctCount = 0, attemptCount = 0;
@@ -1445,15 +1441,16 @@ document.getElementById('rp-slider').max = actualTotalMarks;
                         if (doc.userArray[i] === doc.correctArray[i]) correctCount++;
                     }
                 });
-                window.currentLbStats.avgTimes.push(Math.round(totalTime / docs.length));
-                window.currentLbStats.attemptPercents.push(Math.round((attemptCount / docs.length) * 100));
+                window.currentLbStats.avgTimes.push(docs.length ? Math.round(totalTime / docs.length) : 0);
+                window.currentLbStats.attemptPercents.push(docs.length ? Math.round((attemptCount / docs.length) * 100) : 0);
                 window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
             }
         }
-        updateRankPredictor(myScore); // Init call
+        updateRankPredictor(myScore);
         drawDashSnap();
      }).catch(e => { console.error("LB Fetch Error", e); drawDashSnap(); });
   }
+
 
   window.filterBySection = function(secName, index = null) {
     dSnapS.currentSection = secName;
