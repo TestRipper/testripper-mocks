@@ -698,6 +698,138 @@ body[data-theme="light"] .glass-card {
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
   --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.05);
 }
+/* ====== ANALYSIS PAGE COMPONENT STYLES (from first file) ====== */
+.kpi-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.kpi-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+.kpi-icon-box.rank { background: #fee2e2; color: #dc2626; }
+.kpi-icon-box.score { background: #ede9fe; color: #7c3aed; }
+.kpi-icon-box.accuracy { background: #d1fae5; color: #059669; }
+.kpi-icon-box.percentile { background: #e0f2fe; color: #0284c7; }
+.kpi-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.kpi-val small {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.kpi-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.analysis-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 16px;
+}
+.analysis-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+.custom-analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+.custom-analysis-table th {
+  padding: 12px 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  letter-spacing: 0.5px;
+}
+.custom-analysis-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+.custom-analysis-table tr:hover td {
+  background: var(--bg-main);
+}
+.custom-analysis-table tr.bold-row td {
+  font-weight: 700;
+  background: rgba(0,0,0,0.03);
+  border-top: 1.5px solid var(--border-color);
+}
+.mini-progress-track {
+  width: 90px;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.mini-progress-bar {
+  height: 100%;
+  border-radius: 4px;
+}
+.bar-purple { background: var(--accent-purple); }
+.bar-green { background: var(--accent-green); }
+.bar-red { background: var(--accent-red); }
+.bar-cyan { background: var(--accent-blue); }
+.compare-nav-tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 16px;
+}
+.compare-sub-tab {
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+.compare-sub-tab.active {
+  color: var(--accent-purple);
+  border-bottom-color: var(--accent-purple);
+}
 </style>
 </head>
 <body>
@@ -951,89 +1083,108 @@ body[data-theme="light"] .glass-card {
       </button>
     </div>
 <div id="global-quiz-title" style="text-align:center; padding:12px 20px; font-weight:900; font-size:1.15rem; color:var(--accent-purple); background:var(--bg-main); border-bottom:1px solid var(--border-color); z-index:9; text-transform:uppercase; letter-spacing:0.5px;"></div>
+    
     <div class="tab-content active" id="tab-analysis">
-      <h3 style="margin-bottom:12px; font-weight:900; color:var(--text-secondary);">QUICK SUMMARY</h3>
-      <div class="summary-card">
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-regular fa-flag" style="color:#facc15;"></i> Rank</div>
-          <div class="s-val" id="an-rank">--/--</div>
-        </div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-solid fa-trophy" style="color:#a855f7;"></i> Score</div>
-          <div class="s-val" id="an-score">--/--</div>
-        </div>
-        <div style="font-size:0.75rem; color:var(--text-secondary); text-align:right; margin-bottom:10px;">Average Score: <span id="an-avg-score">--</span> | Best Score: <span id="an-top-score">--</span></div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-regular fa-user" style="color:#ec4899;"></i> Percentile</div>
-          <div class="s-val" id="an-percentile">--%</div>
-        </div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-solid fa-crosshairs" style="color:#10b981;"></i> Accuracy</div>
-          <div class="s-val" id="an-accuracy">--%</div>
-        </div>
-      </div>
+  <!-- KPI Metrics Grid -->
+  <div class="kpi-metrics-grid" id="kpiMetricsGrid">
+    <!-- Cards will be populated by JS -->
+  </div>
 
-      <div class="social-banner" style="margin-bottom: 16px; padding: 15px;">
-        <h2 style="font-size: 1.2rem; margin-bottom: 8px;">Join Vishwasniya</h2>
-        <div class="desc" style="margin-bottom: 12px; font-size: 0.75rem;">Click on social handles to join official channels and stay updated with content.</div>
-        <div class="social-buttons-container" style="gap:5px;">
-          <a href="https://t.me/Vishwasniya" target="_blank" class="soc-btn btn-telegram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-telegram"></i></a>
-          <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="soc-btn btn-youtube" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="soc-btn btn-instagram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <div class="summary-card">
-        <h4 style="text-align:center; margin-bottom:15px; color:var(--text-primary);">Score Comparison</h4>
-        <div style="overflow-x: auto;">
-          <table class="an-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Score</th>
-                <th>Acc.</th>
-                <th>Correct</th>
-                <th>Wrong</th>
-                <th>Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="row-you">
-                <td>You</td>
-                <td id="cmp-you-score">--</td>
-                <td id="cmp-you-acc">--</td>
-                <td id="cmp-you-c">--</td>
-                <td id="cmp-you-w">--</td>
-                <td id="cmp-you-time">--</td>
-              </tr>
-              <tr class="row-top">
-                <td>Topper</td>
-                <td id="cmp-top-score">--</td>
-                <td id="cmp-top-acc">--</td>
-                <td id="cmp-top-c">--</td>
-                <td id="cmp-top-w">--</td>
-                <td id="cmp-top-time">--</td>
-              </tr>
-              <tr class="row-avg">
-                <td>Avg</td>
-                <td id="cmp-avg-score">--</td>
-                <td id="cmp-avg-acc">--</td>
-                <td id="cmp-avg-c">--</td>
-                <td id="cmp-avg-w">--</td>
-                <td id="cmp-avg-time">--</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="rank-predictor-box">
-        <h4 style="margin-bottom: 10px; color:var(--text-primary);">Rank Predictor</h4>
-        <div class="rp-tooltip" id="rp-tooltip">Rank: --</div>
-        <input type="range" min="0" max="100" value="0" step="0.5" class="rp-slider" id="rp-slider" oninput="updateRankPredictor(this.value)">
-        <div style="color:var(--text-secondary); font-size:0.85rem; font-weight:700;">Marks: <span id="rp-marks-disp" style="color:var(--accent-purple);">0</span></div>
-      </div>
+  <!-- Social Banner (already there, keep same) -->
+  <div class="social-banner" style="margin-bottom: 16px; padding: 15px;">
+    <h2 style="font-size: 1.2rem; margin-bottom: 8px;">Join Vishwasniya</h2>
+    <div class="desc" style="margin-bottom: 12px; font-size: 0.75rem;">Click on social handles to join official channels and stay updated with content.</div>
+    <div class="social-buttons-container" style="gap:5px;">
+      <a href="https://t.me/Vishwasniya" target="_blank" class="soc-btn btn-telegram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="soc-btn btn-youtube" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="soc-btn btn-instagram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-instagram"></i></a>
     </div>
+  </div>
+
+  <!-- Sectional Summary Table -->
+  <div class="analysis-card">
+    <div class="analysis-card-title">
+      <span><i class="fa-solid fa-table-list mr-2"></i> Sectional Summary</span>
+    </div>
+    <div class="table-responsive">
+      <table class="custom-analysis-table" id="sectionalSummaryTable">
+        <thead>
+          <tr>
+            <th>Section Name</th>
+            <th>Score</th>
+            <th>Attempted</th>
+            <th>Accuracy</th>
+            <th>Time Spent</th>
+          </tr>
+        </thead>
+        <tbody id="sectionalSummaryTbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Compare with Topper & Average -->
+  <div class="analysis-card">
+    <div class="analysis-card-title">
+      <span><i class="fa-solid fa-users mr-2"></i> Compare with Topper & Average</span>
+    </div>
+    <div class="compare-nav-tabs" id="compareSectionTabs">
+      <button class="compare-sub-tab active" onclick="switchCompareTab('Overall')">Overall</button>
+      <button class="compare-sub-tab" onclick="switchCompareTab('Reasoning')">Reasoning</button>
+      <button class="compare-sub-tab" onclick="switchCompareTab('General Awareness')">GA</button>
+      <button class="compare-sub-tab" onclick="switchCompareTab('Quantitative Aptitude')">Quant</button>
+      <button class="compare-sub-tab" onclick="switchCompareTab('English')">English</button>
+    </div>
+    <div class="table-responsive">
+      <table class="custom-analysis-table" id="topperCompareTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Score</th>
+            <th>Accuracy</th>
+            <th>Correct</th>
+            <th>Wrong</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="topperCompareTbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Rank Predictor -->
+  <div class="rank-predictor-box">
+    <h4 style="margin-bottom: 10px; color:var(--text-primary);">Rank Predictor</h4>
+    <div class="rp-tooltip" id="rp-tooltip">Rank: --</div>
+    <input type="range" min="0" max="100" value="0" step="0.5" class="rp-slider" id="rp-slider" oninput="updateRankPredictor(this.value)">
+    <div style="color:var(--text-secondary); font-size:0.85rem; font-weight:700;">Marks: <span id="rp-marks-disp" style="color:var(--accent-purple);">0</span></div>
+  </div>
+
+  <!-- Charts -->
+  <div class="analysis-card">
+    <div class="analysis-card-title">
+      <span><i class="fa-solid fa-chart-area mr-2"></i> Marks Distribution</span>
+    </div>
+    <div style="position: relative; height: 320px; width: 100%;">
+      <canvas id="marksDistChart"></canvas>
+    </div>
+  </div>
+  <div class="analysis-card" id="attemptComparisonCard">
+    <div class="analysis-card-title">
+      <span><i class="fa-solid fa-code-compare mr-2"></i> Comparison with Previous Attempts</span>
+    </div>
+    <div style="position: relative; height: 260px; width: 100%;">
+      <canvas id="attemptCompareChart"></canvas>
+    </div>
+  </div>
+  <div class="analysis-card">
+    <div class="analysis-card-title">
+      <span><i class="fa-solid fa-chart-column mr-2"></i> Question Distribution</span>
+    </div>
+    <div style="position: relative; height: 280px; width: 100%;">
+      <canvas id="questionDistChart"></canvas>
+    </div>
+  </div>
+</div>
 
     <div class="tab-content" id="tab-review">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
@@ -1785,6 +1936,10 @@ auth.onAuthStateChanged(async (user) => {
         }
         updateRankPredictor(myScore);
         drawDashSnap();
+        populateKpiCards();
+populateSectionalSummary();
+switchCompareTab('Overall');  // reset to Overall
+initAnalysisCharts();
      }).catch(e => { console.error("LB Fetch Error", e); drawDashSnap(); });
   }
 
@@ -3384,6 +3539,179 @@ window.launchEngine = function(engineType) {
 window.closeEngineModal = function() {
     document.getElementById('engine-modal').classList.remove('show');
 };
+function populateKpiCards() {
+  const container = document.getElementById('kpiMetricsGrid');
+  if (!container) return;
+  const rank = document.getElementById('an-rank').textContent;
+  const score = document.getElementById('an-score').textContent;
+  const percentile = document.getElementById('an-percentile').textContent;
+  const accuracy = document.getElementById('an-accuracy').textContent;
+  container.innerHTML = `
+    <div class="kpi-card">
+      <div class="kpi-icon-box rank"><i class="fa-solid fa-medal"></i></div>
+      <div>
+        <div class="kpi-val">${rank}</div>
+        <div class="kpi-label">Your Rank</div>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon-box score"><i class="fa-solid fa-bolt"></i></div>
+      <div>
+        <div class="kpi-val">${score}</div>
+        <div class="kpi-label">Score</div>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon-box percentile"><i class="fa-solid fa-chart-line"></i></div>
+      <div>
+        <div class="kpi-val">${percentile}</div>
+        <div class="kpi-label">Percentile</div>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon-box accuracy"><i class="fa-solid fa-bullseye"></i></div>
+      <div>
+        <div class="kpi-val">${accuracy}</div>
+        <div class="kpi-label">Accuracy</div>
+      </div>
+    </div>
+  `;
+}
+
+function populateSectionalSummary() {
+  const tbody = document.getElementById('sectionalSummaryTbody');
+  if (!tbody || !dSnapS.arr) return;
+  tbody.innerHTML = '';
+  const sections = {};
+  dSnapS.arr.forEach(q => {
+    const sec = q.secName || 'Others';
+    if (!sections[sec]) sections[sec] = { correct: 0, wrong: 0, unattempted: 0, time: 0 };
+    if (q.user === -1) sections[sec].unattempted++;
+    else if (q.user === q.correct) sections[sec].correct++;
+    else sections[sec].wrong++;
+    sections[sec].time += (q.timeTaken || 0);
+  });
+  let totalScore = 0, totalAttempted = 0, totalCorrect = 0, totalTime = 0;
+  Object.keys(sections).forEach(sec => {
+    const d = sections[sec];
+    const attempted = d.correct + d.wrong;
+    const score = (d.correct * 2) - (d.wrong * 0.5); // assuming +2/-0.5
+    totalScore += score;
+    totalAttempted += attempted;
+    totalCorrect += d.correct;
+    totalTime += d.time;
+    const acc = attempted > 0 ? ((d.correct / attempted) * 100).toFixed(1) : '0';
+    const mins = Math.floor(d.time / 60);
+    const secs = d.time % 60;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${sec}</strong></td>
+      <td>
+        <div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width: ${(score / 50) * 100}%"></div></div>
+        <div>${score.toFixed(1)} <span style="font-size:0.75rem; color:var(--text-secondary)">/ 50</span></div>
+      </td>
+      <td>
+        <div class="mini-progress-track"><div class="mini-progress-bar bar-cyan" style="width: ${(attempted / 25) * 100}%"></div></div>
+        <div>${attempted} <span style="font-size:0.75rem; color:var(--text-secondary)">/ 25</span></div>
+      </td>
+      <td>
+        <div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width: ${acc}%"></div></div>
+        <div>${acc}%</div>
+      </td>
+      <td>
+        <div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width: ${(d.time / 1200) * 100}%"></div></div>
+        <div>${mins}:${secs < 10 ? '0' : ''}${secs} min</div>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+  // Overall row
+  const totalAcc = totalAttempted > 0 ? ((totalCorrect / totalAttempted) * 100).toFixed(1) : '0';
+  const oMins = Math.floor(totalTime / 60);
+  const oSecs = totalTime % 60;
+  const trOverall = document.createElement('tr');
+  trOverall.className = 'bold-row';
+  trOverall.innerHTML = `
+    <td><strong>Overall</strong></td>
+    <td>
+      <div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width: ${(totalScore / 200) * 100}%"></div></div>
+      <div>${totalScore.toFixed(1)} <span style="font-size:0.75rem; color:var(--text-secondary)">/ 200</span></div>
+    </td>
+    <td>
+      <div class="mini-progress-track"><div class="mini-progress-bar bar-cyan" style="width: ${(totalAttempted / 100) * 100}%"></div></div>
+      <div>${totalAttempted} <span style="font-size:0.75rem; color:var(--text-secondary)">/ 100</span></div>
+    </td>
+    <td>
+      <div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width: ${totalAcc}%"></div></div>
+      <div>${totalAcc}%</div>
+    </td>
+    <td>
+      <div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width: ${(totalTime / 3600) * 100}%"></div></div>
+      <div>${oMins}:${oSecs < 10 ? '0' : ''}${oSecs} min</div>
+    </td>
+  `;
+  tbody.appendChild(trOverall);
+}
+
+let marksChart = null, attemptChart = null, questionChart = null;
+
+function initAnalysisCharts() {
+  // Destroy previous instances
+  if (marksChart) marksChart.destroy();
+  if (attemptChart) attemptChart.destroy();
+  if (questionChart) questionChart.destroy();
+
+  // 1. Marks Distribution Chart (dummy data for now, can be based on leaderboard)
+  const marksCtx = document.getElementById('marksDistChart').getContext('2d');
+  marksChart = new Chart(marksCtx, {
+    type: 'line',
+    data: {
+      labels: ['0-20', '20-40', '40-60', '60-80', '80-100', '100-120', '120-140', '140-160', '160-180', '180-200'],
+      datasets: [{
+        label: 'Students Count',
+        data: [1200, 3100, 6800, 11400, 13200, 9800, 5200, 2400, 800, 150],
+        borderColor: '#1fbad6',
+        backgroundColor: 'rgba(31,186,214,0.15)',
+        fill: true,
+        tension: 0.4,
+        pointRadius: 4,
+        pointBackgroundColor: '#1fbad6'
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+  });
+
+  // 2. Attempt Comparison Chart (dummy data for now)
+  const attemptCtx = document.getElementById('attemptCompareChart').getContext('2d');
+  attemptChart = new Chart(attemptCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Score', 'Accuracy', 'Percentile'],
+      datasets: [
+        { label: 'Attempt 1', data: [62.5, 54.2, 74.3], backgroundColor: '#cbd5e1', borderRadius: 6 },
+        { label: 'Attempt 2 (Current)', data: [79.0, 63.89, 90.84], backgroundColor: '#6366f1', borderRadius: 6 }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } } }
+  });
+
+  // 3. Question Distribution Chart (stacked bar by section)
+  const qDistCtx = document.getElementById('questionDistChart').getContext('2d');
+  questionChart = new Chart(qDistCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Reasoning', 'General Awareness', 'Quant Aptitude', 'English'],
+      datasets: [
+        { label: 'Correct', data: [20, 11, 4, 11], backgroundColor: '#10b981', borderRadius: 4 },
+        { label: 'Incorrect', data: [3, 6, 9, 8], backgroundColor: '#ef4444', borderRadius: 4 },
+        { label: 'Unattempted', data: [2, 8, 12, 6], backgroundColor: '#94a3b8', borderRadius: 4 }
+      ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } }, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true, max: 25 } } }
+  });
+}
+
+
 </script>
 
 <style>
