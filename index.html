@@ -2064,19 +2064,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     else if (currentHour >= 17) greeting = "Good Night";
     document.getElementById('greeting-text').innerText = greeting;
   }
-
-  function toggleTheme() {
-    const body = document.body;
-    const icon = document.getElementById('theme-icon');
-    if (!body.getAttribute('data-theme')) {
-      body.setAttribute('data-theme', 'dark');
-      icon.className = 'fa-solid fa-sun';
-    } else {
-      body.removeAttribute('data-theme');
-      icon.className = 'fa-solid fa-moon';
-    }
-  }
-
+  
   async function fetchQuote() {
     try {
       const quoteUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main/QUOTE/quote.txt`;
