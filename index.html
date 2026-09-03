@@ -1663,25 +1663,41 @@ auth.onAuthStateChanged(async (user) => {
   }
   
   function drawDashChart() {
-      const counts = {correct:0, wrong:0, un:0, mark:0};
-      dSnapS.arr.forEach(it => {
-        if (dSnapS.currentSection && dSnapS.currentSection !== 'all' && it.secName !== dSnapS.currentSection) return;
-        if(it.mark) counts.mark++; 
-        else if(it.user === -1) counts.un++;
-        else if(it.user === it.correct) counts.correct++;
-        else counts.wrong++;
-      });
-      if(dChart) { try { dChart.destroy(); } catch(e){} dChart=null; }
-      const ctx = document.getElementById('reviewChart').getContext('2d');
-      dChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          labels: ['Marked', 'Correct', 'Incorrect', 'Unattempted'],
-          datasets: [{ data: [counts.mark, counts.correct, counts.wrong, counts.un], backgroundColor: ['#a855f7','#10b981','#ef4444','#94a3b8'], borderWidth: 0 }]
-        },
-        options: { plugins: { legend: { display:false } }, responsive: true, maintainAspectRatio: false }
-      });
-  }
+    // Original calculation logic same rahegi
+    const counts = {correct:0, wrong:0, un:0, mark:0};
+    dSnapS.arr.forEach(it => {
+      if (dSnapS.currentSection && dSnapS.currentSection !== 'all' && it.secName !== dSnapS.currentSection) return;
+      if(it.mark) counts.mark++; 
+      else if(it.user === -1) counts.un++;
+      else if(it.user === it.correct) counts.correct++;
+      else counts.wrong++;
+    });
+    
+    if(dChart) { try { dChart.destroy(); } catch(e){} dChart=null; }
+    
+    // Naye UI ke canvas par render
+    const canvasEl = document.getElementById('reviewDonutChart');
+    if(!canvasEl) return;
+    
+    const ctx = canvasEl.getContext('2d');
+    dChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Correct', 'Incorrect', 'Unattempted', 'Marked'],
+        datasets: [{ 
+            data: [counts.correct, counts.wrong, counts.un, counts.mark], 
+            backgroundColor: ['#10b981','#ef4444','#94a3b8','#a855f7'], 
+            borderWidth: 0 
+        }]
+      },
+      options: { 
+          cutout: '72%', // Premium thin ring style
+          plugins: { legend: { display:false } }, 
+          responsive: true, 
+          maintainAspectRatio: false 
+      }
+    });
+}
 
   /* NAYA BILINGUAL FEATURE ADDED TO DASHBOARD SNAP */
   function drawDashSnap() {
