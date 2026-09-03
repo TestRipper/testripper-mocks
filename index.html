@@ -157,6 +157,9 @@
   .cat-info flex-grow { flex-grow: 1; }
   .cat-info h4 { font-size: 1rem; margin-bottom: 4px; text-transform: uppercase; }
   .cat-info p { font-size: 0.75rem; color: var(--text-secondary); }
+  
+.modal-full { position: fixed; inset: 0; background: var(--bg-main); z-index: 10000; display: none; flex-direction: column; overflow-y: auto;}
+.modal-full.show { display: flex; }
 
   /* ====== DYNAMIC TABS ====== */
   .cross-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
@@ -1435,7 +1438,6 @@ auth.onAuthStateChanged(async (user) => {
      dSnapS.curIndexInOrder = 0;
      dSnapS.currentSection = 'all';
      
-     // --- NEW ATTEMPT TRACKING LOGIC ---
      let tName = normalizeStringForMatch(att.testName);
      let allAttsForThis = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === tName);
      let attemptNumber = allAttsForThis.indexOf(att) + 1;
@@ -1443,27 +1445,20 @@ auth.onAuthStateChanged(async (user) => {
      let firstAttempt = allAttsForThis[0] || att;
      let att1Score = parseFloat(String(firstAttempt.score).split(' /')[0]);
      
-     // 🔥 ASYNC COLLISION FIX
      window.activeAttemptTs = att.ts;
 
      let sections = [...new Set(att.snap.map(q => q.secName).filter(Boolean))];
-     let tabsContainer = document.getElementById('sectionalTabsContainer');
+     let tabsContainer = document.getElementById('reviewSectionPills');
      if (tabsContainer) {
        tabsContainer.innerHTML = '';
-       if(sections.length > 0) {
-         let tabsHtml = `<button class="badge ok" id="tab-all-sec" onclick="filterBySection('all')">Overall</button>`;
-         sections.forEach((sec, i) => { tabsHtml += `<button class="badge min" id="tab-sec-${i}" onclick="filterBySection('${sec}', ${i})">${sec}</button>`; });
-         tabsContainer.innerHTML = tabsHtml;
-       }
+       let tabsHtml = `<button class="section-pill active" onclick="filterBySection('all', null)">Overall</button>`;
+       sections.forEach((sec, i) => { tabsHtml += `<button class="section-pill" onclick="filterBySection('${sec}', ${i})">${sec}</button>`; });
+       tabsContainer.innerHTML = tabsHtml;
      }
 
      window.setDashFilter('all');
-     document.querySelectorAll('.tab-btn')[0].click(); // Go to Analysis tab
+     window.switchModalTab('analysis'); 
      document.getElementById('dash-snap').classList.add('show');
-     
-     let attemptBadgeHTML = (att.attemptNumber && att.attemptNumber > 1) ? `<span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900;">Attempt ${att.attemptNumber}</span>` : "";
-     
-     document.getElementById('global-quiz-title').innerHTML = `<div style="margin-bottom: 4px;">${att.testName}</div>${attemptBadgeHTML}`;
      
      let scoreParts = String(att.score).split(' /');
      let myScore = parseFloat(scoreParts[0]);
@@ -1472,34 +1467,29 @@ auth.onAuthStateChanged(async (user) => {
      let myTime = (att.minutes || 0);
      let isProTest = att.rank !== undefined && att.percentile !== undefined;
      
-     document.getElementById('cmp-you-score').innerText = myScore;
-     document.getElementById('cmp-you-acc').innerText = myAcc + "%";
-     document.getElementById('cmp-you-c').innerText = att.correct || 0;
-     document.getElementById('cmp-you-w').innerText = att.incorrect || 0;
-     document.getElementById('cmp-you-time').innerText = myTime + "m";
-     document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${actualTotalMarks}</span>`;
-     document.getElementById('an-accuracy').innerText = myAcc + "%";
+     if(document.getElementById('kpiScore')) document.getElementById('kpiScore').innerHTML = `${myScore} <small>/ ${actualTotalMarks}</small>`;
+     if(document.getElementById('kpiAccuracy')) document.getElementById('kpiAccuracy').innerHTML = `${myAcc} <small>%</small>`;
+     if(document.getElementById('kpiPercentile')) document.getElementById('kpiPercentile').innerHTML = isProTest ? `${att.percentile} <small>%</small>` : `-- <small>%</small>`;
+     
+     if(document.getElementById('displayReviewScore')) document.getElementById('displayReviewScore').innerText = `${myScore} / ${actualTotalMarks}`;
+     if(document.getElementById('displayReviewTime')) document.getElementById('displayReviewTime').innerText = `${myTime} min`;
+     if(document.getElementById('countCorrectPill')) document.getElementById('countCorrectPill').innerText = `C: ${att.correct || 0}`;
+     if(document.getElementById('countWrongPill')) document.getElementById('countWrongPill').innerText = `W: ${att.incorrect || 0}`;
+     if(document.getElementById('countUnattemptPill')) document.getElementById('countUnattemptPill').innerText = `U: ${att.unattempted || 0}`;
      
      if (isProTest) {
-         document.getElementById('an-rank').innerHTML = `${att.rank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${att.globalTotalStudents || 49000}</span>`;
-         document.getElementById('an-percentile').innerText = att.percentile + "%";
-         document.getElementById('an-avg-score').innerText = att.globalAvgMarks ? att.globalAvgMarks.toFixed(2) : "--";
+         if(document.getElementById('kpiRank')) document.getElementById('kpiRank').innerHTML = `${att.rank} <small>/ ${att.globalTotalStudents || 49000}</small>`;
      } else {
-         document.getElementById('an-rank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
-         document.getElementById('an-percentile').innerText = `--%`;
-         document.getElementById('an-avg-score').innerText = "--";
+         if(document.getElementById('kpiRank')) document.getElementById('kpiRank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
      }
 
-     document.getElementById('rp-slider').max = actualTotalMarks; 
-     document.getElementById('rp-slider').value = myScore;
+     let rpSlider = document.getElementById('rankPredictorSlider');
+     if(rpSlider) { rpSlider.max = actualTotalMarks; rpSlider.value = myScore; }
      
-     // 🔥 THE MASTER FIX: Sanitize Title before asking Firebase
      let safeTitle = att.testName.replace(/:/g, "-").replace(/\//g, "-").replace(/\\/g, "-");
 
-     // Fetch Leaderboard
      db.collection("leaderboards").doc(safeTitle).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
         if (window.activeAttemptTs !== att.ts) return;
-
         const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
         window.currentLbDocs = docs;
         
@@ -1519,13 +1509,9 @@ auth.onAuthStateChanged(async (user) => {
                 });
                 if (!foundSelf) totalStudents += 1;
                 percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
-                
-                document.getElementById('an-rank').innerHTML = `${myRank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${totalStudents}</span>`;
-                document.getElementById('an-percentile').innerText = percentile + "%";
-                document.getElementById('an-avg-score').innerText = avgScore;
+                if(document.getElementById('kpiRank')) document.getElementById('kpiRank').innerHTML = `${myRank} <small>/ ${totalStudents}</small>`;
+                if(document.getElementById('kpiPercentile')) document.getElementById('kpiPercentile').innerHTML = `${percentile} <small>%</small>`;
             }
-
-            document.getElementById('an-top-score').innerText = topScore;
 
             let sumC = 0, sumW = 0, sumT = 0;
             docs.forEach(d => {
@@ -1542,36 +1528,29 @@ auth.onAuthStateChanged(async (user) => {
                 topDoc.userArray.forEach((u, idx) => { if(u !== -1) { if(u === topDoc.correctArray[idx]) topC++; else topW++; } });
             }
             let topAcc = (topC+topW)>0 ? Math.round((topC/(topC+topW))*100) : 0;
-            document.getElementById('cmp-top-score').innerText = topScore;
-            document.getElementById('cmp-top-acc').innerText = topAcc + "%";
-            document.getElementById('cmp-top-c').innerText = topC;
-            document.getElementById('cmp-top-w').innerText = topW;
-            document.getElementById('cmp-top-time').innerText = topT + "m";
-
             let avgC = Math.round(sumC / docs.length);
             let avgW = Math.round(sumW / docs.length);
             let avgT = Math.round(sumT / docs.length);
             let avgAcc = (avgC+avgW)>0 ? Math.round((avgC/(avgC+avgW))*100) : 0;
-            document.getElementById('cmp-avg-score').innerText = avgScore;
-            document.getElementById('cmp-avg-acc').innerText = avgAcc + "%";
-            document.getElementById('cmp-avg-c').innerText = avgC;
-            document.getElementById('cmp-avg-w').innerText = avgW;
-            document.getElementById('cmp-avg-time').innerText = avgT + "m";
 
-            let podHtml = '';
-            if(docs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${docs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${docs[1].name.split(' ')[0]}</div><div class="pod-score">${docs[1].score}</div></div>`;
-            if(docs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${docs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${docs[0].name.split(' ')[0]}</div><div class="pod-score">${docs[0].score}</div></div>`;
-            if(docs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${docs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${docs[2].name.split(' ')[0]}</div><div class="pod-score">${docs[2].score}</div></div>`;
-            document.getElementById('lb-podium').innerHTML = podHtml;
+            let compHtml = `
+              <tr><td><strong>You</strong></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width:100%"></div></div><div>${myScore}</div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:${myAcc}%"></div></div><div>${myAcc}%</div></td><td>${att.correct||0}</td><td>${att.incorrect||0}</td><td>${myTime}m</td></tr>
+              <tr><td><strong>Topper</strong></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:100%"></div></div><div>${topScore}</div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:${topAcc}%"></div></div><div>${topAcc}%</div></td><td>${topC}</td><td>${topW}</td><td>${topT}m</td></tr>
+              <tr><td><strong>Avg</strong></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-cyan" style="width:100%"></div></div><div>${avgScore}</div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:${avgAcc}%"></div></div><div>${avgAcc}%</div></td><td>${avgC}</td><td>${avgW}</td><td>${avgT}m</td></tr>
+            `;
+            let tComp = document.getElementById('topperCompareTbody');
+            if(tComp) tComp.innerHTML = compHtml;
 
-            let listHtml = '';
-            docs.slice(3).forEach((d, i) => {
-              listHtml += `<div class="lb-row"><div class="lb-r-num">${i+4}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${d.score}</div></div>`;
+            let lbHtml = '';
+            docs.forEach((d, i) => {
+                let rankColor = i===0 ? '#eab308' : i===1 ? '#94a3b8' : i===2 ? '#b45309' : 'inherit';
+                let isYou = d.id === user.uid ? 'class="bold-row"' : '';
+                let nameDisp = d.id === user.uid ? `${d.name} (You)` : d.name;
+                let tStr = d.timeArray ? Math.round(d.timeArray.reduce((a,b)=>a+b,0)/60) + 'm' : '--';
+                lbHtml += `<tr ${isYou}><td><strong style="color:${rankColor};">${i+1}</strong></td><td>${nameDisp}</td><td><strong>${d.score}</strong></td><td>${tStr}</td></tr>`;
             });
-            document.getElementById('lb-list').innerHTML = listHtml;
-
-            let safeName = user.displayName || 'Warrior';
-            document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${myScore}</div>`;
+            let lBody = document.getElementById('leaderboardTbody');
+            if(lBody) lBody.innerHTML = lbHtml;
 
             window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
             for (let i = 0; i < dSnapS.arr.length; i++) {
@@ -1588,214 +1567,104 @@ auth.onAuthStateChanged(async (user) => {
                 window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
             }
         }
-        updateRankPredictor(myScore);
+        if(typeof window.updateRankPredictor === 'function') window.updateRankPredictor(myScore);
         drawDashSnap();
      }).catch(e => { console.error("LB Fetch Error", e); drawDashSnap(); });
-  }
-
-
-
-  window.filterBySection = function(secName, index = null) {
-    dSnapS.currentSection = secName;
-    let tabsContainer = document.getElementById('sectionalTabsContainer');
-    if (tabsContainer) {
-        let buttons = tabsContainer.getElementsByTagName('button');
-        for(let btn of buttons) {
-          btn.classList.remove('ok');
-          btn.classList.add('min');
-        }
-        if(secName === 'all') {
-          document.getElementById('tab-all-sec').classList.add('ok');
-          document.getElementById('tab-all-sec').classList.remove('min');
-        } else {
-          let targetBtn = document.getElementById(`tab-sec-${index}`);
-          if(targetBtn) { targetBtn.classList.add('ok'); targetBtn.classList.remove('min'); }
-        }
-    }
-    window.setDashFilter(dSnapS.filter);
   };
-  
-  function badge(txt,cls=''){return `<span class="badge ${cls}">${txt}</span>`;}
-  function linkBadge(id,txt){return `<span class="badge link badge-${id}" onclick="window.setDashFilter('${id}')">${txt}</span>`;}
-
-  window.setDashFilter = function(f) {
-      dSnapS.filter = f;
-      const map = dSnapS.arr.map((it, idx) => {
-        const matchSec = (dSnapS.currentSection === 'all' || !dSnapS.currentSection || it.secName === dSnapS.currentSection);
-        const attempted = it.user !== -1;
-        const right = attempted && it.user === it.correct;
-        const wrong = attempted && it.user !== it.correct;
-        return {idx, attempted, right, wrong, mark: !!it.mark, matchSec};
-      });
-
-      let filtered = map.filter(x => x.matchSec);
-
-      if(f==='correct') dSnapS.order = filtered.filter(x=>x.right).map(x=>x.idx);
-      else if(f==='wrong') dSnapS.order = filtered.filter(x=>x.wrong).map(x=>x.idx);
-      else if(f==='un') dSnapS.order = filtered.filter(x=>!x.attempted).map(x=>x.idx);
-      else if(f==='mark') dSnapS.order = filtered.filter(x=>x.mark).map(x=>x.idx);
-      else dSnapS.order = filtered.map(x=>x.idx);
-      
-      if(!dSnapS.order.length) dSnapS.order=[0];
-      dSnapS.curIndexInOrder=0;
-      
-      drawDashMini();
-      drawDashChart();
-      drawDashSnap();
-  }
-  
-  function curDashIdx() { return dSnapS.order[dSnapS.curIndexInOrder] ?? 0; }
 
   function drawDashMini() {
-      const cont = document.getElementById('snapMini'); cont.innerHTML='';
+      const cont = document.getElementById('questionPaletteContainer'); 
+      if(!cont) return;
+      cont.innerHTML='';
       dSnapS.order.forEach((idx, i) => {
           const it = dSnapS.arr[idx];
           const attempted = it.user !== -1;
           const right = attempted && it.user === it.correct;
           const wrong = attempted && it.user !== it.correct;
-          const d = document.createElement('div'); d.className='mini-chip';
-          if(i === dSnapS.curIndexInOrder) d.classList.add('cur');
-          if(it.mark) d.classList.add('mark'); else if(right) d.classList.add('ok'); else if(wrong) d.classList.add('bad'); else d.classList.add('un');
+          const d = document.createElement('button'); 
+          d.className='palette-btn';
+          if(i === dSnapS.curIndexInOrder) d.classList.add('current');
+          if(right) d.classList.add('correct'); 
+          else if(wrong) d.classList.add('incorrect'); 
+          else d.classList.add('unattempted');
           d.textContent = idx + 1;
           d.onclick = () => { dSnapS.curIndexInOrder = i; drawDashSnap(); };
           cont.appendChild(d);
       });
   }
-  
-  function drawDashChart() {
-    // Original calculation logic same rahegi
-    const counts = {correct:0, wrong:0, un:0, mark:0};
-    dSnapS.arr.forEach(it => {
-      if (dSnapS.currentSection && dSnapS.currentSection !== 'all' && it.secName !== dSnapS.currentSection) return;
-      if(it.mark) counts.mark++; 
-      else if(it.user === -1) counts.un++;
-      else if(it.user === it.correct) counts.correct++;
-      else counts.wrong++;
-    });
-    
-    if(dChart) { try { dChart.destroy(); } catch(e){} dChart=null; }
-    
-    // Naye UI ke canvas par render
-    const canvasEl = document.getElementById('reviewDonutChart');
-    if(!canvasEl) return;
-    
-    const ctx = canvasEl.getContext('2d');
-    dChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Correct', 'Incorrect', 'Unattempted', 'Marked'],
-        datasets: [{ 
-            data: [counts.correct, counts.wrong, counts.un, counts.mark], 
-            backgroundColor: ['#10b981','#ef4444','#94a3b8','#a855f7'], 
-            borderWidth: 0 
-        }]
-      },
-      options: { 
-          cutout: '72%', // Premium thin ring style
-          plugins: { legend: { display:false } }, 
-          responsive: true, 
-          maintainAspectRatio: false 
-      }
-    });
-}
 
-  /* NAYA BILINGUAL FEATURE ADDED TO DASHBOARD SNAP */
   function drawDashSnap() {
-      if(!dSnapS.arr.length) { document.getElementById('snapQ').innerHTML='Nothing.'; return; }
+      if(!dSnapS.arr.length) { 
+          let qb = document.getElementById('questionBodyText');
+          if(qb) qb.innerHTML='Nothing.'; 
+          return; 
+      }
       const it = dSnapS.arr[curDashIdx()];
-      
-                      let secStats = { c:0, w:0, u:0, m:0 };
-                dSnapS.arr.forEach(q => {
-                    if (dSnapS.currentSection && dSnapS.currentSection !== 'all' && q.secName !== dSnapS.currentSection) return;
-                    if (q.mark) secStats.m++;
-                    if (q.user === -1) secStats.u++;
-                    else if (q.user === q.correct) secStats.c++;
-                    else secStats.w++;
-                });
 
-                                // Updated Title without Attempt Number (Moved to Global Title)
-                document.getElementById('snapTitle').innerHTML = `Attempt Review <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:600; margin-left:6px;">— Q${curDashIdx()+1}/${dSnapS.arr.length}</span>`;
-      
-      let badgeArr = [ badge(dSnapS.meta.ts, 'ok'), badge(dSnapS.meta.score) ];
-      if (dSnapS.currentSection === 'all') badgeArr.push(linkBadge('all', 'All'));
-      if (secStats.c > 0) badgeArr.push(linkBadge('correct', `C:${secStats.c}`));
-      if (secStats.w > 0) badgeArr.push(linkBadge('wrong', `W:${secStats.w}`));
-      if (secStats.u > 0) badgeArr.push(linkBadge('un', `U:${secStats.u}`));
-      if (secStats.m > 0) badgeArr.push(linkBadge('mark', `M:${secStats.m}`));
-
-      document.getElementById('snapMetaBadges').innerHTML = badgeArr.join(' ');
-
-      // Save Button
-      const qCheckText = it.q; // Using english as unique ID for cache
-      const isSaved = !!window.savedQuestionsCache[qCheckText];
-      const starIcon = isSaved ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
-      const starColor = isSaved ? '#facc15' : 'var(--text-primary)';
-      const starText = isSaved ? 'SAVED' : 'SAVE This Q';
-      
-      const saveBtnHtml = `<button onclick="toggleSaveCurrentDashQ()" style="background: transparent; color:${starColor}; border:1px solid var(--border-color); padding:8px 16px; border-radius:10px; font-weight:800; cursor:pointer; font-size:1rem; display:flex; align-items:center; gap:8px; transition:0.2s;">
-        ${starIcon} <span>${starText}</span>
-      </button>`;
-      
-      let saveContainer = document.getElementById('saveBtnContainer');
-      if(saveContainer) saveContainer.innerHTML = saveBtnHtml;
-
-      // Question Stats Labels
       if (window.currentLbStats) {
          const qIdx = curDashIdx();
-         document.getElementById('qStatsRow').innerHTML = `
-            <div class="q-stat-tag tag-you">You: ${it.timeTaken || 0}s</div>
-            <div class="q-stat-tag tag-avg">Avg: ${window.currentLbStats.avgTimes[qIdx] || 0}s</div>
-            <div class="q-stat-tag tag-top">Topper: ${window.currentLbStats.topperTimes[qIdx] || 0}s</div>
-            <div class="q-stat-tag tag-att">${window.currentLbStats.attemptPercents[qIdx] || 0}% Attempted</div>
-            <div class="q-stat-tag tag-cor">${window.currentLbStats.correctPercents[qIdx] || 0}% Correct</div>
-         `;
-      } else {
-         document.getElementById('qStatsRow').innerHTML = ''; 
+         let uTime = it.timeTaken || 0;
+         let uBadge = document.getElementById('userTimeBadgeText');
+         let popU = document.getElementById('popoverUserTime');
+         let popA = document.getElementById('popoverAvgTime');
+         let popT = document.getElementById('popoverTopperTime');
+         let ratePill = document.getElementById('questionCorrectRatePill');
+         
+         if(uBadge) uBadge.innerText = `You: ${uTime}s`;
+         if(popU) popU.innerText = `${uTime}s`;
+         if(popA) popA.innerText = `${window.currentLbStats.avgTimes[qIdx] || 0}s`;
+         if(popT) popT.innerText = `${window.currentLbStats.topperTimes[qIdx] || 0}s`;
+         if(ratePill) ratePill.innerText = `${window.currentLbStats.correctPercents[qIdx] || 0}% got it right`;
       }
 
-      // Bilingual logic check (If engine saved 'lang' or direct translation fields)
       let displayLang = it.lang || 'en';
       let displayQ = (displayLang === 'hi' && it.q_hi) ? it.q_hi : it.q;
       let displayOpts = (displayLang === 'hi' && it.o_hi && it.o_hi.length > 0) ? it.o_hi : (it.opts || []);
       let displaySol = (displayLang === 'hi' && it.s_hi) ? it.s_hi : (it.sol || '');
 
-      document.getElementById('snapQ').innerHTML = displayQ;
-      const b = document.getElementById('snapOpts'); b.innerHTML='';
+      let qBody = document.getElementById('questionBodyText');
+      if(qBody) qBody.innerHTML = displayQ;
       
-      displayOpts.forEach((t, i) => {
-        const div = document.createElement('div'); div.className='rev-opt';
-        const dot = document.createElement('div'); dot.className='rev-dot';
-        const isUser = (i === it.user), isCorrect = (i === it.correct);
-        if(isUser){ div.classList.add('user'); dot.classList.add('user'); }
-        if(isCorrect){ 
-            div.classList.add('correct'); 
-            if(it.user !== -1) { dot.classList.add('correct'); } 
-        }
-        if(isUser && !isCorrect){ const ico=document.createElement('div'); ico.className='rev-ico bad'; ico.textContent='✖'; div.appendChild(ico); div.classList.add('wrong'); }
-        if(isCorrect && isUser){ const ico=document.createElement('div'); ico.className='rev-ico ok'; ico.textContent='✔'; div.appendChild(ico); }
-        const text=document.createElement('div'); text.innerHTML=`${String.fromCharCode(65+i)}) ${t}`;
-        div.prepend(text); div.prepend(dot); b.appendChild(div);
-      });
+      const b = document.getElementById('questionOptionsContainer'); 
+      if(b) {
+          b.innerHTML='';
+          displayOpts.forEach((t, i) => {
+            const d = document.createElement('div'); 
+            d.className = 'review-option-item';
+            const isUser = (i === it.user), isCorrect = (i === it.correct);
+            
+            let ico = '<i class="fa-regular fa-circle text-gray-400"></i>';
+            if(isCorrect){ 
+                d.classList.add('correct-opt'); 
+                ico = '<i class="fa-solid fa-circle-check opt-indicator-icon correct"></i>';
+            } else if(isUser && !isCorrect){ 
+                d.classList.add('wrong-marked'); 
+                ico = '<i class="fa-solid fa-circle-xmark opt-indicator-icon wrong"></i>';
+            }
+            d.innerHTML = `<span><b>${String.fromCharCode(65+i)})</b> ${t}</span> <span>${ico}</span>`;
+            b.appendChild(d);
+          });
+      }
 
-      const solBlock = document.getElementById('solBlock');
-      if (displaySol) { solBlock.style.display = 'block'; document.getElementById('snapSol').innerHTML = displaySol; } 
-      else { solBlock.style.display = 'none'; }
+      let solBlock = document.getElementById('solutionBodyContent');
+      if (solBlock) solBlock.innerHTML = displaySol || 'No solution provided.';
       
-      document.getElementById('sPrev').disabled = (dSnapS.curIndexInOrder === 0);
-      document.getElementById('sNext').disabled = (dSnapS.curIndexInOrder === dSnapS.order.length-1);
-      
-              if (window.renderMathInElement) {
-            renderMathInElement(document.getElementById('tab-review'), { // container tera jo bhi ho yahan
-                delimiters: [
-                    {left: '$$', right: '$$', display: false},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false},
-                    {left: '\\[', right: '\\]', display: true}
-                ],
-                throwOnError: false
-            });
-        }
+      if (window.renderMathInElement) {
+          let revCard = document.getElementById('questionReviewCardBox');
+          if(revCard) {
+              renderMathInElement(revCard, {
+                  delimiters: [
+                      {left: '$$', right: '$$', display: false},
+                      {left: '$', right: '$', display: false},
+                      {left: '\\(', right: '\\)', display: false},
+                      {left: '\\[', right: '\\]', display: true}
+                  ], throwOnError: false
+              });
+          }
+      }
       drawDashMini();
+  }
+
   }
   document.getElementById('sPrev').onclick = () => { if(dSnapS.curIndexInOrder > 0){ dSnapS.curIndexInOrder--; drawDashSnap(); } };
   document.getElementById('sNext').onclick = () => { if(dSnapS.curIndexInOrder < dSnapS.order.length-1){ dSnapS.curIndexInOrder++; drawDashSnap(); } };
