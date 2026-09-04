@@ -406,6 +406,37 @@ body[data-theme="light"] .glass-card {
     box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
 }
 .whatsapp-btn:active { transform: scale(0.95); }
+  /* ====== PREMIUM ANALYSIS TAB UI ====== */
+  .analysis-top-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px; }
+  .an-stat-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+  .an-stat-card .icon-title { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; }
+  .an-stat-card.rank .icon-title i { color: #f43f5e; }
+  .an-stat-card.score .icon-title i { color: #8b5cf6; }
+  .an-stat-card.percentile .icon-title i { color: #3b82f6; }
+  .an-stat-card.accuracy .icon-title i { color: #10b981; }
+  .an-stat-card .val { font-size: 1.4rem; font-weight: 900; color: var(--text-primary); }
+  .an-stat-card .sub-val { font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; }
+
+  /* Sectional Progress Bars */
+  .sec-summary-row { display: grid; grid-template-columns: 2fr 1fr 1fr; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+  body[data-theme="light"] .sec-summary-row { border-bottom-color: rgba(0,0,0,0.1); }
+  .sec-summary-row:last-child { border-bottom: none; }
+  .sec-name { font-weight: 800; font-size: 0.85rem; color: var(--text-primary); text-transform: capitalize; }
+  .prog-container { display: flex; flex-direction: column; gap: 4px; }
+  .prog-labels { display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 700; color: var(--text-secondary); }
+  .prog-bg { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+  body[data-theme="light"] .prog-bg { background: rgba(0,0,0,0.1); }
+  .prog-fill { height: 100%; border-radius: 4px; }
+  .fill-score { background: linear-gradient(90deg, #8b5cf6, #3b82f6); }
+  .fill-att { background: linear-gradient(90deg, #10b981, #a3e635); }
+
+  /* Compare Tabs & Charts */
+  .cmp-tabs-wrap { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px; scrollbar-width: none; }
+  .cmp-tabs-wrap::-webkit-scrollbar { display: none; }
+  .cmp-tab { padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); background: rgba(255,255,255,0.05); border: 1px solid transparent; cursor: pointer; white-space: nowrap; transition: 0.2s;}
+  body[data-theme="light"] .cmp-tab { background: rgba(0,0,0,0.05); }
+  .cmp-tab.active { background: rgba(59, 130, 246, 0.1); color: #3b82f6; border-color: #3b82f6; }
+  .chart-canvas-wrap { position: relative; height: 200px; width: 100%; margin-top: 10px; }
 </style>
 </head>
 <body>
@@ -661,27 +692,31 @@ body[data-theme="light"] .glass-card {
     </div>
 <div id="global-quiz-title" style="text-align:center; padding:12px 20px; font-weight:900; font-size:1.15rem; color:var(--accent-purple); background:var(--bg-main); border-bottom:1px solid var(--border-color); z-index:9; text-transform:uppercase; letter-spacing:0.5px;"></div>
     <div class="tab-content active" id="tab-analysis">
-      <h3 style="margin-bottom:12px; font-weight:900; color:var(--text-secondary);">QUICK SUMMARY</h3>
-      <div class="summary-card">
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-regular fa-flag" style="color:#facc15;"></i> Rank</div>
-          <div class="s-val" id="an-rank">--/--</div>
+      <!-- 1. Top 4 Grid Cards -->
+      <div class="analysis-top-grid">
+        <div class="an-stat-card rank">
+          <div class="icon-title"><i class="fa-solid fa-medal"></i> Your Rank</div>
+          <div class="val" id="an-rank">--</div>
+          <div class="sub-val" id="an-total-students">/ --</div>
         </div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-solid fa-trophy" style="color:#a855f7;"></i> Score</div>
-          <div class="s-val" id="an-score">--/--</div>
+        <div class="an-stat-card score">
+          <div class="icon-title"><i class="fa-solid fa-bolt"></i> Score</div>
+          <div class="val" id="an-score">--</div>
+          <div class="sub-val" id="an-max-score">/ --</div>
         </div>
-        <div style="font-size:0.75rem; color:var(--text-secondary); text-align:right; margin-bottom:10px;">Average Score: <span id="an-avg-score">--</span> | Best Score: <span id="an-top-score">--</span></div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-regular fa-user" style="color:#ec4899;"></i> Percentile</div>
-          <div class="s-val" id="an-percentile">--%</div>
+        <div class="an-stat-card percentile">
+          <div class="icon-title"><i class="fa-solid fa-chart-line"></i> Percentile</div>
+          <div class="val" id="an-percentile">--%</div>
+          <div class="sub-val">Better than peers</div>
         </div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-solid fa-crosshairs" style="color:#10b981;"></i> Accuracy</div>
-          <div class="s-val" id="an-accuracy">--%</div>
+        <div class="an-stat-card accuracy">
+          <div class="icon-title"><i class="fa-solid fa-crosshairs"></i> Accuracy</div>
+          <div class="val" id="an-accuracy">--%</div>
+          <div class="sub-val" id="an-attempt-info">-- Attempted</div>
         </div>
       </div>
 
+      <!-- 2. Social Banner -->
       <div class="social-banner" style="margin-bottom: 16px; padding: 15px;">
         <h2 style="font-size: 1.2rem; margin-bottom: 8px;">Join Vishwasniya</h2>
         <div class="desc" style="margin-bottom: 12px; font-size: 0.75rem;">Click on social handles to join official channels and stay updated with content.</div>
@@ -692,57 +727,52 @@ body[data-theme="light"] .glass-card {
         </div>
       </div>
 
+      <!-- 3. Sectional Summary -->
       <div class="summary-card">
-        <h4 style="text-align:center; margin-bottom:15px; color:var(--text-primary);">Score Comparison</h4>
+        <h3 style="font-size: 1.05rem; font-weight: 900; margin-bottom: 12px;"><i class="fa-solid fa-table-list"></i> Sectional Summary</h3>
+        <div id="sectional-summary-box">
+           <div style="text-align:center; color:var(--text-secondary); font-size:0.8rem;"><i class="fa-solid fa-spinner fa-spin"></i> Calculating...</div>
+        </div>
+      </div>
+
+      <!-- 4. Compare with Topper & Average -->
+      <div class="summary-card">
+        <h3 style="font-size: 1.05rem; font-weight: 900; margin-bottom: 12px;"><i class="fa-solid fa-people-arrows"></i> Compare with Topper & Average</h3>
+        <div class="cmp-tabs-wrap" id="cmp-tabs-container"></div>
         <div style="overflow-x: auto;">
-          <table class="an-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Score</th>
-                <th>Acc.</th>
-                <th>Correct</th>
-                <th>Wrong</th>
-                <th>Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="row-you">
-                <td>You</td>
-                <td id="cmp-you-score">--</td>
-                <td id="cmp-you-acc">--</td>
-                <td id="cmp-you-c">--</td>
-                <td id="cmp-you-w">--</td>
-                <td id="cmp-you-time">--</td>
-              </tr>
-              <tr class="row-top">
-                <td>Topper</td>
-                <td id="cmp-top-score">--</td>
-                <td id="cmp-top-acc">--</td>
-                <td id="cmp-top-c">--</td>
-                <td id="cmp-top-w">--</td>
-                <td id="cmp-top-time">--</td>
-              </tr>
-              <tr class="row-avg">
-                <td>Avg</td>
-                <td id="cmp-avg-score">--</td>
-                <td id="cmp-avg-acc">--</td>
-                <td id="cmp-avg-c">--</td>
-                <td id="cmp-avg-w">--</td>
-                <td id="cmp-avg-time">--</td>
-              </tr>
-            </tbody>
+          <table class="an-table" id="compare-table-body">
+             <!-- Table content injected via JS -->
           </table>
         </div>
       </div>
 
+      <!-- 5. Rank Predictor -->
       <div class="rank-predictor-box">
-        <h4 style="margin-bottom: 10px; color:var(--text-primary);">Rank Predictor</h4>
+        <h4 style="margin-bottom: 10px; color:var(--text-primary);"><i class="fa-solid fa-wand-magic-sparkles"></i> Rank Predictor</h4>
         <div class="rp-tooltip" id="rp-tooltip">Rank: --</div>
         <input type="range" min="0" max="100" value="0" step="0.5" class="rp-slider" id="rp-slider" oninput="updateRankPredictor(this.value)">
-        <div style="color:var(--text-secondary); font-size:0.85rem; font-weight:700;">Marks: <span id="rp-marks-disp" style="color:var(--accent-p2);">0</span></div>
+        <div style="color:var(--text-secondary); font-size:0.85rem; font-weight:700;">Selected Marks: <span id="rp-marks-disp" style="color:var(--accent-blue);">0</span></div>
+      </div>
+
+      <!-- 6. Marks Distribution Chart -->
+      <div class="summary-card">
+        <h3 style="font-size: 1.05rem; font-weight: 900; margin-bottom: 8px;"><i class="fa-solid fa-chart-area"></i> Marks Distribution</h3>
+        <div class="chart-canvas-wrap"><canvas id="marksDistChart"></canvas></div>
+      </div>
+
+      <!-- 7. Previous Attempts Chart -->
+      <div class="summary-card" id="prev-attempts-card" style="display:none;">
+        <h3 style="font-size: 1.05rem; font-weight: 900; margin-bottom: 8px;"><i class="fa-solid fa-clock-rotate-left"></i> Previous Attempts</h3>
+        <div class="chart-canvas-wrap"><canvas id="prevAttemptsChart"></canvas></div>
+      </div>
+
+      <!-- 8. Question Distribution Chart -->
+      <div class="summary-card">
+        <h3 style="font-size: 1.05rem; font-weight: 900; margin-bottom: 8px;"><i class="fa-solid fa-chart-column"></i> Question Distribution</h3>
+        <div class="chart-canvas-wrap"><canvas id="qDistChart"></canvas></div>
       </div>
     </div>
+
 
     <div class="tab-content" id="tab-review">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
@@ -1348,112 +1378,192 @@ let actualTotalMarks = scoreParts.length > 1 ? parseFloat(scoreParts[1]) : (att.
 document.getElementById('rp-slider').max = actualTotalMarks; 
      document.getElementById('rp-slider').value = myScore;
      
+     // Global Chart Instances to prevent duplication overlapping
+     if(window.marksDistChartInst) window.marksDistChartInst.destroy();
+     if(window.prevAttChartInst) window.prevAttChartInst.destroy();
+     if(window.qDistChartInst) window.qDistChartInst.destroy();
+
      db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
         const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
         window.currentLbDocs = docs;
         
-                        if (docs.length > 0) {
-                    // Force Attempt 1 Rank Calculation
-                    let totalStudents = docs.length;
-                    let myRank = 1;
-                    let foundSelf = false;
+        let totalStudents = att.globalTotalStudents || Math.max(1, docs.length); 
+        let myRank = att.rank || 1; 
+        let percentile = att.percentile || "100.00";
+        let attemptedCount = (att.correct || 0) + (att.incorrect || 0);
 
-                    docs.forEach(d => {
-                        if (d.id === user.uid) foundSelf = true;
-                        if (d.id !== user.uid && parseFloat(d.score) > att1Score) {
-                            myRank++;
-                        }
-                    });
-                    if (!foundSelf) totalStudents += 1; // If user not yet synced
+        document.getElementById('an-rank').innerText = myRank;
+        document.getElementById('an-total-students').innerText = `/ ${totalStudents}`;
+        document.getElementById('an-score').innerText = myScore;
+        document.getElementById('an-max-score').innerText = `/ ${actualTotalMarks}`;
+        document.getElementById('an-percentile').innerText = percentile + "%";
+        document.getElementById('an-accuracy').innerText = myAcc + "%";
+        document.getElementById('an-attempt-info').innerText = `${attemptedCount} / ${dSnapS.arr.length} Attempted`;
 
-                    let topDoc = docs[0];
-                    let topScore = parseFloat(topDoc.score);
-                    let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
-                    let percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
-            
-            // Populate Basic Summary
-            document.getElementById('an-rank').innerHTML = `${myRank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${totalStudents}</span>`;
-            document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${actualTotalMarks}</span>`;
-            document.getElementById('an-avg-score').innerText = avgScore;
-            document.getElementById('an-top-score').innerText = topScore;
-            document.getElementById('an-percentile').innerText = percentile + "%";
-            document.getElementById('an-accuracy').innerText = myAcc + "%";
+        // --- Sectional Summary Engine ---
+        let secData = {};
+        dSnapS.arr.forEach(q => {
+            let sName = q.secName || 'General';
+            if(!secData[sName]) secData[sName] = { c:0, w:0, u:0, maxM:0, earned:0 };
+            secData[sName].maxM += q.posMarks || 2;
+            if(q.user === -1) { secData[sName].u++; }
+            else if(q.user === q.correct) { secData[sName].c++; secData[sName].earned += (q.posMarks || 2); }
+            else { secData[sName].w++; secData[sName].earned -= (q.negMarks || 0.5); }
+        });
 
-            // Update Score Comparison Table for TOPPER & AVG
-            let sumC = 0, sumW = 0, sumT = 0;
-            docs.forEach(d => {
-                let c = 0, w = 0, t = 0;
-                if(d.correctArray && d.userArray) {
-                    d.userArray.forEach((u, idx) => {
-                        if(u !== -1) { if(u === d.correctArray[idx]) c++; else w++; }
-                    });
-                }
-                if(d.timeArray) t = d.timeArray.reduce((a,b)=>a+b, 0);
-                sumC += c; sumW += w; sumT += Math.round(t/60);
-            });
+        let secSummaryHTML = `
+          <div class="sec-summary-row" style="border-bottom:1px solid var(--border-color); padding-bottom:8px; margin-bottom:8px;">
+            <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase;">Section Name</div>
+            <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase;">Score</div>
+            <div style="font-size:0.7rem; font-weight:800; color:var(--text-secondary); text-transform:uppercase;">Attempted</div>
+          </div>`;
+          
+        for (let [sName, sData] of Object.entries(secData)) {
+            let totalQ = sData.c + sData.w + sData.u;
+            let attQ = sData.c + sData.w;
+            let scorePerc = sData.maxM > 0 ? Math.max(0, (sData.earned / sData.maxM) * 100) : 0;
+            let attPerc = totalQ > 0 ? ((attQ / totalQ) * 100) : 0;
 
-            // Topper Stats Calculation
-            let topC=0, topW=0, topT = topDoc.timeArray ? Math.round(topDoc.timeArray.reduce((a,b)=>a+b,0)/60) : 0;
-            if(topDoc.correctArray && topDoc.userArray) {
-                topDoc.userArray.forEach((u, idx) => {
-                    if(u !== -1) { if(u === topDoc.correctArray[idx]) topC++; else topW++; }
-                });
-            }
-            let topAcc = (topC+topW)>0 ? Math.round((topC/(topC+topW))*100) : 0;
-            document.getElementById('cmp-top-score').innerText = topScore;
-            document.getElementById('cmp-top-acc').innerText = topAcc + "%";
-            document.getElementById('cmp-top-c').innerText = topC;
-            document.getElementById('cmp-top-w').innerText = topW;
-            document.getElementById('cmp-top-time').innerText = topT + "m";
-
-            // Avg Stats Calculation
-            let avgC = Math.round(sumC / totalStudents);
-            let avgW = Math.round(sumW / totalStudents);
-            let avgT = Math.round(sumT / totalStudents);
-            let avgAcc = (avgC+avgW)>0 ? Math.round((avgC/(avgC+avgW))*100) : 0;
-            document.getElementById('cmp-avg-score').innerText = avgScore;
-            document.getElementById('cmp-avg-acc').innerText = avgAcc + "%";
-            document.getElementById('cmp-avg-c').innerText = avgC;
-            document.getElementById('cmp-avg-w').innerText = avgW;
-            document.getElementById('cmp-avg-time').innerText = avgT + "m";
-
-            // Populate Leaderboard Tab
-            let podHtml = '';
-            if(docs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${docs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${docs[1].name.split(' ')[0]}</div><div class="pod-score">${docs[1].score}</div></div>`;
-            if(docs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${docs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${docs[0].name.split(' ')[0]}</div><div class="pod-score">${docs[0].score}</div></div>`;
-            if(docs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${docs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${docs[2].name.split(' ')[0]}</div><div class="pod-score">${docs[2].score}</div></div>`;
-            document.getElementById('lb-podium').innerHTML = podHtml;
-
-            let listHtml = '';
-            docs.slice(3).forEach((d, i) => {
-              listHtml += `<div class="lb-row"><div class="lb-r-num">${i+4}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${d.score}</div></div>`;
-            });
-            document.getElementById('lb-list').innerHTML = listHtml;
-
-                      // Sticky You (Forced Attempt 1 Stats)
-            let safeName = user.displayName || 'Warrior';
-            document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score}</div>`;
-
-            // Prepare Question Stats for Review Tab
-            window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
-            for (let i = 0; i < dSnapS.arr.length; i++) {
-                let totalTime = 0, correctCount = 0, attemptCount = 0;
-                docs.forEach(doc => {
-                    totalTime += (doc.timeArray && doc.timeArray[i]) ? doc.timeArray[i] : 0;
-                    if (doc.userArray && doc.userArray[i] !== -1) {
-                        attemptCount++;
-                        if (doc.userArray[i] === doc.correctArray[i]) correctCount++;
-                    }
-                });
-                window.currentLbStats.avgTimes.push(Math.round(totalTime / docs.length));
-                window.currentLbStats.attemptPercents.push(Math.round((attemptCount / docs.length) * 100));
-                window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
-            }
+            secSummaryHTML += `
+              <div class="sec-summary-row">
+                <div class="sec-name">${sName}</div>
+                <div class="prog-container">
+                  <div class="prog-labels"><span>${sData.earned.toFixed(1)} / ${sData.maxM}</span></div>
+                  <div class="prog-bg"><div class="prog-fill fill-score" style="width:${scorePerc}%"></div></div>
+                </div>
+                <div class="prog-container">
+                  <div class="prog-labels"><span>${attQ} / ${totalQ}</span></div>
+                  <div class="prog-bg"><div class="prog-fill fill-att" style="width:${attPerc}%"></div></div>
+                </div>
+              </div>`;
         }
-        updateRankPredictor(myScore); // Init call
+        document.getElementById('sectional-summary-box').innerHTML = secSummaryHTML;
+
+        // --- Compare with Topper & Average ---
+        let cmpTabsHTML = `<div class="cmp-tab active" onclick="renderCompareTable('Overall')">Overall</div>`;
+        Object.keys(secData).forEach(sName => { cmpTabsHTML += `<div class="cmp-tab" onclick="renderCompareTable('${sName}')">${sName}</div>`; });
+        document.getElementById('cmp-tabs-container').innerHTML = cmpTabsHTML;
+
+        window.renderCompareTable = function(filterSec) {
+            document.querySelectorAll('.cmp-tab').forEach(t => t.classList.remove('active'));
+            if(event) event.target.classList.add('active');
+
+            let yC = 0, yW = 0, yT = 0, yScore = 0, qCount = 0;
+            let topC = 0, topW = 0, topT = 0, topScore = 0;
+            let sumC = 0, sumW = 0, sumT = 0, sumScore = 0;
+            
+            dSnapS.arr.forEach((q, idx) => {
+                if(filterSec !== 'Overall' && q.secName !== filterSec) return;
+                qCount++;
+                let pm = q.posMarks || 2; let nm = q.negMarks || 0.5;
+
+                yT += q.timeTaken || 0;
+                if(q.user !== -1) { if(q.user === q.correct) { yC++; yScore+=pm; } else { yW++; yScore-=nm; } }
+
+                let safeTop = docs[0] || {userArray:[], timeArray:[]};
+                let topUserAns = safeTop.userArray ? safeTop.userArray[idx] : -1;
+                topT += (safeTop.timeArray ? safeTop.timeArray[idx] : 0);
+                if(topUserAns !== -1) { if(topUserAns === q.correct) { topC++; topScore+=pm; } else { topW++; topScore-=nm; } }
+
+                docs.forEach(d => {
+                    sumT += (d.timeArray ? d.timeArray[idx] : 0);
+                    let dAns = d.userArray ? d.userArray[idx] : -1;
+                    if(dAns !== -1) { if(dAns === q.correct) { sumC++; sumScore+=pm; } else { sumW++; sumScore-=nm; } }
+                });
+            });
+
+            let numStudents = Math.max(1, docs.length);
+            let avgC = Math.round(sumC / numStudents); let avgW = Math.round(sumW / numStudents);
+            let avgT = Math.round(sumT / numStudents); let avgS = (sumScore / numStudents).toFixed(1);
+            
+            let yAcc = (yC+yW)>0 ? Math.round((yC/(yC+yW))*100) : 0;
+            let topAcc = (topC+topW)>0 ? Math.round((topC/(topC+topW))*100) : 0;
+            let avgAcc = (avgC+avgW)>0 ? Math.round((avgC/(avgC+avgW))*100) : 0;
+
+            document.getElementById('compare-table-body').innerHTML = `
+              <thead><tr><th>USER</th><th>SCORE</th><th>ACCURACY</th><th>DONE</th><th>TIME</th></tr></thead>
+              <tbody>
+                <tr class="row-you"><td>You</td><td>${yScore.toFixed(1)}</td><td>${yAcc}%</td><td>${yC+yW}/${qCount}</td><td>${Math.round(yT/60)}m</td></tr>
+                <tr class="row-top"><td>Topper</td><td>${topScore.toFixed(1)}</td><td>${topAcc}%</td><td>${topC+topW}/${qCount}</td><td>${Math.round(topT/60)}m</td></tr>
+                <tr class="row-avg"><td>Avg</td><td>${avgS}</td><td>${avgAcc}%</td><td>${avgC+avgW}/${qCount}</td><td>${Math.round(avgT/60)}m</td></tr>
+              </tbody>`;
+        };
+        window.renderCompareTable('Overall');
+
+        // --- Question Distribution Chart ---
+        let qLabels = Object.keys(secData);
+        let dC = [], dW = [], dU = [];
+        qLabels.forEach(k => { dC.push(secData[k].c); dW.push(secData[k].w); dU.push(secData[k].u); });
+
+        const ctxQDist = document.getElementById('qDistChart').getContext('2d');
+        window.qDistChartInst = new Chart(ctxQDist, {
+            type: 'bar',
+            data: { labels: qLabels, datasets: [
+                { label: 'Correct', data: dC, backgroundColor: '#10b981' },
+                { label: 'Incorrect', data: dW, backgroundColor: '#ef4444' },
+                { label: 'Unattempted', data: dU, backgroundColor: '#94a3b8' }
+            ]},
+            options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true } }, plugins:{legend:{display:false}} }
+        });
+
+        // --- Marks Distribution Chart ---
+        let gAvg = att.globalAvgMarks || (docs.reduce((a,b)=>a+parseFloat(b.score),0)/numStudents) || (actualTotalMarks/2);
+        let mDistLabels = [], mDistData = [];
+        let stdDev = Math.max(5, actualTotalMarks / 6); 
+        for(let i=0; i<=actualTotalMarks; i+=(actualTotalMarks/10)) {
+            mDistLabels.push(Math.round(i));
+            let yVal = Math.exp(-Math.pow(i - gAvg, 2) / (2 * Math.pow(stdDev, 2)));
+            mDistData.push(yVal * 100);
+        }
+
+        const ctxMarksDist = document.getElementById('marksDistChart').getContext('2d');
+        window.marksDistChartInst = new Chart(ctxMarksDist, {
+            type: 'line',
+            data: { labels: mDistLabels, datasets: [{ label: 'Students', data: mDistData, borderColor: '#06b6d4', backgroundColor: 'rgba(6, 182, 212, 0.2)', fill: true, tension: 0.4, pointRadius: 0 }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { display: false }, x: { grid: { display: false } } } }
+        });
+
+        // --- Previous Attempts Chart ---
+        if(att.attemptNumber > 1) {
+            document.getElementById('prev-attempts-card').style.display = 'block';
+            let allAttsForThis = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === normalizeStringForMatch(att.testName));
+            let att1 = allAttsForThis[0];
+            let score1 = parseFloat(String(att1.score).split(' /')[0]);
+            
+            const ctxPrev = document.getElementById('prevAttemptsChart').getContext('2d');
+            window.prevAttChartInst = new Chart(ctxPrev, {
+                type: 'bar',
+                data: {
+                    labels: ['Score', 'Accuracy (%)', 'Percentile'],
+                    datasets: [
+                        { label: 'Attempt 1', data: [score1, att1.accuracy||0, att1.percentile||0], backgroundColor: 'rgba(148, 163, 184, 0.5)' },
+                        { label: `Attempt ${att.attemptNumber} (Now)`, data: [myScore, myAcc, parseFloat(percentile)], backgroundColor: '#8b5cf6' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: {color: '#94a3b8'} } } }
+            });
+        } else {
+            document.getElementById('prev-attempts-card').style.display = 'none';
+        }
+
+        // --- Leaderboard Tab ---
+        let podHtml = '';
+        if(docs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${docs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${docs[1].name.split(' ')[0]}</div><div class="pod-score">${docs[1].score}</div></div>`;
+        if(docs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${docs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${docs[0].name.split(' ')[0]}</div><div class="pod-score">${docs[0].score}</div></div>`;
+        if(docs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${docs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${docs[2].name.split(' ')[0]}</div><div class="pod-score">${docs[2].score}</div></div>`;
+        document.getElementById('lb-podium').innerHTML = podHtml;
+
+        let listHtml = '';
+        docs.slice(3).forEach((d, i) => { listHtml += `<div class="lb-row"><div class="lb-r-num">${i+4}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${d.score}</div></div>`; });
+        document.getElementById('lb-list').innerHTML = listHtml;
+
+        let safeName = auth.currentUser ? auth.currentUser.displayName : 'Warrior';
+        document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${(auth.currentUser && auth.currentUser.photoURL) ? auth.currentUser.photoURL : 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${myScore}</div>`;
+
+        updateRankPredictor(myScore); 
         drawDashSnap();
      }).catch(e => { console.error("LB Fetch Error", e); drawDashSnap(); });
-  }
+
 
   window.filterBySection = function(secName, index = null) {
     dSnapS.currentSection = secName;
