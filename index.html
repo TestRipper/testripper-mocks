@@ -1563,8 +1563,7 @@ document.getElementById('rp-slider').max = actualTotalMarks;
         updateRankPredictor(myScore); 
         drawDashSnap();
      }).catch(e => { console.error("LB Fetch Error", e); drawDashSnap(); });
-
-
+}
   window.filterBySection = function(secName, index = null) {
     dSnapS.currentSection = secName;
     let tabsContainer = document.getElementById('sectionalTabsContainer');
