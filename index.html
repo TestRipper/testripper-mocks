@@ -1368,12 +1368,6 @@ let actualTotalMarks = scoreParts.length > 1 ? parseFloat(scoreParts[1]) : (att.
      let myAcc = (att.correct + att.incorrect) > 0 ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) : 0;
      let myTime = (att.minutes || 0);
      
-     document.getElementById('cmp-you-score').innerText = myScore;
-     document.getElementById('cmp-you-acc').innerText = myAcc + "%";
-     document.getElementById('cmp-you-c').innerText = att.correct || 0;
-     document.getElementById('cmp-you-w').innerText = att.incorrect || 0;
-     document.getElementById('cmp-you-time').innerText = myTime + "m";
-     
      // Init Rank Predictor Slider
 document.getElementById('rp-slider').max = actualTotalMarks; 
      document.getElementById('rp-slider').value = myScore;
