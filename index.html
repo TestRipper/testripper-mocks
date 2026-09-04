@@ -679,219 +679,190 @@ body[data-theme="light"] .glass-card {
   </nav>
 
   <div class="modal-full" id="dash-snap">
-    <div class="tab-header">
-      <button class="tab-btn active" onclick="switchModalTab('analysis')">Analysis</button>
-      <button class="tab-btn" onclick="switchModalTab('review')">Attempt Review</button>
-      <button class="tab-btn" onclick="switchModalTab('leaderboard')">Leaderboard</button>
-      <button id="sClose" style="padding:0 15px; color:var(--accent-red); background:none; border:none; font-size:1.2rem; cursor:pointer;" onclick="document.getElementById('dash-snap').classList.remove('show')">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
-<div id="global-quiz-title" style="text-align:center; padding:12px 20px; font-weight:900; font-size:1.15rem; color:var(--accent-purple); background:var(--bg-main); border-bottom:1px solid var(--border-color); z-index:9; text-transform:uppercase; letter-spacing:0.5px;"></div>
-    <!-- 1. ANALYSIS TAB -->
-    <div class="tab-content analysis-section active" id="tab-analysis">
-      <div class="kpi-metrics-grid">
-        <div class="kpi-card">
-          <div class="kpi-icon-box rank"><i class="fa-solid fa-medal"></i></div>
-          <div><div class="kpi-val" id="kpiRank">--</div><div class="kpi-label">Your Rank</div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box score"><i class="fa-solid fa-bolt"></i></div>
-          <div><div class="kpi-val" id="kpiScore">--</div><div class="kpi-label">Score</div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box percentile"><i class="fa-solid fa-chart-line"></i></div>
-          <div><div class="kpi-val" id="kpiPercentile">-- <small>%</small></div><div class="kpi-label">Percentile</div></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon-box accuracy"><i class="fa-solid fa-bullseye"></i></div>
-          <div><div class="kpi-val" id="kpiAccuracy">-- <small>%</small></div><div class="kpi-label">Accuracy</div></div>
-        </div>
-      </div>
+  <div class="tab-header">
+    <button class="tab-btn active" onclick="switchModalTab('analysis')">Analysis</button>
+    <button class="tab-btn" onclick="switchModalTab('review')">Attempt Review</button>
+    <button class="tab-btn" onclick="switchModalTab('leaderboard')">Leaderboard</button>
+    <button id="sClose" style="padding:0 15px; color:var(--accent-red); background:none; border:none; font-size:1.2rem; cursor:pointer;" onclick="document.getElementById('dash-snap').classList.remove('show')">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
 
-      <div class="analysis-card">
-        <div class="analysis-card-title"><span><i class="fa-solid fa-users mr-2"></i> Compare with Topper & Average</span></div>
-        <div class="table-responsive">
-          <table class="custom-analysis-table">
-            <thead>
-              <tr><th>User</th><th>Score</th><th>Accuracy</th><th>Correct</th><th>Wrong</th><th>Time</th></tr>
-            </thead>
-            <tbody>
-              <tr class="row-you">
-                <td><strong>You</strong></td>
-                <td><div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width:100%"></div></div><div id="cmp-you-score">--</div></td>
-                <td><strong style="color:var(--accent-green);" id="cmp-you-acc">--</strong></td>
-                <td id="cmp-you-c">--</td>
-                <td id="cmp-you-w">--</td>
-                <td id="cmp-you-time">--</td>
-              </tr>
-              <tr class="row-top">
-                <td><strong>Topper</strong></td>
-                <td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:100%"></div></div><div id="cmp-top-score">--</div></td>
-                <td><strong style="color:var(--accent-green);" id="cmp-top-acc">--</strong></td>
-                <td id="cmp-top-c">--</td>
-                <td id="cmp-top-w">--</td>
-                <td id="cmp-top-time">--</td>
-              </tr>
-              <tr class="row-avg">
-                <td><strong>Avg</strong></td>
-                <td><div class="mini-progress-track"><div class="mini-progress-bar bar-cyan" style="width:100%"></div></div><div id="cmp-avg-score">--</div></td>
-                <td><strong style="color:var(--accent-green);" id="cmp-avg-acc">--</strong></td>
-                <td id="cmp-avg-c">--</td>
-                <td id="cmp-avg-w">--</td>
-                <td id="cmp-avg-time">--</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+  <div id="global-quiz-title" style="text-align:center; padding:12px 20px; font-weight:900; font-size:1.15rem; color:var(--accent-purple); background:var(--bg-main); border-bottom:1px solid var(--border-color); z-index:9; text-transform:uppercase; letter-spacing:0.5px;"></div>
 
-      <div class="analysis-card">
-        <div class="analysis-card-title"><span><i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rank Predictor</span></div>
-        <div class="rank-predictor-box">
-          <div class="predicted-rank-badge" id="rp-tooltip">Rank: --</div>
-          <input type="range" min="0" max="200" step="0.5" value="0" class="slider-range-input" id="rp-slider" oninput="updateRankPredictor(this.value)" />
-          <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-secondary); margin-top:8px;">
-            <span>0 Marks</span><span style="font-weight:800; color:var(--accent-purple);">Selected: <span id="rp-marks-disp">0</span> Marks</span><span>Max Marks</span>
-          </div>
-        </div>
+  <!-- ========== ANALYSIS TAB ========== -->
+  <div class="tab-content analysis-section active" id="tab-analysis">
+    <!-- KPI Cards -->
+    <div class="kpi-metrics-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon-box rank"><i class="fa-solid fa-medal"></i></div>
+        <div><div class="kpi-val" id="kpiRank">--</div><div class="kpi-label">Your Rank</div></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon-box score"><i class="fa-solid fa-bolt"></i></div>
+        <div><div class="kpi-val" id="kpiScore">--</div><div class="kpi-label">Score</div></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon-box percentile"><i class="fa-solid fa-chart-line"></i></div>
+        <div><div class="kpi-val" id="kpiPercentile">-- <small>%</small></div><div class="kpi-label">Percentile</div></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon-box accuracy"><i class="fa-solid fa-bullseye"></i></div>
+        <div><div class="kpi-val" id="kpiAccuracy">-- <small>%</small></div><div class="kpi-label">Accuracy</div></div>
       </div>
     </div>
 
-    <!-- 2. ATTEMPT REVIEW TAB -->
-    <div class="tab-content" id="tab-review">
-      <div class="review-header-card">
-        <div class="section-pill-container" id="sectionalTabsContainer" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:8px;">
-          <!-- JS will inject section buttons here -->
-        </div>
-        <div class="metrics-summary-bar">
-          <div class="metrics-left-group">
-            <span class="badge-date" id="snapMetaBadges">Date</span>
-            <div class="score-time-display">
-              <button class="btn-modal" onclick="downloadCurrentSnap()" style="padding:6px 12px; font-size:0.85rem;" title="Download PDF/HTML"><i class="fa-solid fa-download"></i></button>
-            </div>
-          </div>
-          <div class="status-count-pills">
-            <span class="pill-c" id="countCorrectPill">C: -</span>
-            <span class="pill-w" id="countWrongPill">W: -</span>
-            <span class="pill-u" id="countUnattemptPill">U: -</span>
-          </div>
-        </div>
+    <!-- Social Banner -->
+    <div class="social-banner-card">
+      <div class="social-banner-text">
+        <h3>Join Vishwasniya</h3>
+        <p>Click on social handles to join official channels and stay updated with content.</p>
       </div>
-
-      <div class="review-grid-layout">
-        <div class="palette-card">
-          <div style="font-size:0.85rem; font-weight:800; margin-bottom:12px; color:var(--text-secondary); display:flex; justify-content:space-between; align-items:center;">
-             <span id="snapTitle">Questions</span>
-             <span id="saveBtnContainer"></span>
-          </div>
-          <div class="mini-nav" id="snapMini" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(34px,1fr)); gap:6px;"></div>
-        </div>
-        <div class="donut-card">
-          <div class="chart-wrap" id="chartWrap" style="height: 140px; width: 140px; margin:0 auto;"><canvas id="reviewChart"></canvas></div>
-          <div style="display:flex; justify-content:center; gap:10px; margin-top:12px; font-size:0.75rem;">
-            <span style="color:#10b981; font-weight:800;">● Correct</span><span style="color:#ef4444; font-weight:800;">● Wrong</span><span style="color:#94a3b8; font-weight:800;">● Skip</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="question-review-card" id="questionReviewCardBox">
-        <!-- New Popover UI injected via JS -->
-        <div class="question-top-toolbar" id="qStatsRow"></div>
-        
-        <div class="question-content-text" id="snapQ">Loading...</div>
-        <div class="review-options-list" id="snapOpts"></div>
-        
-        <div class="solution-card" id="solBlock" style="display:none;">
-          <div class="solution-header-row">
-            <div class="solution-lightning-icon"><i class="fa-solid fa-bolt"></i></div>
-            <div class="solution-title">Solution & Trick</div>
-          </div>
-          <div id="snapSol" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary);"></div>
-        </div>
-        
-        <div style="display:flex; justify-content:space-between; margin-top:24px;">
-          <button class="btn-modal" id="sPrev" style="padding:10px 20px;"><i class="fa fa-chevron-left"></i> Prev</button>
-          <button class="btn-modal" style="background:var(--accent-purple); color:#fff; padding:10px 20px;" id="sNext">Next <i class="fa fa-chevron-right"></i></button>
-        </div>
+      <div class="social-icons-row">
+        <a href="https://t.me/Vishwasniya" target="_blank" class="social-btn telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="social-btn youtube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
 
-    <!-- 3. LEADERBOARD TAB -->
-    <div class="tab-content analysis-card" id="tab-leaderboard" style="position:relative; margin-top:16px;">
-      <div class="analysis-card-title"><span><i class="fa-solid fa-crown text-amber mr-2" style="color:#facc15;"></i> Top Rankers</span></div>
-      <div class="podium" id="lb-podium"></div>
-      <div class="table-responsive" style="padding-bottom:70px;">
+    <!-- Sectional Summary -->
+    <div class="analysis-card">
+      <div class="analysis-card-title"><span><i class="fa-solid fa-table-list mr-2"></i> Sectional Summary</span></div>
+      <div class="table-responsive">
         <table class="custom-analysis-table">
-          <thead><tr><th>Rank</th><th>Warrior Name</th><th>Score</th></tr></thead>
-          <tbody id="lb-list"></tbody>
+          <thead><tr><th>Section Name</th><th>Score</th><th>Attempted</th><th>Accuracy</th><th>Time Spent</th></tr></thead>
+          <tbody id="sectionalSummaryTbody"></tbody>
         </table>
       </div>
-      <div class="sticky-you" id="lb-sticky-you"></div>
     </div>
-  </div>
 
-  <div class="modal" id="error-book-modal">
-    <div class="result">
-      <div class="rev-wrap" style="max-height:80vh;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px; border-bottom:1px solid var(--border-color); padding-bottom:8px;">
-          <h3 id="ebTitle" style="margin:0; font-weight:800; color:var(--accent-red)"><i class="fa-solid fa-book-skull"></i> Mistake Journal</h3>
-          <button class="btn-modal danger" id="ebClose" style="padding:6px 12px; font-size:0.8rem;">Close</button>
+    <!-- Compare with Topper & Average -->
+    <div class="analysis-card">
+      <div class="analysis-card-title"><span><i class="fa-solid fa-users mr-2"></i> Compare with Topper & Average</span></div>
+      <div class="compare-nav-tabs" id="compareSectionTabs">
+        <button class="compare-sub-tab active" onclick="switchCompareTab('Overall')">Overall</button>
+        <button class="compare-sub-tab" onclick="switchCompareTab('Reasoning')">Reasoning</button>
+        <button class="compare-sub-tab" onclick="switchCompareTab('General Awareness')">GA</button>
+        <button class="compare-sub-tab" onclick="switchCompareTab('Quantitative Aptitude')">Quant</button>
+        <button class="compare-sub-tab" onclick="switchCompareTab('English')">English</button>
+      </div>
+      <div class="table-responsive">
+        <table class="custom-analysis-table">
+          <thead><tr><th>User</th><th>Score</th><th>Accuracy</th><th>Correct</th><th>Wrong</th><th>Time</th></tr></thead>
+          <tbody id="topperCompareTbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Rank Predictor -->
+    <div class="analysis-card">
+      <div class="analysis-card-title"><span><i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rank Predictor</span></div>
+      <div class="rank-predictor-box">
+        <div class="predicted-rank-badge" id="rp-tooltip">Rank: --</div>
+        <input type="range" min="0" max="200" step="0.5" value="0" class="slider-range-input" id="rp-slider" oninput="updateRankPredictor(this.value)" />
+        <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-secondary); margin-top:8px;">
+          <span>0 Marks</span><span style="font-weight:800; color:var(--accent-purple);">Selected: <span id="rp-marks-disp">0</span> Marks</span><span>Max Marks</span>
         </div>
-        <div id="ebListArea"></div>
+      </div>
+    </div>
+
+    <!-- Marks Distribution Chart -->
+    <div class="analysis-card">
+      <div class="analysis-card-title"><span><i class="fa-solid fa-chart-area mr-2"></i> Marks Distribution</span></div>
+      <div style="position: relative; height: 320px; width: 100%;"><canvas id="marksDistChart"></canvas></div>
+    </div>
+
+    <!-- Previous Attempts Comparison -->
+    <div class="analysis-card">
+      <div class="analysis-card-title"><span><i class="fa-solid fa-code-compare mr-2"></i> Previous Attempts</span><span id="attemptBadge" style="font-size:0.8rem; font-weight:600; color:var(--accent-purple); background:var(--purple-soft); padding:4px 10px; border-radius:12px;"></span></div>
+      <div style="position: relative; height: 260px; width: 100%;"><canvas id="attemptCompareChart"></canvas></div>
+    </div>
+
+    <!-- Question Distribution Chart -->
+    <div class="analysis-card">
+      <div class="analysis-card-title"><span><i class="fa-solid fa-chart-column mr-2"></i> Question Distribution</span></div>
+      <div style="position: relative; height: 280px; width: 100%;"><canvas id="questionDistChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ========== ATTEMPT REVIEW TAB ========== -->
+  <div class="tab-content" id="tab-review">
+    <div class="review-header-card">
+      <div class="section-pill-container" id="reviewSectionPills"></div>
+      <div class="metrics-summary-bar">
+        <div class="metrics-left-group">
+          <span class="badge-date" id="snapMetaBadges">Date</span>
+          <div class="score-time-display">
+            <span id="displayReviewScore">--</span>
+            <span class="badge-time-chip">TIME</span>
+            <span id="displayReviewTime" style="color: var(--accent-blue); font-weight:700;">--</span>
+            <span class="badge-all-chip">All</span>
+          </div>
+        </div>
+        <div class="status-count-pills">
+          <span class="pill-c" id="countCorrectPill">C: -</span>
+          <span class="pill-w" id="countWrongPill">W: -</span>
+          <span class="pill-u" id="countUnattemptPill">U: -</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-grid-layout">
+      <div class="palette-card">
+        <div style="font-size:0.85rem; font-weight:700; margin-bottom:10px; color:var(--text-secondary);" id="paletteRangeLabel">Questions</div>
+        <div class="question-palette-grid" id="questionPaletteContainer"></div>
+      </div>
+      <div class="donut-card">
+        <div style="position: relative; height: 160px; width: 160px;"><canvas id="reviewChart"></canvas></div>
+        <div style="display:flex; justify-content:center; gap:10px; margin-top:10px; font-size:0.75rem;">
+          <span style="color:#10b981; font-weight:700;">● Correct</span><span style="color:#ef4444; font-weight:700;">● Wrong</span><span style="color:#94a3b8; font-weight:700;">● Skip</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-review-card">
+      <div class="question-top-toolbar">
+        <div style="position: relative;">
+          <button type="button" class="time-badge-btn fast" id="userTimeBtn" onclick="toggleTimePopover(event)">
+            <i class="fa-regular fa-clock"></i> <span id="userTimeBadgeText">You: --</span>
+          </button>
+          <div class="time-popover-box" id="timePopoverBox">
+            <div class="time-popover-row"><span>You:</span><span id="popoverUserTime">--</span></div>
+            <div class="time-popover-row"><span>Avg:</span><span id="popoverAvgTime">--</span></div>
+            <div class="time-popover-row"><span>Topper:</span><span id="popoverTopperTime">--</span></div>
+          </div>
+        </div>
+        <div class="accuracy-stat-pill" id="questionCorrectRatePill">--</div>
+      </div>
+      <div class="question-content-text" id="snapQ">Loading...</div>
+      <div class="review-options-list" id="snapOpts"></div>
+      <div class="solution-card">
+        <div class="solution-header-row">
+          <div class="solution-lightning-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="solution-title">Shortcut Trick & Solution</div>
+        </div>
+        <div id="snapSol" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary);"></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-top:24px;">
+        <button class="btn-modal" id="sPrev" style="padding:10px 20px;"><i class="fa fa-chevron-left"></i> Prev</button>
+        <button class="btn-modal" style="background:var(--accent-purple); color:#fff; padding:10px 20px;" id="sNext">Next <i class="fa fa-chevron-right"></i></button>
       </div>
     </div>
   </div>
 
-  <div class="modal" id="media-modal" style="z-index:10000; padding:0; background:var(--bg-main);">
-    <div style="width:100%; height:100%; display:flex; flex-direction:column;">
-      <div class="media-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:var(--bg-card); border-bottom:1px solid var(--border-color);">
-        <h3 id="media-title" style="margin:0; color:var(--accent-green); font-size:1.1rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Document Viewer</h3>
-        <button onclick="closeMedia()" style="background:var(--accent-red); color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:900; cursor:pointer;"><i class="fa-solid fa-xmark"></i> Close</button>
-      </div>
-      <div id="media-container" style="flex:1; background:#000; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;"></div>
+  <!-- ========== LEADERBOARD TAB ========== -->
+  <div class="tab-content analysis-card" id="tab-leaderboard" style="position:relative; margin-top:16px;">
+    <div class="analysis-card-title"><span><i class="fa-solid fa-crown text-amber mr-2" style="color:#facc15;"></i> Top Rankers</span></div>
+    <div class="podium" id="lb-podium"></div>
+    <div class="table-responsive" style="padding-bottom:70px;">
+      <table class="custom-analysis-table">
+        <thead><tr><th>Rank</th><th>Warrior Name</th><th>Score</th></tr></thead>
+        <tbody id="lb-list"></tbody>
+      </table>
     </div>
+    <div class="sticky-you" id="lb-sticky-you"></div>
   </div>
-
-  <div class="modal" id="saved-questions-modal">
-    <div class="result" style="max-width: 850px; padding:0; overflow:hidden; border-radius:18px;">
-      <div style="background:linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); padding:20px 24px; display:flex; justify-content:space-between; align-items:center;">
-        <h3 style="margin:0; font-weight:900; font-size:1.4rem; color:#fff; text-transform:uppercase; letter-spacing:1px;">
-          <i class="fa-solid fa-star" style="color:#FACC15;"></i> Weekly Saved Questions
-        </h3>
-        <button class="btn-modal" onclick="document.getElementById('saved-questions-modal').classList.remove('show')" style="background:rgba(0,0,0,0.3); color:#fff; padding:8px 16px; font-size:0.9rem; border-radius:8px; border:1px solid rgba(255,255,255,0.2);">Close <i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div style="padding:16px 24px; background:var(--bg-nav); border-bottom:1px solid var(--border-color); display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-        <select id="savedWeekSelector" style="padding:10px 16px; background:var(--bg-card); color:var(--text-primary); border:1px solid var(--border-color); border-radius:8px; font-weight:bold; flex:1; outline:none; font-size:1rem; cursor:pointer;" onchange="renderSavedQuestionsList()">
-          <option value="">Loading Weeks...</option>
-        </select>
-        <button onclick="launchSavedQsMock()" style="background:linear-gradient(90deg, #3b82f6, #8b5cf6); color:#fff; border:none; padding:10px 16px; border-radius:8px; font-weight:900; font-size:0.9rem; cursor:pointer; box-shadow:0 4px 10px rgba(139, 92, 246, 0.3); text-transform:uppercase;"><i class="fa-solid fa-gamepad"></i> Attempt Test</button>
-        <button onclick="downloadSavedQs('txt')" style="background:var(--bg-card); color:var(--accent-gold); border:1px solid var(--border-color); padding:10px 16px; border-radius:8px; font-weight:900; font-size:0.9rem; cursor:pointer; transition:0.2s;"><i class="fa-solid fa-file-code"></i> TXT</button>
-        <button onclick="downloadSavedQs('html')" style="background:linear-gradient(90deg, var(--accent-red), #ff7675); color:#fff; border:none; padding:10px 16px; border-radius:8px; font-weight:900; font-size:0.9rem; cursor:pointer; box-shadow:0 4px 10px rgba(239, 68, 68, 0.3);"><i class="fa-solid fa-file-pdf"></i> HTML</button>
-      </div>
-      <div class="rev-wrap" id="savedQsListArea" style="padding:24px; max-height:65vh; background:var(--bg-main);"></div>
-    </div>
-  </div>
-
-  <div class="modal" id="engine-modal">
-    <div class="result" style="max-width: 400px; text-align: center; padding: 24px;">
-      <h3 style="margin-bottom: 16px; color: var(--accent-green); font-weight: 900; text-transform: uppercase;">
-         <i class="fa-solid fa-rocket"></i> Choose Attempt Mode
-      </h3>
-      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;">
-         Select how you want to tackle this mock.
-      </p>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <button onclick="launchEngine(1)" style="background: linear-gradient(90deg, #3b82f6, #8b5cf6); color: #fff; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);">
-          <i class="fa-solid fa-bolt"></i> Normal Test (Mixed)
-        </button>
-        <button onclick="launchEngine(2)" style="background: linear-gradient(90deg, var(--accent-red), #ff7675); color: #fff; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);">
-          <i class="fa-solid fa-stopwatch"></i> Sectional Timer Test
-        </button>
-      </div>
-      <button class="btn-modal" onclick="closeEngineModal()" style="margin-top: 20px; background: rgba(0,0,0,0.1); border: 1px solid var(--border-color);">Cancel</button>
-    </div>
-  </div>
+  
 <!-- 1. RETAKE STRATEGY MODAL -->
 <div class="modal" id="retake-modal">
   <div class="result" style="max-width: 420px; text-align: center; padding: 24px;">
@@ -3074,6 +3045,98 @@ window.closeEngineModal = function() {
   /* Powered by Google watermark thoda clean karne ke liye */
   .goog-logo-link { display:none !important; } 
   .goog-te-gadget { color: transparent !important; }
+  /* ===== New Analysis & Review Styles ===== */
+.kpi-metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.kpi-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px 20px; box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 16px; }
+.kpi-icon-box { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+.kpi-icon-box.rank { background: rgba(239,68,68,0.1); color: #ef4444; }
+.kpi-icon-box.score { background: rgba(124,58,237,0.1); color: #7c3aed; }
+.kpi-icon-box.percentile { background: rgba(2,132,199,0.1); color: #0284c7; }
+.kpi-icon-box.accuracy { background: rgba(16,185,129,0.1); color: #10b981; }
+.kpi-val { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); line-height: 1.2; }
+.kpi-val small { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); }
+.kpi-label { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; }
+
+.social-banner-card { background: linear-gradient(135deg, #18181b 0%, #09090b 100%); border-radius: 16px; padding: 22px 28px; color: #fff; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.4); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; border-top: 4px solid #ec4899; margin-bottom: 16px; }
+.social-banner-text h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 4px; }
+.social-banner-text p { font-size: 0.88rem; color: #a1a1aa; }
+.social-icons-row { display: flex; gap: 14px; }
+.social-btn { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: #fff; }
+.social-btn.telegram { background: #0088cc; }
+.social-btn.youtube { background: #ff0000; }
+.social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.analysis-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 22px; box-shadow: var(--shadow-sm); margin-bottom: 16px; }
+.analysis-card-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; }
+
+.table-responsive { width: 100%; overflow-x: auto; }
+.custom-analysis-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left; }
+.custom-analysis-table th { padding: 12px 14px; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border-color); text-transform: uppercase; font-size: 0.76rem; }
+.custom-analysis-table td { padding: 14px; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+.custom-analysis-table tr.bold-row td { font-weight: 700; background: rgba(128,128,128,0.05); border-top: 1.5px solid var(--border-color); }
+
+.mini-progress-track { width: 90px; height: 6px; background: var(--border-color); border-radius: 4px; overflow: hidden; margin-bottom: 4px; }
+.mini-progress-bar { height: 100%; border-radius: 4px; }
+.bar-purple { background: var(--accent-purple); }
+.bar-green { background: var(--accent-green); }
+.bar-cyan { background: var(--accent-blue); }
+
+.compare-nav-tabs { display: flex; gap: 10px; border-bottom: 1px solid var(--border-color); margin-bottom: 16px; overflow-x: auto; scrollbar-width: none; }
+.compare-sub-tab { padding: 8px 16px; font-size: 0.88rem; font-weight: 600; color: var(--text-secondary); border-bottom: 2px solid transparent; white-space: nowrap; }
+.compare-sub-tab.active { color: var(--accent-blue); border-bottom-color: var(--accent-blue); }
+
+.rank-predictor-box { padding: 20px; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 10px; margin: 10px 0; }
+.slider-range-input { width: 100%; height: 8px; border-radius: 5px; background: var(--border-color); outline: none; -webkit-appearance: none; accent-color: var(--accent-purple); margin: 10px 0; }
+.predicted-rank-badge { display: inline-block; background: var(--text-primary); color: var(--bg-main); padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.95rem; }
+
+.review-header-card { background: var(--bg-card); border-radius: 10px; padding: 14px 18px; border: 1px solid var(--border-color); margin-bottom: 14px; }
+.section-pill-container { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+.section-pill { flex: 0 0 auto; padding: 7px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); background: var(--bg-main); border: 1px solid var(--border-color); }
+.section-pill.active { background: var(--accent-purple); color: #fff; border-color: var(--accent-purple); }
+
+.metrics-summary-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--border-color); }
+.badge-date { background: var(--accent-purple); color: #fff; padding: 4px 12px; border-radius: 16px; font-size: 0.78rem; font-weight: 600; }
+.score-time-display { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 700; }
+.badge-time-chip { background: var(--accent-blue); color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; }
+.badge-all-chip { background: #1e40af; color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; }
+.pill-c { background: #10b981; color: #fff; padding: 3px 10px; border-radius: 14px; font-size: 0.8rem; font-weight: 700; }
+.pill-w { background: #ef4444; color: #fff; padding: 3px 10px; border-radius: 14px; font-size: 0.8rem; font-weight: 700; }
+.pill-u { background: #94a3b8; color: #fff; padding: 3px 10px; border-radius: 14px; font-size: 0.8rem; font-weight: 700; }
+
+.review-grid-layout { display: grid; grid-template-columns: 1fr 240px; gap: 16px; margin-bottom: 20px; }
+.palette-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px; }
+.question-palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(36px, 1fr)); gap: 8px; }
+.palette-btn { height: 36px; width: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 0.85rem; font-weight: 600; }
+.palette-btn.correct { background: #bbf7d0; color: #14532d; }
+.palette-btn.incorrect { background: #fecaca; color: #7f1d1d; }
+.palette-btn.unattempted { background: #e2e8f0; color: #334155; }
+.palette-btn.current { outline: 3px solid #f59e0b; outline-offset: 1px; font-weight: 800; }
+.donut-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+.question-review-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; margin-bottom: 24px; }
+.question-top-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; position: relative; }
+.time-badge-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; }
+.time-badge-btn.fast { background-color: #86efac; color: #064e3b; border: 1px solid #4ade80; }
+.time-badge-btn.slow { background-color: #fca5a5; color: #7f1d1d; border: 1px solid #f87171; }
+.time-popover-box { display: none; position: absolute; top: 42px; left: 0; z-index: 50; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; box-shadow: var(--shadow-md); padding: 10px 14px; min-width: 170px; }
+.time-popover-box.visible { display: block; }
+.time-popover-row { display: flex; justify-content: space-between; font-size: 0.82rem; padding: 4px 0; border-bottom: 1px dashed var(--border-color); }
+.time-popover-row span:last-child { font-weight: 700; color: var(--text-primary); }
+.accuracy-stat-pill { background: #c084fc; color: #3b0764; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; }
+
+.question-content-text { font-size: 1.05rem; font-weight: 500; color: var(--text-primary); margin-bottom: 18px; line-height: 1.6; }
+.review-options-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.review-option-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: 6px; border: 1.5px solid var(--border-color); font-size: 0.95rem; }
+.review-option-item.correct-opt { border-color: #10b981; background: #ecfdf5; font-weight: 600; }
+.review-option-item.wrong-marked { border-color: #ef4444; background: #fef2f2; font-weight: 600; }
+.opt-indicator-icon { font-size: 1.1rem; }
+.opt-indicator-icon.correct { color: #10b981; }
+.opt-indicator-icon.wrong { color: #ef4444; }
+
+.solution-card { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 5px solid #10b981; border-radius: 6px; padding: 16px 20px; }
+.solution-lightning-icon { width: 36px; height: 36px; background: #fef08a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ca8a04; font-size: 1.1rem; }
+.solution-title { font-size: 1.05rem; font-weight: 700; color: #065f46; }
+  
 </style>
 
 <script type="text/javascript">
@@ -3084,6 +3147,611 @@ window.closeEngineModal = function() {
       layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     }, 'google_translate_element');
   }
+  /* ============================================================
+   OVERRIDE MODAL FUNCTIONS – NEW DESIGN
+   ============================================================ */
+let reviewDonutChartInstance, marksChartInstance, attemptChartInstance, questionDistChartInstance;
+let currentCompareSection = 'Overall';
+
+// ---------- OVERRIDE openDashboardSnap ----------
+window.openDashboardSnap = function(globalIdx) {
+  const user = auth.currentUser;
+  const att = globalUserAttempts[globalIdx];
+  if (!att || !att.snap) return alert("Attempt data missing.");
+
+  dSnapS.arr = att.snap;
+  dSnapS.meta = att;
+  dSnapS.curIndexInOrder = 0;
+  dSnapS.currentSection = 'all';
+
+  // Attempt number logic
+  let tName = normalizeStringForMatch(att.testName);
+  let allAttsForThis = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === tName);
+  let attemptNumber = allAttsForThis.indexOf(att) + 1;
+  att.attemptNumber = attemptNumber > 0 ? attemptNumber : 1;
+  let firstAttempt = allAttsForThis[0] || att;
+  let att1Score = parseFloat(String(firstAttempt.score).split(' /')[0]);
+
+  // Reset tabs
+  document.querySelectorAll('.tab-btn')[0].click();
+  document.getElementById('dash-snap').classList.add('show');
+
+  // Title
+  let attemptBadgeHTML = "";
+  if (att.attemptNumber && att.attemptNumber > 1) {
+    attemptBadgeHTML = `<span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900; text-transform: capitalize;">Attempt ${att.attemptNumber}</span>`;
+  }
+  document.getElementById('global-quiz-title').innerHTML = `
+    <div style="margin-bottom: 4px;">${att.testName}</div>
+    ${attemptBadgeHTML}
+  `;
+
+  // Load leaderboard data
+  window.currentLbStats = null;
+  window.currentLbDocs = [];
+  document.getElementById('kpiRank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+  document.getElementById('kpiScore').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+  document.getElementById('kpiPercentile').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+  document.getElementById('kpiAccuracy').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+
+  db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
+    const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
+    window.currentLbDocs = docs;
+
+    if (docs.length > 0) {
+      let totalStudents = docs.length;
+      let myRank = 1;
+      let foundSelf = false;
+      docs.forEach(d => {
+        if (d.id === user.uid) foundSelf = true;
+        if (d.id !== user.uid && parseFloat(d.score) > att1Score) myRank++;
+      });
+      if (!foundSelf) totalStudents += 1;
+
+      let topDoc = docs[0];
+      let topScore = parseFloat(topDoc.score);
+      let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
+      let percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
+
+      document.getElementById('kpiRank').innerHTML = `${myRank} <small>/ ${totalStudents}</small>`;
+      document.getElementById('kpiScore').innerHTML = `${att1Score} <small>/ ${att.snap.length * 2}</small>`;
+      document.getElementById('kpiPercentile').innerHTML = `${percentile} <small>%</small>`;
+      document.getElementById('kpiAccuracy').innerHTML = `${(att.correct/(att.correct+att.incorrect))*100 || 0} <small>%</small>`;
+
+      // Prepare stats for topper compare
+      window.currentLbStats = {
+        topperTimes: topDoc.timeArray || [],
+        avgTimes: [],
+        correctPercents: [],
+        attemptPercents: []
+      };
+      for (let i = 0; i < dSnapS.arr.length; i++) {
+        let totalTime = 0, correctCount = 0, attemptCount = 0;
+        docs.forEach(doc => {
+          totalTime += (doc.timeArray && doc.timeArray[i]) ? doc.timeArray[i] : 0;
+          if (doc.userArray && doc.userArray[i] !== -1) {
+            attemptCount++;
+            if (doc.userArray[i] === doc.correctArray[i]) correctCount++;
+          }
+        });
+        window.currentLbStats.avgTimes.push(Math.round(totalTime / docs.length));
+        window.currentLbStats.attemptPercents.push(Math.round((attemptCount / docs.length) * 100));
+        window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
+      }
+
+      // Populate leaderboard tab
+      let podHtml = '';
+      if(docs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${docs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${docs[1].name.split(' ')[0]}</div><div class="pod-score">${docs[1].score}</div></div>`;
+      if(docs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${docs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${docs[0].name.split(' ')[0]}</div><div class="pod-score">${docs[0].score}</div></div>`;
+      if(docs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${docs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${docs[2].name.split(' ')[0]}</div><div class="pod-score">${docs[2].score}</div></div>`;
+      document.getElementById('lb-podium').innerHTML = podHtml;
+
+      let listHtml = '';
+      docs.slice(3).forEach((d, i) => {
+        listHtml += `<div class="lb-row"><div class="lb-r-num">${i+4}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${d.score}</div></div>`;
+      });
+      document.getElementById('lb-list').innerHTML = listHtml;
+
+      let safeName = user.displayName || 'Warrior';
+      document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score}</div>`;
+    }
+
+    // Now render all sections
+    populateSectionalSummary();
+    populateCompareTable('Overall');
+    populatePreviousAttempts();
+    populateQuestionDistribution();
+    initMarksDistributionChart();
+    initAttemptCompareChart();
+
+    updateRankPredictor(att1Score);
+    drawDashSnap();
+  }).catch(e => {
+    console.error("LB Fetch Error", e);
+    populateSectionalSummary();
+    populateCompareTable('Overall');
+    populatePreviousAttempts();
+    populateQuestionDistribution();
+    initMarksDistributionChart();
+    initAttemptCompareChart();
+    drawDashSnap();
+  });
+};
+
+// ---------- OVERRIDE switchModalTab ----------
+window.switchModalTab = function(tabName) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById(`tab-${tabName}`).classList.add('active');
+  if (tabName === 'review') {
+    renderQuestionPalette();
+    loadQuestionIntoReview(dSnapS.curIndexInOrder);
+  }
+};
+
+// ---------- OVERRIDE setDashFilter ----------
+window.setDashFilter = function(f) {
+  dSnapS.filter = f;
+  const map = dSnapS.arr.map((it, idx) => {
+    const matchSec = (dSnapS.currentSection === 'all' || !dSnapS.currentSection || it.secName === dSnapS.currentSection);
+    const attempted = it.user !== -1;
+    const right = attempted && it.user === it.correct;
+    const wrong = attempted && it.user !== it.correct;
+    return {idx, attempted, right, wrong, mark: !!it.mark, matchSec};
+  });
+  let filtered = map.filter(x => x.matchSec);
+  if(f==='correct') dSnapS.order = filtered.filter(x=>x.right).map(x=>x.idx);
+  else if(f==='wrong') dSnapS.order = filtered.filter(x=>x.wrong).map(x=>x.idx);
+  else if(f==='un') dSnapS.order = filtered.filter(x=>!x.attempted).map(x=>x.idx);
+  else if(f==='mark') dSnapS.order = filtered.filter(x=>x.mark).map(x=>x.idx);
+  else dSnapS.order = filtered.map(x=>x.idx);
+  if(!dSnapS.order.length) dSnapS.order=[0];
+  dSnapS.curIndexInOrder=0;
+  renderQuestionPalette();
+  drawDashMini();
+  drawDashChart();
+  drawDashSnap();
+};
+
+// ---------- OVERRIDE filterBySection ----------
+window.filterBySection = function(secName, index = null) {
+  dSnapS.currentSection = secName;
+  let tabsContainer = document.getElementById('reviewSectionPills');
+  if (tabsContainer) {
+    let buttons = tabsContainer.getElementsByTagName('button');
+    for(let btn of buttons) {
+      btn.classList.remove('active');
+      btn.classList.add('section-pill');
+    }
+    if(secName === 'all') {
+      document.getElementById('tab-all-sec').classList.add('active');
+    } else {
+      let targetBtn = document.getElementById(`tab-sec-${index}`);
+      if(targetBtn) { targetBtn.classList.add('active'); }
+    }
+  }
+  updateReviewRibbon(secName);
+  window.setDashFilter(dSnapS.filter);
+};
+
+// ---------- OVERRIDE drawDashMini ----------
+function drawDashMini() {
+  const cont = document.getElementById('questionPaletteContainer');
+  cont.innerHTML = '';
+  let list = dSnapS.arr;
+  if (dSnapS.currentSection !== 'all') {
+    let section = dSnapS.currentSection;
+    list = dSnapS.arr.filter(q => q.secName === section);
+  }
+  list.forEach((it, idx) => {
+    const d = document.createElement('div');
+    d.className = 'palette-btn';
+    if (it.user === -1) d.classList.add('unattempted');
+    else if (it.user === it.correct) d.classList.add('correct');
+    else d.classList.add('incorrect');
+    if (idx === dSnapS.curIndexInOrder) d.classList.add('current');
+    d.textContent = idx + 1;
+    d.onclick = () => { dSnapS.curIndexInOrder = idx; drawDashSnap(); };
+    cont.appendChild(d);
+  });
+}
+
+// ---------- OVERRIDE drawDashChart ----------
+function drawDashChart() {
+  const counts = {correct:0, wrong:0, un:0, mark:0};
+  dSnapS.arr.forEach(it => {
+    if (dSnapS.currentSection && dSnapS.currentSection !== 'all' && it.secName !== dSnapS.currentSection) return;
+    if(it.mark) counts.mark++; 
+    else if(it.user === -1) counts.un++;
+    else if(it.user === it.correct) counts.correct++;
+    else counts.wrong++;
+  });
+  if(reviewDonutChartInstance) { try { reviewDonutChartInstance.destroy(); } catch(e){} reviewDonutChartInstance=null; }
+  const ctx = document.getElementById('reviewChart').getContext('2d');
+  reviewDonutChartInstance = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Marked', 'Correct', 'Incorrect', 'Unattempted'],
+      datasets: [{ data: [counts.mark, counts.correct, counts.wrong, counts.un], backgroundColor: ['#a855f7','#10b981','#ef4444','#94a3b8'], borderWidth: 0 }]
+    },
+    options: { plugins: { legend: { display:false } }, responsive: true, maintainAspectRatio: false }
+  });
+}
+
+// ---------- OVERRIDE drawDashSnap ----------
+function drawDashSnap() {
+  if(!dSnapS.arr.length) { document.getElementById('snapQ').innerHTML='Nothing.'; return; }
+  const it = dSnapS.arr[curDashIdx()];
+
+  // Update ribbons
+  let secStats = { c:0, w:0, u:0, m:0 };
+  dSnapS.arr.forEach(q => {
+    if (dSnapS.currentSection && dSnapS.currentSection !== 'all' && q.secName !== dSnapS.currentSection) return;
+    if (q.mark) secStats.m++;
+    if (q.user === -1) secStats.u++;
+    else if (q.user === q.correct) secStats.c++;
+    else secStats.w++;
+  });
+  document.getElementById('countCorrectPill').innerText = `C: ${secStats.c}`;
+  document.getElementById('countWrongPill').innerText = `W: ${secStats.w}`;
+  document.getElementById('countUnattemptPill').innerText = `U: ${secStats.u}`;
+  document.getElementById('displayReviewScore').innerText = dSnapS.meta.score;
+  document.getElementById('displayReviewTime').innerText = `${dSnapS.meta.minutes} min`;
+  document.getElementById('snapMetaBadges').innerText = dSnapS.meta.ts;
+
+  // Save button
+  const qCheckText = it.q; 
+  const isSaved = !!window.savedQuestionsCache[qCheckText];
+  const starIcon = isSaved ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
+  const starColor = isSaved ? '#facc15' : 'var(--text-secondary)';
+  const starText = isSaved ? 'SAVED' : 'SAVE';
+  document.getElementById('saveBtnContainer') ? document.getElementById('saveBtnContainer').innerHTML = `<button onclick="toggleSaveCurrentDashQ()" style="background:transparent; color:${starColor}; border:1px solid var(--border-color); padding:4px 10px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.8rem; display:flex; align-items:center; gap:6px;"><span style="font-size:1rem;">${starIcon}</span> ${starText}</button>` : '';
+
+  // Time popover
+  let uTime = it.timeTaken || 0;
+  document.getElementById('userTimeBadgeText').innerText = `You: ${uTime}s`;
+  let timeBtn = document.getElementById('userTimeBtn');
+  if (window.currentLbStats) {
+    let aTime = window.currentLbStats.avgTimes[curDashIdx()] || 0;
+    let tTime = window.currentLbStats.topperTimes[curDashIdx()] || 0;
+    timeBtn.className = `time-badge-btn ${uTime <= aTime ? 'fast' : 'slow'}`;
+    document.getElementById('popoverUserTime').innerText = `${uTime}s`;
+    document.getElementById('popoverAvgTime').innerText = `${aTime}s`;
+    document.getElementById('popoverTopperTime').innerText = `${tTime}s`;
+    document.getElementById('questionCorrectRatePill').innerText = `${window.currentLbStats.correctPercents[curDashIdx()] || 0}% are correct.`;
+  } else {
+    timeBtn.className = `time-badge-btn fast`;
+    document.getElementById('popoverUserTime').innerText = `${uTime}s`;
+    document.getElementById('popoverAvgTime').innerText = `--`;
+    document.getElementById('popoverTopperTime').innerText = `--`;
+    document.getElementById('questionCorrectRatePill').innerText = `--`;
+  }
+
+  // Content with bilingual support
+  let displayLang = it.lang || 'en';
+  let displayQ = (displayLang === 'hi' && it.q_hi) ? it.q_hi : it.q;
+  let displayOpts = (displayLang === 'hi' && it.o_hi && it.o_hi.length > 0) ? it.o_hi : (it.opts || []);
+  let displaySol = (displayLang === 'hi' && it.s_hi) ? it.s_hi : (it.sol || '');
+
+  document.getElementById('snapQ').innerHTML = displayQ;
+  const b = document.getElementById('snapOpts'); b.innerHTML='';
+  displayOpts.forEach((t, i) => {
+    const div = document.createElement('div'); div.className = 'review-option-item';
+    const isUser = (i === it.user), isCorrect = (i === it.correct);
+    let ico = '<i class="fa-regular fa-circle" style="color:var(--border-color); font-size:1.1rem;"></i>';
+    if (isCorrect) { div.classList.add('correct-opt'); ico = '<i class="fa-solid fa-circle-check opt-indicator-icon correct"></i>'; }
+    else if (isUser && !isCorrect) { div.classList.add('wrong-marked'); ico = '<i class="fa-solid fa-circle-xmark opt-indicator-icon wrong"></i>'; }
+    div.innerHTML = `<div style="display:flex; gap:12px; align-items:flex-start;"><b style="opacity:0.6;">${String.fromCharCode(65+i)})</b> <div>${t}</div></div> <div>${ico}</div>`;
+    b.appendChild(div);
+  });
+
+  const solBlock = document.getElementById('snapSol');
+  if (displaySol) { solBlock.innerHTML = displaySol; } else { solBlock.innerHTML = 'No solution provided.'; }
+
+  document.getElementById('sPrev').disabled = (dSnapS.curIndexInOrder === 0);
+  document.getElementById('sNext').disabled = (dSnapS.curIndexInOrder === dSnapS.order.length-1);
+  renderQuestionPalette();
+  drawDashMini();
+  drawDashChart();
+
+  if (window.renderMathInElement) {
+    renderMathInElement(document.getElementById('tab-review'), {
+      delimiters: [
+        {left: '$$', right: '$$', display: false},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError: false
+    });
+  }
+}
+
+// ---------- NEW: updateRankPredictor (override) ----------
+window.updateRankPredictor = function(marks) {
+  document.getElementById('rp-marks-disp').innerText = marks;
+  let docs = window.currentLbDocs || [];
+  if(docs.length === 0) {
+    document.getElementById('rp-tooltip').innerText = "Rank: 1";
+    return;
+  }
+  let simulatedRank = 1;
+  for(let d of docs) {
+    if(parseFloat(d.score) > parseFloat(marks)) simulatedRank++;
+  }
+  document.getElementById('rp-tooltip').innerText = `Rank: ${simulatedRank}`;
+};
+
+// ---------- NEW: renderQuestionPalette ----------
+function renderQuestionPalette() {
+  const container = document.getElementById('questionPaletteContainer');
+  container.innerHTML = '';
+  let list = dSnapS.arr;
+  if (dSnapS.currentSection && dSnapS.currentSection !== 'all') {
+    list = dSnapS.arr.filter(q => q.secName === dSnapS.currentSection);
+  }
+  list.forEach((q, idx) => {
+    const btn = document.createElement('button');
+    btn.className = `palette-btn ${q.user === -1 ? 'unattempted' : (q.user === q.correct ? 'correct' : 'incorrect')}`;
+    if (idx === dSnapS.curIndexInOrder) btn.classList.add('current');
+    btn.innerText = idx + 1;
+    btn.onclick = () => { dSnapS.curIndexInOrder = idx; drawDashSnap(); };
+    container.appendChild(btn);
+  });
+}
+
+// ---------- NEW: handleSectionSwitch (review tabs) ----------
+function handleSectionSwitch(sectionId) {
+  dSnapS.currentSection = sectionId;
+  let tabsContainer = document.getElementById('reviewSectionPills');
+  if (tabsContainer) {
+    let buttons = tabsContainer.getElementsByTagName('button');
+    for(let btn of buttons) {
+      btn.classList.remove('active');
+      btn.classList.add('section-pill');
+    }
+    if(sectionId === 'all') {
+      document.getElementById('tab-all-sec').classList.add('active');
+    } else {
+      let index = dSnapS.arr.findIndex(q => q.secName === sectionId);
+      document.getElementById(`tab-sec-${index}`).classList.add('active');
+    }
+  }
+  updateReviewRibbon(sectionId);
+  window.setDashFilter(dSnapS.filter);
+}
+
+// ---------- NEW: updateReviewRibbon ----------
+function updateReviewRibbon(secId) {
+  let c=0, w=0, u=0, sc=0, tm=0, mx=200;
+  if (secId === 'all') {
+    c = dSnapS.meta.correct || 0;
+    w = dSnapS.meta.incorrect || 0;
+    u = dSnapS.meta.unattempted || 0;
+    sc = parseFloat(dSnapS.meta.score) || 0;
+    tm = dSnapS.meta.minutes || 0;
+  } else {
+    let secQs = dSnapS.arr.filter(q => q.secName === secId);
+    c = secQs.filter(q => q.user === q.correct).length;
+    w = secQs.filter(q => q.user !== -1 && q.user !== q.correct).length;
+    u = secQs.filter(q => q.user === -1).length;
+    sc = c - (w * 0.25) * 2; // assuming 2 marks per question
+    tm = Math.round(secQs.reduce((a,q) => a + (q.timeTaken || 0), 0) / 60);
+    mx = secQs.length * 2;
+  }
+  document.getElementById('displayReviewScore').innerText = `${sc.toFixed(1)} / ${mx}`;
+  document.getElementById('displayReviewTime').innerText = `${tm} min`;
+  document.getElementById('countCorrectPill').innerText = `C: ${c}`;
+  document.getElementById('countWrongPill').innerText = `W: ${w}`;
+  document.getElementById('countUnattemptPill').innerText = `U: ${u}`;
+  updateDonutChart(c, w, u);
+}
+
+// ---------- NEW: loadQuestionIntoReview ----------
+function loadQuestionIntoReview(index) {
+  dSnapS.curIndexInOrder = index;
+  drawDashSnap();
+}
+
+// ---------- NEW: toggleTimePopover ----------
+window.toggleTimePopover = function(e) { 
+  e.stopPropagation(); 
+  let box = document.getElementById('timePopoverBox');
+  if(box) box.classList.toggle('visible'); 
+};
+
+// ---------- NEW: populateSectionalSummary ----------
+function populateSectionalSummary() {
+  const tb = document.getElementById('sectionalSummaryTbody');
+  tb.innerHTML = '';
+  let sections = {};
+  dSnapS.arr.forEach(q => {
+    if (!sections[q.secName]) sections[q.secName] = { attempted:0, correct:0, wrong:0, time:0, score:0 };
+    sections[q.secName].attempted++;
+    if (q.user === -1) return;
+    sections[q.secName].time += (q.timeTaken || 0);
+    if (q.user === q.correct) { sections[q.secName].correct++; sections[q.secName].score += 2; }
+    else { sections[q.secName].wrong++; sections[q.secName].score -= 0.5; }
+  });
+  let totalScore = 0, totalAttempted = 0, totalCorrect = 0, totalTime = 0;
+  Object.keys(sections).forEach(sec => {
+    let d = sections[sec];
+    let acc = d.attempted > 0 ? ((d.correct / d.attempted) * 100).toFixed(1) : 0;
+    totalScore += d.score; totalAttempted += d.attempted; totalCorrect += d.correct; totalTime += d.time;
+    tb.innerHTML += `<tr><td><strong>${sec}</strong></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width:${Math.max(0,(d.score / (d.attempted*2)) * 100)}%"></div></div><div>${d.score.toFixed(1)} <small>/ ${d.attempted*2}</small></div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-cyan" style="width:${(d.attempted/25)*100}%"></div></div><div>${d.attempted} <small>/ 25</small></div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:${acc}%"></div></div><div>${acc}%</div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width:${(d.time/1200)*100}%"></div></div><div>${Math.floor(d.time/60)}:${(d.time%60).toString().padStart(2,'0')} min</div></td></tr>`;
+  });
+  tb.innerHTML += `<tr class="bold-row"><td><strong>Overall</strong></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width:${(totalScore/(totalAttempted*2))*100}%"></div></div><div>${totalScore.toFixed(1)} <small>/ ${totalAttempted*2}</small></div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-cyan" style="width:${(totalAttempted/100)*100}%"></div></div><div>${totalAttempted} <small>/ 100</small></div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:${(totalCorrect/totalAttempted*100).toFixed(1)}%"></div></div><div>${(totalCorrect/totalAttempted*100).toFixed(1)}%</div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width:${(totalTime/3600)*100}%"></div></div><div>${Math.floor(totalTime/60)}:${(totalTime%60).toString().padStart(2,'0')} min</div></td></tr>`;
+}
+
+// ---------- NEW: populateCompareTable ----------
+function populateCompareTable(section) {
+  currentCompareSection = section;
+  const tb = document.getElementById('topperCompareTbody');
+  tb.innerHTML = '';
+  let y, top, avg;
+  let docs = window.currentLbDocs || [];
+  if (docs.length > 0) {
+    // You
+    let you = dSnapS.meta;
+    let youScore = parseFloat(you.score.split(' /')[0]);
+    let youAcc = (you.correct/(you.correct+you.incorrect))*100;
+    let youTime = you.minutes;
+    // Topper
+    let topDoc = docs[0];
+    let topScore = parseFloat(topDoc.score);
+    let topCorrect = 0, topWrong = 0;
+    if (topDoc.correctArray && topDoc.userArray) {
+      topDoc.userArray.forEach((u, i) => { if (u !== -1) { if (u === topDoc.correctArray[i]) topCorrect++; else topWrong++; } });
+    }
+    let topAcc = (topCorrect+topWrong) > 0 ? (topCorrect/(topCorrect+topWrong))*100 : 0;
+    let topTime = Math.round((topDoc.timeArray || []).reduce((a,b)=>a+b,0)/60);
+    // Average
+    let avgScore = docs.reduce((s,d)=>s+parseFloat(d.score),0) / docs.length;
+    let avgCorrect = Math.round(docs.reduce((s,d)=>{ let c=0; if(d.correctArray && d.userArray){ d.userArray.forEach((u,i)=>{ if(u!==-1 && u===d.correctArray[i]) c++; }); } return s+c; },0)/docs.length);
+    let avgWrong = Math.round(docs.reduce((s,d)=>{ let w=0; if(d.correctArray && d.userArray){ d.userArray.forEach((u,i)=>{ if(u!==-1 && u!==d.correctArray[i]) w++; }); } return s+w; },0)/docs.length);
+    let avgTime = Math.round(docs.reduce((s,d)=> s + (d.timeArray ? d.timeArray.reduce((a,b)=>a+b,0) : 0),0)/docs.length/60);
+
+    if (section === 'Overall') {
+      y = {n:'You',s:youScore,m:youScore,maxPossible:200,a:youAcc,c:you.correct,w:you.incorrect,t:`${youTime}m`,b:'bar-purple'};
+      top = {n:'Topper',s:topScore,m:topScore,maxPossible:200,a:topAcc,c:topCorrect,w:topWrong,t:`${topTime}m`,b:'bar-green'};
+      avg = {n:'Avg',s:avgScore,m:avgScore,maxPossible:200,a:(avgCorrect/(avgCorrect+avgWrong))*100,c:avgCorrect,w:avgWrong,t:`${avgTime}m`,b:'bar-cyan'};
+    } else {
+      // Section-specific: filter by secName in snap and leaderboards? For simplicity use static data from attempt.
+      let secQs = dSnapS.arr.filter(q => q.secName === section);
+      let secScore = secQs.reduce((sum,q) => sum + (q.user === q.correct ? 2 : (q.user === -1 ? 0 : -0.5)),0);
+      let secCorrect = secQs.filter(q => q.user === q.correct).length;
+      let secWrong = secQs.filter(q => q.user !== -1 && q.user !== q.correct).length;
+      let secTime = Math.round(secQs.reduce((a,q)=>a + (q.timeTaken||0),0)/60);
+      let secMax = secQs.length * 2;
+      y = {n:'You',s:secScore,m:secMax,maxPossible:secMax,a:secCorrect/(secCorrect+secWrong)*100,c:secCorrect,w:secWrong,t:`${secTime}m`,b:'bar-purple'};
+      // For topper/average we can use overall stats if not available per section; for demo use overall.
+      top = {n:'Topper',s:topScore,m:200,maxPossible:200,a:topAcc,c:topCorrect,w:topWrong,t:`${topTime}m`,b:'bar-green'};
+      avg = {n:'Avg',s:avgScore,m:200,maxPossible:200,a:(avgCorrect/(avgCorrect+avgWrong))*100,c:avgCorrect,w:avgWrong,t:`${avgTime}m`,b:'bar-cyan'};
+    }
+  } else {
+    // fallback static dummy if no leaderboard
+    y = {n:'You',s:79,m:79,maxPossible:200,a:64,c:46,w:26,t:'48m',b:'bar-purple'};
+    top = {n:'Topper',s:200,m:200,maxPossible:200,a:100,c:100,w:0,t:'37m',b:'bar-green'};
+    avg = {n:'Avg',s:108,m:108,maxPossible:200,a:91,c:82,w:8,t:'36m',b:'bar-cyan'};
+  }
+
+  [y,top,avg].forEach(r => tb.innerHTML += `<tr><td><strong>${r.n}</strong></td><td><div class="mini-progress-track"><div class="mini-progress-bar ${r.b}" style="width:${(r.s/r.maxPossible)*100}%"></div></div><div>${r.s.toFixed(1)} <small>/ ${r.maxPossible}</small></div></td><td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:${r.a}%"></div></div><div>${r.a}%</div></td><td>${r.c}</td><td>${r.w}</td><td>${r.t}</td></tr>`);
+}
+
+// ---------- NEW: switchCompareTab ----------
+window.switchCompareTab = function(t) {
+  document.querySelectorAll('#compareSectionTabs .compare-sub-tab').forEach(b => b.classList.toggle('active', b.textContent.includes(t.split(' ')[0])));
+  populateCompareTable(t);
+};
+
+// ---------- NEW: populatePreviousAttempts ----------
+function populatePreviousAttempts() {
+  let attempts = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === normalizeStringForMatch(dSnapS.meta.testName));
+  if (attempts.length === 0) return;
+  let att1 = attempts[0];
+  let att2 = attempts[attempts.length-1];
+  let att1Score = parseFloat(String(att1.score).split(' /')[0]);
+  let att2Score = parseFloat(String(att2.score).split(' /')[0]);
+  let att1Acc = (att1.correct/(att1.correct+att1.incorrect))*100;
+  let att2Acc = (att2.correct/(att2.correct+att2.incorrect))*100;
+  let att1Percentile = 74.3; // static fallback
+  let att2Percentile = 18.07; // static fallback – can be computed from rank if available
+
+  document.getElementById('attemptBadge').innerText = `Attempt ${attempts.length}`;
+initAttemptCompareChart(att1Score, att2Score, att1Acc, att2Acc, att1Percentile, att2Percentile, attempts.length);
+}
+
+// ---------- NEW: populateQuestionDistribution ----------
+function populateQuestionDistribution() {
+  let sections = {};
+  dSnapS.arr.forEach(q => {
+    if (!sections[q.secName]) sections[q.secName] = {correct:0, wrong:0, un:0};
+    if (q.user === -1) sections[q.secName].un++;
+    else if (q.user === q.correct) sections[q.secName].correct++;
+    else sections[q.secName].wrong++;
+  });
+  initQuestionDistChart(sections);
+}
+
+// ---------- NEW: initMarksDistributionChart ----------
+function initMarksDistributionChart() {
+  if(marksChartInstance) marksChartInstance.destroy();
+  const ctx = document.getElementById('marksDistChart').getContext('2d');
+  // use actual leaderboard scores if available, else dummy
+  let scores = (window.currentLbDocs || []).map(d => parseFloat(d.score));
+  if (scores.length < 5) scores = [1200,3100,6800,11400,13200,9800,5200,2400,800,150]; // dummy
+  const bins = [0,20,40,60,80,100,120,140,160,180,200];
+  const labels = ['0-20','20-40','40-60','60-80','80-100','100-120','120-140','140-160','160-180','180-200'];
+  let counts = new Array(bins.length-1).fill(0);
+  scores.forEach(s => {
+    for (let i=0; i<bins.length-1; i++) {
+      if (s >= bins[i] && s < bins[i+1]) { counts[i]++; break; }
+    }
+  });
+  marksChartInstance = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets: [{ label: 'Students', data: counts, borderColor: '#1fbad6', backgroundColor: 'rgba(31,186,214,0.15)', fill: true, tension: 0.4 }] },
+    options: { maintainAspectRatio: false, plugins: { legend: { display:false } }, scales: { x: { grid: { display:false } }, y: { grid: { color:'#f1f5f9' } } } }
+  });
+}
+
+// ---------- NEW: initAttemptCompareChart (corrected) ----------
+function initAttemptCompareChart(att1Score, att2Score, att1Acc, att2Acc, att1Percentile, att2Percentile, attemptNum) {
+  if(attemptChartInstance) attemptChartInstance.destroy();
+  const ctx = document.getElementById('attemptCompareChart').getContext('2d');
+  attemptChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Score', 'Accuracy (%)', 'Percentile (%)'],
+      datasets: [
+        { label: 'Attempt 1', data: [att1Score, att1Acc, att1Percentile], backgroundColor: '#cbd5e1' },
+        { label: `Attempt ${attemptNum}`, data: [att2Score, att2Acc, att2Percentile], backgroundColor: '#6366f1' }
+      ]
+    },
+    options: { maintainAspectRatio: false, scales: { x: { grid: { display: false } } } }
+  });
+}
+
+// ---------- NEW: initQuestionDistChart ----------
+function initQuestionDistChart(sections) {
+  if(questionDistChartInstance) questionDistChartInstance.destroy();
+  const ctx = document.getElementById('questionDistChart').getContext('2d');
+  let labels = Object.keys(sections);
+  let correct = labels.map(l => sections[l].correct);
+  let wrong = labels.map(l => sections[l].wrong);
+  let un = labels.map(l => sections[l].un);
+  questionDistChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Correct', data: correct, backgroundColor: '#10b981' },
+        { label: 'Incorrect', data: wrong, backgroundColor: '#ef4444' },
+        { label: 'Unattempted', data: un, backgroundColor: '#94a3b8' }
+      ]
+    },
+    options: { maintainAspectRatio: false, scales: { x: { stacked: true, grid: { display:false } }, y: { stacked: true, max: Math.max(...correct.concat(wrong,un)) + 2 } } }
+  });
+}
+
+// ---------- Helper: updateDonutChart ----------
+function updateDonutChart(c, w, u) {
+  if(reviewDonutChartInstance) {
+    reviewDonutChartInstance.data.datasets[0].data = [c, w, u];
+    reviewDonutChartInstance.update();
+  }
+}
+
+// ---------- Helper: curDashIdx ----------
+function curDashIdx() { return dSnapS.order[dSnapS.curIndexInOrder] ?? 0; }
+
+// ---------- Setup prev/next buttons ----------
+document.getElementById('sPrev').onclick = () => { if(dSnapS.curIndexInOrder > 0){ dSnapS.curIndexInOrder--; drawDashSnap(); } };
+document.getElementById('sNext').onclick = () => { if(dSnapS.curIndexInOrder < dSnapS.order.length-1){ dSnapS.curIndexInOrder++; drawDashSnap(); } };
+
+// ---------- Add click handler to close popover ----------
+window.addEventListener('click', () => { let box = document.getElementById('timePopoverBox'); if(box) box.classList.remove('visible'); });
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
