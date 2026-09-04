@@ -796,7 +796,6 @@ body[data-theme="light"] .glass-card {
       </div>
 
       <div class="question-review-card" id="questionReviewCardBox">
-        <!-- New Popover UI injected via JS -->
         <div class="question-top-toolbar" id="qStatsRow"></div>
         
         <div class="question-content-text" id="snapQ">Loading...</div>
@@ -1605,13 +1604,15 @@ document.getElementById('rp-slider').max = actualTotalMarks;
                     else secStats.w++;
                 });
 
-         if (dSnapS.currentSection === 'all') badgeArr.push(linkBadge('all', 'All'));
-      document.getElementById('snapMetaBadges').innerHTML = badgeArr.join(' ');
-
       // Naya Pilled Section Stats (C, W, U)
       document.getElementById('countCorrectPill').innerText = `C: ${secStats.c}`;
       document.getElementById('countWrongPill').innerText = `W: ${secStats.w}`;
       document.getElementById('countUnattemptPill').innerText = `U: ${secStats.u}`;
+
+      // Fix: Title & Date Update (Removed undefined badgeArr to stop crashing)
+      let dateOnly = dSnapS.meta.ts ? dSnapS.meta.ts.split(',')[0].toUpperCase() : '';
+      document.getElementById('snapMetaBadges').innerHTML = `<i class="fa-regular fa-calendar-days"></i> ${dateOnly}`;
+      document.getElementById('snapTitle').innerHTML = `Question ${curDashIdx() + 1} <span style="opacity:0.5; font-size:0.75rem; font-weight:600;">/ ${dSnapS.arr.length}</span>`;
 
       // Save Button
       const qCheckText = it.q; 
