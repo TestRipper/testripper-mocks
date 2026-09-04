@@ -947,6 +947,27 @@ body[data-theme="light"] .glass-card {
     <div id="media-container" style="flex-grow: 1; background: #000;"></div>
   </div>
 </div>
+
+<div class="modal" id="engine-modal">
+  <div class="result" style="max-width: 420px; text-align: center; padding: 24px;">
+    <h3 style="margin-bottom: 16px; color: var(--accent-purple); font-weight: 900; text-transform: uppercase;">
+       <i class="fa-solid fa-rocket"></i> Launch Test Engine
+    </h3>
+    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 24px;">
+       Select your preferred test interface, Warrior!
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <button onclick="launchEngine(1)" style="background: linear-gradient(90deg, #3b82f6, #a855f7); color: #fff; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);">
+        <i class="fa-solid fa-bolt"></i> Quiz Engine 1 (Standard)
+      </button>
+      <button onclick="launchEngine(2)" style="background: linear-gradient(90deg, #10b981, #3b82f6); color: #fff; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);">
+        <i class="fa-solid fa-fire"></i> Quiz Engine 2 (Advanced)
+      </button>
+    </div>
+    <button class="btn-modal" onclick="closeEngineModal()" style="margin-top: 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);">Cancel</button>
+  </div>
+</div>
+
 <script>
 
   /* =========================================
