@@ -3025,12 +3025,11 @@ STRICT JSON & FORMATTING RULES (CRITICAL FOR UI PARSING):
     return JSON.parse(rawText.replace(/```json/g, '').replace(/```/g, '').trim());
 }
 
-// ==========================================
-// 2. ENGINE LAUNCHER (ROUTING LOGIC)
+// 2. ENGINE LAUNCHER (ROUTING LOGIC) - FIXED
 // ==========================================
 window.launchEngine = function(engineType) {
     let encodedTitle = encodeURIComponent(currentTargetTitle);
-    
+
     // CUSTOM MISTAKE/SAVED QUIZ ROUTING
     if (pendingCustomQuestions) {
         const payload = { title: currentTargetTitle, questions: pendingCustomQuestions };
@@ -3049,13 +3048,22 @@ window.launchEngine = function(engineType) {
         return;
     }
 
-    let encodedUrl = encodeURIComponent(currentTargetJsonUrl);
+    // 💥 NINJA FIX: Convert Relative Path to GitHub Raw Absolute URL
+    let finalUrl = currentTargetJsonUrl;
+    if (finalUrl.startsWith('/')) {
+        let cleanPath = finalUrl.substring(1);
+        finalUrl = `https://raw.githubusercontent.com/TestRipper/testripper-mocks/main/${cleanPath}`;
+    }
+
+    let encodedUrl = encodeURIComponent(finalUrl);
+    
     if(engineType === 1) {
         window.location.href = `Quiz-Engine-1.html?data=${encodedUrl}&title=${encodedTitle}`;
     } else {
         window.location.href = `Quiz-Engine-2.html?data=${encodedUrl}&title=${encodedTitle}`;
     }
 };
+
 
 // ==========================================
 // 3. ENGINE MODAL CANCEL BUTTON FIX
