@@ -920,7 +920,37 @@ body[data-theme="light"] .glass-card {
     <div id="ai-progress-percent" style="font-size: 0.8rem; font-weight: 800; margin-top: 8px; color: var(--accent-purple);">0%</div>
   </div>
 </div>
+<!-- ERROR BOOK MODAL -->
+<div class="modal-full" id="error-book-modal">
+  <div class="tab-header" style="justify-content: space-between; padding: 15px;">
+    <div id="ebTitle" style="font-weight: 800; font-size: 1.2rem; color: var(--accent-red);"><i class="fa-solid fa-book-skull"></i> Mistake Journal</div>
+    <button id="ebClose" style="background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="tab-content active" id="ebListArea" style="padding: 16px;"></div>
+</div>
+
+<!-- SAVED QUESTIONS MODAL -->
+<div class="modal-full" id="saved-questions-modal">
+  <div class="tab-header" style="justify-content: space-between; padding: 15px;">
+    <div style="font-weight: 800; font-size: 1.2rem; color: var(--accent-gold);"><i class="fa-solid fa-star"></i> Saved Questions</div>
+    <select id="savedWeekSelector" onchange="renderSavedQuestionsList()" style="background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-color); padding: 5px; border-radius: 5px;"></select>
+    <button onclick="document.getElementById('saved-questions-modal').classList.remove('show')" style="background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="tab-content active" id="savedQsListArea" style="padding: 16px;"></div>
+</div>
+
+<!-- MEDIA MODAL (FOR PDF/VIDEO) -->
+<div class="modal" id="media-modal" style="z-index: 99999;">
+  <div class="result" style="max-width: 800px; width: 95%; height: 80vh; padding: 0; display: flex; flex-direction: column; overflow: hidden;">
+    <div style="display: flex; justify-content: space-between; padding: 15px; background: var(--bg-card); border-bottom: 1px solid var(--border-color);">
+      <div id="media-title" style="font-weight: 800; color: var(--text-primary);">Media</div>
+      <button onclick="closeMedia()" style="background: none; border: none; color: var(--accent-red); font-size: 1.5rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="media-container" style="flex-grow: 1; background: #000;"></div>
+  </div>
+</div>
 <script>
+
   /* =========================================
      UPDATED FEATURE: Password Logic & HTML Export
      ========================================= */
@@ -1771,7 +1801,10 @@ document.getElementById('rp-slider').max = actualTotalMarks;
   /* =========================================
      MISTAKE JOURNAL LOGIC
      ========================================= */
-  document.getElementById('ebClose').onclick = () => document.getElementById('error-book-modal').classList.remove('show');
+  let ebCloseBtn = document.getElementById('ebClose');
+if (ebCloseBtn) {
+    ebCloseBtn.onclick = () => document.getElementById('error-book-modal').classList.remove('show');
+}
 
   function openErrorBook(filterType, customBookArray = null) {
       const ebListArea = document.getElementById('ebListArea');
