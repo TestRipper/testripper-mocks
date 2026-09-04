@@ -329,50 +329,78 @@
   .tab-content.active { display: block; }
 
   /* Analysis Tab Updates (Score Compare & Predictor) */
-  .summary-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-  .summary-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
-  .summary-row:last-child { border-bottom: none; }
-  .s-label { font-weight: 700; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
-  .s-val { font-weight: 900; font-size: 1.2rem; }
-  
-  .an-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem; }
-  .an-table th, .an-table td { padding: 10px 8px; text-align: center; border-bottom: 1px dashed rgba(255,255,255,0.1); }
-  body[data-theme="light"] .an-table th, body[data-theme="light"] .an-table td { border-bottom-color: rgba(0,0,0,0.1); }
-  .an-table th { color: var(--text-secondary); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
-  .an-table .row-you { background: rgba(168, 85, 247, 0.05); font-weight: 900; color: var(--text-primary); }
-  .an-table .row-top { background: rgba(16, 185, 129, 0.05); font-weight: 700; color: var(--text-primary); }
-  .an-table .row-avg { background: rgba(250, 204, 21, 0.05); font-weight: 700; color: var(--text-primary); }
-  
-  .rank-predictor-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; text-align: center; margin-top: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-  .rp-slider { -webkit-appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; outline: none; margin: 20px 0; }
-  body[data-theme="light"] .rp-slider { background: rgba(0,0,0,0.1); }
-  .rp-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #06b6d4; cursor: pointer; border: 3px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-  .rp-tooltip { background: #222; color: #fff; padding: 4px 10px; border-radius: 6px; font-weight: 900; font-size: 0.8rem; display: inline-block; margin-bottom: 10px; }
+    .analysis-section { display: flex; flex-direction: column; gap: 24px; }
+    .kpi-metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+    .kpi-card { background: #ffffff; border-radius: 10px; padding: 16px 20px; border: 1px solid var(--border-color); box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); display: flex; align-items: center; gap: 16px; }
+    body[data-theme="dark"] .kpi-card { background: var(--bg-card); }
+    .kpi-icon-box { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;}
+    .kpi-icon-box.rank { background: rgba(220, 38, 38, 0.1); color: #dc2626; }
+    .kpi-icon-box.score { background: rgba(124, 58, 237, 0.1); color: #7c3aed; }
+    .kpi-icon-box.percentile { background: rgba(2, 132, 199, 0.1); color: #0284c7; }
+    .kpi-icon-box.accuracy { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+    .kpi-val { font-size: 1.4rem; font-weight: 900; color: var(--text-primary); line-height: 1.2; }
+    .kpi-val small { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); }
+    .kpi-label { font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-top:2px;}
 
-  /* Leaderboard Tab */
-  .podium { display: flex; justify-content: center; align-items: flex-end; gap: 10px; margin-top: 20px; margin-bottom: 30px; }
-  .pod-item { display: flex; flex-direction: column; align-items: center; position: relative; }
-  .pod-avatar { border-radius: 50%; object-fit: cover; border: 3px solid; background: #222; }
-  .pod-rank { position: absolute; top: -10px; right: -10px; width: 24px; height: 24px; border-radius: 50%; background: gold; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.8rem; }
-  .pod-1 .pod-avatar { width: 80px; height: 80px; border-color: gold; }
-  .pod-2 .pod-avatar { width: 65px; height: 65px; border-color: silver; }
-  .pod-3 .pod-avatar { width: 65px; height: 65px; border-color: #cd7f32; }
-  .pod-name { font-weight: 800; font-size: 0.85rem; margin-top: 8px; color: var(--text-primary); }
-  .pod-score { font-weight: 700; font-size: 0.75rem; color: var(--text-secondary); }
-  
-  .lb-list { display: flex; flex-direction: column; gap: 8px; padding-bottom: 80px; }
-  .lb-row { display: flex; align-items: center; padding: 12px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color); }
-  .lb-r-num { width: 30px; font-weight: 900; color: var(--text-secondary); }
-  .lb-r-name { flex-grow: 1; font-weight: 700; margin-left: 10px; color: var(--text-primary); }
-  .lb-r-score { font-weight: 900; color: var(--accent-green); }
-  
-  .sticky-you { position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #1e3a8a, #3b82f6); padding: 15px 20px; display: flex; align-items: center; z-index: 100; box-shadow: 0 -4px 15px rgba(0,0,0,0.3); }
+    .analysis-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); margin-bottom: 20px;}
+    .analysis-card-title { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; }
+    
+    .table-responsive { width: 100%; overflow-x: auto; }
+    .custom-analysis-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left; }
+    .custom-analysis-table th { padding: 10px 12px; color: var(--text-secondary); font-weight: 700; border-bottom: 1px solid var(--border-color); text-transform: uppercase; font-size: 0.75rem; }
+    .custom-analysis-table td { padding: 12px; border-bottom: 1px dashed rgba(128,128,128,0.2); vertical-align: middle; color: var(--text-primary);}
+    .custom-analysis-table tr.bold-row td { font-weight: 800; background: rgba(128,128,128,0.05); border-top: 1px solid var(--border-color); }
+    
+    .mini-progress-track { width: 80px; height: 6px; background: var(--border-color); border-radius: 4px; overflow: hidden; margin-bottom: 6px; }
+    .mini-progress-bar { height: 100%; border-radius: 4px; }
+    .bar-purple { background: var(--accent-purple); }
+    .bar-green { background: var(--accent-green); }
+    .bar-cyan { background: #06b6d4; }
 
-  /* Review Stats Tags */
-  .q-stats-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
-  .q-stat-tag { padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; color: #fff; }
-  .tag-you { background: #3b82f6; }
-  .tag-avg { background: #facc15; color: #000; }
+    .rank-predictor-box { padding: 20px; background: rgba(128,128,128,0.05); border: 1px solid var(--border-color); border-radius: 12px; margin: 10px 0; text-align:center;}
+    .slider-range-input { width: 100%; height: 6px; border-radius: 4px; background: var(--border-color); outline: none; -webkit-appearance: none; accent-color: var(--accent-purple); margin: 16px 0; cursor:pointer;}
+    .predicted-rank-badge { display: inline-block; background: var(--text-primary); color: var(--bg-main); padding: 6px 16px; border-radius: 20px; font-weight: 800; font-size: 0.9rem; }
+
+    .review-header-card { background: var(--bg-card); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--border-color); margin-bottom: 16px; }
+    .metrics-summary-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--border-color); }
+    .metrics-left-group { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .badge-date { background: rgba(168,85,247,0.1); color: var(--accent-purple); border: 1px solid rgba(168,85,247,0.3); padding: 4px 12px; border-radius: 16px; font-size: 0.75rem; font-weight: 700; }
+    .score-time-display { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 800; color: var(--text-primary);}
+    .status-count-pills { display: flex; gap: 8px; }
+    .pill-c { background: #10b981; color: #fff; padding: 4px 12px; border-radius: 14px; font-size: 0.75rem; font-weight: 800; }
+    .pill-w { background: #ef4444; color: #fff; padding: 4px 12px; border-radius: 14px; font-size: 0.75rem; font-weight: 800; }
+    .pill-u { background: #94a3b8; color: #fff; padding: 4px 12px; border-radius: 14px; font-size: 0.75rem; font-weight: 800; }
+
+    .review-grid-layout { display: grid; grid-template-columns: 1fr 240px; gap: 16px; margin-bottom: 16px; }
+    @media (max-width: 820px) { .review-grid-layout { grid-template-columns: 1fr; } }
+    .palette-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; }
+    .donut-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+    .question-review-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+    .question-top-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; position: relative; }
+    .time-badge-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 8px; font-weight: 800; font-size: 0.85rem; transition: 0.2s; cursor:pointer;}
+    .time-badge-btn.fast { background-color: rgba(16,185,129,0.1); color: #10b981; border: 1px solid #10b981; }
+    .time-badge-btn.slow { background-color: rgba(239,68,68,0.1); color: #ef4444; border: 1px solid #ef4444; }
+    .time-popover-box { display: none; position: absolute; top: 42px; left: 0; z-index: 50; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); padding: 10px 14px; min-width: 170px; }
+    .time-popover-box.visible { display: block; }
+    .time-popover-row { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 4px 0; border-bottom: 1px dashed var(--border-color); color:var(--text-secondary);}
+    .time-popover-row span:last-child { font-weight: 800; color: var(--text-primary); }
+    .accuracy-stat-pill { background: rgba(168,85,247,0.1); color: #a855f7; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; border: 1px solid #a855f7;}
+
+    .question-content-text { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 18px; line-height: 1.6; }
+    .review-options-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .review-option-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: 8px; border: 1.5px solid var(--border-color); font-size: 0.95rem; color: var(--text-primary);}
+    .review-option-item.correct-opt { border-color: #10b981; background: rgba(16,185,129,0.05); font-weight: 700; }
+    .review-option-item.wrong-marked { border-color: #ef4444; background: rgba(239,68,68,0.05); font-weight: 700; }
+    .opt-indicator-icon { font-size: 1.2rem; }
+    .opt-indicator-icon.correct { color: #10b981; }
+    .opt-indicator-icon.wrong { color: #ef4444; }
+
+    .solution-card { background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); border-left: 4px solid #10b981; border-radius: 8px; padding: 16px 20px; }
+    .solution-header-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .solution-lightning-icon { width: 32px; height: 32px; background: rgba(250,204,21,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #facc15; font-size: 1rem; }
+    .solution-title { font-size: 1rem; font-weight: 800; color: #10b981; text-transform:uppercase; }
+
   .tag-top { background: #10b981; }
   .tag-att { background: #ef4444; }
   .tag-cor { background: #8b5cf6; }
@@ -660,73 +688,55 @@ body[data-theme="light"] .glass-card {
       </button>
     </div>
 <div id="global-quiz-title" style="text-align:center; padding:12px 20px; font-weight:900; font-size:1.15rem; color:var(--accent-purple); background:var(--bg-main); border-bottom:1px solid var(--border-color); z-index:9; text-transform:uppercase; letter-spacing:0.5px;"></div>
-    <div class="tab-content active" id="tab-analysis">
-      <h3 style="margin-bottom:12px; font-weight:900; color:var(--text-secondary);">QUICK SUMMARY</h3>
-      <div class="summary-card">
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-regular fa-flag" style="color:#facc15;"></i> Rank</div>
-          <div class="s-val" id="an-rank">--/--</div>
+    <!-- 1. ANALYSIS TAB -->
+    <div class="tab-content analysis-section active" id="tab-analysis">
+      <div class="kpi-metrics-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon-box rank"><i class="fa-solid fa-medal"></i></div>
+          <div><div class="kpi-val" id="kpiRank">--</div><div class="kpi-label">Your Rank</div></div>
         </div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-solid fa-trophy" style="color:#a855f7;"></i> Score</div>
-          <div class="s-val" id="an-score">--/--</div>
+        <div class="kpi-card">
+          <div class="kpi-icon-box score"><i class="fa-solid fa-bolt"></i></div>
+          <div><div class="kpi-val" id="kpiScore">--</div><div class="kpi-label">Score</div></div>
         </div>
-        <div style="font-size:0.75rem; color:var(--text-secondary); text-align:right; margin-bottom:10px;">Average Score: <span id="an-avg-score">--</span> | Best Score: <span id="an-top-score">--</span></div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-regular fa-user" style="color:#ec4899;"></i> Percentile</div>
-          <div class="s-val" id="an-percentile">--%</div>
+        <div class="kpi-card">
+          <div class="kpi-icon-box percentile"><i class="fa-solid fa-chart-line"></i></div>
+          <div><div class="kpi-val" id="kpiPercentile">-- <small>%</small></div><div class="kpi-label">Percentile</div></div>
         </div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-solid fa-crosshairs" style="color:#10b981;"></i> Accuracy</div>
-          <div class="s-val" id="an-accuracy">--%</div>
-        </div>
-      </div>
-
-      <div class="social-banner" style="margin-bottom: 16px; padding: 15px;">
-        <h2 style="font-size: 1.2rem; margin-bottom: 8px;">Join Vishwasniya</h2>
-        <div class="desc" style="margin-bottom: 12px; font-size: 0.75rem;">Click on social handles to join official channels and stay updated with content.</div>
-        <div class="social-buttons-container" style="gap:5px;">
-          <a href="https://t.me/Vishwasniya" target="_blank" class="soc-btn btn-telegram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-telegram"></i></a>
-          <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="soc-btn btn-youtube" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="soc-btn btn-instagram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-instagram"></i></a>
+        <div class="kpi-card">
+          <div class="kpi-icon-box accuracy"><i class="fa-solid fa-bullseye"></i></div>
+          <div><div class="kpi-val" id="kpiAccuracy">-- <small>%</small></div><div class="kpi-label">Accuracy</div></div>
         </div>
       </div>
 
-      <div class="summary-card">
-        <h4 style="text-align:center; margin-bottom:15px; color:var(--text-primary);">Score Comparison</h4>
-        <div style="overflow-x: auto;">
-          <table class="an-table">
+      <div class="analysis-card">
+        <div class="analysis-card-title"><span><i class="fa-solid fa-users mr-2"></i> Compare with Topper & Average</span></div>
+        <div class="table-responsive">
+          <table class="custom-analysis-table">
             <thead>
-              <tr>
-                <th></th>
-                <th>Score</th>
-                <th>Acc.</th>
-                <th>Correct</th>
-                <th>Wrong</th>
-                <th>Time</th>
-              </tr>
+              <tr><th>User</th><th>Score</th><th>Accuracy</th><th>Correct</th><th>Wrong</th><th>Time</th></tr>
             </thead>
             <tbody>
               <tr class="row-you">
-                <td>You</td>
-                <td id="cmp-you-score">--</td>
-                <td id="cmp-you-acc">--</td>
+                <td><strong>You</strong></td>
+                <td><div class="mini-progress-track"><div class="mini-progress-bar bar-purple" style="width:100%"></div></div><div id="cmp-you-score">--</div></td>
+                <td><strong style="color:var(--accent-green);" id="cmp-you-acc">--</strong></td>
                 <td id="cmp-you-c">--</td>
                 <td id="cmp-you-w">--</td>
                 <td id="cmp-you-time">--</td>
               </tr>
               <tr class="row-top">
-                <td>Topper</td>
-                <td id="cmp-top-score">--</td>
-                <td id="cmp-top-acc">--</td>
+                <td><strong>Topper</strong></td>
+                <td><div class="mini-progress-track"><div class="mini-progress-bar bar-green" style="width:100%"></div></div><div id="cmp-top-score">--</div></td>
+                <td><strong style="color:var(--accent-green);" id="cmp-top-acc">--</strong></td>
                 <td id="cmp-top-c">--</td>
                 <td id="cmp-top-w">--</td>
                 <td id="cmp-top-time">--</td>
               </tr>
               <tr class="row-avg">
-                <td>Avg</td>
-                <td id="cmp-avg-score">--</td>
-                <td id="cmp-avg-acc">--</td>
+                <td><strong>Avg</strong></td>
+                <td><div class="mini-progress-track"><div class="mini-progress-bar bar-cyan" style="width:100%"></div></div><div id="cmp-avg-score">--</div></td>
+                <td><strong style="color:var(--accent-green);" id="cmp-avg-acc">--</strong></td>
                 <td id="cmp-avg-c">--</td>
                 <td id="cmp-avg-w">--</td>
                 <td id="cmp-avg-time">--</td>
@@ -736,51 +746,87 @@ body[data-theme="light"] .glass-card {
         </div>
       </div>
 
-      <div class="rank-predictor-box">
-        <h4 style="margin-bottom: 10px; color:var(--text-primary);">Rank Predictor</h4>
-        <div class="rp-tooltip" id="rp-tooltip">Rank: --</div>
-        <input type="range" min="0" max="100" value="0" step="0.5" class="rp-slider" id="rp-slider" oninput="updateRankPredictor(this.value)">
-        <div style="color:var(--text-secondary); font-size:0.85rem; font-weight:700;">Marks: <span id="rp-marks-disp" style="color:var(--accent-p2);">0</span></div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="tab-review">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <h3 id="snapTitle" style="margin:0; font-weight:800; color:var(--accent-green)">Attempt Review</h3>
-        <button class="btn-modal" onclick="downloadCurrentSnap()" style="padding:6px 12px; font-size:1rem; border-radius: 8px;" title="Download Snap">
-          <i class="fa-solid fa-download"></i>
-        </button>
-      </div>
-      <div id="sectionalTabsContainer" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:8px; margin-bottom:8px;"></div>
-      <div class="rev-head" id="snapMetaBadges" style="margin-bottom:6px;align-items:center"></div>
-      
-      <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
-        <div class="mini-nav" id="snapMini" style="flex:1"></div>
-        <div class="chart-wrap" id="chartWrap"><canvas id="reviewChart"></canvas></div>
-      </div>
-
-      <div class="q-stats-row" id="qStatsRow"></div>
-
-      <div id="snapQ" class="q" style="margin-top:12px"></div>
-      <div id="snapOpts"></div>
-      
-      <div class="sol" id="solBlock" style="display:none;margin-top:12px">
-        <b><i class="fa fa-lightbulb"></i> Solution</b>
-        <div id="snapSol" style="margin-top:6px"></div>
-      </div>
-      
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
-        <div id="saveBtnContainer"></div>
-        <div>
-          <button class="btn-modal" id="sPrev"><i class="fa fa-chevron-left"></i></button>
-          <button class="btn-modal" id="sNext"><i class="fa fa-chevron-right"></i></button>
+      <div class="analysis-card">
+        <div class="analysis-card-title"><span><i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rank Predictor</span></div>
+        <div class="rank-predictor-box">
+          <div class="predicted-rank-badge" id="rp-tooltip">Rank: --</div>
+          <input type="range" min="0" max="200" step="0.5" value="0" class="slider-range-input" id="rp-slider" oninput="updateRankPredictor(this.value)" />
+          <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-secondary); margin-top:8px;">
+            <span>0 Marks</span><span style="font-weight:800; color:var(--accent-purple);">Selected: <span id="rp-marks-disp">0</span> Marks</span><span>Max Marks</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="tab-content" id="tab-leaderboard" style="position:relative;">
+    <!-- 2. ATTEMPT REVIEW TAB -->
+    <div class="tab-content" id="tab-review">
+      <div class="review-header-card">
+        <div class="section-pill-container" id="sectionalTabsContainer" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:8px;">
+          <!-- JS will inject section buttons here -->
+        </div>
+        <div class="metrics-summary-bar">
+          <div class="metrics-left-group">
+            <span class="badge-date" id="snapMetaBadges">Date</span>
+            <div class="score-time-display">
+              <button class="btn-modal" onclick="downloadCurrentSnap()" style="padding:6px 12px; font-size:0.85rem;" title="Download PDF/HTML"><i class="fa-solid fa-download"></i></button>
+            </div>
+          </div>
+          <div class="status-count-pills">
+            <span class="pill-c" id="countCorrectPill">C: -</span>
+            <span class="pill-w" id="countWrongPill">W: -</span>
+            <span class="pill-u" id="countUnattemptPill">U: -</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-grid-layout">
+        <div class="palette-card">
+          <div style="font-size:0.85rem; font-weight:800; margin-bottom:12px; color:var(--text-secondary); display:flex; justify-content:space-between; align-items:center;">
+             <span id="snapTitle">Questions</span>
+             <span id="saveBtnContainer"></span>
+          </div>
+          <div class="mini-nav" id="snapMini" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(34px,1fr)); gap:6px;"></div>
+        </div>
+        <div class="donut-card">
+          <div class="chart-wrap" id="chartWrap" style="height: 140px; width: 140px; margin:0 auto;"><canvas id="reviewChart"></canvas></div>
+          <div style="display:flex; justify-content:center; gap:10px; margin-top:12px; font-size:0.75rem;">
+            <span style="color:#10b981; font-weight:800;">● Correct</span><span style="color:#ef4444; font-weight:800;">● Wrong</span><span style="color:#94a3b8; font-weight:800;">● Skip</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-review-card" id="questionReviewCardBox">
+        <!-- New Popover UI injected via JS -->
+        <div class="question-top-toolbar" id="qStatsRow"></div>
+        
+        <div class="question-content-text" id="snapQ">Loading...</div>
+        <div class="review-options-list" id="snapOpts"></div>
+        
+        <div class="solution-card" id="solBlock" style="display:none;">
+          <div class="solution-header-row">
+            <div class="solution-lightning-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="solution-title">Solution & Trick</div>
+          </div>
+          <div id="snapSol" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary);"></div>
+        </div>
+        
+        <div style="display:flex; justify-content:space-between; margin-top:24px;">
+          <button class="btn-modal" id="sPrev" style="padding:10px 20px;"><i class="fa fa-chevron-left"></i> Prev</button>
+          <button class="btn-modal" style="background:var(--accent-purple); color:#fff; padding:10px 20px;" id="sNext">Next <i class="fa fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. LEADERBOARD TAB -->
+    <div class="tab-content analysis-card" id="tab-leaderboard" style="position:relative; margin-top:16px;">
+      <div class="analysis-card-title"><span><i class="fa-solid fa-crown text-amber mr-2" style="color:#facc15;"></i> Top Rankers</span></div>
       <div class="podium" id="lb-podium"></div>
-      <div class="lb-list" id="lb-list"></div>
+      <div class="table-responsive" style="padding-bottom:70px;">
+        <table class="custom-analysis-table">
+          <thead><tr><th>Rank</th><th>Warrior Name</th><th>Score</th></tr></thead>
+          <tbody id="lb-list"></tbody>
+        </table>
+      </div>
       <div class="sticky-you" id="lb-sticky-you"></div>
     </div>
   </div>
@@ -1329,8 +1375,12 @@ auth.onAuthStateChanged(async (user) => {
      `;
      window.currentLbStats = null;
      window.currentLbDocs = [];
-     document.getElementById('an-rank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
      
+     // Naye KPI cards mein spinner lagana (Pichla an-rank null error deta)
+     document.getElementById('kpiRank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+     document.getElementById('kpiScore').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+     document.getElementById('kpiPercentile').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+     document.getElementById('kpiAccuracy').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
      // Default 'You' Table Data
 let scoreParts = String(att.score).split(' /');
 let myScore = parseFloat(scoreParts[0]);
@@ -1371,14 +1421,12 @@ document.getElementById('rp-slider').max = actualTotalMarks;
                     let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
                     let percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
             
-            // Populate Basic Summary
-            document.getElementById('an-rank').innerHTML = `${myRank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${totalStudents}</span>`;
-            document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${actualTotalMarks}</span>`;
-            document.getElementById('an-avg-score').innerText = avgScore;
-            document.getElementById('an-top-score').innerText = topScore;
-            document.getElementById('an-percentile').innerText = percentile + "%";
-            document.getElementById('an-accuracy').innerText = myAcc + "%";
-
+            // Populate Basic Summary in NEW KPI Cards
+            document.getElementById('kpiRank').innerHTML = `${myRank} <small>/ ${totalStudents}</small>`;
+            document.getElementById('kpiScore').innerHTML = `${myScore} <small>/ ${actualTotalMarks}</small>`;
+            document.getElementById('kpiPercentile').innerHTML = `${percentile} <small>%</small>`;
+            document.getElementById('kpiAccuracy').innerHTML = `${myAcc} <small>%</small>`;
+            // (Note: an-avg-score aur an-top-score hata diye kyunki comparison table handle kar lega)
             // Update Score Comparison Table for TOPPER & AVG
             let sumC = 0, sumW = 0, sumT = 0;
             docs.forEach(d => {
@@ -1557,74 +1605,83 @@ document.getElementById('rp-slider').max = actualTotalMarks;
                     else secStats.w++;
                 });
 
-                                // Updated Title without Attempt Number (Moved to Global Title)
-                document.getElementById('snapTitle').innerHTML = `Attempt Review <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:600; margin-left:6px;">— Q${curDashIdx()+1}/${dSnapS.arr.length}</span>`;
-      
-      let badgeArr = [ badge(dSnapS.meta.ts, 'ok'), badge(dSnapS.meta.score) ];
-      if (dSnapS.currentSection === 'all') badgeArr.push(linkBadge('all', 'All'));
-      if (secStats.c > 0) badgeArr.push(linkBadge('correct', `C:${secStats.c}`));
-      if (secStats.w > 0) badgeArr.push(linkBadge('wrong', `W:${secStats.w}`));
-      if (secStats.u > 0) badgeArr.push(linkBadge('un', `U:${secStats.u}`));
-      if (secStats.m > 0) badgeArr.push(linkBadge('mark', `M:${secStats.m}`));
-
+         if (dSnapS.currentSection === 'all') badgeArr.push(linkBadge('all', 'All'));
       document.getElementById('snapMetaBadges').innerHTML = badgeArr.join(' ');
 
+      // Naya Pilled Section Stats (C, W, U)
+      document.getElementById('countCorrectPill').innerText = `C: ${secStats.c}`;
+      document.getElementById('countWrongPill').innerText = `W: ${secStats.w}`;
+      document.getElementById('countUnattemptPill').innerText = `U: ${secStats.u}`;
+
       // Save Button
-      const qCheckText = it.q; // Using english as unique ID for cache
+      const qCheckText = it.q; 
       const isSaved = !!window.savedQuestionsCache[qCheckText];
       const starIcon = isSaved ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
-      const starColor = isSaved ? '#facc15' : 'var(--text-primary)';
-      const starText = isSaved ? 'SAVED' : 'SAVE This Q';
+      const starColor = isSaved ? '#facc15' : 'var(--text-secondary)';
+      const starText = isSaved ? 'SAVED' : 'SAVE';
       
-      const saveBtnHtml = `<button onclick="toggleSaveCurrentDashQ()" style="background: transparent; color:${starColor}; border:1px solid var(--border-color); padding:8px 16px; border-radius:10px; font-weight:800; cursor:pointer; font-size:1rem; display:flex; align-items:center; gap:8px; transition:0.2s;">
-        ${starIcon} <span>${starText}</span>
-      </button>`;
-      
-      let saveContainer = document.getElementById('saveBtnContainer');
-      if(saveContainer) saveContainer.innerHTML = saveBtnHtml;
+      document.getElementById('saveBtnContainer').innerHTML = `<button onclick="toggleSaveCurrentDashQ()" style="background:transparent; color:${starColor}; border:1px solid var(--border-color); padding:4px 10px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.8rem; display:flex; align-items:center; gap:6px;"><span style="font-size:1rem;">${starIcon}</span> ${starText}</button>`;
 
-      // Question Stats Labels
+      // NAYA POPOVER & TIME LOGIC
+      let uTime = it.timeTaken || 0;
+      let qStatsHTML = `
+        <div style="position: relative;">
+          <button type="button" class="time-badge-btn fast" id="userTimeBtn" onclick="toggleTimePopover(event)">
+            <i class="fa-regular fa-clock"></i> <span id="userTimeBadgeText">You: ${uTime}s</span>
+          </button>
+          <div class="time-popover-box" id="timePopoverBox">
+            <div class="time-popover-row"><span>You:</span><span>${uTime}s</span></div>
+            <div class="time-popover-row"><span>Avg:</span><span id="popoverAvgTime">--</span></div>
+            <div class="time-popover-row"><span>Topper:</span><span id="popoverTopperTime">--</span></div>
+          </div>
+        </div>
+        <div class="accuracy-stat-pill" id="questionCorrectRatePill">Stats Hidden</div>
+      `;
+      document.getElementById('qStatsRow').innerHTML = qStatsHTML;
+
       if (window.currentLbStats) {
          const qIdx = curDashIdx();
-         document.getElementById('qStatsRow').innerHTML = `
-            <div class="q-stat-tag tag-you">You: ${it.timeTaken || 0}s</div>
-            <div class="q-stat-tag tag-avg">Avg: ${window.currentLbStats.avgTimes[qIdx] || 0}s</div>
-            <div class="q-stat-tag tag-top">Topper: ${window.currentLbStats.topperTimes[qIdx] || 0}s</div>
-            <div class="q-stat-tag tag-att">${window.currentLbStats.attemptPercents[qIdx] || 0}% Attempted</div>
-            <div class="q-stat-tag tag-cor">${window.currentLbStats.correctPercents[qIdx] || 0}% Correct</div>
-         `;
-      } else {
-         document.getElementById('qStatsRow').innerHTML = ''; 
+         let aTime = window.currentLbStats.avgTimes[qIdx] || 0;
+         let tTime = window.currentLbStats.topperTimes[qIdx] || 0;
+         let cRate = window.currentLbStats.correctPercents[qIdx] || 0;
+         
+         let timeBtn = document.getElementById('userTimeBtn');
+         timeBtn.className = `time-badge-btn ${uTime <= aTime ? 'fast' : 'slow'}`;
+         document.getElementById('popoverAvgTime').innerText = `${aTime}s`;
+         document.getElementById('popoverTopperTime').innerText = `${tTime}s`;
+         document.getElementById('questionCorrectRatePill').innerText = `${cRate}% got it right`;
       }
 
-      // Bilingual logic check (If engine saved 'lang' or direct translation fields)
+      // Content Load
       let displayLang = it.lang || 'en';
       let displayQ = (displayLang === 'hi' && it.q_hi) ? it.q_hi : it.q;
       let displayOpts = (displayLang === 'hi' && it.o_hi && it.o_hi.length > 0) ? it.o_hi : (it.opts || []);
       let displaySol = (displayLang === 'hi' && it.s_hi) ? it.s_hi : (it.sol || '');
 
       document.getElementById('snapQ').innerHTML = displayQ;
-      const b = document.getElementById('snapOpts'); b.innerHTML='';
       
+      // NAYA PREMIUM OPTIONS RENDERING
+      const b = document.getElementById('snapOpts'); b.innerHTML='';
       displayOpts.forEach((t, i) => {
-        const div = document.createElement('div'); div.className='rev-opt';
-        const dot = document.createElement('div'); dot.className='rev-dot';
+        const div = document.createElement('div'); div.className = 'review-option-item';
         const isUser = (i === it.user), isCorrect = (i === it.correct);
-        if(isUser){ div.classList.add('user'); dot.classList.add('user'); }
-        if(isCorrect){ 
-            div.classList.add('correct'); 
-            if(it.user !== -1) { dot.classList.add('correct'); } 
+        let ico = '<i class="fa-regular fa-circle" style="color:var(--border-color); font-size:1.1rem;"></i>';
+        
+        if (isCorrect) { 
+            div.classList.add('correct-opt'); 
+            ico = '<i class="fa-solid fa-circle-check opt-indicator-icon correct"></i>'; 
+        } else if (isUser && !isCorrect) { 
+            div.classList.add('wrong-marked'); 
+            ico = '<i class="fa-solid fa-circle-xmark opt-indicator-icon wrong"></i>'; 
         }
-        if(isUser && !isCorrect){ const ico=document.createElement('div'); ico.className='rev-ico bad'; ico.textContent='✖'; div.appendChild(ico); div.classList.add('wrong'); }
-        if(isCorrect && isUser){ const ico=document.createElement('div'); ico.className='rev-ico ok'; ico.textContent='✔'; div.appendChild(ico); }
-        const text=document.createElement('div'); text.innerHTML=`${String.fromCharCode(65+i)}) ${t}`;
-        div.prepend(text); div.prepend(dot); b.appendChild(div);
+        
+        div.innerHTML = `<div style="display:flex; gap:12px; align-items:flex-start;"><b style="opacity:0.6;">${String.fromCharCode(65+i)})</b> <div>${t}</div></div> <div>${ico}</div>`;
+        b.appendChild(div);
       });
 
       const solBlock = document.getElementById('solBlock');
       if (displaySol) { solBlock.style.display = 'block'; document.getElementById('snapSol').innerHTML = displaySol; } 
       else { solBlock.style.display = 'none'; }
-      
       document.getElementById('sPrev').disabled = (dSnapS.curIndexInOrder === 0);
       document.getElementById('sNext').disabled = (dSnapS.curIndexInOrder === dSnapS.order.length-1);
       
@@ -2983,6 +3040,15 @@ window.launchEngine = function(engineType) {
 window.closeEngineModal = function() {
     document.getElementById('engine-modal').classList.remove('show');
 };
+  window.toggleTimePopover = function(e) { 
+      e.stopPropagation(); 
+      let box = document.getElementById('timePopoverBox');
+      if(box) box.classList.toggle('visible'); 
+  };
+  window.addEventListener('click', () => { 
+      let box = document.getElementById('timePopoverBox');
+      if(box) box.classList.remove('visible'); 
+  });
 </script>
 
 <style>
