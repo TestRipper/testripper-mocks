@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>TestRipper - Mocks</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
@@ -406,6 +406,49 @@ body[data-theme="light"] .glass-card {
     box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
 }
 .whatsapp-btn:active { transform: scale(0.95); }
+  /* ====== TESTRIPPER PREMIUM RESPONSIVE UI ====== */
+  
+  /* 1. MOBILE APP VIEW (Small Screens) */
+  @media (max-width: 767px) {
+    .container { padding-bottom: 80px; } /* Bottom nav na chhupe isliye gap */
+    .analysis-top-grid { grid-template-columns: 1fr 1fr; } /* Mobile me 4 card 2x2 dikhenge */
+    .social-banner h2 { font-size: 1.4rem; }
+  }
+
+  /* 2. WINDOW / DESKTOP PREMIUM VIEW (Large Screens) */
+  @media (min-width: 768px) {
+    /* PC pe container wide aur clean dikhega */
+    .container { max-width: 1100px; padding: 24px 40px; padding-bottom: 100px; }
+    
+    /* Header ko PC ke hisaab se space denge */
+    .header { padding: 16px 40px; }
+    .welcome-section h1 { font-size: 2.5rem; }
+    
+    /* Grid aur Lists ko 2-column me tod diya taaki screen faili hui na lage */
+    .category-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-2 { gap: 24px; }
+    
+    /* Analysis cards PC pe ek single row me aayenge (4 columns) */
+    .analysis-top-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    
+    /* MAC-OS STYLE FLOATING NAV DOCK FOR PC */
+    .bottom-nav {
+      max-width: 450px;
+      margin: 0 auto;
+      left: 0; 
+      right: 0;
+      bottom: 24px;
+      border-radius: 30px; /* Gol kinare premium look ke liye */
+      border: 1px solid var(--border-color);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* 3D Shadow effect */
+      padding: 10px 20px;
+    }
+  }
+  
+  /* Dark mode me dock ki shadow adjust ki hai */
+  body[data-theme="dark"] @media (min-width: 768px) {
+    .bottom-nav { box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+  }
 </style>
 </head>
 <body>
