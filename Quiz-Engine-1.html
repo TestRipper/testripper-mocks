@@ -22,7 +22,15 @@
 /* KaTeX Gap Fix */
 .katex-display { margin: 4px 0 !important; }
 /* --- BASE CSS --- */
-*{box-sizing:border-box;margin:0;padding:0}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none; /* Mobile pe long-press menu block karega */
+  -webkit-user-select: none;   /* Safari/Chrome */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Standard browsers */
+}
 :root{
   --bg:#0f172a;--card:#0b1220;--txt:#e5e7eb;--mut:#94a3b8;
   --p1:#7c3aed;--p2:#06b6d4;--brd:rgba(255,255,255,.12);--ok:#10b981;--bad:#ef4444;--pill:rgba(255,255,255,.15);
