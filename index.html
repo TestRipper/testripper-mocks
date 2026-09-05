@@ -338,64 +338,49 @@
   body[data-theme="dark"] .badge-un { border-color: #cbd5e1 !important; }
 
   /* ====== 3-TAB MODAL STYLES (Testbook Clone) ====== */
-  .modal-full { position: fixed; inset: 0; background: var(--bg-main); z-index: 10000; display: none; flex-direction: column; overflow-y: auto;}
-  .modal-full.show { display: flex; }
-  
-  .tab-header { display: flex; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: var(--bg-main); z-index: 10; }
-  .tab-btn { flex: 1; padding: 15px 0; text-align: center; font-weight: 800; color: var(--text-secondary); border-bottom: 3px solid transparent; transition: 0.3s; font-size: 0.95rem; text-transform: uppercase;}
-  .tab-btn.active { color: var(--accent-purple); border-bottom-color: var(--accent-purple); }
-  
-  .tab-content { display: none; padding: 16px; max-width: 800px; margin: 0 auto; width: 100%; flex-grow: 1; }
-  .tab-content.active { display: block; }
+/* ====== PREMIUM ATTEMPT REVIEW UI ====== */
+#dash-snap .kpi-metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px; }
+#dash-snap .kpi-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; }
+#dash-snap .kpi-icon-box { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+#dash-snap .kpi-icon-box.rank { background: #fee2e2; color: #dc2626; }
+#dash-snap .kpi-icon-box.score { background: #ede9fe; color: #7c3aed; }
+#dash-snap .kpi-icon-box.percentile { background: #e0f2fe; color: #0284c7; }
+#dash-snap .kpi-icon-box.accuracy { background: #d1fae5; color: #059669; }
+#dash-snap .kpi-val { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); line-height: 1.2; }
+#dash-snap .kpi-val small { font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); }
+#dash-snap .kpi-label { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; }
 
-  /* Analysis Tab Updates (Score Compare & Predictor) */
-  .summary-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-  .summary-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
-  .summary-row:last-child { border-bottom: none; }
-  .s-label { font-weight: 700; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
-  .s-val { font-weight: 900; font-size: 1.2rem; }
-  
-  .an-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem; }
-  .an-table th, .an-table td { padding: 10px 8px; text-align: center; border-bottom: 1px dashed rgba(255,255,255,0.1); }
-  body[data-theme="light"] .an-table th, body[data-theme="light"] .an-table td { border-bottom-color: rgba(0,0,0,0.1); }
-  .an-table th { color: var(--text-secondary); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
-  .an-table .row-you { background: rgba(168, 85, 247, 0.05); font-weight: 900; color: var(--text-primary); }
-  .an-table .row-top { background: rgba(16, 185, 129, 0.05); font-weight: 700; color: var(--text-primary); }
-  .an-table .row-avg { background: rgba(250, 204, 21, 0.05); font-weight: 700; color: var(--text-primary); }
-  
-  .rank-predictor-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; text-align: center; margin-top: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-  .rp-slider { -webkit-appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; outline: none; margin: 20px 0; }
-  body[data-theme="light"] .rp-slider { background: rgba(0,0,0,0.1); }
-  .rp-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #06b6d4; cursor: pointer; border: 3px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-  .rp-tooltip { background: #222; color: #fff; padding: 4px 10px; border-radius: 6px; font-weight: 900; font-size: 0.8rem; display: inline-block; margin-bottom: 10px; }
+#dash-snap .analysis-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 22px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 16px; }
+#dash-snap .analysis-card-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; }
 
-  /* Leaderboard Tab */
-  .podium { display: flex; justify-content: center; align-items: flex-end; gap: 10px; margin-top: 20px; margin-bottom: 30px; }
-  .pod-item { display: flex; flex-direction: column; align-items: center; position: relative; }
-  .pod-avatar { border-radius: 50%; object-fit: cover; border: 3px solid; background: #222; }
-  .pod-rank { position: absolute; top: -10px; right: -10px; width: 24px; height: 24px; border-radius: 50%; background: gold; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.8rem; }
-  .pod-1 .pod-avatar { width: 80px; height: 80px; border-color: gold; }
-  .pod-2 .pod-avatar { width: 65px; height: 65px; border-color: silver; }
-  .pod-3 .pod-avatar { width: 65px; height: 65px; border-color: #cd7f32; }
-  .pod-name { font-weight: 800; font-size: 0.85rem; margin-top: 8px; color: var(--text-primary); }
-  .pod-score { font-weight: 700; font-size: 0.75rem; color: var(--text-secondary); }
-  
-  .lb-list { display: flex; flex-direction: column; gap: 8px; padding-bottom: 80px; }
-  .lb-row { display: flex; align-items: center; padding: 12px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color); }
-  .lb-r-num { width: 30px; font-weight: 900; color: var(--text-secondary); }
-  .lb-r-name { flex-grow: 1; font-weight: 700; margin-left: 10px; color: var(--text-primary); }
-  .lb-r-score { font-weight: 900; color: var(--accent-green); }
-  
-  .sticky-you { position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #1e3a8a, #3b82f6); padding: 15px 20px; display: flex; align-items: center; z-index: 100; box-shadow: 0 -4px 15px rgba(0,0,0,0.3); }
+#dash-snap .custom-analysis-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left; }
+#dash-snap .custom-analysis-table th { padding: 12px 14px; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border-color); text-transform: uppercase; font-size: 0.76rem; }
+#dash-snap .custom-analysis-table td { padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.1); vertical-align: middle; }
+body[data-theme="light"] #dash-snap .custom-analysis-table td { border-bottom-color: rgba(0,0,0,0.1); }
+#dash-snap .custom-analysis-table tr.bold-row td { font-weight: 700; background: rgba(255,255,255,0.05); border-top: 1.5px solid var(--border-color); }
 
-  /* Review Stats Tags */
-  .q-stats-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
-  .q-stat-tag { padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; color: #fff; }
-  .tag-you { background: #3b82f6; }
-  .tag-avg { background: #facc15; color: #000; }
-  .tag-top { background: #10b981; }
-  .tag-att { background: #ef4444; }
-  .tag-cor { background: #8b5cf6; }
+#dash-snap .rank-predictor-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; text-align: center; margin-top: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+#dash-snap .rp-slider { -webkit-appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; outline: none; margin: 20px 0; }
+body[data-theme="light"] #dash-snap .rp-slider { background: rgba(0,0,0,0.1); }
+#dash-snap .rp-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #06b6d4; cursor: pointer; border: 3px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+#dash-snap .rp-tooltip { background: var(--bg-card); color: var(--text-primary); padding: 4px 10px; border-radius: 6px; font-weight: 900; font-size: 0.8rem; display: inline-block; margin-bottom: 10px; border: 1px solid var(--border-color); }
+
+#dash-snap .chart-container { position: relative; height: 320px; width: 100%; }
+#dash-snap .chart-container-sm { position: relative; height: 220px; width: 100%; }
+
+#dash-snap .compare-sub-tab { padding: 8px 16px; font-size: 0.88rem; font-weight: 600; color: var(--text-secondary); border-bottom: 2px solid transparent; white-space: nowrap; cursor: pointer; transition: 0.2s; }
+#dash-snap .compare-sub-tab.active { color: var(--accent-purple); border-bottom-color: var(--accent-purple); }
+
+#dash-snap .prev-attempt-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+#dash-snap .prev-attempt-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+#dash-snap .prev-attempt-title { font-weight: 800; font-size: 1rem; color: var(--text-primary); }
+#dash-snap .prev-attempt-badge { background: var(--accent-purple); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+#dash-snap .improvement-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 0.85rem; }
+#dash-snap .improvement-up { color: var(--accent-green); font-weight: 700; }
+#dash-snap .improvement-down { color: var(--accent-red); font-weight: 700; }
+#dash-snap .improvement-same { color: var(--text-secondary); font-weight: 700; }
+
+#dash-snap .data-unavailable { text-align: center; padding: 20px; color: var(--text-secondary); font-style: italic; font-size: 0.9rem; }
   /* ====== GLASSMORPHISM APPROVAL UI ====== */
 .glass-overlay {
     position: fixed; inset: 0; background: var(--bg-main); z-index: 99999;
@@ -718,94 +703,114 @@ body[data-theme="light"] .glass-card {
       <button class="tab-btn active" onclick="switchModalTab('analysis')">Analysis</button>
       <button class="tab-btn" onclick="switchModalTab('review')">Attempt Review</button>
       <button class="tab-btn" onclick="switchModalTab('leaderboard')">Leaderboard</button>
-      <button id="sClose" style="padding:0 15px; color:var(--accent-red); background:none; border:none; font-size:1.2rem; cursor:pointer;" onclick="document.getElementById('dash-snap').classList.remove('show')">
+      <button id="sClose" style="padding:0 15px; color:var(--accent-red); background:none; border:none; font-size:1.2rem; cursor:pointer;" onclick="closeDashSnapModal()">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 <div id="global-quiz-title" style="text-align:center; padding:12px 20px; font-weight:900; font-size:1.15rem; color:var(--accent-purple); background:var(--bg-main); border-bottom:1px solid var(--border-color); z-index:9; text-transform:uppercase; letter-spacing:0.5px;"></div>
-    <div class="tab-content active" id="tab-analysis">
-      <h3 style="margin-bottom:12px; font-weight:900; color:var(--text-secondary);">QUICK SUMMARY</h3>
-      <div class="summary-card">
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-regular fa-flag" style="color:#facc15;"></i> Rank</div>
-          <div class="s-val" id="an-rank">--/--</div>
-        </div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-solid fa-trophy" style="color:#a855f7;"></i> Score</div>
-          <div class="s-val" id="an-score">--/--</div>
-        </div>
-        <div style="font-size:0.75rem; color:var(--text-secondary); text-align:right; margin-bottom:10px;">Average Score: <span id="an-avg-score">--</span> | Best Score: <span id="an-top-score">--</span></div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-regular fa-user" style="color:#ec4899;"></i> Percentile</div>
-          <div class="s-val" id="an-percentile">--%</div>
-        </div>
-        <div class="summary-row">
-          <div class="s-label"><i class="fa-solid fa-crosshairs" style="color:#10b981;"></i> Accuracy</div>
-          <div class="s-val" id="an-accuracy">--%</div>
-        </div>
-      </div>
-
-      <div class="social-banner" style="margin-bottom: 16px; padding: 15px;">
-        <h2 style="font-size: 1.2rem; margin-bottom: 8px;">Join Vishwasniya</h2>
-        <div class="desc" style="margin-bottom: 12px; font-size: 0.75rem;">Click on social handles to join official channels and stay updated with content.</div>
-        <div class="social-buttons-container" style="gap:5px;">
-          <a href="https://t.me/Vishwasniya" target="_blank" class="soc-btn btn-telegram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-telegram"></i></a>
-          <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="soc-btn btn-youtube" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="soc-btn btn-instagram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <div class="summary-card">
-        <h4 style="text-align:center; margin-bottom:15px; color:var(--text-primary);">Score Comparison</h4>
-        <div style="overflow-x: auto;">
-          <table class="an-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Score</th>
-                <th>Acc.</th>
-                <th>Correct</th>
-                <th>Wrong</th>
-                <th>Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="row-you">
-                <td>You</td>
-                <td id="cmp-you-score">--</td>
-                <td id="cmp-you-acc">--</td>
-                <td id="cmp-you-c">--</td>
-                <td id="cmp-you-w">--</td>
-                <td id="cmp-you-time">--</td>
-              </tr>
-              <tr class="row-top">
-                <td>Topper</td>
-                <td id="cmp-top-score">--</td>
-                <td id="cmp-top-acc">--</td>
-                <td id="cmp-top-c">--</td>
-                <td id="cmp-top-w">--</td>
-                <td id="cmp-top-time">--</td>
-              </tr>
-              <tr class="row-avg">
-                <td>Avg</td>
-                <td id="cmp-avg-score">--</td>
-                <td id="cmp-avg-acc">--</td>
-                <td id="cmp-avg-c">--</td>
-                <td id="cmp-avg-w">--</td>
-                <td id="cmp-avg-time">--</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="rank-predictor-box">
-        <h4 style="margin-bottom: 10px; color:var(--text-primary);">Rank Predictor</h4>
-        <div class="rp-tooltip" id="rp-tooltip">Rank: --</div>
-        <input type="range" min="0" max="100" value="0" step="0.5" class="rp-slider" id="rp-slider" oninput="updateRankPredictor(this.value)">
-        <div style="color:var(--text-secondary); font-size:0.85rem; font-weight:700;">Marks: <span id="rp-marks-disp" style="color:var(--accent-p2);">0</span></div>
+<div class="tab-content active" id="tab-analysis">
+  <!-- KPI Metrics Grid -->
+  <div class="kpi-metrics-grid" id="analysis-kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-icon-box rank"><i class="fa-solid fa-medal"></i></div>
+      <div>
+        <div class="kpi-val" id="an-rank-display">--</div>
+        <div class="kpi-label">Your Rank</div>
       </div>
     </div>
+    <div class="kpi-card">
+      <div class="kpi-icon-box score"><i class="fa-solid fa-bolt"></i></div>
+      <div>
+        <div class="kpi-val" id="an-score-display">--</div>
+        <div class="kpi-label">Score</div>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon-box percentile"><i class="fa-solid fa-chart-line"></i></div>
+      <div>
+        <div class="kpi-val" id="an-percentile-display">--</div>
+        <div class="kpi-label">Percentile</div>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon-box accuracy"><i class="fa-solid fa-bullseye"></i></div>
+      <div>
+        <div class="kpi-val" id="an-accuracy-display">--</div>
+        <div class="kpi-label">Accuracy</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Banner -->
+  <div class="social-banner" id="analysis-social-banner" style="margin-bottom: 16px; padding: 15px;">
+    <h2 style="font-size: 1.2rem; margin-bottom: 8px;">Join Vishwasniya</h2>
+    <div class="desc" style="margin-bottom: 12px; font-size: 0.75rem;">Click on social handles to join official channels and stay updated with content.</div>
+    <div class="social-buttons-container" style="gap:5px;">
+      <a href="https://t.me/Vishwasniya" target="_blank" class="soc-btn btn-telegram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.youtube.com/@Vishwasniya" target="_blank" class="soc-btn btn-youtube" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.instagram.com/Vishwasniya_official" target="_blank" class="soc-btn btn-instagram" style="min-width:auto; flex:none; padding:8px 12px;"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <!-- Sectional Summary -->
+  <div class="analysis-card">
+    <div class="analysis-card-title"><span><i class="fa-solid fa-table-list mr-2"></i> Sectional Summary</span></div>
+    <div class="table-responsive">
+      <table class="custom-analysis-table">
+        <thead>
+          <tr><th>Section</th><th>Score</th><th>Attempted</th><th>Correct</th><th>Wrong</th><th>Accuracy</th></tr>
+        </thead>
+        <tbody id="sectional-summary-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Comparison with Topper & Average -->
+  <div class="analysis-card">
+    <div class="analysis-card-title"><span><i class="fa-solid fa-users mr-2"></i> Compare with Topper & Average</span></div>
+    <div class="table-responsive">
+      <table class="custom-analysis-table">
+        <thead>
+          <tr><th>User</th><th>Score</th><th>Accuracy</th><th>Correct</th><th>Wrong</th><th>Time</th></tr>
+        </thead>
+        <tbody id="topper-comparison-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Rank Predictor -->
+  <div class="analysis-card">
+    <div class="analysis-card-title"><span><i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rank Predictor</span></div>
+    <div class="rank-predictor-box">
+      <div class="rp-tooltip" id="rank-predictor-tooltip">Rank: --</div>
+      <input type="range" min="0" max="100" value="0" step="0.5" class="rp-slider" id="rank-predictor-slider" oninput="updatePremiumRankPredictor(this.value)">
+      <div style="color:var(--text-secondary); font-size:0.85rem; font-weight:700;">Marks: <span id="rp-marks-disp" style="color:var(--accent-purple)">0</span></div>
+      <div id="rp-data-status" style="color:var(--text-secondary); font-size:0.8rem; margin-top:8px;"></div>
+    </div>
+  </div>
+
+  <!-- Marks Distribution Chart -->
+  <div class="analysis-card">
+    <div class="analysis-card-title"><span><i class="fa-solid fa-chart-area mr-2"></i> Marks Distribution</span></div>
+    <div class="chart-container">
+      <canvas id="marks-dist-chart"></canvas>
+    </div>
+  </div>
+
+  <!-- Question Distribution Chart -->
+  <div class="analysis-card">
+    <div class="analysis-card-title"><span><i class="fa-solid fa-chart-column mr-2"></i> Question Distribution</span></div>
+    <div class="chart-container-sm">
+      <canvas id="question-dist-chart"></canvas>
+    </div>
+  </div>
+
+  <!-- Previous Attempts Comparison -->
+  <div class="analysis-card" id="prev-attempts-card" style="display:none;">
+    <div class="analysis-card-title"><span><i class="fa-solid fa-code-compare mr-2"></i> Previous Attempts</span></div>
+    <div id="prev-attempts-container"></div>
+  </div>
+</div>
 
     <div class="tab-content" id="tab-review">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
@@ -1342,143 +1347,78 @@ auth.onAuthStateChanged(async (user) => {
       document.getElementById('rp-tooltip').innerText = `Rank: ${simulatedRank}`;
   };
 
-    window.openDashboardSnap = function(globalIdx) {
-     const user = auth.currentUser;
-     const att = globalUserAttempts[globalIdx];
-     if(!att || !att.snap) return alert("Attempt data missing.");
-     
-     // Ye 4 lines wapas add karni hain
-     dSnapS.arr = att.snap;
-     dSnapS.meta = att;
-     dSnapS.curIndexInOrder = 0;
-     dSnapS.currentSection = 'all';
-     
-                     // --- NEW ATTEMPT TRACKING LOGIC ---
-                let tName = normalizeStringForMatch(att.testName);
-                let allAttsForThis = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === tName);
-                
-                let attemptNumber = allAttsForThis.indexOf(att) + 1;
-                att.attemptNumber = attemptNumber > 0 ? attemptNumber : 1;
-                
-                let firstAttempt = allAttsForThis[0] || att;
-                let att1Score = parseFloat(String(firstAttempt.score).split(' /')[0]);
-                // ----------------------------------
+window.openDashboardSnap = function(globalIdx) {
+    const user = auth.currentUser;
+    const att = globalUserAttempts[globalIdx];
+    if(!att || !att.snap) return alert("Attempt data missing.");
 
-     let sections = [...new Set(att.snap.map(q => q.secName).filter(Boolean))];
-     let tabsContainer = document.getElementById('sectionalTabsContainer');
-     if (tabsContainer) {
-       tabsContainer.innerHTML = '';
-       if(sections.length > 0) {
-         let tabsHtml = `<button class="badge ok" id="tab-all-sec" onclick="filterBySection('all')">Overall</button>`;
-         sections.forEach((sec, i) => { tabsHtml += `<button class="badge min" id="tab-sec-${i}" onclick="filterBySection('${sec}', ${i})">${sec}</button>`; });
-         tabsContainer.innerHTML = tabsHtml;
-       }
-     }
+    // Store for review tab
+    dSnapS.arr = att.snap;
+    dSnapS.meta = att;
+    dSnapS.curIndexInOrder = 0;
+    dSnapS.currentSection = 'all';
 
-     window.setDashFilter('all');
-     
-     // Reset UI to Analysis Tab
-     document.querySelectorAll('.tab-btn')[0].click();
-     document.getElementById('dash-snap').classList.add('show');
-          // Set Global Quiz Title (Hide badge if Attempt 1)
-     let attemptBadgeHTML = "";
-     if (att.attemptNumber && att.attemptNumber > 1) {
-         attemptBadgeHTML = `<span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900; letter-spacing: 0px; text-transform: capitalize;">Attempt ${att.attemptNumber}</span>`;
-     }
-     
-     document.getElementById('global-quiz-title').innerHTML = `
+    // Attempt number logic
+    let tName = normalizeStringForMatch(att.testName);
+    let allAttsForThis = globalUserAttempts.filter(a => normalizeStringForMatch(a.testName) === tName);
+    let attemptNumber = allAttsForThis.indexOf(att) + 1;
+    att.attemptNumber = attemptNumber > 0 ? attemptNumber : 1;
+    let firstAttempt = allAttsForThis[0] || att;
+    let att1Score = parseFloat(String(firstAttempt.score).split(' /')[0]);
+
+    // Section tabs
+    let sections = [...new Set(att.snap.map(q => q.secName).filter(Boolean))];
+    let tabsContainer = document.getElementById('sectionalTabsContainer');
+    if (tabsContainer) {
+        tabsContainer.innerHTML = '';
+        if(sections.length > 0) {
+            let tabsHtml = `<button class="badge ok" id="tab-all-sec" onclick="filterBySection('all')">Overall</button>`;
+            sections.forEach((sec, i) => { tabsHtml += `<button class="badge min" id="tab-sec-${i}" onclick="filterBySection('${sec}', ${i})">${sec}</button>`; });
+            tabsContainer.innerHTML = tabsHtml;
+        }
+    }
+
+    window.setDashFilter('all');
+
+    // Reset UI to Analysis Tab
+    document.querySelectorAll('.tab-btn')[0].click();
+    document.getElementById('dash-snap').classList.add('show');
+
+    // Set Global Quiz Title
+    let attemptBadgeHTML = "";
+    if (att.attemptNumber && att.attemptNumber > 1) {
+        attemptBadgeHTML = `<span style="background: #facc15; color: #000; border-radius: 6px; padding: 2px 12px; font-size: 0.85rem; font-weight: 900; letter-spacing: 0px; text-transform: capitalize;">Attempt ${att.attemptNumber}</span>`;
+    }
+    document.getElementById('global-quiz-title').innerHTML = `
         <div style="margin-bottom: 4px;">${att.testName}</div>
         ${attemptBadgeHTML}
-     `;
-     window.currentLbStats = null;
-     window.currentLbDocs = [];
-     document.getElementById('an-rank').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
-     
-     // Default 'You' Table Data
-let scoreParts = String(att.score).split(' /');
-let myScore = parseFloat(scoreParts[0]);
-let actualTotalMarks = scoreParts.length > 1 ? parseFloat(scoreParts[1]) : (att.snap.length * 2);
-     let myAcc = (att.correct + att.incorrect) > 0 ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) : 0;
-     let myTime = (att.minutes || 0);
-     
-     document.getElementById('cmp-you-score').innerText = myScore;
-     document.getElementById('cmp-you-acc').innerText = myAcc + "%";
-     document.getElementById('cmp-you-c').innerText = att.correct || 0;
-     document.getElementById('cmp-you-w').innerText = att.incorrect || 0;
-     document.getElementById('cmp-you-time').innerText = myTime + "m";
-     
-     // Init Rank Predictor Slider
-document.getElementById('rp-slider').max = actualTotalMarks; 
-     document.getElementById('rp-slider').value = myScore;
-     
-     db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
+    `;
+
+    // Reset predictor docs
+    window.currentLbStats = null;
+    window.currentLbDocs = [];
+
+    // Fetch leaderboard data
+    db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
         const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
         window.currentLbDocs = docs;
-        
-                        if (docs.length > 0) {
-                    // Force Attempt 1 Rank Calculation
-                    let totalStudents = docs.length;
-                    let myRank = 1;
-                    let foundSelf = false;
 
-                    docs.forEach(d => {
-                        if (d.id === user.uid) foundSelf = true;
-                        if (d.id !== user.uid && parseFloat(d.score) > att1Score) {
-                            myRank++;
-                        }
-                    });
-                    if (!foundSelf) totalStudents += 1; // If user not yet synced
-
-                    let topDoc = docs[0];
-                    let topScore = parseFloat(topDoc.score);
-                    let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
-                    let percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
-            
-            // Populate Basic Summary
-            document.getElementById('an-rank').innerHTML = `${myRank} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${totalStudents}</span>`;
-            document.getElementById('an-score').innerHTML = `${myScore} <span style="font-size:0.8rem;color:var(--text-secondary)">/ ${actualTotalMarks}</span>`;
-            document.getElementById('an-avg-score').innerText = avgScore;
-            document.getElementById('an-top-score').innerText = topScore;
-            document.getElementById('an-percentile').innerText = percentile + "%";
-            document.getElementById('an-accuracy').innerText = myAcc + "%";
-
-            // Update Score Comparison Table for TOPPER & AVG
-            let sumC = 0, sumW = 0, sumT = 0;
+        if (docs.length > 0) {
+            let totalStudents = docs.length;
+            let myRank = 1;
+            let foundSelf = false;
             docs.forEach(d => {
-                let c = 0, w = 0, t = 0;
-                if(d.correctArray && d.userArray) {
-                    d.userArray.forEach((u, idx) => {
-                        if(u !== -1) { if(u === d.correctArray[idx]) c++; else w++; }
-                    });
+                if (d.id === user.uid) foundSelf = true;
+                if (d.id !== user.uid && parseFloat(d.score) > att1Score) {
+                    myRank++;
                 }
-                if(d.timeArray) t = d.timeArray.reduce((a,b)=>a+b, 0);
-                sumC += c; sumW += w; sumT += Math.round(t/60);
             });
+            if (!foundSelf) totalStudents += 1;
 
-            // Topper Stats Calculation
-            let topC=0, topW=0, topT = topDoc.timeArray ? Math.round(topDoc.timeArray.reduce((a,b)=>a+b,0)/60) : 0;
-            if(topDoc.correctArray && topDoc.userArray) {
-                topDoc.userArray.forEach((u, idx) => {
-                    if(u !== -1) { if(u === topDoc.correctArray[idx]) topC++; else topW++; }
-                });
-            }
-            let topAcc = (topC+topW)>0 ? Math.round((topC/(topC+topW))*100) : 0;
-            document.getElementById('cmp-top-score').innerText = topScore;
-            document.getElementById('cmp-top-acc').innerText = topAcc + "%";
-            document.getElementById('cmp-top-c').innerText = topC;
-            document.getElementById('cmp-top-w').innerText = topW;
-            document.getElementById('cmp-top-time').innerText = topT + "m";
-
-            // Avg Stats Calculation
-            let avgC = Math.round(sumC / totalStudents);
-            let avgW = Math.round(sumW / totalStudents);
-            let avgT = Math.round(sumT / totalStudents);
-            let avgAcc = (avgC+avgW)>0 ? Math.round((avgC/(avgC+avgW))*100) : 0;
-            document.getElementById('cmp-avg-score').innerText = avgScore;
-            document.getElementById('cmp-avg-acc').innerText = avgAcc + "%";
-            document.getElementById('cmp-avg-c').innerText = avgC;
-            document.getElementById('cmp-avg-w').innerText = avgW;
-            document.getElementById('cmp-avg-time').innerText = avgT + "m";
+            let topDoc = docs[0];
+            let topScore = parseFloat(topDoc.score);
+            let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
+            let percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
 
             // Populate Leaderboard Tab
             let podHtml = '';
@@ -1489,11 +1429,10 @@ document.getElementById('rp-slider').max = actualTotalMarks;
 
             let listHtml = '';
             docs.slice(3).forEach((d, i) => {
-              listHtml += `<div class="lb-row"><div class="lb-r-num">${i+4}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${d.score}</div></div>`;
+                listHtml += `<div class="lb-row"><div class="lb-r-num">${i+4}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${d.score}</div></div>`;
             });
             document.getElementById('lb-list').innerHTML = listHtml;
 
-                      // Sticky You (Forced Attempt 1 Stats)
             let safeName = user.displayName || 'Warrior';
             document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score}</div>`;
 
@@ -1513,12 +1452,19 @@ document.getElementById('rp-slider').max = actualTotalMarks;
                 window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
             }
         }
-        updateRankPredictor(myScore); // Init call
-        drawDashSnap();
-     }).catch(e => { console.error("LB Fetch Error", e); drawDashSnap(); });
-  }
 
-  window.filterBySection = function(secName, index = null) {
+        // Render premium analysis and review
+        renderPremiumAnalysis(globalIdx);
+        drawDashSnap();
+    }).catch(e => { 
+        console.error("LB Fetch Error", e); 
+        renderPremiumAnalysis(globalIdx);
+        drawDashSnap(); 
+    });
+};
+
+
+window.filterBySection = function(secName, index = null) {
     dSnapS.currentSection = secName;
     let tabsContainer = document.getElementById('sectionalTabsContainer');
     if (tabsContainer) {
@@ -1706,7 +1652,554 @@ document.getElementById('rp-slider').max = actualTotalMarks;
   }
   document.getElementById('sPrev').onclick = () => { if(dSnapS.curIndexInOrder > 0){ dSnapS.curIndexInOrder--; drawDashSnap(); } };
   document.getElementById('sNext').onclick = () => { if(dSnapS.curIndexInOrder < dSnapS.order.length-1){ dSnapS.curIndexInOrder++; drawDashSnap(); } };
-  
+/* ====== PREMIUM ANALYSIS RENDER FUNCTIONS ====== */
+
+let premiumMarksChart = null;
+let premiumQuestionDistChart = null;
+let premiumRankPredictorData = null;
+
+// Function to extract numeric score from string like "79.00 / 200"
+function extractScoreValues(scoreStr) {
+    if (!scoreStr) return { score: 0, max: 0 };
+    const parts = String(scoreStr).split('/');
+    const score = parseFloat(parts[0] || '0');
+    const max = parts.length > 1 ? parseFloat(parts[1] || '0') : 0;
+    return { score: isNaN(score) ? 0 : score, max: isNaN(max) ? 0 : max };
+}
+
+// Function to analyze sectional data from snapshot
+function analyzeSectionsFromSnap(snapArray) {
+    if (!snapArray || snapArray.length === 0) return [];
+    
+    const sections = {};
+    
+    snapArray.forEach(q => {
+        const secName = q.secName || 'General';
+        if (!sections[secName]) {
+            sections[secName] = {
+                name: secName,
+                total: 0,
+                attempted: 0,
+                correct: 0,
+                wrong: 0,
+                unattempted: 0,
+                score: 0,
+                marks: 0
+            };
+        }
+        
+        const sec = sections[secName];
+        sec.total++;
+        
+        if (q.user === -1) {
+            sec.unattempted++;
+        } else {
+            sec.attempted++;
+            if (q.user === q.correct) {
+                sec.correct++;
+                sec.score += (q.posMarks || 2);
+                sec.marks += (q.posMarks || 2);
+            } else {
+                sec.wrong++;
+                sec.score -= (q.negMarks || 0.5);
+            }
+        }
+    });
+    
+    return Object.values(sections).map(s => ({
+        ...s,
+        accuracy: s.attempted > 0 ? Math.round((s.correct / s.attempted) * 100) : 0,
+        scoreStr: `${s.score.toFixed(2)} / ${s.total * 2}`
+    }));
+}
+
+// Function to build sectional summary
+function buildSectionalSummary(sections) {
+    const tbody = document.getElementById('sectional-summary-tbody');
+    if (!tbody) return;
+    
+    if (!sections || sections.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:20px; color:var(--text-secondary);">No sectional data available</td></tr>`;
+        return;
+    }
+    
+    let html = '';
+    let totalScore = 0;
+    let totalAttempted = 0;
+    let totalCorrect = 0;
+    let totalWrong = 0;
+    
+    sections.forEach(sec => {
+        totalScore += sec.score;
+        totalAttempted += sec.attempted;
+        totalCorrect += sec.correct;
+        totalWrong += sec.wrong;
+        
+        const accBarWidth = sec.accuracy;
+        const attBarWidth = Math.round((sec.attempted / sec.total) * 100);
+        
+        html += `
+        <tr>
+            <td><strong>${sec.name}</strong></td>
+            <td>
+                <div style="width:100px; height:6px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                    <div style="height:100%; background:var(--accent-purple); width:${accBarWidth}%"></div>
+                </div>
+                ${sec.scoreStr}
+            </td>
+            <td>
+                <div style="width:100px; height:6px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                    <div style="height:100%; background:var(--accent-blue); width:${attBarWidth}%"></div>
+                </div>
+                ${sec.attempted} <small>/ ${sec.total}</small>
+            </td>
+            <td style="color:var(--accent-green); font-weight:700;">${sec.correct}</td>
+            <td style="color:var(--accent-red); font-weight:700;">${sec.wrong}</td>
+            <td>
+                <div style="width:100px; height:6px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                    <div style="height:100%; background:var(--accent-green); width:${accBarWidth}%"></div>
+                </div>
+                ${sec.accuracy}%
+            </td>
+        </tr>`;
+    });
+    
+    const overallAcc = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
+    html += `
+    <tr class="bold-row">
+        <td><strong>Overall</strong></td>
+        <td>${totalScore.toFixed(2)}</td>
+        <td>${totalAttempted}</td>
+        <td style="color:var(--accent-green); font-weight:700;">${totalCorrect}</td>
+        <td style="color:var(--accent-red); font-weight:700;">${totalWrong}</td>
+        <td>${overallAcc}%</td>
+    </tr>`;
+    
+    tbody.innerHTML = html;
+}
+
+// Function to build comparison table with topper and average
+function buildComparisonTable(userData, topperData, avgData) {
+    const tbody = document.getElementById('topper-comparison-tbody');
+    if (!tbody) return;
+    
+    if (!userData) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:20px; color:var(--text-secondary);">User data not available</td></tr>`;
+        return;
+    }
+    
+    const userScore = extractScoreValues(userData.score);
+    
+    let html = '';
+    
+    const userAcc = (userData.correct + userData.incorrect) > 0 
+        ? Math.round((userData.correct / (userData.correct + userData.incorrect)) * 100) 
+        : 0;
+    
+    html += `
+    <tr>
+        <td><strong>You</strong></td>
+        <td>${userScore.score.toFixed(2)} <small>/ ${userScore.max}</small></td>
+        <td>${userAcc}%</td>
+        <td>${userData.correct || 0}</td>
+        <td>${userData.incorrect || 0}</td>
+        <td>${userData.minutes || 0}m</td>
+    </tr>`;
+    
+    if (topperData) {
+        const topScore = topperData.score;
+        const topAcc = topperData.accuracy !== undefined ? topperData.accuracy : 
+            (topperData.correct + topperData.wrong > 0 ? Math.round((topperData.correct / (topperData.correct + topperData.wrong)) * 100) : 0);
+        
+        html += `
+        <tr>
+            <td><strong>Topper</strong></td>
+            <td>${topScore}</td>
+            <td>${topAcc}%</td>
+            <td>${topperData.correct || '--'}</td>
+            <td>${topperData.wrong || '--'}</td>
+            <td>${topperData.time || '--'}</td>
+        </tr>`;
+    } else {
+        html += `
+        <tr>
+            <td><strong>Topper</strong></td>
+            <td colspan="5" style="text-align:center; color:var(--text-secondary);">Data unavailable</td>
+        </tr>`;
+    }
+    
+    if (avgData) {
+        const avgScore = avgData.score;
+        const avgAcc = avgData.accuracy !== undefined ? avgData.accuracy : 
+            (avgData.correct + avgData.wrong > 0 ? Math.round((avgData.correct / (avgData.correct + avgData.wrong)) * 100) : 0);
+        
+        html += `
+        <tr>
+            <td><strong>Average</strong></td>
+            <td>${avgScore}</td>
+            <td>${avgAcc}%</td>
+            <td>${avgData.correct || '--'}</td>
+            <td>${avgData.wrong || '--'}</td>
+            <td>${avgData.time || '--'}</td>
+        </tr>`;
+    } else {
+        html += `
+        <tr>
+            <td><strong>Average</strong></td>
+            <td colspan="5" style="text-align:center; color:var(--text-secondary);">Data unavailable</td>
+        </tr>`;
+    }
+    
+    tbody.innerHTML = html;
+}
+
+// Function to render marks distribution chart
+function renderMarksDistChart(scoreData, rankData) {
+    const canvas = document.getElementById('marks-dist-chart');
+    if (!canvas) return;
+    
+    if (premiumMarksChart) {
+        try { premiumMarksChart.destroy(); } catch(e) {}
+        premiumMarksChart = null;
+    }
+    
+    const ctx = canvas.getContext('2d');
+    
+    if (!rankData || rankData.length === 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.parentElement.innerHTML = '<div class="data-unavailable"><i class="fa-solid fa-chart-line"></i> Marks distribution data unavailable</div>';
+        return;
+    }
+    
+    const bins = [0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200];
+    const labels = [];
+    const counts = new Array(bins.length - 1).fill(0);
+    
+    for (let i = 0; i < bins.length - 1; i++) {
+        labels.push(`${bins[i]}-${bins[i+1]}`);
+    }
+    
+    rankData.forEach(d => {
+        const score = parseFloat(d.score) || 0;
+        for (let i = 0; i < bins.length - 1; i++) {
+            if (score >= bins[i] && score < bins[i+1]) {
+                counts[i]++;
+                break;
+            }
+        }
+    });
+    
+    const userScore = scoreData.score;
+    
+    premiumMarksChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Students',
+                data: counts,
+                borderColor: '#06b6d4',
+                backgroundColor: 'rgba(6, 182, 212, 0.15)',
+                fill: true,
+                tension: 0.4,
+                pointBackgroundColor: '#fff',
+                pointRadius: 4
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: userScore > 0,
+                    text: `Your Score: ${userScore.toFixed(2)}`,
+                    color: '#6366f1',
+                    font: { weight: 'bold' }
+                }
+            },
+            scales: {
+                x: { grid: { display: false }, ticks: { color: 'rgba(128,128,128,0.7)' } },
+                y: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { color: 'rgba(128,128,128,0.7)' } }
+            }
+        }
+    });
+}
+
+// Function to render question distribution chart
+function renderQuestionDistChart(snapArray, sections) {
+    const canvas = document.getElementById('question-dist-chart');
+    if (!canvas) return;
+    
+    if (premiumQuestionDistChart) {
+        try { premiumQuestionDistChart.destroy(); } catch(e) {}
+        premiumQuestionDistChart = null;
+    }
+    
+    const ctx = canvas.getContext('2d');
+    
+    if (!snapArray || snapArray.length === 0) {
+        canvas.parentElement.innerHTML = '<div class="data-unavailable"><i class="fa-solid fa-chart-column"></i> Question distribution data unavailable</div>';
+        return;
+    }
+    
+    const sectionNames = sections.map(s => s.name);
+    const correctData = sections.map(s => s.correct);
+    const wrongData = sections.map(s => s.wrong);
+    const unattemptedData = sections.map(s => s.unattempted);
+    
+    premiumQuestionDistChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: sectionNames,
+            datasets: [
+                {
+                    label: 'Correct',
+                    data: correctData,
+                    backgroundColor: '#10b981',
+                    borderRadius: 4
+                },
+                {
+                    label: 'Incorrect',
+                    data: wrongData,
+                    backgroundColor: '#ef4444',
+                    borderRadius: 4
+                },
+                {
+                    label: 'Unattempted',
+                    data: unattemptedData,
+                    backgroundColor: '#94a3b8',
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { 
+                    display: true, 
+                    position: 'bottom',
+                    labels: { color: document.body.getAttribute('data-theme') === 'light' ? '#111' : '#fff' }
+                }
+            },
+            scales: {
+                x: { 
+                    stacked: true, 
+                    grid: { display: false },
+                    ticks: { color: document.body.getAttribute('data-theme') === 'light' ? '#111' : '#fff' }
+                },
+                y: { 
+                    stacked: true,
+                    grid: { color: 'rgba(128,128,128,0.1)' },
+                    ticks: { color: document.body.getAttribute('data-theme') === 'light' ? '#111' : '#fff' }
+                }
+            }
+        }
+    });
+}
+
+// Function to render previous attempts comparison
+function renderPrevAttemptsComparison(currentAttempt, allAttempts) {
+    const container = document.getElementById('prev-attempts-container');
+    const card = document.getElementById('prev-attempts-card');
+    
+    if (!container || !card) return;
+    
+    const sameTestAttempts = allAttempts.filter(a => 
+        a.testName === currentAttempt.testName
+    );
+    
+    if (sameTestAttempts.length <= 1) {
+        card.style.display = 'none';
+        return;
+    }
+    
+    card.style.display = 'block';
+    
+    const currentIndex = sameTestAttempts.findIndex(a => a === currentAttempt);
+    if (currentIndex <= 0) {
+        card.style.display = 'none';
+        return;
+    }
+    
+    const prevAttempt = sameTestAttempts[currentIndex - 1];
+    
+    const currentScore = extractScoreValues(currentAttempt.score);
+    const prevScore = extractScoreValues(prevAttempt.score);
+    
+    const currentAcc = (currentAttempt.correct + currentAttempt.incorrect) > 0 
+        ? Math.round((currentAttempt.correct / (currentAttempt.correct + currentAttempt.incorrect)) * 100) 
+        : 0;
+    const prevAcc = (prevAttempt.correct + prevAttempt.incorrect) > 0 
+        ? Math.round((prevAttempt.correct / (prevAttempt.correct + prevAttempt.incorrect)) * 100) 
+        : 0;
+    
+    const scoreChange = currentScore.score - prevScore.score;
+    const accChange = currentAcc - prevAcc;
+    
+    const scoreClass = scoreChange > 0 ? 'improvement-up' : (scoreChange < 0 ? 'improvement-down' : 'improvement-same');
+    const accClass = accChange > 0 ? 'improvement-up' : (accChange < 0 ? 'improvement-down' : 'improvement-same');
+    
+    const scoreIcon = scoreChange > 0 ? '<i class="fa-solid fa-arrow-trend-up"></i>' : 
+                     (scoreChange < 0 ? '<i class="fa-solid fa-arrow-trend-down"></i>' : '<i class="fa-solid fa-minus"></i>');
+    const accIcon = accChange > 0 ? '<i class="fa-solid fa-arrow-trend-up"></i>' : 
+                   (accChange < 0 ? '<i class="fa-solid fa-arrow-trend-down"></i>' : '<i class="fa-solid fa-minus"></i>');
+    
+    container.innerHTML = `
+        <div class="prev-attempt-card">
+            <div class="prev-attempt-header">
+                <div class="prev-attempt-title">Previous Attempt</div>
+                <div class="prev-attempt-badge">${prevAttempt.ts || 'Unknown Date'}</div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;">
+                <div>
+                    <div class="muted" style="font-size:0.75rem;">Score</div>
+                    <div style="font-weight:800; font-size:1.1rem;">${prevScore.score.toFixed(2)}</div>
+                </div>
+                <div>
+                    <div class="muted" style="font-size:0.75rem;">Accuracy</div>
+                    <div style="font-weight:800; font-size:1.1rem;">${prevAcc}%</div>
+                </div>
+                <div>
+                    <div class="muted" style="font-size:0.75rem;">Correct</div>
+                    <div style="font-weight:800; font-size:1.1rem;">${prevAttempt.correct || 0}</div>
+                </div>
+                <div>
+                    <div class="muted" style="font-size:0.75rem;">Wrong</div>
+                    <div style="font-weight:800; font-size:1.1rem;">${prevAttempt.incorrect || 0}</div>
+                </div>
+            </div>
+            <div style="margin-top:12px; border-top:1px solid rgba(128,128,128,0.2); padding-top:10px;">
+                <div class="improvement-row ${scoreClass}">
+                    ${scoreIcon} Score: ${scoreChange > 0 ? '+' : ''}${scoreChange.toFixed(2)}
+                    <span style="color:var(--text-secondary); font-size:0.8rem;">(${prevScore.score.toFixed(2)} → ${currentScore.score.toFixed(2)})</span>
+                </div>
+                <div class="improvement-row ${accClass}">
+                    ${accIcon} Accuracy: ${accChange > 0 ? '+' : ''}${accChange}%
+                    <span style="color:var(--text-secondary); font-size:0.8rem;">(${prevAcc}% → ${currentAcc}%)</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Function to handle rank predictor with real data
+window.updatePremiumRankPredictor = function(value) {
+    const tooltip = document.getElementById('rank-predictor-tooltip');
+    const marksDisp = document.getElementById('rp-marks-disp');
+    
+    if (!tooltip || !marksDisp) return;
+    
+    marksDisp.textContent = value;
+    
+    if (!premiumRankPredictorData || premiumRankPredictorData.length === 0) {
+        tooltip.textContent = 'Rank: Data unavailable';
+        return;
+    }
+    
+    let rank = 1;
+    premiumRankPredictorData.forEach(d => {
+        if (parseFloat(d.score) > parseFloat(value)) {
+            rank++;
+        }
+    });
+    
+    tooltip.textContent = `Rank: ${rank}`;
+};
+
+// Function to fetch topper and average data from Firestore
+async function fetchComparisonData(testName) {
+    if (!testName) return { topperData: null, avgData: null };
+    
+    try {
+        const lbRef = db.collection("leaderboards").doc(testName).collection("rankings");
+        const snapshot = await lbRef.orderBy("score", "desc").get();
+        
+        if (snapshot.empty) return { topperData: null, avgData: null };
+        
+        const docs = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+        
+        const topperData = docs[0] ? {
+            score: docs[0].score,
+            correct: docs[0].correct !== undefined ? docs[0].correct : null,
+            wrong: docs[0].wrong !== undefined ? docs[0].wrong : null,
+            time: docs[0].time !== undefined ? docs[0].time : null
+        } : null;
+        
+        const avgScore = docs.reduce((sum, d) => sum + parseFloat(d.score || 0), 0) / docs.length;
+        
+        const avgData = {
+            score: avgScore.toFixed(2),
+            correct: null,
+            wrong: null,
+            time: null
+        };
+        
+        return { topperData, avgData };
+    } catch (error) {
+        console.error("Error fetching comparison data:", error);
+        return { topperData: null, avgData: null };
+    }
+}
+
+// Main function to render premium analysis
+async function renderPremiumAnalysis(globalIdx) {
+    const user = auth.currentUser;
+    if (!user) return;
+    
+    const att = globalUserAttempts[globalIdx];
+    if (!att) return;
+    
+    const scoreData = extractScoreValues(att.score);
+    
+    const rankDisplay = document.getElementById('an-rank-display');
+    const scoreDisplay = document.getElementById('an-score-display');
+    const percentileDisplay = document.getElementById('an-percentile-display');
+    const accuracyDisplay = document.getElementById('an-accuracy-display');
+    
+    if (rankDisplay) rankDisplay.innerHTML = att.rank ? `${att.rank} <small>/ ${att.globalTotalStudents || '--'}</small>` : '--';
+    if (scoreDisplay) scoreDisplay.innerHTML = `${scoreData.score.toFixed(2)} <small>/ ${scoreData.max}</small>`;
+    if (percentileDisplay) percentileDisplay.innerHTML = att.percentile ? `${att.percentile}%` : '--';
+    if (accuracyDisplay) {
+        const acc = (att.correct + att.incorrect) > 0 
+            ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) 
+            : 0;
+        accuracyDisplay.innerHTML = `${acc}%`;
+    }
+    
+    const sections = analyzeSectionsFromSnap(att.snap);
+    buildSectionalSummary(sections);
+    
+    const comparisonData = await fetchComparisonData(att.testName);
+    buildComparisonTable(att, comparisonData.topperData, comparisonData.avgData);
+    
+    premiumRankPredictorData = window.currentLbDocs || [];
+    
+    const rpSlider = document.getElementById('rank-predictor-slider');
+    const rpStatus = document.getElementById('rp-data-status');
+    
+    if (rpSlider) {
+        rpSlider.max = scoreData.max || 200;
+        rpSlider.value = scoreData.score;
+        
+        if (premiumRankPredictorData.length > 0) {
+            updatePremiumRankPredictor(scoreData.score);
+            if (rpStatus) rpStatus.textContent = `Based on ${premiumRankPredictorData.length} leaderboard entries`;
+        } else {
+            if (rpStatus) rpStatus.textContent = 'Leaderboard data unavailable for prediction';
+            document.getElementById('rank-predictor-tooltip').textContent = 'Rank: Data unavailable';
+        }
+    }
+    
+    renderMarksDistChart(scoreData, window.currentLbDocs || []);
+    renderQuestionDistChart(att.snap, sections);
+    renderPrevAttemptsComparison(att, globalUserAttempts);
+}
+
+window.closeDashSnapModal = function() {
+    document.getElementById('dash-snap').classList.remove('show');
+    if (premiumMarksChart) { try { premiumMarksChart.destroy(); } catch(e) {} premiumMarksChart = null; }
+    if (premiumQuestionDistChart) { try { premiumQuestionDistChart.destroy(); } catch(e) {} premiumQuestionDistChart = null; }
+};
   // --- NAYA ADDITION: Toggle Save/Unsave Logic ---
   window.toggleSaveCurrentDashQ = async function() {
       const user = auth.currentUser;
