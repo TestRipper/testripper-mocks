@@ -51,7 +51,15 @@
 
   /* ====== RESET & BASE ====== */
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
-  body { background: var(--bg-main); color: var(--text-primary); transition: background 0.3s, color 0.3s; padding-bottom: 70px; }
+  body { 
+  background: var(--bg-main); 
+  color: var(--text-primary); 
+  transition: background 0.3s, color 0.3s; 
+  padding-bottom: 70px; 
+  -webkit-user-select: none; /* Safari/iOS ke liye */
+  -ms-user-select: none; /* Internet Explorer ke liye */
+  user-select: none; /* Standard modern browsers ke liye */
+}
   a { text-decoration: none; color: inherit; }
   button { border: none; background: none; cursor: pointer; color: inherit; outline: none; }
 
