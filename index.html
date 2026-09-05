@@ -264,6 +264,16 @@
   /* ====== EMBEDDED MODALS CSS ====== */
   .modal-full { position: fixed; inset: 0; background: var(--bg-main); display: none; flex-direction: column; z-index: 99999; overflow-y: auto; padding: 16px; }
   .modal-full.show { display: flex; }
+
+  /* ====== TABS UI (Testbook Clone) ====== */
+  .tab-header { display: flex; background: var(--bg-card); border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 10; align-items: center; border-radius: 12px 12px 0 0; margin: -16px -16px 16px -16px; padding: 0 8px;}
+  .tab-btn { flex: 1; padding: 14px 4px; font-weight: 800; font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; border-bottom: 3px solid transparent; transition: 0.2s; white-space: nowrap; }
+  .tab-btn.active { color: var(--accent-purple); border-bottom-color: var(--accent-purple); }
+  .tab-content { display: none; padding-bottom: 30px;}
+  .tab-content.active { display: block; }
+  .lang-toggle-btn { background: rgba(0,0,0,0.05); border: 1px solid var(--border-color); border-radius: 6px; padding: 4px 8px; font-weight: 900; font-size: 0.8rem; margin-right: 8px; cursor: pointer; color: var(--text-primary); }
+  body[data-theme="dark"] .lang-toggle-btn { background: rgba(255,255,255,0.1); }
+
   .modal{ position:fixed;inset:0;background:rgba(0,0,0,.65); display:none;align-items:center;justify-content:center;padding:16px;z-index:9999; }
   .modal.show{display:flex}
   .result{ background:var(--bg-card);border:1px solid var(--border-color);border-radius:18px; padding:18px;max-width:640px;width:100%; color:var(--text-primary); display:flex; flex-direction:column; max-height:90vh;}
@@ -698,16 +708,19 @@ body[data-theme="light"] .glass-card {
       <i class="fa-solid fa-user"></i>
       <span>Profile</span>
     </button>
-  </nav>
-
+  <nav class="bottom-nav">
+      
   <div class="modal-full" id="dash-snap">
     <div class="tab-header">
       <button class="tab-btn active" onclick="switchModalTab('analysis')">Analysis</button>
-      <button class="tab-btn" onclick="switchModalTab('review')">Attempt Review</button>
+      <button class="tab-btn" onclick="switchModalTab('review')">Review</button>
       <button class="tab-btn" onclick="switchModalTab('leaderboard')">Leaderboard</button>
-      <button id="sClose" style="padding:0 15px; color:var(--accent-red); background:none; border:none; font-size:1.2rem; cursor:pointer;" onclick="closeDashSnapModal()">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+      <div style="display:flex; align-items:center; margin-left:auto; padding-right:10px;">
+        <button id="snapLangBtn" class="lang-toggle-btn" onclick="toggleSnapLang()">A/अ</button>
+        <button id="sClose" style="color:var(--accent-red); background:none; border:none; font-size:1.4rem; cursor:pointer; padding-left: 5px;" onclick="closeDashSnapModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
     </div>
 <div id="global-quiz-title" style="text-align:center; padding:12px 20px; font-weight:900; font-size:1.15rem; color:var(--accent-purple); background:var(--bg-main); border-bottom:1px solid var(--border-color); z-index:9; text-transform:uppercase; letter-spacing:0.5px;"></div>
 <div class="tab-content active" id="tab-analysis">
@@ -1330,8 +1343,20 @@ auth.onAuthStateChanged(async (user) => {
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
     
-    event.target.classList.add('active');
+    let targetBtn = event.currentTarget || event.target;
+    if(targetBtn && targetBtn.classList) targetBtn.classList.add('active');
+    
     document.getElementById(`tab-${tabName}`).classList.add('active');
+  };
+
+  window.currentSnapLang = 'en';
+  window.toggleSnapLang = function() {
+      window.currentSnapLang = (window.currentSnapLang === 'en') ? 'hi' : 'en';
+      document.getElementById('snapLangBtn').innerText = (window.currentSnapLang === 'en') ? 'EN' : 'HI';
+      dSnapS.arr.forEach(q => q.lang = window.currentSnapLang);
+      if (document.getElementById('tab-review').classList.contains('active')) {
+          drawDashSnap();
+      }
   };
 
   // Rank Predictor Updater Function
@@ -1353,6 +1378,8 @@ window.openDashboardSnap = function(globalIdx) {
     const user = auth.currentUser;
     const att = globalUserAttempts[globalIdx];
     if(!att || !att.snap) return alert("Attempt data missing.");
+
+    history.pushState({ modal: 'dash-snap' }, ""); // Push state for back button
 
     // Store for review tab
     dSnapS.arr = att.snap;
@@ -2197,10 +2224,15 @@ async function renderPremiumAnalysis(globalIdx) {
     renderPrevAttemptsComparison(att, globalUserAttempts);
 }
 
-window.closeDashSnapModal = function() {
+window.closeDashSnapModal = function(fromPopState = false) {
     document.getElementById('dash-snap').classList.remove('show');
     if (premiumMarksChart) { try { premiumMarksChart.destroy(); } catch(e) {} premiumMarksChart = null; }
     if (premiumQuestionDistChart) { try { premiumQuestionDistChart.destroy(); } catch(e) {} premiumQuestionDistChart = null; }
+    
+    // Sync History if closed manually via 'X' button
+    if (!fromPopState && history.state && history.state.modal === 'dash-snap') {
+        history.back();
+    }
 };
   // --- NAYA ADDITION: Toggle Save/Unsave Logic ---
   window.toggleSaveCurrentDashQ = async function() {
@@ -2824,12 +2856,18 @@ window.closeDashSnapModal = function() {
       
       if(html === '') container.innerHTML = `<div style="text-align:center; color:var(--text-secondary); font-size:0.8rem;">No extra folders found in root.</div>`;
       else container.innerHTML = html;
-    } catch(e) {
+        } catch(e) {
       document.getElementById('dynamic-tabs-container').innerHTML = '';
     }
   }
 
   window.addEventListener('popstate', (event) => {
+    // Agar modal khula hai aur Hardware Back dabaya
+    if (document.getElementById('dash-snap') && document.getElementById('dash-snap').classList.contains('show')) {
+        closeDashSnapModal(true); // true prevents history.back() loop
+        return; 
+    }
+    
     if (event.state && event.state.view === 'folder') renderFolderView(event.state.path, false);
     else if (event.state && event.state.view === 'profile') window.openProfile(false);
     else if (event.state && event.state.view === 'recent') window.openRecentTests(false);
