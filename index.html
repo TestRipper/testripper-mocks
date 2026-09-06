@@ -1433,8 +1433,8 @@ window.openDashboardSnap = function(globalIdx) {
         window.currentLbDocs = docs;
 
         if (docs.length > 0) {
-            let totalStudents = docs.length;
-            let myRank = 1;
+            let totalStudents = att.globalTotalStudents ? parseInt(att.globalTotalStudents) : docs.length;
+            let myRank = att.rank ? parseInt(att.rank) : 1;
             let foundSelf = false;
             docs.forEach(d => {
                 if (d.id === user.uid) foundSelf = true;
@@ -1635,11 +1635,13 @@ window.filterBySection = function(secName, index = null) {
          document.getElementById('qStatsRow').innerHTML = ''; 
       }
 
-      // Bilingual logic check (If engine saved 'lang' or direct translation fields)
+            // Bilingual logic check (If engine saved 'lang' or direct translation fields)
       let displayLang = it.lang || 'en';
       let displayQ = (displayLang === 'hi' && it.q_hi) ? it.q_hi : it.q;
-      let displayOpts = (displayLang === 'hi' && it.o_hi && it.o_hi.length > 0) ? it.o_hi : (it.opts || []);
-      let displaySol = (displayLang === 'hi' && it.s_hi) ? it.s_hi : (it.sol || '');
+      let baseOpts = it.opts || it.o || [];
+      let displayOpts = (displayLang === 'hi' && it.o_hi && it.o_hi.length > 0) ? it.o_hi : baseOpts;
+      let baseSol = it.sol || it.s || '';
+      let displaySol = (displayLang === 'hi' && it.s_hi) ? it.s_hi : baseSol;
 
       document.getElementById('snapQ').innerHTML = displayQ;
       const b = document.getElementById('snapOpts'); b.innerHTML='';
@@ -1900,7 +1902,11 @@ function renderMarksDistChart(scoreData, rankData) {
         return;
     }
     
-    const bins = [0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200];
+        let maxM = scoreData.max || 200;
+    let step = maxM / 10;
+    const bins = [];
+    for(let b = 0; b <= maxM; b += step) bins.push(b);
+    
     const labels = [];
     const counts = new Array(bins.length - 1).fill(0);
     
@@ -2147,20 +2153,22 @@ async function fetchComparisonData(testName) {
         
         const docs = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
         
-        const topperData = docs[0] ? {
+                const topperData = docs[0] ? {
             score: docs[0].score,
-            correct: docs[0].correct !== undefined ? docs[0].correct : null,
-            wrong: docs[0].wrong !== undefined ? docs[0].wrong : null,
-            time: docs[0].time !== undefined ? docs[0].time : null
+            correct: docs[0].correctArray ? docs[0].correctArray.filter((c, i) => c === docs[0].userArray[i]).length : '--',
+            wrong: docs[0].userArray ? docs[0].userArray.filter((u, i) => u !== -1 && u !== docs[0].correctArray[i]).length : '--',
+            time: docs[0].timeArray ? Math.round(docs[0].timeArray.reduce((a,b)=>a+b,0)/60) + 'm' : '--'
         } : null;
         
-        const avgScore = docs.reduce((sum, d) => sum + parseFloat(d.score || 0), 0) / docs.length;
-        
-        const avgData = {
-            score: avgScore.toFixed(2),
-            correct: null,
-            wrong: null,
-            time: null
+        const avgDoc = docs.find(d => d.id === "average_student" || d.name === "Average Student");
+        const avgData = avgDoc ? {
+            score: avgDoc.score,
+            correct: avgDoc.correctArray ? avgDoc.correctArray.filter((c, i) => c === avgDoc.userArray[i]).length : '--',
+            wrong: avgDoc.userArray ? avgDoc.userArray.filter((u, i) => u !== -1 && u !== avgDoc.correctArray[i]).length : '--',
+            time: avgDoc.timeArray ? Math.round(avgDoc.timeArray.reduce((a,b)=>a+b,0)/60) + 'm' : '--'
+        } : {
+            score: (docs.reduce((sum, d) => sum + parseFloat(d.score || 0), 0) / docs.length).toFixed(2),
+            correct: '--', wrong: '--', time: '--'
         };
         
         return { topperData, avgData };
