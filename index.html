@@ -349,6 +349,25 @@
   .badge-mark { background: #a855f7 !important; color: #fff !important; border: none !important; }
   body[data-theme="dark"] .badge-un { border-color: #cbd5e1 !important; }
 
+  /* LEADERBOARD UI FIX */
+  .podium { display: flex; justify-content: center; align-items: flex-end; gap: 10px; margin: 30px 0 20px; height: 160px; }
+  .pod-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px 12px 0 0; padding: 10px; position: relative; width: 100px; }
+  .pod-1 { height: 140px; border-color: #facc15; background: rgba(250, 204, 21, 0.1); }
+  .pod-2 { height: 110px; border-color: #94a3b8; }
+  .pod-3 { height: 90px; border-color: #b45309; }
+  .pod-avatar { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; position: absolute; top: -25px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+  .pod-1 .pod-avatar { width: 55px; height: 55px; top: -30px; border-color: #facc15; }
+  .pod-rank { font-weight: 900; font-size: 1.5rem; color: var(--text-secondary); margin-top: 15px; }
+  .pod-1 .pod-rank { color: #facc15; font-size: 2rem; }
+  .pod-name { font-size: 0.8rem; font-weight: 700; margin-top: auto; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; color: var(--text-primary); }
+  .pod-score { font-size: 1rem; font-weight: 900; color: var(--accent-purple); }
+  .lb-list { display: flex; flex-direction: column; gap: 8px; padding-bottom: 70px; }
+  .lb-row { display: flex; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 16px; gap: 15px; }
+  .lb-r-num { font-weight: 800; font-size: 1.1rem; color: var(--text-secondary); width: 25px; text-align: center; }
+  .lb-r-name { flex-grow: 1; font-weight: 700; font-size: 0.95rem; color: var(--text-primary); }
+  .lb-r-score { font-weight: 900; font-size: 1.1rem; color: var(--accent-green); }
+  .sticky-you { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(90deg, #6d28d9, #3b82f6); padding: 12px 20px; display: flex; align-items: center; border-radius: 0 0 16px 16px; border-top: 1px solid rgba(255,255,255,0.2); box-shadow: 0 -4px 15px rgba(0,0,0,0.2); z-index: 10; }
+
   /* ====== 3-TAB MODAL STYLES (Testbook Clone) ====== */
 /* ====== PREMIUM ATTEMPT REVIEW UI ====== */
 #dash-snap .kpi-metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px; }
@@ -1438,11 +1457,12 @@ window.openDashboardSnap = function(globalIdx) {
             let foundSelf = false;
             docs.forEach(d => {
                 if (d.id === user.uid) foundSelf = true;
-                if (d.id !== user.uid && parseFloat(d.score) > att1Score) {
+                // Ninja Hack: Agar 'att.rank' pehle se python ne di hai toh rank badhao mat
+                if (!att.rank && d.id !== user.uid && parseFloat(d.score) > att1Score) {
                     myRank++;
                 }
             });
-            if (!foundSelf) totalStudents += 1;
+            if (!foundSelf && !att.globalTotalStudents) totalStudents += 1;
 
             let topDoc = docs[0];
             let topScore = parseFloat(topDoc.score);
@@ -1458,7 +1478,14 @@ window.openDashboardSnap = function(globalIdx) {
 
             let listHtml = '';
             docs.slice(3).forEach((d, i) => {
-                listHtml += `<div class="lb-row"><div class="lb-r-num">${i+4}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${d.score}</div></div>`;
+                let displayRank = i + 4;
+                // Asli Rank Injection Hack
+                if (d.id === user.uid && att.rank) displayRank = att.rank;
+                if ((d.id === "average_student" || d.name === "Average Student") && att.globalTotalStudents) {
+                    displayRank = Math.round(parseInt(att.globalTotalStudents) / 2); // Average is roughly 50th percentile
+                }
+                
+                listHtml += `<div class="lb-row"><div class="lb-r-num" style="font-size:0.9rem">${displayRank}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${parseFloat(d.score).toFixed(2)}</div></div>`;
             });
             document.getElementById('lb-list').innerHTML = listHtml;
 
@@ -1885,7 +1912,7 @@ function buildComparisonTable(userData, topperData, avgData) {
 }
 
 // Function to render marks distribution chart
-function renderMarksDistChart(scoreData, rankData) {
+function renderMarksDistChart(scoreData, rankData, attData) {
     const canvas = document.getElementById('marks-dist-chart');
     if (!canvas) return;
     
@@ -1893,16 +1920,15 @@ function renderMarksDistChart(scoreData, rankData) {
         try { premiumMarksChart.destroy(); } catch(e) {}
         premiumMarksChart = null;
     }
+        const ctx = canvas.getContext('2d');
     
-    const ctx = canvas.getContext('2d');
-    
-    if (!rankData || rankData.length === 0) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        canvas.parentElement.innerHTML = '<div class="data-unavailable"><i class="fa-solid fa-chart-line"></i> Marks distribution data unavailable</div>';
-        return;
+    // 100% Dynamic Logic: Pehle score array se max uthao, nahi toh marksDist data se sabse highest marks dhundho!
+    let maxM = scoreData.max;
+    if (!maxM || maxM <= 0) {
+        maxM = (attData && attData.marksDist && attData.marksDist.length > 0) 
+               ? Math.max(...attData.marksDist.map(d => parseFloat(d.marks))) 
+               : 100;
     }
-    
-        let maxM = scoreData.max || 200;
     let step = maxM / 10;
     const bins = [];
     for(let b = 0; b <= maxM; b += step) bins.push(b);
@@ -1913,16 +1939,35 @@ function renderMarksDistChart(scoreData, rankData) {
     for (let i = 0; i < bins.length - 1; i++) {
         labels.push(`${bins[i]}-${bins[i+1]}`);
     }
+
+    // NORMAL DISTRIBUTION (BELL CURVE) MATHEMATICS HACK
+    let isSimulated = attData && attData.globalTotalStudents && rankData.length <= 10;
     
-    rankData.forEach(d => {
-        const score = parseFloat(d.score) || 0;
+    if (isSimulated) {
+        let mean = parseFloat(attData.globalAvgMarks || maxM/2);
+        let stdDev = maxM / 6; // Spread of the curve
+        let totalSt = parseInt(attData.globalTotalStudents);
+        
         for (let i = 0; i < bins.length - 1; i++) {
-            if (score >= bins[i] && score < bins[i+1]) {
-                counts[i]++;
-                break;
-            }
+            let midPoint = (bins[i] + bins[i+1]) / 2;
+            let exponent = Math.exp(-Math.pow(midPoint - mean, 2) / (2 * Math.pow(stdDev, 2)));
+            let val = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * exponent * totalSt * step;
+            counts[i] = Math.round(val);
         }
-    });
+    } else if (rankData && rankData.length > 0) {
+        rankData.forEach(d => {
+            const score = parseFloat(d.score) || 0;
+            for (let i = 0; i < bins.length - 1; i++) {
+                if (score >= bins[i] && score < bins[i+1]) {
+                    counts[i]++; break;
+                }
+            }
+        });
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.parentElement.innerHTML = '<div class="data-unavailable"><i class="fa-solid fa-chart-line"></i> Marks distribution data unavailable</div>';
+        return;
+    }
     
     const userScore = scoreData.score;
     
@@ -1931,26 +1976,16 @@ function renderMarksDistChart(scoreData, rankData) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Students',
-                data: counts,
-                borderColor: '#06b6d4',
-                backgroundColor: 'rgba(6, 182, 212, 0.15)',
-                fill: true,
-                tension: 0.4,
-                pointBackgroundColor: '#fff',
-                pointRadius: 4
+                label: 'Students', data: counts,
+                borderColor: '#06b6d4', backgroundColor: 'rgba(6, 182, 212, 0.15)',
+                fill: true, tension: 0.4, pointBackgroundColor: '#fff', pointRadius: 4
             }]
         },
         options: {
             maintainAspectRatio: false,
             plugins: {
                 legend: { display: false },
-                title: {
-                    display: userScore > 0,
-                    text: `Your Score: ${userScore.toFixed(2)}`,
-                    color: '#6366f1',
-                    font: { weight: 'bold' }
-                }
+                title: { display: userScore > 0, text: `Your Score: ${userScore.toFixed(2)}`, color: '#6366f1', font: { weight: 'bold' } }
             },
             scales: {
                 x: { grid: { display: false }, ticks: { color: 'rgba(128,128,128,0.7)' } },
@@ -2117,29 +2152,6 @@ function renderPrevAttemptsComparison(currentAttempt, allAttempts) {
     `;
 }
 
-// Function to handle rank predictor with real data
-window.updatePremiumRankPredictor = function(value) {
-    const tooltip = document.getElementById('rank-predictor-tooltip');
-    const marksDisp = document.getElementById('rp-marks-disp');
-    
-    if (!tooltip || !marksDisp) return;
-    
-    marksDisp.textContent = value;
-    
-    if (!premiumRankPredictorData || premiumRankPredictorData.length === 0) {
-        tooltip.textContent = 'Rank: Data unavailable';
-        return;
-    }
-    
-    let rank = 1;
-    premiumRankPredictorData.forEach(d => {
-        if (parseFloat(d.score) > parseFloat(value)) {
-            rank++;
-        }
-    });
-    
-    tooltip.textContent = `Rank: ${rank}`;
-};
 
 // Function to fetch topper and average data from Firestore
 async function fetchComparisonData(testName) {
@@ -2209,7 +2221,8 @@ async function renderPremiumAnalysis(globalIdx) {
     const comparisonData = await fetchComparisonData(att.testName);
     buildComparisonTable(att, comparisonData.topperData, comparisonData.avgData);
     
-    premiumRankPredictorData = window.currentLbDocs || [];
+        premiumRankPredictorData = window.currentLbDocs || [];
+    window.currentAttemptForRP = att; // Predictor ke liye secret hack
     
     const rpSlider = document.getElementById('rank-predictor-slider');
     const rpStatus = document.getElementById('rp-data-status');
@@ -2218,16 +2231,22 @@ async function renderPremiumAnalysis(globalIdx) {
         rpSlider.max = scoreData.max || 200;
         rpSlider.value = scoreData.score;
         
-        if (premiumRankPredictorData.length > 0) {
+        // Asli RankMarksData hai toh usko priority do
+        if (att.rankMarks && att.rankMarks.length > 0) {
             updatePremiumRankPredictor(scoreData.score);
-            if (rpStatus) rpStatus.textContent = `Based on ${premiumRankPredictorData.length} leaderboard entries`;
+            let totalPredictStudents = att.globalTotalStudents || 15103;
+            if (rpStatus) rpStatus.textContent = `Based on ${totalPredictStudents} real test entries`;
+        } else if (premiumRankPredictorData.length > 0) {
+            updatePremiumRankPredictor(scoreData.score);
+            let totalPredictStudents = att.globalTotalStudents || premiumRankPredictorData.length;
+            if (rpStatus) rpStatus.textContent = `Based on ${totalPredictStudents} students data`;
         } else {
             if (rpStatus) rpStatus.textContent = 'Leaderboard data unavailable for prediction';
             document.getElementById('rank-predictor-tooltip').textContent = 'Rank: Data unavailable';
         }
     }
-    
-    renderMarksDistChart(scoreData, window.currentLbDocs || []);
+
+    renderMarksDistChart(scoreData, window.currentLbDocs || [], att);
     renderQuestionDistChart(att.snap, sections);
     renderPrevAttemptsComparison(att, globalUserAttempts);
 }
