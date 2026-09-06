@@ -548,11 +548,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                   });
               }
 
-              engQs.forEach((eq, qIdx) => {
+                            engQs.forEach((eq, qIdx) => {
                   const hq = hinQs[qIdx] || {};
                   QS.push({
                       q: eq.q, o: eq.o, a: eq.a, s: eq.s,
-                      q_hi: hq.q_hi || hq.q || "", o_hi: hq.o_hi || hq.o || [], s_hi: hq.s_hi || hq.s || "",
+                      q_hi: hq.q_hi || eq.q_hi || hq.q || "", 
+                      o_hi: (hq.o_hi && hq.o_hi.length > 0) ? hq.o_hi : (eq.o_hi && eq.o_hi.length > 0 ? eq.o_hi : (hq.o || [])), 
+                      s_hi: hq.s_hi || eq.s_hi || hq.s || "",
                       secEng: secNameEng, secHin: secNameHin
                   });
                   currentQIndex++;
@@ -568,7 +570,9 @@ document.addEventListener('DOMContentLoaded', async () => {
               const hq = hinQs[qIdx] || {};
               QS.push({
                   q: eq.q, o: eq.o, a: eq.a, s: eq.s,
-                  q_hi: hq.q_hi || hq.q || "", o_hi: hq.o_hi || hq.o || [], s_hi: hq.s_hi || hq.s || "",
+                  q_hi: hq.q_hi || eq.q_hi || hq.q || "", 
+                  o_hi: (hq.o_hi && hq.o_hi.length > 0) ? hq.o_hi : (eq.o_hi && eq.o_hi.length > 0 ? eq.o_hi : (hq.o || [])), 
+                  s_hi: hq.s_hi || eq.s_hi || hq.s || "",
                   secEng: "General", secHin: "सामान्य"
               });
           });
