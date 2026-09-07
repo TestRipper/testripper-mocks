@@ -2226,19 +2226,20 @@ async function renderPremiumAnalysis(globalIdx) {
     const rpSlider = document.getElementById('rank-predictor-slider');
     const rpStatus = document.getElementById('rp-data-status');
     
-    if (rpSlider) {
+        if (rpSlider) {
         rpSlider.max = scoreData.max || 200;
         rpSlider.value = scoreData.score;
         
-        // Asli RankMarksData hai toh usko priority do
+        // Asli RankMarksData (Python pushed) hai toh usko priority do
         if (att.rankMarks && att.rankMarks.length > 0) {
             updatePremiumRankPredictor(scoreData.score);
             let totalPredictStudents = att.globalTotalStudents || 15103;
             if (rpStatus) rpStatus.textContent = `Based on ${totalPredictStudents} real test entries`;
         } else if (premiumRankPredictorData.length > 0) {
+            // Fallback: Agar static test hai (ya purana test jisme rankMarks nahi), toh sirf active leaderboard users count karo
             updatePremiumRankPredictor(scoreData.score);
-            let totalPredictStudents = att.globalTotalStudents || premiumRankPredictorData.length;
-            if (rpStatus) rpStatus.textContent = `Based on ${totalPredictStudents} students data`;
+            let fallbackStudentsCount = premiumRankPredictorData.length;
+            if (rpStatus) rpStatus.textContent = `Based on ${fallbackStudentsCount} active App users`;
         } else {
             if (rpStatus) rpStatus.textContent = 'Leaderboard data unavailable for prediction';
             document.getElementById('rank-predictor-tooltip').textContent = 'Rank: Data unavailable';
