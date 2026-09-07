@@ -1911,61 +1911,60 @@ function buildComparisonTable(userData, topperData, avgData) {
     tbody.innerHTML = html;
 }
 
+// Function to handle rank predictor with real data
+window.updatePremiumRankPredictor = function(value) {
+    const tooltip = document.getElementById('rank-predictor-tooltip');
+    const marksDisp = document.getElementById('rp-marks-disp');
+    if (!tooltip || !marksDisp) return;
+    
+    marksDisp.textContent = value;
+    let attData = window.currentAttemptForRP;
+    
+    // 1. Dynamic Testbook Logic (Real Exact Rank using pushed rankMarks)
+    if (attData && attData.rankMarks && attData.rankMarks.length > 0) {
+        let predictedRank = attData.globalTotalStudents || 15103; 
+        for (let item of attData.rankMarks) {
+            if (parseFloat(value) >= item.marks) {
+                predictedRank = item.rank;
+                break;
+            }
+        }
+        tooltip.textContent = `Rank: ${predictedRank}`;
+    } 
+    // 2. Static Vault Logic (Fallback to App users from Firebase Leaderboard)
+    else if (premiumRankPredictorData && premiumRankPredictorData.length > 0) {
+        let rank = 1;
+        premiumRankPredictorData.forEach(d => {
+            if (parseFloat(d.score) > parseFloat(value)) rank++;
+        });
+        tooltip.textContent = `Rank: ${rank}`;
+    } else {
+        tooltip.textContent = 'Rank: 1';
+    }
+};
+
 // Function to render marks distribution chart
 function renderMarksDistChart(scoreData, rankData, attData) {
     const canvas = document.getElementById('marks-dist-chart');
     if (!canvas) return;
     
-    if (premiumMarksChart) {
-        try { premiumMarksChart.destroy(); } catch(e) {}
-        premiumMarksChart = null;
-    }
-        const ctx = canvas.getContext('2d');
+    if (premiumMarksChart) { try { premiumMarksChart.destroy(); } catch(e) {} premiumMarksChart = null; }
+    const ctx = canvas.getContext('2d');
     
-    // 100% Dynamic Logic: Pehle score array se max uthao, nahi toh marksDist data se sabse highest marks dhundho!
-    let maxM = scoreData.max;
-    if (!maxM || maxM <= 0) {
-        maxM = (attData && attData.marksDist && attData.marksDist.length > 0) 
-               ? Math.max(...attData.marksDist.map(d => parseFloat(d.marks))) 
-               : 100;
-    }
-    let step = maxM / 10;
-    const bins = [];
-    for(let b = 0; b <= maxM; b += step) bins.push(b);
-    
-    const labels = [];
-    const counts = new Array(bins.length - 1).fill(0);
-    
-    for (let i = 0; i < bins.length - 1; i++) {
-        labels.push(`${bins[i]}-${bins[i+1]}`);
-    }
+    let labels = [];
+    let counts = [];
 
-    // NORMAL DISTRIBUTION (BELL CURVE) MATHEMATICS HACK
-    let isSimulated = attData && attData.globalTotalStudents && rankData.length <= 10;
-    
-    if (isSimulated) {
-        let mean = parseFloat(attData.globalAvgMarks || maxM/2);
-        let stdDev = maxM / 6; // Spread of the curve
-        let totalSt = parseInt(attData.globalTotalStudents);
-        
-        for (let i = 0; i < bins.length - 1; i++) {
-            let midPoint = (bins[i] + bins[i+1]) / 2;
-            let exponent = Math.exp(-Math.pow(midPoint - mean, 2) / (2 * Math.pow(stdDev, 2)));
-            let val = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * exponent * totalSt * step;
-            counts[i] = Math.round(val);
-        }
-    } else if (rankData && rankData.length > 0) {
-        rankData.forEach(d => {
-            const score = parseFloat(d.score) || 0;
-            for (let i = 0; i < bins.length - 1; i++) {
-                if (score >= bins[i] && score < bins[i+1]) {
-                    counts[i]++; break;
-                }
-            }
-        });
-    } else {
+    // 1. Dynamic Testbook Logic (Real Graph using pushed marksDist)
+    if (attData && attData.marksDist && attData.marksDist.length > 0) {
+        // Testbook array descending hoti hai, graph ke liye ascending karna hoga
+        let sortedDist = [...attData.marksDist].reverse();
+        labels = sortedDist.map(d => d.marks);
+        counts = sortedDist.map(d => d.count);
+    } 
+    // 2. Static Vault Logic (Clean Fallback UI, No fake math)
+    else {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        canvas.parentElement.innerHTML = '<div class="data-unavailable"><i class="fa-solid fa-chart-line"></i> Marks distribution data unavailable</div>';
+        canvas.parentElement.innerHTML = '<div class="data-unavailable" style="text-align:center; padding:20px; color:var(--text-secondary); font-size:0.9rem; font-style:italic;"><i class="fa-solid fa-chart-line"></i> Real marks distribution data unavailable for this test</div>';
         return;
     }
     
