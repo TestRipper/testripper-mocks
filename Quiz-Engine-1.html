@@ -721,11 +721,14 @@ document.addEventListener('DOMContentLoaded', async () => {
           });
       }
 
-      function makeGrid(){
+            function makeGrid(){
         const g=$('qGrid');g.innerHTML='';
-        st.qs.forEach((_,i)=>{
+        st.qs.forEach((q,i)=>{
           const d=document.createElement('div');
-          d.className='cell';d.textContent=i+1;
+          d.className='cell';
+          // 🔥 NEW: SECTIONAL RELATIVE NUMBERING FOR CELL
+          let secStartIndex = st.qs.findIndex(x => x.secEng === q.secEng);
+          d.textContent = (i - secStartIndex + 1);
           d.onclick=()=>{ recordTime(); st.cur=i; render(); $('panel').classList.remove('show'); };
           g.appendChild(d);
         });
@@ -743,7 +746,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         let qOpts = (currentLang === 'hi' && q.o_hi && q.o_hi.length > 0) ? q.o_hi : q.o;
         const qSol = (currentLang === 'hi' && q.s_hi) ? q.s_hi : q.s;
 
-        $('qInfo').textContent=`Q${st.cur+1}/${st.qs.length}`;
+        // 🔥 NEW: SECTIONAL RELATIVE NUMBERING FOR DOCK
+        let secStartIndex = st.qs.findIndex(x => x.secEng === q.secEng);
+        let relativeIdx = st.cur - secStartIndex + 1;
+        let secTotalQs = st.qs.filter(x => x.secEng === q.secEng).length;
+        
+        $('qInfo').textContent=`${q.secEng || 'Test'} - Q${relativeIdx}/${secTotalQs}`;
         let ansCount = st.ans.filter(x=>x!=null).length;
         $('progTxt').innerHTML=`${st.cur+1} of ${st.qs.length} · Answered: ${ansCount}`;
         

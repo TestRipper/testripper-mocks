@@ -1446,81 +1446,101 @@ window.openDashboardSnap = function(globalIdx) {
     window.currentLbStats = null;
     window.currentLbDocs = [];
 
-    // Fetch leaderboard data
-    db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get().then(lbRef => {
+    // 🔥 STEP 1: Fetch Universal Parent Document First
+    db.collection("leaderboards").doc(att.testName).get().then(docSnap => {
+        let metaData = docSnap.exists ? docSnap.data() : {};
+        
+        // Inject Universal Data into current attempt (For GitHub Vault tests)
+        att.globalTotalStudents = metaData.globalTotalStudents || att.globalTotalStudents;
+        att.rankMarks = metaData.rankMarks || att.rankMarks;
+        att.marksDist = metaData.marksDist || att.marksDist;
+        
+        // Now fetch rankings
+        return db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get();
+    }).then(lbRef => {
+        if (!lbRef) return;
         const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
         window.currentLbDocs = docs;
 
-        if (docs.length > 0) {
-            let totalStudents = att.globalTotalStudents ? parseInt(att.globalTotalStudents) : docs.length;
-            let myRank = att.rank ? parseInt(att.rank) : 1;
-            let foundSelf = false;
-            docs.forEach(d => {
-                if (d.id === user.uid) foundSelf = true;
-                // Ninja Hack: Agar 'att.rank' pehle se python ne di hai toh rank badhao mat
-                if (!att.rank && d.id !== user.uid && parseFloat(d.score) > att1Score) {
-                    myRank++;
-                }
-            });
-            if (!foundSelf && !att.globalTotalStudents) totalStudents += 1;
+        let totalStudents = att.globalTotalStudents ? parseInt(att.globalTotalStudents) : docs.length;
+        let myRank = 1;
+        let foundSelf = false;
 
-            let topDoc = docs[0];
-            let topScore = parseFloat(topDoc.score);
-            let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
-            let percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
-
-                       // NINJA HACK: Filter out system nodes (average_student, general_cutoff) for Podium
-            let realDocs = docs.filter(d => d.id !== 'average_student' && d.id !== 'general_cutoff');
-
-            // Populate Leaderboard Tab (Using realDocs only)
-            let podHtml = '';
-            if(realDocs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${realDocs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${realDocs[1].name.split(' ')[0]}</div><div class="pod-score">${realDocs[1].score}</div></div>`;
-            if(realDocs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${realDocs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${realDocs[0].name.split(' ')[0]}</div><div class="pod-score">${realDocs[0].score}</div></div>`;
-            if(realDocs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${realDocs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${realDocs[2].name.split(' ')[0]}</div><div class="pod-score">${realDocs[2].score}</div></div>`;
-            document.getElementById('lb-podium').innerHTML = podHtml;
-
-            let listHtml = '';
-            docs.slice(realDocs.length >= 3 ? 3 : realDocs.length).forEach((d, i) => {
-                let displayRank = i + 4;
-                // Asli Rank Injection Hack
-                if (d.id === user.uid && att.rank) displayRank = att.rank;
-                if ((d.id === "average_student" || d.name === "Average Student") && att.globalTotalStudents) {
-                    displayRank = Math.round(parseInt(att.globalTotalStudents) / 2); // Average is roughly 50th percentile
-                }
-                
-                listHtml += `<div class="lb-row"><div class="lb-r-num" style="font-size:0.9rem">${displayRank}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${parseFloat(d.score).toFixed(2)}</div></div>`;
-            });
-            document.getElementById('lb-list').innerHTML = listHtml;
-
-            let safeName = user.displayName || 'Warrior';
-            document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${myRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score}</div>`;
-
-            // Prepare Question Stats for Review Tab
-            window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
-            for (let i = 0; i < dSnapS.arr.length; i++) {
-                let totalTime = 0, correctCount = 0, attemptCount = 0;
-                docs.forEach(doc => {
-                    totalTime += (doc.timeArray && doc.timeArray[i]) ? doc.timeArray[i] : 0;
-                    if (doc.userArray && doc.userArray[i] !== -1) {
-                        attemptCount++;
-                        if (doc.userArray[i] === doc.correctArray[i]) correctCount++;
-                    }
-                });
-                window.currentLbStats.avgTimes.push(Math.round(totalTime / docs.length));
-                window.currentLbStats.attemptPercents.push(Math.round((attemptCount / docs.length) * 100));
-                window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
+        // 🔥 RANK CALCULATION: STRICTLY ON 1st ATTEMPT SCORE
+        docs.forEach(d => {
+            if (d.id === user.uid) foundSelf = true;
+            if (d.id !== 'average_student' && d.id !== 'general_cutoff' && d.id !== user.uid && parseFloat(d.score) > att1Score) {
+                myRank++;
             }
+        });
+
+        if (!foundSelf && !att.globalTotalStudents) totalStudents += 1;
+
+        // 🔥 SMART PERCENTILE CALCULATION USING UNIVERSAL DATA
+        let percentile = 0.0;
+        if (att.rankMarks && att.rankMarks.length > 0) {
+            for (let item of att.rankMarks) {
+                if (att1Score >= item.marks) { // STRICTLY 1st Attempt
+                    myRank = item.rank;
+                    percentile = item.per;
+                    break;
+                }
+            }
+        } else {
+            percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
         }
 
-        // Render premium analysis and review
-        renderPremiumAnalysis(globalIdx);
+        // Save calculated rank for UI rendering
+        att.displayRank = myRank;
+        att.displayPercentile = percentile;
+        att.displayTotalStudents = totalStudents;
+
+        let realDocs = docs.filter(d => d.id !== 'average_student' && d.id !== 'general_cutoff');
+
+        let podHtml = '';
+        if(realDocs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${realDocs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${realDocs[1].name.split(' ')[0]}</div><div class="pod-score">${realDocs[1].score}</div></div>`;
+        if(realDocs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${realDocs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${realDocs[0].name.split(' ')[0]}</div><div class="pod-score">${realDocs[0].score}</div></div>`;
+        if(realDocs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${realDocs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${realDocs[2].name.split(' ')[0]}</div><div class="pod-score">${realDocs[2].score}</div></div>`;
+        document.getElementById('lb-podium').innerHTML = podHtml;
+
+        let listHtml = '';
+        docs.slice(realDocs.length >= 3 ? 3 : realDocs.length).forEach((d, i) => {
+            let displayRank = i + 4;
+            if (d.id === user.uid) displayRank = att.displayRank;
+            if ((d.id === "average_student" || d.name === "Average Student") && att.globalTotalStudents) {
+                displayRank = Math.round(parseInt(att.globalTotalStudents) / 2); 
+            }
+            listHtml += `<div class="lb-row"><div class="lb-r-num" style="font-size:0.9rem">${displayRank}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${parseFloat(d.score).toFixed(2)}</div></div>`;
+        });
+        document.getElementById('lb-list').innerHTML = listHtml;
+
+        let safeName = user.displayName || 'Warrior';
+        document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${att.displayRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score}</div>`;
+
+        window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
+        for (let i = 0; i < dSnapS.arr.length; i++) {
+            let totalTime = 0, correctCount = 0, attemptCount = 0;
+            docs.forEach(doc => {
+                totalTime += (doc.timeArray && doc.timeArray[i]) ? doc.timeArray[i] : 0;
+                if (doc.userArray && doc.userArray[i] !== -1) {
+                    attemptCount++;
+                    if (doc.userArray[i] === doc.correctArray[i]) correctCount++;
+                }
+            });
+            window.currentLbStats.avgTimes.push(Math.round(totalTime / docs.length));
+            window.currentLbStats.attemptPercents.push(Math.round((attemptCount / docs.length) * 100));
+            window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
+        }
+
+        // 🔥 Pass att1Score into Analysis
+        renderPremiumAnalysis(globalIdx, att1Score);
         drawDashSnap();
     }).catch(e => { 
         console.error("LB Fetch Error", e); 
-        renderPremiumAnalysis(globalIdx);
+        renderPremiumAnalysis(globalIdx, att1Score);
         drawDashSnap(); 
     });
-};
+
 
 
 window.filterBySection = function(secName, index = null) {
@@ -1584,7 +1604,9 @@ window.filterBySection = function(secName, index = null) {
           const d = document.createElement('div'); d.className='mini-chip';
           if(i === dSnapS.curIndexInOrder) d.classList.add('cur');
           if(it.mark) d.classList.add('mark'); else if(right) d.classList.add('ok'); else if(wrong) d.classList.add('bad'); else d.classList.add('un');
-          d.textContent = idx + 1;
+          // 🔥 NEW: SECTIONAL RELATIVE NUMBERING FOR GRID CHIPS
+          let secStartIndex = dSnapS.arr.findIndex(q => q.secName === it.secName);
+          d.textContent = idx - secStartIndex + 1;
           d.onclick = () => { dSnapS.curIndexInOrder = i; drawDashSnap(); };
           cont.appendChild(d);
       });
@@ -1625,10 +1647,20 @@ window.filterBySection = function(secName, index = null) {
                     else secStats.w++;
                 });
 
-                                // Updated Title without Attempt Number (Moved to Global Title)
-                document.getElementById('snapTitle').innerHTML = `Attempt Review <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:600; margin-left:6px;">— Q${curDashIdx()+1}/${dSnapS.arr.length}</span>`;
+                                     // 🔥 NEW: SECTIONAL RELATIVE NUMBERING FOR TITLE
+      let secStartIndex = dSnapS.arr.findIndex(q => q.secName === it.secName);
+      let relativeIdx = curDashIdx() - secStartIndex + 1;
+      let secTotalQs = dSnapS.arr.filter(q => q.secName === it.secName).length;
       
-      let badgeArr = [ badge(dSnapS.meta.ts, 'ok'), badge(dSnapS.meta.score) ];
+      document.getElementById('snapTitle').innerHTML = `Attempt Review <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:600; margin-left:6px;">— ${it.secName || 'General'} : Q${relativeIdx}/${secTotalQs}</span>`;
+      
+            let badgeArr = [ badge(dSnapS.meta.ts, 'ok'), badge(dSnapS.meta.score) ];
+      
+      // 🔥 NEW: CUTOFF INJECTION BADGE
+      if (dSnapS.meta.general_cutoff && dSnapS.meta.general_cutoff !== "--") {
+          badgeArr.push(`<span class="badge" style="background:linear-gradient(90deg, #ea580c, #f59e0b); color:#fff; border:none; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);"><i class="fa-solid fa-bullseye"></i> Cutoff: ${dSnapS.meta.general_cutoff}</span>`);
+      }
+
       if (dSnapS.currentSection === 'all') badgeArr.push(linkBadge('all', 'All'));
       if (secStats.c > 0) badgeArr.push(linkBadge('correct', `C:${secStats.c}`));
       if (secStats.w > 0) badgeArr.push(linkBadge('wrong', `W:${secStats.w}`));
@@ -1932,7 +1964,8 @@ window.updatePremiumRankPredictor = function(value) {
                 break;
             }
         }
-        tooltip.textContent = `Rank: ${predictedRank}`;
+        tooltip.innerHTML = `Rank: <span style="color:#06b6d4">${predictedRank}</span>`;
+
     } 
     // 2. Static Vault Logic (Fallback to App users from Firebase Leaderboard)
     else if (premiumRankPredictorData && premiumRankPredictorData.length > 0) {
@@ -2193,13 +2226,14 @@ async function fetchComparisonData(testName) {
 }
 
 // Main function to render premium analysis
-async function renderPremiumAnalysis(globalIdx) {
+async function renderPremiumAnalysis(globalIdx, att1Score) {
     const user = auth.currentUser;
     if (!user) return;
-    
     const att = globalUserAttempts[globalIdx];
     if (!att) return;
     
+    // Check if it's 2nd, 3rd Attempt
+    const isRetake = (att.attemptNumber > 1);
     const scoreData = extractScoreValues(att.score);
     
     const rankDisplay = document.getElementById('an-rank-display');
@@ -2207,14 +2241,18 @@ async function renderPremiumAnalysis(globalIdx) {
     const percentileDisplay = document.getElementById('an-percentile-display');
     const accuracyDisplay = document.getElementById('an-accuracy-display');
     
-    if (rankDisplay) rankDisplay.innerHTML = att.rank ? `${att.rank} <small>/ ${att.globalTotalStudents || '--'}</small>` : '--';
+    // 🔥 SCORE AND ACCURACY (Always Current Attempt)
     if (scoreDisplay) scoreDisplay.innerHTML = `${scoreData.score.toFixed(2)} <small>/ ${scoreData.max}</small>`;
-    if (percentileDisplay) percentileDisplay.innerHTML = att.percentile ? `${att.percentile}%` : '--';
-    if (accuracyDisplay) {
-        const acc = (att.correct + att.incorrect) > 0 
-            ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) 
-            : 0;
-        accuracyDisplay.innerHTML = `${acc}%`;
+    const acc = (att.correct + att.incorrect) > 0 ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) : 0;
+    if (accuracyDisplay) accuracyDisplay.innerHTML = `${acc}%`;
+
+    // 🔥 RANK AND PERCENTILE (Strictly 1st Attempt Lock)
+    if (isRetake) {
+        if (rankDisplay) rankDisplay.innerHTML = `<span style="font-size:0.7rem; color:var(--text-secondary); display:block; margin-bottom:4px;">(1st Attempt Based)</span>${att.displayRank || '--'} <small>/ ${att.displayTotalStudents || '--'}</small>`;
+        if (percentileDisplay) percentileDisplay.innerHTML = `<span style="font-size:0.7rem; color:var(--text-secondary); display:block; margin-bottom:4px;">(1st Attempt Based)</span>${att.displayPercentile ? parseFloat(att.displayPercentile).toFixed(2) + '%' : '--'}`;
+    } else {
+        if (rankDisplay) rankDisplay.innerHTML = `${att.displayRank || '--'} <small>/ ${att.displayTotalStudents || '--'}</small>`;
+        if (percentileDisplay) percentileDisplay.innerHTML = att.displayPercentile ? `${parseFloat(att.displayPercentile).toFixed(2)}%` : '--';
     }
     
     const sections = analyzeSectionsFromSnap(att.snap);
@@ -2223,36 +2261,37 @@ async function renderPremiumAnalysis(globalIdx) {
     const comparisonData = await fetchComparisonData(att.testName);
     buildComparisonTable(att, comparisonData.topperData, comparisonData.avgData);
     
-        premiumRankPredictorData = window.currentLbDocs || [];
-    window.currentAttemptForRP = att; // Predictor ke liye secret hack
+    premiumRankPredictorData = window.currentLbDocs || [];
+    window.currentAttemptForRP = att; 
     
     const rpSlider = document.getElementById('rank-predictor-slider');
     const rpStatus = document.getElementById('rp-data-status');
     
-        if (rpSlider) {
+    if (rpSlider) {
         rpSlider.max = scoreData.max || 200;
-        rpSlider.value = scoreData.score;
+        // 🔥 PREDICTOR SLIDER DEFAULT TO 1ST ATTEMPT
+        let defaultSliderScore = isRetake ? att1Score : scoreData.score;
+        rpSlider.value = defaultSliderScore;
         
-        // Asli RankMarksData (Python pushed) hai toh usko priority do
         if (att.rankMarks && att.rankMarks.length > 0) {
-            updatePremiumRankPredictor(scoreData.score);
+            updatePremiumRankPredictor(defaultSliderScore);
             let totalPredictStudents = att.globalTotalStudents || 15103;
-            if (rpStatus) rpStatus.textContent = `Based on ${totalPredictStudents} real test entries`;
+            if (rpStatus) rpStatus.textContent = `Universal Data: ${totalPredictStudents} real entries`;
         } else if (premiumRankPredictorData.length > 0) {
-            // Fallback: Agar static test hai (ya purana test jisme rankMarks nahi), toh sirf active leaderboard users count karo
-            updatePremiumRankPredictor(scoreData.score);
-            let fallbackStudentsCount = premiumRankPredictorData.length;
-            if (rpStatus) rpStatus.textContent = `Based on ${fallbackStudentsCount} active App users`;
+            updatePremiumRankPredictor(defaultSliderScore);
+            if (rpStatus) rpStatus.textContent = `Based on ${premiumRankPredictorData.length} active App users`;
         } else {
-            if (rpStatus) rpStatus.textContent = 'Leaderboard data unavailable for prediction';
-            document.getElementById('rank-predictor-tooltip').textContent = 'Rank: Data unavailable';
+            if (rpStatus) rpStatus.textContent = 'Leaderboard data unavailable';
         }
     }
 
-    renderMarksDistChart(scoreData, window.currentLbDocs || [], att);
+    // 🔥 MARKS DIST GRAPH: (Current Score indicator locked to 1st Attempt)
+    let graphScoreData = isRetake ? {score: att1Score} : scoreData;
+    renderMarksDistChart(graphScoreData, window.currentLbDocs || [], att);
     renderQuestionDistChart(att.snap, sections);
     renderPrevAttemptsComparison(att, globalUserAttempts);
 }
+
 
 window.closeDashSnapModal = function(fromPopState = false) {
     document.getElementById('dash-snap').classList.remove('show');
