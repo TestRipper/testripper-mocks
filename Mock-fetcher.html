@@ -497,8 +497,16 @@ document.addEventListener('DOMContentLoaded',()=>{
   // Shuffle Questions
   for(let i = QS.length - 1; i > 0; i--){ let j = Math.floor(Math.random() * (i + 1)); [QS[i], QS[j]] = [QS[j], QS[i]]; }
 
-  // 🚀 40 SECONDS PER QUESTION LOGIC
-  const TIME_SECONDS = QS.length * 40; 
+    // 🚀 SMART TIMER LOGIC (Priority to JSON time, fallback to 40s/Q)
+  let TIME_SECONDS = QS.length * 40; 
+  if (customEngineData) {
+      try {
+          let parsed = JSON.parse(customEngineData);
+          if (parsed.quizTime) {
+              TIME_SECONDS = parsed.quizTime * 60;
+          }
+      } catch(e) {}
+  }
   const STORE_NAME = QUIZ_TITLE.replace(/\s+/g, '_');
 
   document.title = QUIZ_TITLE + " - TestRipper";

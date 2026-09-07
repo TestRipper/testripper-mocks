@@ -1469,15 +1469,18 @@ window.openDashboardSnap = function(globalIdx) {
             let avgScore = (docs.reduce((sum, d) => sum + parseFloat(d.score), 0) / docs.length).toFixed(2);
             let percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
 
-            // Populate Leaderboard Tab
+                       // NINJA HACK: Filter out system nodes (average_student, general_cutoff) for Podium
+            let realDocs = docs.filter(d => d.id !== 'average_student' && d.id !== 'general_cutoff');
+
+            // Populate Leaderboard Tab (Using realDocs only)
             let podHtml = '';
-            if(docs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${docs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${docs[1].name.split(' ')[0]}</div><div class="pod-score">${docs[1].score}</div></div>`;
-            if(docs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${docs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${docs[0].name.split(' ')[0]}</div><div class="pod-score">${docs[0].score}</div></div>`;
-            if(docs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${docs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${docs[2].name.split(' ')[0]}</div><div class="pod-score">${docs[2].score}</div></div>`;
+            if(realDocs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${realDocs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${realDocs[1].name.split(' ')[0]}</div><div class="pod-score">${realDocs[1].score}</div></div>`;
+            if(realDocs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${realDocs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${realDocs[0].name.split(' ')[0]}</div><div class="pod-score">${realDocs[0].score}</div></div>`;
+            if(realDocs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${realDocs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${realDocs[2].name.split(' ')[0]}</div><div class="pod-score">${realDocs[2].score}</div></div>`;
             document.getElementById('lb-podium').innerHTML = podHtml;
 
             let listHtml = '';
-            docs.slice(3).forEach((d, i) => {
+            docs.slice(realDocs.length >= 3 ? 3 : realDocs.length).forEach((d, i) => {
                 let displayRank = i + 4;
                 // Asli Rank Injection Hack
                 if (d.id === user.uid && att.rank) displayRank = att.rank;
