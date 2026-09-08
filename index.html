@@ -751,7 +751,7 @@ body[data-theme="light"] .glass-card {
       <i class="fa-solid fa-user"></i>
       <span>Profile</span>
     </button>
-  <nav class="bottom-nav">
+  </nav>
       
   <div class="modal-full" id="dash-snap">
     <div class="tab-header">
@@ -1641,6 +1641,8 @@ window.openDashboardSnap = function(globalIdx) {
         renderPremiumAnalysis(globalIdx, att1Score);
         drawDashSnap(); 
     });
+    };
+    
 
 window.switchLbView = function(view) {
     document.querySelectorAll('.lb-tog').forEach(b => b.classList.remove('active'));
@@ -1654,6 +1656,7 @@ window.switchLbView = function(view) {
         document.getElementById('lb-view-sectional').style.display = 'block';
     }
 };
+
 
 window.filterBySection = function(secName, index = null) {
     dSnapS.currentSection = secName;
