@@ -1628,30 +1628,43 @@ window.openDashboardSnap = function(globalIdx) {
             document.getElementById('sectional-toppers-container').innerHTML = `<div style="text-align:center; padding:20px; color:var(--text-secondary);">Sectional data not available for this test.</div>`;
         }
 
-        // Stats calculation for Review tab...
-        window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
+          // 🔥 FIX: Correctly map Exact Topper and Universal Average Stats
+        let avgDoc = docs.find(d => d.id === 'average_student' || d.name === 'Average Student');
+        let topperDoc = realDocs.length > 0 ? realDocs[0] : (docs[0] || {});
+        
+        window.currentLbStats = { 
+            topperTimes: topperDoc.timeArray || [], 
+            avgTimes: avgDoc ? (avgDoc.timeArray || []) : [], 
+            correctPercents: [], 
+            attemptPercents: [] 
+        };
+        
         for (let i = 0; i < dSnapS.arr.length; i++) {
-            let totalTime = 0, correctCount = 0, attemptCount = 0;
-            docs.forEach(doc => {
-                totalTime += (doc.timeArray && doc.timeArray[i]) ? doc.timeArray[i] : 0;
+            let correctCount = 0, attemptCount = 0;
+            // Real users (excluding average/cutoff) ki stats calculate karo
+            realDocs.forEach(doc => {
                 if (doc.userArray && doc.userArray[i] !== -1) {
                     attemptCount++;
-                    if (doc.userArray[i] === doc.correctArray[i]) correctCount++;
+                    if (doc.userArray && doc.correctArray && doc.userArray[i] === doc.correctArray[i]) {
+                        correctCount++;
+                    }
                 }
             });
-            window.currentLbStats.avgTimes.push(Math.round(totalTime / docs.length));
-            window.currentLbStats.attemptPercents.push(Math.round((attemptCount / docs.length) * 100));
+            
+            // Fallback: Agar average_student doc mein time nahi hai, toh real users ka average nikal lo
+            if (window.currentLbStats.avgTimes.length <= i) {
+                let tTime = 0;
+                realDocs.forEach(doc => { tTime += (doc.timeArray && doc.timeArray[i]) ? doc.timeArray[i] : 0; });
+                window.currentLbStats.avgTimes[i] = realDocs.length > 0 ? Math.round(tTime / realDocs.length) : 0;
+            }
+            
+            let totalValidUsers = realDocs.length || 1;
+            window.currentLbStats.attemptPercents.push(Math.round((attemptCount / totalValidUsers) * 100));
             window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
         }
 
         renderPremiumAnalysis(globalIdx, att1Score);
         drawDashSnap();
-    }).catch(e => { 
-        console.error("LB Fetch Error", e); 
-        renderPremiumAnalysis(globalIdx, att1Score);
-        drawDashSnap(); 
-    });
-    };
     
 
 window.switchLbView = function(view) {
