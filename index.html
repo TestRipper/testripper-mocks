@@ -408,7 +408,9 @@
 #dash-snap .analysis-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 22px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 16px; }
 #dash-snap .analysis-card-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; }
 
-#dash-snap .custom-analysis-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left; }
+/* 🔥 FIX 1: Table Overflow & Scroll on Mobile */
+#dash-snap .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+#dash-snap .custom-analysis-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left; white-space: nowrap; }
 #dash-snap .custom-analysis-table th { padding: 12px 14px; color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--border-color); text-transform: uppercase; font-size: 0.76rem; }
 #dash-snap .custom-analysis-table td { padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.1); vertical-align: middle; }
 body[data-theme="light"] #dash-snap .custom-analysis-table td { border-bottom-color: rgba(0,0,0,0.1); }
@@ -417,7 +419,8 @@ body[data-theme="light"] #dash-snap .custom-analysis-table td { border-bottom-co
 #dash-snap .rank-predictor-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; text-align: center; margin-top: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 #dash-snap .rp-slider { -webkit-appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 4px; outline: none; margin: 20px 0; }
 body[data-theme="light"] #dash-snap .rp-slider { background: rgba(0,0,0,0.1); }
-#dash-snap .rp-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #06b6d4; cursor: pointer; border: 3px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+/* 🔥 FIX 2: Yellowish Rank Predictor Slider */
+#dash-snap .rp-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #facc15; cursor: pointer; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
 #dash-snap .rp-tooltip { background: var(--bg-card); color: var(--text-primary); padding: 4px 10px; border-radius: 6px; font-weight: 900; font-size: 0.8rem; display: inline-block; margin-bottom: 10px; border: 1px solid var(--border-color); }
 
 #dash-snap .chart-container { position: relative; height: 320px; width: 100%; }
@@ -1990,76 +1993,98 @@ function buildSectionalSummary(sections) {
 function buildComparisonTable(userData, topperData, avgData) {
     const tbody = document.getElementById('topper-comparison-tbody');
     if (!tbody) return;
-    
+
     if (!userData) {
         tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:20px; color:var(--text-secondary);">User data not available</td></tr>`;
         return;
     }
-    
+
     const userScore = extractScoreValues(userData.score);
-    
     let html = '';
-    
+
     const userAcc = (userData.correct + userData.incorrect) > 0 
         ? Math.round((userData.correct / (userData.correct + userData.incorrect)) * 100) 
         : 0;
-    
+    const userScorePct = userScore.max > 0 ? (userScore.score / userScore.max) * 100 : 0;
+
     html += `
-    <tr>
+    <tr style="background:rgba(109, 40, 217, 0.05);">
         <td><strong>You</strong></td>
-        <td>${userScore.score.toFixed(2)} <small>/ ${userScore.max}</small></td>
-        <td>${userAcc}%</td>
-        <td>${userData.correct || 0}</td>
-        <td>${userData.incorrect || 0}</td>
+        <td>
+            <div style="width:80px; height:5px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                <div style="height:100%; background:var(--accent-purple); width:${userScorePct}%"></div>
+            </div>
+            ${userScore.score.toFixed(2)} <small>/ ${userScore.max}</small>
+        </td>
+        <td>
+            <div style="width:80px; height:5px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                <div style="height:100%; background:var(--accent-green); width:${userAcc}%"></div>
+            </div>
+            ${userAcc}%
+        </td>
+        <td style="color:var(--accent-green); font-weight:700;">${userData.correct || 0}</td>
+        <td style="color:var(--accent-red); font-weight:700;">${userData.incorrect || 0}</td>
         <td>${userData.minutes || 0}m</td>
     </tr>`;
-    
+
     if (topperData) {
-        const topScore = topperData.score;
+        const topScore = parseFloat(topperData.score) || 0;
         const topAcc = topperData.accuracy !== undefined ? topperData.accuracy : 
             (topperData.correct + topperData.wrong > 0 ? Math.round((topperData.correct / (topperData.correct + topperData.wrong)) * 100) : 0);
-        
+        const topScorePct = userScore.max > 0 ? (topScore / userScore.max) * 100 : 0;
+
         html += `
         <tr>
-            <td><strong>Topper</strong></td>
-            <td>${topScore}</td>
-            <td>${topAcc}%</td>
-            <td>${topperData.correct || '--'}</td>
-            <td>${topperData.wrong || '--'}</td>
+            <td><strong>Topper <i class="fa-solid fa-crown" style="color:#facc15; font-size:0.8rem; margin-left:4px;"></i></strong></td>
+            <td>
+                <div style="width:80px; height:5px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                    <div style="height:100%; background:var(--accent-purple); width:${topScorePct}%"></div>
+                </div>
+                ${topScore.toFixed(2)}
+            </td>
+            <td>
+                <div style="width:80px; height:5px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                    <div style="height:100%; background:var(--accent-green); width:${topAcc}%"></div>
+                </div>
+                ${topAcc}%
+            </td>
+            <td style="color:var(--accent-green); font-weight:700;">${topperData.correct || '--'}</td>
+            <td style="color:var(--accent-red); font-weight:700;">${topperData.wrong || '--'}</td>
             <td>${topperData.time || '--'}</td>
         </tr>`;
-    } else {
-        html += `
-        <tr>
-            <td><strong>Topper</strong></td>
-            <td colspan="5" style="text-align:center; color:var(--text-secondary);">Data unavailable</td>
-        </tr>`;
     }
-    
+
     if (avgData) {
-        const avgScore = avgData.score;
+        const avgScore = parseFloat(avgData.score) || 0;
         const avgAcc = avgData.accuracy !== undefined ? avgData.accuracy : 
             (avgData.correct + avgData.wrong > 0 ? Math.round((avgData.correct / (avgData.correct + avgData.wrong)) * 100) : 0);
-        
+        const avgScorePct = userScore.max > 0 ? (avgScore / userScore.max) * 100 : 0;
+
         html += `
         <tr>
             <td><strong>Average</strong></td>
-            <td>${avgScore}</td>
-            <td>${avgAcc}%</td>
-            <td>${avgData.correct || '--'}</td>
-            <td>${avgData.wrong || '--'}</td>
+            <td>
+                <div style="width:80px; height:5px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                    <div style="height:100%; background:var(--accent-purple); width:${avgScorePct}%"></div>
+                </div>
+                ${avgScore.toFixed(2)}
+            </td>
+            <td>
+                <div style="width:80px; height:5px; background:rgba(128,128,128,0.2); border-radius:3px; overflow:hidden; margin-bottom:4px;">
+                    <div style="height:100%; background:var(--accent-green); width:${avgAcc}%"></div>
+                </div>
+                ${avgAcc}%
+            </td>
+            <td style="color:var(--accent-green); font-weight:700;">${avgData.correct || '--'}</td>
+            <td style="color:var(--accent-red); font-weight:700;">${avgData.wrong || '--'}</td>
             <td>${avgData.time || '--'}</td>
         </tr>`;
-    } else {
-        html += `
-        <tr>
-            <td><strong>Average</strong></td>
-            <td colspan="5" style="text-align:center; color:var(--text-secondary);">Data unavailable</td>
-        </tr>`;
     }
-    
+
     tbody.innerHTML = html;
 }
+
+
 
 // Function to handle rank predictor with real data
 window.updatePremiumRankPredictor = function(value) {
