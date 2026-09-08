@@ -349,24 +349,48 @@
   .badge-mark { background: #a855f7 !important; color: #fff !important; border: none !important; }
   body[data-theme="dark"] .badge-un { border-color: #cbd5e1 !important; }
 
-  /* LEADERBOARD UI FIX */
-  .podium { display: flex; justify-content: center; align-items: flex-end; gap: 10px; margin: 30px 0 20px; height: 160px; }
-  .pod-item { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px 12px 0 0; padding: 10px; position: relative; width: 100px; }
-  .pod-1 { height: 140px; border-color: #facc15; background: rgba(250, 204, 21, 0.1); }
-  .pod-2 { height: 110px; border-color: #94a3b8; }
-  .pod-3 { height: 90px; border-color: #b45309; }
-  .pod-avatar { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; position: absolute; top: -25px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-  .pod-1 .pod-avatar { width: 55px; height: 55px; top: -30px; border-color: #facc15; }
-  .pod-rank { font-weight: 900; font-size: 1.5rem; color: var(--text-secondary); margin-top: 15px; }
-  .pod-1 .pod-rank { color: #facc15; font-size: 2rem; }
-  .pod-name { font-size: 0.8rem; font-weight: 700; margin-top: auto; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; color: var(--text-primary); }
-  .pod-score { font-size: 1rem; font-weight: 900; color: var(--accent-purple); }
+  /* ====== PREMIUM LEADERBOARD UI ====== */
+  .lb-header-toggle { display: flex; background: rgba(0,0,0,0.05); padding: 4px; border-radius: 12px; margin-bottom: 10px; }
+  body[data-theme="dark"] .lb-header-toggle { background: rgba(255,255,255,0.05); }
+  .lb-tog { flex: 1; padding: 10px; border-radius: 10px; font-weight: 800; font-size: 0.85rem; color: var(--text-secondary); text-align: center; cursor: pointer; transition: 0.3s; border:none; background:transparent;}
+  .lb-tog.active { background: var(--accent-purple); color: #fff; box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3); }
+
+  .podium { display: flex; justify-content: center; align-items: flex-end; gap: 12px; margin: 45px 0 25px; height: 180px; }
+  .pod-item { display: flex; flex-direction: column; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px 16px 0 0; padding: 10px; position: relative; width: 100px; box-shadow: 0 -4px 15px rgba(0,0,0,0.05); }
+  .pod-1 { height: 160px; border-color: #facc15; background: linear-gradient(180deg, rgba(250, 204, 21, 0.15) 0%, transparent 100%); z-index: 5; }
+  .pod-2 { height: 120px; border-color: #94a3b8; background: linear-gradient(180deg, rgba(148, 163, 184, 0.15) 0%, transparent 100%); }
+  .pod-3 { height: 100px; border-color: #b45309; background: linear-gradient(180deg, rgba(180, 83, 9, 0.15) 0%, transparent 100%); }
+  .pod-avatar { width: 50px; height: 50px; border-radius: 50%; border: 3px solid var(--bg-card); position: absolute; top: -30px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); background:var(--bg-main); object-fit:cover;}
+  .pod-1 .pod-avatar { width: 64px; height: 64px; top: -40px; border-color: #facc15; }
+  .crown { position: absolute; top: -52px; font-size: 1.5rem; color: #facc15; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+  .pod-1 .crown { top: -70px; font-size: 2.2rem; }
+  .pod-rank { font-weight: 900; font-size: 1.8rem; color: var(--text-secondary); margin-top: 25px; opacity:0.4; line-height: 1;}
+  .pod-1 .pod-rank { color: #facc15; font-size: 2.5rem; opacity:0.8; margin-top: 30px;}
+  .pod-name { font-size: 0.75rem; font-weight: 800; margin-top: auto; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; color: var(--text-primary); }
+  .pod-score { font-size: 1.1rem; font-weight: 900; color: var(--text-primary); }
+
+  .lb-list-header { display: flex; padding: 0 16px 10px; font-size: 0.75rem; font-weight: 800; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border-color); margin-bottom: 10px; }
+  .lb-list-header span:nth-child(1) { width: 30px; text-align: center; }
+  .lb-list-header span:nth-child(2) { flex-grow: 1; padding-left: 15px; }
+  .lb-list-header span:nth-child(3) { width: 60px; text-align: right; }
+
   .lb-list { display: flex; flex-direction: column; gap: 8px; padding-bottom: 70px; }
   .lb-row { display: flex; align-items: center; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 16px; gap: 15px; }
   .lb-r-num { font-weight: 800; font-size: 1.1rem; color: var(--text-secondary); width: 25px; text-align: center; }
-  .lb-r-name { flex-grow: 1; font-weight: 700; font-size: 0.95rem; color: var(--text-primary); }
-  .lb-r-score { font-weight: 900; font-size: 1.1rem; color: var(--accent-green); }
+  .lb-r-name { flex-grow: 1; font-weight: 700; font-size: 0.95rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+  .lb-r-score { font-weight: 900; font-size: 1.1rem; color: var(--text-primary); }
   .sticky-you { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(90deg, #6d28d9, #3b82f6); padding: 12px 20px; display: flex; align-items: center; border-radius: 0 0 16px 16px; border-top: 1px solid rgba(255,255,255,0.2); box-shadow: 0 -4px 15px rgba(0,0,0,0.2); z-index: 10; }
+
+  /* SECTIONAL TOPPER CARDS */
+  .sec-topper-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 16px; display: flex; align-items: center; gap: 15px; margin-bottom: 12px; position:relative; overflow:hidden;}
+  .sec-topper-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:6px; background:inherit; }
+  .sec-icon { width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; background: rgba(0,0,0,0.05); flex-shrink: 0;}
+  body[data-theme="dark"] .sec-icon { background: rgba(255,255,255,0.05); }
+  .sec-info { flex-grow: 1; overflow: hidden;}
+  .sec-info h4 { font-size: 1rem; font-weight: 900; color: var(--text-primary); margin-bottom: 4px; text-transform: capitalize;}
+  .sec-topper-det { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; white-space: nowrap;}
+  .sec-topper-det img { width: 22px; height: 22px; border-radius: 50%; }
+  .sec-badge { background: #facc15; color: #000; padding: 4px 10px; border-radius: 8px; font-weight: 900; font-size: 0.8rem; flex-shrink: 0;}
 
   /* ====== 3-TAB MODAL STYLES (Testbook Clone) ====== */
 /* ====== PREMIUM ATTEMPT REVIEW UI ====== */
@@ -880,10 +904,22 @@ body[data-theme="light"] .glass-card {
       </div>
     </div>
 
-    <div class="tab-content" id="tab-leaderboard" style="position:relative;">
-      <div class="podium" id="lb-podium"></div>
-      <div class="lb-list" id="lb-list"></div>
-      <div class="sticky-you" id="lb-sticky-you"></div>
+    <div class="tab-content" id="tab-leaderboard" style="position:relative; min-height:400px;">
+      <div class="lb-header-toggle">
+          <button class="lb-tog active" onclick="switchLbView('overall')">Overall Leaderboard</button>
+          <button class="lb-tog" onclick="switchLbView('sectional')">Sectional Toppers</button>
+      </div>
+      
+      <div id="lb-view-overall">
+          <div class="podium" id="lb-podium"></div>
+          <div class="lb-list-header"><span>#</span><span>Name</span><span>Score</span></div>
+          <div class="lb-list" id="lb-list"></div>
+          <div class="sticky-you" id="lb-sticky-you"></div>
+      </div>
+
+      <div id="lb-view-sectional" style="display:none; padding-bottom:70px;">
+          <div id="sectional-toppers-container"></div>
+      </div>
     </div>
   </div>
 
@@ -1450,87 +1486,139 @@ window.openDashboardSnap = function(globalIdx) {
     db.collection("leaderboards").doc(att.testName).get().then(docSnap => {
         let metaData = docSnap.exists ? docSnap.data() : {};
         
-        // Inject Universal Data into current attempt (For GitHub Vault tests)
         att.globalTotalStudents = metaData.globalTotalStudents || att.globalTotalStudents;
         att.rankMarks = metaData.rankMarks || att.rankMarks;
         att.marksDist = metaData.marksDist || att.marksDist;
         
-        // Now fetch rankings
-        return db.collection("leaderboards").doc(att.testName).collection("rankings").orderBy("score", "desc").get();
+        return db.collection("leaderboards").doc(att.testName).collection("rankings").get();
     }).then(lbRef => {
         if (!lbRef) return;
         const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
         window.currentLbDocs = docs;
 
-        let realDocs = docs.filter(d => d.id !== 'average_student' && d.id !== 'general_cutoff' && !d.id.startsWith('ranker_'));
-        // 🔥 FIX 1: DYNAMIC TOTAL STUDENTS (e.g., 15103 + Kaluwa = 15104)
+        let realDocs = docs.filter(d => d.id !== 'average_student' && d.id !== 'general_cutoff');
+
+        // 🔥 FIX 1: EXACT TOTAL STUDENTS COUNT (Tally Fix)
         let baseTotal = att.globalTotalStudents ? parseInt(att.globalTotalStudents) : 0;
-        let totalStudents = baseTotal > 0 ? baseTotal + realDocs.length : realDocs.length;
+        let appUsersCount = realDocs.filter(d => !d.id.startsWith('ranker_')).length;
+        let totalStudents = baseTotal > 0 ? baseTotal + appUsersCount : realDocs.length;
         if (totalStudents === 0) totalStudents = 1;
 
-        // 🔥 FIX 2: UNIVERSAL RANK CALCULATION FOR CURRENT USER
-        let myRank = 1;
-        if (att.rankMarks && att.rankMarks.length > 0) {
-            for (let item of att.rankMarks) {
-                if (att1Score >= item.marks) { // STRICTLY 1st Attempt
-                    myRank = item.rank;
-                    break;
-                }
-            }
-            let appUsersAhead = realDocs.filter(d => d.id !== user.uid && parseFloat(d.score) > att1Score).length;
-            myRank += appUsersAhead;
-        } else {
-            myRank = 1 + realDocs.filter(d => d.id !== user.uid && parseFloat(d.score) > att1Score).length;
-        }
+        // Sort realDocs by score descending, then by time ascending
+        realDocs.sort((a, b) => {
+            if (parseFloat(b.score) !== parseFloat(a.score)) return parseFloat(b.score) - parseFloat(a.score);
+            let timeA = Array.isArray(a.timeArray) ? a.timeArray.reduce((x,y)=>x+y,0) : 9999;
+            let timeB = Array.isArray(b.timeArray) ? b.timeArray.reduce((x,y)=>x+y,0) : 9999;
+            return timeA - timeB;
+        });
 
-        // SMART PERCENTILE CALCULATION
-        let percentile = (((totalStudents - myRank) / totalStudents) * 100).toFixed(2);
-        if (percentile < 0) percentile = "0.00";
-
-        // Save calculated rank for UI rendering
-        att.displayRank = myRank;
-        att.displayPercentile = percentile;
-        att.displayTotalStudents = totalStudents;
-
-        let podHtml = '';
-        if(realDocs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${realDocs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${realDocs[1].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[1].score).toFixed(2)}</div></div>`;
-        if(realDocs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${realDocs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${realDocs[0].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[0].score).toFixed(2)}</div></div>`;
-        if(realDocs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${realDocs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${realDocs[2].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[2].score).toFixed(2)}</div></div>`;
-        document.getElementById('lb-podium').innerHTML = podHtml;
-
-        let listHtml = '';
-        docs.slice(realDocs.length >= 3 ? 3 : realDocs.length).forEach((d, i) => {
+        // 🔥 FIX 2: UNIVERSAL RANK FOR EVERY USER (Solves Aman vs Kaluwa Bug)
+        realDocs.forEach((d, idx) => {
             let dScore = parseFloat(d.score);
-            let displayRank = i + 4; // Fallback
-
-            // 🔥 FIX 3: UNIVERSAL RANK FOR EVERY USER IN THE LIST (Solves Tally Issue)
             if (att.rankMarks && att.rankMarks.length > 0) {
                 let baseR = 1;
                 for (let item of att.rankMarks) {
-                    if (dScore >= item.marks) {
-                        baseR = item.rank;
-                        break;
-                    }
+                    if (dScore >= item.marks) { baseR = item.rank; break; }
                 }
-                let ahead = realDocs.filter(rd => rd.id !== d.id && parseFloat(rd.score) > dScore).length;
-                displayRank = baseR + ahead;
+                let ahead = realDocs.filter(rd => !rd.id.startsWith('ranker_') && parseFloat(rd.score) > dScore).length;
+                d.displayRank = baseR + ahead;
             } else {
-                displayRank = 1 + realDocs.filter(rd => rd.id !== d.id && parseFloat(rd.score) > dScore).length;
+                d.displayRank = idx + 1;
             }
+            if (d.id === user.uid) att.displayRank = d.displayRank;
+        });
 
-            if (d.id === user.uid) displayRank = att.displayRank;
-            if (d.id === "average_student" || d.name === "Average Student") {
-                displayRank = att.displayTotalStudents ? Math.round(att.displayTotalStudents / 2) : "AS"; 
+        // Fallback if current user is not in the fetched list
+        if (!att.displayRank) {
+            let myBaseR = 1;
+            if (att.rankMarks && att.rankMarks.length > 0) {
+                for (let item of att.rankMarks) {
+                    if (att1Score >= item.marks) { myBaseR = item.rank; break; }
+                }
+                let ahead = realDocs.filter(rd => !rd.id.startsWith('ranker_') && parseFloat(rd.score) > att1Score).length;
+                att.displayRank = myBaseR + ahead;
+            } else {
+                att.displayRank = 1 + realDocs.filter(rd => parseFloat(rd.score) > att1Score).length;
             }
+        }
 
-            listHtml += `<div class="lb-row"><div class="lb-r-num" style="font-size:0.9rem; color:var(--text-secondary); font-weight:800;">${displayRank}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${dScore.toFixed(2)}</div></div>`;
+        att.displayTotalStudents = totalStudents;
+        let percentile = (((totalStudents - att.displayRank) / totalStudents) * 100).toFixed(2);
+        att.displayPercentile = percentile < 0 ? "0.00" : percentile;
+
+        // 🔥 PREMIUM PODIUM RENDERING (Real Top 3)
+        let podHtml = '';
+        if(realDocs[1]) podHtml += `<div class="pod-item pod-2"><i class="fa-solid fa-crown crown" style="color:#94a3b8; font-size:1.2rem; top:-45px;"></i><img src="https://ui-avatars.com/api/?name=${realDocs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-rank">2</div><div class="pod-name">${realDocs[1].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[1].score).toFixed(2)}</div></div>`;
+        if(realDocs[0]) podHtml += `<div class="pod-item pod-1"><i class="fa-solid fa-crown crown"></i><img src="https://ui-avatars.com/api/?name=${realDocs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-rank">1</div><div class="pod-name">${realDocs[0].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[0].score).toFixed(2)}</div></div>`;
+        if(realDocs[2]) podHtml += `<div class="pod-item pod-3"><i class="fa-solid fa-crown crown" style="color:#b45309; font-size:1.2rem; top:-45px;"></i><img src="https://ui-avatars.com/api/?name=${realDocs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-rank">3</div><div class="pod-name">${realDocs[2].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[2].score).toFixed(2)}</div></div>`;
+        document.getElementById('lb-podium').innerHTML = podHtml;
+
+        // 🔥 PREMIUM LIST RENDERING
+        let listHtml = '';
+        let avgDoc = docs.find(d => d.id === 'average_student');
+        if (avgDoc) {
+            listHtml += `<div class="lb-row" style="background:rgba(59, 130, 246, 0.05); border-color:#3b82f6;"><div class="lb-r-num" style="font-size:0.8rem; color:#3b82f6; font-weight:900;">AS</div><img src="https://ui-avatars.com/api/?name=Avg&background=3b82f6&color=fff" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name" style="color:#3b82f6;">Average Student</div><div class="lb-r-score">${parseFloat(avgDoc.score).toFixed(2)}</div></div>`;
+        }
+
+        realDocs.slice(3).forEach((d) => {
+            let isYou = d.id === user.uid ? " (You)" : "";
+            let rowStyle = d.id === user.uid ? "background:rgba(168, 85, 247, 0.05); border-color:#a855f7;" : "";
+            listHtml += `<div class="lb-row" style="${rowStyle}"><div class="lb-r-num" style="font-size:0.9rem; color:var(--text-secondary); font-weight:800;">${d.displayRank}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}${isYou}</div><div class="lb-r-score">${parseFloat(d.score).toFixed(2)}</div></div>`;
         });
         document.getElementById('lb-list').innerHTML = listHtml;
 
+        // Sticky You
         let safeName = user.displayName || 'Warrior';
         document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${att.displayRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score.toFixed(2)}</div>`;
 
+        // 🔥 SECTIONAL TOPPERS LOGIC (New Feature!)
+        let secNames = [...new Set(dSnapS.arr.map(q => q.secName).filter(Boolean))];
+        let secHtml = '';
+        let colors = ['var(--accent-red)', 'var(--accent-blue)', 'var(--accent-green)', 'var(--accent-gold)'];
+        let icons = ['fa-calculator', 'fa-book-open', 'fa-brain', 'fa-globe'];
 
+        if (secNames.length > 0 && secNames[0] !== 'General') {
+            secNames.forEach((sec, sIdx) => {
+                let bestUser = null; let bestScore = -999; let bestTime = 99999;
+                realDocs.forEach(d => {
+                    let secScore = 0; let secTime = 0;
+                    dSnapS.arr.forEach((q, qIdx) => {
+                        if(q.secName === sec) {
+                            if(d.timeArray && d.timeArray[qIdx]) secTime += d.timeArray[qIdx];
+                            if(d.userArray && d.userArray[qIdx] !== -1) {
+                                if(d.userArray[qIdx] === d.correctArray[qIdx]) secScore += (q.posMarks || 2);
+                                else secScore -= (q.negMarks || 0.5);
+                            }
+                        }
+                    });
+                    if (secScore > bestScore || (secScore === bestScore && secTime < bestTime)) {
+                        bestScore = secScore; bestTime = secTime; bestUser = d;
+                    }
+                });
+
+                if(bestUser) {
+                    let min = Math.floor(bestTime / 60); let s = bestTime % 60;
+                    let c = colors[sIdx % colors.length]; let ico = icons[sIdx % icons.length];
+                    secHtml += `<div class="sec-topper-card" style="border-color:${c};">
+                        <div class="sec-icon" style="color:${c}"><i class="fa-solid ${ico}"></i></div>
+                        <div class="sec-info">
+                            <h4>${sec}</h4>
+                            <div class="sec-topper-det">
+                                <img src="https://ui-avatars.com/api/?name=${bestUser.name}&background=random">
+                                <span><b>${bestUser.name.split(' ')[0]}</b> • ${bestScore.toFixed(2)} Marks • ${min}m ${s}s</span>
+                            </div>
+                        </div>
+                        <div class="sec-badge">#1</div>
+                        <div style="position:absolute; left:0; top:0; bottom:0; width:6px; background:${c};"></div>
+                    </div>`;
+                }
+            });
+            document.getElementById('sectional-toppers-container').innerHTML = secHtml;
+        } else {
+            document.getElementById('sectional-toppers-container').innerHTML = `<div style="text-align:center; padding:20px; color:var(--text-secondary);">Sectional data not available for this test.</div>`;
+        }
+
+        // Stats calculation for Review tab...
         window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
         for (let i = 0; i < dSnapS.arr.length; i++) {
             let totalTime = 0, correctCount = 0, attemptCount = 0;
@@ -1546,7 +1634,6 @@ window.openDashboardSnap = function(globalIdx) {
             window.currentLbStats.correctPercents.push(attemptCount > 0 ? Math.round((correctCount / attemptCount) * 100) : 0);
         }
 
-        // 🔥 Pass att1Score into Analysis
         renderPremiumAnalysis(globalIdx, att1Score);
         drawDashSnap();
     }).catch(e => { 
@@ -1554,8 +1641,19 @@ window.openDashboardSnap = function(globalIdx) {
         renderPremiumAnalysis(globalIdx, att1Score);
         drawDashSnap(); 
     });
-};
 
+window.switchLbView = function(view) {
+    document.querySelectorAll('.lb-tog').forEach(b => b.classList.remove('active'));
+    if(view === 'overall') {
+        document.querySelectorAll('.lb-tog')[0].classList.add('active');
+        document.getElementById('lb-view-overall').style.display = 'block';
+        document.getElementById('lb-view-sectional').style.display = 'none';
+    } else {
+        document.querySelectorAll('.lb-tog')[1].classList.add('active');
+        document.getElementById('lb-view-overall').style.display = 'none';
+        document.getElementById('lb-view-sectional').style.display = 'block';
+    }
+};
 
 window.filterBySection = function(secName, index = null) {
     dSnapS.currentSection = secName;
