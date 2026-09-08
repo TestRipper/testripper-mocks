@@ -1788,24 +1788,28 @@ window.filterBySection = function(secName, index = null) {
           ? `${dSnapS.meta.minutes}min` 
           : `${Math.floor(secTimeSec/60)}m ${secTimeSec%60}s`;
 
+            // 🔥 CHUNK 1: SCORE AND DYNAMIC TIME TAKEN CARD UI (No Overflow)
       let topStatsHtml = `
-          <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:12px;">
-              <div style="background:var(--accent-purple); color:#fff; padding:6px 12px; border-radius:20px; font-weight:800; font-size:0.8rem; box-shadow:0 2px 5px rgba(0,0,0,0.1);">${dSnapS.meta.ts}</div>
-              <div style="text-align:center; line-height:1.1;">
-                  <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase;">Score</div>
-                  <div style="font-size:1.4rem; font-weight:900; color:var(--accent-red);">${dSnapS.meta.score.split('/')[0]}<span style="font-size:0.9rem;color:var(--text-secondary)">/${dSnapS.meta.score.split('/')[1]}</span></div>
+          <div style="width:100%; margin-bottom:12px;">
+              <div style="display:inline-block; background:var(--accent-purple); color:#fff; padding:6px 14px; border-radius:20px; font-weight:800; font-size:0.85rem; box-shadow:0 2px 5px rgba(0,0,0,0.1); margin-bottom:12px;">
+                  <i class="fa-regular fa-calendar-days"></i> ${dSnapS.meta.ts}
               </div>
-              <div style="text-align:center; line-height:1.1;">
-                  <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase;">Time Taken</div>
-                  <div style="font-size:1.4rem; font-weight:900; color:var(--accent-green);">${timeDisplay}</div>
+              <div style="display:flex; justify-content:space-around; align-items:center; background:var(--bg-card); border:1px solid var(--border-color); border-radius:14px; padding:12px; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+                  <div style="text-align:center; line-height:1.2;">
+                      <div style="font-size:0.75rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">Score</div>
+                      <div style="font-size:1.6rem; font-weight:900; color:var(--accent-red);">${dSnapS.meta.score.split('/')[0]}<span style="font-size:1rem;color:var(--text-secondary)">/${dSnapS.meta.score.split('/')[1]}</span></div>
+                  </div>
+                  <div style="width:1px; height:40px; background:var(--border-color);"></div>
+                  <div style="text-align:center; line-height:1.2;">
+                      <div style="font-size:0.75rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">Time Taken</div>
+                      <div style="font-size:1.6rem; font-weight:900; color:var(--accent-green);">${timeDisplay}</div>
+                  </div>
               </div>
           </div>
       `;
       
       let filtersHtml = `<div style="display:flex; gap:6px; flex-wrap:wrap; width:100%;">`;
-      if (dSnapS.meta.general_cutoff && dSnapS.meta.general_cutoff !== "--") {
-          filtersHtml += `<span class="badge" style="background:linear-gradient(90deg, #ea580c, #f59e0b); color:#fff; border:none; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);"><i class="fa-solid fa-bullseye"></i> Cutoff: ${dSnapS.meta.general_cutoff}</span>`;
-      }
+      // Cutoff removed from here and moved to Analysis Tab
       if (dSnapS.currentSection === 'all') filtersHtml += linkBadge('all', 'All');
       if (secStats.c > 0) filtersHtml += linkBadge('correct', `C:${secStats.c}`);
       if (secStats.w > 0) filtersHtml += linkBadge('wrong', `W:${secStats.w}`);
@@ -2429,7 +2433,15 @@ async function renderPremiumAnalysis(globalIdx, att1Score) {
     const accuracyDisplay = document.getElementById('an-accuracy-display');
     
     // 🔥 SCORE AND ACCURACY (Always Current Attempt)
-    if (scoreDisplay) scoreDisplay.innerHTML = `${scoreData.score.toFixed(2)} <small>/ ${scoreData.max}</small>`;
+    if (scoreDisplay) {
+        let cutoffHtml = '';
+        if (att.general_cutoff && att.general_cutoff !== "--") {
+            // Cutoff popup badge injected on the right side of the card
+            cutoffHtml = `<div style="position:absolute; right:16px; top:50%; transform:translateY(-50%); background:linear-gradient(90deg, #ea580c, #f59e0b); color:#fff; font-size:0.75rem; padding:4px 10px; border-radius:8px; font-weight:900; box-shadow:0 2px 5px rgba(234, 88, 12, 0.4);"><i class="fa-solid fa-bullseye"></i> Cutoff: ${att.general_cutoff}</div>`;
+        }
+        scoreDisplay.parentElement.parentElement.style.position = 'relative'; // Make card relative for absolute badge
+        scoreDisplay.innerHTML = `${scoreData.score.toFixed(2)} <small>/ ${scoreData.max}</small>${cutoffHtml}`;
+    }
     const acc = (att.correct + att.incorrect) > 0 ? Math.round((att.correct / (att.correct + att.incorrect)) * 100) : 0;
     if (accuracyDisplay) accuracyDisplay.innerHTML = `${acc}%`;
 
