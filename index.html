@@ -1465,7 +1465,7 @@ window.openDashboardSnap = function(globalIdx) {
         let realDocs = docs.filter(d => d.id !== 'average_student' && d.id !== 'general_cutoff' && !d.id.startsWith('ranker_'));
 
         // 🔥 FIX 1: DYNAMIC TOTAL STUDENTS (e.g., 15103 + Kaluwa = 15104)
-        let baseTotal = metaData.globalTotalStudents ? parseInt(metaData.globalTotalStudents) : 0;
+        let baseTotal = att.globalTotalStudents ? parseInt(att.globalTotalStudents) : 0;
         let totalStudents = baseTotal > 0 ? baseTotal + realDocs.length : realDocs.length;
         if (totalStudents === 0) totalStudents = 1;
 
