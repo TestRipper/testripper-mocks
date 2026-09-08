@@ -1627,7 +1627,7 @@ window.openDashboardSnap = function(globalIdx) {
         }
 
           // 🔥 FIX: Correctly map Exact Topper and Universal Average Stats
-        let avgDoc = docs.find(d => d.id === 'average_student' || d.name === 'Average Student');
+        avgDoc = docs.find(d => d.id === 'average_student' || d.name === 'Average Student');
         let topperDoc = realDocs.length > 0 ? realDocs[0] : (docs[0] || {});
         
         window.currentLbStats = { 
