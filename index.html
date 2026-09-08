@@ -1462,60 +1462,75 @@ window.openDashboardSnap = function(globalIdx) {
         const docs = lbRef.docs.map(d => ({id: d.id, ...d.data()}));
         window.currentLbDocs = docs;
 
-        let totalStudents = att.globalTotalStudents ? parseInt(att.globalTotalStudents) : docs.length;
+        let realDocs = docs.filter(d => d.id !== 'average_student' && d.id !== 'general_cutoff' && !d.id.startsWith('ranker_'));
+
+        // 🔥 FIX 1: DYNAMIC TOTAL STUDENTS (e.g., 15103 + Kaluwa = 15104)
+        let baseTotal = metaData.globalTotalStudents ? parseInt(metaData.globalTotalStudents) : 0;
+        let totalStudents = baseTotal > 0 ? baseTotal + realDocs.length : realDocs.length;
+        if (totalStudents === 0) totalStudents = 1;
+
+        // 🔥 FIX 2: UNIVERSAL RANK CALCULATION FOR CURRENT USER
         let myRank = 1;
-        let foundSelf = false;
-
-        // 🔥 RANK CALCULATION: STRICTLY ON 1st ATTEMPT SCORE
-        docs.forEach(d => {
-            if (d.id === user.uid) foundSelf = true;
-            if (d.id !== 'average_student' && d.id !== 'general_cutoff' && d.id !== user.uid && parseFloat(d.score) > att1Score) {
-                myRank++;
-            }
-        });
-
-        if (!foundSelf && !att.globalTotalStudents) totalStudents += 1;
-
-        // 🔥 SMART PERCENTILE CALCULATION USING UNIVERSAL DATA
-        let percentile = 0.0;
         if (att.rankMarks && att.rankMarks.length > 0) {
             for (let item of att.rankMarks) {
                 if (att1Score >= item.marks) { // STRICTLY 1st Attempt
                     myRank = item.rank;
-                    percentile = item.per;
                     break;
                 }
             }
+            let appUsersAhead = realDocs.filter(d => d.id !== user.uid && parseFloat(d.score) > att1Score).length;
+            myRank += appUsersAhead;
         } else {
-            percentile = totalStudents > 1 ? (((totalStudents - myRank) / totalStudents) * 100).toFixed(2) : "100.00";
+            myRank = 1 + realDocs.filter(d => d.id !== user.uid && parseFloat(d.score) > att1Score).length;
         }
+
+        // SMART PERCENTILE CALCULATION
+        let percentile = (((totalStudents - myRank) / totalStudents) * 100).toFixed(2);
+        if (percentile < 0) percentile = "0.00";
 
         // Save calculated rank for UI rendering
         att.displayRank = myRank;
         att.displayPercentile = percentile;
         att.displayTotalStudents = totalStudents;
 
-        let realDocs = docs.filter(d => d.id !== 'average_student' && d.id !== 'general_cutoff');
-
         let podHtml = '';
-        if(realDocs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${realDocs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${realDocs[1].name.split(' ')[0]}</div><div class="pod-score">${realDocs[1].score}</div></div>`;
-        if(realDocs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${realDocs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${realDocs[0].name.split(' ')[0]}</div><div class="pod-score">${realDocs[0].score}</div></div>`;
-        if(realDocs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${realDocs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${realDocs[2].name.split(' ')[0]}</div><div class="pod-score">${realDocs[2].score}</div></div>`;
+        if(realDocs[1]) podHtml += `<div class="pod-item pod-2"><div class="pod-rank">2</div><img src="https://ui-avatars.com/api/?name=${realDocs[1].name}&background=C0C0C0&color=000" class="pod-avatar"><div class="pod-name">${realDocs[1].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[1].score).toFixed(2)}</div></div>`;
+        if(realDocs[0]) podHtml += `<div class="pod-item pod-1"><div class="pod-rank">1</div><img src="https://ui-avatars.com/api/?name=${realDocs[0].name}&background=FFD700&color=000" class="pod-avatar"><div class="pod-name">${realDocs[0].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[0].score).toFixed(2)}</div></div>`;
+        if(realDocs[2]) podHtml += `<div class="pod-item pod-3"><div class="pod-rank">3</div><img src="https://ui-avatars.com/api/?name=${realDocs[2].name}&background=CD7F32&color=000" class="pod-avatar"><div class="pod-name">${realDocs[2].name.split(' ')[0]}</div><div class="pod-score">${parseFloat(realDocs[2].score).toFixed(2)}</div></div>`;
         document.getElementById('lb-podium').innerHTML = podHtml;
 
         let listHtml = '';
         docs.slice(realDocs.length >= 3 ? 3 : realDocs.length).forEach((d, i) => {
-            let displayRank = i + 4;
-            if (d.id === user.uid) displayRank = att.displayRank;
-            if ((d.id === "average_student" || d.name === "Average Student") && att.globalTotalStudents) {
-                displayRank = Math.round(parseInt(att.globalTotalStudents) / 2); 
+            let dScore = parseFloat(d.score);
+            let displayRank = i + 4; // Fallback
+
+            // 🔥 FIX 3: UNIVERSAL RANK FOR EVERY USER IN THE LIST (Solves Tally Issue)
+            if (att.rankMarks && att.rankMarks.length > 0) {
+                let baseR = 1;
+                for (let item of att.rankMarks) {
+                    if (dScore >= item.marks) {
+                        baseR = item.rank;
+                        break;
+                    }
+                }
+                let ahead = realDocs.filter(rd => rd.id !== d.id && parseFloat(rd.score) > dScore).length;
+                displayRank = baseR + ahead;
+            } else {
+                displayRank = 1 + realDocs.filter(rd => rd.id !== d.id && parseFloat(rd.score) > dScore).length;
             }
-            listHtml += `<div class="lb-row"><div class="lb-r-num" style="font-size:0.9rem">${displayRank}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${parseFloat(d.score).toFixed(2)}</div></div>`;
+
+            if (d.id === user.uid) displayRank = att.displayRank;
+            if (d.id === "average_student" || d.name === "Average Student") {
+                displayRank = att.displayTotalStudents ? Math.round(att.displayTotalStudents / 2) : "AS"; 
+            }
+
+            listHtml += `<div class="lb-row"><div class="lb-r-num" style="font-size:0.9rem; color:var(--text-secondary); font-weight:800;">${displayRank}</div><img src="https://ui-avatars.com/api/?name=${d.name}&background=random" style="width:35px;height:35px;border-radius:50%;"><div class="lb-r-name">${d.name}</div><div class="lb-r-score">${dScore.toFixed(2)}</div></div>`;
         });
         document.getElementById('lb-list').innerHTML = listHtml;
 
         let safeName = user.displayName || 'Warrior';
-        document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${att.displayRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score}</div>`;
+        document.getElementById('lb-sticky-you').innerHTML = `<div style="font-weight:900; font-size:1.2rem; margin-right:15px; color:#fff;">${att.displayRank}</div><img src="${user.photoURL || 'https://ui-avatars.com/api/?name='+safeName}" style="width:40px;height:40px;border-radius:50%; border:2px solid #fff;"><div style="flex-grow:1; margin-left:10px; font-weight:800; color:#fff;">${safeName} (You)</div><div style="font-weight:900; color:#A3E635; font-size:1.1rem;">${att1Score.toFixed(2)}</div>`;
+
 
         window.currentLbStats = { topperTimes: docs[0].timeArray || [], avgTimes: [], correctPercents: [], attemptPercents: [] };
         for (let i = 0; i < dSnapS.arr.length; i++) {
@@ -1990,10 +2005,10 @@ function renderMarksDistChart(scoreData, rankData, attData) {
     let labels = [];
     let counts = [];
 
-    // 1. Dynamic Testbook Logic (Real Graph using pushed marksDist)
-    if (attData && attData.marksDist && attData.marksDist.length > 0) {
-        // Testbook array descending hoti hai, graph ke liye ascending karna hoga
-        let sortedDist = [...attData.marksDist].reverse();
+    // 1. Dynamic Testbook Logic (Real Graph using pushed/fetched marksDist)
+    if (attData && attData.marksDist && Array.isArray(attData.marksDist) && attData.marksDist.length > 0) {
+        // 🔥 FIX: Guaranteed sorting for graph render, prevents Vault fetch crash
+        let sortedDist = [...attData.marksDist].sort((a, b) => a.marks - b.marks);
         labels = sortedDist.map(d => d.marks);
         counts = sortedDist.map(d => d.count);
     } 
@@ -2275,8 +2290,8 @@ async function renderPremiumAnalysis(globalIdx, att1Score) {
         
         if (att.rankMarks && att.rankMarks.length > 0) {
             updatePremiumRankPredictor(defaultSliderScore);
-            let totalPredictStudents = att.globalTotalStudents || 15103;
-            if (rpStatus) rpStatus.textContent = `Universal Data: ${totalPredictStudents} real entries`;
+            // 🔥 FIX: Display dynamic total students in Predictor
+            if (rpStatus) rpStatus.textContent = `Universal Data: ${att.displayTotalStudents || 15103} real entries`;
         } else if (premiumRankPredictorData.length > 0) {
             updatePremiumRankPredictor(defaultSliderScore);
             if (rpStatus) rpStatus.textContent = `Based on ${premiumRankPredictorData.length} active App users`;
