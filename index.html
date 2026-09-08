@@ -266,8 +266,9 @@
   .modal-full.show { display: flex; }
 
   /* ====== TABS UI (Testbook Clone) ====== */
-  .tab-header { display: flex; background: var(--bg-card); border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 10; align-items: center; border-radius: 12px 12px 0 0; margin: -16px -16px 16px -16px; padding: 0 8px;}
-  .tab-btn { flex: 1; padding: 14px 4px; font-weight: 800; font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; border-bottom: 3px solid transparent; transition: 0.2s; white-space: nowrap; }
+  .tab-header { display: flex; background: var(--bg-card); border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 10; align-items: stretch; border-radius: 12px 12px 0 0; margin: -16px -16px 16px -16px; padding: 0;}
+  .tab-btn { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 2px; font-weight: 800; font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; border-bottom: 3px solid transparent; transition: 0.2s; text-align: center; gap: 4px; background: transparent; line-height: 1.1;}
+  .tab-btn i { font-size: 1.3rem; }
   .tab-btn.active { color: var(--accent-purple); border-bottom-color: var(--accent-purple); }
   .tab-content { display: none; padding-bottom: 30px;}
   .tab-content.active { display: block; }
@@ -758,10 +759,16 @@ body[data-theme="light"] .glass-card {
       
   <div class="modal-full" id="dash-snap">
     <div class="tab-header">
-      <button class="tab-btn active" onclick="switchModalTab('analysis')">Analysis</button>
-      <button class="tab-btn" onclick="switchModalTab('review')">Review</button>
-      <button class="tab-btn" onclick="switchModalTab('leaderboard')">Leaderboard</button>
-      <div style="display:flex; align-items:center; margin-left:auto; padding-right:10px;">
+      <button class="tab-btn active" onclick="switchModalTab('analysis')">
+        <i class="fa-solid fa-chart-pie"></i><span>Analysis</span>
+      </button>
+      <button class="tab-btn" onclick="switchModalTab('review')">
+        <i class="fa-solid fa-list-check"></i><span>Attempt Review</span>
+      </button>
+      <button class="tab-btn" onclick="switchModalTab('leaderboard')">
+        <i class="fa-solid fa-trophy"></i><span>Leaderboard</span>
+      </button>
+      <div style="display:flex; align-items:center; margin-left:auto; padding:0 10px;">
         <button id="snapLangBtn" class="lang-toggle-btn" onclick="toggleSnapLang()">A/अ</button>
         <button id="sClose" style="color:var(--accent-red); background:none; border:none; font-size:1.4rem; cursor:pointer; padding-left: 5px;" onclick="closeDashSnapModal()">
           <i class="fa-solid fa-xmark"></i>
