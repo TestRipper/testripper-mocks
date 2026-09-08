@@ -1772,20 +1772,41 @@ window.filterBySection = function(secName, index = null) {
       
       document.getElementById('snapTitle').innerHTML = `Attempt Review <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:600; margin-left:6px;">— ${it.secName || 'General'} : Q${relativeIdx}/${secTotalQs}</span>`;
       
-            let badgeArr = [ badge(dSnapS.meta.ts, 'ok'), badge(dSnapS.meta.score) ];
-      
-      // 🔥 NEW: CUTOFF INJECTION BADGE
-      if (dSnapS.meta.general_cutoff && dSnapS.meta.general_cutoff !== "--") {
-          badgeArr.push(`<span class="badge" style="background:linear-gradient(90deg, #ea580c, #f59e0b); color:#fff; border:none; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);"><i class="fa-solid fa-bullseye"></i> Cutoff: ${dSnapS.meta.general_cutoff}</span>`);
+                  // 🔥 CHUNK 1: SCORE AND DYNAMIC TIME TAKEN UI
+      let secTimeSec = 0;
+      if (dSnapS.currentSection !== 'all') {
+          dSnapS.arr.forEach(q => { if(q.secName === dSnapS.currentSection) secTimeSec += (q.timeTaken || 0); });
       }
+      let timeDisplay = dSnapS.currentSection === 'all' 
+          ? `${dSnapS.meta.minutes}min` 
+          : `${Math.floor(secTimeSec/60)}m ${secTimeSec%60}s`;
 
-      if (dSnapS.currentSection === 'all') badgeArr.push(linkBadge('all', 'All'));
-      if (secStats.c > 0) badgeArr.push(linkBadge('correct', `C:${secStats.c}`));
-      if (secStats.w > 0) badgeArr.push(linkBadge('wrong', `W:${secStats.w}`));
-      if (secStats.u > 0) badgeArr.push(linkBadge('un', `U:${secStats.u}`));
-      if (secStats.m > 0) badgeArr.push(linkBadge('mark', `M:${secStats.m}`));
+      let topStatsHtml = `
+          <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:12px;">
+              <div style="background:var(--accent-purple); color:#fff; padding:6px 12px; border-radius:20px; font-weight:800; font-size:0.8rem; box-shadow:0 2px 5px rgba(0,0,0,0.1);">${dSnapS.meta.ts}</div>
+              <div style="text-align:center; line-height:1.1;">
+                  <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase;">Score</div>
+                  <div style="font-size:1.4rem; font-weight:900; color:var(--accent-red);">${dSnapS.meta.score.split('/')[0]}<span style="font-size:0.9rem;color:var(--text-secondary)">/${dSnapS.meta.score.split('/')[1]}</span></div>
+              </div>
+              <div style="text-align:center; line-height:1.1;">
+                  <div style="font-size:0.7rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase;">Time Taken</div>
+                  <div style="font-size:1.4rem; font-weight:900; color:var(--accent-green);">${timeDisplay}</div>
+              </div>
+          </div>
+      `;
+      
+      let filtersHtml = `<div style="display:flex; gap:6px; flex-wrap:wrap; width:100%;">`;
+      if (dSnapS.meta.general_cutoff && dSnapS.meta.general_cutoff !== "--") {
+          filtersHtml += `<span class="badge" style="background:linear-gradient(90deg, #ea580c, #f59e0b); color:#fff; border:none; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);"><i class="fa-solid fa-bullseye"></i> Cutoff: ${dSnapS.meta.general_cutoff}</span>`;
+      }
+      if (dSnapS.currentSection === 'all') filtersHtml += linkBadge('all', 'All');
+      if (secStats.c > 0) filtersHtml += linkBadge('correct', `C:${secStats.c}`);
+      if (secStats.w > 0) filtersHtml += linkBadge('wrong', `W:${secStats.w}`);
+      if (secStats.u > 0) filtersHtml += linkBadge('un', `U:${secStats.u}`);
+      if (secStats.m > 0) filtersHtml += linkBadge('mark', `M:${secStats.m}`);
+      filtersHtml += `</div>`;
 
-      document.getElementById('snapMetaBadges').innerHTML = badgeArr.join(' ');
+      document.getElementById('snapMetaBadges').innerHTML = topStatsHtml + filtersHtml;
 
       // Save Button
       const qCheckText = it.q; // Using english as unique ID for cache
@@ -1801,15 +1822,34 @@ window.filterBySection = function(secName, index = null) {
       let saveContainer = document.getElementById('saveBtnContainer');
       if(saveContainer) saveContainer.innerHTML = saveBtnHtml;
 
-      // Question Stats Labels
+           // 🔥 CHUNK 2: INTERACTIVE TIMER DROPDOWN & CORRECT % BADGE
       if (window.currentLbStats) {
          const qIdx = curDashIdx();
+         let uTime = it.timeTaken || 0;
+         let aTime = window.currentLbStats.avgTimes[qIdx] || 0;
+         let tTime = window.currentLbStats.topperTimes[qIdx] || 0;
+         let cPct = window.currentLbStats.correctPercents[qIdx] || 0;
+         
+         // Logic: Green if faster/equal to average, Red if slower
+         let timerColor = (uTime <= aTime) ? "var(--accent-green)" : "var(--accent-red)";
+         
          document.getElementById('qStatsRow').innerHTML = `
-            <div class="q-stat-tag tag-you">You: ${it.timeTaken || 0}s</div>
-            <div class="q-stat-tag tag-avg">Avg: ${window.currentLbStats.avgTimes[qIdx] || 0}s</div>
-            <div class="q-stat-tag tag-top">Topper: ${window.currentLbStats.topperTimes[qIdx] || 0}s</div>
-            <div class="q-stat-tag tag-att">${window.currentLbStats.attemptPercents[qIdx] || 0}% Attempted</div>
-            <div class="q-stat-tag tag-cor">${window.currentLbStats.correctPercents[qIdx] || 0}% Correct</div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; position:relative;">
+                <div style="position:relative;">
+                    <button onclick="let d=document.getElementById('timeDropdownMenu'); d.style.display = d.style.display === 'none' ? 'block' : 'none';" style="background:${timerColor}; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-weight:800; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; gap:6px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+                        <i class="fa-regular fa-clock"></i> You: ${uTime}s
+                    </button>
+                    <!-- Clickable Dropdown Menu -->
+                    <div id="timeDropdownMenu" style="display:none; position:absolute; top:100%; left:0; margin-top:8px; background:var(--bg-card); border:1px solid var(--border-color); border-radius:8px; padding:10px; width:140px; box-shadow:0 10px 25px rgba(0,0,0,0.2); z-index:20;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.85rem;"><span style="color:var(--text-secondary); font-weight:600;">You:</span> <span style="font-weight:800; color:var(--text-primary);">${uTime}s</span></div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.85rem;"><span style="color:var(--text-secondary); font-weight:600;">Avg:</span> <span style="font-weight:800; color:var(--text-primary);">${aTime}s</span></div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.85rem;"><span style="color:var(--text-secondary); font-weight:600;">Topper:</span> <span style="font-weight:800; color:var(--text-primary);">${tTime}s</span></div>
+                    </div>
+                </div>
+                <div style="background:rgba(168, 85, 247, 0.15); color:var(--accent-purple); padding:6px 12px; border-radius:6px; font-weight:800; font-size:0.9rem; border:1px solid rgba(168, 85, 247, 0.3);">
+                    ${cPct}% are correct.
+                </div>
+            </div>
          `;
       } else {
          document.getElementById('qStatsRow').innerHTML = ''; 
