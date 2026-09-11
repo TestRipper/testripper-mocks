@@ -3682,7 +3682,7 @@ window.startAIGeneration = async function(difficulty) {
 
         // 2. START GENERATION WITH CHAIN-FALLBACK
         let generatedQuestions = [];
-        const BATCH_SIZE = 5; 
+        const BATCH_SIZE = 3; 
         let totalBatches = Math.ceil(questionsToProcess.length / BATCH_SIZE);
 
         for (let b = 0; b < totalBatches; b++) {
