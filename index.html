@@ -3557,11 +3557,8 @@ window.closeDashSnapModal = function(fromPopState = false) {
     let currentTargetJsonUrl = "";
   let currentTargetTitle = "";
   
-  const GEMINI_API_KEY = atob("QVEuQWI4Uk42Smt3LXBRYUhnZ0NxSnFTdkJ2N2o1ZUxEcU45NmwweXpXNlZDWU11LS1JekE="); 
-const FALLBACK_MODELS = [
-    "gemini-3.7-flash",
-    "gemini-3.6-flash",
-    "gemini-3.5-flash-lite"
+  const FALLBACK_MODELS = [
+    "Vercel-AI-Matrix"
 ];
 
 let pendingFileUrl = "";
@@ -3763,65 +3760,31 @@ window.launchAITestFinal = function(generatedQs, title, qTime, qMarks) {
     document.getElementById('engine-modal').classList.add('show');
 };
 
+// 1. THE ULTIMATE API CALLER (VERCEL BACKEND BRIDGE)
 
-// ==========================================
-// 1. THE ULTIMATE API CALLER (WITH CHAIN LOGIC SUPPORT)
-// ==========================================
-async function generateSingleChunk(modelName, chunk, difficulty) {
-    const diffInst = difficulty === 'easy_mod' 
-        ? "EASY-TO-MODERATE LEVEL: Use the original question strictly as a hardcoded skeleton. For Quant/Reasoning, just change numbers, names, and data values but keep the exact logic. For English/GK, change the sentence/context but test the exact same grammar rule or specific factual topic. Maintain the original complexity."
-        : "MODERATE-TO-HARD LEVEL: Push the boundaries! Create pro-level CGL/CDS traps based strictly on the original topic. For Quant: Multi-step calculations. For English: Tricky exceptions, cloze/parajumble twists. For GK: Statement-based or in-depth conceptual questions (e.g., 'Which of the following is NOT correct'). For Reasoning: Hidden patterns. Do NOT go out of context from the original topic.";
-
-    const systemPrompt = `You are the Ultimate Expert Exam Setter & Analytical Engine for SSC CGL, CDS, and Railways.
-Your persona for the explanation ("s" key) is Aman bhaiya (engaging conversational Hinglish, e.g., "Dekh bhai aise karna hai...").
-
-CRITICAL EXECUTION METHOD (1-to-1 Mapping):
-Do not process the input as a generic batch. You must look at the input JSON array question-by-question. For EACH original question, identify its subject (Quant, English, Reasoning, or GK) and generate exactly ONE corresponding variation based on the difficulty directive. If the input has 5 questions, your output MUST be a valid JSON array of exactly 5 questions.
-ZERO SUBJECT LEAKAGE: You MUST rigorously identify the subject of the original input question. If the original question is Mathematics/Quant, your output MUST be Mathematics/Quant. NEVER insert Polity, GK, or English questions into a Math/Quant batch.
-
-DIFFICULTY DIRECTIVE:
-${diffInst}
-
-SUBJECT-SPECIFIC RULES:
-- QUANTITATIVE APTITUDE: Emphasize 'Pen-Free Observation'. You MUST EXPLICITLY state which of the 5 Core Conceptual Tools (1. CPR, 2. Successive Change, 3. JSM/Deviation, 4. Cross-Product, 5. Unitary Scaling) applies before showing the calculation.
-- ENGLISH COMPREHENSION (Grammar, Fillers, Cloze, Parajumbles): Test the exact same rule/concept as the original. Provide a detailed grammatical breakdown in the solution.
-- REASONING: Keep the same logical pattern (e.g., coding-decoding, number series) but apply it to new elements. Make the logic airtight.
-- GK/GS: Stay STRICTLY within the original topic boundary. If the original asks about Article 32, ask a harder/different fact about Article 32. Do NOT hallucinate random out-of-context topics.
-
-STRICT JSON & FORMATTING RULES (CRITICAL FOR UI PARSING):
-1. OUTPUT FORMAT: ONLY output a valid JSON array. NO markdown wrappers (DO NOT use \`\`\`json).
-2. KEYS: Keep exact keys: "q" (Question), "o" (Array of exactly 4 Options), "a" (Correct Index 0-3), "s" (Explanation in Hinglish).
-3. STRUCTURAL SPACING: You MUST explicitly use double line breaks (\\n\\n) to separate distinct logical parts inside "q" and "s" (e.g., separating direction text from statements or data series).
-4. RICH TEXT EMPHASIS: Intelligently use <b>...</b> to bold crucial trap words (NOT, INCORRECT) and key data. Use <u>...</u> for underlines. Use properly escaped quotes (\\"...\\").
-5. MATH & LATEX: ALL math equations, numbers, fractions, and symbols MUST use double-escaped LaTeX (e.g., \\\\frac{x}{y}, $A \\\\times B$). DO NOT use single backslashes.`;
-
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent`;
+async function generateSingleChunk(modelName_ignored, chunk, difficulty) {
+    const endpoint = `/api/gemini`; 
     
     const payload = {
-        contents: [{ parts: [{ text: systemPrompt }, { text: JSON.stringify(chunk) }] }],
-        generationConfig: { responseMimeType: "application/json", temperature: 0.8 }
+        chunk: chunk,
+        difficulty: difficulty
     };
 
     const response = await fetch(endpoint, {
         method: "POST", 
-        headers: { 
-            "Content-Type": "application/json",
-            "x-goog-api-key": GEMINI_API_KEY 
-        }, 
+        headers: { "Content-Type": "application/json" }, 
         body: JSON.stringify(payload)
     });
 
     if (!response.ok) {
-        const errText = await response.text();
-        throw new Error(`HTTP ${response.status} - ${errText}`);
+        const errorData = await response.json();
+        // Naya addition: errorData.details taaki Vercel ka actual error catch ho sake
+        throw new Error(`Backend Error: ${errorData.error || errorData.details || 'Unknown Error'}`);
     }
 
-    const aiData = await response.json();
-    const rawText = aiData.candidates[0].content.parts[0].text;
-    return JSON.parse(rawText.replace(/```json/g, '').replace(/```/g, '').trim());
+    return await response.json();
 }
 
-// ==========================================
 // 2. ENGINE LAUNCHER (ROUTING LOGIC)
 // ==========================================
 window.launchEngine = function(engineType) {
