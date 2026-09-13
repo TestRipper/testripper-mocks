@@ -459,6 +459,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   let TIME_SECONDS = 0;
   let STORE_NAME = '';
   let isSectional = false;
+  let GENERAL_CUTOFF = '--'
 
   // Session storage check for custom mock generated engine (Revision tests)
     const sessionData = sessionStorage.getItem('customEngineData');
@@ -525,6 +526,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           QUIZ_TITLE = jsonData.quizTitle || jsonData.title || (passedTitle ? decodeURIComponent(passedTitle) : "Normal Test");
       TIME_SECONDS = (jsonData.quizTime || 60) * 60;
       TOTAL_MARKS = jsonData.totalMarks || 200;
+      GENERAL_CUTOFF = jsonData.Cutoff || "--";
       STORE_NAME = QUIZ_TITLE.replace(/\s+/g, '_');
 
       let currentQIndex = 0;
@@ -861,7 +863,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const rec = {
           ts: formattedTs, score: disp, correct: C, incorrect: W, 
           unattempted: U, marked: M, minutes: mins, snap: snap(), 
-          testName: QUIZ_TITLE, path: dataUrl || ''
+          testName: QUIZ_TITLE, path: dataUrl || '',
+          general_cutoff: GENERAL_CUTOFF
         };
 
         const user = auth.currentUser;
