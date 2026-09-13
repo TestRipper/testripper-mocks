@@ -3602,16 +3602,6 @@ window.chooseRetakeMode = function(mode) {
     }
 };
 
-    // 2. Agar ye AI Variant hai ya Normal mock hai, toh Quiz-Engine 1 ya 2 khulega
-    if (!currentTargetJsonUrl) {
-        window.location.href = engineType === 1 ? `Quiz-Engine-1.html?title=${encodedTitle}` : `Quiz-Engine-2.html?title=${encodedTitle}`;
-        return;
-    }
-
-    let encodedUrl = encodeURIComponent(currentTargetJsonUrl);
-    window.location.href = engineType === 1 ? `Quiz-Engine-1.html?data=${encodedUrl}&title=${encodedTitle}` : `Quiz-Engine-2.html?data=${encodedUrl}&title=${encodedTitle}`;
-};
-
 // 2. Main Generation Function
 window.startAIGeneration = async function(difficulty) {
     document.getElementById('ai-level-modal').classList.remove('show');
