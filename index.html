@@ -3602,17 +3602,6 @@ window.chooseRetakeMode = function(mode) {
     }
 };
 
-window.launchEngine = function(engineType) {
-    let encodedTitle = encodeURIComponent(currentTargetTitle);
-    
-    // 1. Agar ye Mistake/Saved Quiz hai, toh hamesha Mock-fetcher khulega
-    if (pendingCustomQuestions) {
-        const payload = { title: currentTargetTitle, questions: pendingCustomQuestions };
-        sessionStorage.setItem('customEngineData', JSON.stringify(payload));
-        window.location.href = "Mock-fetcher.html";
-        return; 
-    }
-    
     // 2. Agar ye AI Variant hai ya Normal mock hai, toh Quiz-Engine 1 ya 2 khulega
     if (!currentTargetJsonUrl) {
         window.location.href = engineType === 1 ? `Quiz-Engine-1.html?title=${encodedTitle}` : `Quiz-Engine-2.html?title=${encodedTitle}`;
@@ -3784,7 +3773,7 @@ async function generateSingleChunk(modelName_ignored, chunk, difficulty) {
 
     return await response.json();
 }
-
+// ==========================================
 // 2. ENGINE LAUNCHER (ROUTING LOGIC)
 // ==========================================
 window.launchEngine = function(engineType) {
@@ -3803,7 +3792,9 @@ window.launchEngine = function(engineType) {
         if(engineType === 1) {
             window.location.href = `Quiz-Engine-1.html?title=${encodedTitle}`;
         } else {
-            window.location.href = `Quiz-Engine-2.html?title=${encodedTitle}`;
+            window.location.href = `Quiz-engine-2.html?title=${encodedTitle}`;
+        } else {
+            window.location.href = `Quiz-engine-3.html?title=${encodedTitle}`;
         }
         return;
     }
@@ -3812,13 +3803,14 @@ window.launchEngine = function(engineType) {
     if(engineType === 1) {
         window.location.href = `Quiz-Engine-1.html?data=${encodedUrl}&title=${encodedTitle}`;
     } else {
-        window.location.href = `Quiz-Engine-2.html?data=${encodedUrl}&title=${encodedTitle}`;
-    }
+        window.location.href = `Quiz-engine-2.html?data=${encodedUrl}&title=${encodedTitle}`;
+    } else {
+            window.location.href = `Quiz-engine-2.html?title=${encodedTitle}`;}
 };
 
-// ==========================================
+
 // 3. ENGINE MODAL CANCEL BUTTON FIX
-// ==========================================
+
 window.closeEngineModal = function() {
     document.getElementById('engine-modal').classList.remove('show');
 };
