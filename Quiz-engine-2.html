@@ -745,9 +745,8 @@ li{margin-bottom:6px;}
       <div class="th-right">
         <div class="th-answered">Total Questions Answered: <span class="ans-count" id="answeredCount">0</span></div>
         <div class="th-time">
-          <div class="th-time-label">Section Time</div>
+                    <div class="th-time-label">Section Time</div>
           <div class="th-time-row">
-            <button class="ctrl-btn pause" id="pauseBtn" type="button" aria-label="Pause timer" title="Pause timer">❚❚</button>
             <div class="timer-value" id="timerValue">15 : 00</div>
           </div>
         </div>
@@ -992,7 +991,7 @@ const quizState = {
   screen: APP_STATES.INSTRUCTIONS_PAGE_1,
   language: '', agreementAccepted: false,
   currentSection: '', currentQuestionIndex: 0,
-  sectionPositions: {}, answers: {}, markedForReview: {}, visited: {}, saved: {},
+  sectionPositions: {}, answers: {}, draftAnswers: {}, markedForReview: {}, visited: {}, saved: {},
   timeSpent: {}, // 🔥 TIME TRACKING
   submittedSections: {}, testSubmitted: false,
   totalTimeSeconds: 0, remainingTimeSeconds: 0,
@@ -1105,12 +1104,32 @@ function startTest(){
   $('pauseBtn').classList.remove('paused');
   $('pauseBtn').textContent = '❚❚';
 
-  showScreen(APP_STATES.TEST);
+    showScreen(APP_STATES.TEST);
   renderSectionTabs();
   renderTimer();
   questionStartTime = Date.now();
   renderQuestion();
   startTimer();
+
+  history.pushState(null, null, location.href);
+  window.onpopstate = function () {
+      if (quizState.screen === APP_STATES.TEST && !quizState.testSubmitted) {
+          history.pushState(null, null, location.href);
+          showModal({
+              title: '⚠️ EXAM EXIT WARNING!',
+              body: '<p style="text-align:center;font-weight:600;">Are you sure you want to exit the test?<br>Aapka current progress submit kar diya jayega.</p>',
+              confirmText: 'Exit & Submit',
+              onConfirm: () => { doSubmitTest(false); }
+          });
+      }
+  };
+
+  window.onbeforeunload = function (e) {
+      if (quizState.screen === APP_STATES.TEST && !quizState.testSubmitted) {
+          e.preventDefault();
+          e.returnValue = '';
+      }
+  };
 }
 
 function renderSectionTabs(){
@@ -1155,18 +1174,28 @@ function renderQuestion(){
   const optWrap = $('qOptions');
   optWrap.innerHTML = '';
 
-  q.options.forEach(opt => {
-    const label = document.createElement('label');
-    label.className = 'q-option' + (quizState.answers[q.id] === opt.id ? ' selected' : '');
-    
+    q.options.forEach(opt => {
+    const label = document.createElement('div');
+    let currentSel = quizState.draftAnswers[q.id] !== undefined ? quizState.draftAnswers[q.id] : quizState.answers[q.id];
+    label.className = 'q-option' + (currentSel === opt.id ? ' selected' : '');
+
     const radioCell = document.createElement('span'); radioCell.className = 'opt-radio-cell';
     const input = document.createElement('input'); input.type = 'radio'; input.name = 'opt_' + q.id;
-    input.value = opt.id; input.checked = (quizState.answers[q.id] === opt.id);
-    input.addEventListener('change', () => selectAnswer(q.id, opt.id));
+    input.value = opt.id; input.checked = (currentSel === opt.id);
+    
+    input.addEventListener('click', (e) => {
+        if (currentSel === opt.id) {
+            quizState.draftAnswers[q.id] = null; 
+            delete quizState.answers[q.id]; 
+        } else {
+            quizState.draftAnswers[q.id] = opt.id;
+        }
+        renderQuestion();
+    });
     radioCell.appendChild(input);
 
     const textCell = document.createElement('span'); textCell.className = 'opt-text-cell';
-    textCell.innerHTML = opt.text[lang] || opt.text.en; // 🔥 HTML injection allowed
+    textCell.innerHTML = opt.text[lang] || opt.text.en; 
 
     label.appendChild(radioCell); label.appendChild(textCell);
     optWrap.appendChild(label);
@@ -1195,11 +1224,6 @@ function renderQuestion(){
   renderPalette();
 }
 
-function selectAnswer(questionId, optionId){
-  if(quizState.testSubmitted) return;
-  quizState.answers[questionId] = optionId;
-  renderQuestion();
-}
 
 function updateAnsweredCount(){ $('answeredCount').textContent = String(answeredCount()); }
 
@@ -1501,14 +1525,38 @@ function wireEvents(){
   $('testLang').addEventListener('change', e => { selectLanguage(e.target.value); setFormError(''); });
   $('agreeChk').addEventListener('change', e => toggleAgreement(e.target.checked));
 
-  $('pauseBtn').addEventListener('click', pauseTimer);
+  // $('pauseBtn') hata diya gaya hai
   $('btnPrev').addEventListener('click', goPrevQuestion);
-  $('btnMarkReview').addEventListener('click', toggleMarkForReview);
+  
+  $('btnMarkReview').addEventListener('click', () => {
+    const q = getCurrentQuestion();
+    if(q && quizState.draftAnswers[q.id] !== undefined) {
+        if(quizState.draftAnswers[q.id] === null) delete quizState.answers[q.id];
+        else quizState.answers[q.id] = quizState.draftAnswers[q.id];
+        delete quizState.draftAnswers[q.id];
+    }
+    toggleMarkForReview();
+  });
+  
   $('btnSaveNext').addEventListener('click', () => {
     const q = getCurrentQuestion();
-    if(q){ quizState.saved[q.id] = true; if(quizState.answers[q.id]) toast('Saved.'); }
+    if(q){ 
+      if(quizState.draftAnswers[q.id] !== undefined) {
+          if(quizState.draftAnswers[q.id] === null) {
+              delete quizState.answers[q.id];
+          } else {
+              quizState.answers[q.id] = quizState.draftAnswers[q.id];
+          }
+          delete quizState.draftAnswers[q.id];
+      }
+      quizState.saved[q.id] = true; 
+      if(quizState.answers[q.id]) toast('Saved.'); 
+      renderPalette();
+      updatePaletteAnalysis();
+    }
     goNextQuestion();
   });
+
   $('btnSubmitSection').addEventListener('click', () => submitSection(quizState.currentSection));
   $('btnSubmitTest').addEventListener('click', submitTest);
 
