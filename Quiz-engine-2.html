@@ -1075,13 +1075,6 @@ function renderTimer(){
   } else { lm.style.display = 'none'; }
 }
 
-function pauseTimer(){
-  if(quizState.testSubmitted) return;
-  quizState.isPaused = !quizState.isPaused;
-  $('pauseBtn').classList.toggle('paused', quizState.isPaused);
-  $('pauseBtn').textContent = quizState.isPaused ? '▶' : '❚❚';
-  toast(quizState.isPaused ? 'Timer paused' : 'Timer resumed');
-}
 
 /* ==============================================================
    5. TEST START & RENDER
@@ -1101,10 +1094,8 @@ function startTest(){
   quizState.testSubmitted = false;
 
   $('qLang').value = quizState.questionLanguage;
-  $('pauseBtn').classList.remove('paused');
-  $('pauseBtn').textContent = '❚❚';
 
-    showScreen(APP_STATES.TEST);
+  showScreen(APP_STATES.TEST);
   renderSectionTabs();
   renderTimer();
   questionStartTime = Date.now();
