@@ -868,9 +868,9 @@ function toast(message){
 /* ==============================================================
    1. DYNAMIC DATA LOADING (JSON Fetch & Structure Mapping)
    ============================================================== */
-        dynamicQuizTitle = passedTitle || (jsonData && (jsonData.quizTitle || jsonData.title));
-        dynamicTotalMarks = jsonData.totalMarks;
-        dynamicCutoff = jsonData.Cutoff || "--";
+       let dynamicQuizTitle = passedTitle || (jsonData && (jsonData.quizTitle || jsonData.title));
+       let dynamicTotalMarks = jsonData.totalMarks;
+       let dynamicCutoff = jsonData.Cutoff || "--";
 
 let originalJsonPath = "";
 
