@@ -834,7 +834,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }));
       }
 
-      function submit(){
+      async function submit(){
         if(st.sub) return;
         recordTime();
         st.sub=true; clearInterval(st.timer); guard=false;
@@ -860,26 +860,35 @@ document.addEventListener('DOMContentLoaded', async () => {
         const mos = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
         const formattedTs = `${String(d.getDate()).padStart(2,'0')} ${mos[d.getMonth()]} ${d.getFullYear()}, ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
 
-                const rec = {
+        const rec = {
           ts: formattedTs, score: disp, correct: C, incorrect: W, 
           unattempted: U, marked: M, minutes: mins, snap: snap(), 
           testName: QUIZ_TITLE, path: dataUrl || '',
           general_cutoff: GENERAL_CUTOFF
         };
 
+        $('ovr').classList.add('show');
+        render();
+
+        let closeBtn = $('closeOvr');
+        if(closeBtn) {
+            closeBtn.disabled = true;
+            closeBtn.textContent = "Syncing... Please Wait";
+            closeBtn.style.opacity = "0.6";
+            closeBtn.style.cursor = "not-allowed";
+        }
+
         const user = auth.currentUser;
         if(user){
-            // Save Attempt to user's history
-            db.collection("users").doc(user.uid).collection("attempts").add({
-                ...rec, serverTime: firebase.firestore.FieldValue.serverTimestamp()
-            }).then(()=>console.log("Cloud Sync Done!"))
-              .catch(e=>console.error("Sync Error", e));
-
-            // Save to Leaderboard ONLY IF FIRST ATTEMPT
-            const lbRef = db.collection("leaderboards").doc(QUIZ_TITLE).collection("rankings").doc(user.uid);
-            lbRef.get().then(doc => {
+            try {
+                await db.collection("users").doc(user.uid).collection("attempts").add({
+                    ...rec, serverTime: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                
+                const lbRef = db.collection("leaderboards").doc(QUIZ_TITLE).collection("rankings").doc(user.uid);
+                const doc = await lbRef.get();
                 if (!doc.exists) {
-                    lbRef.set({
+                    await lbRef.set({
                         name: user.displayName || "Warrior",
                         score: marksEarned,
                         timeArray: rec.snap.map(q => q.timeTaken || 0),
@@ -887,12 +896,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                         correctArray: rec.snap.map(q => q.correct)
                     });
                 }
-            });
+            } catch(e) { console.error("Sync Error", e); }
         }
 
-        $('ovr').classList.add('show');
-        render();
+        if(closeBtn) {
+            closeBtn.disabled = false;
+            closeBtn.textContent = "Return to Dashboard";
+            closeBtn.style.opacity = "1";
+            closeBtn.style.cursor = "pointer";
+        }
       }
+
       
       $('closeOvr').onclick = () => { window.location.href = "index.html"; };
   }

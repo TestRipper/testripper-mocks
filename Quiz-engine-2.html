@@ -1410,9 +1410,7 @@ function submitTest(){
   });
 }
 
-function submitTestDueToTime(){ if(!quizState.testSubmitted) doSubmitTest(true); }
-
-function doSubmitTest(timeUp){
+async function doSubmitTest(timeUp){
   quizState.testSubmitted = true;
   stopTimer();
   recordTime();
@@ -1458,37 +1456,48 @@ function doSubmitTest(timeUp){
       general_cutoff: dynamicCutoff
   };
 
-  const user = auth.currentUser;
-  if(user){
-      db.collection("users").doc(user.uid).collection("attempts").add({
-          ...rec, serverTime: firebase.firestore.FieldValue.serverTimestamp()
-      }).then(()=>console.log("Cloud Sync Done!")).catch(e=>console.error(e));
-
-      const lbRef = db.collection("leaderboards").doc(dynamicQuizTitle).collection("rankings").doc(user.uid);
-      lbRef.get().then(doc => {
-          if (!doc.exists) {
-              lbRef.set({
-                  name: user.displayName || "Warrior", score: marksEarned,
-                  timeArray: snap.map(q => q.timeTaken), userArray: snap.map(q => q.user),
-                  correctArray: snap.map(q => q.correct)
-              });
-          }
-      });
-  }
-
   const panel = document.createElement('div');
   panel.className = 'result-panel';
   panel.innerHTML = `<h2>${timeUp ? 'Time Up' : 'Test Submitted Successfully'}</h2>
-    <p class="sub">Your responses have been recorded.</p>
+    <p class="sub">Saving your progress... Please do not close or refresh.</p>
     <table class="result-table">
       <tr><th>Score</th><td>${disp}</td></tr>
       <tr><th>Correct Answers</th><td>${C}</td></tr>
       <tr><th>Incorrect Answers</th><td>${W}</td></tr>
       <tr><th>Unattempted</th><td>${U}</td></tr>
     </table>
-    <button class="btn btn-primary btn-block" onclick="window.location.href='index.html'">Return to Dashboard</button>`;
+    <button id="q2SubmitBtn" class="btn btn-primary btn-block" disabled style="opacity: 0.6; cursor: not-allowed;">Syncing to Server... Please Wait</button>`;
   $('screen-test').appendChild(panel);
+
+  const user = auth.currentUser;
+  if(user){
+      try {
+          await db.collection("users").doc(user.uid).collection("attempts").add({
+              ...rec, serverTime: firebase.firestore.FieldValue.serverTimestamp()
+          });
+          
+          const lbRef = db.collection("leaderboards").doc(dynamicQuizTitle).collection("rankings").doc(user.uid);
+          const doc = await lbRef.get();
+          if (!doc.exists) {
+              await lbRef.set({
+                  name: user.displayName || "Warrior", score: marksEarned,
+                  timeArray: snap.map(q => q.timeTaken), userArray: snap.map(q => q.user),
+                  correctArray: snap.map(q => q.correct)
+              });
+          }
+      } catch(e) { console.error("Cloud Sync Error", e); }
+  }
+  
+  let finalBtn = $('q2SubmitBtn');
+  if (finalBtn) {
+      finalBtn.disabled = false;
+      finalBtn.style.opacity = '1';
+      finalBtn.style.cursor = 'pointer';
+      finalBtn.textContent = 'Return to Dashboard';
+      finalBtn.onclick = () => { window.location.href = 'index.html'; };
+  }
 }
+
 
 /* ==============================================================
    9. MODALS & EVENTS
