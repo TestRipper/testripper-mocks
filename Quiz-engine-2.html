@@ -515,29 +515,24 @@ li{margin-bottom:6px;}
 
         <div class="instr-block">
           <h3>1. Exam Overview / परीक्षा का संक्षिप्त विवरण</h3>
-          <ul>
-            <li>Duration: 60 minutes / समयावधि: 60 मिनट</li>
-            <li>Total Questions: 100 / कुल प्रश्न: 100</li>
-            <li>Negative Marking: 25% marks deducted for each wrong answer. / ऋणात्मक अंकन: प्रत्येक गलत उत्तर पर 25% अंक काटे जाएंगे।</li>
-            <li>Number of Sections displayed at any time: 4 / किसी भी समय प्रदर्शित अनुभागों की संख्या: 4</li>
-          </ul>
-
-          <table class="marks-table">
-            <thead>
-              <tr>
-                <th>Section</th>
-                <th>Subject</th>
-                <th>Number of Questions</th>
-                <th>Maximum Marks</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>PART-A</td><td>English Comprehension</td><td>25</td><td>50</td></tr>
-              <tr><td>PART-B</td><td>General Intelligence and Reasoning</td><td>25</td><td>50</td></tr>
-              <tr><td>PART-C</td><td>Quantitative Aptitude</td><td>25</td><td>50</td></tr>
-              <tr><td>PART-D</td><td>General Awareness</td><td>25</td><td>50</td></tr>
-            </tbody>
-          </table>
+  <ul>
+    <li>Duration: <span id="dynDuration">--</span> minutes / समयावधि: <span id="dynDurationHi">--</span> मिनट</li>
+    <li>Total Questions: <span id="dynTotalQs">--</span> / कुल प्रश्न: <span id="dynTotalQsHi">--</span></li>
+    <li>Negative Marking: <span id="dynNegMark">0.25</span> marks deducted for each wrong answer.</li>
+    <li>Number of Sections displayed at any time: <span id="dynSecCount">--</span></li>
+  </ul>
+  <table class="marks-table">
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Subject</th>
+        <th>Number of Questions</th>
+        <th>Maximum Marks</th>
+      </tr>
+    </thead>
+    <tbody id="instrTableBody">
+    </tbody>
+  </table>
         </div>
 
         <div class="instr-block">
@@ -970,6 +965,21 @@ quizData.durationSeconds = (jsonData.quizTime || 60) * 60;
         const m = Math.floor(quizData.durationSeconds / 60);
         const s = quizData.durationSeconds % 60;
         if($('timerValue')) $('timerValue').textContent = String(m).padStart(2,'0') + ' : ' + String(s).padStart(2,'0');
+        
+        /* 🔥 DYNAMIC INSTRUCTIONS INJECTION */
+        let tMins = Math.floor(quizData.durationSeconds / 60);
+        let tQs = totalQuestions();
+        if($('dynDuration')) { $('dynDuration').textContent = tMins; $('dynDurationHi').textContent = tMins; }
+        if($('dynTotalQs')) { $('dynTotalQs').textContent = tQs; $('dynTotalQsHi').textContent = tQs; }
+        if($('dynNegMark')) $('dynNegMark').textContent = jsonData.globalNegMarks || 0.25;
+        if($('dynSecCount')) $('dynSecCount').textContent = quizData.sections.length;
+
+        let tableHTML = '';
+        quizData.sections.forEach((sec, idx) => {
+            let secMarks = sec.questions.reduce((sum, q) => sum + (parseFloat(q.positiveMarks) || 2), 0);
+            tableHTML += `<tr><td>PART-${String.fromCharCode(65 + idx)}</td><td>${sec.name}</td><td>${sec.questions.length}</td><td>${secMarks}</td></tr>`;
+        });
+        if($('instrTableBody')) $('instrTableBody').innerHTML = tableHTML;
 
     } catch (error) {
         $('loader').innerHTML = `<div style="color:var(--danger)">Failed to load test data.<br><br>${error.message}</div>`;
