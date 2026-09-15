@@ -332,8 +332,8 @@
   /* --- ATTEMPT REVIEW KO NUMBER SYSTEM WALA PREMIUM LOOK --- */
   #dash-snap h3#snapTitle { color: var(--text-primary) !important; font-weight: 900; }
   #dash-snap .badge.ok { background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue)) !important; color: #fff !important; border:none; }
-  #dash-snap .badge.min { background: rgba(255, 255, 255, 0.1) !important; color: var(--text-primary) !important; border: 1px solid rgba(255,255,255,0.2); }
-  body[data-theme="dark"] #dash-snap .badge.min { background: rgba(0, 0, 0, 0.05) !important; border: 1px solid rgba(0,0,0,0.1); color: #000 !important; }
+  #dash-snap .badge.min { background: rgba(0, 0, 0, 0.05) !important; color: var(--text-primary) !important; border: 1px solid rgba(0, 0, 0, 0.1); }
+  body[data-theme="dark"] #dash-snap .badge.min { background: rgba(255, 255, 255, 0.1) !important; border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
    #dash-snap .sol { 
       background: rgba(16, 185, 129, 0.1) !important; 
       border: none !important; 
@@ -1825,15 +1825,15 @@ window.filterBySection = function(secName, index = null) {
               <div style="background:linear-gradient(90deg, var(--accent-purple), var(--accent-blue)); color:#fff; padding:6px 12px; border-radius:20px; font-weight:800; font-size:0.75rem; box-shadow:0 4px 10px rgba(109, 40, 217, 0.3); display:flex; align-items:center; gap:6px; white-space:nowrap;">
                   <i class="fa-regular fa-calendar-days"></i> ${dSnapS.meta.ts}
               </div>
-              <div style="flex:1; min-width:180px; display:flex; justify-content:space-around; align-items:center; background:rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border:1px solid var(--border-color); border-radius:20px; padding:6px 12px; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+              <div style="flex:1; min-width:180px; display:flex; justify-content:space-around; align-items:center; background:linear-gradient(135deg, rgba(0, 242, 254, 0.08), rgba(79, 172, 254, 0.08)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border:1px solid rgba(0, 242, 254, 0.4); border-radius:20px; padding:6px 12px; box-shadow:0 0 15px rgba(0, 242, 254, 0.25);">
                   <div style="display:flex; align-items:center; gap:6px;">
-                      <span style="font-size:0.65rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase;">Score</span>
-                      <span style="font-size:0.95rem; font-weight:900; color:var(--accent-red);">${currentSecScore.toFixed(2)}<span style="font-size:0.7rem;color:var(--text-secondary)">/${currentSecMaxMarks}</span></span>
+                      <span style="font-size:0.65rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase; letter-spacing: 1px;">Score</span>
+                      <span style="font-size:1rem; font-weight:900; color:var(--accent-red); text-shadow: 0 0 8px rgba(239, 68, 68, 0.3);">${currentSecScore.toFixed(2)}<span style="font-size:0.75rem;color:var(--text-secondary); text-shadow:none;">/${currentSecMaxMarks}</span></span>
                   </div>
-                  <div style="width:1px; height:18px; background:var(--border-color);"></div>
+                  <div style="width:2px; height:20px; background:rgba(0, 242, 254, 0.3);"></div>
                   <div style="display:flex; align-items:center; gap:6px;">
-                      <span style="font-size:0.65rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase;">Time</span>
-                      <span style="font-size:0.95rem; font-weight:900; color:var(--accent-green);">${timeDisplay}</span>
+                      <span style="font-size:0.65rem; color:var(--text-secondary); font-weight:800; text-transform:uppercase; letter-spacing: 1px;">Time</span>
+                      <span style="font-size:1rem; font-weight:900; color:var(--accent-green); text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);">${timeDisplay}</span>
                   </div>
               </div>
           </div>
