@@ -868,15 +868,14 @@ function toast(message){
 /* ==============================================================
    1. DYNAMIC DATA LOADING (JSON Fetch & Structure Mapping)
    ============================================================== */
-       let dynamicQuizTitle = passedTitle || (jsonData && (jsonData.quizTitle || jsonData.title));
-       let dynamicTotalMarks = jsonData.totalMarks;
-       let dynamicCutoff = jsonData.Cutoff || "--";
-
+let dynamicQuizTitle = "Loading...";
+let dynamicTotalMarks = 200;
+let dynamicCutoff = "--";
 let originalJsonPath = "";
 
 const quizData = {
-  durationSeconds: 3600,
-  lastMinutesThreshold: 5 * 60,
+  durationSeconds: 0, // Ye aage JSON se auto-fill hoga
+  lastMinutesThreshold: 5 * 60, // 5 minute ka red alert fix rahega
   sections: []
 };
 
@@ -903,9 +902,11 @@ async function loadDynamicData() {
             jsonData = JSON.parse(rawText.trim());
         }
 
-        dynamicTotalMarks = jsonData.totalMarks || 200;
-        dynamicCutoff = jsonData.Cutoff || "--";
-        quizData.durationSeconds = (jsonData.quizTime || 60) * 60;
+// Universal Dynamic Mapping
+dynamicQuizTitle = passedTitle || jsonData.quizTitle || jsonData.title || "Warrior Mock Test";
+dynamicTotalMarks = jsonData.totalMarks || 200;
+dynamicCutoff = jsonData.Cutoff || "--";
+quizData.durationSeconds = (jsonData.quizTime || 60) * 60;
         quizData.isStrictSectional = !!(jsonData.sections && jsonData.sectionMetadata);
 
         let isSectional = !!(jsonData.sections && jsonData.questionsData);
