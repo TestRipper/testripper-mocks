@@ -902,10 +902,10 @@ async function loadDynamicData() {
             jsonData = JSON.parse(rawText.trim());
         }
 
-        dynamicQuizTitle = jsonData.quizTitle || jsonData.title || (passedTitle ? decodeURIComponent(passedTitle) : "Normal Test");
         dynamicTotalMarks = jsonData.totalMarks || 200;
         dynamicCutoff = jsonData.Cutoff || "--";
         quizData.durationSeconds = (jsonData.quizTime || 60) * 60;
+        quizData.isStrictSectional = !!(jsonData.sections && jsonData.sectionMetadata);
 
         let isSectional = !!(jsonData.sections && jsonData.questionsData);
         let qGlobalIndex = 0;
@@ -915,16 +915,30 @@ async function loadDynamicData() {
                 const engQs = secBlock.questions || [];
                 const secNameEng = secBlock.secName || "Section " + (sIdx + 1);
                 let hinQs = (jsonData.questions_hinData && jsonData.questions_hinData[sIdx]) ? (jsonData.questions_hinData[sIdx].questions || jsonData.questions_hinData[sIdx].questions_hi || []) : [];
-
-                let secObj = { id: 'SEC_' + sIdx, name: secNameEng, subject: secNameEng, questions: [] };
+                
+                let secMeta = jsonData.sectionMetadata ? jsonData.sectionMetadata.find(m => m.secName === secNameEng) : null;
+                let sTime = secMeta ? (secMeta.sectionalTime * 60) : 0;
+                let secObj = { id: 'SEC_' + sIdx, name: secNameEng, subject: secNameEng, questions: [], timeAllocated: sTime, autoShuffle: secMeta ? secMeta.autoShuffle : false };
 
                 engQs.forEach((eq, qIdx) => {
                     const hq = hinQs[qIdx] || {};
+                    if(secMeta && eq.posMarks === undefined) eq.posMarks = secMeta.posMarks;
+                    if(secMeta && eq.negMarks === undefined) eq.negMarks = secMeta.negMarks;
                     secObj.questions.push(mapQuestion(eq, hq, qGlobalIndex, secNameEng));
                     qGlobalIndex++;
                 });
+                
+                if(secObj.autoShuffle && secObj.questions.length > 0) {
+                    for (let i = secObj.questions.length - 1; i > 0; i--) {
+                        let j = Math.floor(Math.random() * (i + 1));
+                        [secObj.questions[i], secObj.questions[j]] = [secObj.questions[j], secObj.questions[i]];
+                    }
+                }
+                
                 if (secObj.questions.length > 0) quizData.sections.push(secObj);
             });
+        } else {
+
         } else {
             const engQs = jsonData.questions || [];
             const hinQs = jsonData.questions_hin || [];
@@ -1055,10 +1069,17 @@ function stopTimer(){ if(timerInterval !== null){ clearInterval(timerInterval); 
 
 function tickTimer(){
   if(quizState.isPaused || quizState.testSubmitted) return;
-  if(quizState.remainingTimeSeconds <= 0){ stopTimer(); submitTestDueToTime(); return; }
+  if(quizState.remainingTimeSeconds <= 0){ 
+      stopTimer(); 
+      if(quizData.isStrictSectional) { submitSection(quizState.currentSection, true); } else { submitTestDueToTime(); }
+      return; 
+  }
   quizState.remainingTimeSeconds--;
   renderTimer();
-  if(quizState.remainingTimeSeconds === 0){ stopTimer(); submitTestDueToTime(); }
+  if(quizState.remainingTimeSeconds === 0){ 
+      stopTimer(); 
+      if(quizData.isStrictSectional) { submitSection(quizState.currentSection, true); } else { submitTestDueToTime(); }
+  }
 }
 
 function renderTimer(){
@@ -1085,11 +1106,18 @@ function startTest(){
   if(!quizState.agreementAccepted){ setFormError('Please accept the agreement.'); return; }
   setFormError('');
 
-  quizState.questionLanguage = (quizState.language === 'hi') ? 'hi' : 'en';
+    quizState.questionLanguage = (quizState.language === 'hi') ? 'hi' : 'en';
   quizState.currentSection = quizData.sections[0].id;
   quizState.currentQuestionIndex = 0;
-  quizState.remainingTimeSeconds = quizData.durationSeconds;
-  quizState.totalTimeSeconds = quizData.durationSeconds;
+  
+  if (quizData.isStrictSectional && quizData.sections[0].timeAllocated > 0) {
+      quizState.remainingTimeSeconds = quizData.sections[0].timeAllocated;
+      quizState.totalTimeSeconds = quizData.sections[0].timeAllocated;
+  } else {
+      quizState.remainingTimeSeconds = quizData.durationSeconds;
+      quizState.totalTimeSeconds = quizData.durationSeconds;
+  }
+  
   quizState.isPaused = false;
   quizState.testSubmitted = false;
 
@@ -1131,7 +1159,14 @@ function renderSectionTabs(){
     btn.type = 'button';
     btn.className = 'sec-tab' + (sec.id === quizState.currentSection ? ' active' : '');
     btn.textContent = sec.name;
-    btn.addEventListener('click', () => { switchSection(sec.id); });
+    
+    if (quizData.isStrictSectional && sec.id !== quizState.currentSection) {
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+        btn.style.cursor = 'not-allowed';
+    } else {
+        btn.addEventListener('click', () => { switchSection(sec.id); });
+    }
     wrap.appendChild(btn);
   });
 }
@@ -1249,6 +1284,10 @@ function goNextQuestion(){
   if(quizState.currentQuestionIndex < sec.questions.length - 1){
     goToQuestion(quizState.currentQuestionIndex + 1);
   } else {
+    if(quizData.isStrictSectional) {
+        toast('Last question of section! Please Submit Section to proceed.');
+        return;
+    }
     let moved = false;
     for(let i=0; i<quizData.sections.length; i++){
       if(quizData.sections[i].id === quizState.currentSection){
@@ -1321,23 +1360,36 @@ function closeQuestionPalette(){ $('palette').classList.remove('open'); $('overl
 /* ==============================================================
    8. SUBMISSION & FIREBASE PUSH 🔥
    ============================================================== */
-function submitSection(sectionId){
+function submitSection(sectionId, autoSubmit = false){
   const sec = getSection(sectionId);
-  showModal({
-    title: 'Submit Section', body: `<p>Submit ${sec.name}?</p>`, confirmText: 'Submit',
-    onConfirm: () => {
+  const doSubmit = () => {
       quizState.submittedSections[sectionId] = true;
       let moved = false;
       for(let i = 0; i < quizData.sections.length; i++){
         if(quizData.sections[i].id === sectionId && quizData.sections[i+1]){
           quizState.currentSection = quizData.sections[i+1].id;
-          quizState.currentQuestionIndex = 0; moved = true; break;
+          quizState.currentQuestionIndex = 0; 
+          if(quizData.isStrictSectional && quizData.sections[i+1].timeAllocated > 0) {
+              quizState.remainingTimeSeconds = quizData.sections[i+1].timeAllocated;
+              quizState.totalTimeSeconds = quizData.sections[i+1].timeAllocated;
+              startTimer();
+          }
+          moved = true; break;
         }
       }
       renderSectionTabs(); renderQuestion();
-      if(!moved) toast('All sections submitted.');
-    }
-  });
+      if(!moved) { submitTestDueToTime(); }
+  };
+
+  if(autoSubmit) {
+      toast(`${sec.name} Time Up! Moving to next.`);
+      doSubmit();
+  } else {
+      showModal({
+        title: 'Submit Section', body: `Submit ${sec.name}?`, confirmText: 'Submit',
+        onConfirm: doSubmit
+      });
+  }
 }
 
 function submitTest(){
