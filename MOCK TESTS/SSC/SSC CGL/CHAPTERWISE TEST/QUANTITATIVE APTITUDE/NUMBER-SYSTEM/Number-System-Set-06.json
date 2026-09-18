@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Number-System-Set-06",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "Dividing $2226$ and $2529$ by a certain three-digit number leaves the same remainder $R$ in each case. Find the value of $R$.",
+    "o": [
+      "4",
+      "5",
+      "9",
+      "6"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Options single digit hain, aur 'same remainder' bola hai toh seedha divisors ke difference ka game hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, jab bhi 'same remainder' aaye, dono numbers ka difference le lo. $2529 - 2226 = 303$. Ab divisor is $303$ ka hi koi factor hoga, aur question ne clearly 3-digit divisor bola hai. $303$ ke 3-digit factors hain: $101$ aur $303$. Agar main $303$ se $2226$ ko bhag dun, remainder $105$ aayega, jo options mein nahi hai. Matlab divisor pakka $101$ hai. $2226 \\div 101$ par remainder $4$ aata hai. Seedha Option A tick maar!<br><br><b>Method 2 (Concept Builder):</b><br>Agar $N_1$ aur $N_2$ ko $D$ se divide karne par remainder $R$ aata hai, toh unka difference $(N_1 - N_2)$ hamesha $D$ se perfectly divisible hota hai. Yahi fundamental property hum shortcut me use karte hain.<br><br><b>Future Exam Takeaway:</b> CGL Mains mein jab bhi 'same remainder' dekho, HCF of differences nikalne ki aadat daalo."
+  },
+  {
+    "q": "If six-digit number $5x2y6z$ is divisible by $7, 11$ and $13$, then the value of $(x-y+3z)$ is?",
+    "o": [
+      "7",
+      "4",
+      "0",
+      "9"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $7, 11, 13$ dekhte hi dimag ki batti jalni chahiye. Ye combined divisibility $1001$ ka specific pattern hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai TestRipper, is type ka ek fix pattern hota hai. Jo number in teeno se katega, wo essentially inke LCM ($1001$) se katega.<br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept</th><th style='text-align:left;padding:4px;color:var(--p2)'>Rule</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>7, 11, 13 Magic Multiplier</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Any 3-digit number $\\times 1001$ becomes $ABCABC$</td></tr></table><br>Toh $5x2$ aur $y6z$ bilkul judwa (identical) hone chahiye. Compare karlo: $y=5, x=6, z=2$.<br>Equation mein daalo: $x - y + 3z = 6 - 5 + 3(2) = 1 + 6 = 7$.<br><br><b>Method 2 (Concept Builder):</b><br>Number is form $1000 \\times (5x2) + (y6z)$. $1001$ se divisibility ka matab hai alternate 3-digit blocks ka difference $0$ ya $1001$ ka multiple ho. Since it's a 6-digit number, difference exactly $0$ hi hoga.<br><br><b>Future Exam Takeaway:</b> SSC me ab $1001$ ke alawa $7, 11, 13$ ka difference approach bhi puchte hain, par $ABCABC$ format sabse scoring hai."
+  },
+  {
+    "q": "If $N = 1! + 2! + 3! + \\dots + 50!$, then what is the remainder when $N$ is divided by $15$?",
+    "o": [
+      "0",
+      "3",
+      "8",
+      "13"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $15$ se bhag dena hai yani $3 \\times 5$. Factorial series wahi end ho jati hai jahan se divisor banne lagta hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, jis term me $3$ aur $5$ dono factor aa gaye, wahan se remainder $0$ aana shuru. $5! = 120$ (jo $15$ se pura katta hai). Toh $5!$ ke aage ke saare factorials ($6!, 7! \\dots$) zero remainder denge. <br>Humein bas chillar sum karna hai: $1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33$.<br>Ab $33 \\div 15$ karo, $15 \\times 2 = 30$, bacha remainder $3$. Bina pen uthaye $3$ sec ka question!<br><br><b>Method 2 (Concept Builder):</b><br>Divisibility of factorials depends entirely on their constituent prime factors. Once a factorial exceeds the prime factors of the divisor, all subsequent terms are irrelevant for remainder calculation.<br><br><b>Future Exam Takeaway:</b> Hamesha check karo divisor kin prime numbers se bana hai aur wo pehli baar kis factorial me combine ho rahe hain."
+  },
+  {
+    "q": "Find the remainder when $(-13)^{100}$ is divided by $14$.",
+    "o": [
+      "1",
+      "13",
+      "0",
+      "7"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Base $(-13)$ aur Divisor $14$ ke beech exactly $1$ ka difference hai. Seedha Fermat/Negative Remainder ka application hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai, negative base dekh kar CGL me darna nahi. $(-13)$ ko $14$ se bhag dega toh positive remainder kya aayega? $+1$ (kyunki $-13 + 14 = 1$).<br>Ya direct deviation lagao: $(-13) \\equiv 1 \\pmod{14}$.<br>Ab us remainder par original power rakh do: $1^{100} = 1$. Itna lallu sawal free ke marks deta hai.<br><br><b>Method 2 (Concept Builder):</b><br>Polynomial theorem ke hisab se: $\\frac{(a-1)^n}{a}$. Agar $n$ even hai toh remainder hamesha $1$ hota hai. Yahan $a=14$ aur base $14-27$ ya $-13$ le sakte hain, practically the distance to nearest multiple is what matters.<br><br><b>Future Exam Takeaway:</b> Negative base hamesha modulus add karke positive remainder me convert karo, mistakes zero ho jayengi."
+  },
+  {
+    "q": "How many 100-digit positive integers are completely divisible by $5$?",
+    "o": [
+      "$1.8 \\times 10^{99}$",
+      "$1.8 \\times 10^{98}$",
+      "$9 \\times 10^{99}$",
+      "$2 \\times 10^{99}$"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $5$ se divide hone ki probability hamesha $1/5$ hoti hai kisi bhi large uniform set mein.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, $100$-digit numbers ki duniya me total numbers kitne hain? Pehla digit $1-9$ hi ho sakta hai (9 choices), baaki $99$ digits kuch bhi $0-9$ (yani $10^{99}$ choices). Toh total hue: $9 \\times 10^{99}$.<br>Ab inme se $5$ se katne wale chahiye. Har $5$ lagatar numbers mein theek ek $5$ se katta hai. Toh total ko $5$ se bhag kar de: $\\frac{9 \\times 10^{99}}{5} = 1.8 \\times 10^{99}$. Option A mark kar!<br><br><b>Method 2 (Concept Builder):</b><br>Counting aur basic Arithmetic Progression (AP) ka mixture hai. Lowest 100-digit number is $10^{99}$ and highest is $10^{100}-1$. You can use $T_n = a + (n-1)d$ to find $n$, but logical probability is way faster.<br><br><b>Future Exam Takeaway:</b> Jab bhi aisi massive ranges me divisibility puchi jaye, always find Total Items and divide by the Divisor directly."
+  },
+  {
+    "q": "How many total digits are required to write the natural numbers from $1$ to $125$?",
+    "o": [
+      "265",
+      "267",
+      "270",
+      "273"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> 1 se 99 tak fix $189$ digits hote hain. Bas $100$ se $125$ tak calculate karna hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, typing wale counting sawalon me standard base yaad rakh: $1-9$ tak $9$ digits, $1-99$ tak $189$ digits. Humein $125$ tak jaana hai.<br>$100$ se $125$ tak kitne numbers hue? $125 - 100 + 1 = 26$ numbers. Sabme 3 digits hain.<br>Toh naye digits = $26 \\times 3 = 78$.<br>Pehle ke $189$ + $78$ = $267$. Seedha calculation aur done.<br><br><b>Method 2 (Concept Builder):</b><br>Manual grouping: <br>1-digit ($1-9$): $9 \\times 1 = 9$<br>2-digit ($10-99$): $90 \\times 2 = 180$<br>3-digit ($100-125$): $26 \\times 3 = 78$<br>Sum $= 9 + 180 + 78 = 267$.<br><br><b>Future Exam Takeaway:</b> Exam me speed badhane ke lie $1-99$ ($189$ digits) aur $1-999$ ($2889$ digits) ka data direct memorize hona chahiye."
+  },
+  {
+    "q": "The sum of the digits of a two-digit number is $1/7$ of the number. The units digit is $4$ less than the tens digit. Find the number.",
+    "o": [
+      "84",
+      "62",
+      "73",
+      "95"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Equations mat banana shuru kar dena. 'Units digit is 4 less than tens digit' aur 'Sum is 1/7 of number' ko seedha options par test karna hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, options verification sabse bada hack hai aise algebra questions me.<br>Option A ($84$): Tens ($8$) aur Units ($4$) ka difference $4$ hai (Condition 1 satisfied). Sum of digits = $8 + 4 = 12$. Kya $84 / 7 = 12$ hota hai? Bilkul! Dono conditions match, option A correct!<br>Baaki check kar lo time-pass ke lie: $62$ (sum=8, $62/7$ fraction hai - Out). $73$ ($73/7$ out). $95$ ($95/7$ out).<br><br><b>Method 2 (Concept Builder):</b><br>Let digits be $x$ (tens) and $y$ (units). $y = x - 4$.<br>Number $= 10x + y = 10x + x - 4 = 11x - 4$.<br>Sum of digits $= x + y = 2x - 4$.<br>Condition: $2x - 4 = \\frac{11x - 4}{7} \\implies 14x - 28 = 11x - 4 \\implies 3x = 24 \\implies x=8$. So $y=4$. Number is $84$.<br><br><b>Future Exam Takeaway:</b> Word problems regarding 2-digit numbers should ALWAYS be destroyed using Options Elimination first. Algebra is a backup."
+  },
+  {
+    "q": "How many zeros are there in the product $1^{50} \\times 2^{49} \\times 3^{48} \\times \\dots \\times 50^1$?",
+    "o": [
+      "262",
+      "261",
+      "246",
+      "235"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Zeros depend totally on the power of $5$ kyunki $2$ ki quantity bohot zyada hai. Pattern identify karo: Base + Power ka sum hamesha $51$ hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, humein bas $5$ ke multiples ki powers extract karni hain. Multiple hain $5, 10, 15 \\dots 50$. Inki powers nikal: $5^{46}, 10^{41}, 15^{36} \\dots 50^1$.<br>Sum of powers of 5 = $46 + 41 + 36 + \\dots + 1$ (ye ek AP ban gayi). Sum $= \\frac{10}{2} (46 + 1) = 5 \\times 47 = 235$.<br>Lekin $25$ aur $50$ do aese traps hain jinme $5^2$ aata hai. Yani inki powers ko ek aur baar jodna padega. $25$ ki power $26$ hai aur $50$ ki power $1$ hai. Extra zeros $= 26 + 1 = 27$.<br>Total zeros $= 235 + 27 = 262$.<br><br><b>Method 2 (Concept Builder):</b><br>Formula for zeros is essentially extracting the prime $p=5$ using Legendre-like logical extraction over powers. You sum the primary exponents first, then secondary powers (multiples of $25$), tertiary (multiples of $125$), etc.<br><br><b>Future Exam Takeaway:</b> Mixed power series me trap hamesha higher powers of 5 ($25, 125$) me chhupa hota hai, unhe alag se add karna mat bhoolna."
+  },
+  {
+    "q": "Find the smallest number which when successively divided by $7$ and $8$ leaves remainders $2$ and $3$ respectively, and is a multiple of $5$.",
+    "o": [
+      "135",
+      "415",
+      "695",
+      "975"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Number 'multiple of 5' hona chahiye, aur saare options multiples of 5 hain. Toh successive division se base equation bana lo.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, successive division ka standard equation bottom-up chalta hai. Let last quotient be $k$.<br>Number $N = 7(8k + 3) + 2 = 56k + 21 + 2 = 56k + 23$.<br>Ab is $N$ ko $5$ ka multiple ban na hai (yani aakhiri digit $0$ ya $5$ ho).<br>Agar main $k=0$ lu, $N = 23$ (Fail).<br>Agar main $k=1$ lu, $N = 79$ (Fail).<br>Agar main $k=2$ lu, $N = 112 + 23 = 135$. Ye pass ho gaya kyunki last me $5$ hai. Toh smallest answer $135$ hai.<br><br><b>Method 2 (Concept Builder):</b><br>To solve $56k + 23 \\equiv 0 \\pmod{5}$, break it down: $(55k + k) + 20 + 3 \\implies k + 3 \\equiv 0 \\pmod{5}$. Smallest positive integer $k$ satisfying this is $k=2$. Plugin $k=2$ in $56k+23$ gives $135$.<br><br><b>Future Exam Takeaway:</b> Successive division equation banakar Modulo reduction (Concept Builder method) is the most failsafe approach for CGL Mains."
+  },
+  {
+    "q": "The sum of three prime numbers is $100$. If one of them exceeds another by $36$, then one of the numbers is:",
+    "o": [
+      "67",
+      "41",
+      "43",
+      "53"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Teen prime numbers ka sum ek Even number ($100$) hai. Ye tabhi possible hai jab unn teeno me se ek Even Prime ho!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai, Even prime sirf ek hi hota hai aur wo hai $2$. Toh ek number pakka $2$ ho gaya.<br>Ab baaki do primes ($p$ aur $q$) ka sum kitna bacha? $100 - 2 = 98$.<br>Question ne bola hai ek prime doosre se $36$ bada hai: $p - q = 36$.<br>Dono add kar do: $2p = 134 \\implies p = 67$.<br>Aur $q = 98 - 67 = 31$.<br>Hamare teen primes hain $2, 31, 67$. Options mein $67$ diya hai, mark maar!<br><br><b>Method 2 (Concept Builder):</b><br>Odd + Odd + Odd = Odd. But sum is Even (100). Therefore, pattern must be Even + Odd + Odd. By fixing the unique even prime (2), it converts to a basic linear system.<br><br><b>Future Exam Takeaway:</b> \"Sum of three primes is even\" is a classic SSC Trap. Always fix $2$ as one of the primes instantly."
+  },
+  {
+    "q": "Determine the last two digits of $35^{42}$.",
+    "o": [
+      "25",
+      "75",
+      "15",
+      "35"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Number $5$ pe end ho raha hai, toh base ka tens digit aur power ka nature hi result decide karega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, Aman Sir ka fix rule hai:<br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Tens Digit of Base & Power)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Last Two Digits)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Both are ODD</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> $75$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Any other combination</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> $25$</td></tr></table><br>Yahan $35^{42}$ mein Tens digit $3$ (Odd) hai, aur Power $42$ (Even) hai. 'Both Odd' wali condition fail ho gayi, toh bina calculation kare seedha $25$ tick maar!<br><br><b>Method 2 (Concept Builder):</b><br>Cyclicity of $5$ shows that powers of numbers ending in $5$ follow a strict modulo $100$ cycle depending solely on the parity of the preceding digit and the exponent. It's essentially $(10x+5)^{2k}$.<br><br><b>Future Exam Takeaway:</b> CGL me $5$ ending values ki last two digits ke lie ye shortcut hamesha $2$ sec me answer dega."
+  },
+  {
+    "q": "Find the number of factors of $6600$ which are greater than $10$.",
+    "o": [
+      "40",
+      "38",
+      "36",
+      "42"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Total factors nikal kar usme se $1-10$ range wale chhote factors subtract karne hain. No direct formula, complementary counting chalegi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai, pehle prime factorization udhad de: $6600 = 66 \\times 100 = (2 \\times 3 \\times 11) \\times (2^2 \\times 5^2) = 2^3 \\times 3^1 \\times 5^2 \\times 11^1$.<br>Total factors $= (3+1)(1+1)(2+1)(1+1) = 4 \\times 2 \\times 3 \\times 2 = 48$.<br>Ab $10$ tak ke numbers me check kar kon kon $6600$ ko kaat sakta hai: $1, 2, 3, 4, 5, 6, 8, 10$. (Ye total $8$ numbers hue). $7$ aur $9$ nahi kaat te.<br>Bache hue factors = $48 - 8 = 40$. Option A right hai.<br><br><b>Method 2 (Concept Builder):</b><br>Whenever asked for factors satisfying a \"greater than\" or \"less than\" bound that is relatively small, always use Total Factors $-$ Undesired Factors. It saves you from manually listing large combinations.<br><br><b>Future Exam Takeaway:</b> Prime factorization me silly mistake mat karna, powers add karte waqt focus maintain rakhna!"
+  },
+  {
+    "q": "When $f(x) = 15x^3 - 14x^2 - 4x + 10$ is divided by $(3x + 2)$, then the remainder is:",
+    "o": [
+      "-1",
+      "1",
+      "-2",
+      "2"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Polynomial Remainder Theorem seedha chillam-chilli kar rahi hai yahan. Divisor ko zero put karo, value function me daalo.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, $3x + 2 = 0 \\implies x = -\\frac{2}{3}$.<br>Is choti si value ko $f(x)$ mein patak do.<br>$f(-\\frac{2}{3}) = 15(-\\frac{8}{27}) - 14(\\frac{4}{9}) - 4(-\\frac{2}{3}) + 10$<br>$= -\\frac{40}{9} - \\frac{56}{9} + \\frac{8}{3} + 10$<br>$= -\\frac{96}{9} + \\frac{24}{9} + \\frac{90}{9}$ (Sabka denominator $9$ kar diya mentally)<br>$= \\frac{-96 + 114}{9} = \\frac{18}{9} = 2$.<br>Basic calculation thi, $2$ marks andar.<br><br><b>Method 2 (Concept Builder):</b><br>By Remainder Theorem, dividing polynomial $P(x)$ by $(ax - b)$ yields remainder $P(b/a)$. It bypasses the tedious long polynomial division entirely.<br><br><b>Future Exam Takeaway:</b> Fractions wale calculations mein LCM mentally ek step me combine karna seekho, time bachega."
+  },
+  {
+    "q": "When $456753$ is divided by a certain number, the successive remainders are $44, 35, 46,$ and $51$ respectively. Find the sum of the digits of the divisor.",
+    "o": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Ye CDS/CGL ka hardcore reverse-engineering division type hai. Long division ko visualize karke equations draw karni padengi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, step-by-step numbers likh: <br>Pehla operation: $456 - kD = 44 \\implies kD = 412$.<br>Next digit laane par $447$ banega. Usme operation: $447 - mD = 35 \\implies mD = 412$.<br>Next $355$ banega: $355 - nD = 46 \\implies nD = 309$.<br>Last $463$ banega: $463 - pD = 51 \\implies pD = 412$.<br>Humein divisor $D$ chahiye jo in sabko divide kare. Yani inka HCF! HCF of $(412, 309)$ is $103$.<br>Toh Divisor $103$ mil gaya. Sum of digits = $1 + 0 + 3 = 4$. Option A is right.<br><br><b>Method 2 (Concept Builder):</b><br>In a standard long division process, the number formed minus the remainder gives exactly a multiple of the divisor. Taking the HCF of all such multiple-differences yields the precise divisor.<br><br><b>Future Exam Takeaway:</b> Successive remainders in long division hamesha Multiples ka difference dete hain. HCF trick ko lock kar lo dimag me."
+  },
+  {
+    "q": "Find the LCM of $1/6, 5/27, 4/15, 8/3$?",
+    "o": [
+      "40/3",
+      "40/5",
+      "5/28",
+      "3/28"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Fractions ka LCM maanga hai. Formula clear hona chahiye: Numerator ka LCM, Denominator ka HCF.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai, upar ke numbers dekh: $1, 5, 4, 8$. $4$ already $8$ ka part hai, usko hata. $8$ aur $5$ co-prime hain, toh unka LCM seedha multiply kar de $= 40$. Numerator set ho gaya.<br>Neeche ke numbers dekh: $6, 27, 15, 3$. In sab me sabse bada common factor (HCF) kya hai? $3$.<br>Dono ko mila de: $\\frac{40}{3}$. Fraction ka question $5$ sec se zyada time nahi deserve karta.<br><br><b>Method 2 (Concept Builder):</b><br>By definition, LCM of fractions must be a multiple of every numerator while being divided exactly by every denominator's maximum commonality. $\\text{LCM}(a/b) = \\text{LCM(numerators)} / \\text{HCF(denominators)}$.<br><br><b>Future Exam Takeaway:</b> Hamesha ensure karna fractions unke simplified form me hon LCM lene se pehle (yahan sab already simple the)."
+  },
+  {
+    "q": "Find no. of zeroes in $[100!]$?",
+    "o": [
+      "23",
+      "50",
+      "25",
+      "24"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Factorial me Zeros nikalne hain, yani number of $5$s check karne hain. $100$ tak ki range me ye ek standard data hai jo yaad hona chahiye.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, $100!$ ki sidhi calculation Legendre's Formula se nikalti hai. Hum successive division karte hain $5$ se.<br>$\\frac{100}{5} = 20$.<br>$\\frac{20}{5} = 4$.<br>Ab $4$, $5$ se chota ho gaya toh wahi ruk ja. Dono ko jod de: $20 + 4 = 24$. Option D answer!<br><br><b>Method 2 (Concept Builder):</b><br>The formula is $\\lfloor \\frac{100}{5} \\rfloor + \\lfloor \\frac{100}{5^2} \\rfloor + \\lfloor \\frac{100}{5^3} \\rfloor \\dots$<br>It counts one $5$ from every multiple of 5, then a second $5$ from every multiple of $25$.<br><br><b>Future Exam Takeaway:</b> $100!$ ka 24 zeroes hota hai ye directly yaad rakho, bahut baari badi values ke base calculations me use hota hai."
+  },
+  {
+    "q": "If a 9-digit number $32x4115y2$, is divisible by $88$, then the value of $(4x-y)$ for the minimum possible value of $y$ is?",
+    "o": [
+      "-1",
+      "20",
+      "11",
+      "31"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $88$ divisibility hamesha $8$ aur $11$ ke combined rules se todi jaati hai. Minimum $y$ nikal ke directly $11$ ki equation me fit karo.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai, pehle $8$ ka rule (last 3 digits): $5y2$. Minimum $y$ pucha hai. $y=0$ rakha toh $502$ fail. $y=1$ rakha toh $512$ (jo $8$ ka cube hai) perfectly pass! Toh $y=1$ lock ho gaya.<br>Ab $11$ ka rule lagao (Alternating sum difference): <br>Odd places: $3+x+1+5+2 = 11+x$.<br>Even places: $2+4+1+y = 7+y$.<br>Difference: $(11+x) - (7+y) = 4 + x - y$.<br>$y=1$ yahan daal do: $4 + x - 1 = 3 + x$.<br>Ab isko ya toh $0$ banna hai ya $11$. Positive digits ke lie $0$ impossible hai, toh $11$ banao. $3 + x = 11 \\implies x = 8$.<br>Humein pucha hai: $4x - y = 4(8) - 1 = 32 - 1 = 31$. Option D is right.<br><br><b>Method 2 (Concept Builder):</b><br>Isolate divisibility rules strictly. The parameter 'minimum' simplifies the search space for $y$ instantly, converting a two-variable Diophantine problem into a linear one.<br><br><b>Future Exam Takeaway:</b> 'Minimum possible' aur 'Maximum possible' limits hamesha dhyan se padhna, warna correct variables aakar bhi final value galat ho sakti hai."
+  },
+  {
+    "q": "Find the number of even factors of $N = 2^{5} \\times 3^{4} \\times 5^{3}$ which are also perfect squares.",
+    "o": [
+      "12",
+      "18",
+      "24",
+      "36"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> 'Even factor' ka matlab hai ki prime factorization me $2$ zaroor hona chahiye. 'Perfect square' ka matlab hai powers even honi chahiye.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, combinations banate hain:<br>$2$ ki powers: Perfect square ke lie $0, 2, 4$ chahiye. Par Even condition ne $2^0$ ko reject kar diya. Toh choice bachi: $2^2, 2^4$ (Total 2 options).<br>$3$ ki powers: Square ke lie $0, 2, 4$ (Total 3 options).<br>$5$ ki powers: Square ke lie $0, 2$ (Total 2 options).<br>Sabko multiply kar do (Fundamental Principle of Counting): $2 \\times 3 \\times 2 = 12$. Option A is correct.<br><br><b>Method 2 (Concept Builder):</b><br>A factor $F$ is a perfect square if its prime decomposition has only even exponents. The 'even' constraint specifically forces the prime $2$'s exponent to be strictly greater than $0$.<br><br><b>Future Exam Takeaway:</b> Combinatorics based factors questions me conditions ko overlapping parts me break karke independent choices multiply karna is the most robust way."
+  },
+  {
+    "q": "What is the remainder when $17!$ is divided by $18$?",
+    "o": [
+      "0",
+      "1",
+      "17",
+      "18"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b> $18$ ek composite number hai. Wilson Theorem lagane ki glti mat karna yahan. Logical divisibility ka concept check ho raha hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai, dhyan se dekh, divide kisko karna hai? $17!$ ko. Yani $1 \\times 2 \\times 3 \\dots \\times 9 \\dots \\times 17$.<br>Aur Divisor kya hai? $18$. Yani $9 \\times 2$.<br>Teri $17!$ ki train mein $9$ aur $2$ dono aaram se baithe hain. Jab numerator mein divisor ke saare tukde already present hain, toh remainder pura $0$ bachega!<br><br><b>Method 2 (Concept Builder):</b><br>For any factorial $N!$ and composite number $C$, if the prime factors of $C$ are fully present in the product sequence up to $N$, then $N! \\equiv 0 \\pmod{C}$.<br><br><b>Future Exam Takeaway:</b> Factorials ke denominator me Prime aur Composite numbers ka farak clearly observe karna. Prime me Wilson chalegi, composite me basic structure."
+  },
+  {
+    "q": "What is the remainder when $100^{100}$ is divided by $99$?",
+    "o": [
+      "0",
+      "1",
+      "98",
+      "99"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Base $100$ aur divisor $99$ ka difference theek $1$ hai. Remainder theorem format directly dikh raha hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, $100$ ko $99$ se bhag doge toh positive remainder $1$ aayega. Ab us $1$ ki power wahi laga do jo question me thi. $1^{100} = 1$.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>List I (Format)</th><th style='text-align:left;padding:4px;color:var(--p2)'>List II (Remainder)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> $\\frac{(a+1)^n}{a}$</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Always 1</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> $\\frac{(a-1)^n}{a}$ (n is even)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> 1</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>C.</b> $\\frac{(a-1)^n}{a}$ (n is odd)</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>3.</b> $a - 1$</td></tr></table><br>Ye Format A ka sawal tha, 2 second wala.<br><br><b>Method 2 (Concept Builder):</b><br>Expand $(99 + 1)^{100}$ using Binomial Theorem. All terms except the last one ($1^{100}$) contain a factor of $99$ and are hence perfectly divisible.<br><br><b>Future Exam Takeaway:</b> Difference $1$ wale formats pe free marks batorne hote hain. Table formats ko hamesha refer karo!"
+  },
+  {
+    "q": "How many numbers are there from $500$ to $550$ (including both) which are neither divisible by $3$ nor by $11$?",
+    "o": [
+      "18",
+      "11",
+      "28",
+      "30"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b> 'Neither/Nor' wale Venn Diagram set-theory type ke conditions hai. Total items me se Union minus karna hoga.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, sequence break karo:<br>Total numbers $500$ to $550$ = $550 - 500 + 1 = 51$ numbers.<br>Divisible by 3: Sequence starts at $501$, ends at $549$. AP ke elements $= \\frac{549 - 501}{3} + 1 = 17$ numbers.<br>Divisible by 11: Starts at $506$, ends at $550$. Elements $= \\frac{550 - 506}{11} + 1 = 5$ numbers.<br>Divisible by Both (LCM 33): Range me pehla $33$ ka multiple $528$ hai. Range me bas yahi $1$ number aayega.<br>Formula laga Union ka $n(A \\cup B) = 17 + 5 - 1 = 21$ (Ye divisible hain).<br>Humein Neither chahiye: $51 - 21 = 30$.<br><br><b>Method 2 (Concept Builder):</b><br>Basic counting principle combining arithmetic progressions with Set Theory inclusion-exclusion: $N(\\text{Total}) - [N(3) + N(11) - N(33)]$.<br><br><b>Future Exam Takeaway:</b> Jab boundary 'including both' ho, toh initial count me $+1$ add karna mat bhoolna ($550-500+1$). Varna poori mehnat bekaar jayegi."
+  },
+  {
+    "q": "What is the unit digit of $1237^{15^{16^{17}}}$?",
+    "o": [
+      "1",
+      "3",
+      "7",
+      "9"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Base ka aakhiri digit $7$ hai jiski cyclicity $4$ ki hoti hai. Nested powers dekhar ghabrana nahi, sirf power ki parity (Even/Odd mod 4) track karni hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai, unit digit nikani hai toh $1237$ me sirf $7$ pe dhyan de. Ab $7$ ki power $4$ me ghoomti hai.<br>Power dekho: $15^{\\text{Kuch Bhi}}$. Hamein bas $15 \\pmod{4}$ nikalna hai.<br>$15$ ko $4$ se bhag doge toh remainder $-1$ (ya $3$) aata hai.<br>Upar power $16^{17}$ ek EVEN number hai chahe kuch bhi ho.<br>Toh $(-1)^{\\text{Even}} = +1$. Yani actual effective power bas $1$ reh gayi.<br>Base $7$ pe power $1$ chadha do: $7^1 = 7$. Ye tricks Aman Sir jaisi observation mangti hain bhai!<br><br><b>Method 2 (Concept Builder):</b><br>Unit digits rely entirely on cyclicity. By finding the modulus of the exponent string w.r.t to the base's cycle length, you reduce infinite-looking exponents to a single fundamental digit.<br><br><b>Future Exam Takeaway:</b> Power ke upar power ladder wale problems hamesha Modulo Negative remainders aur Even/Odd parity pe khatam ho jate hain. Base level up!"
+  },
+  {
+    "q": "Which of the following pairs of numbers are relatively prime?",
+    "o": [
+      "(14, 21)",
+      "(15, 20)",
+      "(16, 25)",
+      "(18, 24)"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Co-prime (relatively prime) matlab inka HCF purely $1$ hona chahiye. Options pe nazar daalo and common factors reject karo.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai sidhi scanning chalegi:<br>Option A: $14, 21$ (Dono $7$ ke table me aate hain - Reject)<br>Option B: $15, 20$ (Dono $5$ se katte hain - Reject)<br>Option D: $18, 24$ (Dono $6$ se katte hain - Reject)<br>Option C: $16$ ($2^4$) aur $25$ ($5^2$). Inke prime bases alag hain, inme kuch bhi common nahi hai. Yahi tere sache co-primes hain!<br><br><b>Method 2 (Concept Builder):</b><br>Two numbers are relatively prime if their only common divisor is 1. They don't need to be prime numbers themselves, just their intersection of prime factors must be empty.<br><br><b>Future Exam Takeaway:</b> CGL me definitions based aise chote sawal aate hain jahan options check karna is the fastest route."
+  },
+  {
+    "q": "A natural number when successively divided by $2, 3, 5, 7,$ and $9$ leaves remainders $1, 2, 3, 4,$ and $5$ respectively. What is the remainder when the same number is directly divided by $7$?",
+    "o": [
+      "1",
+      "3",
+      "5",
+      "0"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Successive division equation me beech ka modulus find karna hai toh puri chain banane ki zaroorat nahi, wahi se Modulo property laga lenge.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Dekh bhai, successive division ka standard number chain banao: $N = (((((k \\times 9 + 5) \\times 7 + 4) \\times 5 + 3) \\times 3 + 2) \\times 2 + 1$.<br>Humein iska Remainder with 7 chahiye. Let internal block $X = (9k+5)$. Humare paas hai $(7X + 4)$. Aage multiply karo aur directly Modulo 7 lo:<br>$((7X+4) \\times 5 + 3) = 35X + 23$. Mod 7 karo: $23 \\pmod{7} = 2$.<br>Agla block: $2 \\times 3 + 2 = 8$. Mod 7 karo: $8 \\pmod{7} = 1$.<br>Last block: $1 \\times 2 + 1 = 3$. Mod 7 karo: $3 \\pmod{7} = 3$.<br>Seedha remainder 3 aa gaya bina poori algebraic gatha likhe!<br><br><b>Method 2 (Concept Builder):</b><br>Expand the constants manually: $N = 210X + 143$. If you divide $143$ by $7$, the quotient is $20$ and remainder is $3$. The $210X$ part becomes $0$ mod $7$.<br><br><b>Future Exam Takeaway:</b> Successive division ke intermediate modulo nikalne ke liye hamesha step-by-step moduli update karo, pure constants evaluate karna is a trap!"
+  },
+  {
+    "q": "$64329$ is divided by a certain number. While dividing, the numbers, $175, 114, 213$ appear as $3$ successive remainders. The divisor is:",
+    "o": [
+      "184",
+      "224",
+      "234",
+      "296"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b> Division algorithms me consecutive intermediate remainders humein Divisor ke direct multiples dedenge via subtraction.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Bhai, Divisor guess karne ke reverse engineering ko samajh: <br>First step: 3 digits lo $643$. Isme se Divisor $D$ ghata ke $175$ aaya. Yani $D \\times x = 643 - 175 = 468$.<br>Second step: Agla digit utara, number bana $1752$. Isme se ghatake $114$ bacha. $D \\times y = 1752 - 114 = 1638$.<br>Third step: Last digit laaye, bana $1149$. Ghataya toh $213$ remainder. $D \\times z = 1149 - 213 = 936$.<br>Ab aisa $D$ dhoondho jo $468, 1638,$ aur $936$ teeno ka factor ho (yani unka HCF).<br>HCF trick: $468$ aur $936$ clearly $468$ me related hain ($468 \\times 2 = 936$). Ab $468$ aur $1638$ ko dekho, $468$ ka half $234$ kya dono me lag raha hai? $234 \\times 7 = 1638$ aur $234 \\times 4 = 936$. Yes! Toh Divisor = $234$.<br><br><b>Method 2 (Concept Builder):</b><br>Long division steps strictly equate to: $\\text{Dividend block} - \\text{Divisor Multiple} = \\text{Remainder}$. Collecting all difference equations provides numbers that all share the Divisor as a common factor.<br><br><b>Future Exam Takeaway:</b> Jab bhi intermediate remainders diye hon, unhe 'New Formed Dividend' se subtract karke seedha unka HCF nikal lo."
+  }
+]
+}

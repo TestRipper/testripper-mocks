@@ -1,0 +1,33 @@
+{
+  "quizTitle": "CDS Practice Set - Bilingual (Flat)",
+  "quizTime": 15,
+  "totalMarks": 4,
+  "questions": [
+    {
+      "q": "If $x + \\frac{1}{x} = 5$, then find the value of $x^3 + \\frac{1}{x^3}$.",
+      "o": ["110", "125", "115", "120"],
+      "a": 0,
+      "s": "Formula: $n^3 - 3n$. Here $n = 5$. So, $125 - 15 = 110$."
+    },
+    {
+      "q": "Who is known as the 'Father of Indian Renaissance'?",
+      "o": ["Swami Vivekananda", "Raja Ram Mohan Roy", "Dayananda Saraswati", "Ishwar Chandra Vidyasagar"],
+      "a": 1,
+      "s": "Raja Ram Mohan Roy is known as the Father of Indian Renaissance due to his socio-religious reforms."
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "यदि $x + \\frac{1}{x} = 5$ है, तो $x^3 + \\frac{1}{x^3}$ का मान ज्ञात कीजिए।",
+      "o_hi": ["110", "125", "115", "120"],
+      "a": 0,
+      "s_hi": "सूत्र: $n^3 - 3n$. यहाँ $n = 5$. अतः, $125 - 15 = 110$."
+    },
+    {
+      "q_hi": "'भारतीय पुनर्जागरण के जनक' के रूप में किसे जाना जाता है?",
+      "o_hi": ["स्वामी विवेकानंद", "राजा राम मोहन राय", "दयानंद सरस्वती", "ईश्वर चंद्र विद्यासागर"],
+      "a": 1,
+      "s_hi": "राजा राम मोहन राय को उनके सामाजिक-धार्मिक सुधारों के कारण भारतीय पुनर्जागरण के जनक के रूप में जाना जाता है।"
+    }
+  ]
+}

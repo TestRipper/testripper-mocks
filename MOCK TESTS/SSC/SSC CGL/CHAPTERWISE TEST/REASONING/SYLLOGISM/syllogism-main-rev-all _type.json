@@ -1,0 +1,227 @@
+{
+  "quizTitle": "syllogism-main",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "Statements:\nAll plates are bowls.\nNo bowl is a glass.\nSome glasses are vessels.\n\nConclusions:\nI. Some glasses are plates.\nII. Some bowls are plates.\nIII. Some vessels are bowls.",
+    "o": [
+      "Only conclusion I follows",
+      "Only conclusion II follows",
+      "Both conclusions I and II follow",
+      "Both conclusions II and III follow"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, syllogism ka sabse basic funda Venn diagram hai. Yahan 'All plates are bowls' diya hai, matlab plates ka pura circle bowls ke andar aayega. Fir bola hai 'No bowl is a glass', toh glass aur bowl ka katti (no relation) ho gaya. Jab outer circle (bowl) ka hi glass se relation nahi hai, toh andar wale plate se kaise hoga? Isliye Conclusion I (Some glasses are plates) bilkul galat hai. Conclusion II (Some bowls are plates) ekdum sahi hai kyunki jab saare plates bowls hain, toh bowls ka kuch hissa plates zaroor gherenge. Conclusion III me vessels aur bowls ka koi relation nahi ban raha. Toh sirf II follow karega.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept (List I)</th><th style='text-align:left;padding:4px;color:var(--p2)'>Deduction (List II)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> All A are B</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Some B are A is always True</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> No Outer is C</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> No Inner is C is always True</td></tr></table><br>SSC CGL Tier 1 me aise straightforward questions aate hain, bas options elimination use karna seekh jaa."
+  },
+  {
+    "q": "Statements:\nAll pens are newspapers.\nSome newspapers are novels.\nNo novel is a book.\n\nConclusions:\nI. Some books are pens.\nII. Some novels are pens.\nIII. No book is a pen.",
+    "o": [
+      "Only conclusion II follows",
+      "Either conclusion I or III follows",
+      "Both conclusion II and III follow",
+      "None of the conclusions follow"
+    ],
+    "a": 1,
+    "s": "Babu, idhar dhyan dena. Yahan 'books' aur 'pens' ke beech koi direct relation nahi diya gaya hai statements me. Aise case me ya toh 'Some books are pens' hoga, ya fir 'No book is a pen' hoga. Dono ek sath galat nahi ho sakte, isliye yeh Either-Or ka classic case ban jata hai! Conclusion II (Some novels are pens) certainty ke sath nahi bol sakte kyunki overlap zaroori nahi hai. Toh answer hoga Either I or III. <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Either-Or Conditions</th><th style='text-align:left;padding:4px;color:var(--p2)'>Meaning</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Same Subjects/Objects</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Book & Pen both present</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Complementary Pair</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> Some + No</td></tr></table><br>CGL Mains me ye Either-Or bohot bachon ko fasaata hai. Humesha complementary pairs check kiya kar!"
+  },
+  {
+    "q": "Statements:\nSome bread are butter.\nNo butter is biscuit.\n\nConclusions:\nI. No biscuit is bread.\nII. No biscuit is butter.\nIII. Some butter are not biscuit.",
+    "o": [
+      "Both conclusions I and III follow",
+      "Only conclusion III follows",
+      "Both conclusions II and III follow",
+      "All conclusions follow"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, ye question free ke marks wala hai. 'No butter is biscuit' ka seedha reverse hota hai 'No biscuit is butter', toh Conclusion II 100% correct hai. Aur jab 'No butter is biscuit' true hai, toh butter ka koi bhi chhota sa hissa (Some butter) bhi biscuit nahi hoga, isliye Conclusion III bhi true hai. Conclusion I galat hai kyunki bread aur biscuit ka relation nahi pata. <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Statement (List I)</th><th style='text-align:left;padding:4px;color:var(--p2)'>Valid Conclusions (List II)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> No A is B</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> No B is A / Some A are not B</td></tr></table><br>Exam me aise obvious deductions ko quickly tick karke aage badhna hota hai, time bachane ka yahi best hack hai!"
+  },
+  {
+    "q": "Statements:\nNo R is S.\nSome S are T.\n\nConclusions:\nI. Some T are not R.\nII. Some S are not R.\nIII. All T are R.",
+    "o": [
+      "Both conclusions I and II follow",
+      "Both conclusions I and III follow",
+      "All conclusions follow",
+      "Both conclusions II and III follow"
+    ],
+    "a": 0,
+    "s": "Babu, dhyan se dekh. 'No R is S' ka matlab saare R, S se alag hain, iska reverse hua 'No S is R', isse ye prove hua ki 'Some S are not R' (Conclusion II true). Ab T ka woh hissa jo S ke andar aata hai (kyunki Some S are T), woh kabhi R nahi ban sakta. Isliye 'Some T are not R' bhi bilkul sahi hai! Conclusion III toh absurd hai. <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Intersection Logic</th><th style='text-align:left;padding:4px;color:var(--p2)'>Result</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> S $\\cap$ T exists & No S is R</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> That intersected part of T is NOT R</td></tr></table><br>SSC CDS me Venn diagrams ka overlap check karne ke liye best approach yahi hai."
+  },
+  {
+    "q": "Statements:\nAll jasmines are flowers.\nNo flower is a plant.\nSome plants are herbs.\n\nConclusions:\nI. Some jasmines are herbs.\nII. No flower is a herb.\nIII. No jasmine is a flower.",
+    "o": [
+      "Only conclusion I follows",
+      "Only conclusions II and III follow",
+      "None of the conclusions follow",
+      "Either conclusion I or II follows"
+    ],
+    "a": 2,
+    "s": "Dekh bhai aise karna hai... Sabse pehle Conclusion III check kar. 'All jasmines are flowers' diya hai, toh 'No jasmine is a flower' toh waise hi bakwas ho gaya (III is false). Ab jasmines/flowers aur herbs ke beech me directly koi relation (negative ya positive) nahi ban raha kyunki herb ka circle azaad hai flower ke zone se interact karne ya na karne ke liye. Toh I aur II dono definite nahi hain. Ans: None follows! <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Rule (List I)</th><th style='text-align:left;padding:4px;color:var(--p2)'>Application (List II)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Unknown Territory</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> No definite conclusion can be drawn</td></tr></table><br>CGL me 'Possibility' na likha ho, toh unknown relations humesha false hote hain."
+  },
+  {
+    "q": "Statements:\nMost suits are trousers.\nSome shirts are ties.\nAll suitcases are watches.\n\nConclusions:\nI. All trousers are suits.\nII. Some shirts are suitcases.\nIII. Some shirts are not watches.",
+    "o": [
+      "Either conclusion I or III follows",
+      "None of the conclusions follow",
+      "Only conclusion II follows",
+      "Only conclusion I follows"
+    ],
+    "a": 1,
+    "s": "Babu, yahan options elimination lagao. 'Most' ka matlab hota hai 'Some'. Toh 'Some suits are trousers' se hum 'All trousers are suits' nahi nikal sakte (I is false). Statements me dekho, Suits/Trousers, Shirts/Ties, aur Suitcases/Watches ke sets bilkul disconnected hain! Koi overlap nahi hai teeno sentences me. Toh inke aapas me koi bhi definite relation nikalna namumkin hai. II aur III dono false hain. <br><br><b>Trick:</b> Agar terms common nahi hain statements me, toh unke beech ka koi bhi relation definitely exist nahi karta (jab tak possibility na puchi ho)."
+  },
+  {
+    "q": "Statements:\nNo pigeon is a dove.\nSome doves are sparrows.\nAll sparrows are birds.\n\nConclusions:\nI. Some sparrows are not pigeons.\nII. Some sparrows are doves.\nIII. Some birds are doves.",
+    "o": [
+      "Only conclusion I follows",
+      "Only conclusion II follows",
+      "All the conclusions I, II and III follow",
+      "Either conclusion I or III follows"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, step-by-step chalte hain. 'Some doves are sparrows', iska seedha reverse Conclusion II (Some sparrows are doves) bilkul sahi hai. Ab sparrows ka jo hissa doves ke andar hai, woh pakka pigeon nahi ban sakta (kyunki no pigeon is a dove), iska matlab Conclusion I (Some sparrows are not pigeons) bhi correct hai. Aur saare sparrows birds hain, toh birds ka kuch hissa doves ke sath intersect karega hi karega, isliye III bhi sahi hai! <br><br>Syllogism me agar basics clear hain toh ye 10 seconds ka sawal hai SSC prelims ka."
+  },
+  {
+    "q": "Statements:\nSome crows are myenas.\nSome myenas are birds.\n\nConclusions:\nI. No crow is a bird.\nII. Some birds are crows.\nIII. All myenas are birds.\nIV. No myena is a crow.",
+    "o": [
+      "Only either conclusion I or III follows",
+      "Only either conclusion I or II follows",
+      "Only either conclusion I or IV follows",
+      "Only conclusion IV follows"
+    ],
+    "a": 1,
+    "s": "Babu, idhar Crows aur Birds ke beech koi jankari (relation) nahi hai statement me. Jaisa pehle sikhaya tha, jab relation unknown ho aur ek conclusion positive (Some) ho aur dusra negative (No) ho unhi do variables (Crows & Birds) ke beech, toh wahan 'Either-Or' condition lagti hai. Toh Either I or II follows hoga. III aur IV direct statements ke against ya unverified hain. <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Pair (List I)</th><th style='text-align:left;padding:4px;color:var(--p2)'>Type (List II)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Some A are B / No A is B</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Valid Either-Or Pair</td></tr></table><br>Examiner options me ghumane ki koshish karega, par tumhe fasna nahi hai!"
+  },
+  {
+    "q": "Statements:\nSome goats are eagles.\nAll eagles are snakes.\nNo duck is an eagle.\n\nConclusions:\nI. No snake is a goat.\nII. Some ducks are snakes is a possibility.\nIII. Some ducks are not goats.",
+    "o": [
+      "Only conclusion II follows",
+      "Both conclusions II and III follow",
+      "Only conclusion III follows",
+      "Both conclusions I and II follow"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye badhiya question hai! I: Goats aur Eagles overlap kar rahe hain, aur saare eagles snakes hain, matlab goats aur snakes bhi overlap karenge. Isliye 'No snake is a goat' galat hai. II: Duck ka sirf eagle se katti hai. Duck uth ke snake ke bahar wale portion me baith sakta hai aaram se! Isliye possibility (sambhavna) bilkul hai! (II is true). III: Ducks aur goats ke beech negative relation hume nahi pata. Toh sirf II follow karega. <br><br><b>Pro Tip for Possibility:</b> Agar do cheezon ke beech direct relation ya restriction na ho, toh unki positive possibility humesha sahi hoti hai."
+  },
+  {
+    "q": "Statements:\nSome houses are trees.\nAll flowers are houses.\nNo vegetable is a flower.\n\nConclusions:\nI. Some vegetables are houses is a possibility.\nII. Some flowers are trees is a possibility.\nIII. No vegetable is a house.",
+    "o": [
+      "Both conclusions I and II follow",
+      "Both conclusions II and III follow",
+      "Only conclusion II follows",
+      "Only conclusion III follows"
+    ],
+    "a": 0,
+    "s": "Babu dhyan se dekh, 'No vegetable is a flower' bola hai. Par vegetable aaram se flower ko chhod ke houses ke bache hue hisse me aa sakta hai na? Toh 'Some vegetables are houses is a possibility' 100% correct hai. Wahi logic II me lagega, flowers aur trees ke beech koi restriction nahi hai, toh unke overlap hone ki sambhavna hai (II is true). III galat hai kyunki jaruri nahi ki vegetable house na ho. <br><br>CGL Mains aur Banking exams dono me possibility check karne me time lagta hai, isliye Venn diagram dimaag me draw karna seekh."
+  },
+  {
+    "q": "Statements:\nNo dogs are cats.\nMostly cats are rats.\nOnly a few rats are tigers.\n\nConclusions:\nI. Some cats are not tigers.\nII. All rats being dogs is a possibility.",
+    "o": [
+      "Only conclusion II follows",
+      "Neither conclusion I nor II follows",
+      "Both conclusions I and II follow",
+      "Only conclusion I follows"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, level thoda upar ho gaya! 'Only a few rats are tigers' ka matlab hai Some rats are tigers + Some rats are NOT tigers. Lekin cats aur tigers ka toh door-door tak koi relation pata hi nahi, toh 'Some cats are not tigers' certainty se nahi bol sakte (I false). Dusra dekh, 'Mostly cats are rats' (Some cats are rats). Matlab rats ka kuch hissa cat hai. Aur dogs aur cats ki aapas me ladai hai (No dogs are cats). Toh jo rat cat ban chuka hai, woh kabhi dog nahi banega! Isliye saare rats kabhi dogs nahi ho sakte. (II is also false). <br><br><b>Important Trick:</b> 'Only a few' wale cases sabse confusing hote hain. Humesha dono conditions (Some + Some Not) ko sath leke chala kar!"
+  },
+  {
+    "q": "Statements:\nSome convex are not concave.\nSome concave are plain.\nAll plain are regular.\n\nConclusions:\nI. Some regular are concave.\nII. All convex being regular is a possibility.",
+    "o": [
+      "Neither conclusion I nor II follows",
+      "Only conclusion II follows",
+      "Both conclusions I and II follow",
+      "Only conclusion I follows"
+    ],
+    "a": 2,
+    "s": "Dekh bhai aise karna hai, jab 'Some concave are plain' aur 'All plain are regular' mila doge, toh regular ka kuch part toh concave ke upar chadhega hi, isliye I (Some regular are concave) bilkul sahi hai. Ab convex ko dekh, uska problem sirf concave se hai, aur woh bhi thode se convex ka. Toh pura ka pura convex asani se uth ke regular wale gole ke us hisse me baith sakta hai jahan concave nahi hai. Toh ye possibility bilkul exist karti hai (II is true). <br><br>Exam setter aise terms use karta hai (Convex, Concave) taaki logic distract ho jaye. Focus strictly Venn pe rakh!"
+  },
+  {
+    "q": "Statements:\nAll wines are whiskeys.\nSome whiskeys are beers.\nSome beers are not vodkas.\n\nConclusions:\nI. Some beers are vodkas.\nII. All whiskeys being vodkas is a possibility.",
+    "o": [
+      "Neither conclusion I nor II follows",
+      "Both conclusions I and II follow",
+      "Only conclusion I follows",
+      "Only conclusion II follows"
+    ],
+    "a": 3,
+    "s": "Babu, I ko dekho: 'Some beers are vodkas' is a definite statement. Hume sirf itna pata hai ki kuch beer vodka nahi hai, baki beer vodka ho bhi sakti hai, nahi bhi. Toh certainty se nahi bol sakte (I galat). Ab II dekh: Whiskeys aur vodkas me koi direct restriction nahi diya. Agar main chahu toh vodkas ka bada sa circle draw kar lu jisme saari whiskeys aur thodi si beers aa jayen (dhyaan rahe kuch beers abhi bhi bahar rahengi). Toh ye possibility perfect hai. (II true). <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Concept (List I)</th><th style='text-align:left;padding:4px;color:var(--p2)'>Possibility Check (List II)</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Some A are not B</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> All B can be A (True possibility)</td></tr></table><br>Yeh trap bahut baar SSC CGL Phase XI type hard shifts me milta hai."
+  },
+  {
+    "q": "Statements:\nOnly a few A1 are P5.\nOnly a few P5 are T8.\n\nConclusions:\nI. Some A1 are T8.\nII. All P5 can never be T8.",
+    "o": [
+      "Only conclusion I follows",
+      "Only conclusion II follows",
+      "Both conclusions I and II follow",
+      "Neither conclusion I nor II follows"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, dhyan se samajh 'Only a few' ka chakkar. 'Only a few P5 are T8' ka matlab hai ki kuch P5 T8 hain, aur <b>kuch P5 pakka T8 nahi hain</b>. Agar kuch P5 definitely T8 nahi hain, toh saare P5 zindagi me kabhi T8 nahi ho sakte! Isliye Conclusion II (Can never be) ekdum 100% true hai. Aur A1 aur T8 ke beech koi direct rishta nahi diya, toh Conclusion I wrong ho gaya. <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Syllogism Keyword</th><th style='text-align:left;padding:4px;color:var(--p2)'>Hidden Meaning</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Only a few</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Some + Some Not</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>B.</b> Can never be</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>2.</b> Definite Negative (Not a possibility)</td></tr></table><br>CDS aur CGL Mains dono me aajkal yahi traps aate hain."
+  },
+  {
+    "q": "Statements:\nSome bowls are cups.\nAll cups are glasses.\nSome glasses are plates.\nAll plates are utensils.\n\nConclusions:\nI. All bowls can never be utensils.\nII. All glasses can never be utensils.",
+    "o": [
+      "Both the conclusions follow",
+      "Neither conclusion I nor II follows",
+      "Only conclusion II follows",
+      "Only conclusion I follows"
+    ],
+    "a": 1,
+    "s": "Babu, sabse pehli baat notice karo ki saare statements POSITIVE hain! Jab pura data positive hota hai, toh saari aapsi possibilities true ho sakti hain. 'Can never be' ek definite negative conclusion hota hai. Hume kisi bhi object ki aapas me nafrat (negative statement) nahi di gayi hai, toh hum 'can never be' jaisa strong negative word accept nahi kar sakte. I aur II dono wrong! <br><br><b>Super Hack:</b> Agar saare statements positive hain, toh kabhi bhi koi definite negative conclusion follow nahi karega! Dekhte hi cancel maar diya karo."
+  },
+  {
+    "q": "Statements:\nOnly a few grasses are green.\nSome grasses are not brown.\nNo brown is white.\n\nConclusions:\nI. All grasses being green is a possibility.\nII. Some grasses are white.\nIII. Some green are brown.",
+    "o": [
+      "Only conclusion II follows",
+      "None follows",
+      "Only conclusions I and II follow",
+      "Only conclusions I and III follow"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, Conclusion I pe focus kar: 'Only a few grasses are green' ka seedha matlab hai ki kuch grass pakka green nahi hai. Agar pakka green nahi hai, toh saari grass kabhi green ban hi nahi sakti! Isliye Possibility I galat hai. Conclusion II and III dono independent parameters (grass-white aur green-brown) ka definite positive relation dikha rahe hain jabki statements me koi support nahi hai. Toh teeno galat! <br><br>Possibility check karte time basic statements ko breach nahi karna hota. Ek solid revise maar liyo Venn diagram banane ki!"
+  },
+  {
+    "q": "Statements:\nSome windows are not doors.\nSome doors are fans.\nNo fan is a bulb.\n\nConclusions:\nI. All bulbs being doors is a possibility.\nII. All doors being windows is a possibility.",
+    "o": [
+      "Both conclusions I and II follow",
+      "Only conclusion I follows",
+      "Only conclusion II follows",
+      "Neither conclusion I nor II follows"
+    ],
+    "a": 0,
+    "s": "Babu yahan traps se bachna. I ko dekho: Bulb ka katti sirf fan se hai. Woh door ke paas aaram se aake baith sakta hai (bina fan ko touch kiye). Isliye ye possibility sach hai. II ko dekh: 'Some windows are not doors', iska matlab window ka ek hissa door me nahi jayega. Par door ko kaun rok raha hai? Door ka circle chhota karke pura ka pura window ke andar daala jaa sakta hai, bas uss restrict wale window ke part ko touch na kare! (All B can be A even if Some A are not B). Toh dono possibilties sahi hain. <br><br>Ye reverse relation logic SSC mains ka favorite area hai."
+  },
+  {
+    "q": "Statements:\nOnly grapes are papaya.\nSome grapes are mango.\nNo mango is litchi.\n\nConclusions:\nI. Some papayas are not litchi.\nII. Some papayas are mango.",
+    "o": [
+      "Only conclusion I follows",
+      "Only conclusion II follows",
+      "Both conclusions I and II follow",
+      "Neither conclusion I nor II follows"
+    ],
+    "a": 0,
+    "s": "Babu, yeh 'Only' wala case bada khatarnak hota hai. 'Only grapes are papaya' ka matlab hota hai 'All papayas are grapes' aur uske sath ek invisible boundary lag jati hai ki <b>papaya ab kisi aur ka nahi ho sakta</b> (Papaya is restricted EXCLUSIVELY to Grapes). Toh papaya mango nahi ho sakta (Conclusion II is false). Aur kyunki papaya kisi aur ka nahi ho sakta, toh woh litchi bhi nahi ho sakta, iska matlab 'No papaya is litchi' true hai, jisse 'Some papaya are not litchi' bhi 100% true ho jayega! <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Exclusive Condition</th><th style='text-align:left;padding:4px;color:var(--p2)'>Impact on Venn Diagram</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Only A is B</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> All B is A + B has No relation with anything else</td></tr></table><br>Yeh SSC me pucha gaya sabse badiya trap hai, exclusivity bhoolna mat!"
+  },
+  {
+    "q": "Statements:\nAll red are coal.\nSome red are green.\n\nConclusions:\nI. All red are green.\nII. Some coals are green.",
+    "o": [
+      "Only conclusion I follows",
+      "Only conclusion II follows",
+      "Both conclusions I and II follow",
+      "Neither conclusion I nor II follows"
+    ],
+    "a": 1,
+    "s": "Dekh bhai bilkul lallu question hai. 'All red are coal' aur 'Some red are green' diya hai. Red aur green thoda intersect kar rahe hain. Par pura red green thodi ban jayega? Isliye I wrong hai. Aur kyunki saara red coal ke andar daba hua hai, aur green ne red ko touch kiya hai, iska matlab green ne coal ko toh definitely cross kiya hoga na! Isliye Conclusion II (Some coals are green) humesha sach hoga. <br><br>Ye diagram banake seedha observe karne wala case hai. Speed maintain rakhni hai aiso me!"
+  },
+  {
+    "q": "Statements:\nSome students are players.\nSome players are athletes.\n\nConclusions:\nI. Some students are athletes.\nII. Some players are students.\nIII. No student is an athlete.",
+    "o": [
+      "Only conclusion II follows",
+      "Only conclusion I follows",
+      "Conclusion II and either I or III follow",
+      "None follows"
+    ],
+    "a": 2,
+    "s": "Dekh bhai aise karna hai, statement 1 se Conclusion II ekdum perfectly true nikal raha hai (reverse of some is some). Ab I aur III ko dhyan se dekh. Students aur athletes ka aapas me koi direct link nahi diya gaya. Toh ya toh woh intersect karenge (Some) ya woh nahi karenge (No). In dono me se ek baat toh sach hogi hi! Isliye I aur III me Either-Or ki shart lag jaati hai. Ans: Conclusion II follows AND Either I or III follows. <br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Combination</th><th style='text-align:left;padding:4px;color:var(--p2)'>Nature</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>A.</b> Some A are B + No A is B</td><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>1.</b> Strong Either-Or pair if no relation exists</td></tr></table><br>Ye option marking me fasaate hain bacho ko. Humesha carefully read karna 'Either-Or' kisme tag kiya gaya hai."
+  }
+]
+}

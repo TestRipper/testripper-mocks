@@ -1,0 +1,559 @@
+{
+  "quizTitle": "CODING-DECODING PYQS Set-15",
+  "quizTime": "15",
+  "totalMarks": "50",
+  "questions": [
+    {
+      "q": "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Instruction: In a code language, \"The music sounds sweet\" is coded as \"la ma na ta\", \"The music sounds loud\" is coded as \"la ma pa ta\", \"The song sounds sweet\" is coded as \"ka ma na ta\".</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Question: What is the code for \"The song sounds loud\"?</span><span> </span></p>",
+      "o": [
+        "<p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">pa na ka ta</span><span> </span></p>",
+        "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">ma na ra ka</span><span> </span></p>",
+        "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">la na ya ka</span><span> </span></p>",
+        "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">ka ma ta pa</span><span> </span></p>"
+      ],
+      "a": 3,
+      "s": "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Compare statement 1 and 2 (differ by sweet ↔ loud): sweet = na, loud = pa.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Compare statement 1 and 3 (differ by music ↔ song): music = la, song = ka.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Common to all three: 'The' and 'sounds' map to ma and ta (in some order).</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">For \"The song sounds loud\" = ka + (ma/ta) + (ma/ta) + pa = {ka, ma, ta, pa}.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">The matching option is ka ma ta pa.</span><span> </span></p>"
+    },
+    {
+      "q": "<p><span style=\"font-family: Cambria Math;\">5</span><span style=\"font-family: Cambria Math;\">.</span><span style=\"font-family: Cambria Math;\"> In a certain code language, \"MATHS\" is written as \"13320819\" and \"HINDI\" is written as </span><span style=\"font-family: Cambria Math;\">\"82714427\"</span><span style=\"font-family: Cambria Math;\">. </span><span style=\"font-family: Cambria Math;\">How will \"PHYSICS\" be written in that language?</span></p>\n<p><span style=\"font-family: Cambria Math;\">SSC CHSL 27</span><span style=\"font-family: Cambria Math;\">/</span><span style=\"font-family: Cambria Math;\">05</span><span style=\"font-family: Cambria Math;\">/</span><span style=\"font-family: Cambria Math;\">2022 </span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">Morning</span><span style=\"font-family: Cambria Math;\">)</span></p>",
+      "o": [
+        "<p><span style=\"font-family: Cambria Math;\">168251928319</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">168251923319</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">168251937319</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">168251927319</span></p>"
+      ],
+      "a": 3,
+      "s": "<p><span style=\"font-family: Cambria Math;\">5 </span><span style=\"font-family: Cambria Math;\">.</span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">d</span><span style=\"font-family: Cambria Math;\">) </span></p>\n<p><strong><span style=\"font-family: Cambria Math;\">Logic </span><span style=\"font-family: Cambria Math;\">: </span></strong><span style=\"font-family: Cambria Math;\">Each consonant is replaced by its place value in alphabet while each vowel is replaced by </span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">Place value × </span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">).</span></p>\n<p><span style=\"font-family: Cambria Math;\">MATHS  ⇒ </span><span style=\"font-family: Cambria Math;\">13</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">1</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">20</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 ⇒</span><span style=\"font-family: Cambria Math;\"> 13</span><span style=\"font-family: Cambria Math;\">-(</span><span style=\"font-family: Cambria Math;\">1×</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">)-</span><span style=\"font-family: Cambria Math;\">20</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 ⇒</span><span style=\"font-family: Cambria Math;\"> 13</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">20</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 </span></p>\n<p><span style=\"font-family: Cambria Math;\">HINDI ⇒</span><span style=\"font-family: Cambria Math;\"> 8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">9</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">14</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">4</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">9 ⇒</span><span style=\"font-family: Cambria Math;\"> 8</span><span style=\"font-family: Cambria Math;\">-(</span><span style=\"font-family: Cambria Math;\">9×</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">)-</span><span style=\"font-family: Cambria Math;\">14</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">4</span><span style=\"font-family: Cambria Math;\">-(</span><span style=\"font-family: Cambria Math;\">9×</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">) ⇒</span><span style=\"font-family: Cambria Math;\"> 8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">27</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">14</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">4</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">27 </span></p>\n<p><span style=\"font-family: Cambria Math;\">Similarly, PHYSICS ⇒</span><span style=\"font-family: Cambria Math;\"> 16</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">25</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">9</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 ⇒</span><span style=\"font-family: Cambria Math;\"> 16</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">25</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19</span><span style=\"font-family: Cambria Math;\">-(</span><span style=\"font-family: Cambria Math;\">9×</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">)-</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 ⇒</span><span style=\"font-family: Cambria Math;\"> 16</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">25</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">27</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19</span></p>"
+    },
+    {
+      "q": "<p>10. In a certain code language, ‘time flies fast’ is coded as ‘mk tu jb’ and ‘fast or slow’ is coded as ‘tb mk ab’. How is ‘fast’ coded in the given language ?</p>",
+      "o": [
+        "<p>tu</p>",
+        "<p>mk</p>",
+        "<p>ab</p>",
+        "<p>jb</p>"
+      ],
+      "a": 1,
+      "s": "<p>10.(b) <strong>Given:-</strong> time flies fast→ mk tu jb….(i)<br/>fast or slow → tb mk ab…..(ii)<br/>From (i) and (ii) the code of ‘fast’ = ‘mk’.</p>"
+    },
+    {
+      "q": "<p><span style=\"font-family: Cambria Math;\">17</span><span style=\"font-family: Cambria Math;\">.</span><span style=\"font-family: Cambria Math;\"> In a certain code language, \"SITAR\" is written as \"RHSZQ\" and </span><span style=\"font-family: Cambria Math;\">‘</span><span style=\"font-family: Cambria Math;\">BANJO</span><span style=\"font-family: Cambria Math;\">’ </span><span style=\"font-family: Cambria Math;\">is written as </span><span style=\"font-family: Cambria Math;\">‘</span><span style=\"font-family: Cambria Math;\">AZMIN</span><span style=\"font-family: Cambria Math;\">’. </span><span style=\"font-family: Cambria Math;\">How will \"TABLA\" be written in that language?</span></p>\n<p><span style=\"font-family: Cambria Math;\">SSC CHSL 30</span><span style=\"font-family: Cambria Math;\">/</span><span style=\"font-family: Cambria Math;\">05</span><span style=\"font-family: Cambria Math;\">/</span><span style=\"font-family: Cambria Math;\">2022 </span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">Evening</span><span style=\"font-family: Cambria Math;\">)</span></p>",
+      "o": [
+        "<p><span style=\"font-family: Cambria Math;\">SAZKZ</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">SZAKZ</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">SZKAZ</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">SZAZA</span></p>"
+      ],
+      "a": 1,
+      "s": "<p><span style=\"font-family: Cambria Math;\">17</span><span style=\"font-family: Cambria Math;\">.</span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">b</span><span style=\"font-family: Cambria Math;\">) </span></p>\n<p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image34.png';\" referrerpolicy=\"no-referrer\" src=\"admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image34.png\" style=\"max-width:100%;\"/></p>\n<p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image35.png';\" referrerpolicy=\"no-referrer\" src=\"admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image35.png\" style=\"max-width:100%;\"/></p>\n<p><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">Similarly, </span></p>\n<p><img height=\"93\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image36.png';\" referrerpolicy=\"no-referrer\" src=\"admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image36.png\" style=\"max-width:100%;\" width=\"138\"/></p>"
+    },
+    {
+      "q": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <span></span><span style=\"font-weight:bold\"> </span><span>In a certain code language, ‘RETAINED’ is written as ‘ENIATERD’ and ‘MATURITY’ is written as ‘TIRUTAMY’. How will ‘FIREWALL’ be written in that language?</span>",
+      "o": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> FLLAWERI</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> LAWERIFL</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> LAWEFIFR</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> FLIREWAL</span>"
+      ],
+      "a": 1,
+      "s": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span> </span><img alt=\"\" height=\"714\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1750066089916_image019.png';\" referrerpolicy=\"no-referrer\" src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1750066089916_image019.png\" style=\"max-width:100%;\" width=\"576\"/><p></p>"
+    },
+    {
+      "q": "13. In a certain code language, ‘played the piano’ is written as ‘lo le li’ and ‘sparkles a piano’ is coded as ‘lu li la’. How is ‘piano’ coded in that language?",
+      "o": [
+        "li",
+        "la",
+        "le",
+        "lu"
+      ],
+      "a": 0,
+      "s": "13.(a)<br/>‘played the piano’ <math display=\"inline\"><mo>→</mo></math> ‘lo le li’ ……..(i)<br/>‘sparkles a piano’ <math display=\"inline\"><mo>→</mo></math> ‘lu li la’ ……..(ii)<br/>From (i)and (ii) ‘piano’ and ‘li’ are common.<br/>So, the code of ‘piano’ is ‘li’."
+    },
+    {
+      "q": "<p>23.<span style=\"font-family: Times New Roman;\"> In a certain code, </span><span style=\"font-family: Times New Roman;\">692425</span><span style=\"font-family: Times New Roman;\"> means ‘</span><span style=\"font-family: Times New Roman;\">School education is free in India’</span><span style=\"font-family: Times New Roman;\"> and </span><span style=\"font-family: Times New Roman;\">7926</span><span style=\"font-family: Times New Roman;\"> means </span><span style=\"font-family: Times New Roman;\">‘College education is costly’.</span><span style=\"font-family: Times New Roman;\"> Which of the following is the code for ‘I want to become graduate’? </span></p>",
+      "o": [
+        "<p>23586</p>",
+        "<p>54268</p>",
+        "<p>14268</p>",
+        "<p>15426</p>"
+      ],
+      "a": 2,
+      "s": "<p>23.(c) <span style=\"font-family: Times New Roman;\"><strong>Logic</strong> - </span><span style=\"font-family: Times New Roman;\">According to the question here we can see that the number of the alphabet is counting.<br/></span><span style=\"font-family: Times New Roman;\">‘School education is free in India’ </span><span style=\"font-family: Times New Roman;\">692425<br/></span><span style=\"font-family: Times New Roman;\">college education is costly </span><span style=\"font-family: Times New Roman;\"> 7926 <br/></span><span style=\"font-family: Times New Roman;\">So ‘I want to become graduate’ </span><span style=\"font-family: Times New Roman;\"> 14268.</span></p>"
+    },
+    {
+      "q": "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">If REQUEST is written as S2R52TU,    how will ACID be written?</span></p>",
+      "o": [
+        "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">BDJE</span></p>",
+        "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">1394</span></p>",
+        "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">1D9E</span></p>",
+        "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">IC94</span></p>"
+      ],
+      "a": 2,
+      "s": "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0;margin-bottom:0in\"> <span style=\"font-family:'Nirmala UI'\">Pattern:</span></p> <ul> <li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\"><b>Consonants     </b></span><span><b>→</b></span><span style=\"font-family:'Nirmala UI'\"><b>     next letter (+1)</b></span></p> </li><li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\"><b>Vowels     </b></span><span><b>→</b></span><span style=\"font-family:'Nirmala UI'\"><b>     their alphabetical positions</b></span></p> </li></ul> <p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">Apply    to ACID:</span></p> <ul> <li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">A     (vowel) </span><span>→</span><span style=\"font-family:'Nirmala UI'\"> </span><span style=\"font-family:'Nirmala UI'\"><b>1</b></span></p> </li><li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">C     </span><span>→</span><span style=\"font-family:'Nirmala UI'\">     D</span></p> </li><li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">I     (vowel) </span><span>→</span><span style=\"font-family:'Nirmala UI'\"> 9</span></p> </li><li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">D     </span><span>→</span><span style=\"font-family:'Nirmala UI'\">     E</span></p> </li></ul> <p style=\"orphans:0;widows:0\"><span style=\"font-family:'Nirmala UI'\"><b>Therefore,    code for ACID is 1D9E.</b></span></p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">In a certain code language, 'RIVAL' is coded as 'PKTCJ' and 'TEXTS' is coded as 'RGVVQ'. How will 'POINT' be coded in the given language?</span></span></span></p></span><span class=\"hqt\"><p style=\"text-align: justify;\"><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">एक निश्चित कोड भाषा में</span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">, 'RIVAL' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">को </span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">'PKTCJ' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">और </span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">'TEXTS' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">को </span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">'RGVVQ' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">के रूप में कोडित किया जाता है। दी गई भाषा में </span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">'POINT' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">को किस प्रकार कोडित किया जाएगा</span></span></span></span></span></p></span>",
+      "o": [
+        "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">    NRGOR</span></span></span></p></span><span class=\"hqt\"><p>NRGOR</p></span>",
+        "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">    OQGPO</span></span></span></p></span><span class=\"hqt\"><p>OQGPO</p></span>",
+        "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">    NQGPR    </span></span></span></p></span><span class=\"hqt\"><p>NQGPR</p></span>",
+        "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">    OQGOQ</span></span></span></p></span><span class=\"hqt\"><p>OQGOQ</p></span>"
+      ],
+      "a": 2,
+      "s": "<span class=\"eqt\">\n<span style=\"color: #000000\"><span style=\"font-family: 'Cambria Math',serif\"><span style=\"font-size: 19px\">\n</span></span></span>\n<img align=\"bottom\" border=\"0\" height=\"82\" name=\"Image21\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://www.thepunditsofficial.in/admin/uploads/questions/q_69880767324275.11306716.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://www.thepunditsofficial.in/admin/uploads/questions/q_69880767324275.11306716.jpg\" style=\"max-width:100%;\" width=\"278\"/>\n<br/>\n<img align=\"bottom\" border=\"0\" height=\"111\" name=\"Picture 8\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://www.thepunditsofficial.in/admin/uploads/questions/q_698807674b6c09.70861684.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://www.thepunditsofficial.in/admin/uploads/questions/q_698807674b6c09.70861684.jpg\" style=\"max-width:100%;\" width=\"210\"/>\n<br/></span><span class=\"hqt\"><p><img align=\"bottom\" border=\"0\" height=\"82\" name=\"Image22\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://www.thepunditsofficial.in/admin/uploads/questions/q_69880767667fc6.39853227.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://www.thepunditsofficial.in/admin/uploads/questions/q_69880767667fc6.39853227.jpg\" style=\"max-width:100%;\" width=\"278\"/> <br/><img align=\"bottom\" border=\"0\" height=\"111\" name=\"Image23\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://www.thepunditsofficial.in/admin/uploads/questions/q_6988076783ca57.41182848.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://www.thepunditsofficial.in/admin/uploads/questions/q_6988076783ca57.41182848.jpg\" style=\"max-width:100%;\" width=\"210\"/></p></span>"
+    },
+    {
+      "q": "In a certain code language, 'GINGER' is coded as LZCKGF and 'GARLIC' is coded as WDHOYF. How will 'CLOVES' be coded in the same language? ",
+      "o": [
+        "NYQLJB",
+        "MZRLJB",
+        "MZQLIB",
+        "NYYLJB"
+      ],
+      "a": 1,
+      "s": " <img alt=\"\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D26.png';\" referrerpolicy=\"no-referrer\" src=\"https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D26.png\" style=\"max-width:100%;\"/>,  <img alt=\"\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D27.png';\" referrerpolicy=\"no-referrer\" src=\"https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D27.png\" style=\"max-width:100%;\"/>, <img alt=\"\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D28.png';\" referrerpolicy=\"no-referrer\" src=\"https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D28.png\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q": "<p>18. <span style=\"font-family: Palanquin Dark;\"> In a certain code language, ‘</span><span style=\"font-family: Palanquin Dark;\">GLOVE’</span><span style=\"font-family: Palanquin Dark;\"> is coded as </span><span style=\"font-family: Palanquin Dark;\">148</span><span style=\"font-family: Palanquin Dark;\">. How will </span><span style=\"font-family: Palanquin Dark;\">‘OBDURATE’</span><span style=\"font-family: Palanquin Dark;\"> be coded  </span><span style=\"font-family: Palanquin Dark;\">in that language? </span></p>",
+      "o": [
+        "<p>602</p>",
+        "<p>402</p>",
+        "<p>520</p>",
+        "<p>502</p>"
+      ],
+      "a": 2,
+      "s": "<p>18.(c) <span style=\"font-family: Palanquin Dark;\"><strong>logic</strong>:-</span><span style=\"font-family: Palanquin Dark;\"> (sum of the opposite of place value of all the letters)× (number of vowels)<br/></span><span style=\"font-family: Palanquin Dark;\">O = 15 ⇒</span><span style=\"font-family: Palanquin Dark;\"> Opposite letter = 12<br/></span><span style=\"font-family: Palanquin Dark;\">B = 2 ⇒ </span><span style=\"font-family: Palanquin Dark;\">Opposite letter = 25 <br/></span><span style=\"font-family: Palanquin Dark;\">D = 4 ⇒ </span><span style=\"font-family: Palanquin Dark;\">Opposite letter = 23 <br/></span><span style=\"font-family: Palanquin Dark;\">U = 21 ⇒ </span><span style=\"font-family: Palanquin Dark;\">Opposite letter = 6 <br/></span><span style=\"font-family: Palanquin Dark;\">R = 18 ⇒ </span><span style=\"font-family: Palanquin Dark;\">Opposite letter = 9 <br/></span><span style=\"font-family: Palanquin Dark;\">A = 1 ⇒ </span><span style=\"font-family: Palanquin Dark;\">Opposite letter = 26 <br/></span><span style=\"font-family: Palanquin Dark;\">T = 20 ⇒ </span><span style=\"font-family: Palanquin Dark;\">Opposite letter = 7<br/></span><span style=\"font-family: Palanquin Dark;\">E = 5 ⇒ </span><span style=\"font-family: Palanquin Dark;\">Opposite letter = 22’<br/></span><span style=\"font-weight: 400;\">(12 + 25 + 23 + 6 + 9 + 26 + 7 + 22) </span>× (4) = 130 × 4 = 520</p>"
+    },
+    {
+      "q": "<p><span style=\"font-family:Cambria Math\">9. </span><span style=\"font-family:Cambria Math\">In a certain code language, ‘MEAL’ is written as ‘BMNF’ and ‘FOOD’ is written as ‘PEGP’. How will ‘FARE’ be written in that language?</span></p> <p><span style=\"font-family:Cambria Math\">SSC CHSL 06/06/2022 (Afternoon)</span></p>",
+      "o": [
+        "<p> GBSF</p>",
+        "<p> SFGB</p>",
+        "<p> FSBG</p>",
+        "<p> ERFA</p>"
+      ],
+      "a": 1,
+      "s": "<p> <span style=\"font-family:Cambria Math\">9.</span><span style=\"font-family:Cambria Math\">(</span><span style=\"font-family:Cambria Math\">b) </span></p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image19.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image19.png\" style=\"max-width:100%;\"/></p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image20.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image20.png\" style=\"max-width:100%;\"/></p> <p><span style=\"font-family:Cambria Math\">Similarly,</span></p> <p><span style=\"font-family:Cambria Math\"> </span><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image21.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image21.png\" style=\"max-width:100%;\"/></p>"
+    },
+    {
+      "q": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">In    a certain code language, 'DEFECT' is written as '2747118',    'DEVICE' is written as '27201117', how will 'DOMAIN' be written in    that language?</span></span></span></span><span></span></span></p>",
+      "o": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">2171131112</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">217113119</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">217111912</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">417111912</span></span></span></span></span></p>"
+      ],
+      "a": 0,
+      "s": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <img height=\"468\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752391981465_html_8bc773e18199b573.png';\" referrerpolicy=\"no-referrer\" src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752391981465_html_8bc773e18199b573.png\" style=\"max-width:100%;\" width=\"576\"/> </p>"
+    },
+    {
+      "q": "<p>10. The word RESERVATION has been coded using 4 different codes.</p>",
+      "o": [
+        "<p>Code 2</p>",
+        "<p>Code 4</p>",
+        "<p>Code 3</p>",
+        "<p>Code 1</p>"
+      ],
+      "a": 0,
+      "s": "<p>10.(a)<br/>From the given codes we can observe that in code 2<br/>Code for R = R + 1 = S<br/>Code for E = E - 2 = C and so on <br/>And code for ENQUIRY = FLTQNLF is coded according to code 2.</p>"
+    },
+    {
+      "q": "3. In a certain code language, \"HAVE\" is coded as \"2648\" and \"VOLT\" is coded as \"3961\".What is the code for \"V\" in the given code language?",
+      "o": [
+        "3",
+        "6",
+        "1",
+        "4"
+      ],
+      "a": 1,
+      "s": "3.(b)<br/>\"HAVE\" <math display=\"inline\"><mo>→</mo></math> \"2648\"......(i)<br/>\"VOLT\" <math display=\"inline\"><mo>→</mo></math> \"3961 …….(ii)<br/>From (i) and (ii) ‘V’ and ‘6’ are common.<br/>So, the code of ‘V’ is ‘6’."
+    },
+    {
+      "q": "In a certain code language, ‘MAP’ is written as ‘102’ and ‘ROT’ is written as ‘56’. How will ‘SEC’ be written in that language?",
+      "o": [
+        "108",
+        "112",
+        "98",
+        "84"
+      ],
+      "a": 0,
+      "s": "<p><span style=\"color: rgb(33, 37, 41);\">Logic: Code of the word = (Sum of letter's opposite positional values) </span><span style=\"color: rgb(33, 37, 41);\">× 2</span></p>\n<p>'SEC' can be written as → (8 + 22 + 24) × 2 → 54 × 2 = 108</p>\n"
+    },
+    {
+      "q": "3. In a certain code language, \"HOST\" is coded as \"2846\" and \"TEAM\" is coded as \"3587\". What is the code for \"T\" in the given code language?",
+      "o": [
+        "3",
+        "7",
+        "6",
+        "8"
+      ],
+      "a": 3,
+      "s": "3.(d) HOST :- 2846…….(i)<br/>                   TEAM :- 3587……..(ii)<br/>From (i) and (ii) ‘T’ and ‘8’ are common. The code of ‘T’ = ‘8’."
+    },
+    {
+      "q": "<p>6. In a certain code language , ‘VMBHL’ is written as ‘VQJTB’ . What is the code for ‘KTSPR’ in that code language?</p>",
+      "o": [
+        "<p>BYAAQ</p>",
+        "<p>BYBBQ</p>",
+        "<p>BYABR</p>",
+        "<p>BYBAR</p>"
+      ],
+      "a": 0,
+      "s": "<p>6.(a)<br/><strong id=\"docs-internal-guid-f4e51423-7fff-c45c-65b5-cc8ff70c6a7b\"><img height=\"88\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://lh7-rt.googleusercontent.com/docsz/AD_4nXf1l89G7w5G0z_IbLXYWSZdDLD1Q-niv4cJb3DK8cnWCA5pZ7n4tGtEqpRJY0wEHnwep4iLvv-oZxxviCs4SRRS-oZwMy179vx-kybSqmbrjg6470dsle2FFfeLPp1Z-KkdI2IsLs2l7K8l09kn673_PPk1%3Fkey%3DDlpOIM7Ud5BheMKWNhLVKg';\" referrerpolicy=\"no-referrer\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXf1l89G7w5G0z_IbLXYWSZdDLD1Q-niv4cJb3DK8cnWCA5pZ7n4tGtEqpRJY0wEHnwep4iLvv-oZxxviCs4SRRS-oZwMy179vx-kybSqmbrjg6470dsle2FFfeLPp1Z-KkdI2IsLs2l7K8l09kn673_PPk1?key=DlpOIM7Ud5BheMKWNhLVKg\" style=\"max-width:100%;\" width=\"122\"/></strong><br/>similarly,<br/><strong id=\"docs-internal-guid-8891b014-7fff-cf20-2a91-84bf40809958\"><img height=\"88\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://lh7-rt.googleusercontent.com/docsz/AD_4nXfrtCi_lYwFGYPe2bu0Vv7b8F8yVx2Un8Zv4fAf2Q8bl8OWN2_03YSSw3vPaEJkOacW7lv9ov4uzzLnFefDEd5ZiyN3JPa-2LrU-3RB96lX67BMwBmuaWligvapD2-EzA6aZ1x4fSrSxmmp1qX-CrN_Ro0%3Fkey%3DDlpOIM7Ud5BheMKWNhLVKg';\" referrerpolicy=\"no-referrer\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXfrtCi_lYwFGYPe2bu0Vv7b8F8yVx2Un8Zv4fAf2Q8bl8OWN2_03YSSw3vPaEJkOacW7lv9ov4uzzLnFefDEd5ZiyN3JPa-2LrU-3RB96lX67BMwBmuaWligvapD2-EzA6aZ1x4fSrSxmmp1qX-CrN_Ro0?key=DlpOIM7Ud5BheMKWNhLVKg\" style=\"max-width:100%;\" width=\"122\"/></strong></p>"
+    },
+    {
+      "q": "<p><span style=\"font-family: Cambria Math;\">11.</span><span style=\"font-family: Cambria Math;\"> In a certain code language, \"GOLF\" is coded as \"44\" and \"BALL\" is coded as \"31\". How will \"P</span><span style=\"font-family: Cambria Math;\">LAY\" be coded in that language?</span></p>",
+      "o": [
+        "<p>60</p>",
+        "<p>58</p>",
+        "<p>62</p>",
+        "<p>56</p>"
+      ],
+      "a": 1,
+      "s": "<p>11.(b)<br/><span style=\"font-family: Cambria Math;\"><strong>Logic used:-</strong> </span><span style=\"font-family: Cambria Math;\">Sum of place value of alphabets + 4 <br/></span><span style=\"font-family: Cambria Math;\">(GOLF) ⇒ 7 + 15 + 12 + 6 = 40 + 4 ⇒ </span><span style=\"font-family: Cambria Math;\"><strong>44</strong><br/></span><span style=\"font-family: Cambria Math;\">(BALL) ⇒ 2 + 1 + 12 + 12 = 27 + 4 ⇒ </span><span style=\"font-family: Cambria Math;\"><strong>31</strong><br/></span><span style=\"font-family: Cambria Math;\">Similarly</span><span style=\"font-family: Cambria Math;\">,<br/></span><span style=\"font-family: Cambria Math;\"><strong>(PLAY)</strong> ⇒ 16 + 12 + 1 + 25 = 54 + 4 ⇒ </span><strong><span style=\"font-family: Cambria Math;\">58</span></strong></p>"
+    },
+    {
+      "q": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">In each question below, two pairs of letters are given. The first pair has a specific relationship between its letters. Identify relationship and choose the correct option that completes the second pair in the same way.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">ZY : XV :: TR : ?</span><span> </span></p>",
+      "o": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">OS</span><span> </span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">SP</span><span> </span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">QP</span><span> </span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">RO</span><span> </span></p>"
+      ],
+      "a": 3,
+      "s": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">In the first pair ZY : XW, the logic is as follows:</span><span> </span><br/><span style=\"font-family:Arial\">- From Z → X, we subtract 2 positions.</span><span> </span><br/><span style=\"font-family:Arial\">- From Y → V, we subtract 3 positions.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">The pattern alternates: first -2, then -3 in sequence.</span><span> </span><br/><br/><span style=\"font-family:Arial\">Applying the same logic to TR:</span><span> </span><br/><span style=\"font-family:Arial\">- T (20th letter) → R (18th letter), subtract 2.</span><span> </span><br/><span style=\"font-family:Arial\">- R (18th letter) → O (15th letter), subtract 3.</span><span> </span><br/><br/><span style=\"font-family:Arial\">Hence, TR becomes RO. Therefore, the correct answer is</span><span style=\"font-family:Arial\">  </span><span style=\"font-family:Arial\">RO .</span><span> </span></p>"
+    },
+    {
+      "q": "<p>1. In a certain language, \"How are you\" is written as \"Co De Ki\" and \"You look happy\" is written as \"Th De Mo. How is \"you\" written in the given language ?</p>",
+      "o": [
+        "<p>Ki</p>",
+        "<p>Mo</p>",
+        "<p>De</p>",
+        "<p>Co</p>"
+      ],
+      "a": 2,
+      "s": "<p>1.(c) How are you → Co De Ki……..(i)<br/>        You look happy → Th De Mo….. (ii)<br/>From (i) and (ii) ‘You’ and ‘De’ are common. The code of ‘You’ = ‘De’.</p>"
+    },
+    {
+      "q": "<p><span style=\"font-family: Cambria Math;\">14. </span><span style=\"font-family: Cambria Math;\">In a certain code language, \"WINTER\" is coded as XJXQKX and \"AUTUMN\" is coded as TRYWWB. How will \"SEASON\" be coded in the same language?</span><span style=\"font-family: Cambria Math;\"> </span></p>",
+      "o": [
+        "<p>RTXCTT</p>",
+        "<p>TRXCGT</p>",
+        "<p>TGDWTT</p>",
+        "<p>TTWDGT</p>\n<p><span style=\"font-family: Cambria Math;\"> </span></p>"
+      ],
+      "a": 3,
+      "s": "<p>14.(d)</p>\n<p><img height=\"119\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image30.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image30.png\" style=\"max-width:100%;\" width=\"288\"/></p>\n<p><span style=\"font-family: Cambria Math;\">Similarly,</span></p>\n<p><img height=\"124\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image31.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image31.png\" style=\"max-width:100%;\" width=\"134\"/></p>"
+    },
+    {
+      "q": "<img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static.pw.live/5b09189f7285894d9130ccd0/63298b5b-fb21-4b6b-a764-c898e8c29d99.png';\" referrerpolicy=\"no-referrer\" src=\"https://static.pw.live/5b09189f7285894d9130ccd0/63298b5b-fb21-4b6b-a764-c898e8c29d99.png\" style=\"max-width:100%;\"/>",
+      "o": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "a": 2,
+      "s": "<img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static.pw.live/5b09189f7285894d9130ccd0/53389b4d-0199-4d4f-88a9-d967b3dd9bd9.png';\" referrerpolicy=\"no-referrer\" src=\"https://static.pw.live/5b09189f7285894d9130ccd0/53389b4d-0199-4d4f-88a9-d967b3dd9bd9.png\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <span></span><span style=\"font-weight:bold\"> </span><span>In a certain code language, ‘BLEACHERS’ is coded as ‘63’ and ‘ABACAS’ is coded as ‘42’. How will ‘FIZZY’ be coded in the same language?</span>",
+      "o": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> 35</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> 52</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> 45</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> 44</span>"
+      ],
+      "a": 0,
+      "s": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span> Number of letters in the word multiplied by 7 then we get the desired number.</span><p></p>"
+    },
+    {
+      "q": "<p>8. In a certain code language, \"BEHALF\" is coded as \"DCJYND\". What is the code for \"CLINIC\" in that code language ?</p>",
+      "o": [
+        "<p>EJKLKA</p>",
+        "<p>EJLLLA</p>",
+        "<p>EJKLKB</p>",
+        "<p>EJKLLB</p>"
+      ],
+      "a": 0,
+      "s": "<p>8.(a)<br/><img alt=\"rId13\" height=\"73\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1731151599546.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1731151599546.png\" style=\"max-width:100%;\" width=\"124\"/><br/>Similarly, <img alt=\"rId14\" height=\"71\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1731151599644.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1731151599644.png\" style=\"max-width:100%;\" width=\"120\"/><br/><br/></p>"
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Instruction: In a code language, \"The music sounds sweet\" is coded as \"la ma na ta\", \"The music sounds loud\" is coded as \"la ma pa ta\", \"The song sounds sweet\" is coded as \"ka ma na ta\".</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Question: What is the code for \"The song sounds loud\"?</span><span> </span></p>",
+      "o_hi": [
+        "<p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">pa na ka ta</span><span> </span></p>",
+        "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">ma na ra ka</span><span> </span></p>",
+        "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">la na ya ka</span><span> </span></p>",
+        "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">ka ma ta pa</span><span> </span></p>"
+      ],
+      "a": 3,
+      "s_hi": "<style> *{overflow-wrap: break-word;} </style> <p style=\"margin-top:0pt;margin-bottom:0pt;font-size:11pt\"><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Compare statement 1 and 2 (differ by sweet ↔ loud): sweet = na, loud = pa.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Compare statement 1 and 3 (differ by music ↔ song): music = la, song = ka.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">Common to all three: 'The' and 'sounds' map to ma and ta (in some order).</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">For \"The song sounds loud\" = ka + (ma/ta) + (ma/ta) + pa = {ka, ma, ta, pa}.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">The matching option is ka ma ta pa.</span><span> </span></p>"
+    },
+    {
+      "q_hi": "<p><span style=\"font-family: Cambria Math;\">5</span><span style=\"font-family: Cambria Math;\">.</span><span style=\"font-family: Cambria Math;\"> एक निश्चित कूट भाषा में</span><span style=\"font-family: Cambria Math;\"> \"MATHS\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> \"13320819\" </span><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\"> \"HINDI\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> \"82714427\" </span><span style=\"font-family: Cambria Math;\">लिखा जाता है। उसी भाषा में</span><span style=\"font-family: Cambria Math;\"> \"PHYSICS\" </span><span style=\"font-family: Cambria Math;\">को कैसे लिखा जाएगा</span><span style=\"font-family: Cambria Math;\">?</span></p>\n<p><span style=\"font-family: Cambria Math;\">SSC CHSL 27</span><span style=\"font-family: Cambria Math;\">/</span><span style=\"font-family: Cambria Math;\">05</span><span style=\"font-family: Cambria Math;\">/</span><span style=\"font-family: Cambria Math;\">2022 </span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">Morning</span><span style=\"font-family: Cambria Math;\">)</span></p>",
+      "o_hi": [
+        "<p><span style=\"font-family: Cambria Math;\">168251928319</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">168251923319</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">168251937319</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">168251927319</span></p>"
+      ],
+      "a": 3,
+      "s_hi": "<p><span style=\"font-family: Cambria Math;\">5 </span><span style=\"font-family: Cambria Math;\">.</span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">d</span><span style=\"font-family: Cambria Math;\">) </span></p>\n<p><span style=\"font-family: Cambria Math;\"><strong>तर्क:  </strong>प्रत्येक व्यंजन को वर्णमाला में उसके स्थानीय मान से बदल दिया जाता है</span><span style=\"font-family: Cambria Math;\">, </span><span style=\"font-family: Cambria Math;\">जबकि प्रत्येक स्वर को (स्थान मान × </span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">) से बदल दिया जाता है।</span></p>\n<p><span style=\"font-family: Cambria Math;\">MATHS  ⇒ </span><span style=\"font-family: Cambria Math;\">13</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">1</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">20</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 ⇒</span><span style=\"font-family: Cambria Math;\"> 13</span><span style=\"font-family: Cambria Math;\">-(</span><span style=\"font-family: Cambria Math;\">1×</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">)-</span><span style=\"font-family: Cambria Math;\">20</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 ⇒</span><span style=\"font-family: Cambria Math;\"> 13</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">20</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 </span></p>\n<p><span style=\"font-family: Cambria Math;\">HINDI ⇒</span><span style=\"font-family: Cambria Math;\"> 8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">9</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">14</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">4</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">9 ⇒</span><span style=\"font-family: Cambria Math;\"> 8</span><span style=\"font-family: Cambria Math;\">-(</span><span style=\"font-family: Cambria Math;\">9×</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">)-</span><span style=\"font-family: Cambria Math;\">14</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">4</span><span style=\"font-family: Cambria Math;\">-(</span><span style=\"font-family: Cambria Math;\">9×</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">) ⇒</span><span style=\"font-family: Cambria Math;\"> 8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">27</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">14</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">4</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">27 </span></p>\n<p><span style=\"font-family: Cambria Math;\">इसी प्रकार, PHYSICS ⇒</span><span style=\"font-family: Cambria Math;\"> 16</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">25</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">9</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 ⇒</span><span style=\"font-family: Cambria Math;\"> 16</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">25</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19</span><span style=\"font-family: Cambria Math;\">-(</span><span style=\"font-family: Cambria Math;\">9×</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">)-</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19 ⇒</span><span style=\"font-family: Cambria Math;\"> 16</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">8</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">25</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">27</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">3</span><span style=\"font-family: Cambria Math;\">-</span><span style=\"font-family: Cambria Math;\">19</span></p>"
+    },
+    {
+      "q_hi": "<p>10. किसी निश्चित कूट भाषा में, \"time flies fast\" को \"mk tu jb\" के रूप में कूटबद्ध किया जाता है और \"fast or slow\" को \"tb mk ab\" के रूप में कूटबद्ध किया जाता है। दी गई कूट भाषा में \"fast\" को किसमें कूटबद्ध किया जाएगा ?</p>",
+      "o_hi": [
+        "<p>tu</p>",
+        "<p>mk</p>",
+        "<p>ab</p>",
+        "<p>jb</p>"
+      ],
+      "a": 1,
+      "s_hi": "<p>10.(b)<strong> दिया गया:-</strong> time flies fast→ mk tu jb….(i)<br/>fast or slow → tb mk ab…..(ii)<br/>(i) और (ii) से \"fast\" का कोड = \"mk\"।</p>"
+    },
+    {
+      "q_hi": "<p><span style=\"font-family: Cambria Math;\">17</span><span style=\"font-family: Cambria Math;\">. </span><span style=\"font-family: Cambria Math;\">एक निश्चित कूट भाषा में</span><span style=\"font-family: Cambria Math;\">, \"SITAR\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> \"RHSZQ\" </span><span style=\"font-family: Cambria Math;\">लिखा जाता है और</span><span style=\"font-family: Cambria Math;\"> \"BANJO\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> \"AZMIN\" </span><span style=\"font-family: Cambria Math;\">लिखा जाता है। उस भाषा में</span><span style=\"font-family: Cambria Math;\"> \"TABLA\" </span><span style=\"font-family: Cambria Math;\">कैसे लिखा जाएगा</span><span style=\"font-family: Cambria Math;\">?</span></p>\n<p><span style=\"font-family: Cambria Math;\">SSC CHSL 30</span><span style=\"font-family: Cambria Math;\">/</span><span style=\"font-family: Cambria Math;\">05</span><span style=\"font-family: Cambria Math;\">/</span><span style=\"font-family: Cambria Math;\">2022 </span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">Evening</span><span style=\"font-family: Cambria Math;\">)</span></p>",
+      "o_hi": [
+        "<p><span style=\"font-family: Cambria Math;\">SAZKZ</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">SZAKZ</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">SZKAZ</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">SZAZA</span></p>"
+      ],
+      "a": 1,
+      "s_hi": "<p><span style=\"font-family: Cambria Math;\">17</span><span style=\"font-family: Cambria Math;\">.</span><span style=\"font-family: Cambria Math;\">(</span><span style=\"font-family: Cambria Math;\">b</span><span style=\"font-family: Cambria Math;\">) </span></p>\n<p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image34.png';\" referrerpolicy=\"no-referrer\" src=\"admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image34.png\" style=\"max-width:100%;\"/></p>\n<p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image35.png';\" referrerpolicy=\"no-referrer\" src=\"admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image35.png\" style=\"max-width:100%;\"/></p>\n<p><span style=\"font-weight: 400;\">उसी प्रकार</span></p>\n<p><img height=\"82\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image36.png';\" referrerpolicy=\"no-referrer\" src=\"admin/resources/qdocs/test-1-EN-1/1664443438/word/media/image36.png\" style=\"max-width:100%;\" width=\"122\"/></p>"
+    },
+    {
+      "q_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <span></span><span style=\"font-weight:bold\"> </span><span>In a certain code language, ‘RETAINED’ is written as ‘ENIATERD’ and ‘MATURITY’ is written as ‘TIRUTAMY’. How will ‘FIREWALL’ be written in that language?</span>",
+      "o_hi": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> FLLAWERI</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> LAWERIFL</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> LAWEFIFR</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> FLIREWAL</span>"
+      ],
+      "a": 1,
+      "s_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span> </span><img alt=\"\" height=\"714\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1750066089916_image019.png';\" referrerpolicy=\"no-referrer\" src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1750066089916_image019.png\" style=\"max-width:100%;\" width=\"576\"/><p></p>"
+    },
+    {
+      "q_hi": "13. एक निश्चित कूट भाषा में, \"played the piano\" को \"lo le li\" के रूप में कूटबद्ध किया जाता है और \"sparkles a piano\" को \"lu li la\" के रूप में कूटबद्ध किया जाता है। उस भाषा में \"piano\" को किस प्रकार कूटबद्ध किया गया है?",
+      "o_hi": [
+        "li",
+        "la",
+        "le",
+        "lu"
+      ],
+      "a": 0,
+      "s_hi": "13.(a)<br/>‘played the piano’ <math display=\"inline\"><mo>→</mo></math> ‘lo le li’ ……..(i)<br/>‘sparkles a piano’ <math display=\"inline\"><mo>→</mo></math> ‘lu li la’ ……..(ii)<br/>(i) और (ii) से \"piano\" और \"li\" उभयनिष्ठ है।<br/>तो, \"piano\" का कोड \"li\" है।"
+    },
+    {
+      "q_hi": "<p>23. <span style=\"font-family: Baloo;\">एक निश्चित कोड में, 692425 का अर्थ है \"School education is free in India\" और 7926 का अर्थ है \"College education is costly\"। निम्नलिखित में से कौन सा कूट \"I want to become graduate\" के लिए है?</span></p>",
+      "o_hi": [
+        "<p>23586</p>",
+        "<p>54268</p>",
+        "<p>14268</p>",
+        "<p>15426</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>23.(c) <span style=\"font-family: Times New Roman;\"><strong>Logic </strong>- </span><span style=\"font-family: Baloo;\">वर्णमाला की संख्या गिन कर लिखा गया है ।<br/></span><span style=\"font-family: Times New Roman;\">‘School education is free in India’ </span><span style=\"font-family: Times New Roman;\">692425<br/></span><span style=\"font-family: Times New Roman;\">college education is costly </span><span style=\"font-family: Times New Roman;\"> 7926 <br/></span><span style=\"font-family: Baloo;\">अतः‘I want to become graduate’ को 14268 लिखा जाता है।</span></p>"
+    },
+    {
+      "q_hi": "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">If REQUEST is written as S2R52TU,    how will ACID be written?</span></p>",
+      "o_hi": [
+        "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">BDJE</span></p>",
+        "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">1394</span></p>",
+        "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">1D9E</span></p>",
+        "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0\"> <span style=\"font-family:'Nirmala UI'\">IC94</span></p>"
+      ],
+      "a": 2,
+      "s_hi": "<style> @font-face { font-family: 'Nirmala UI'; src: url('https://static-appxdb-v2.akamai.net.in/fonts/Nirmala.ttf') format('truetype');} </style><style> *{overflow-wrap: break-word;} </style> <p style=\"orphans:0;widows:0;margin-bottom:0in\"> <span style=\"font-family:'Nirmala UI'\">Pattern:</span></p> <ul> <li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\"><b>Consonants     </b></span><span><b>→</b></span><span style=\"font-family:'Nirmala UI'\"><b>     next letter (+1)</b></span></p> </li><li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\"><b>Vowels     </b></span><span><b>→</b></span><span style=\"font-family:'Nirmala UI'\"><b>     their alphabetical positions</b></span></p> </li></ul> <p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">Apply    to ACID:</span></p> <ul> <li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">A     (vowel) </span><span>→</span><span style=\"font-family:'Nirmala UI'\"> </span><span style=\"font-family:'Nirmala UI'\"><b>1</b></span></p> </li><li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">C     </span><span>→</span><span style=\"font-family:'Nirmala UI'\">     D</span></p> </li><li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">I     (vowel) </span><span>→</span><span style=\"font-family:'Nirmala UI'\"> 9</span></p> </li><li><p style=\"orphans:0;widows:0;margin-bottom:0in\"><span style=\"font-family:'Nirmala UI'\">D     </span><span>→</span><span style=\"font-family:'Nirmala UI'\">     E</span></p> </li></ul> <p style=\"orphans:0;widows:0\"><span style=\"font-family:'Nirmala UI'\"><b>Therefore,    code for ACID is 1D9E.</b></span></p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">In a certain code language, 'RIVAL' is coded as 'PKTCJ' and 'TEXTS' is coded as 'RGVVQ'. How will 'POINT' be coded in the given language?</span></span></span></p></span><span class=\"hqt\"><p style=\"text-align: justify;\"><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">एक निश्चित कोड भाषा में</span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">, 'RIVAL' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">को </span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">'PKTCJ' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">और </span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">'TEXTS' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">को </span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">'RGVVQ' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">के रूप में कोडित किया जाता है। दी गई भाषा में </span></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">'POINT' </span></span></span><span lang=\"ar-SA\"><span style=\"color: #000000;\"><span style=\"font-family: 'Nirmala UI';\"><span style=\"font-size: 19px;\"><span lang=\"hi-IN\">को किस प्रकार कोडित किया जाएगा</span></span></span></span></span></p></span>",
+      "o_hi": [
+        "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">    NRGOR</span></span></span></p></span><span class=\"hqt\"><p>NRGOR</p></span>",
+        "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">    OQGPO</span></span></span></p></span><span class=\"hqt\"><p>OQGPO</p></span>",
+        "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">    NQGPR    </span></span></span></p></span><span class=\"hqt\"><p>NQGPR</p></span>",
+        "<span class=\"eqt\"><p><span style=\"color: #000000;\"><span style=\"font-family: 'Cambria Math',serif;\"><span style=\"font-size: 19px;\">    OQGOQ</span></span></span></p></span><span class=\"hqt\"><p>OQGOQ</p></span>"
+      ],
+      "a": 2,
+      "s_hi": "<span class=\"eqt\">\n<span style=\"color: #000000\"><span style=\"font-family: 'Cambria Math',serif\"><span style=\"font-size: 19px\">\n</span></span></span>\n<img align=\"bottom\" border=\"0\" height=\"82\" name=\"Image21\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://www.thepunditsofficial.in/admin/uploads/questions/q_69880767324275.11306716.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://www.thepunditsofficial.in/admin/uploads/questions/q_69880767324275.11306716.jpg\" style=\"max-width:100%;\" width=\"278\"/>\n<br/>\n<img align=\"bottom\" border=\"0\" height=\"111\" name=\"Picture 8\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://www.thepunditsofficial.in/admin/uploads/questions/q_698807674b6c09.70861684.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://www.thepunditsofficial.in/admin/uploads/questions/q_698807674b6c09.70861684.jpg\" style=\"max-width:100%;\" width=\"210\"/>\n<br/></span><span class=\"hqt\"><p><img align=\"bottom\" border=\"0\" height=\"82\" name=\"Image22\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://www.thepunditsofficial.in/admin/uploads/questions/q_69880767667fc6.39853227.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://www.thepunditsofficial.in/admin/uploads/questions/q_69880767667fc6.39853227.jpg\" style=\"max-width:100%;\" width=\"278\"/> <br/><img align=\"bottom\" border=\"0\" height=\"111\" name=\"Image23\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://www.thepunditsofficial.in/admin/uploads/questions/q_6988076783ca57.41182848.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://www.thepunditsofficial.in/admin/uploads/questions/q_6988076783ca57.41182848.jpg\" style=\"max-width:100%;\" width=\"210\"/></p></span>"
+    },
+    {
+      "q_hi": "In a certain code language, 'GINGER' is coded as LZCKGF and 'GARLIC' is coded as WDHOYF. How will 'CLOVES' be coded in the same language? ",
+      "o_hi": [
+        "NYQLJB",
+        "MZRLJB",
+        "MZQLIB",
+        "NYYLJB"
+      ],
+      "a": 1,
+      "s_hi": " <img alt=\"\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D26.png';\" referrerpolicy=\"no-referrer\" src=\"https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D26.png\" style=\"max-width:100%;\"/>,  <img alt=\"\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D27.png';\" referrerpolicy=\"no-referrer\" src=\"https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D27.png\" style=\"max-width:100%;\"/>, <img alt=\"\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D28.png';\" referrerpolicy=\"no-referrer\" src=\"https://storage.googleapis.com/tb-img/production/23/12/F1_Pranali_SSC_6-12-23_D28.png\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q_hi": "<p>18. <span style=\"font-family: Palanquin Dark;\">एक निश्चित कूट भाषा में, ‘</span><span style=\"font-family: Palanquin Dark;\">GLOVE</span><span style=\"font-family: Palanquin Dark;\">’ को </span><span style=\"font-family: Palanquin Dark;\">148 </span><span style=\"font-family: Palanquin Dark;\">लिखा जाता है। उसी भाषा में </span><span style=\"font-family: Palanquin Dark;\">‘OBDURATE’</span><span style=\"font-family: Palanquin Dark;\"> को  </span><span style=\"font-family: Palanquin Dark;\">कैसे लिखा जायेगा ?</span></p>",
+      "o_hi": [
+        "<p>602</p>",
+        "<p>402</p>",
+        "<p>520</p>",
+        "<p>502</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>18.(c) <span style=\"font-family: Palanquin Dark;\"><strong>तर्क</strong>: (सभी अक्षरों के स्थानीय मान के विपरीत योग)× (स्वरों की संख्या)<br/></span><span style=\"font-family: Palanquin Dark;\">O = 15 ⇒ </span><span style=\"font-family: Palanquin Dark;\">विपरीत अक्षर = 12<br/></span><span style=\"font-family: Palanquin Dark;\">B = 2 ⇒ </span><span style=\"font-family: Palanquin Dark;\">विपरीत अक्षर= 25 <br/></span><span style=\"font-family: Palanquin Dark;\">D = 4 ⇒ </span><span style=\"font-family: Palanquin Dark;\">विपरीत अक्षर = 23 <br/></span><span style=\"font-family: Palanquin Dark;\">U = 21 ⇒ </span><span style=\"font-family: Palanquin Dark;\">विपरीत अक्षर = 6 <br/></span><span style=\"font-family: Palanquin Dark;\">R = 18 ⇒ </span><span style=\"font-family: Palanquin Dark;\">विपरीत अक्षर = 9 <br/></span><span style=\"font-family: Palanquin Dark;\">A = 1 ⇒ </span><span style=\"font-family: Palanquin Dark;\">विपरीत अक्षर = 26 <br/></span><span style=\"font-family: Palanquin Dark;\">T = 20 ⇒ </span><span style=\"font-family: Palanquin Dark;\">विपरीत अक्षर = 7<br/></span><span style=\"font-family: Palanquin Dark;\">E = 5 ⇒ </span><span style=\"font-family: Palanquin Dark;\">विपरीत अक्षर = 22<br/></span><span style=\"font-weight: 400;\">(12 + 25 + 23 + 6 + 9 + 26 + 7 + 22) </span>× (4) = 130 × 4 = 520</p>"
+    },
+    {
+      "q_hi": "<p>9. <span style=\"font-family:Cambria Math\">एक</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">निश्चित</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">कूट</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">भाषा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">में</span><span style=\"font-family:Cambria Math\">, \"MEAL\" </span><span style=\"font-family:Cambria Math\">को</span><span style=\"font-family:Cambria Math\"> \"BMNF\" </span><span style=\"font-family:Cambria Math\">लिखा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">जाता</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">है</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">और</span><span style=\"font-family:Cambria Math\"> \"FOOD\" </span><span style=\"font-family:Cambria Math\">को</span><span style=\"font-family:Cambria Math\"> \"PEGP\" </span><span style=\"font-family:Cambria Math\">लिखा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">जाता</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">है।</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">उसी</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">भाषा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">में</span><span style=\"font-family:Cambria Math\"> \"FARE\" </span><span style=\"font-family:Cambria Math\">को</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">कैसे</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">लिखा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">जाएगा</span><span style=\"font-family:Cambria Math\">?</span></p> <p><span style=\"font-family:Cambria Math\">SSC CHSL 06/06/2022 (Afternoon)</span></p>",
+      "o_hi": [
+        "<p> GBSF</p>",
+        "<p> SFGB</p>",
+        "<p> FSBG</p>",
+        "<p> ERFA</p>"
+      ],
+      "a": 1,
+      "s_hi": "<p>9<span style=\"font-family:Cambria Math\"> .</span><span style=\"font-family:Cambria Math\">(b) </span></p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image19.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image19.png\" style=\"max-width:100%;\"/></p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image20.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image20.png\" style=\"max-width:100%;\"/></p> <p><span style=\"font-family:Cambria Math\">उसी</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Cambria Math\">प्रकार</span><span style=\"font-family:Cambria Math\">,</span></p> <p><span style=\"font-family:Cambria Math\"> </span><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image21.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1665132599/word/media/image21.png\" style=\"max-width:100%;\"/></p>"
+    },
+    {
+      "q_hi": "<span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">[SSC    SP P-11 2023]</span></span></span></span>",
+      "o_hi": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">2171131112</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">217113119</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">217111912</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">417111912</span></span></span></span></span></p>"
+      ],
+      "a": 0,
+      "s_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <img height=\"468\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752391981465_html_8bc773e18199b573.png';\" referrerpolicy=\"no-referrer\" src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752391981465_html_8bc773e18199b573.png\" style=\"max-width:100%;\" width=\"576\"/> </p>"
+    },
+    {
+      "q_hi": "<p>10. RESERVATION शब्द को 4 अलग-अलग कोडों का उपयोग करके कोडित किया गया है।<br/>कोड 1: SGVIWBHBRYY<br/>कोड 2: SCVAWPHLREY<br/>कोड 3:TGUGTXCVKQP<br/>कोड 4: PCQCPTYRGML<br/>निम्नलिखित में से कौन सा कोड INQUIRY शब्द को FLTQNLF के रूप में लिखने के लिए प्रयोग किया जाता है?</p>",
+      "o_hi": [
+        "<p>Code 2</p>",
+        "<p>Code 4</p>",
+        "<p>Code 3</p>",
+        "<p>Code 1</p>"
+      ],
+      "a": 0,
+      "s_hi": "<p>10.(a)<br/>दिए गए कोड से हम देख सकते हैं कि कोड 2 में<br/>R के लिए कोड = R + 1 = S<br/>E के लिए कोड = E - 2 = C और इसी प्रकार <br/>ENQUIRY के लिए कोड = कोड 2 के अनुसार FLTQNLF कोडित किया गया है।</p>"
+    },
+    {
+      "q_hi": "3. एक निश्चित कूट भाषा में, \"HAVE\" को \"2648\" के रूप में कूटबद्ध किया जाता है और \"VOLT\" को \"3961\" के रूप में कूटबद्ध किया जाता है। दी गई कूट भाषा में \"V\" के लिए कूट क्या है?",
+      "o_hi": [
+        "3",
+        "6",
+        "1",
+        "4"
+      ],
+      "a": 1,
+      "s_hi": "3.(b)<br/>\"HAVE\" <math display=\"inline\"><mo>→</mo></math> \"2648\"......(i)<br/>\"VOLT\" <math display=\"inline\"><mo>→</mo></math> \"3961 …….(ii)<br/>(i) और (ii) से \"V\" और \"6\" उभयनिष्ठ हैं।<br/>तो, \"V\" का कोड \"6\" है।"
+    },
+    {
+      "q_hi": "In a certain code language, ‘MAP’ is written as ‘102’ and ‘ROT’ is written as ‘56’. How will ‘SEC’ be written in that language?",
+      "o_hi": [
+        "108",
+        "112",
+        "98",
+        "84"
+      ],
+      "a": 0,
+      "s_hi": "<p><span style=\"color: rgb(33, 37, 41);\">Logic: Code of the word = (Sum of letter's opposite positional values) </span><span style=\"color: rgb(33, 37, 41);\">× 2</span></p>\n<p>'SEC' can be written as → (8 + 22 + 24) × 2 → 54 × 2 = 108</p>\n"
+    },
+    {
+      "q_hi": "3. एक निश्चित कूट भाषा में, \"HOST\" को \"2846\" के रूप में कूटबद्ध किया जाता है और \"TEAM\" को \"3587\" के रूप में कूटबद्ध किया जाता है। दी गई कूट भाषा में \"T\" के लिए कूट क्या है?",
+      "o_hi": [
+        "3",
+        "7",
+        "6",
+        "8"
+      ],
+      "a": 3,
+      "s_hi": "3.(d) HOST :- 2846…….(i)<br/>                   TEAM :- 3587……..(ii)<br/>(i) और (ii) से \"T\" और \"8\" उभयनिष्ठ हैं। \"T\" का कोड = \"8\"."
+    },
+    {
+      "q_hi": "<p>6. एक निश्चित कोड भाषा में, \"VMBHL\" को \"VQJTB\" लिखा जाता है। उसी कोड भाषा में \"KTSPR\" के लिए कूट क्या है?</p>",
+      "o_hi": [
+        "<p>BYAAQ</p>",
+        "<p>BYBBQ</p>",
+        "<p>BYABR</p>",
+        "<p>BYBAR</p>"
+      ],
+      "a": 0,
+      "s_hi": "<p>6.(a)<br/><strong id=\"docs-internal-guid-2658511f-7fff-ec0e-f31e-492719c3bdc7\"><img height=\"88\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://lh7-rt.googleusercontent.com/docsz/AD_4nXf1l89G7w5G0z_IbLXYWSZdDLD1Q-niv4cJb3DK8cnWCA5pZ7n4tGtEqpRJY0wEHnwep4iLvv-oZxxviCs4SRRS-oZwMy179vx-kybSqmbrjg6470dsle2FFfeLPp1Z-KkdI2IsLs2l7K8l09kn673_PPk1%3Fkey%3DDlpOIM7Ud5BheMKWNhLVKg';\" referrerpolicy=\"no-referrer\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXf1l89G7w5G0z_IbLXYWSZdDLD1Q-niv4cJb3DK8cnWCA5pZ7n4tGtEqpRJY0wEHnwep4iLvv-oZxxviCs4SRRS-oZwMy179vx-kybSqmbrjg6470dsle2FFfeLPp1Z-KkdI2IsLs2l7K8l09kn673_PPk1?key=DlpOIM7Ud5BheMKWNhLVKg\" style=\"max-width:100%;\" width=\"122\"/></strong><br/>उसी प्रकार, <br/><strong id=\"docs-internal-guid-8891b014-7fff-cf20-2a91-84bf40809958\"><img height=\"88\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://lh7-rt.googleusercontent.com/docsz/AD_4nXfrtCi_lYwFGYPe2bu0Vv7b8F8yVx2Un8Zv4fAf2Q8bl8OWN2_03YSSw3vPaEJkOacW7lv9ov4uzzLnFefDEd5ZiyN3JPa-2LrU-3RB96lX67BMwBmuaWligvapD2-EzA6aZ1x4fSrSxmmp1qX-CrN_Ro0%3Fkey%3DDlpOIM7Ud5BheMKWNhLVKg';\" referrerpolicy=\"no-referrer\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXfrtCi_lYwFGYPe2bu0Vv7b8F8yVx2Un8Zv4fAf2Q8bl8OWN2_03YSSw3vPaEJkOacW7lv9ov4uzzLnFefDEd5ZiyN3JPa-2LrU-3RB96lX67BMwBmuaWligvapD2-EzA6aZ1x4fSrSxmmp1qX-CrN_Ro0?key=DlpOIM7Ud5BheMKWNhLVKg\" style=\"max-width:100%;\" width=\"122\"/></strong></p>"
+    },
+    {
+      "q_hi": "<p><span style=\"font-family: Cambria Math;\">11. </span><span style=\"font-family: Nirmala UI;\">एक</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">निश्चित</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कूट</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">भाषा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">में</span><span style=\"font-family: Cambria Math;\">, \"GOLF\" </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> \"44\" </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">रूप</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">में</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कूटबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जाता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">और</span><span style=\"font-family: Cambria Math;\"> \"BALL\" </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> \"31\" </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">रूप</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">में</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कूटबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जाता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है।</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">उसी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">भाषा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">में</span><span style=\"font-family: Cambria Math;\"> \"PLAY </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">किस</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रकार</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कूटबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जाएगा</span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>60</p>",
+        "<p>58</p>",
+        "<p>62</p>",
+        "<p>56</p>"
+      ],
+      "a": 1,
+      "s_hi": "<p>11.(b)<br/><strong><span style=\"font-family: Nirmala UI;\">तर्क </span></strong><span style=\"font-family: Cambria Math;\"><strong>:-</strong> </span><span style=\"font-family: Nirmala UI;\">अक्षरों</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">स्थानीय</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">मान</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">का</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">योग</span><span style=\"font-family: Cambria Math;\"> + 4 <br/></span>(GOLF) ⇒ 7 + 15 + 12 + 6 = 40 + 4 ⇒ <strong>44</strong><br/>(BALL) ⇒ 2 + 1 + 12 + 12 = 27 + 4 ⇒ <strong>31</strong><br/><span style=\"font-family: Nirmala UI;\">इसी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रकार</span><span style=\"font-family: Cambria Math;\">,<br/></span><strong>(PLAY)</strong> ⇒ 16 + 12 + 1 + 25 = 54 + 4 ⇒ <strong>58</strong></p>"
+    },
+    {
+      "q_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">In each question below, two pairs of letters are given. The first pair has a specific relationship between its letters. Identify relationship and choose the correct option that completes the second pair in the same way.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">ZY : XV :: TR : ?</span><span> </span></p>",
+      "o_hi": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">OS</span><span> </span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">SP</span><span> </span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">QP</span><span> </span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">RO</span><span> </span></p>"
+      ],
+      "a": 3,
+      "s_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">In the first pair ZY : XW, the logic is as follows:</span><span> </span><br/><span style=\"font-family:Arial\">- From Z → X, we subtract 2 positions.</span><span> </span><br/><span style=\"font-family:Arial\">- From Y → V, we subtract 3 positions.</span><span> </span></p><p style=\"margin-top:0pt;margin-bottom:6pt;font-size:11pt\"><span style=\"font-family:Arial\">The pattern alternates: first -2, then -3 in sequence.</span><span> </span><br/><br/><span style=\"font-family:Arial\">Applying the same logic to TR:</span><span> </span><br/><span style=\"font-family:Arial\">- T (20th letter) → R (18th letter), subtract 2.</span><span> </span><br/><span style=\"font-family:Arial\">- R (18th letter) → O (15th letter), subtract 3.</span><span> </span><br/><br/><span style=\"font-family:Arial\">Hence, TR becomes RO. Therefore, the correct answer is</span><span style=\"font-family:Arial\">  </span><span style=\"font-family:Arial\">RO .</span><span> </span></p>"
+    },
+    {
+      "q_hi": "<p>1. एक निश्चित कूट भाषा में, \"How are you\" को \"Co De Ki\" लिखा जाता है और \"You look happy\" को \"Th De Mo\" लिखा जाता है। उस कूट भाषा में \"you\" को कैसे लिखा जाएगा ?</p>",
+      "o_hi": [
+        "<p>Ki</p>",
+        "<p>Mo</p>",
+        "<p>De</p>",
+        "<p>Co</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>1.(c) How are you → Co De Ki……..(i)<br/>        You look happy → Th De Mo….. (ii)<br/>(i) और (ii) से ‘you\" और \"de\" उभयनिष्ठ हैं। \"You\" का कूट = \"De\".</p>"
+    },
+    {
+      "q_hi": "<p><span style=\"font-family: Cambria Math;\">14. </span><span style=\"font-family: Cambria Math;\">एक</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">निश्चित</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कूट</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">भाषा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> \"WINTER\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> XJXQKX </span><span style=\"font-family: Cambria Math;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">रूप</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कू</span><span style=\"font-family: Cambria Math;\">टबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जाता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\"> \"AUTUMN\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> TRYWWB </span><span style=\"font-family: Cambria Math;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">रूप</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कूटबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जाता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है।</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">उसी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">भाषा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> \"SEASON\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किस</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">प्रकार</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कूटबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जाएगा</span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>RTXCTT</p>",
+        "<p>TRXCGT</p>",
+        "<p>TGDWTT</p>",
+        "<p>TTWDGT</p>\n<p><span style=\"font-family: Cambria Math;\"> </span></p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>14.(d)</p>\n<p><img height=\"119\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image30.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image30.png\" style=\"max-width:100%;\" width=\"288\"/></p>\n<p><span style=\"font-family: Cambria Math;\">इसी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">प्रकार</span><span style=\"font-family: Cambria Math;\">,</span></p>\n<p><img height=\"124\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image31.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image31.png\" style=\"max-width:100%;\" width=\"134\"/></p>"
+    },
+    {
+      "q_hi": "<img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static.pw.live/5b09189f7285894d9130ccd0/63298b5b-fb21-4b6b-a764-c898e8c29d99.png';\" referrerpolicy=\"no-referrer\" src=\"https://static.pw.live/5b09189f7285894d9130ccd0/63298b5b-fb21-4b6b-a764-c898e8c29d99.png\" style=\"max-width:100%;\"/>",
+      "o_hi": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "a": 2,
+      "s_hi": "<img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static.pw.live/5b09189f7285894d9130ccd0/53389b4d-0199-4d4f-88a9-d967b3dd9bd9.png';\" referrerpolicy=\"no-referrer\" src=\"https://static.pw.live/5b09189f7285894d9130ccd0/53389b4d-0199-4d4f-88a9-d967b3dd9bd9.png\" style=\"max-width:100%;\"/>"
+    },
+    {
+      "q_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <span></span><span style=\"font-weight:bold\"> </span><span>In a certain code language, ‘BLEACHERS’ is coded as ‘63’ and ‘ABACAS’ is coded as ‘42’. How will ‘FIZZY’ be coded in the same language?</span>",
+      "o_hi": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> 35</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> 52</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> 45</span>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span style=\"color:#4224e9\"> 44</span>"
+      ],
+      "a": 0,
+      "s_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><span> Number of letters in the word multiplied by 7 then we get the desired number.</span><p></p>"
+    },
+    {
+      "q_hi": "<p>8. एक निश्चित कूट भाषा में \"BEHALF\" को \"DCJYND\" लिखा जाता है। उसी कूट भाषा में \"CLINIC\" को कैसे लिखा जाएगा ?</p>",
+      "o_hi": [
+        "<p>EJKLKA</p>",
+        "<p>EJLLLA</p>",
+        "<p>EJKLKB</p>",
+        "<p>EJKLLB</p>"
+      ],
+      "a": 0,
+      "s_hi": "<p>8.(a)<br/><img alt=\"rId13\" height=\"73\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1731151599546.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1731151599546.png\" style=\"max-width:100%;\" width=\"124\"/><br/>इसी तरह, <img alt=\"rId14\" height=\"71\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1731151599644.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1731151599644.png\" style=\"max-width:100%;\" width=\"120\"/><br/><br/><br/></p>"
+    }
+  ]
+}

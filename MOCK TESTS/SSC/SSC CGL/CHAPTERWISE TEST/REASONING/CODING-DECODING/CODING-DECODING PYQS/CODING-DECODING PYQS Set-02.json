@@ -1,0 +1,559 @@
+{
+  "quizTitle": "CODING-DECODING PYQS Set-02",
+  "quizTime": "15",
+  "totalMarks": "50",
+  "questions": [
+    {
+      "q": "<p>10. In a certain code language, ‘EACH’ is coded as ‘6138’ and ‘CAME’ is coded as ‘1396’. What is the code for ‘M’ in that language?</p>",
+      "o": [
+        "<p>6</p>",
+        "<p>9</p>",
+        "<p>3</p>",
+        "<p>1</p>"
+      ],
+      "a": 1,
+      "s": "<p>10.(b) EACH :- 6138……(i)<br/>CAME :- 1396…….(ii)<br/>From (i) and (ii) ‘CAE’ and ‘613’ are common. The code of ‘M’ = ‘9’.</p>"
+    },
+    {
+      "q": "<p>7. In a certain code language, ‘TAIL’ is coded as ‘2463’ and ‘INKS’ is coded as ‘9351’. What is the code for ‘I’ in the given code language?</p>",
+      "o": [
+        "<p>5</p>",
+        "<p>6</p>",
+        "<p>9</p>",
+        "<p>3</p>"
+      ],
+      "a": 3,
+      "s": "<p>7.(d)<br/>T A I L <math display=\"inline\"><mo>→</mo></math> 2 4 6 3 … (i)<br/>I N K S <math display=\"inline\"><mo>→</mo></math> 9 3 5 1 … (ii)<br/>from (i) and (ii) ‘I’ and ‘3’ are common.<br/>Hence, the code for ‘I’ is ‘3’.</p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>In a coded language, \"SAB ATI PON IFT\" is coded as \"at the low level\", \"IJN ATI XIO\" is coded as \"high and low\", \"ROA XIO DOO\" is coded as \"tide is high\" and \"IFT PON ROA\" is coded as \"the tide level\". What is the code for 'PON ROA' if code for \"IFT\" is 'the'?</p></span><span class=\"hqt\" style=\"display:none\"><p>एक कोडित भाषा में \"SAB ATI PON IFT\" को \"at the low level\" के रूप में कोडित किया जाता है, \"IJN ATI XIO\" को \"high and low\" के रूप में कोडित किया जाता है, \"ROA XIO DOO\" को \"tide is high\" के रूप में कोडित किया जाता है तथा \"IFT PON ROA\" को \"the tide level\" के रूप में कोडित किया जाता है। यदि \"IFT\" के लिए कोड 'the' है, तो 'PON ROA' के लिए कोड क्या है?</p></span>",
+      "o": [
+        "<span class=\"eqt\">level tide</span><span class=\"hqt\" style=\"display:none\">level tide</span>",
+        "<span class=\"eqt\">is high</span><span class=\"hqt\" style=\"display:none\">is high</span>",
+        "<span class=\"eqt\">at and</span><span class=\"hqt\" style=\"display:none\">at and</span>",
+        "<span class=\"eqt\">and low</span><span class=\"hqt\" style=\"display:none\">and low</span>"
+      ],
+      "a": 0,
+      "s": "<p>It is given that, </p><p>\"SAB ATI PON IFT\" is coded as \"at the low level\"..........(1)</p><p>\"IJN ATI XIO\" is coded as \"high and low\".................(2)</p><p>\"ROA XIO DOO\" is coded as \"tide is high\" .................(3)</p><p>\"IFT PON ROA\" is coded as \"the tide level\"...................(4)</p><p>From (1) and (2), ATI == low.</p><p>From (2) and (3), XIO == high.</p><p>From (3) and (4), ROA == tide.</p><p>From (1) and (4), IFT PON == the level.</p><p>But IFT == the</p><p>So, PON == level</p><p>From (1), SAB == at.</p><p>From (2), IJN == and.</p><p>From (3), DOO == is.</p><p>Here, PON ROA == level tide.</p>"
+    },
+    {
+      "q": "<div class=\"status-sec\"><table class=\"table-status\"><tbody><tr><td class=\"noborder\"></td><td class=\"noborder txt-black\">Time</td><td class=\"noborder txt-black\">Status</td></tr><tr><td class=\"txt-black bg-blue\">You</td><td class=\"txt-muted\">0 sec</td><td><span class=\"tst-status status-unat\">Unattempted</span></td></tr><tr><td class=\"txt-black bg-blue\">Topper</td><td class=\"txt-muted\">21 sec</td><td><span class=\"tst-status status-correct\">Correct</span></td></tr></tbody></table></div><span class=\"eqt\"><p>In a certain code language, 'OASIS' is written as 'RJTBN' and 'OBESE' is written as 'DTFCN'. How will 'OCCUR' be written in that language? </p></span><span class=\"hqt\" style=\"display:none\">एक निश्चित कोड भाषा में, 'OASIS' को 'RJTBN' और 'OBESE' को 'DTFCN' लिखा जाता है। उस भाषा में 'OCCUR' को कैसे लिखा जाएगा?</span>",
+      "o": [
+        "<span class=\"eqt\">VQDDN</span><span class=\"hqt\" style=\"display:none\">VQDDN</span>",
+        "<span class=\"eqt\">VQNDD</span><span class=\"hqt\" style=\"display:none\">VQNDD</span>",
+        "<span class=\"eqt\">QVNDD</span><span class=\"hqt\" style=\"display:none\">QVNDD</span>",
+        "<span class=\"eqt\">QVDDN</span><span class=\"hqt\" style=\"display:none\">QVDDN</span>"
+      ],
+      "a": 3,
+      "s": "<table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A (1)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B (2)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C (3)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">D (4)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E (5)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">F (6)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">G (7)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">H (8)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I (9)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">J (10)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">K (11)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">L (12)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">M (13)</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Z (26)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Y (25)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">X (24)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">W (23)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">V (22)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U (21)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">T (20)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R (18)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Q (17)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">P (16)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N (14)</td></tr></table><p>'OASIS' is written as 'RJTBN'</p><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A (1)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I (9)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">OASIS</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Reverse</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S-1=R</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I+1=J</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S+1=T</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A+1=B</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1=N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">RJTBN</td></tr></table><p>'OBESE' is written as 'DTFCN'</p><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B (2)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E (5)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E (5)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">OBESE</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Reverse</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E-1=D</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S+1=T</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E+1=F</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B+1=C</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1=N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">DTFCN</td></tr></table><p>Similarly,</p><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C (3)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C (3)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U (21)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R (18)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">OCCUR</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Reverse</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R-1=Q</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U+1=V</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C+1=D</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C+1=D</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1=N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"><b>QVDDN</b></td></tr></table><p>Thus, 'OCCUR' is written as 'QVDDN'.</p>"
+    },
+    {
+      "q": "<p>8.<span style=\"font-family: Roboto;\"> In a certain code language, \"PRINT\" is written as \"</span><span style=\"font-family: Roboto;\">YMNIU</span><span style=\"font-family: Roboto;\">\". How will \"MAGIC\" be written in that language?</span></p>",
+      "o": [
+        "<p><span style=\"font-family: Roboto;\">HLDRV</span><span style=\"font-family: Roboto;\"> </span></p>",
+        "<p>HDLVR</p>",
+        "<p>HRLRZ</p>",
+        "<p><span style=\"font-family: Roboto;\">HRLZR</span><span style=\"font-family: Roboto;\"> </span></p>"
+      ],
+      "a": 3,
+      "s": "<p>8.(d)<br/><span style=\"font-family: Roboto;\"><strong>Logic:</strong> Reverse the word and then +5 to odd place digits and opposite the alphabetical position of even placed digits.</span><br/><span style=\"font-family: Nova Mono;\">After reversing the word MAGIC → CIGAM and applying the above logic </span><span style=\"font-family: Roboto;\">HRLZR</span><span style=\"font-family: Roboto;\">.</span></p>"
+    },
+    {
+      "q": "<p>6. In a certain code language, \"LIKE\" is coded as \"1576\" and \"LINK\" is coded as \"6581\". What is the code for \"E\" in the given code language?</p>",
+      "o": [
+        "<p>6</p>",
+        "<p>5</p>",
+        "<p>7</p>",
+        "<p>1</p>"
+      ],
+      "a": 2,
+      "s": "<p>6.(c) LIKE :- 1576…….(i)<br/>LINK :- 6581…….(ii)<br/>From (i) and (ii) ‘LIK’ and ‘156’ are common. The code of ‘E’ = ‘7’.</p>"
+    },
+    {
+      "q": "<p>5. In a code language, CHILD is written as 412983. How would you write the word ADULT in the same code language?</p>",
+      "o": [
+        "<p>142112</p>",
+        "<p>14211220</p>",
+        "<p>124983</p>",
+        "<p>20122141</p>"
+      ],
+      "a": 3,
+      "s": "<p>5.(d) logic-<br/><strong id=\"docs-internal-guid-5132d0ff-7fff-15de-05c1-5b0126e7d02d\"><img height=\"97\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://lh7-rt.googleusercontent.com/docsz/AD_4nXcFvQ7PmRQ6vzTlOvoYeHJ2dP4X_HKDLOG0WtFz9mufauKvSX4vm9xhSybOqc0kBX4X7uxi6HdZCCPyhfE41mi2oDKgeDwvi9vPzUNg3e3dlHL8BTPEQuDSqeZtak6qIygaRZ5KpYuAGisQTZerwlGNeeo%3Fkey%3DKWfmEzdI0AiicySuZi3z_g';\" referrerpolicy=\"no-referrer\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXcFvQ7PmRQ6vzTlOvoYeHJ2dP4X_HKDLOG0WtFz9mufauKvSX4vm9xhSybOqc0kBX4X7uxi6HdZCCPyhfE41mi2oDKgeDwvi9vPzUNg3e3dlHL8BTPEQuDSqeZtak6qIygaRZ5KpYuAGisQTZerwlGNeeo?key=KWfmEzdI0AiicySuZi3z_g\" style=\"max-width:100%;\" width=\"119\"/></strong><br/>Similarly ADULT is written as 20122141</p>"
+    },
+    {
+      "q": "<p>12. In a certain code language, BRIDE is written as FVMHI. How will SINGLE be written as in that language?</p>",
+      "o": [
+        "<p>WMRJPO</p>",
+        "<p>WNRKPI</p>",
+        "<p>WMRJPK</p>",
+        "<p>WMRKPI</p>"
+      ],
+      "a": 3,
+      "s": "<p>12.(d) <br/><strong>Logic</strong> :<br/>B + 4 = F , R + 4 = V , I + 4 = M , D + 4 =H , E + 4 = I <br/>Similarly ,SINGLE is written as WMRKPI</p>"
+    },
+    {
+      "q": "<p><b>What may be possible code for “a waste material” in the given code language?</b></p>",
+      "o": [
+        "<p>mu su ka</p>",
+        "<p>pe na ka</p>",
+        "<p>su ka ra</p>",
+        "<p>su ka qs</p>"
+      ],
+      "a": 3,
+      "s": "<p>In certain language,</p><p>“waste product as last” is written as “ra mu pe ka”</p><p>“waste as a cheap” is written as “su ka pe ke”</p><p>“be as last cheap” is written as “pe na ke ra”</p><p>“a bad used product” is written as “da ku mu su”</p><p><b>Inference:</b></p><p>“waste product as last” is written as “ra mu pe ka”……..(1)</p><p>“waste as a cheap” is written as “su ka pe ke”……….(2)</p><p>“be as last cheap” is written as “pe na ke ra”……..(3)</p><p>“a bad used product” is written as “da ku mu su”……..(4)</p><p>From (1), (2) and (3), we get:</p><p>As → pe……..(5)</p><p>From (1), (2) and (5), we get:</p><p>Waste → ka……..(6)</p><p>From (1), (3) and (5), we get:</p><p>Last → ra……..(7)</p><p>From (1) and (4), we get:</p><p>Product → mu……..(8)</p><p>From (2), (3) and (5), we get:</p><p>Cheap → ke……..(9)</p><p>From (2) and (4), we get:</p><p>A → su……..(10)</p><p>From (3), (5), (7) and (9), we get:</p><p>Be → na……..(11)</p><p>From (4), (8) and (10), we get:</p><p>Bad/Used → da/ku……..(12)</p><p>The possible code for “a waste material” is “su ka qs”.</p>"
+    },
+    {
+      "q": "<p>11.<span style=\"font-family:Cambria Math\"> In a certain code language, \"HUMP’ is written as \"GTLO\" and \"LIKE\" is written as \"KHJD\". How will \"PLAY\" be written in that language?</span></p>",
+      "o": [
+        "<p> OJZX<span style=\"font-family:Cambria Math\"> </span></p>",
+        "<p> QKZX </p>",
+        "<p> OKZX </p>",
+        "<p> OKYX</p>"
+      ],
+      "a": 2,
+      "s": "<p>11.(c)</p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image21.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image21.png\" style=\"max-width:100%;\"/><span style=\"font-family:Cambria Math\">  ,   </span><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image22.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image22.png\" style=\"max-width:100%;\"/></p> <p><span style=\"font-family:Cambria Math\">Similarly,</span></p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image23.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image23.png\" style=\"max-width:100%;\"/></p>"
+    },
+    {
+      "q": "<p>2. In a code language, \"FORK\" is coded as ‘GLWD’ and \"CAVF\" is coded as ‘DXAY’. How will \"TRHA\" be coded in that language?</p>",
+      "o": [
+        "<p>UOPR</p>",
+        "<p>UONQ</p>",
+        "<p>UNMS</p>",
+        "<p>UOMT</p>"
+      ],
+      "a": 3,
+      "s": "<p>2.(d)<br/><img alt=\"rId4\" height=\"100\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1739171190421.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1739171190421.png\" style=\"max-width:100%;\" width=\"142\"/>,     <img alt=\"rId5\" height=\"100\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1739171190605.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1739171190605.png\" style=\"max-width:100%;\" width=\"142\"/><br/>Similarly,<br/><img alt=\"rId6\" height=\"100\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1739171190741.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1739171190741.png\" style=\"max-width:100%;\" width=\"141\"/></p>"
+    },
+    {
+      "q": "<p>10. In a certain code language, ‘FRAK’ is coded as ‘35’, and ‘MALT’, is coded as ‘45’, how will ‘TRIM’ be coded in that language?</p>",
+      "o": [
+        "<p>60</p>",
+        "<p>58</p>",
+        "<p>59</p>",
+        "<p>61</p>"
+      ],
+      "a": 2,
+      "s": "<p>10.(c)<br/>FRAK = 6 + 18 + 1 + 11 = 36 - 1 = 35<br/>MALT = 13 + 1 + 12 + 20 = 46 - 1 = 45<br/>Similarly,<br/>TRIM = 20 + 18 + 9 + 13 = 60 - 1 = 59</p>"
+    },
+    {
+      "q": "<p>7. <span style=\"font-family: Cambria Math;\"> In a certain code language, \"CLOUD\" is written as \"DMUAE\" and \"WHITE\" is written as \"XIOUI\". How will \"WATER\" be written in that language?</span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span></p>",
+      "o": [
+        "<p><span style=\"font-family: Cambria Math;\">XEUIT</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">XEVIS</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">XBUFS</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">XEUIS</span></p>"
+      ],
+      "a": 3,
+      "s": "<p><span style=\"font-family: Cambria Math;\">7.(</span><span style=\"font-family: Cambria Math;\">d)</span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span><img height=\"92\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image14.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image14.png\" style=\"max-width:100%;\" width=\"183\"/> <span style=\"font-family: Cambria Math;\">and  </span><span style=\"font-family: Cambria Math;\"> </span><img height=\"92\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image15.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image15.png\" style=\"max-width:100%;\" width=\"200\"/></p>\n<p><span style=\"font-family: Cambria Math;\">Similarly,</span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span><img height=\"93\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image16.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image16.png\" style=\"max-width:100%;\" width=\"188\"/></p>\n<p><span style=\"font-family: Cambria Math;\">Here pattern of vowels is followed as</span></p>\n<p><span style=\"font-family: Cambria Math;\">A + 1 = </span><span style=\"font-family: Cambria Math;\">E ,</span><span style=\"font-family: Cambria Math;\"> E + 1 = I , I + 1 = O , O + 1 = U</span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span></p>\n<p> </p>"
+    },
+    {
+      "q": "<p>1. If AMBER = 27 and BROWN = 14 , then GREEN will be equal to</p>",
+      "o": [
+        "<p>28</p>",
+        "<p>36</p>",
+        "<p>39</p>",
+        "<p>24</p>"
+      ],
+      "a": 1,
+      "s": "<p>1.(b) Here, <br/>A    M    B    E    R =<br/>1 + 13 + 2 + 5 + 18 = 39 = <math display=\"inline\"><mn>3</mn><mo>×</mo><mn>9</mn></math> = 27<br/>Similarly, BROWN = 14, <br/>Then G R E E N will be equal to <br/>7 + 18 + 5 + 5 + 14 = 49 = <math display=\"inline\"><mn>4</mn><mo>×</mo><mn>9</mn></math> = 36</p>"
+    },
+    {
+      "q": "<span class=\"eqt\"><p>In a certain code language, 'TYR' is coded as '65', and 'GAP' is coded as '26'. How will 'MOJ' be coded in that language?</p></span><span class=\"hqt\" style=\"display:none\"><p>एक निश्चित कोड भाषा में, 'TYR' को '65' के रूप में कोडित किया जाता है और 'GAP' को '26' के रूप में कोडित किया जाता है, तो समान भाषा में 'MOJ' को किस प्रकार कोडित किया जायेगा?</p></span>",
+      "o": [
+        "<span class=\"eqt\">40</span><span class=\"hqt\" style=\"display:none\">40</span>",
+        "<span class=\"eqt\">41</span><span class=\"hqt\" style=\"display:none\">41</span>",
+        "<span class=\"eqt\">38</span><span class=\"hqt\" style=\"display:none\">38</span>",
+        "<span class=\"eqt\">39</span><span class=\"hqt\" style=\"display:none\">39</span>"
+      ],
+      "a": 0,
+      "s": "<p>The code is by adding the position of all the alphabets according to the alphabetical series and '2' to the total sum.</p><p>TYR = (20+25+18) + 2 = 63+2 = 65</p><p>GAP = (7+1+16) + 2 = 24+2 = 26</p><p>Similarly,</p><p>MOJ = (13+15+10) + 2 = 38+2 = 40</p><p>So, 'MOJ' will be coded as '40'.</p>"
+    },
+    {
+      "q": "<p>4. In a certain code language, ‘does she hear’ is written as ‘mt sp dt’ and ‘hear the music’ is written as ‘rb mt ch’. What is the code for ‘hear’ in that language ?</p>",
+      "o": [
+        "<p>sp</p>",
+        "<p>mt</p>",
+        "<p>ch</p>",
+        "<p>rb</p>"
+      ],
+      "a": 1,
+      "s": "<p>4.(b) ‘does she hear’ → ‘mt sp dt’ …….(i)<br/>‘hear the music’ → ‘rb mt ch’.....(ii)<br/>From (i) and (ii) ‘hear’ and ‘mt’ are common.<br/>So, the code of ‘hear’ is ‘mt’.</p>"
+    },
+    {
+      "q": "<p>10.<span style=\"font-family:Cambria Math\"> In a certain code language, ‘FOLDER\" is coded as \"PCBJMD\". What is the code for \"DOLLAR\" in that code language ?</span></p>",
+      "o": [
+        "<p> PYJJMC<span style=\"font-family:Cambria Math\"> </span></p>",
+        "<p> PZJJMB</p>",
+        "<p> PYJJMB<span style=\"font-family:Cambria Math\"> </span></p>",
+        "<p> PYKKMC</p>"
+      ],
+      "a": 2,
+      "s": "<p>10.(c)</p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image19.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image19.png\" style=\"max-width:100%;\"/></p> <p><span style=\"font-family:Cambria Math\">Similarly,</span></p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image20.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image20.png\" style=\"max-width:100%;\"/></p>"
+    },
+    {
+      "q": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><b><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>Which of the following is the possible code for “up side”?</span></span></span></b></p>",
+      "o": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>bhn ytr</span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>kol aws</span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>cfv aws</span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>edg cfv</span></span></span></p>"
+      ],
+      "a": 3,
+      "s": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">“so many mornings” is coded as “aws drf njm”----------(i)</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">“woke up confused” is coded as “cfv bhn kol”-----------(ii)</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">“dreams are many” is coded as “zsx njm ytr”------------(iii)</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">“confused so are” is coded as  “kol zsx drf”--------------(iv)</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (i) and (iii), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">many → njm</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (i) and (iv), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">so → drf</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equation (i), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">mornings → aws</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equation (ii), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">Woke/up → cfv/bhn</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (ii) and (iv), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">confused → kol</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (iii) and (iv), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">are → zsx</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (iv), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">Dreams → ytr</span></span></span></span></span></span></span></span></p>\n<p><span style=\"font-size:11pt\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\">The code for “up” is either “cfv/bhn” and “side” code must be unique.</span></span></span></span></span></span></p>"
+    },
+    {
+      "q": "<p>13.<span style=\"font-family: Times New Roman;\"> In a certain code language, ‘FIGURE’ is written as ‘DJEVPF’. How will ‘DECODE’ be written as in that language ?</span></p>",
+      "o": [
+        "<p>BFDNBF<span style=\"font-family: Times New Roman;\"> </span></p>",
+        "<p>BDDNBD</p>",
+        "<p><span style=\"font-family: Times New Roman;\">BFAPBF</span><span style=\"font-family: Times New Roman;\"> </span></p>",
+        "<p>BDANBD</p>"
+      ],
+      "a": 2,
+      "s": "<p>13.(c)<span style=\"font-family: Times New Roman;\"> Here -2, +1, -2, &amp; so on..</span></p>\n<p><strong id=\"docs-internal-guid-11abcd2e-7fff-a08a-0837-1edb78e6d3e4\"><img height=\"86\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://lh7-rt.googleusercontent.com/docsz/AD_4nXeR3OSfdqncfco7u3ulOZ9-khGo88BY6NPQ6poF-Cz7sBNUf2EK5MU1EdH5lueggjK8j98yyVp9P1-poUMuE58UmifpxgwWFltZgfWKhdnczU628ktEPSjmm0PbW_IXPQW_H7lxWg%3Fkey%3DS2tu5BURB2pOav13q5IyBkft';\" referrerpolicy=\"no-referrer\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXeR3OSfdqncfco7u3ulOZ9-khGo88BY6NPQ6poF-Cz7sBNUf2EK5MU1EdH5lueggjK8j98yyVp9P1-poUMuE58UmifpxgwWFltZgfWKhdnczU628ktEPSjmm0PbW_IXPQW_H7lxWg?key=S2tu5BURB2pOav13q5IyBkft\" style=\"max-width:100%;\" width=\"177\"/></strong></p>\n<p><span style=\"font-family: Times New Roman;\">Similarly , DECODE = </span><span style=\"font-family: Times New Roman;\">BFAPBF</span></p>"
+    },
+    {
+      "q": "<p>3. In a certain code language, ‘95’ means ‘estimated time’ , ‘469’ means ‘space and time’ and ‘65’ means ‘estimated space’. Which of the following numbers mean ‘space’ in that language?</p>",
+      "o": [
+        "<p>9</p>",
+        "<p>4</p>",
+        "<p>5</p>",
+        "<p>6</p>"
+      ],
+      "a": 3,
+      "s": "<p>3.(d)<br/><img alt=\"rId4\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1728626140934.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1728626140934.png\" style=\"max-width:100%;\"/></p>"
+    },
+    {
+      "q": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">In    a certain code language, ‘PAWS’ is written as ‘59’ and    ‘CLAW’ is written as ‘39’.How will ‘TOES’ be written    in that language?</span></span></span></span><span></span></span></p>",
+      "o": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">69</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">29</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">59</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">39</span></span></span></span></span></p>"
+      ],
+      "a": 2,
+      "s": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <img height=\"700\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752391981465_html_1a70318e0336e141.png';\" referrerpolicy=\"no-referrer\" src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752391981465_html_1a70318e0336e141.png\" style=\"max-width:100%;\" width=\"576\"/> </p>"
+    },
+    {
+      "q": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">In    a certain code language, ‘ACTION’ is written as ‘TXANLI’    and 'DEBATE' is written as 'BVDEGA'. How will ‘CHANGE’ be    written in that language?</span></span></span></span><span></span></span></p>",
+      "o": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">HRPEIU</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">BJDLER</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">ATHFN</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">ASCETN</span></span></span></span></span></p>"
+      ],
+      "a": 3,
+      "s": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <img height=\"684\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752386543208_html_b9708e6e1f4fa94c.png';\" referrerpolicy=\"no-referrer\" src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752386543208_html_b9708e6e1f4fa94c.png\" style=\"max-width:100%;\" width=\"576\"/> </p>"
+    },
+    {
+      "q": "<p>14. In a certain code language, \"CASKM\" is coded as \"69271\", \"CHARM\" is coded as \"13576\", \"CIAOS\" is coded as ‘74682\". What can be the code for \"H\" in that code language ?</p>",
+      "o": [
+        "<p>7</p>",
+        "<p>1</p>",
+        "<p>3</p>",
+        "<p>6</p>"
+      ],
+      "a": 2,
+      "s": "<p>14.(c)<br/><img alt=\"rId26\" height=\"125\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1731301373670.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1731301373670.png\" style=\"max-width:100%;\" width=\"313\"/><br/>It can be clearly seen that code for H and R are 3 and 5 or 5 and 3. But there is no option for 5, therefore H is coded as 3.<br/>.</p>"
+    },
+    {
+      "q": "<div class=\"status-sec\"><table class=\"table-status\"><tbody><tr><td class=\"noborder\"></td><td class=\"noborder txt-black\">Time</td><td class=\"noborder txt-black\">Status</td></tr><tr><td class=\"txt-black bg-blue\">You</td><td class=\"txt-muted\">0 sec</td><td><span class=\"tst-status status-unat\">Unattempted</span></td></tr><tr><td class=\"txt-black bg-blue\">Topper</td><td class=\"txt-muted\">7 sec</td><td><span class=\"tst-status status-correct\">Correct</span></td></tr></tbody></table></div><span class=\"eqt\"><p>In a certain code language, 'BOOK' is written as 'ZNNI' and 'SHOP' is written as 'QFNN'. How will 'NOTES' be written in that language?</p></span><span class=\"hqt\" style=\"display:none\">एक निश्चित कोड भाषा में, 'BOOK' को 'ZNNI' और 'SHOP' को 'QFNN' लिखा जाता है। उस भाषा में 'NOTES' को कैसे लिखा जाएगा?</span>",
+      "o": [
+        "<span class=\"eqt\">LRDQN</span><span class=\"hqt\" style=\"display:none\">LRDQN</span>",
+        "<span class=\"eqt\">LNRDQ</span><span class=\"hqt\" style=\"display:none\">LNRDQ</span>",
+        "<span class=\"eqt\">LDNQR</span><span class=\"hqt\" style=\"display:none\">LDNQR</span>",
+        "<span class=\"eqt\">QDRNL</span><span class=\"hqt\" style=\"display:none\">QDRNL</span>"
+      ],
+      "a": 1,
+      "s": "<table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A (1)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B (2)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C (3)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">D (4)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E (5)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">F (6)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">G (7)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">H (8)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I (9)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">J (10)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">K (11)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">L (12)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">M (13)</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Z (26)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Y (25)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">X (24)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">W (23)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">V (22)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U (21)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">T (20)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R (18)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Q (17)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">P (16)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N (14)</td></tr></table><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">K</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">BOOK</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">K-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Z</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">ZNNI</td></tr></table><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">H</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">P</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">SHOP</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">H-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">P-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Q</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">G</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">QGNN</td></tr></table><p>Similarly,</p><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">T</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">NOTES</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">T-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">L</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">D</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Q</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"><b>LNRDQ</b></td></tr></table>"
+    },
+    {
+      "q": "<p><span style=\"font-family: Cambria Math;\">10. </span><span style=\"font-family: Cambria Math;\">In a certain code language, \"MOBILE\" is coded as BJFZLK and \"TABLET\" is coded as</span></p>\n<p><span style=\"font-family: Cambria Math;\">QCIZXR. How will \"KINDLE\" be coded in the same language?</span></p>",
+      "o": [
+        "<p>BJALFI</p>",
+        "<p>BJBKFI</p>",
+        "<p>CIBKGC</p>",
+        "<p>CJBLGI</p>"
+      ],
+      "a": 0,
+      "s": "<p>10.(a)</p>\n<p><span style=\"font-family: Cambria Math;\"> </span><img height=\"111\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image22.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image22.png\" style=\"max-width:100%;\" width=\"160\"/>   <span style=\"font-family: Cambria Math;\">,  </span><img height=\"110\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image23.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image23.png\" style=\"max-width:100%;\" width=\"156\"/></p>\n<p><span style=\"font-family: Cambria Math;\">Similarly,</span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span><img height=\"110\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image24.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image24.png\" style=\"max-width:100%;\" width=\"156\"/></p>"
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "<p>10. एक निश्चित कूटभाषा में, ‘EACH’ को ‘6138’ के रूप में कूटबद्ध किया गया है और ‘CAME’ को ‘1396’ के रूप में कूटबद्ध किया गया है। उस भाषा में ‘M’ के लिए कूट क्या है?</p>",
+      "o_hi": [
+        "<p>6</p>",
+        "<p>9</p>",
+        "<p>3</p>",
+        "<p>1</p>"
+      ],
+      "a": 1,
+      "s_hi": "<p>10.(b) EACH :- 6138……(i)<br/>CAME :- 1396…….(ii)<br/>(i) और (ii) से ‘CAE’ और ‘613’ उभयनिष्ठ हैं। ‘M’ का कोड = ‘9’ है।</p>"
+    },
+    {
+      "q_hi": "<p>7. एक निश्चित कूट भाषा में, \"TAIL\" को \"2463\" के रूप में कूटबद्ध किया जाता है और \"INKS\" को \"9351\" के रूप में कूटबद्ध किया जाता है। दी गई कूट भाषा में \"।\" के लिए कूट क्या होगा?</p>",
+      "o_hi": [
+        "<p>5</p>",
+        "<p>6</p>",
+        "<p>9</p>",
+        "<p>3</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>7.(d)<br/>T A I L <math display=\"inline\"><mo>→</mo></math> 2 4 6 3 … (i)<br/>I N K S <math display=\"inline\"><mo>→</mo></math> 9 3 5 1 … (ii)<br/>(i) और (ii) से \"I\" और \"3\" उभयनिष्ठ हैं।<br/>अतः, \"I\" के लिए कूट \"3\" है।</p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>In a coded language, \"SAB ATI PON IFT\" is coded as \"at the low level\", \"IJN ATI XIO\" is coded as \"high and low\", \"ROA XIO DOO\" is coded as \"tide is high\" and \"IFT PON ROA\" is coded as \"the tide level\". What is the code for 'PON ROA' if code for \"IFT\" is 'the'?</p></span><span class=\"hqt\" style=\"display:none\"><p>एक कोडित भाषा में \"SAB ATI PON IFT\" को \"at the low level\" के रूप में कोडित किया जाता है, \"IJN ATI XIO\" को \"high and low\" के रूप में कोडित किया जाता है, \"ROA XIO DOO\" को \"tide is high\" के रूप में कोडित किया जाता है तथा \"IFT PON ROA\" को \"the tide level\" के रूप में कोडित किया जाता है। यदि \"IFT\" के लिए कोड 'the' है, तो 'PON ROA' के लिए कोड क्या है?</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">level tide</span><span class=\"hqt\" style=\"display:none\">level tide</span>",
+        "<span class=\"eqt\">is high</span><span class=\"hqt\" style=\"display:none\">is high</span>",
+        "<span class=\"eqt\">at and</span><span class=\"hqt\" style=\"display:none\">at and</span>",
+        "<span class=\"eqt\">and low</span><span class=\"hqt\" style=\"display:none\">and low</span>"
+      ],
+      "a": 0,
+      "s_hi": "<p>It is given that, </p><p>\"SAB ATI PON IFT\" is coded as \"at the low level\"..........(1)</p><p>\"IJN ATI XIO\" is coded as \"high and low\".................(2)</p><p>\"ROA XIO DOO\" is coded as \"tide is high\" .................(3)</p><p>\"IFT PON ROA\" is coded as \"the tide level\"...................(4)</p><p>From (1) and (2), ATI == low.</p><p>From (2) and (3), XIO == high.</p><p>From (3) and (4), ROA == tide.</p><p>From (1) and (4), IFT PON == the level.</p><p>But IFT == the</p><p>So, PON == level</p><p>From (1), SAB == at.</p><p>From (2), IJN == and.</p><p>From (3), DOO == is.</p><p>Here, PON ROA == level tide.</p>"
+    },
+    {
+      "q_hi": "<div class=\"status-sec\"><table class=\"table-status\"><tbody><tr><td class=\"noborder\"></td><td class=\"noborder txt-black\">Time</td><td class=\"noborder txt-black\">Status</td></tr><tr><td class=\"txt-black bg-blue\">You</td><td class=\"txt-muted\">0 sec</td><td><span class=\"tst-status status-unat\">Unattempted</span></td></tr><tr><td class=\"txt-black bg-blue\">Topper</td><td class=\"txt-muted\">21 sec</td><td><span class=\"tst-status status-correct\">Correct</span></td></tr></tbody></table></div><span class=\"eqt\"><p>In a certain code language, 'OASIS' is written as 'RJTBN' and 'OBESE' is written as 'DTFCN'. How will 'OCCUR' be written in that language? </p></span><span class=\"hqt\" style=\"display:none\">एक निश्चित कोड भाषा में, 'OASIS' को 'RJTBN' और 'OBESE' को 'DTFCN' लिखा जाता है। उस भाषा में 'OCCUR' को कैसे लिखा जाएगा?</span>",
+      "o_hi": [
+        "<span class=\"eqt\">VQDDN</span><span class=\"hqt\" style=\"display:none\">VQDDN</span>",
+        "<span class=\"eqt\">VQNDD</span><span class=\"hqt\" style=\"display:none\">VQNDD</span>",
+        "<span class=\"eqt\">QVNDD</span><span class=\"hqt\" style=\"display:none\">QVNDD</span>",
+        "<span class=\"eqt\">QVDDN</span><span class=\"hqt\" style=\"display:none\">QVDDN</span>"
+      ],
+      "a": 3,
+      "s_hi": "<table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A (1)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B (2)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C (3)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">D (4)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E (5)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">F (6)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">G (7)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">H (8)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I (9)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">J (10)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">K (11)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">L (12)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">M (13)</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Z (26)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Y (25)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">X (24)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">W (23)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">V (22)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U (21)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">T (20)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R (18)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Q (17)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">P (16)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N (14)</td></tr></table><p>'OASIS' is written as 'RJTBN'</p><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A (1)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I (9)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">OASIS</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Reverse</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S-1=R</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I+1=J</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S+1=T</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A+1=B</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1=N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">RJTBN</td></tr></table><p>'OBESE' is written as 'DTFCN'</p><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B (2)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E (5)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E (5)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">OBESE</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Reverse</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E-1=D</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S+1=T</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E+1=F</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B+1=C</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1=N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">DTFCN</td></tr></table><p>Similarly,</p><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C (3)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C (3)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U (21)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R (18)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">OCCUR</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Reverse</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R-1=Q</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U+1=V</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C+1=D</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C+1=D</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1=N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"><b>QVDDN</b></td></tr></table><p>Thus, 'OCCUR' is written as 'QVDDN'.</p>"
+    },
+    {
+      "q_hi": "<p>8.<span style=\"font-family: Palanquin;\"> एक निश्चित कूट भाषा में \"PRINT\" को \"</span><span style=\"font-family: Roboto;\">YMNIU</span><span style=\"font-family: Palanquin;\">\" लिखा जाता है। उस भाषा में \"MAGIC\" कैसे लिखा जाएगा?</span></p>",
+      "o_hi": [
+        "<p><span style=\"font-family: Roboto;\">HLDRV</span><span style=\"font-family: Roboto;\"> </span></p>",
+        "<p>HDLVR</p>",
+        "<p>HRLRZ</p>",
+        "<p><span style=\"font-family: Roboto;\">HRLZR</span><span style=\"font-family: Roboto;\"> </span></p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>8.(d)<br/><span style=\"font-family: Palanquin;\"><strong>तर्क: </strong>शब्द को उलट दें और फिर +5 को विषम स्थान के अंकों में जोड़ दें और सम अंकों की वर्णानुक्रमिक स्थिति के विपरीत कर दे ।</span><br/><span style=\"font-family: Arial Unicode MS;\">MAGIC → CIGAM शब्द को उलटने और उपरोक्त तर्क को लागू करने के बाद HRLZR .</span></p>"
+    },
+    {
+      "q_hi": "<p>6. एक निश्चित कूट भाषा में, \"LIKE\" को \"1576\" लिखा जाता है और \"LINK\" को \"6581\" लिखा जाता है। उसी कूट भाषा में \"E\" को कैसे लिखा जाएगा?</p>",
+      "o_hi": [
+        "<p>6</p>",
+        "<p>5</p>",
+        "<p>7</p>",
+        "<p>1</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>6.(c) LIKE :- 1576…….(i)<br/>LINK :- 6581…….(ii)<br/>(i) और (ii) से ‘LIK’ और ‘156’ उभयनिष्ठ हैं। ‘E’ का कोड = ‘7’ है।</p>"
+    },
+    {
+      "q_hi": "<p>5. एक कोड भाषा में, CHILD को 412983 लिखा जाता है। आप उसी कोड भाषा में ADULT शब्द को कैसे लिखेंगे?</p>",
+      "o_hi": [
+        "<p>142112</p>",
+        "<p>14211220</p>",
+        "<p>124983</p>",
+        "<p>20122141</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>5.(d) तर्क-<br/><strong id=\"docs-internal-guid-5132d0ff-7fff-15de-05c1-5b0126e7d02d\"><img height=\"97\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://lh7-rt.googleusercontent.com/docsz/AD_4nXcFvQ7PmRQ6vzTlOvoYeHJ2dP4X_HKDLOG0WtFz9mufauKvSX4vm9xhSybOqc0kBX4X7uxi6HdZCCPyhfE41mi2oDKgeDwvi9vPzUNg3e3dlHL8BTPEQuDSqeZtak6qIygaRZ5KpYuAGisQTZerwlGNeeo%3Fkey%3DKWfmEzdI0AiicySuZi3z_g';\" referrerpolicy=\"no-referrer\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXcFvQ7PmRQ6vzTlOvoYeHJ2dP4X_HKDLOG0WtFz9mufauKvSX4vm9xhSybOqc0kBX4X7uxi6HdZCCPyhfE41mi2oDKgeDwvi9vPzUNg3e3dlHL8BTPEQuDSqeZtak6qIygaRZ5KpYuAGisQTZerwlGNeeo?key=KWfmEzdI0AiicySuZi3z_g\" style=\"max-width:100%;\" width=\"119\"/></strong><br/>इसी प्रकार ADULT को 20122141 लिखा जाता है</p>"
+    },
+    {
+      "q_hi": "<p>12. एक निश्चित कोड भाषा में, BRIDE FVMHI के रूप में लिखा है। उस भाषा में SINGLE कैसे लिखा जाएगा?</p>",
+      "o_hi": [
+        "<p>WMRJPO</p>",
+        "<p>WNRKPI</p>",
+        "<p>WMRJPK</p>",
+        "<p>WMRKPI</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>12.(d) <br/><strong>तर्क</strong> :<br/>B + 4 = F , R + 4 = V , I + 4 = M , D + 4 =H , E + 4 = I <br/>इसी तरह, SINGLE को WMRKPI के रूप में लिखा जाता है।</p>"
+    },
+    {
+      "q_hi": "<p><b>What may be possible code for “a waste material” in the given code language?</b></p>",
+      "o_hi": [
+        "<p>mu su ka</p>",
+        "<p>pe na ka</p>",
+        "<p>su ka ra</p>",
+        "<p>su ka qs</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>In certain language,</p><p>“waste product as last” is written as “ra mu pe ka”</p><p>“waste as a cheap” is written as “su ka pe ke”</p><p>“be as last cheap” is written as “pe na ke ra”</p><p>“a bad used product” is written as “da ku mu su”</p><p><b>Inference:</b></p><p>“waste product as last” is written as “ra mu pe ka”……..(1)</p><p>“waste as a cheap” is written as “su ka pe ke”……….(2)</p><p>“be as last cheap” is written as “pe na ke ra”……..(3)</p><p>“a bad used product” is written as “da ku mu su”……..(4)</p><p>From (1), (2) and (3), we get:</p><p>As → pe……..(5)</p><p>From (1), (2) and (5), we get:</p><p>Waste → ka……..(6)</p><p>From (1), (3) and (5), we get:</p><p>Last → ra……..(7)</p><p>From (1) and (4), we get:</p><p>Product → mu……..(8)</p><p>From (2), (3) and (5), we get:</p><p>Cheap → ke……..(9)</p><p>From (2) and (4), we get:</p><p>A → su……..(10)</p><p>From (3), (5), (7) and (9), we get:</p><p>Be → na……..(11)</p><p>From (4), (8) and (10), we get:</p><p>Bad/Used → da/ku……..(12)</p><p>The possible code for “a waste material” is “su ka qs”.</p>"
+    },
+    {
+      "q_hi": "<p>11.<span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">एक</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">निश्चित</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">कूट</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">भाषा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">में</span><span style=\"font-family:Cambria Math\">, \"HUMP\" </span><span style=\"font-family:Kokila\">को</span><span style=\"font-family:Cambria Math\"> \"GTLO\" </span><span style=\"font-family:Kokila\">लिखा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">जाता</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">है</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">और</span><span style=\"font-family:Cambria Math\"> \"LIKE\" </span><span style=\"font-family:Kokila\">को</span><span style=\"font-family:Cambria Math\"> \"KHJD\" </span><span style=\"font-family:Kokila\">लिखा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">जाता</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">है।</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">उस</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">भाषा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">में</span><span style=\"font-family:Cambria Math\"> \"PLAY\" </span><span style=\"font-family:Kokila\">को</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">कैसे</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">लिखा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">जाएगा</span><span style=\"font-family:Cambria Math\">?</span></p>",
+      "o_hi": [
+        "<p> OJZX<span style=\"font-family:Cambria Math\"> </span></p>",
+        "<p> QKZX </p>",
+        "<p> OKZX </p>",
+        "<p> OKYX</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>11.(c)</p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image21.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image21.png\" style=\"max-width:100%;\"/><span style=\"font-family:Cambria Math\">    ,   </span><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image22.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image22.png\" style=\"max-width:100%;\"/></p> <p><span style=\"font-family:Kokila\">इसी</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">प्रकार</span><span style=\"font-family:Cambria Math\">,</span></p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image23.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image23.png\" style=\"max-width:100%;\"/></p>"
+    },
+    {
+      "q_hi": "<p>2. किसी कूट भाषा में, \"FORK\" को ‘GLWD’ के रूप में कूटबद्ध किया जाता है और \"CAVF\" को ‘DXAY’ के रूप में कूटबद्ध किया जाता है। उसी भाषा में \"TRHA\" को किस प्रकार कूटबद्ध किया जाएगा?</p>",
+      "o_hi": [
+        "<p>UOPR</p>",
+        "<p>UONQ</p>",
+        "<p>UNMS</p>",
+        "<p>UOMT</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>2.(d)<br/><img alt=\"rId4\" height=\"100\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1739171190421.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1739171190421.png\" style=\"max-width:100%;\" width=\"142\"/>,     <img alt=\"rId5\" height=\"100\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1739171190605.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1739171190605.png\" style=\"max-width:100%;\" width=\"142\"/><br/>इसी प्रकार,<br/><img alt=\"rId6\" height=\"100\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1739171190741.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1739171190741.png\" style=\"max-width:100%;\" width=\"141\"/></p>"
+    },
+    {
+      "q_hi": "<p>10. एक निश्चित कूट भाषा में, \"FRAK\" को \"35\" और \"MALT\" को \"45\" के रूप में कोडित किया जाता है, उस भाषा में \"TRIM\" को कैसे कोडित किया जाएगा?</p>",
+      "o_hi": [
+        "<p>60</p>",
+        "<p>58</p>",
+        "<p>59</p>",
+        "<p>61</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>10.(c)<br/>FRAK = 6 + 18 + 1 + 11 = 36 - 1 = 35<br/>MALT = 13 + 1 + 12 + 20 = 46 - 1 = 45<br/>इसी तरह,<br/>TRIM = 20 + 18 + 9 + 13 = 60 - 1 = 59</p>"
+    },
+    {
+      "q_hi": "<p>7. <span style=\"font-family: Nirmala UI;\">एक</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">खास</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कूट</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">भाषा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">में</span><span style=\"font-family: Cambria Math;\">, \"CLOUD\" </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> \"DMUAE\" </span><span style=\"font-family: Nirmala UI;\">और</span><span style=\"font-family: Cambria Math;\"> \"WHITE\" </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> \"XIOUI\" </span><span style=\"font-family: Nirmala UI;\">लिखा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जाता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है</span><span style=\"font-family: Nirmala UI;\">।</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">उस</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">भाषा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">में</span><span style=\"font-family: Cambria Math;\"> \"WATER\" </span><span style=\"font-family: Nirmala UI;\">को</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">कैसे</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">लिखा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">जाएगा</span><span style=\"font-family: Cambria Math;\">?</span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span></p>",
+      "o_hi": [
+        "<p><span style=\"font-family: Cambria Math;\">XEUIT</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">XEVIS</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">XBUFS</span></p>",
+        "<p><span style=\"font-family: Cambria Math;\">XEUIS</span></p>"
+      ],
+      "a": 3,
+      "s_hi": "<p> </p>\n<p><span style=\"font-family: Cambria Math;\"> </span></p>\n<p><span style=\"font-family: Cambria Math;\">Sol.7</span><span style=\"font-family: Cambria Math;\">.(</span><span style=\"font-family: Cambria Math;\">d)</span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span><img height=\"102\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image17.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image17.png\" style=\"max-width:100%;\" width=\"191\"/> <span style=\"font-family: Nirmala UI;\">और</span><span style=\"font-family: Cambria Math;\">  </span><img height=\"99\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image18.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image18.png\" style=\"max-width:100%;\" width=\"200\"/></p>\n<p><span style=\"font-family: Nirmala UI;\">इसी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रकार</span><span style=\"font-family: Cambria Math;\">,</span></p>\n<p><span style=\"font-family: Cambria Math;\"> </span><img height=\"96\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image19.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1703828654/word/media/image19.png\" style=\"max-width:100%;\" width=\"183\"/></p>\n<p><span style=\"font-family: Nirmala UI;\">यहाँ</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">स्वरों</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">पैटर्न</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">इस</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">प्रकार</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Nirmala UI;\">है</span></p>\n<p><span style=\"font-family: Cambria Math;\">A + 1 = </span><span style=\"font-family: Cambria Math;\">E ,</span><span style=\"font-family: Cambria Math;\"> E + 1 = I , I + 1 = O , O + 1 = U</span></p>"
+    },
+    {
+      "q_hi": "<p>1. यदि AMBER = 27 और BROWN = 14 है, तो GREEN किसके समतुल्य होगा ?</p>",
+      "o_hi": [
+        "<p>28</p>",
+        "<p>36</p>",
+        "<p>39</p>",
+        "<p>24</p>"
+      ],
+      "a": 1,
+      "s_hi": "<p>1.(b) यहां, <br/>A     M   B    E    R =<br/>1 + 13 + 2 + 5 + 18 = 39 = <math display=\"inline\"><mn>3</mn><mo>×</mo><mn>9</mn></math> = 27<br/>इसी तरह, BROWN = 14 , <br/>फिर G R E E N =<br/>7 + 18 + 5 + 5 + 14 = 49 = <math display=\"inline\"><mn>4</mn><mo>×</mo><mn>9</mn></math> = 36</p>"
+    },
+    {
+      "q_hi": "<span class=\"eqt\"><p>In a certain code language, 'TYR' is coded as '65', and 'GAP' is coded as '26'. How will 'MOJ' be coded in that language?</p></span><span class=\"hqt\" style=\"display:none\"><p>एक निश्चित कोड भाषा में, 'TYR' को '65' के रूप में कोडित किया जाता है और 'GAP' को '26' के रूप में कोडित किया जाता है, तो समान भाषा में 'MOJ' को किस प्रकार कोडित किया जायेगा?</p></span>",
+      "o_hi": [
+        "<span class=\"eqt\">40</span><span class=\"hqt\" style=\"display:none\">40</span>",
+        "<span class=\"eqt\">41</span><span class=\"hqt\" style=\"display:none\">41</span>",
+        "<span class=\"eqt\">38</span><span class=\"hqt\" style=\"display:none\">38</span>",
+        "<span class=\"eqt\">39</span><span class=\"hqt\" style=\"display:none\">39</span>"
+      ],
+      "a": 0,
+      "s_hi": "<p>The code is by adding the position of all the alphabets according to the alphabetical series and '2' to the total sum.</p><p>TYR = (20+25+18) + 2 = 63+2 = 65</p><p>GAP = (7+1+16) + 2 = 24+2 = 26</p><p>Similarly,</p><p>MOJ = (13+15+10) + 2 = 38+2 = 40</p><p>So, 'MOJ' will be coded as '40'.</p>"
+    },
+    {
+      "q_hi": "<p>4. एक निश्चित कूट भाषा में, ‘does she hear’ को \"mt sp dt\" के रूप में लिखा जाता है और ‘hear the music’ को \"rb mt ch\" के रूप में लिखा जाता है। उस भाषा में \"hear\" के लिए कूट क्या है?</p>",
+      "o_hi": [
+        "<p>sp</p>",
+        "<p>mt</p>",
+        "<p>ch</p>",
+        "<p>rb</p>"
+      ],
+      "a": 1,
+      "s_hi": "<p>4.(b) ‘does she hear’ → ‘mt sp dt’ …….(i)<br/>‘hear the music’ → ‘rb mt ch’.....(ii)<br/>(i) और (ii) से \"hear\" और \"mt\" उभयनिष्ठ हैं।<br/>अतः \"hear\" का कूट \"mt\" है।</p>"
+    },
+    {
+      "q_hi": "<p>10.<span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">एक</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">निश्चित</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">कूट</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">भाषा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">में</span><span style=\"font-family:Cambria Math\">, \"FOLDER\" </span><span style=\"font-family:Kokila\">को</span><span style=\"font-family:Cambria Math\"> \"PCBJMD\" </span><span style=\"font-family:Kokila\">लिखा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">जाता</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">है।</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">उस</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">कूट</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">भाषा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">में</span><span style=\"font-family:Cambria Math\"> \"DOLLAR\" </span><span style=\"font-family:Kokila\">को</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">कैसे</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">लिखा</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">जाएगा</span><span style=\"font-family:Cambria Math\">?</span></p>",
+      "o_hi": [
+        "<p> PYJJMC<span style=\"font-family:Cambria Math\"> </span></p>",
+        "<p> PZJJMB</p>",
+        "<p> PYJJMB<span style=\"font-family:Cambria Math\"> </span></p>",
+        "<p> PYKKMC</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>10.(c)</p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image19.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image19.png\" style=\"max-width:100%;\"/></p> <p><span style=\"font-family:Kokila\">इसी</span><span style=\"font-family:Cambria Math\"> </span><span style=\"font-family:Kokila\">प्रकार</span><span style=\"font-family:Cambria Math\">,</span></p> <p><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image20.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1704365779/word/media/image20.png\" style=\"max-width:100%;\"/></p>"
+    },
+    {
+      "q_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><b><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>Which of the following is the possible code for “up side”?</span></span></span></b></p>",
+      "o_hi": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>bhn ytr</span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>kol aws</span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>cfv aws</span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style='font-family:\"Arial\",sans-serif'>edg cfv</span></span></span></p>"
+      ],
+      "a": 3,
+      "s_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">“so many mornings” is coded as “aws drf njm”----------(i)</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">“woke up confused” is coded as “cfv bhn kol”-----------(ii)</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">“dreams are many” is coded as “zsx njm ytr”------------(iii)</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">“confused so are” is coded as  “kol zsx drf”--------------(iv)</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (i) and (iii), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">many → njm</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (i) and (iv), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">so → drf</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equation (i), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">mornings → aws</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equation (ii), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">Woke/up → cfv/bhn</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (ii) and (iv), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">confused → kol</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (iii) and (iv), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">are → zsx</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">From equations (iv), we get that,</span></span></span></span></span></span></span></span></p>\n<p style=\"margin-top:20px; margin-bottom:16px\"><span style=\"font-size:11pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\"><span style=\"color:black\">Dreams → ytr</span></span></span></span></span></span></span></span></p>\n<p><span style=\"font-size:11pt\"><span style=\"line-height:115%\"><span style=\"font-family:Arial,sans-serif\"><span lang=\"EN-IN\" style=\"font-size:12.0pt\"><span style=\"background:white\"><span style=\"line-height:115%\">The code for “up” is either “cfv/bhn” and “side” code must be unique.</span></span></span></span></span></span></p>"
+    },
+    {
+      "q_hi": "<p>13<span style=\"font-family: Times New Roman;\">.</span><span style=\"font-family: Baloo;\"> किसी निश्चित कूट भाषा में, ‘FIGURE’ को ‘DJEVPE’ लिखा जाता है । इस भाषा में ‘DECODE’ को कैसे लिखा जाएगा ? </span></p>",
+      "o_hi": [
+        "<p>BFDNBF<span style=\"font-family: Times New Roman;\"> </span></p>",
+        "<p>BDDNBD</p>",
+        "<p><span style=\"font-family: Times New Roman;\">BFAPBF</span><span style=\"font-family: Times New Roman;\"> </span></p>",
+        "<p>BDANBD</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>13.(c)<span style=\"font-family: Baloo;\"> यहां -2, +1, -2, और इसी तरह ..</span></p>\n<p><strong id=\"docs-internal-guid-11abcd2e-7fff-a08a-0837-1edb78e6d3e4\"><img height=\"86\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://lh7-rt.googleusercontent.com/docsz/AD_4nXeR3OSfdqncfco7u3ulOZ9-khGo88BY6NPQ6poF-Cz7sBNUf2EK5MU1EdH5lueggjK8j98yyVp9P1-poUMuE58UmifpxgwWFltZgfWKhdnczU628ktEPSjmm0PbW_IXPQW_H7lxWg%3Fkey%3DS2tu5BURB2pOav13q5IyBkft';\" referrerpolicy=\"no-referrer\" src=\"https://lh7-rt.googleusercontent.com/docsz/AD_4nXeR3OSfdqncfco7u3ulOZ9-khGo88BY6NPQ6poF-Cz7sBNUf2EK5MU1EdH5lueggjK8j98yyVp9P1-poUMuE58UmifpxgwWFltZgfWKhdnczU628ktEPSjmm0PbW_IXPQW_H7lxWg?key=S2tu5BURB2pOav13q5IyBkft\" style=\"max-width:100%;\" width=\"177\"/></strong></p>\n<p><span style=\"font-family: Baloo;\">इसी प्रकार, DECODE = BFAPBF</span></p>"
+    },
+    {
+      "q_hi": "<p>3. एक निश्चित कूट भाषा में, \"95\" का अर्थ estimated time’है, \"469\" का अर्थ ‘space and time’ और \"65\" का अर्थ ‘estimated space’ है। निम्नलिखित में से किस संख्या का अर्थ उस भाषा में ‘space’ है?</p>",
+      "o_hi": [
+        "<p>9</p>",
+        "<p>4</p>",
+        "<p>5</p>",
+        "<p>6</p>"
+      ],
+      "a": 3,
+      "s_hi": "<p>3.(d)<br/><img alt=\"rId4\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1728626140934.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1728626140934.png\" style=\"max-width:100%;\"/></p>"
+    },
+    {
+      "q_hi": "<span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">[SSC    SP P-11 2023]</span></span></span></span>",
+      "o_hi": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">69</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">29</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">59</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">39</span></span></span></span></span></p>"
+      ],
+      "a": 2,
+      "s_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <img height=\"700\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752391981465_html_1a70318e0336e141.png';\" referrerpolicy=\"no-referrer\" src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752391981465_html_1a70318e0336e141.png\" style=\"max-width:100%;\" width=\"576\"/> </p>"
+    },
+    {
+      "q_hi": "<span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">[SSC    CPO 2023]</span></span></span></span>",
+      "o_hi": [
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style><p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">HRPEIU</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">BJDLER</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">ATHFN</span></span></span></span></span></p>",
+        "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <span style=\"font-size:11pt\"><span><span style=\"font-style:normal\"><span style=\"text-decoration:none\"><span style=\"font-weight:normal\">ASCETN</span></span></span></span></span></p>"
+      ],
+      "a": 3,
+      "s_hi": "<style>*{overflow-wrap: break-word;} img {max-width:100% !important} </style> <p style=\"orphans:2;widows:2\"> <img height=\"684\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752386543208_html_b9708e6e1f4fa94c.png';\" referrerpolicy=\"no-referrer\" src=\"https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1752386543208_html_b9708e6e1f4fa94c.png\" style=\"max-width:100%;\" width=\"576\"/> </p>"
+    },
+    {
+      "q_hi": "<p>14. एक निश्चित कूट भाषा में, \"CASKM\" को \"69271\" लिखा जाता है, \"CHARM\" को \"13576\" लिखा जाता है, और \"CIAOS\" को \"74682\" लिखा जाता है। उसी कूट भाषा में \"H\" को कैसे लिखा जाएगा?</p>",
+      "o_hi": [
+        "<p>7</p>",
+        "<p>1</p>",
+        "<p>3</p>",
+        "<p>6</p>"
+      ],
+      "a": 2,
+      "s_hi": "<p>14.(c)<br/><img alt=\"rId26\" height=\"125\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://d2jnyx7x72uicf.cloudfront.net/image_1731301373670.png';\" referrerpolicy=\"no-referrer\" src=\"https://d2jnyx7x72uicf.cloudfront.net/image_1731301373670.png\" style=\"max-width:100%;\" width=\"313\"/><br/>यह स्पष्ट रूप से देखा जा सकता है कि H और R के लिए कोड 3 और 5 या 5 और 3 हैं। लेकिन 5 के लिए कोई विकल्प नहीं है, इसलिए H को 3 के रूप में कोड किया गया है।</p>"
+    },
+    {
+      "q_hi": "<div class=\"status-sec\"><table class=\"table-status\"><tbody><tr><td class=\"noborder\"></td><td class=\"noborder txt-black\">Time</td><td class=\"noborder txt-black\">Status</td></tr><tr><td class=\"txt-black bg-blue\">You</td><td class=\"txt-muted\">0 sec</td><td><span class=\"tst-status status-unat\">Unattempted</span></td></tr><tr><td class=\"txt-black bg-blue\">Topper</td><td class=\"txt-muted\">7 sec</td><td><span class=\"tst-status status-correct\">Correct</span></td></tr></tbody></table></div><span class=\"eqt\"><p>In a certain code language, 'BOOK' is written as 'ZNNI' and 'SHOP' is written as 'QFNN'. How will 'NOTES' be written in that language?</p></span><span class=\"hqt\" style=\"display:none\">एक निश्चित कोड भाषा में, 'BOOK' को 'ZNNI' और 'SHOP' को 'QFNN' लिखा जाता है। उस भाषा में 'NOTES' को कैसे लिखा जाएगा?</span>",
+      "o_hi": [
+        "<span class=\"eqt\">LRDQN</span><span class=\"hqt\" style=\"display:none\">LRDQN</span>",
+        "<span class=\"eqt\">LNRDQ</span><span class=\"hqt\" style=\"display:none\">LNRDQ</span>",
+        "<span class=\"eqt\">LDNQR</span><span class=\"hqt\" style=\"display:none\">LDNQR</span>",
+        "<span class=\"eqt\">QDRNL</span><span class=\"hqt\" style=\"display:none\">QDRNL</span>"
+      ],
+      "a": 1,
+      "s_hi": "<table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">A (1)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B (2)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">C (3)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">D (4)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E (5)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">F (6)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">G (7)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">H (8)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I (9)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">J (10)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">K (11)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">L (12)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">M (13)</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Z (26)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Y (25)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">X (24)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">W (23)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">V (22)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">U (21)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">T (20)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S (19)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R (18)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Q (17)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">P (16)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O (15)</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N (14)</td></tr></table><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">K</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">BOOK</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">B-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">K-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Z</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">I</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">ZNNI</td></tr></table><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">H</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">P</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">SHOP</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">H-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">P-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Q</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">G</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">QGNN</td></tr></table><p>Similarly,</p><table style=\"border-collapse:collapse;\"><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">T</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">NOTES</td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">O-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">T-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">E-1</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">S-2</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"></td></tr><tr><td align=\"left\" style=\"border:1px solid black;padding:5px;\">L</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">N</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">R</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">D</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\">Q</td><td align=\"left\" style=\"border:1px solid black;padding:5px;\"><b>LNRDQ</b></td></tr></table>"
+    },
+    {
+      "q_hi": "<p>10.<span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">एक</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">निश्चित</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कूट</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">भाषा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> \"MOBILE\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> BJFZLK </span><span style=\"font-family: Cambria Math;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">रूप</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कूटबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जाता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">और</span><span style=\"font-family: Cambria Math;\"> \"TABLET\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> QCIZXR </span><span style=\"font-family: Cambria Math;\">के</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">रूप</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कूटबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जाता</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">है।</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">उसी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">भाषा</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">में</span><span style=\"font-family: Cambria Math;\"> \"KINDLE\" </span><span style=\"font-family: Cambria Math;\">को</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कैसे</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">कूटबद्ध</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">किया</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">जाएगा</span><span style=\"font-family: Cambria Math;\">?</span></p>",
+      "o_hi": [
+        "<p>BJALFI</p>",
+        "<p>BJBKFI</p>",
+        "<p>CIBKGC</p>",
+        "<p>CJBLGI</p>"
+      ],
+      "a": 0,
+      "s_hi": "<p>10.(a)</p>\n<p><span style=\"font-family: Cambria Math;\"> </span><img height=\"111\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image22.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image22.png\" style=\"max-width:100%;\" width=\"160\"/>   <span style=\"font-family: Cambria Math;\">,  </span><img height=\"110\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image23.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image23.png\" style=\"max-width:100%;\" width=\"156\"/></p>\n<p><span style=\"font-family: Cambria Math;\">इसी</span><span style=\"font-family: Cambria Math;\"> </span><span style=\"font-family: Cambria Math;\">प्रकार</span><span style=\"font-family: Cambria Math;\">,</span></p>\n<p><img height=\"110\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image24.png';\" referrerpolicy=\"no-referrer\" src=\"https://ssccglpinnacle.com/admin/resources/qdocs/test-1-EN-1/1705131176/word/media/image24.png\" style=\"max-width:100%;\" width=\"156\"/></p>"
+    }
+  ]
+}

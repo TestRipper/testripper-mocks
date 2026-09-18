@@ -1,0 +1,282 @@
+{
+  "quizTitle": "Number-System-Set05",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "Determine the unit digit of $98^{99^{100^{101}}}$.",
+    "o": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Base $8$ hai, toh cyclicity $4$ ki lagegi. Power dekh ke ghabrana nahi, sirf parity (odd/even) ka game hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Power ko $4$ se divide karo: $99 \\pmod 4 = 3 \\equiv -1$.<br>Ab is $99$ ke upar ki power dekho: $100^{101}$, jo ki definitely ek EVEN number hai.<br>$(-1)^{\\text{Even}} = +1$. Matlab reduced effective power $1$ ho gayi.<br>Unit digit = $8^1 = 8$.<br><br><b>Method 2 (Concept Builder):</b><br>Power of power (ladder exponent) me humesha base of ladder ko mod cyclicity karte hain. Phir uske exponent ka nature (odd ya even) check karte hain.<br><br><b>Future Exam Takeaway:</b><br>CDS aur SSC aise hi power ladders dete hain time waste karne ke liye. Modulo $4$ aur Odd/Even nature se ye $5$ second me break hota hai."
+  },
+  {
+    "q": "When a number is successively divided by $3, 4$ and $7$, the remainders obtained are $2, 3$ and $5$, respectively. What will be the remainder when $84$ divides the same number?",
+    "o": [
+      "71",
+      "53",
+      "48",
+      "30"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Successive division ka fixed structure hota hai. Sabse chhota number nikal ke direct $84$ (jo ki $3 \\times 4 \\times 7$ hai) se divide kar do.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Table method reverse me lagao, let final quotient be $0$.<br>Step 1: $(7 \\times 0) + 5 = 5$.<br>Step 2: $(4 \\times 5) + 3 = 23$.<br>Step 3: $(3 \\times 23) + 2 = 71$.<br>Smallest number mil gaya $71$.<br>Ab $71$ ko $84$ se divide karo, remainder $71$ hi bachega!<br><br><b>Method 2 (Concept Builder):</b><br>Yahan divisors ka product $3 \\times 4 \\times 7 = 84$ hai. Jab bhi same product se final divide karne ko bole, toh jo original smallest number aata hai, wahi directly remainder hota hai.<br><br><b>Future Exam Takeaway:</b><br>Always assume the last quotient as $0$ to find the absolute minimum number. This prevents calculation errors and saves time."
+  },
+  {
+    "q": "What is the remainder when $36363636$ is divided by $101$?",
+    "o": [
+      "36",
+      "100",
+      "0",
+      "1"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Ek dam free ke marks! $2$-digit number ki repeating sequence hamesha $101$ se judti hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Any number of the form $abab$ is completely divisible by $101$ ($ab \\times 101$).<br>Yahan $36363636$ extended form hai, jo strictly $36360000 + 3636$ ki sequence se banta hai.<br>Chunki ye completely multiple hai, Remainder = $0$.<br><br><b>Method 2 (Concept Builder):</b><br>Format $xyxy = xy \\times 101$. $abababab$ ka format essentially $ab \\times 1010101$ hai. Yahan pair perfectly $101$ ka multiple banata hai.<br><br><b>Future Exam Takeaway:</b><br>Pattern $xyxy$ is div by $101$. $xyzxyz$ is div by $1001$. Memorize these structural primes."
+  },
+  {
+    "q": "A printer numbers the pages of a book starting with $1$ and uses $5189$ digits in all. How many pages does the book have?",
+    "o": [
+      "1575",
+      "1574",
+      "1573",
+      "1576"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Page numbering ke digit chunks yaad hone chahiye. $999$ pages tak $2889$ digits hote hain. Uske upar sab $4$-digit wale hain.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Pages $1$ to $999$ use exactly $2889$ digits.<br>Remaining digits = $5189 - 2889 = 2300$ digits.<br>Ye saare bachhe hue digits $4$-digit number banayenge.<br>Number of $4$-digit pages = $2300 \\div 4 = 575$ pages.<br>Total pages = $999 + 575 = 1574$ pages.<br><br><b>Method 2 (Concept Builder):</b><br>Breakdown: $1-9$ ($9$ digits), $10-99$ ($180$ digits), $100-999$ ($2700$ digits). Total = $2889$. Ye sequence yaad rakhne se time bachta hai.<br><br><b>Future Exam Takeaway:</b><br>Always memorize standard digit counts: $1$ to $99 = 189$ digits. $1$ to $999 = 2889$ digits. Direct application se calculation aadhi ho jati hai."
+  },
+  {
+    "q": "Find the remainder when $2^{100}$ is divided by $102$.",
+    "o": [
+      "2",
+      "16",
+      "52",
+      "0"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Base $2$ aur Divisor $102$ coprime nahi hain. Iska matlab direct totient nahi lagega, pehle 'Cancellation Rule' lagana padega!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Expression: $\\frac{2^{100}}{102} = \\frac{2 \\times 2^{99}}{2 \\times 51}$. Upar niche $2$ se cancel kar do. Nayi form: $\\frac{2^{99}}{51}$.<br>Euler's Totient $\\phi(51) = 51 \\times \\left(1 - \\frac{1}{3}\\right) \\times \\left(1 - \\frac{1}{17}\\right) = 32$.<br>Power reduce: $99 \\pmod{32} = 3$.<br>Remainder of $\\frac{2^3}{51} = \\frac{8}{51}$ is $8$.<br>Crucial Step: Jis $2$ se pehle kata tha, usko wapis multiply karo! $8 \\times 2 = 16$.<br><br><b>Method 2 (Concept Builder):</b><br>Agar $\\text{HCF}(a, n) > 1$ ho, toh Euler ya Fermat fail ho jate hain. Pehle common factor HCF cancel karke coprime banao, solve karo, aur end me HCF se wapas multiply karo.<br><br><b>Future Exam Takeaway:</b><br>SSC CGL Mains me cancellation rule ka ye trap bohot common hai. Cancellation factor ko side me likh liya karo taaki end me bhool na jao."
+  },
+  {
+    "q": "If a number $54k31m82$ is divisible by $11$, what will be the maximum value of $(k+m)$?",
+    "o": [
+      "10",
+      "12",
+      "13",
+      "none"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Divisibility of $11$ calls for the difference of alternate sums. 'Maximum value' pucha hai matlab variables ki badi digits test karni padengi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Sum of odd places: $2 + m + 3 + 4 = 9 + m$.<br>Sum of even places: $8 + 1 + k + 5 = 14 + k$.<br>Difference: $(14 + k) - (9 + m) = 5 + k - m$.<br>Condition for $11$: Diff must be $0$ or $11$.<br>Case 1: $5 + k - m = 0 \\implies m - k = 5$. Pairs for max sum: $m=9, k=4 \\implies$ Sum = $13$.<br>Case 2: $5 + k - m = 11 \\implies k - m = 6$. Pairs for max sum: $k=9, m=3 \\implies$ Sum = $12$.<br>Maximum of both cases is $13$.<br><br><b>Method 2 (Concept Builder):</b><br>Single digits me maximum limit $9$ hoti hai. Equation me badi limit push karne ke liye $9$ ko explicitly rakh ke check karna hi best strategy hai.<br><br><b>Future Exam Takeaway:</b><br>Humesha dono cases ($0$ aur $11$) check karo, kyunki Examiner randomly max value kisi ek case me shift kar deta hai."
+  },
+  {
+    "q": "Find the last two digits of $19^{19^{19}}$.",
+    "o": [
+      "39",
+      "59",
+      "79",
+      "99"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Base ends in $9$. Aakhiri do digits nikalne hain, matlab $\\pmod{100}$ karna hai. Yahan cyclicity of tens place lagani hogi.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>$19^2 = 361 \\equiv 61 \\pmod{100}$. Cyclicity of bases ending in $9$ modulo $100$ is usually $10$.<br>Calculate effective power $19^{19} \\pmod{10}$: $19 \\equiv -1 \\pmod{10} \\implies (-1)^{19} = -1 \\equiv 9 \\pmod{10}$.<br>So we need last two digits of $19^9$.<br>$19^9 = 19 \\times (19^2)^4 = 19 \\times (61)^4$.<br>Shortcut for $61^4$: unit is $1$, tens is $6 \\times 4 = 24 \\implies 4$. Last two = $41$.<br>$19 \\times 41 = 779 \\implies 79$.<br><br><b>Method 2 (Concept Builder):</b><br>For any number ending in $1$, $(x1)^y$, the last two digits are $(\\text{unit digit of } x \\times y)1$. Isliye $61^4 \\implies (6\\times4)1 = 41$ aaya.<br><br><b>Future Exam Takeaway:</b><br>Whenever asked for last two digits of numbers ending in $3, 7,$ or $9$, always raise them to a power that ends in $1$ (like $19^2=361$) and then apply the $x1$ binomial shortcut."
+  },
+  {
+    "q": "A number consists of two digits and the digit in the ten's place exceeds that in the unit's place by $5$. If $5$ times the sum of the digits is subtracted from the number, the digits of the number are reversed. Then the sum of the digits of the number is:",
+    "o": [
+      "11",
+      "7",
+      "9",
+      "13"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Basic number system property: $(N - \\text{Reverse of } N) = 9(x-y)$. Direct equation put karni hai, no lengthy algebra.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Given: Tens digit exceeds units by $5 \\implies x - y = 5$.<br>Standard Rule: $N - \\text{Reverse} = 9(x-y) = 9(5) = 45$.<br>Question says: $N - 5(x+y) = \\text{Reverse} \\implies N - \\text{Reverse} = 5(x+y)$.<br>Equating both: $5(x+y) = 45 \\implies x+y = 9$.<br>Bhai sum directly $9$ aa gaya, number was $72$. Options dekhte hi khatam!<br><br><b>Method 2 (Concept Builder):</b><br>Agar details verify karni ho: $x-y=5$ aur $x+y=9$. Solve kiya toh $x=7, y=2$. Number $72$ ban gaya. Reverse $27$. $72 - 27 = 45$. Condition satisfied.<br><br><b>Future Exam Takeaway:</b><br>Difference between a $2$-digit number and its reverse is ALWAYS $9(x-y)$. Sum is ALWAYS $11(x+y)$. Isko muh-zubaani yaad rakho."
+  },
+  {
+    "q": "Find the smallest number which is perfectly divisible by $7$, but when divided by $6, 9,$ and $15$ leaves a remainder of $4$ in each case.",
+    "o": [
+      "94",
+      "184",
+      "364",
+      "544"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Number $7$ se divisible hona chahiye. Options check karo! $94, 184, 544$ $7$ se nahi katte. Sirf $364$ kat raha hai. Exam me solve karna hi nahi tha!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Maths approach: $\\text{LCM}$ of $6, 9, 15 = 90$.<br>Number is of the form $90k + 4$.<br>Condition: $(90k + 4)$ is divisible by $7$.<br>Find remainder of $90/7 \\implies 6$. So, $(6k + 4)$ must be div by $7$.<br>Put $k=4 \\implies 6(4)+4 = 28$ (divisible by $7$).<br>Original Number $= 90(4) + 4 = 364$.<br><br><b>Method 2 (Concept Builder):</b><br>We reduce $90k \\pmod 7$ to make calculation smaller. $90 = 12 \\times 7 + 6$. Hamesha remainder equation bana ke minimum $k$ dhoondo.<br><br><b>Future Exam Takeaway:</b><br>Aise sawalo me sabse pehle divisibility rule lagao options par. $90\\%$ cases me $1$ hi option match karega aur $5$ seconds me mark karke aage badh jaoge!"
+  },
+  {
+    "q": "What is the remainder when $18!$ is divided by $23$?",
+    "o": [
+      "1",
+      "18",
+      "22",
+      "4"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Factorial division by prime! Ye seedha Wilson's Theorem ka derivative hai. Wilson kehta hai $(P-1)! \\equiv -1 \\pmod P$.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>$23$ prime hai. By Wilson's Theorem: $22! \\equiv -1 \\pmod{23}$.<br>Isko $18!$ tak piche khicho:<br>$22 \\times 21 \\times 20 \\times 19 \\times 18! \\equiv -1 \\pmod{23}$.<br>Negative remainders apply karo $\\pmod{23}$: $(-1)(-2)(-3)(-4) \\times 18! \\equiv -1$.<br>$24 \\times 18! \\equiv -1$.<br>Now $24 \\equiv 1 \\pmod{23}$.<br>So, $1 \\times 18! \\equiv -1$.<br>To make remainder positive: $23 - 1 = 22$. Answer $22$.<br><br><b>Method 2 (Concept Builder):</b><br>Negative remainders calculation ko extremely short banate hain. $22$ is practically $-1$ w.r.t $23$. Yahi step multiply karne ka dard bachaata hai.<br><br><b>Future Exam Takeaway:</b><br>Agar $(P-x)! \\pmod P$ pucha ho toh negative remainders ka back-gear lagao, direct answer niklega."
+  },
+  {
+    "q": "The 6-digit number $537xy5$ is divisible by $125$. How many possible values can the digit $x$ take?",
+    "o": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Divisibility by $125$ ($5^3$) means checking ONLY the last $3$ digits. Poora number ignore maaro.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Last $3$ digits hain $xy5$.<br>$125$ ke $3$-digit multiples ending in $5$ are: $125, 375, 625, 875$.<br>Yani $x$ ki place pe values ho sakti hain: $1, 3, 6, 8$.<br>Total possible values for $x$ are exactly $4$.<br><br><b>Method 2 (Concept Builder):</b><br>Jaise $8$ ($2^3$) ke liye last $3$ digits dekhte hain, waise hi $125$ ($5^3$) ke liye karte hain. Even endings ($250, 500, 750$) valid nahi the kyunki unit digit fix $5$ hai.<br><br><b>Future Exam Takeaway:</b><br>Remember the standard endings for $125$: $125, 250, 375, 500, 625, 750, 875, 000$. Direct filter out karo given conditions se."
+  },
+  {
+    "q": "Let $ab$ (where $a \\ne b$) be a two-digit prime number such that $ba$ is also a prime number. The sum of all such numbers is:",
+    "o": [
+      "418",
+      "428",
+      "408",
+      "398"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Bhai $2$-digit primes gine-chune hote hain. Reversible prime pairs toh aur bhi limited hain, bas dimaag me count karna hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Find pairs of $(ab, ba)$ which both are primes, and $a \\ne b$ (eliminates $11$).<br>Pairs are: $(13, 31)$, $(17, 71)$, $(37, 73)$, $(79, 97)$.<br>Total $8$ numbers. Unka sum nikalna hai:<br>$13+31+17+71+37+73+79+97 = 418$.<br><br><b>Method 2 (Concept Builder):</b><br>Baki combination jaise $23$ (rev $32$ is even), $47$ (rev $74$ is even), ya $19$ (rev $91 = 13 \\times 7$) trap hote hain. Hamesha reverse ko factorize karne ki aadat dalo.<br><br><b>Future Exam Takeaway:</b><br>Reversible primes up to $100$ ko 'Emirp primes' bolte hain. Inka set $\\{13, 17, 31, 37, 71, 73, 79, 97\\}$ direct yaad hona chahiye."
+  },
+  {
+    "q": "Find the greatest possible 5-digit number of the form $4a3b2$ which is divisible by $36$.",
+    "o": [
+      "49392",
+      "48312",
+      "47372",
+      "46332"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>'Greatest' pucha hai matlab hum digits ko $9$ se check karna shuru karenge. Divisibility $36$ yani $4$ and $9$ dono lagana hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Number is $4a3b2$. For divisibility by $4$, last two digits '$b2$' must be divisible.<br>To maximize, test largest $b$: $b=9 \\implies 92$ is div by $4$. So $b=9$ set kar do.<br>Now number is $4a392$. For divisibility by $9$, digital sum must be div by $9$.<br>Sum $= 4 + a + 3 + 9 + 2 = 18 + a$.<br>To maximize, put $a=9 \\implies 18+9 = 27$ (div by $9$).<br>So the greatest number is $49392$.<br><br><b>Method 2 (Concept Builder):</b><br>Pehle hamesha choti constraint wala rule lagao (jaise $4$ ke liye bas last $2$ digits). Phir global rule (jaise $9$ ke liye sabka sum) apply karo.<br><br><b>Future Exam Takeaway:</b><br>Maximization ke questions me variable ko default $9$ assume karke condition check kiya karo, speed $2x$ ho jayegi."
+  },
+  {
+    "q": "How many integers between $299$ and $501$ are divisible by $4$ or $10$?",
+    "o": [
+      "56",
+      "72",
+      "51",
+      "61"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Venn diagram set theory (Inclusion-Exclusion Principle) ka classic application! Formula $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$ dimag me flash hona chahiye.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Numbers between $299$ and $501$ (Total $201$ numbers from $300$ to $500$).<br>Div by $4$: $300, 304, \\dots, 500 \\implies \\frac{500-300}{4} + 1 = 51$.<br>Div by $10$: $300, 310, \\dots, 500 \\implies \\frac{500-300}{10} + 1 = 21$.<br>Div by LCM $20$ (intersection): $300, 320, \\dots, 500 \\implies \\frac{500-300}{20} + 1 = 11$.<br>Total integers = $51 + 21 - 11 = 61$.<br><br><b>Method 2 (Concept Builder):</b><br>Series ki total terms nikalne ka JSM (Junior Satisfaction Method) $\\implies \\frac{\\text{Last} - \\text{First}}{\\text{Common Difference}} + 1$. Isko directly mentally count kiya karo.<br><br><b>Future Exam Takeaway:</b><br>'Or' likha ho toh humesha LCM wala part subtract karna hai nahi toh double counting ho jayegi. Ye SSC ka sabse favourite trap hai."
+  },
+  {
+    "q": "If $68A3Y$ is divisible by $3, 7$ and $11$, find $4A+3Y$?",
+    "o": [
+      "40",
+      "56",
+      "64",
+      "80"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Divisibility by $3, 7$, and $11$ means divisible by their LCM, $3 \\times 7 \\times 11 = 231$.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Assume max possible value $68939$ and divide by $231$.<br> $68939 \\div 231 = 298$ (Quotient) and Remainder = $101$.<br> Subtract remainder to get perfect multiple: $68939 - 101 = 68838$.<br> Compare $68838$ with $68A3Y \\implies A = 8, Y = 8$.<br> Value of $4A + 3Y = 4(8) + 3(8) = 32 + 24 = 56$.<br><br><b>Method 2 (Concept Builder):</b><br>Alternating sums for $11$ and digital roots for $3$ can also form equations, but LCM subtraction is fool-proof and fastest.<br><br><b>Future Exam Takeaway:</b><br>Whenever a number with missing digits is divisible by $7, 11, 13$ or $3, 7, 11$, always pad it with $9$s, find the remainder with LCM, and subtract!"
+  },
+  {
+    "q": "If a number $P$ is divided by $D$, the remainder is $14$. When $3P$ is divided by the same divisor $D$, the remainder is $8$. What is the value of the divisor $D$?",
+    "o": [
+      "32",
+      "34",
+      "38",
+      "42"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Agar number $3$ guna ho raha hai, toh mathematically remainder bhi $3$ guna hoga (temporarily). Naya remainder tabhi ghatega jab Divisor se bhaag lagega.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Old Remainder was $14$. Condition says number is multiplied by $3$ ($3P$).<br>Temporary New Remainder $= 14 \\times 3 = 42$.<br>Actual Remainder given is $8$.<br>Iska seedha matlab hai: $42$ ko jab Divisor $D$ se bhag diya, toh $8$ bacha.<br>$42 - D = 8 \\implies D = 34$. Divisor $34$ hai!<br><br><b>Method 2 (Concept Builder):</b><br>Algebraically: $P = kD + 14$. Then $3P = 3kD + 42$. $3kD$ is fully divisible. Modulo operation pe focus karo: $42 \\equiv 8 \\pmod D \\implies 42 - 8 = 34$, which is a multiple of $D$. $D$ could be $17$ or $34$, options me se $34$ correct hai.<br><br><b>Future Exam Takeaway:</b><br>Operation performed on the number is EXACTLY performed on its remainder. Remainder exceeds divisor? Subtract divisor. Simple!"
+  },
+  {
+    "q": "If $n$ is a positive integer, then when $1^{n}+2^{n}+3^{n}+4^{n}$ is divided by $10$, how many possible remainders can there be?",
+    "o": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Dividing by $10$ is just finding the Unit Digit! We only need to check cycles of powers up to $4$.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Put $n=1$: $1+2+3+4 = 10 \\implies$ Unit digit $0$.<br>Put $n=2$: $1+4+9+6 = 20 \\implies$ Unit digit $0$.<br>Put $n=3$: $1+8+7+4 = 20 \\implies$ Unit digit $0$.<br>Put $n=4$: $1+6+1+6 = 14 \\implies$ Unit digit $4$.<br>Possible remainders are only $0$ and $4$. That means exactly $2$ possible remainders.<br><br><b>Method 2 (Concept Builder):</b><br>The cyclicity of unit digits for $1, 2, 3, 4$ repeats every $4$th power. So checking $n=1,2,3,4$ covers all infinite possibilities.<br><br><b>Future Exam Takeaway:</b><br>Divisibility by $10$ ALWAYS means 'Find the Unit Digit'. Don't waste time thinking about complex polynomial theorems. CGL bas unit digit check karwana chahta hai!"
+  },
+  {
+    "q": "What is the remainder when the sum $(10^1 + 10^2 + 10^3 + \\dots + 10^{100})$ is divided by $6$?",
+    "o": [
+      "0",
+      "2",
+      "4",
+      "5"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>$10$ aur $6$ ka relation cyclicity me fix hai! $10$ ki koi bhi power ko $6$ se divide karo, remainder hamesha $4$ aayega. Pattern identify kiya toh $2$ second ka sawal hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>$10^1 \\pmod 6 = 4$.<br>$10^2 = 100 \\pmod 6 = 4$.<br>There are $100$ such terms in the series.<br>Sum of remainders = $4 \\times 100 = 400$.<br>Final step: $400 \\pmod 6$. $400 = 396 + 4 \\implies$ Remainder $4$.<br><br><b>Method 2 (Concept Builder):</b><br>Modular arithmetic me addition distribute ho jata hai. Tum series ko sum kar ke mod lo ya individually mod leke sum karo, answer same aayega. Yahan individual remainder fix hai ($4$) isliye multiply kar diya.<br><br><b>Future Exam Takeaway:</b><br>Series based questions hamesha repeating remainders par set hote hain. First $2-3$ terms check karo, pattern apne aap chilla ke bolega."
+  },
+  {
+    "q": "Find the maximum value of $n$ such that $50!$ is perfectly divisible by $12600^n$.",
+    "o": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "a": 1,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Factorial division ke extreme cases me composite denominator ko prime factors me todna hota hai. Limit humesha badi prime number ya uski heavily loaded powers tay karti hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Prime factorization of $12600 = 2^3 \\times 3^2 \\times 5^2 \\times 7^1$.<br>Powers in $50!$ nikalte hain Legendre's formula se:<br>Power of $7$: $\\lfloor 50/7 \\rfloor + \\lfloor 50/49 \\rfloor = 7 + 1 = 8$.<br>Power of $5$: $\\lfloor 50/5 \\rfloor + \\lfloor 50/25 \\rfloor = 10 + 2 = 12$. Humein groups of $5^2$ chahiye $\\implies 12/2 = 6$.<br>Power of $3$: Limit bohot door hai (around $22/2 = 11$).<br>Sabse restricting factor $5^2$ ban raha hai, jo max $6$ times available hai. So max $n = 6$.<br><br><b>Method 2 (Concept Builder):</b><br>Bache galti karte hain ki sirf sabse bada prime ($7$) check karte hain. Lekin yahan $5$ ki power squared thi ($5^2$), jiski wajah se uski availability aur reduce ho gayi ($12 \\div 2 = 6$).<br><br><b>Future Exam Takeaway:</b><br>Composite divisors me sirf highest prime mat dekho. Agar chote prime ki high power demand me hai ($a^k$), toh power $k$ se divide zaroor karna!"
+  },
+  {
+    "q": "Which of the following statements is true? I) $\\text{odd} \\times \\text{even} = \\text{odd}$, II) $\\text{odd} \\times \\text{odd} = \\text{even}$",
+    "o": [
+      "Only I is true",
+      "Only II is true",
+      "Both I and II are true",
+      "Neither I nor II is true"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Statements padh ke direct numbers put karo dimaag me. Algebraic proof ki zarurat nahi hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Check I) $\\text{odd} \\times \\text{even}$. Take $3 \\times 2 = 6$ (Even). Statement says odd. False.<br>Check II) $\\text{odd} \\times \\text{odd}$. Take $3 \\times 3 = 9$ (Odd). Statement says even. False.<br>Dono statements completely wrong hain.<br><br><b>Method 2 (Concept Builder):</b><br>Even number behaves like a black hole in multiplication; koi bhi number even se multiply hoga toh overall even hi ban jayega. Odd tabhi aata hai jab sirf odd numbers multiply ho rahe hon.<br><br><b>Future Exam Takeaway:</b><br>Theoretical statements me variables ke saath mat khelo. Simple prime numbers ($2, 3$) put karke seconds me counter-example dhoondh liya karo."
+  },
+  {
+    "q": "Find the least number which is completely divisible by $9, 24$ and $36$?",
+    "o": [
+      "72",
+      "24",
+      "36",
+      "9"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>'Least number completely divisible' matlab sedha-sedha LCM (Lowest Common Multiple) pucha hai. Language ghumaai hai bas.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Numbers hain $9, 24, 36$.<br>Notice karo ki $36$ exactly $9$ se divide hota hai. Toh $9$ ko picture se hi hata do.<br>Ab sirf $24$ aur $36$ ka LCM nikalna hai.<br>Highest common factor of $24, 36$ is $12$.<br>LCM = $12 \\times (2 \\times 3) = 72$. Option dekhte hi mark karo!<br><br><b>Method 2 (Concept Builder):</b><br>Jab given set of numbers me koi chota number kisi bade number ka factor ho, toh chote number ka LCM par koi effect nahi padta.<br><br><b>Future Exam Takeaway:</b><br>Don't draw lines and solve for LCM blindly. Eliminate factors immediately to shrink your calculation."
+  },
+  {
+    "q": "Find the smallest integer which should be added to the given expression to make it a perfect square? $79998 \\times 79999$",
+    "o": [
+      "79999",
+      "89999",
+      "79998",
+      "79997"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Dekhte hi algebraic identity $n(n+1)$ dikhni chahiye. Multiply karne ka paap nahi karna hai!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Let $n = 79998$. Expression is $n \\times (n+1) = n^2 + n$.<br>Isme kya add karein ki agla perfect square $(n+1)^2$ ban jaye?<br>$(n+1)^2 = n^2 + 2n + 1$.<br>Hamare paas $(n^2 + n)$ hai, toh humein $(n + 1)$ aur chahiye.<br>Matlab $79998 + 1 = 79999$ add karna padega!<br><br><b>Method 2 (Concept Builder):</b><br>General rule: Product of two consecutive integers $n(n+1)$. Add the larger number $(n+1)$ to make it $(n+1)^2$. Subtract the smaller number $n$ to make it $n^2$.<br><br><b>Future Exam Takeaway:</b><br>Seedha formula yaad rakh: $A \\times (A+1)$ me BADA number add karne pe perfect square banta hai, aur CHHOTA number subtract karne pe."
+  },
+  {
+    "q": "How many composite factors does the number $2^3 \\times 3^2 \\times 5^1$ have?",
+    "o": [
+      "20",
+      "21",
+      "19",
+      "24"
+    ],
+    "a": 0,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Total factors nikal ke Primes aur '$1$' ko hata dena hai.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Formula: Composite = Total Factors - Prime Factors - 1.<br>Total = $(3+1)(2+1)(1+1) = 4 \\times 3 \\times 2 = 24$.<br>Prime bases are $2, 3, 5$ (Total $3$ primes).<br>Composite = $24 - 3 - 1 = 20$.<br><br><b>Method 2 (Concept Builder):</b><br>Every factor is either Prime, Composite, or Neither (which is $1$). Isiliye humesha $1$ subtract karna mat bhulna, ye CDS ka classic trap hai!<br><br><b>Future Exam Takeaway:</b><br>Keep this equation tattooed in memory: Total Factors = Prime + Composite + 1."
+  },
+  {
+    "q": "What is the unit digit of $232^{123^{321}}$?",
+    "o": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "a": 3,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Unit digit nikalni hai, base ka last digit $2$ hai. Yani cyclicity $4$ check hogi. Power of power ladder me trick lagao.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Power hai $123^{321}$. Ise $4$ se mod karo.<br>$123 \\pmod 4 \\equiv 3 \\equiv -1$.<br>Reduced effective power $= (-1)^{321}$. Since power is Odd, it stays $-1$.<br>Math me $-1$ mod $4$ ka actual remainder hota hai: $4 - 1 = 3$.<br>Base unit $2^3 = 8$. Bam!<br><br><b>Method 2 (Concept Builder):</b><br>Negative remainders cyclicity calculations ke Brahmastra hote hain. Jab base cyclicity-divisor ke close ho (jaise $123 = 124 - 1$), $-1$ assume karne se power odd-even logic se ek second me tut jati hai.<br><br><b>Future Exam Takeaway:</b><br>For any $X^{Y^Z}$ unit digit question, immediately apply modulo $4$ on base $X$'s power ladder using $+1$ or $-1$ deviation."
+  },
+  {
+    "q": "Find the unit digit of $\\frac{12^{55}}{3^{11}} + \\frac{8^{48}}{16^{18}}$",
+    "o": [
+      "2",
+      "4",
+      "0",
+      "6"
+    ],
+    "a": 2,
+    "s": "<b>The 'Pen-Free' Observation First:</b><br>Never find unit digits before simplifying fractions! Denominators must be completely canceled out.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Term 1: $\\frac{12^{55}}{3^{11}} = \\frac{4^{55} \\times 3^{55}}{3^{11}} = 4^{55} \\times 3^{44}$.<br>Unit digit: $4^{\\text{odd}} \\implies 4$. $3^{44}$ (power is multiple of $4$) $\\implies 1$. $4 \\times 1 = 4$.<br>Term 2: $\\frac{8^{48}}{16^{18}} = \\frac{(2^3)^{48}}{(2^4)^{18}} = \\frac{2^{144}}{2^{72}} = 2^{72}$.<br>Unit digit: $2^{72}$ (multiple of $4$) $\\implies 6$.<br>Total Unit Digit = $4 + 6 = 10 \\implies 0$.<br><br><b>Method 2 (Concept Builder):</b><br>Indices ka base rule use kiya: $\\frac{a^m}{a^n} = a^{m-n}$. Bacha denominator me fas ke galat unit digit nikalta hai.<br><br><b>Future Exam Takeaway:</b><br>Simplification first, cyclicity second. Base same banao, powers minus karo."
+  }
+]
+}

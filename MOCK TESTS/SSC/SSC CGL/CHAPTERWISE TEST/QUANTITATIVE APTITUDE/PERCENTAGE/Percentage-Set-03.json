@@ -1,0 +1,183 @@
+{
+  "quizTitle": "Percentage-Set-03",
+  "quizTime": 30,
+  "totalMarks": 50,
+  "questions": [
+    {
+      "q": "A is $33.33\\%$ less than B and C is $20\\%$ more than D. If D is $50\\%$ more than A, then which of the following is true?",
+      "o": [
+        "A = 1.75D",
+        "C = 1.2B",
+        "C = 0.20B",
+        "A = 0.22C"
+      ],
+      "a": 1,
+      "s": "<b>[Core Tool Triggered: Successive Change]</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, yahan percentages chain me hain. Denominators $3, 2, 5$ hain. Inka LCM 30 hota hai, toh B ko seedha 300 maan le taaki decimals ka panga hi na rahe.<br><br><b>Method 1 (Ninja Technique):</b><br>1. $B = 300$<br>2. A, B se $1/3$ kam hai $\\Rightarrow A = 300 - 100 = 200$<br>3. D, A se $1/2$ zyada hai $\\Rightarrow D = 200 + 100 = 300$<br>4. C, D se $1/5$ zyada hai $\\Rightarrow C = 300 + 60 = 360$<br>Ab clear hai ki $C = 360$ aur $B = 300$. Ratio $\\frac{C}{B} = 1.2$, toh $C = 1.2B$.<br><br><b>Method 2 (Concept Builder):</b><br>Ratios likh aur multiply kar de: $\\frac{A}{B} = \\frac{2}{3}$, $\\frac{D}{A} = \\frac{3}{2}$, $\\frac{C}{D} = \\frac{6}{5}$.<br>$\\frac{A}{B} \\times \\frac{D}{A} \\times \\frac{C}{D} = \\frac{2}{3} \\times \\frac{3}{2} \\times \\frac{6}{5} = \\frac{6}{5} = 1.2$. CGL me direct ratio multiply karke time bacha!"
+    },
+    {
+      "q": "A saves $40\\%$ of his income and B saves $20\\%$ more than A. If the income of A is $80\\%$ of the income of B and A's expenditure is $\\text{Rs. } 18000$, then what is the expenditure of B?",
+      "o": [
+        "$\\text{Rs. } 21900$",
+        "$\\text{Rs. } 23100$",
+        "$\\text{Rs. } 22800$",
+        "$\\text{Rs. } 24500$"
+      ],
+      "a": 1,
+      "s": "<b>[Core Tool Triggered: Unitary Scaling]</b><br><br><b>Pen-Free Observation:</b> B ki income ko 100 aur A ki 80 maanke mind me structure bana. A ka expenditure $60\\%$ of 80 yani 48 units banega jiski value 18000 hai.<br><br><img src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260804_165617.jpg\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260804_165617.jpg';\"><br><br><b>Method 1 (Ninja Technique):</b><br>Let B's income $= 100$.<br>A's income $= 80$.<br>A's saving $= 40\\%$ of $80 = 32$.<br>A's exp $= 80 - 32 = 48$.<br>B's saving is $20\\%$ MORE than A's saving $\\Rightarrow 32 \\times 1.2 = 38.4$.<br>B's exp $= 100 - 38.4 = 61.6$.<br>Question me $48 \\text{ units} = 18000 \\Rightarrow 1 \\text{ unit} = 375$.<br>B's exp $= 61.6 \\times 375 = 23100$.<br><br><b>Method 2 (Concept Builder):</b><br>Decimals se dar lagta hai toh $61.6 \\times 375$ ko $61.6 \\times \\frac{3000}{8}$ likh le. Seedha $7.7 \\times 3000 = 23100$ aayega. Calculation fast karne ke liye fractions ka use ekdum best hai."
+    },
+    {
+      "q": "Sterling silver is $92.5\\%$ pure silver. How many grams of sterling silver must be mixed to a $90\\%$ silver alloy to obtain a 500 gm of a $91\\%$ of silver alloy?",
+      "o": [
+        "250",
+        "200",
+        "100",
+        "150"
+      ],
+      "a": 1,
+      "s": "<b>[Core Tool Triggered: JSM / Deviation (Alligation)]</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, do chizen mix karke teesri ban rahi hai, toh bina soche Alligation fek ke maar! $90$ aur $92.5$ ke beech $91$ hai, ratio inverse aayega.<br><br><b>Method 1 (Ninja Technique):</b><br>Alligation laga:<br>Sterling ($92.5\\%$) ...... Other ($90\\%$)<br>............... $91\\%$ ...............<br>$(91-90) = 1$ ...... $(92.5-91) = 1.5$<br>Ratio $= 1 : 1.5 \\Rightarrow 2 : 3$<br>Total parts $= 5$, jo 500 gm ke barabar hai. $1 \\text{ part} = 100 \\text{ gm}$.<br>Sterling silver $= 2 \\text{ parts} = 200 \\text{ gm}$.<br><br><b>Takeaway:</b> Mixture ke sawalo me wazan (weight) hamesha percentage differences ke inverse ratio me hota hai."
+    },
+    {
+      "q": "Forty per cent of the employees of a certain company are men, and $75\\%$ of the men earn more than $\\text{Rs. } 38$,000 per year. If $48\\%$ of the company's employees earn more than $\\text{Rs. } 38$,000 per year, what fraction of the women employed by the company earn less than or equal to $\\text{Rs. } 38$,000 per year?",
+      "o": [
+        "$\\frac{7}{10}$",
+        "$\\frac{3}{10}$",
+        "$\\frac{11}{15}$",
+        "$\\frac{7}{15}$"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: JSM / Deviation (Tree Diagram)]</b><br><br><b>Pen-Free Observation:</b> Data straight hai, base $100$ maan kar split kar de. Total men 40, women 60 hain. Target 'women $\\le 38k$' nikalna hai.<br><br><img src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260804_165633.jpg\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260804_165633.jpg';\"><br><br><b>Method 1 isme tum female ka % nikalne ke bajay tum female ka total pop se compare karne lagte ho jo ki galat hai aisa repeated karte ho(Ninja Technique):</b><br>Let Total Employees $= 100$.<br>Men $= 40$, Women $= 60$.<br>Men $> 38k = 75\\%$ of $40 = 30$.<br>Total employees $> 38k = 48$.<br>Toh Women $> 38k$ kitni hui? $48 - 30 = 18$.<br>Humein un aurto ka fraction chahiye jo $\\le 38k$ kamati hain. Wo hongi $60 - 18 = 42$.<br>Fraction $= \\frac{\\text{Women } \\le 38k}{\\text{Total Women}} = \\frac{42}{60}= \\frac{7}{10}$.<br><br><b>Method 2 (Concept Builder):</b><br>Tree banane se accuracy $100\\%$ rehti hai. Language dhyan se padh 'fraction of the women' pucha hai, 'fraction of total employees' nahi, isliye denominator me 60 aayega, 100 nahi!"
+    },
+    {
+      "q": "The strength of a school increases and decreases every alternate year by $15\\%$. If it started with an increase in 2012, then the strength of the school in the beginning of 2015, as compared to that in 2012, had (correct to two decimal places):",
+      "o": [
+        "Increased by $12.41\\%$",
+        "Decreased by $12.41\\%$",
+        "Increased by $13.85\\%$",
+        "Decreased by $13.85\\%$"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Successive Change]</b><br><br><b>Pen-Free Observation:</b> 2012 se 2015 tak 3 transitions hain: $+15\\%, -15\\%, +15\\%$. Pehle do ka net seedha $-x^2/100$ hota hai, uske baad teesre ko combine karna hai.<br><br><b>Method 1 (Ninja Technique):</b><br>1st & 2nd year effect: $+15\\%$ aur $-15\\% \\Rightarrow \\frac{-15^2}{100} = -2.25\\%$.<br>Ab is $-2.25\\%$ ka $+15\\%$ ke sath successive laga de ($x + y + \\frac{xy}{100}$):<br>$-2.25 + 15 + \\frac{(-2.25 \\times 15)}{100}$<br>$= 12.75 - 0.3375 = +12.4125\\%$.<br>Yani positive value aayi hai, matlab $12.41\\%$ ka increase hua.<br><br><b>Takeaway:</b> 3 successive percentages nikalne ke liye hamesha 2-2 ke jode banakar solve karo."
+    },
+    {
+      "q": "The ratio of the monthly income of P to the monthly income of Q is 7:10, and P's saving is $21\\frac{3}{7}\\%$ more than Q's savings. Find the expenditure of P if the sum of the monthly income of P and Q is $85,000$, and the expenditure of Q is $22,000$.",
+      "o": [
+        "$\\text{Rs. } 12,000$",
+        "$\\text{Rs. } 8,000$",
+        "$\\text{Rs. } 1,000$",
+        "$\\text{Rs. } 1,500$"
+      ],
+      "a": 2,
+      "s": "<b>[Core Tool Triggered: Unitary Scaling]</b><br><br><b>Pen-Free Observation:</b> $7+10 = 17$ units $= 85000$. $1 \\text{ unit} = 5000$. P ki income $35k$, Q ki $50k$. Q ki saving = Income - Exp = $50k - 22k = 28k$.<br><br><b>Method 1 (Ninja Technique):</b><br>Income $P = 35,000$, $Q = 50,000$.<br>Q ki saving $= 50,000 - 22,000 = 28,000$.<br>P ki saving Q se $21\\frac{3}{7}\\%$ zyada hai. Percentage ka fraction bana: $21\\frac{3}{7}\\% = \\frac{150}{7}\\% = \\frac{150}{700} = \\frac{3}{14}$.<br>P's saving $= 28,000 + (28,000 \\times \\frac{3}{14}) = 28,000 + 6,000 = 34,000$.<br>P ka exp $= \\text{Income} - \\text{Saving} = 35,000 - 34,000 = 1,000$.<br><br><b>Takeaway:</b> Weird percentages ko hamesha fraction me tod lo, exam setter wahi values deta hai jo denominator se cut jayen (jaise $28000$ aur $14$)."
+    },
+    {
+      "q": "A salesman is allowed $16.66\\%$ commission on the total sales made by him and a bonus of $3.33\\%$ on the sales over 18000rs. if the total earning of the salesman is $\\text{Rs. } 9720$. Find the total sales?",
+      "o": [
+        "51600",
+        "55200",
+        "48600",
+        "52000"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Unitary Scaling (Base Shift / Imaginary Increment)]</b><br><br><b>Pen-Free Observation:</b> Agar salesman ko shuru ke 18000 par bhi bonus milne lagta, toh total sales par flat $20\\%$ milta! Us imaginary commission ko jodo aur direct ans nikal.<br><br><b>Method 1 (Ninja Technique):</b><br>Agar usko pure par $3.33\\%$ bonus milta toh extra kitna kamata?<br>Extra $= 18000 \\times 3.33\\% = 18000 \\times \\frac{1}{30} = 600$.<br>Toh total imaginary earning hoti: $9720 + 600 = 10320$.<br>Ab total rate ban gaya $16.66\\% + 3.33\\% = 20\\%$.<br>$20\\%$ (yani $1/5$) $= 10320$.<br>Total Sales $= 10320 \\times 5 = 51600$.<br><br><b>Takeaway:</b> Pieces me tuti hui percent ko jod kar straight line banana (Shift Method) best exam hack hai."
+    },
+    {
+      "q": "The price of cooking oil increased by $8\\%$. A family uses 12 litres of cooking oil per month. If the original price was 150 per litre, what is the additional annual expenditure (nearest ₹) for the family due to the price hike?",
+      "o": [
+        "1,728",
+        "1,700",
+        "1,765",
+        "1,789"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Unitary Scaling]</b><br><br><b>Pen-Free Observation:</b> Additional kharcha pucha hai toh purana bill calculate mat kar. Seedha extra rate par focus kar aur unit digit method se check kar ($12 \\times 12 \\times 12$ ka last digit 8 aayega).<br><br><b>Method 1 (Ninja Technique):</b><br>Ek litre par hike $= 8\\%$ of $150 = 12 \\text{ Rs}$.<br>Monthly 12 litre ka kharcha bada $= 12 \\times 12 = 144 \\text{ Rs}$.<br>Annual hike pucha hai $= 144 \\times 12 = 1728 \\text{ Rs}$.<br>Option (A) perfectly match kar raha hai.<br><br><b>Takeaway:</b> Question me 'annual' aur 'monthly' word traps hote hain, unko carefully padha karo."
+    },
+    {
+      "q": "In any Exam $12\\%$ student absent, there are two subject Math and English, students who passed in both exam is triple to number of students who failed in both and number of student who passed in math only is $45.45\\%$ of student who passed in both. If $29\\%$ students of total student in English only then find out the % of students who passed in math ?",
+      "o": [
+        "$48\\%$",
+        "$76\\%$",
+        "$59\\%$",
+        "$38\\%$"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Unitary Scaling (Venn Diagram)]</b><br><br><b>Pen-Free Observation:</b> Present bacche = $88\\%$. $45.45\\%$ fraction $\\frac{5}{11}$ hota hai. Seedha equations likh aur 'Both pass' ko ek variable maan.<br><br><b>Method 1 (Ninja Technique):</b><br>Let total students $= 100x$. Present $= 88x$.<br>Let 'Fail Both' $= y$. Toh 'Pass Both' $= 3y$.<br>'Only Math' $= \\frac{5}{11} \\times 3y = \\frac{15y}{11}$.<br>'Only English' $= 29\\%$ of total $= 29x$.<br>Venn Equation: (Only M) + (Only E) + (Pass Both) + (Fail Both) = Present<br>$\\frac{15y}{11} + 29x + 3y + y = 88x$<br>$\\frac{15y}{11} + 4y = 59x \\Rightarrow \\frac{59y}{11} = 59x \\Rightarrow y = 11x$.<br>Pucha hai Total Passed in Math = (Only Math) + (Pass Both)<br>$= \\frac{15y}{11} + 3y = \\frac{15(11x)}{11} + 3(11x) = 15x + 33x = 48x = 48\\%$.<br><br><b>Takeaway:</b> Calculation lamba dikhta hai par variables easily cancel ho jate hain. $45.45\\% = 5 \\times 9.09\\% = \\frac{5}{11}$ ko pehchanna zaroori tha."
+    },
+    {
+      "q": "F(a,b,c,d) = $3a + 2bc + 5c^2d$. If a, b, c and d increases by $65\\%$, $32\\%$, $25\\%$ and $5.6\\%$ respectively. What is the percentage change in F?",
+      "o": [
+        "$65\\%$",
+        "$63\\%$",
+        "$61\\%$",
+        "$67\\%$"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Successive Change]</b><br><br><b>Pen-Free Observation:</b> Dekh bhai, polynomial me agar har ek degree-term barabar percentage se badhe, toh total function bhi utne hi percentage se badhega. Har term ka degree net nikal kar dekh!<br><br><img src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260804_165542.jpg\" referrerpolicy=\"no-referrer\" style=\"max-width:100%;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260804_165542.jpg';\"><br><br><b>Method 1 (Ninja Technique):</b><br>Term 1: 'a' akela hai, $+65\\%$.<br>Term 2: 'bc'. b ($+32\\%$), c ($+25\\%$). Net $= 32 + 25 + \\frac{32 \\times 25}{100} = 57 + 8 = +65\\%$.<br>Term 3: '$c^2d$'. pehle c ka square yani $25+25+6.25 = 56.25\\%$. Phir iska d ($+5.6\\%$) ke sath: $56.25 + 5.6 + \\frac{56.25 \\times 5.6}{100} = 61.85 + 3.15 = +65\\%$.<br>Chunki saare independent terms exactly $65\\%$ se badh rahe hain, unka addition bhi $65\\%$ se hi badhega!<br><br><b>Takeaway:</b> Ye CGL Mains ka trap hai. Calculations mat karo, pattern pakdo."
+    },
+    {
+      "q": "Annually income of Arun is 6.24 lakh, he spend $38\\frac{6}{13}\\%$ of monthly income on Food and Rent, $12.5\\%$ of remaining on Gym, $14\\frac{2}{7}\\%$ of remaining on clothing and $75\\%$ of remaining invested in mutual fund. if he kept remaining amount after all expense as cash with him then find how much cash Arun have after one year?",
+      "o": [
+        "$\\text{Rs. } 72000$",
+        "$\\text{Rs. } 74000$",
+        "$\\text{Rs. } 78000$",
+        "$\\text{Rs. } 75000$"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Successive Change (Chain Reaction)]</b><br><br><b>Pen-Free Observation:</b> Har jagah 'remaining' use hua hai, matlab successive multiplier lagega. Fractions yaad hain toh ek line ka question hai.<br><br><b>Method 1 (Ninja Technique):</b><br>$38\\frac{6}{13}\\% = \\frac{5}{13} \\Rightarrow \\text{Bacha } \\frac{8}{13}$.<br>$12.5\\% = \\frac{1}{8} \\Rightarrow \\text{Bacha } \\frac{7}{8}$.<br>$14\\frac{2}{7}\\% = \\frac{1}{7} \\Rightarrow \\text{Bacha } \\frac{6}{7}$.<br>$75\\% = \\frac{3}{4} \\Rightarrow \\text{Bacha } \\frac{1}{4}$.<br>Multiply karke total remaining fraction nikal: $\\frac{8}{13} \\times \\frac{7}{8} \\times \\frac{6}{7} \\times \\frac{1}{4} = \\frac{6}{52} = \\frac{3}{26}$.<br>Total income $6,24,000$ hai. Cash $= 624000 \\times \\frac{3}{26} = 24000 \\times 3 = 72000 \\text{ Rs}$.<br><br><b>Takeaway:</b> Jab initial value aur final value ki baat ho toh chain reaction best tool hai."
+    },
+    {
+      "q": "Everyday a fruit seller sells $75\\%$ of his stock during the day and $20\\%$ of his stock gets spoiled during the night. If in the morning of third day he had 128 fresh fruits, then how many fruits he had initially.",
+      "o": [
+        "1600",
+        "2400",
+        "3200",
+        "4000"
+      ],
+      "a": 2,
+      "s": "<b>[Core Tool Triggered: Successive Change]</b><br><br><b>Pen-Free Observation:</b> Day-Night milakar 1 din ka cycle poora hota hai. Morning of 3rd day matlab sirf 2 din poore hue hain (Day 1 aur Day 2).<br><br><b>Method 1 (Ninja Technique):</b><br>Din me $75\\%$ becha $\\Rightarrow$ bacha $25\\%$ (yani $1/4$).<br>Raat me $20\\%$ kharab $\\Rightarrow$ bacha $80\\%$ (yani $4/5$).<br>Roz ka bacha hua fraction $= \\frac{1}{4} \\times \\frac{4}{5} = \\frac{1}{5}$.<br>2 cycle ke baad bacha $= \\text{Initial} \\times \\frac{1}{5} \\times \\frac{1}{5} = 128$.<br>Initial $= 128 \\times 25 = 3200$.<br><br><b>Takeaway:</b> Cycles ko dhyan se padhna, 'Morning of 3rd day' = End of 2nd day."
+    },
+    {
+      "q": "Out of total population of a city, 450 are males. Respective ratio of literate to illiterate females is 5: 2 and their difference is 150. If $28\\%$ males are illiterate, then find the percentage of literate population.",
+      "o": [
+        "$77.25\\%$",
+        "$75.5\\%$",
+        "$70.25\\%$",
+        "$71.75\\%$"
+      ],
+      "a": 3,
+      "s": "<b>[Core Tool Triggered: Unitary Scaling]</b><br><br><b>Pen-Free Observation:</b> Female ratio 5:2 hai, inka difference 3 units $= 150$ (so 1 unit $= 50$). Bas isse values direct dimaag me nikali ja sakti hain.Ab isme tum literate female nikal ho chuke hoge ratio ki help se toh total lit \\% niaklne ke liye deviation mt lgana isliye niche wala soln best hai. <br><br><b>Method 1 (Ninja Technique):</b><br>Females: Difference $3 \\text{ units} = 150 \\Rightarrow 1 \\text{ unit} = 50$.<br>Total Females $= 7 \\text{ units} = 350$.<br>Literate Females $= 5 \\text{ units} = 250$.<br>Males: Total $450$ hain. Agar $28\\%$ illiterate hain, toh $72\\%$ literate honge.<br>Literate Males $= 72\\%$ of $450 = 324$.<br>Total Literate $= 250 + 324 = 574$.<br>Total Population $= 450 \\text{ (M)} + 350 \\text{ (F)} = 800$.<br>$\\text{Literate } \\% = \\frac{574}{800} \\times 100 = \\frac{574}{8} = 71.75\\%$.<br>Ekdum straight bat pe aane wali ball thi."
+    },
+    {
+      "q": "In a cafe house there are some people who like to drink coffee and tea while some do not drink anything. The ratio of the people who like only tea and the people who like only coffee are 3 : 4 respectively, the number of people who like both drinks is $6.25\\%$ of total. If $50\\%$ of the people in the cafe are like to drink something out of total 80 people, then find the total number of people in the cafe house who drink only tea.",
+      "o": [
+        "10",
+        "15",
+        "12",
+        "20"
+      ],
+      "a": 1,
+      "s": "<b>[Core Tool Triggered: Unitary Scaling (Venn Diagram)]</b><br><br><b>Pen-Free Observation:</b> 'Drink something' wale $50\\%$ hain matlab baki $50\\%$ kuch nahi peete unka koi role hi nahi hai set theory me. Seedha un $40$ logo pe game khelo.<br><br><b>Method 1 (Ninja Technique):</b><br>Total people $= 80$.<br>Peene wale (Union) $= 50\\%$ of $80 = 40$.<br>Dono peene wale (Intersection) $= 6.25\\%$ (yani $1/16$) of $80 = 5$.<br>Only Tea + Only Coffee $= \\text{Union} - \\text{Both} = 40 - 5 = 35$.<br>Ratio Only Tea : Only Coffee $= 3:4$ (Total 7 units).<br>$7 \\text{ units} = 35 \\Rightarrow 1 \\text{ unit} = 5$.<br>Only Tea $= 3 \\text{ units} = 15$.<br><br><b>Takeaway:</b> Kuch data sirf distract karne ke liye hota hai, Venn Diagram ki core formula property $\\text{Union} = A + B - \\text{Intersection}$ se banta hai."
+    },
+    {
+      "q": "The number A is $25\\%$ more than the number B and the number C is $25\\%$ less than the number B. If the numbers A and C are decreased and increased by (x+10) and (x) respectively and the ratio of the numbers A and C becomes 6:5, if the sum of the numbers A, B and C initially is 180, then find the value of (5x+85)?",
+      "o": [
+        "110",
+        "210",
+        "200",
+        "120"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Unitary Scaling]</b><br><br><b>Pen-Free Observation:</b> B ko $100\\%$ (ya 4 units) maano. A aayega 5 units, C aayega 3 units. Sum 12 units $= 180$. Toh base values turant nikal aayengi.<br><br><b>Method 1 (Ninja Technique):</b><br>B $= 4u$, A $= 5u$, C $= 3u$.<br>Total $= 12u = 180 \\Rightarrow u = 15$.<br>Values hain: A $= 75$, B $= 60$, C $= 45$.<br>A ghati $(x+10)$ se: New A $= 75 - (x+10) = 65 - x$.<br>C badhi $x$ se: New C $= 45 + x$.<br>Ratio di hai $6:5$ $\\Rightarrow \\frac{65 - x}{45 + x} = \\frac{6}{5}$.<br>Cross multiply: $325 - 5x = 270 + 6x \\Rightarrow 11x = 55 \\Rightarrow x = 5$.<br>Pucha kya hai? $(5x + 85) = 5(5) + 85 = 25 + 85 = 110$.<br>Option (A) is correct.<br><br><b>Takeaway:</b> Question ki lambai dekh kar darna nahi, step by step process se 30 second ke under toot jata hai."
+    },
+    {
+      "q": "A monkey is trying to climb up a pole with height 20 meters. Every minute the monkey climbs up by 3 meters and in the next 30 seconds it slips down by 1 meter. In how much time it will reach the top of the pole if initially the monkey was at the bottom of the pole?",
+      "o": [
+        "14 min 10sec",
+        "13 min 30 sec",
+        "14 min 40 sec",
+        "15 minutes"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Logical Scaling (Cycle Method)]</b><br><br><b>Pen-Free Observation:</b> Monkey jab ek baar top par pahaunch jayega, toh wo phislega kyu? Isiliye hamesha total height se last ki 1 upward jump ($3\\text{m}$) minus karke (yani 17m tak) cycles ginte hain.<br><br><b>Method 1 (Ninja Technique):</b><br>1 Cycle $= 1 \\text{ min}$ (up) $+ 30 \\text{ sec}$ (down) $= 1.5 \\text{ minutes}$.<br>Net distance in 1 Cycle $= +3 - 1 = 2 \\text{ meters}$.<br>Target without last jump $= 20 - 3 = 17 \\text{ meters}$.<br>17 meter tak pahaunchne ke liye total cycles: 8 cycle (yani 16m). Par 9 cycle tak jayenge toh 18m par jayega.<br>Let's take 9 full cycles:<br>$9 \\text{ cycles}$ me $= 9 \\times 2 = 18 \\text{ meters}$. Time $= 9 \\times 1.5 = 13.5 \\text{ minutes}$.<br>Ab wo $18\\text{m}$ par baitha hai. Top hai $20\\text{m}$ par. Use jana hai sirf $2\\text{m}$.<br>Uski climbing speed hai $3 \\text{ meters per minute}$.<br>2 meter jane me laga time $= \\frac{2}{3} \\text{ minute} = 40 \\text{ seconds}$.<br>Total time $= 13 \\text{ min } 30 \\text{ sec} + 40 \\text{ sec} = 14 \\text{ min } 10 \\text{ sec}$.<br><br><b>Takeaway:</b> Hamesha check karo cycle tootne ke baad bacha hua distance normal speed se kitni der me cross hoga. SSC CGL ka favourite trap hai ye!"
+    }
+  ]
+}

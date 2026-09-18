@@ -1,0 +1,559 @@
+{
+  "quizTitle": "series-revise-all-concepts Set-02",
+  "quizTime": "15",
+  "totalMarks": "50",
+  "questions": [
+    {
+      "q": "What comes next? \n\n2, 3, 10, 15, 26, 35, ?",
+      "o": [
+        "50",
+        "57",
+        "47",
+        "49"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Numbers ko gaur se dekh, sab ke sab perfect squares ke ekdum padosi hain (jaise 3 is near 4, 10 is near 9).<br/><br/><b>Method:</b><br/>Pattern chal raha hai $n^2 + 1$ aur $n^2 - 1$ ka alternate!<br/>$1^2 + 1 = 2$<br/>$2^2 - 1 = 3$<br/>$3^2 + 1 = 10$<br/>$4^2 - 1 = 15$<br/>$5^2 + 1 = 26$<br/>$6^2 - 1 = 35$<br/><br/>Agla hoga $7^2 + 1 = 49 + 1 = 50$."
+    },
+    {
+      "q": "One term in the given number series is wrong. Find out the wrong term. \n\n<b>15, 17, 22, 32, 49, 76</b>",
+      "o": [
+        "49",
+        "32",
+        "22",
+        "76"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Double difference check kar bhai, answer apne aap baahar aa jayega.<br/><br/><b>Ninja Technique:</b><br/>First Difference: 2, 5, 10, 17, 27<br/>Second Difference: 3, 5, 7, 10<br/>Yahan 10 nahi, 9 aana chahiye (Odd numbers ka diff chal raha hai).<br/>Toh agla First Difference $17 + 9 = 26$ hona chahiye.<br/>Corrent term $= 49 + 26 = 75$. Par diya hai 76, so 76 is the wrong term."
+    },
+    {
+      "q": "Select the number from among the given option that can replace the question mark (?) in the following series. \n\n<b>3, 5, 7, 12, 37, 69, 357, ?</b>",
+      "o": [
+        "656",
+        "657",
+        "655",
+        "658"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Same pichle wale ki tarah differences mein odd numbers ka operation ho raha hai.<br/><br/><b>Ninja Technique:</b><br/>Differences: 2, 2, 5, 25, 32, 288<br/>Unke relations:<br/>$\\rightarrow 2 \\times 1 = 2$<br/>$\\rightarrow 2 + 3 = 5$<br/>$\\rightarrow 5 \\times 5 = 25$<br/>$\\rightarrow 25 + 7 = 32$<br/>$\\rightarrow 32 \\times 9 = 288$<br/>Next operation: $+ 11$. Toh diff hoga $288 + 11 = 299$.<br/>Answer $= 357 + 299 = 656$."
+    },
+    {
+      "q": "Which letter cluster will replace the question mark (?) to complete the given series? \n\nabCD, fgHI, ?, stUV, abCD",
+      "o": [
+        "klMO",
+        "lmNO",
+        "mnOP",
+        "lnMO"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Har cluster mein pehle 2 letter small aur aakhri 2 Capital hain. Par sequence break kaise ho raha hai wo dhyan do.<br/><br/><b>Method:</b><br/>Group 1: a,b,C,D (ends at D=4)<br/>Group 2: f,g,H,I (starts at f=6). Matlab e(5) ko skip kiya gaya.<br/>Group 3: I=9 pe khatam hua. J(10) ko skip karenge, toh k se shuru nahi hoga, pattern thoda alag hai. Let's see first letters:<br/>a(1) se f(6) = +5.<br/>Agar f(6) mein +5 karein = k(11). Par options mein 'lmNO' hai.<br/><br/>Asli logic: Gaps between groups consistently badh rahe hain:<br/>D(4) se f(6) gap hai +2<br/>I(9) se l(12) gap hai +3 (Iska matlab agla group l,m,N,O hoga)<br/>O(15) se s(19) gap hai +4<br/>V(22) se a(1) gap hai +5. Pattern ekdum set hai! Answer is lmNO."
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>82, 105, 136, 177, 224, 283, ?</b>",
+      "o": [
+        "380",
+        "350",
+        "349",
+        "320"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Pichle question ke same pattern ki judwa behen hai ye series.<br/><br/><b>Ninja Technique:</b><br/>Differences: 23, 31, 41, 47, 59<br/>Same skipping alternate primes wala logic: 23, 29(skip), 31, 37(skip), 41, 43(skip), 47, 53(skip), 59.<br/>Toh ab 61 skip karke 67 add karna hai.<br/>$283 + 67 = 350$."
+    },
+    {
+      "q": "Find the next element that replace the ? Logically. \n\n7, 24, 58, 126, ?",
+      "o": [
+        "252",
+        "262",
+        "273",
+        "264"
+      ],
+      "a": 1,
+      "s": "<b>Method:</b> Difference nikalo, sequence dikh jayega.<br/>24 - 7 = 17<br/>58 - 24 = 34<br/>126 - 58 = 68<br/>Differences double ho rahe hain: 17, 34, 68... Toh agla difference 68 $\\times$ 2 = 136 hoga.<br/>126 + 136 = 262."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following series? \n\n<b>2, 3, 6, 10, 17, 28, ?</b>",
+      "o": [
+        "45",
+        "39",
+        "43",
+        "46"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Jab numbers previous numbers ka close sum lagein toh Lucas/Fibonacci diff check kiya kar.<br/><br/><b>Ninja Technique:</b><br/>Diffs: 1, 3, 4, 7, 11<br/>Ye diffs pichle do ka sum hain! ($1+3=4, 3+4=7, 4+7=11$).<br/>Next diff $= 7 + 11 = 18$.<br/>Number $= 28 + 18 = 46$."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following series? \n\n<b>3, 12, 52, 159, 640, ?</b>",
+      "o": [
+        "1731",
+        "1923",
+        "1910",
+        "1863"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Alternating multiplier dikh raha hai yahan. 52 ko dekho aur 159 ko, $\\times 3$ hai.<br/><br/><b>Ninja Technique:</b><br/>Pattern: $\\times 4, (\\times 4 + 4), (\\times 3 + 3), (\\times 4 + 4), (\\times 3 + 3)$<br/>Wait, isko aur asaan banate hain:<br/>$\\rightarrow 3 \\times 4 + 0 = 12$<br/>$\\rightarrow 12 \\times 4 + 4 = 52$<br/>$\\rightarrow 52 \\times 3 + 3 = 159$<br/>$\\rightarrow 159 \\times 4 + 4 = 640$<br/>$\\rightarrow 640 \\times 3 + 3 = 1923$<br/>Bhut solid trap tha CGL mains laayak!"
+    },
+    {
+      "q": "The series given below contains a sequence of numbers. Accordingly identify the incorrect combination: \n\n6, 7, 16, 51, 210",
+      "o": [
+        "210",
+        "16",
+        "7",
+        "51"
+      ],
+      "a": 0,
+      "s": "<b>Method:</b> Number achanak chhalang maar rahe hain, ye pakka multiplication based series hai.<br/><br/>6 $\\times$ 1 + 1 = 7<br/>7 $\\times$ 2 + 2 = 16<br/>16 $\\times$ 3 + 3 = 51<br/>51 $\\times$ 4 + 4 = 204 + 4 = 208.<br/>Par series mein 210 diya hai, jo ki wrong hai."
+    },
+    {
+      "q": "Which of the following numbers will replace the question mark (?) in the given series? \n\n45, 90, 154, ?, 347",
+      "o": [
+        "248",
+        "273",
+        "239",
+        "256"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Numbers dheere-dheere badh rahe hain, seedha double step difference nikalo.<br/><br/><b>Method:</b><br/>1st step differences: <br/>90 - 45 = 45<br/>154 - 90 = 64<br/>Abhi direct pattern nahi dikha. Chalo 2nd step difference dekhte hain options ke hisaab se. Par dhyaan de, 45 aur 64 ke beech +19 ka gap hai.<br/>Agar hum gap ko +2 se badhate jayein (19, 21, 23):<br/>Next difference = 64 + 21 = 85<br/>Next to next = 85 + 23 = 108<br/><br/>Check karte hain:<br/>154 + 85 = 239<br/>239 + 108 = 347 (Match ho gaya!)<br/>So, missing number is 239."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following number series? \n\n<b>91, 100, 94, 97, 101, 90, 112, ?</b>",
+      "o": [
+        "83",
+        "123",
+        "87",
+        "79"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Numbers zig-zag chal rahe hain, seedha alternate series utha le bhai.<br/><br/><b>Ninja Technique:</b><br/><b>Series 1:</b> 91, 94, 101, 112 (Diffs: 3, 7, 11)<br/><b>Series 2:</b> 100, 97, 90, ? (Diffs: -3, -7, -11)<br/>Agla subtraction hoga -11 ka.<br/>$90 - 11 = 79$."
+    },
+    {
+      "q": "What should come at the place of question mark? \n\n3, 4, 13, 14, 45, 46, ?",
+      "o": [
+        "143",
+        "136",
+        "140",
+        "138"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Pairs ban rahe hain: (3, 4), (13, 14), (45, 46). Har pair mein +1 hai. Par ek pair se dusre pair ka relation dhundna hai.<br/><br/><b>Method (Exam Approach):</b><br/>Pichle pair ke last number se agla pair shuru ho raha hai aise:<br/>4 $\\times$ 3 + 1 = 13<br/>14 $\\times$ 3 + 3 = 45<br/>Toh 46 se kya banega? Pattern dekho: $\\times 3 + 1$, phir $\\times 3 + 3$. Agla $\\times 3 + 5$ hona chahiye.<br/>46 $\\times$ 3 + 5 = 138 + 5 = 143."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following series? \n\n<b>20, 10, 10, 15, 30, ?</b>",
+      "o": [
+        "45",
+        "90",
+        "60",
+        "75"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Jab bhi series pehle ghate (decrease ho) aur fir badhe, wahan 0.5 ka multiplication zaroor hota hai bhai!<br/><br/><b>Ninja Technique:</b><br/>$20 \\times 0.5 = 10$<br/>$10 \\times 1 = 10$<br/>$10 \\times 1.5 = 15$<br/>$15 \\times 2 = 30$<br/>$30 \\times 2.5 = 75$<br/>Best approach for banking and SSC CGL series."
+    },
+    {
+      "q": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series. \n\nA B _ N _ D O P E _ Q R _ H S T I J U _",
+      "o": [
+        "MCGIV",
+        "CMGIV",
+        "CMGFV",
+        "MCFGV"
+      ],
+      "a": 3,
+      "s": "<b>Method:</b> Again 20 letters. 4-4 ke 5 tukde kar lo:<br/>A B _ N / _ D O P / E _ Q R / _ H S T / I J U _<br/><br/>Compare columns:<br/>Col 1: A, C, E, G, I. (Alternate letters). 2nd blank = C, 4th blank = G.<br/>Col 2: B, D, F, H, J. (Alternate). 3rd blank = F.<br/>Col 3: M, O, Q, S, U. (Alternate). 1st blank = M.<br/>Col 4: N, P, R, T, V. 5th blank = V.<br/>Blanks in order: M, C, F, G, V."
+    },
+    {
+      "q": "Select the correct option that when filled in the blanks in the same sequence will make the series logically complete. \n\nG H _ S T _ H O _ R G H O S P G _ O S _",
+      "o": [
+        "GORNH",
+        "ORHSN",
+        "OGSHN",
+        "GOHNP"
+      ],
+      "a": 2,
+      "s": "<b>Method:</b> Total 25 spaces hain. Group by 5:<br/>G H _ S T / _ H O _ R / G H O S P / G _ O S _<br/>Wait, 20 spaces hain. <br/>Col 1: G, _, G, G. Blank = G.<br/>Col 2: H, H, H, _. Blank = H.<br/>Col 3: _, O, O, O. Blank = O.<br/>Col 4: S, _, S, S. Blank = S.<br/>Col 5: T, R, P, _. T(20), R(18), P(16), so next must be N(14). Blank = N.<br/>Sequence: O, G, S, H, N."
+    },
+    {
+      "q": "Select the letter-cluster from among the given options that can replace the question mark (?) in the following series. \n\n<b>TALT, YAGT, YFGO, DFBO, DKBJ, ?</b>",
+      "o": [
+        "DPBE",
+        "IKWJ",
+        "IJKW",
+        "BDEP"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Har baar koi ek letter apni jagah constant chhod raha hai. Pattern of +5 and 0 check kar.<br/><br/><b>Ninja Technique:</b><br/>TALT se YAGT $\\rightarrow +5, 0, -5, 0$<br/>YAGT se YFGO $\\rightarrow 0, +5, 0, -5$<br/>YFGO se DFBO $\\rightarrow +5, 0, -5, 0$<br/>DFBO se DKBJ $\\rightarrow 0, +5, 0, -5$<br/>Next shift hogi: $+5, 0, -5, 0$<br/>D(4)+5=I, K+0=K, B(2)-5=W, J+0=J. Result = IKWJ."
+    },
+    {
+      "q": "Select the numbers that will replace the question marks (?) in the given series. \n\n<b>23, 25, 29, 35, 47, 50, ?, ?</b>",
+      "o": [
+        "75, 50",
+        "54, 68",
+        "56, 70",
+        "62, 70"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Bhai, aisi ajeeb double missing wali series ko directly alternate series se break kar aur digit multiplication check kar.<br/><br/><b>Ninja Technique:</b><br/><b>Series 1:</b> 23, 29, 47, ?<br/>$\\rightarrow 23 + (2 \\times 3) = 29$<br/>$\\rightarrow 29 + (2 \\times 9) = 47$<br/>$\\rightarrow 47 + (4 \\times 7) = 75$<br/><b>Series 2:</b> 25, 35, 50, ?<br/>$\\rightarrow 25 + (2 \\times 5) = 35$<br/>$\\rightarrow 35 + (3 \\times 5) = 50$<br/>$\\rightarrow 50 + (5 \\times 0) = 50$<br/>Answer is 75, 50."
+    },
+    {
+      "q": "Select the number that can replace the question mark (?) in the following series. \n\n<b>4, 11, 31, 65, 193, ?</b>",
+      "o": [
+        "396",
+        "369",
+        "389",
+        "398"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Multiplication by 2 and 3 alternate ho raha hai. Observe 31 se 65 ($\\approx \\times 2$) aur 65 se 193 ($\\approx \\times 3$).<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 4 \\times 2 + 3 = 11$<br/>$\\rightarrow 11 \\times 3 - 2 = 31$<br/>$\\rightarrow 31 \\times 2 + 3 = 65$<br/>$\\rightarrow 65 \\times 3 - 2 = 193$<br/>$\\rightarrow 193 \\times 2 + 3 = 386 + 3 = 389$."
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>11, 13, 19, 49, 109, 239, ?</b>",
+      "o": [
+        "449",
+        "494",
+        "394",
+        "349"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Diffs dekho, jaldi pakad mein aa jayega.<br/><br/><b>Ninja Technique:</b><br/>Differences: 2, 6, 30, 60, 130...<br/>Ye number cubes ke pas hain:<br/>$1^3 + 1 = 2$<br/>$2^3 - 2 = 6$<br/>$3^3 + 3 = 30$<br/>$4^3 - 4 = 60$<br/>$5^3 + 5 = 130$<br/>Next aayega $6^3 - 6 = 210$.<br/>$239 + 210 = 449$."
+    },
+    {
+      "q": "Select the letter-cluster that can replace the question mark (?) in the following series. \n\nPERSONA, ANPERSO, ANOSPER, ?",
+      "o": [
+        "ANOSERP",
+        "NOSAREP",
+        "ANSORPE",
+        "ANOSREP"
+      ],
+      "a": 3,
+      "s": "<b>Method:</b> Letter shifting ka bahut tagda question hai bhai!<br/>Word 1: P E R S O N A<br/>Word 2: A N P E R S O (Pichle word ke last 2 letters N aur A ko reverse karke 'AN' banaya aur front pe rakh diya).<br/>Word 3: A N O S P E R ('AN' ko waise hi rakha, ab bache hue 'PERSO' ke last 2 letters S aur O ko reverse karke 'OS' banaya aur 'AN' ke aage chipka diya).<br/>Word 4: Ab humare paas 'ANOSPER' hai. Hum 'ANOS' ko waise hi rakhenge, aur bache hue 'PER' ke last 2 letters E aur R ko reverse karke 'RE' banayenge aur usko aage lagayenge. Bacha hua P end mein chala jayega.<br/>Result = A N O S + R E + P = ANOSREP."
+    },
+    {
+      "q": "Select the letter-cluster from among the given options that can replace the question mark (?) in the following series. \n\n<b>FCC, UFH, OIS, LLX, FOC, ?</b>",
+      "o": [
+        "WTH",
+        "VSG",
+        "TRF",
+        "URH"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Middle letter ka +3 shift clear dikh raha hai (C, F, I, L, O).<br/><br/><b>Ninja Technique:</b><br/>Middle letter: O+3 = R aayega.<br/>Last letter: C, H, S, X, C... (Yahan opposite pairs ka aapas me skip chal raha hai, ya gap dekho).<br/>Actually First Letter F $\\leftrightarrow$ U opposite chal raha hai: F, U, O, L, F. (F ka U opposite, O ka L). Toh Next U aayega.<br/>Result seedha <b>URH</b> aayega."
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>10, 22, 35, 40, 72, 40, ?</b>",
+      "o": [
+        "133",
+        "143",
+        "134",
+        "131"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Dekh bhai, sequence ajeeb hai, beecho-beech same numbers aa gaye (40, 40). Ye pakka Alternate Series hai!<br/><br/><b>Ninja Technique:</b><br/>Dono series ko alag kar de:<br/><b>Series 1:</b> 10, 35, 72, ?<br/>Differences: 25, 37. Double Difference = 12.<br/>Next Diff = $37 + 12 = 49$? Wait, let's look at diff of diff = 12? Actually 25, 37, 61. Double diffs are 12, 24.<br/>So next diff = 61. Missing $= 72 + 61 = 133$.<br/><b>Series 2:</b> 22, 40, 40<br/>Differences: 18, 0 (Yahan $18 \\rightarrow 18-18=0$).<br/>Option A is correct."
+    },
+    {
+      "q": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series. \n\nM T _ R M _ Q R _ V Q _ M W _ R M _ Q R",
+      "o": [
+        "R U M R Q Y",
+        "Q U M Q R X",
+        "Q U M R Q X",
+        "Q U S R Q R"
+      ],
+      "a": 2,
+      "s": "<b>Method:</b> Total 20 spaces, 5 groups of 4 banenge:<br/>M T _ R / M _ Q R / _ V Q _ / M W _ R / M _ Q R<br/><br/>Col 1: Sab mein 'M' constant hai. (3rd blank = M)<br/>Col 2: T, U, V, W, X. (Yahan sequence hai +1 ka). So 2nd blank = U, 6th blank = X.<br/>Col 3: Sab mein 'Q' constant hai. So 1st blank = Q, 5th blank = Q.<br/>Col 4: Sab mein 'R' constant hai. So 4th blank = R.<br/><br/>Blanks in order: Q, U, M, R, Q, X."
+    },
+    {
+      "q": "Select the option that represents the letters that, when placed from left to right in the blanks below, will complete the letter sequence correctly. \n\n<b>Q _ _ R R K Z _ _ K Z R T _ _ R</b>",
+      "o": [
+        "Q Z R S P R",
+        "K Z R P R Z",
+        "K Z R S Z T",
+        "K Z R S K Z"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Ek element aage shift ho raha hai. Pattern split kar 4 ke parts mein.<br/><br/><b>Ninja Technique:</b><br/>Blocks: Q _ _ R | R K Z _ | _ K Z R | T _ _ R<br/>Dekh bhai, last 3 letters K Z R constants lag rahe hain!<br/>Q [K] [Z] R | R K Z [R] | [S] K Z R | T [K] [Z] R<br/>Sirf pehla letter Q, R, S, T ja raha hai.<br/>Toh missing blanks hain: K, Z, R, S, K, Z."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following number series? \n\n<b>2, 3, 6, 10, 17, ?</b>",
+      "o": [
+        "30",
+        "25",
+        "28",
+        "27"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Direct sum of previous differences wali trick hai (Lucas Number sequence variation).<br/><br/><b>Ninja Technique:</b><br/>Differences: 1, 3, 4, 7<br/>Notice kar: $1+3=4$, $3+4=7$. Next hoga $4+7=11$.<br/>So $17 + 11 = 28$."
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "What comes next? \n\n2, 3, 10, 15, 26, 35, ?",
+      "o_hi": [
+        "50",
+        "57",
+        "47",
+        "49"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Numbers ko gaur se dekh, sab ke sab perfect squares ke ekdum padosi hain (jaise 3 is near 4, 10 is near 9).<br/><br/><b>Method:</b><br/>Pattern chal raha hai $n^2 + 1$ aur $n^2 - 1$ ka alternate!<br/>$1^2 + 1 = 2$<br/>$2^2 - 1 = 3$<br/>$3^2 + 1 = 10$<br/>$4^2 - 1 = 15$<br/>$5^2 + 1 = 26$<br/>$6^2 - 1 = 35$<br/><br/>Agla hoga $7^2 + 1 = 49 + 1 = 50$."
+    },
+    {
+      "q_hi": "One term in the given number series is wrong. Find out the wrong term. \n\n<b>15, 17, 22, 32, 49, 76</b>",
+      "o_hi": [
+        "49",
+        "32",
+        "22",
+        "76"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Double difference check kar bhai, answer apne aap baahar aa jayega.<br/><br/><b>Ninja Technique:</b><br/>First Difference: 2, 5, 10, 17, 27<br/>Second Difference: 3, 5, 7, 10<br/>Yahan 10 nahi, 9 aana chahiye (Odd numbers ka diff chal raha hai).<br/>Toh agla First Difference $17 + 9 = 26$ hona chahiye.<br/>Corrent term $= 49 + 26 = 75$. Par diya hai 76, so 76 is the wrong term."
+    },
+    {
+      "q_hi": "Select the number from among the given option that can replace the question mark (?) in the following series. \n\n<b>3, 5, 7, 12, 37, 69, 357, ?</b>",
+      "o_hi": [
+        "656",
+        "657",
+        "655",
+        "658"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Same pichle wale ki tarah differences mein odd numbers ka operation ho raha hai.<br/><br/><b>Ninja Technique:</b><br/>Differences: 2, 2, 5, 25, 32, 288<br/>Unke relations:<br/>$\\rightarrow 2 \\times 1 = 2$<br/>$\\rightarrow 2 + 3 = 5$<br/>$\\rightarrow 5 \\times 5 = 25$<br/>$\\rightarrow 25 + 7 = 32$<br/>$\\rightarrow 32 \\times 9 = 288$<br/>Next operation: $+ 11$. Toh diff hoga $288 + 11 = 299$.<br/>Answer $= 357 + 299 = 656$."
+    },
+    {
+      "q_hi": "Which letter cluster will replace the question mark (?) to complete the given series? \n\nabCD, fgHI, ?, stUV, abCD",
+      "o_hi": [
+        "klMO",
+        "lmNO",
+        "mnOP",
+        "lnMO"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Har cluster mein pehle 2 letter small aur aakhri 2 Capital hain. Par sequence break kaise ho raha hai wo dhyan do.<br/><br/><b>Method:</b><br/>Group 1: a,b,C,D (ends at D=4)<br/>Group 2: f,g,H,I (starts at f=6). Matlab e(5) ko skip kiya gaya.<br/>Group 3: I=9 pe khatam hua. J(10) ko skip karenge, toh k se shuru nahi hoga, pattern thoda alag hai. Let's see first letters:<br/>a(1) se f(6) = +5.<br/>Agar f(6) mein +5 karein = k(11). Par options mein 'lmNO' hai.<br/><br/>Asli logic: Gaps between groups consistently badh rahe hain:<br/>D(4) se f(6) gap hai +2<br/>I(9) se l(12) gap hai +3 (Iska matlab agla group l,m,N,O hoga)<br/>O(15) se s(19) gap hai +4<br/>V(22) se a(1) gap hai +5. Pattern ekdum set hai! Answer is lmNO."
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>82, 105, 136, 177, 224, 283, ?</b>",
+      "o_hi": [
+        "380",
+        "350",
+        "349",
+        "320"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Pichle question ke same pattern ki judwa behen hai ye series.<br/><br/><b>Ninja Technique:</b><br/>Differences: 23, 31, 41, 47, 59<br/>Same skipping alternate primes wala logic: 23, 29(skip), 31, 37(skip), 41, 43(skip), 47, 53(skip), 59.<br/>Toh ab 61 skip karke 67 add karna hai.<br/>$283 + 67 = 350$."
+    },
+    {
+      "q_hi": "Find the next element that replace the ? Logically. \n\n7, 24, 58, 126, ?",
+      "o_hi": [
+        "252",
+        "262",
+        "273",
+        "264"
+      ],
+      "a": 1,
+      "s_hi": "<b>Method:</b> Difference nikalo, sequence dikh jayega.<br/>24 - 7 = 17<br/>58 - 24 = 34<br/>126 - 58 = 68<br/>Differences double ho rahe hain: 17, 34, 68... Toh agla difference 68 $\\times$ 2 = 136 hoga.<br/>126 + 136 = 262."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following series? \n\n<b>2, 3, 6, 10, 17, 28, ?</b>",
+      "o_hi": [
+        "45",
+        "39",
+        "43",
+        "46"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Jab numbers previous numbers ka close sum lagein toh Lucas/Fibonacci diff check kiya kar.<br/><br/><b>Ninja Technique:</b><br/>Diffs: 1, 3, 4, 7, 11<br/>Ye diffs pichle do ka sum hain! ($1+3=4, 3+4=7, 4+7=11$).<br/>Next diff $= 7 + 11 = 18$.<br/>Number $= 28 + 18 = 46$."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following series? \n\n<b>3, 12, 52, 159, 640, ?</b>",
+      "o_hi": [
+        "1731",
+        "1923",
+        "1910",
+        "1863"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Alternating multiplier dikh raha hai yahan. 52 ko dekho aur 159 ko, $\\times 3$ hai.<br/><br/><b>Ninja Technique:</b><br/>Pattern: $\\times 4, (\\times 4 + 4), (\\times 3 + 3), (\\times 4 + 4), (\\times 3 + 3)$<br/>Wait, isko aur asaan banate hain:<br/>$\\rightarrow 3 \\times 4 + 0 = 12$<br/>$\\rightarrow 12 \\times 4 + 4 = 52$<br/>$\\rightarrow 52 \\times 3 + 3 = 159$<br/>$\\rightarrow 159 \\times 4 + 4 = 640$<br/>$\\rightarrow 640 \\times 3 + 3 = 1923$<br/>Bhut solid trap tha CGL mains laayak!"
+    },
+    {
+      "q_hi": "The series given below contains a sequence of numbers. Accordingly identify the incorrect combination: \n\n6, 7, 16, 51, 210",
+      "o_hi": [
+        "210",
+        "16",
+        "7",
+        "51"
+      ],
+      "a": 0,
+      "s_hi": "<b>Method:</b> Number achanak chhalang maar rahe hain, ye pakka multiplication based series hai.<br/><br/>6 $\\times$ 1 + 1 = 7<br/>7 $\\times$ 2 + 2 = 16<br/>16 $\\times$ 3 + 3 = 51<br/>51 $\\times$ 4 + 4 = 204 + 4 = 208.<br/>Par series mein 210 diya hai, jo ki wrong hai."
+    },
+    {
+      "q_hi": "Which of the following numbers will replace the question mark (?) in the given series? \n\n45, 90, 154, ?, 347",
+      "o_hi": [
+        "248",
+        "273",
+        "239",
+        "256"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Numbers dheere-dheere badh rahe hain, seedha double step difference nikalo.<br/><br/><b>Method:</b><br/>1st step differences: <br/>90 - 45 = 45<br/>154 - 90 = 64<br/>Abhi direct pattern nahi dikha. Chalo 2nd step difference dekhte hain options ke hisaab se. Par dhyaan de, 45 aur 64 ke beech +19 ka gap hai.<br/>Agar hum gap ko +2 se badhate jayein (19, 21, 23):<br/>Next difference = 64 + 21 = 85<br/>Next to next = 85 + 23 = 108<br/><br/>Check karte hain:<br/>154 + 85 = 239<br/>239 + 108 = 347 (Match ho gaya!)<br/>So, missing number is 239."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following number series? \n\n<b>91, 100, 94, 97, 101, 90, 112, ?</b>",
+      "o_hi": [
+        "83",
+        "123",
+        "87",
+        "79"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Numbers zig-zag chal rahe hain, seedha alternate series utha le bhai.<br/><br/><b>Ninja Technique:</b><br/><b>Series 1:</b> 91, 94, 101, 112 (Diffs: 3, 7, 11)<br/><b>Series 2:</b> 100, 97, 90, ? (Diffs: -3, -7, -11)<br/>Agla subtraction hoga -11 ka.<br/>$90 - 11 = 79$."
+    },
+    {
+      "q_hi": "What should come at the place of question mark? \n\n3, 4, 13, 14, 45, 46, ?",
+      "o_hi": [
+        "143",
+        "136",
+        "140",
+        "138"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Pairs ban rahe hain: (3, 4), (13, 14), (45, 46). Har pair mein +1 hai. Par ek pair se dusre pair ka relation dhundna hai.<br/><br/><b>Method (Exam Approach):</b><br/>Pichle pair ke last number se agla pair shuru ho raha hai aise:<br/>4 $\\times$ 3 + 1 = 13<br/>14 $\\times$ 3 + 3 = 45<br/>Toh 46 se kya banega? Pattern dekho: $\\times 3 + 1$, phir $\\times 3 + 3$. Agla $\\times 3 + 5$ hona chahiye.<br/>46 $\\times$ 3 + 5 = 138 + 5 = 143."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following series? \n\n<b>20, 10, 10, 15, 30, ?</b>",
+      "o_hi": [
+        "45",
+        "90",
+        "60",
+        "75"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Jab bhi series pehle ghate (decrease ho) aur fir badhe, wahan 0.5 ka multiplication zaroor hota hai bhai!<br/><br/><b>Ninja Technique:</b><br/>$20 \\times 0.5 = 10$<br/>$10 \\times 1 = 10$<br/>$10 \\times 1.5 = 15$<br/>$15 \\times 2 = 30$<br/>$30 \\times 2.5 = 75$<br/>Best approach for banking and SSC CGL series."
+    },
+    {
+      "q_hi": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series. \n\nA B _ N _ D O P E _ Q R _ H S T I J U _",
+      "o_hi": [
+        "MCGIV",
+        "CMGIV",
+        "CMGFV",
+        "MCFGV"
+      ],
+      "a": 3,
+      "s_hi": "<b>Method:</b> Again 20 letters. 4-4 ke 5 tukde kar lo:<br/>A B _ N / _ D O P / E _ Q R / _ H S T / I J U _<br/><br/>Compare columns:<br/>Col 1: A, C, E, G, I. (Alternate letters). 2nd blank = C, 4th blank = G.<br/>Col 2: B, D, F, H, J. (Alternate). 3rd blank = F.<br/>Col 3: M, O, Q, S, U. (Alternate). 1st blank = M.<br/>Col 4: N, P, R, T, V. 5th blank = V.<br/>Blanks in order: M, C, F, G, V."
+    },
+    {
+      "q_hi": "Select the correct option that when filled in the blanks in the same sequence will make the series logically complete. \n\nG H _ S T _ H O _ R G H O S P G _ O S _",
+      "o_hi": [
+        "GORNH",
+        "ORHSN",
+        "OGSHN",
+        "GOHNP"
+      ],
+      "a": 2,
+      "s_hi": "<b>Method:</b> Total 25 spaces hain. Group by 5:<br/>G H _ S T / _ H O _ R / G H O S P / G _ O S _<br/>Wait, 20 spaces hain. <br/>Col 1: G, _, G, G. Blank = G.<br/>Col 2: H, H, H, _. Blank = H.<br/>Col 3: _, O, O, O. Blank = O.<br/>Col 4: S, _, S, S. Blank = S.<br/>Col 5: T, R, P, _. T(20), R(18), P(16), so next must be N(14). Blank = N.<br/>Sequence: O, G, S, H, N."
+    },
+    {
+      "q_hi": "Select the letter-cluster from among the given options that can replace the question mark (?) in the following series. \n\n<b>TALT, YAGT, YFGO, DFBO, DKBJ, ?</b>",
+      "o_hi": [
+        "DPBE",
+        "IKWJ",
+        "IJKW",
+        "BDEP"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Har baar koi ek letter apni jagah constant chhod raha hai. Pattern of +5 and 0 check kar.<br/><br/><b>Ninja Technique:</b><br/>TALT se YAGT $\\rightarrow +5, 0, -5, 0$<br/>YAGT se YFGO $\\rightarrow 0, +5, 0, -5$<br/>YFGO se DFBO $\\rightarrow +5, 0, -5, 0$<br/>DFBO se DKBJ $\\rightarrow 0, +5, 0, -5$<br/>Next shift hogi: $+5, 0, -5, 0$<br/>D(4)+5=I, K+0=K, B(2)-5=W, J+0=J. Result = IKWJ."
+    },
+    {
+      "q_hi": "Select the numbers that will replace the question marks (?) in the given series. \n\n<b>23, 25, 29, 35, 47, 50, ?, ?</b>",
+      "o_hi": [
+        "75, 50",
+        "54, 68",
+        "56, 70",
+        "62, 70"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Bhai, aisi ajeeb double missing wali series ko directly alternate series se break kar aur digit multiplication check kar.<br/><br/><b>Ninja Technique:</b><br/><b>Series 1:</b> 23, 29, 47, ?<br/>$\\rightarrow 23 + (2 \\times 3) = 29$<br/>$\\rightarrow 29 + (2 \\times 9) = 47$<br/>$\\rightarrow 47 + (4 \\times 7) = 75$<br/><b>Series 2:</b> 25, 35, 50, ?<br/>$\\rightarrow 25 + (2 \\times 5) = 35$<br/>$\\rightarrow 35 + (3 \\times 5) = 50$<br/>$\\rightarrow 50 + (5 \\times 0) = 50$<br/>Answer is 75, 50."
+    },
+    {
+      "q_hi": "Select the number that can replace the question mark (?) in the following series. \n\n<b>4, 11, 31, 65, 193, ?</b>",
+      "o_hi": [
+        "396",
+        "369",
+        "389",
+        "398"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Multiplication by 2 and 3 alternate ho raha hai. Observe 31 se 65 ($\\approx \\times 2$) aur 65 se 193 ($\\approx \\times 3$).<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 4 \\times 2 + 3 = 11$<br/>$\\rightarrow 11 \\times 3 - 2 = 31$<br/>$\\rightarrow 31 \\times 2 + 3 = 65$<br/>$\\rightarrow 65 \\times 3 - 2 = 193$<br/>$\\rightarrow 193 \\times 2 + 3 = 386 + 3 = 389$."
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>11, 13, 19, 49, 109, 239, ?</b>",
+      "o_hi": [
+        "449",
+        "494",
+        "394",
+        "349"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Diffs dekho, jaldi pakad mein aa jayega.<br/><br/><b>Ninja Technique:</b><br/>Differences: 2, 6, 30, 60, 130...<br/>Ye number cubes ke pas hain:<br/>$1^3 + 1 = 2$<br/>$2^3 - 2 = 6$<br/>$3^3 + 3 = 30$<br/>$4^3 - 4 = 60$<br/>$5^3 + 5 = 130$<br/>Next aayega $6^3 - 6 = 210$.<br/>$239 + 210 = 449$."
+    },
+    {
+      "q_hi": "Select the letter-cluster that can replace the question mark (?) in the following series. \n\nPERSONA, ANPERSO, ANOSPER, ?",
+      "o_hi": [
+        "ANOSERP",
+        "NOSAREP",
+        "ANSORPE",
+        "ANOSREP"
+      ],
+      "a": 3,
+      "s_hi": "<b>Method:</b> Letter shifting ka bahut tagda question hai bhai!<br/>Word 1: P E R S O N A<br/>Word 2: A N P E R S O (Pichle word ke last 2 letters N aur A ko reverse karke 'AN' banaya aur front pe rakh diya).<br/>Word 3: A N O S P E R ('AN' ko waise hi rakha, ab bache hue 'PERSO' ke last 2 letters S aur O ko reverse karke 'OS' banaya aur 'AN' ke aage chipka diya).<br/>Word 4: Ab humare paas 'ANOSPER' hai. Hum 'ANOS' ko waise hi rakhenge, aur bache hue 'PER' ke last 2 letters E aur R ko reverse karke 'RE' banayenge aur usko aage lagayenge. Bacha hua P end mein chala jayega.<br/>Result = A N O S + R E + P = ANOSREP."
+    },
+    {
+      "q_hi": "Select the letter-cluster from among the given options that can replace the question mark (?) in the following series. \n\n<b>FCC, UFH, OIS, LLX, FOC, ?</b>",
+      "o_hi": [
+        "WTH",
+        "VSG",
+        "TRF",
+        "URH"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Middle letter ka +3 shift clear dikh raha hai (C, F, I, L, O).<br/><br/><b>Ninja Technique:</b><br/>Middle letter: O+3 = R aayega.<br/>Last letter: C, H, S, X, C... (Yahan opposite pairs ka aapas me skip chal raha hai, ya gap dekho).<br/>Actually First Letter F $\\leftrightarrow$ U opposite chal raha hai: F, U, O, L, F. (F ka U opposite, O ka L). Toh Next U aayega.<br/>Result seedha <b>URH</b> aayega."
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>10, 22, 35, 40, 72, 40, ?</b>",
+      "o_hi": [
+        "133",
+        "143",
+        "134",
+        "131"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Dekh bhai, sequence ajeeb hai, beecho-beech same numbers aa gaye (40, 40). Ye pakka Alternate Series hai!<br/><br/><b>Ninja Technique:</b><br/>Dono series ko alag kar de:<br/><b>Series 1:</b> 10, 35, 72, ?<br/>Differences: 25, 37. Double Difference = 12.<br/>Next Diff = $37 + 12 = 49$? Wait, let's look at diff of diff = 12? Actually 25, 37, 61. Double diffs are 12, 24.<br/>So next diff = 61. Missing $= 72 + 61 = 133$.<br/><b>Series 2:</b> 22, 40, 40<br/>Differences: 18, 0 (Yahan $18 \\rightarrow 18-18=0$).<br/>Option A is correct."
+    },
+    {
+      "q_hi": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series. \n\nM T _ R M _ Q R _ V Q _ M W _ R M _ Q R",
+      "o_hi": [
+        "R U M R Q Y",
+        "Q U M Q R X",
+        "Q U M R Q X",
+        "Q U S R Q R"
+      ],
+      "a": 2,
+      "s_hi": "<b>Method:</b> Total 20 spaces, 5 groups of 4 banenge:<br/>M T _ R / M _ Q R / _ V Q _ / M W _ R / M _ Q R<br/><br/>Col 1: Sab mein 'M' constant hai. (3rd blank = M)<br/>Col 2: T, U, V, W, X. (Yahan sequence hai +1 ka). So 2nd blank = U, 6th blank = X.<br/>Col 3: Sab mein 'Q' constant hai. So 1st blank = Q, 5th blank = Q.<br/>Col 4: Sab mein 'R' constant hai. So 4th blank = R.<br/><br/>Blanks in order: Q, U, M, R, Q, X."
+    },
+    {
+      "q_hi": "Select the option that represents the letters that, when placed from left to right in the blanks below, will complete the letter sequence correctly. \n\n<b>Q _ _ R R K Z _ _ K Z R T _ _ R</b>",
+      "o_hi": [
+        "Q Z R S P R",
+        "K Z R P R Z",
+        "K Z R S Z T",
+        "K Z R S K Z"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Ek element aage shift ho raha hai. Pattern split kar 4 ke parts mein.<br/><br/><b>Ninja Technique:</b><br/>Blocks: Q _ _ R | R K Z _ | _ K Z R | T _ _ R<br/>Dekh bhai, last 3 letters K Z R constants lag rahe hain!<br/>Q [K] [Z] R | R K Z [R] | [S] K Z R | T [K] [Z] R<br/>Sirf pehla letter Q, R, S, T ja raha hai.<br/>Toh missing blanks hain: K, Z, R, S, K, Z."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following number series? \n\n<b>2, 3, 6, 10, 17, ?</b>",
+      "o_hi": [
+        "30",
+        "25",
+        "28",
+        "27"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Direct sum of previous differences wali trick hai (Lucas Number sequence variation).<br/><br/><b>Ninja Technique:</b><br/>Differences: 1, 3, 4, 7<br/>Notice kar: $1+3=4$, $3+4=7$. Next hoga $4+7=11$.<br/>So $17 + 11 = 28$."
+    }
+  ]
+}

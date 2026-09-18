@@ -1,0 +1,361 @@
+{
+  "quizTitle": "series-revise-all-concepts Set-04",
+  "quizTime": "15",
+  "totalMarks": "50",
+  "questions": [
+    {
+      "q": "Select the letter-cluster that can replace the question mark (?) in the following series. \n\nNAVIGATE, PCVIGATE, NAXKGATE, ?, NAVIGAVG",
+      "o": [
+        "PCVIICUG",
+        "NAXKICTE",
+        "NAVIICTE",
+        "NAVIJCTF"
+      ],
+      "a": 2,
+      "s": "<b>Method:</b> Dekh bhai, base word 'NAVIGATE' hai aur step-by-step sirf do hi letters +2 se badh rahe hain, baki word constant reh raha hai.<br/>Step 1: NAVIGATE -&gt; PCVIGATE (N+2=P, A+2=C, baki same).<br/>Step 2: NAXKGATE -&gt; Base word 'NAVIGATE' ke 3rd aur 4th letter ko shift kiya (V+2=X, I+2=K, baki same).<br/>Step 3: Ab Base word 'NAVIGATE' ke 5th aur 6th letter ki baari. (G+2=I, A+2=C). Baki pura word NAVIGATE ki tarah. <br/>Toh word banega: N A V I + I + C + T + E = NAVIICTE."
+    },
+    {
+      "q": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series. \n\n<b>B _ DC _ _ ADD _ BA</b>",
+      "o": [
+        "ABCB",
+        "DABC",
+        "ACBC",
+        "DACB"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Ye cyclic shift ka classic CGL trap hai. Pura block move ho raha hai.<br/><br/><b>Ninja Technique:</b><br/>Pattern check: B A D C<br/>Ab is block ka last letter aage aayega baki shift honge: C B A D<br/>Agla: D C B A<br/>Plugging values: B [A] D C | [C] [B] A D | D [C] B A<br/>Blanks mein aaya: A C B C. Option 2 correct."
+    },
+    {
+      "q": "Complete the following series from the given options. \n\na b _ b a a b x b _ a _ x b a _ b x b a",
+      "o": [
+        "xaba",
+        "xabx",
+        "xaxa",
+        "aaba"
+      ],
+      "a": 0,
+      "s": "<b>Method:</b> Total 20 spaces. 4 groups of 5 banate hain:<br/>a b _ b a / a b x b _ / a _ x b a / _ b x b a<br/>Compare karne par pattern 'abxba' banta hai.<br/>Blank spaces in order: x, a, b, a."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following series? \n\n<b>7, 14, 33, 70, 131, ?</b>",
+      "o": [
+        "190",
+        "218",
+        "131",
+        "222"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Wapas cubes ka darshan ho raha hai bhai. 14, 33, 70 sab cubes ke close hain.<br/><br/><b>Ninja Technique:</b><br/>$1^3 + 6 = 7$<br/>$2^3 + 6 = 14$<br/>$3^3 + 6 = 33$<br/>$4^3 + 6 = 70$<br/>$5^3 + 6 = 131$<br/>Next hoga $6^3 + 6 = 216 + 6 = 222$.<br/>Option D right answer hai."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following number series? \n\n<b>5, 7, 9, 11, 18, ?, 34, 35, 59, 67</b>",
+      "o": [
+        "19",
+        "27",
+        "17",
+        "21"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Lamba sequence = Alternate series chup ke baithi hai bhai.<br/><br/><b>Ninja Technique:</b><br/><b>Series 1:</b> 5, 9, 18, 34, 59<br/>Diffs: 4, 9, 16, 25 (Perfect squares: $2^2, 3^2, 4^2, 5^2$)<br/><b>Series 2:</b> 7, 11, ?, 35, 67<br/>Diffs: 4, 8, 16, 32 (Powers of 2: $2^2, 2^3, 2^4, 2^5$)<br/>Toh $11 + 8 = 19$. Missing term 19 hoga."
+    },
+    {
+      "q": "Select the number that can replace the question mark (?) in the following series. \n\n<b>58, 73, 99, 138, 193, ?, 368</b>",
+      "o": [
+        "268",
+        "260",
+        "312",
+        "329"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Double nahi triple difference tak jana padega yahan, question thoda calculating hai.<br/><br/><b>Ninja Technique:</b><br/>Diff 1: 15, 26, 39, 55, ...<br/>Diff 2: 11, 13, 16, ...<br/>Diff 3: 2, 3, 4, 5<br/>Toh Diff 2 ka next term: $16 + 4 = 20$.<br/>Diff 1 ka next term: $55 + 20 = 75$.<br/>Final Answer: $193 + 75 = 268$."
+    },
+    {
+      "q": "What comes next: \n\n3, 6, 18, 108, ?",
+      "o": [
+        "1290",
+        "1944",
+        "648",
+        "432"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Numbers achanak se 18 se 108 ban gaye, matlab multiplication chal raha hai.<br/><br/><b>Method:</b><br/>Pichle do numbers ko multiply karke agla number ban raha hai (Fibonacci type multiplication).<br/>3 $\\times$ 6 = 18<br/>6 $\\times$ 18 = 108<br/>Toh agla hoga 18 $\\times$ 108 = 1944.<br/>(Smart calculation: Unit digit dekh, $8 \\times 8 = 64$, last mein 4 aayega. Option b is correct)."
+    },
+    {
+      "q": "Which of the following numbers will replace the question mark (?) in the given series? \n\n78, 86, 258, 322, ?",
+      "o": [
+        "1288",
+        "1360",
+        "1420",
+        "1610"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> 86 se achanak 258 gaya, saaf dikh raha hai ki multiply by 3 hai. Series mein Alternate Plus aur Multiply chal raha hai!<br/><br/><b>Method:</b><br/>78 + 8 = 86 (Yahan $+2^3$ hua hai)<br/>86 $\\times$ 3 = 258 (Yahan $\\times 3^1$ hua hai)<br/>258 + 64 = 322 (Yahan $+4^3$ hua hai)<br/><br/>Pattern set hai: $+2^3, \\times 3^1, +4^3$. Agla definitely $\\times 5^1$ hoga.<br/>322 $\\times$ 5 = 1610."
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>16, 35, ?, 217, 653, 1309</b>",
+      "o": [
+        "107",
+        "77",
+        "72",
+        "128"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> 217 se 653 ($\\approx \\times 3$) and 653 se 1309 ($\\approx \\times 2$). Alternating multiplication pakdo!<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 16 \\times 2 + 3 = 35$<br/>$\\rightarrow 35 \\times 3 + 2 = 107$<br/>$\\rightarrow 107 \\times 2 + 3 = 217$<br/>$\\rightarrow 217 \\times 3 + 2 = 653$<br/>$\\rightarrow 653 \\times 2 + 3 = 1309$<br/>Toh missing answer 107 hai."
+    },
+    {
+      "q": "Which of the following alternative will fill the blanks? \n\np q _ s t _ q r _ t p _ r s t",
+      "o": [
+        "r,p,s,q",
+        "p,s,q,r",
+        "p,q,s,r",
+        "r,p,q,s"
+      ],
+      "a": 0,
+      "s": "<b>Method:</b> Total 15 spaces. 3 groups of 5.<br/>p q _ s t / _ q r _ t / p _ r s t<br/>Saaf dikh raha hai ki 'pqrst' ka hi repetition hai!<br/>Blanks honge: r (pehle group mein), p (dusre group mein), s (dusre mein), q (teesre mein).<br/>Answer: r, p, s, q."
+    },
+    {
+      "q": "Which of the following numbers will replace the question mark (?) in the given series? \n\n<b>6, 16, 29, 62, 121, ?</b>",
+      "o": [
+        "283",
+        "264",
+        "246",
+        "238"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Har term double ke aas-paas dikh rahi hai. Multiplying by 2 karke plus/minus check kar.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 6 \\times 2 + 4 = 16$<br/>$\\rightarrow 16 \\times 2 - 3 = 29$<br/>$\\rightarrow 29 \\times 2 + 4 = 62$<br/>$\\rightarrow 62 \\times 2 - 3 = 121$<br/>$\\rightarrow 121 \\times 2 + 4 = 246$."
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>45, 68, 99, ?, 187, 246, 313</b>",
+      "o": [
+        "140",
+        "166",
+        "117",
+        "105"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Differences check kar. Series gap chote hain matlab addition chal raha hai.<br/><br/><b>Ninja Technique:</b><br/>Differences: 23, 31, ?, ?, 59, 67<br/>Dhyan se dekh, ye primes hain par alternate skip hoke.<br/>Primes: 23, (skip 29), 31, (skip 37), 41, (skip 43), 47, (skip 53), 59, (skip 61), 67.<br/>Toh agla difference 41 hoga.<br/>$99 + 41 = 140$."
+    },
+    {
+      "q": "Complete the series: \n\n?, 150, 183, 219, 258",
+      "o": [
+        "120",
+        "148",
+        "361",
+        "247"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Dekh bhai, numbers paas-paas hain, toh sidha difference nikal. Difference 30 ke aas paas ghoom raha hai.<br/><br/><b>Method (Ninja Technique):</b><br/>Ulta chalte hain:<br/>258 - 219 = 39<br/>219 - 183 = 36<br/>183 - 150 = 33<br/>Difference mein 3 ka table chal raha hai. Toh agla difference 30 hona chahiye.<br/>150 - 30 = 120.<br/>Option (a) is correct."
+    },
+    {
+      "q": "Complete the pattern: \n\n2, 12, 36, 80, 150, ?",
+      "o": [
+        "246",
+        "240",
+        "252",
+        "258"
+      ],
+      "a": 2,
+      "s": "<b>Method (Concept Builder):</b> Ye ek standard CGL trap series hai jo frequently repeat hoti hai. Ise hamesha $n^3 + n^2$ format se check karo.<br/><br/>$1^3 + 1^2 = 1 + 1 = 2$<br/>$2^3 + 2^2 = 8 + 4 = 12$<br/>$3^3 + 3^2 = 27 + 9 = 36$<br/>$4^3 + 4^2 = 64 + 16 = 80$<br/>$5^3 + 5^2 = 125 + 25 = 150$<br/><br/>Agla hoga $6^3 + 6^2 = 216 + 36 = 252$."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following series? \n\n<b>11, 13, 16, 26, 41, 67, 102, ?</b>",
+      "o": [
+        "251",
+        "215",
+        "152",
+        "125"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Differences ko dekho, wo perfect squares ke bohot close chal rahe hain.<br/><br/><b>Ninja Technique:</b><br/>Differences: 2, 3, 10, 15, 26, 35<br/>Pattern:<br/>$1^2 + 1 = 2$<br/>$2^2 - 1 = 3$<br/>$3^2 + 1 = 10$<br/>$4^2 - 1 = 15$<br/>$5^2 + 1 = 26$<br/>$6^2 - 1 = 35$<br/>Next hoga $7^2 + 1 = 50$.<br/>So, $102 + 50 = 152$."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following series? \n\n<b>8, 26, 73, 157, 284, 464, 705, 1017, ?</b>",
+      "o": [
+        "1480",
+        "1840",
+        "1408",
+        "1804"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Double difference nikal ke check kar, series thodi lambi hai toh confirm koi fixed number sequence hoga.<br/><br/><b>Ninja Technique:</b><br/>Diffs: 18, 47, 84, 127, 180, 241, 312<br/>Double Diffs: 29, 37, 43, 53, 61, 71<br/>Ye Prime Numbers hain par dhyan se dekh, 1-1 prime number skip kiya hai! (31 skip, 41 skip, 47 skip...)<br/>Toh 71 ke baad 73 skip karke 79 aayega.<br/>Next Diff = $312 + 79 = 391$<br/>Answer = $1017 + 391 = 1408$."
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "Select the letter-cluster that can replace the question mark (?) in the following series. \n\nNAVIGATE, PCVIGATE, NAXKGATE, ?, NAVIGAVG",
+      "o_hi": [
+        "PCVIICUG",
+        "NAXKICTE",
+        "NAVIICTE",
+        "NAVIJCTF"
+      ],
+      "a": 2,
+      "s_hi": "<b>Method:</b> Dekh bhai, base word 'NAVIGATE' hai aur step-by-step sirf do hi letters +2 se badh rahe hain, baki word constant reh raha hai.<br/>Step 1: NAVIGATE -&gt; PCVIGATE (N+2=P, A+2=C, baki same).<br/>Step 2: NAXKGATE -&gt; Base word 'NAVIGATE' ke 3rd aur 4th letter ko shift kiya (V+2=X, I+2=K, baki same).<br/>Step 3: Ab Base word 'NAVIGATE' ke 5th aur 6th letter ki baari. (G+2=I, A+2=C). Baki pura word NAVIGATE ki tarah. <br/>Toh word banega: N A V I + I + C + T + E = NAVIICTE."
+    },
+    {
+      "q_hi": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series. \n\n<b>B _ DC _ _ ADD _ BA</b>",
+      "o_hi": [
+        "ABCB",
+        "DABC",
+        "ACBC",
+        "DACB"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Ye cyclic shift ka classic CGL trap hai. Pura block move ho raha hai.<br/><br/><b>Ninja Technique:</b><br/>Pattern check: B A D C<br/>Ab is block ka last letter aage aayega baki shift honge: C B A D<br/>Agla: D C B A<br/>Plugging values: B [A] D C | [C] [B] A D | D [C] B A<br/>Blanks mein aaya: A C B C. Option 2 correct."
+    },
+    {
+      "q_hi": "Complete the following series from the given options. \n\na b _ b a a b x b _ a _ x b a _ b x b a",
+      "o_hi": [
+        "xaba",
+        "xabx",
+        "xaxa",
+        "aaba"
+      ],
+      "a": 0,
+      "s_hi": "<b>Method:</b> Total 20 spaces. 4 groups of 5 banate hain:<br/>a b _ b a / a b x b _ / a _ x b a / _ b x b a<br/>Compare karne par pattern 'abxba' banta hai.<br/>Blank spaces in order: x, a, b, a."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following series? \n\n<b>7, 14, 33, 70, 131, ?</b>",
+      "o_hi": [
+        "190",
+        "218",
+        "131",
+        "222"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Wapas cubes ka darshan ho raha hai bhai. 14, 33, 70 sab cubes ke close hain.<br/><br/><b>Ninja Technique:</b><br/>$1^3 + 6 = 7$<br/>$2^3 + 6 = 14$<br/>$3^3 + 6 = 33$<br/>$4^3 + 6 = 70$<br/>$5^3 + 6 = 131$<br/>Next hoga $6^3 + 6 = 216 + 6 = 222$.<br/>Option D right answer hai."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following number series? \n\n<b>5, 7, 9, 11, 18, ?, 34, 35, 59, 67</b>",
+      "o_hi": [
+        "19",
+        "27",
+        "17",
+        "21"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Lamba sequence = Alternate series chup ke baithi hai bhai.<br/><br/><b>Ninja Technique:</b><br/><b>Series 1:</b> 5, 9, 18, 34, 59<br/>Diffs: 4, 9, 16, 25 (Perfect squares: $2^2, 3^2, 4^2, 5^2$)<br/><b>Series 2:</b> 7, 11, ?, 35, 67<br/>Diffs: 4, 8, 16, 32 (Powers of 2: $2^2, 2^3, 2^4, 2^5$)<br/>Toh $11 + 8 = 19$. Missing term 19 hoga."
+    },
+    {
+      "q_hi": "Select the number that can replace the question mark (?) in the following series. \n\n<b>58, 73, 99, 138, 193, ?, 368</b>",
+      "o_hi": [
+        "268",
+        "260",
+        "312",
+        "329"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Double nahi triple difference tak jana padega yahan, question thoda calculating hai.<br/><br/><b>Ninja Technique:</b><br/>Diff 1: 15, 26, 39, 55, ...<br/>Diff 2: 11, 13, 16, ...<br/>Diff 3: 2, 3, 4, 5<br/>Toh Diff 2 ka next term: $16 + 4 = 20$.<br/>Diff 1 ka next term: $55 + 20 = 75$.<br/>Final Answer: $193 + 75 = 268$."
+    },
+    {
+      "q_hi": "What comes next: \n\n3, 6, 18, 108, ?",
+      "o_hi": [
+        "1290",
+        "1944",
+        "648",
+        "432"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Numbers achanak se 18 se 108 ban gaye, matlab multiplication chal raha hai.<br/><br/><b>Method:</b><br/>Pichle do numbers ko multiply karke agla number ban raha hai (Fibonacci type multiplication).<br/>3 $\\times$ 6 = 18<br/>6 $\\times$ 18 = 108<br/>Toh agla hoga 18 $\\times$ 108 = 1944.<br/>(Smart calculation: Unit digit dekh, $8 \\times 8 = 64$, last mein 4 aayega. Option b is correct)."
+    },
+    {
+      "q_hi": "Which of the following numbers will replace the question mark (?) in the given series? \n\n78, 86, 258, 322, ?",
+      "o_hi": [
+        "1288",
+        "1360",
+        "1420",
+        "1610"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> 86 se achanak 258 gaya, saaf dikh raha hai ki multiply by 3 hai. Series mein Alternate Plus aur Multiply chal raha hai!<br/><br/><b>Method:</b><br/>78 + 8 = 86 (Yahan $+2^3$ hua hai)<br/>86 $\\times$ 3 = 258 (Yahan $\\times 3^1$ hua hai)<br/>258 + 64 = 322 (Yahan $+4^3$ hua hai)<br/><br/>Pattern set hai: $+2^3, \\times 3^1, +4^3$. Agla definitely $\\times 5^1$ hoga.<br/>322 $\\times$ 5 = 1610."
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>16, 35, ?, 217, 653, 1309</b>",
+      "o_hi": [
+        "107",
+        "77",
+        "72",
+        "128"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> 217 se 653 ($\\approx \\times 3$) and 653 se 1309 ($\\approx \\times 2$). Alternating multiplication pakdo!<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 16 \\times 2 + 3 = 35$<br/>$\\rightarrow 35 \\times 3 + 2 = 107$<br/>$\\rightarrow 107 \\times 2 + 3 = 217$<br/>$\\rightarrow 217 \\times 3 + 2 = 653$<br/>$\\rightarrow 653 \\times 2 + 3 = 1309$<br/>Toh missing answer 107 hai."
+    },
+    {
+      "q_hi": "Which of the following alternative will fill the blanks? \n\np q _ s t _ q r _ t p _ r s t",
+      "o_hi": [
+        "r,p,s,q",
+        "p,s,q,r",
+        "p,q,s,r",
+        "r,p,q,s"
+      ],
+      "a": 0,
+      "s_hi": "<b>Method:</b> Total 15 spaces. 3 groups of 5.<br/>p q _ s t / _ q r _ t / p _ r s t<br/>Saaf dikh raha hai ki 'pqrst' ka hi repetition hai!<br/>Blanks honge: r (pehle group mein), p (dusre group mein), s (dusre mein), q (teesre mein).<br/>Answer: r, p, s, q."
+    },
+    {
+      "q_hi": "Which of the following numbers will replace the question mark (?) in the given series? \n\n<b>6, 16, 29, 62, 121, ?</b>",
+      "o_hi": [
+        "283",
+        "264",
+        "246",
+        "238"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Har term double ke aas-paas dikh rahi hai. Multiplying by 2 karke plus/minus check kar.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 6 \\times 2 + 4 = 16$<br/>$\\rightarrow 16 \\times 2 - 3 = 29$<br/>$\\rightarrow 29 \\times 2 + 4 = 62$<br/>$\\rightarrow 62 \\times 2 - 3 = 121$<br/>$\\rightarrow 121 \\times 2 + 4 = 246$."
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>45, 68, 99, ?, 187, 246, 313</b>",
+      "o_hi": [
+        "140",
+        "166",
+        "117",
+        "105"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Differences check kar. Series gap chote hain matlab addition chal raha hai.<br/><br/><b>Ninja Technique:</b><br/>Differences: 23, 31, ?, ?, 59, 67<br/>Dhyan se dekh, ye primes hain par alternate skip hoke.<br/>Primes: 23, (skip 29), 31, (skip 37), 41, (skip 43), 47, (skip 53), 59, (skip 61), 67.<br/>Toh agla difference 41 hoga.<br/>$99 + 41 = 140$."
+    },
+    {
+      "q_hi": "Complete the series: \n\n?, 150, 183, 219, 258",
+      "o_hi": [
+        "120",
+        "148",
+        "361",
+        "247"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Dekh bhai, numbers paas-paas hain, toh sidha difference nikal. Difference 30 ke aas paas ghoom raha hai.<br/><br/><b>Method (Ninja Technique):</b><br/>Ulta chalte hain:<br/>258 - 219 = 39<br/>219 - 183 = 36<br/>183 - 150 = 33<br/>Difference mein 3 ka table chal raha hai. Toh agla difference 30 hona chahiye.<br/>150 - 30 = 120.<br/>Option (a) is correct."
+    },
+    {
+      "q_hi": "Complete the pattern: \n\n2, 12, 36, 80, 150, ?",
+      "o_hi": [
+        "246",
+        "240",
+        "252",
+        "258"
+      ],
+      "a": 2,
+      "s_hi": "<b>Method (Concept Builder):</b> Ye ek standard CGL trap series hai jo frequently repeat hoti hai. Ise hamesha $n^3 + n^2$ format se check karo.<br/><br/>$1^3 + 1^2 = 1 + 1 = 2$<br/>$2^3 + 2^2 = 8 + 4 = 12$<br/>$3^3 + 3^2 = 27 + 9 = 36$<br/>$4^3 + 4^2 = 64 + 16 = 80$<br/>$5^3 + 5^2 = 125 + 25 = 150$<br/><br/>Agla hoga $6^3 + 6^2 = 216 + 36 = 252$."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following series? \n\n<b>11, 13, 16, 26, 41, 67, 102, ?</b>",
+      "o_hi": [
+        "251",
+        "215",
+        "152",
+        "125"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Differences ko dekho, wo perfect squares ke bohot close chal rahe hain.<br/><br/><b>Ninja Technique:</b><br/>Differences: 2, 3, 10, 15, 26, 35<br/>Pattern:<br/>$1^2 + 1 = 2$<br/>$2^2 - 1 = 3$<br/>$3^2 + 1 = 10$<br/>$4^2 - 1 = 15$<br/>$5^2 + 1 = 26$<br/>$6^2 - 1 = 35$<br/>Next hoga $7^2 + 1 = 50$.<br/>So, $102 + 50 = 152$."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following series? \n\n<b>8, 26, 73, 157, 284, 464, 705, 1017, ?</b>",
+      "o_hi": [
+        "1480",
+        "1840",
+        "1408",
+        "1804"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Double difference nikal ke check kar, series thodi lambi hai toh confirm koi fixed number sequence hoga.<br/><br/><b>Ninja Technique:</b><br/>Diffs: 18, 47, 84, 127, 180, 241, 312<br/>Double Diffs: 29, 37, 43, 53, 61, 71<br/>Ye Prime Numbers hain par dhyan se dekh, 1-1 prime number skip kiya hai! (31 skip, 41 skip, 47 skip...)<br/>Toh 71 ke baad 73 skip karke 79 aayega.<br/>Next Diff = $312 + 79 = 391$<br/>Answer = $1017 + 391 = 1408$."
+    }
+  ]
+}

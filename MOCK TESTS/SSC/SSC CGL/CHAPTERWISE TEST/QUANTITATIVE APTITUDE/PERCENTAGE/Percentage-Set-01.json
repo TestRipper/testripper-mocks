@@ -1,0 +1,183 @@
+{
+  "quizTitle": "Percentage-Set-01",
+  "quizTime": 30,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "In a school, $50\\%$ of the students play cricket, $40\\%$ of the students play football and the number of students who play both games is 420. The number of students who play neither cricket nor football is $45\\%$. Find the total number of students in the school.",
+    "o": [
+      "1200",
+      "1150",
+      "1100",
+      "1000"
+    ],
+    "a": 0,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, $45\\%$ kuch nahi khelte, matlab $55\\%$ kuch toh khelte hain. Venn diagram ka union $55\\%$ hai. Cricket ($50\\%$) + Football ($40\\%$) = $90\\%$. Intersection kya hoga? $90\\% - 55\\% = 35\\%$. Ab $35\\%$ ki value 420 di hai. $1\\% = 12$, toh $100\\% = 1200$. Seedha divisibility check kar, 12 ka multiple 1200 hai. Pen uthane ki zaroorat hi nahi thi!<br><br><b>Method 1 (Concept Builder):</b><br>Step 1: Let Total Students = $100x$.<br>Step 2: Neither C nor F = $45x$, so $n(C \\cup F) = 100x - 45x = 55x$.<br>Step 3: By Set Theory: $n(C \\cup F) = n(C) + n(F) - n(C \\cap F)$<br>$55x = 50x + 40x - 420$<br>$55x = 90x - 420 \\implies 35x = 420 \\implies x = 12$.<br>Step 4: Total = $100 \\times 12 = 1200$.<br><br><b>Best Method:</b> Mental Venn Diagram (Observation)! Exam me Set formula likhne nahi baithna hai.</div>"
+  },
+  {
+    "q": "A shopkeeper charges a sales tax of $x\\%$ up to purchases of ₹2,000, and for amounts above it, he charges $y\\%$. A customer pays a total tax of ₹320 when he purchases goods worth ₹6,000, and he pays a total tax of ₹680 for goods worth ₹12,000. The value of $(x - y)$ is:",
+    "o": [
+      "0",
+      "-2",
+      "-4",
+      "5"
+    ],
+    "a": 1,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, ₹6,000 aur ₹12,000 ke beech ka difference ₹6,000 hai. Ye extra ₹6,000 purntah $y\\%$ slab (above ₹2,000) mein aayega. Tax difference = ₹680 - ₹320 = ₹360. Yani ₹6,000 ka $y\\% = 360$. Sidha $y = 6$. Pehle case mein ₹6,000 pe 320 tax laga. ₹4,000 (above ₹2k) pe $6\\%$ se ₹240 tax lag gaya. Bacha ₹80 tax ₹2,000 par laga hoga, yani $x = 4$. Toh $(x - y) = 4 - 6 = -2$. Solid Hacker mindset!<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Step 1: Difference in Total Goods Value = $12000 - 6000 = 6000$<br>Step 2: Difference in Total Tax = $680 - 320 = 360$<br>Step 3: $y\\%$ of $6000 = 360 \\implies y = 6$.<br>Step 4: For ₹6000 good, Tax on upper ₹4000 = $4000 \\times 6\\% = 240$<br>Step 5: Remaining tax for first ₹2000 = $320 - 240 = 80$<br>$x\\%$ of $2000 = 80 \\implies x = 4$.<br>Step 6: $(x - y) = 4 - 6 = -2$.</div>"
+  },
+  {
+    "q": "The profits of three partners in a business are initially in the ratio 2 : 3 : 4. If their respective profits are increased by $50\\%$, $40\\%$, and $30\\%$ respectively, what is the new simplified ratio of their profits?",
+    "o": [
+      "15 : 21 : 26",
+      "12 : 14 : 16",
+      "15 : 20 : 25",
+      "10 : 12 : 13"
+    ],
+    "a": 0,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, ratios ko sidha multipliers se multiply kar. $2 \\times 1.5 = 3$. $3 \\times 1.4 = 4.2$. $4 \\times 1.3 = 5.2$. Ratio bana $3 : 4.2 : 5.2$. Isko 10 se multiply kar de decimal hatane ke liye: $30 : 42 : 52$. Ab isko 2 se kaat de: $15 : 21 : 26$. Seedha option 0. SSC tumhara basics check karta hai ki ratio scale karna aata hai ya nahi.<br><br><b>Method 1 (Base Assumption):</b><br>Let initial profits be 200, 300, 400.<br>New P1 = $200 + 50\\% = 300$<br>New P2 = $300 + 40\\% = 420$<br>New P3 = $400 + 30\\% = 520$<br>Ratio = $300 : 420 : 520 = 30 : 42 : 52 = 15 : 21 : 26$.</div>"
+  },
+  {
+    "q": "A number is first increased by $12\\%$ and then again increased by $23\\%$. The number so obtained is now decreased by $34\\%$. What is the net increase or decrease percent in the original number (rounded off to the nearest integer)?",
+    "o": [
+      "$9\\%$ decrease",
+      "$10\\%$ decrease",
+      "$9\\%$ increase",
+      "$10\\%$ increase"
+    ],
+    "a": 0,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, $12\\%$ aur $23\\%$ ka pehle net nikal. $12 + 23 + \\frac{12 \\times 23}{100} = 35 + 2.76 = 37.76\\%$ (approx $38\\%$ up). Ab isko $34\\%$ se girana hai. Result = $1.38 \\times 0.66$. $1.38 \\times \\frac{2}{3}$ karoge toh lagbhag 0.92 aayega. Exact dekhoge toh $1.3776 \\times 0.66 \\approx 0.909$. Yani $100$ ki cheez 91 reh gayi. Lagbhag $9\\%$ ka decrease. Approximation is the real king in TCS pattern!<br><br><b>Method 1 (Exam Approach):</b><br>Multiplier 1: $1.12$<br>Multiplier 2: $1.23$<br>Multiplier 3: $0.66$<br>Net = $1.12 \\times 1.23 \\times 0.66 = 1.3776 \\times 0.66 = 0.909216$<br>This means the final value is $90.92\\%$ of the original.<br>Net change = $100 - 90.92 = 9.08\\%$ decrease $\\approx 9\\%$ decrease.</div>"
+  },
+  {
+    "q": "In an examination, Ravi scores $40\\%$ marks and fails by 30 marks. In the same examination, Sohan scores $50\\%$ marks and gets 20 marks more than the minimum pass marks. Find the maximum marks of the examination.",
+    "o": [
+      "400",
+      "500",
+      "450",
+      "550"
+    ],
+    "a": 1,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, number line soch. Pass mark beech mein hai. Ravi $40\\%$ lakar 30 peeche reh gaya (-30). Sohan $50\\%$ lakar 20 aage nikal gaya (+20). Dono ke percentage ka gap = $50\\% - 40\\% = 10\\%$. Aur marks ka gap = $30 + 20 = 50$. Agar $10\\% = 50$ marks, toh paper ka $100\\% = 500$ marks. Zero calculation, total visualization!<br><br><b>Method 1 (Ninja Technique):</b><br>Difference in $\\%$ = Sum of margin marks (Fail + Pass extra)<br>$(50\\% - 40\\%) \\text{ of Max} = 30 + 20$<br>$10\\% \\text{ of Max} = 50 \\implies \\text{Max} = 500$.</div>"
+  },
+  {
+    "q": "A student gets a total of $80\\%$ marks overall in five subjects, where the marks obtained are in the ratio of 10:8:6:4:2. If the passing marks for each subject are $30\\%$ of the maximum marks, and the maximum marks for each subject are the same, then in how many subjects does he pass the examination?",
+    "o": [
+      "3",
+      "2",
+      "4",
+      "5"
+    ],
+    "a": 2,
+    "s": "<b>Tool Triggered: 5. Unitary Scaling</b><br><br><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, app wala solution decimals mein gaya kyunki unhone 100 maana. Hum decimals mein nahi khelenge. Ratio ka sum 30 hai, toh hum total aise set karenge jo 30 se properly divide ho jaye.<br><br><b>Method 1 (Ninja Technique / Exam Approach):</b><br>Let maximum marks for each subject = 30.<br>Total marks for 5 subjects = \\( 30 \\times 5 = 150 \\).<br>Overall marks obtained = 80% of 150 = 120.<br><br>Now, total ratio units = 10 + 8 + 6 + 4 + 2 = 30 units.<br>30 units = 120 marks \\(\\implies\\) 1 unit = 4 marks.<br><br>Passing marks required per subject = 30% of 30 = 9 marks.<br><br>Let's check the scores from lowest to highest:<br>Lowest score = 2 units = \\( 2 \\times 4 = 8 \\) marks. (Since 8 < 9, he failed here).<br>Second lowest = 4 units = \\( 4 \\times 4 = 16 \\) marks. (Since 16 > 9, he passed here).<br>Iska matlab sirf sabse kam marks wale mein fail hua, baaki 4 subjects mein pass!<br><br><div style=\"border: 1px solid var(--brd, #e5e7eb); border-radius: 8px; padding: 12px; margin-top: 15px; background-color: var(--bg2, #f9fafb); box-shadow: 0 4px 6px rgba(0,0,0,0.05);\"><div style=\"font-weight: 600; font-size: 0.95rem; margin-bottom: 10px; color: var(--p2, #374151);\">💡 Topper's Alternate Approach (Handwritten)</div><img src=\"REPLACE_WITH_GITHUB_RAW_URL\" referrerpolicy=\"no-referrer\" style=\"max-width:100%; border-radius: 4px;\" onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/6a84981fd051f735fb0c61db03ee4c0af9039d1a/assets/IMG_20260725_203748.jpg';\"></div>"
+  },
+  {
+  "q": "In a manufacturing unit, it was noted that the price of raw material has increased by $12.5\\%$ and the labour cost has gone up from $25\\%$ of the cost of raw material to $30\\%$ of the NEW cost of raw material. By what percentage must the consumption of raw material be reduced to keep the total cost the same? (Approximate)",
+  "o": [
+    "$12.58\\%$",
+    "$13.45\\%$",
+    "$14.28\\%$",
+    "$14.53\\%$"
+  ],
+  "a": 3,
+  "s": "<b>Dhyan se dekh, question mein do alag-alag tarah ki \"Cost\" ki baat ho rahi hai, jismein bachche sabse zyada phasne hain:</b><br><b>Cost of 1 Unit:</b> Ek item banane mein kya lagta hai? (Raw Material + Labour).<br><b>Total Cost (Budget):</b> Factory ka pura kharcha. (Ek item ki cost $\\times$ Kitne item banaye/Consumption).<br><br>Ab line by line chalte hain:<br><br><b>Step 1: Raw Material ka Ratio (Question ki pehli line)</b><br>Question: \"Price of raw material has increased by $12.5\\%$.\"<br>$12.5\\%$ ka fraction hota hai $\\frac{1}{8}$. Matlab agar pehle price $8$ tha, toh ab $1$ badh gaya.<br>Raw Material (Old : New) = $8 : 9$<br><br><b>Step 2: Labour Cost nikalna (Question ki doosri line)</b><br>Labour ki cost fixed nahi hai, woh Raw Material ke upar depend karti hai.<br><b>Old Labour:</b> Raw material ka $25\\%$ (yani $\\frac{1}{4}$). Purana Raw material $8$ tha, toh $8 \\times \\frac{1}{4} = 2$.<br><b>New Labour:</b> NAYE Raw material ka $30\\%$. Naya Raw material $9$ hai, toh $9 \\times \\frac{30}{100} = 2.7$.<br><br><b>Step 3: Ek Unit banane ka Total Kharcha (Price of 1 Unit)</b><br>Ek unit banane mein factory ko total kitna paisa laga? (Raw Material + Labour)<br><b>Old Price:</b> $8$ (RM) + $2$ (Labour) = $10$<br><b>New Price:</b> $9$ (RM) + $2.7$ (Labour) = $11.7$<br>Price Ratio (Old : New) = $10 : 11.7$<br>Point hata de calculation aasan karne ke liye: $100 : 117$<br><br><b>Step 4: Consumption ka Ratio (Question ki aakhri line - The Game Changer)</b><br>Question: \"By what percentage must the consumption of raw material be reduced to keep the total cost the same?\"<br>\"Total cost the same\" ka matlab hai Factory malik ke paas fixed paisa hai. Uski jeb se ek rupya extra nahi jayega.<br>Jab jeb mein paisa fixed ho (Budget = Constant), aur saaman mehnga ho jaye (Price $100$ se $117$ ho gaya), toh majboori mein saaman kam kharidna padega (Consumption).<br>Kis ratio mein kam kharidna padega? Theek Price ke ulte ratio mein.<br>Consumption Ratio (Old : New) = $117 : 100$<br><br><b>Step 5: Final Percentage</b><br>Ab tere paas Consumption ka ratio aa gaya. Pehle consumption $117$ thi, ab gir kar $100$ ho gayi. Yani $17$ ki kami aayi.<br>Percentage reduction = $\\frac{17}{117} \\times 100 \\approx 14.53\\%$.<br><br><b>Method 2: Factory Malik Approach (Desi Example)</b><br>Maan le teri ek Joota (Shoes) banane ki factory hai. Ek joota banane mein do cheezein lagti hain:<br><b>Raw Material:</b> Leather (kachha maal)<br><b>Labour Cost:</b> Karigar ki majdoori<br>Ab kahani ko do hisso mein baant te hain: Puraana Zamana (Old) aur Mehngai ka Zamana (New).<br><br><b>🏭 Scene 1: Puraana Zamana (Old Setup)</b><br>Hum calculations aasan karne ke liye percentages ko fractions mein dekhte hain. $12.5\\%$ ka fraction hota hai $\\frac{1}{8}$. Toh hum maan lete hain ki shuruwaat mein Leather ka rate tha ₹$80$ (taaki $\\frac{1}{8}$ nikalna aasan ho).<br><b>Raw Material (Leather):</b> Ek joota banane ke liye ₹$80$ ka leather lagta tha.<br><b>Labour (Karigar ki Majdoori):</b> Karigar ne bola, \"Seth ji, main kachhe maal ki keemat ka $25\\%$ majdoori lunga.\"<br>Toh teri labour cost aayi: ₹$80$ ka $25\\%$ (yani ek-chauthai, $\\frac{1}{4}$) = ₹$20$.<br><b>Ek Joote ki Total Keemat:</b> ₹$80$ (Maal) + ₹$20$ (Majdoori) = ₹$100$.<br>Maan le tere papa ne factory chalane ke liye daily ka budget ₹$11,700$ fix kiya hua tha.<br>Toh tu roz kitne joote (Consumption) banwata tha?<br>$$ \\frac{11700}{100} = 117 $$ (Joote roz ban rahe the).<br><br><b>📉 Scene 2: Mehngai ka Zamana (New Setup)</b><br>Ab market badla aur sawaal ki conditions apply hoti hain:<br><b>Naya Raw Material:</b> Leather ka rate $12.5\\%$ badh gaya. ₹$80$ ka $12.5\\%$ ( $\\frac{1}{8}$ hissa) hota hai ₹$10$.<br>Toh naya leather ab ₹$80$ + ₹$10$ = ₹$90$ ka aane laga.<br><b>Nayi Labour:</b> Karigar bhi hoshiyaar hai. Woh bola, \"Seth ji, ab meri majdoori NAYE raw material ka $30\\%$ hogi.\"<br>Toh nayi labour cost aayi: ₹$90$ ka $30\\%$ = ₹$27$.<br><b>Naye Joote ki Total Keemat:</b> ₹$90$ (Maal) + ₹$27$ (Majdoori) = ₹$117$.<br>Ab ek joota jo pehle ₹$100$ ka banta tha, wahi joota factory mein ab ₹$117$ ka ban raha hai.<br><br><b>🧠 The Climax: CPR (Constant Product Ratio) ki Entry</b><br>Tere papa ne aake bola, \"Dekh bhai, maal mehenga ho gaya par main daily budget ₹$11,700$ se ek rupya upar nahi dunga. Apna production kam kar le!\"<br>Yahi CPR ka jaadu hai:<br>Jab Total Budget constant hota hai, toh jis ratio mein chizen mehengi hoti hain, uske theek ulte ratio mein khapat (consumption) girani padti hai.<br>Cost ka Ratio (Old : New) = $100 : 117$<br>Consumption ka Ratio (Old : New) = $117 : 100$<br>Iska matlab desi bhasha mein: Pehle factory mein roz $117$ joote bante the, ab budget fix rakhne ke chakar mein roz sirf $100$ joote ban payenge.<br>Kitne joote banne kam ho gaye? $17$ joote kam banenge.<br>Yeh nuksaan kis base par gina jayega? Puraane production par, yani $117$ par.<br><b>Percentage Drop:</b><br>$$ \\frac{17}{117} \\times 100 $$<br>Aur yahan wahi Ninja technique lagani hai jo maine pehle sikhayi thi. Agar tu $17$ ko $119$ se divide karta toh exactly $\\frac{1}{7}$ ($14.28\\%$) aata. Lekin base thoda chhota hai ($117$), toh answer thoda bada aayega $\\approx 14.53\\%$."
+},
+  {
+    "q": "The ratio of the number of boys and girls in a school is 7:5. If $65\\%$ of the boys and $81\\%$ of the girls are scholarship holders, then the exact percentage of students who do NOT get a scholarship is:",
+    "o": [
+      "$28 \\frac{1}{3}\\%$",
+      "$30 \\frac{1}{4}\\%$",
+      "$25\\%$",
+      "$27 \\frac{1}{12}\\%$"
+    ],
+    "a": 0,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, 'do NOT get scholarship' pucha hai.Pehle nikalte hain ki total kitno ko scholarship <b>mili hai</b>, aur phir usko $100\\%$ se minus kar denge.<br><br><b>Step 1: JSM for 'Getting Scholarship'</b><br>Boys (Ratio 7) = $65\\%$<br>Girls (Ratio 5) = $81\\%$<br>Total Students = $12$<br><br>Base value chhoti wali maan le = $65\\%$<br>Girls base se kitna extra hain? $+16\\%$<br>Total extra = $5 \\times 16\\% = 80\\%$<br>Is $80\\%$ ko total 12 students mein baant de: $\\frac{80}{12} = \\frac{20}{3} = 6\\frac{2}{3}\\%$<br>Total 'Getting Scholarship' = $65\\% + 6\\frac{2}{3}\\% = 71\\frac{2}{3}\\%$<br><br><b>Step 2: Subtract from 100 (The Ninja Hack)</b><br>Students NOT getting scholarship = $100\\% - 71\\frac{2}{3}\\%$<br><br>Yahan bracket aur LCM ke chakkar mein bilkul nahi padna hai. $71\\frac{2}{3}$ ko ek badha ke $72$ maan le.<br>Integers minus kar: $100 - 72 = 28$<br>Fraction $\\frac{2}{3}$ ko $1$ banane ke liye gap kitna hai? $\\frac{1}{3}$<br>Dono ko mila de: <b>$28\\frac{1}{3}\\%$</b><br><br><i>Exam Takeaway: Calculation mein jab bhi $100$ mein se mixed fraction minus karna ho, toh bracket open karke LCM mat le. Bas integer ko ek round number aage badha ke subtract kar, aur fraction ka bacha hua gap chipka de! Boys getting = $65\\%$, so Boys NOT getting = $35\\%$. Girls getting = $81\\%$, so Girls NOT getting = $19\\%$. JSM (Junior Satisfaction Method) laga de Aman Sir wala! Base value pakad $19\\%$. Boys usse kitna zyada hain? $16\\%$. Ye extra $16\\%$, 7 boys mein distribute hoga $= 16 \\times 7 = 112$. Ab is 112 ko total 12 (7+5) logo mein baant de. $\\frac{112}{12} = \\frac{28}{3} = 9 \\frac{1}{3}\\%$. Total average = $19 + 9 \\frac{1}{3} = 28 \\frac{1}{3}\\%$. Bina badi calculation kiye answer nikal gaya!<br><br><b>Method 1 (JSM / Deviation):</b><br>Target: % NOT getting.<br>Boys % = $100 - 65 = 35\\%$<br>Girls % = $100 - 81 = 19\\%$<br>Ratio B:G = 7:5<br>Assume average = $19\\%$<br>Extra in Boys = $35 - 19 = +16$<br>Net Extra = $7 \\times 16 = +112$<br>Average extra to be distributed among all 12 = $\\frac{112}{12} = \\frac{28}{3} = 9.33\\%$<br>Final overall % = $19 + 9 \\frac{1}{3} = 28 \\frac{1}{3}\\%$</div>"
+  },
+  {
+    "q": "The present population of a village is 45,840. If the number of males increases by $25\\%$ and that of females increases by $15\\%$, then the population will become 55,284. What is the difference between the initial number of males and females in the village?",
+    "o": [
+      "5520",
+      "5420",
+      "5620",
+      "5320"
+    ],
+    "a": 0,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, isme Mixture Alligation ya phir Base Shifting lagate hain. Maan le pura gaon hi $15\\%$ se badh gaya hota. Toh population kitni badhti? $45840 \\times 15\\% = 6876$. Lekin actual me population kitni badhi? $55284 - 45840 = 9444$. Ye extra badhotri $9444 - 6876 = 2568$ kyu aayi? Kyunki Males $15\\%$ se nahi, $25\\%$ se badhe the ($10\\%$ extra). Matlab $10\\%$ of Males = $2568$, toh Males = $25680$. Total pata hai, toh Females = $45840 - 25680 = 20160$. Dono ka difference = $25680 - 20160 = 5520$. Yahi trick CDS aur CGL dono ko crush karti hai!<br><br><b>Method 1 (Base Shifting Concept):</b><br>Step 1: Net increase = $55284 - 45840 = 9444$<br>Step 2: Suppose total population increased by $15\\%$ only. Increase = $45840 \\times 0.15 = 6876$<br>Step 3: Extra increase = $9444 - 6876 = 2568$<br>Step 4: This extra is due to the extra $10\\%$ increase in Males ($25\\% - 15\\%$).<br>$10\\% \\text{ of } M = 2568 \\implies M = 25680$<br>Step 5: $F = 45840 - 25680 = 20160$<br>Step 6: Diff $M - F = 25680 - 20160 = 5520$.</div>"
+  },
+  {
+    "q": "In a village, there are two candidates in an election. $20\\%$ of the registered voters did not vote, and 1,792 votes were declared invalid. The winning candidate secured $42\\%$ of the TOTAL registered votes and won by 3,584 votes. In the neighboring city of Lucknow, the total registered voters are 3 times that of the village. During an election in Lucknow, 4,400 votes were declared invalid, and the winner secured $58\\%$ of the valid votes. What is the difference between the valid votes secured by the winning and losing candidates in Lucknow?",
+    "o": [
+      "20800",
+      "25600",
+      "30000",
+      "40500"
+    ],
+    "a": 0,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:bhau isme total \\100% wala method bhi lag jaawenga \\20%+1792+42%+(42%-3584) so 4% ki value 1792 aayengi </b><br>Dekh bhai, lamba question dekh ke darna nahi hai, parts me tod. Village mein Winner ko total ka $42\\%$ mila. Loser ko kya mila hoga? Total ka $80\\%$ poll hua thha, usme se 1792 invalid nikal gaye. Toh Loser = (Polled - Invalid) - Winner = $(80\\%T - 1792) - 42\\%T = 38\\%T - 1792$. Difference (W - L) = $42\\%T - (38\\%T - 1792) = 4\\%T + 1792$. Aur ye 3584 ke barabar hai! Toh $4\\%T = 1792 \\implies 1\\%T = 448 \\implies T = 44800$. Lucknow ke voters = $3 \\times 44800 = 134400$. Usme 4400 invalid, so Valid = 130000. Winner ko $58\\%$ aur loser ko $42\\%$, difference $16\\%$. $130000$ ka $16\\%$ nikal. $13 \\times 16 = 208$, seedha 20800 aayega.<br><br><b>Method 1 (Exam Approach):</b><br>Step 1: Let village voters = $T$.<br>Valid = $0.8T - 1792$<br>Winner = $0.42T$<br>Loser = $0.8T - 1792 - 0.42T = 0.38T - 1792$<br>Margin = $0.42T - (0.38T - 1792) = 3584 \\implies 0.04T = 1792 \\implies T = 44800$.<br>Step 2: Lucknow voters = $44800 \\times 3 = 134400$.<br>Step 3: Lucknow Valid Votes = $134400 - 4400 = 130000$.<br>Step 4: Margin in Lucknow = $58\\% - (100 - 58)\\% = 16\\%$.<br>Step 5: $16\\%$ of $130000 = 20800$.<br>Bade statements bas time waste karne ke liye hote hain, concepts pakde rakh!</div>"
+  },
+  {
+    "q": "If the price of rice is raised by $28\\%$, then by how much percent must a person reduce his consumption of rice so that his overall expenditure remains the same?",
+    "o": [
+      "$21.875\\%$",
+      "$22.875\\%$",
+      "$23.875\\%$",
+      "$24.875\\%$"
+    ],
+    "a": 0,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, CPR (Constant Product Ratio) laga. Price badha by $+28\\% = +\\frac{28}{100} = +\\frac{7}{25}$. Jab fraction $+\\frac{x}{y}$ se badhti hai aur product same rakhna ho, toh dusra factor $-\\frac{x}{x+y}$ se girana padta hai. Yani Consumption giregi $\\frac{7}{25+7} = \\frac{7}{32}$ se. Ab fraction ko percentage me convert kar: $\\frac{7}{32} \\times 100 = \\frac{700}{32} = \\frac{175}{8} = 21.875\\%$. Second method lagaoge toh 1 minute waste hoga, CPR lagaya toh 10 second me answer! Flexi-Frac bhi lagaoge toh time lega dekho agar num me value asaan bai toh and denom me bhi toh simply bhag deso tumhe sahi time pe sahi method execute karna hi padega.<br><br><b>Method 1 (CPR - Ninja Technique):</b><br>Price Increment = $+28\\% = +\\frac{28}{100} = +\\frac{7}{25}$<br>Corresponding Decrease = $-\\frac{7}{25 + 7} = -\\frac{7}{32}$<br>Percentage = $\\frac{7}{32} \\times 100 = 21.875\\%$</div>"
+  },
+  {
+    "q": "The income of A is $45\\%$ more than that of B. The income of C is $60\\%$ less than the sum of the incomes of A and B. The income of D is $20\\%$ more than that of C. If the difference between the incomes of B and D is ₹13,200, then find the income of C.",
+    "o": [
+      "72000",
+      "72500",
+      "73500",
+      "75000"
+    ],
+    "a": 2,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, simple base lo. B ko 100x maan. A ho gaya 145x. Sum = 245x. C is $60\\%$ less than sum, matlab C sum ka $40\\%$ hai. $245 \\times 0.4 = 98x$. D is $20\\%$ more than C, yani D = $98 \\times 1.2 = 117.6x$. Diff between B and D = $117.6x - 100x = 17.6x$. Question ne iski value 13200 de rakhi hai. Toh $17.6x = 13200$. $x = \\frac{132000}{176} = 750$. Pucha kya hai? Income of C = 98x = $98 \\times 750$. Mental math kar: $(100 - 2) \\times 750 = 75000 - 1500 = 73500$. Boom! lekin itna kaat kut noi karna hai mittar 🫠 jab clearly \\98 me \\14×7 hai denom me kuch kaatne wala noi hai toh 7 ka multiple hoga n<br><br><b>Method 1 (Step-by-Step Multiplier):</b><br>Let $B = 100x$<br>$A = 145x$<br>$A + B = 245x$<br>$C = 40\\% \\text{ of } 245x = 98x$<br>$D = 120\\% \\text{ of } 98x = 117.6x$<br>Difference $|D - B| = 117.6x - 100x = 17.6x$<br>$17.6x = 13200 \\implies x = 750$<br>Income of $C = 98x = 98 \\times 750 = 73500$</div>"
+  },
+  {
+    "q": "In company A, the number of male employees is $71.42\\%$ of the total employees. The total number of employees in company B is $14.28\\%$ less than that in company A. If the difference between male and female employees in company A is $(x+12)$ and the total employees in company B is 84, find the value of x.",
+    "o": [
+      "30",
+      "40",
+      "20",
+      "50"
+    ],
+    "a": 0,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, fractions strong hone chahiye. $14.28\\% = \\frac{1}{7}$ and $71.42\\% = \\frac{5}{7}$. Company B ke total log $14.28\\%$ less hain A se. Yani $B = \\frac{6}{7} \\times A$. Diya hai $B = 84$, toh $A = 84 \\times \\frac{7}{6} = 98$. Ab A ke andar males kitne hain? $\\frac{5}{7}$ of 98, yani 70. Bachi hui females = $98 - 70 = 28$. Difference kitna hai male aur female ka? $70 - 28 = 42$. Aur question keh raha hai diff $(x + 12)$ hai. Toh $x + 12 = 42 \\implies x = 30$. Ek line me solve karne ki aadat daal!<br><br><b>Method 1 (Exam Approach):</b><br>Step 1: Fraction values: $14.28\\% = 1/7$ and $71.42\\% = 5/7$<br>Step 2: $B = (1 - 1/7)A = 6/7 A$<br>$84 = 6/7 A \\implies A = 98$<br>Step 3: Male in A = $5/7 \\times 98 = 70$. Female in A = $98 - 70 = 28$.<br>Step 4: Difference = $70 - 28 = 42$<br>Step 5: $x + 12 = 42 \\implies x = 30$.</div>"
+  },
+  {
+    "q": "Ram's income is $1.25$ times Shyam's expenditure. Shyam's income is $1.33$ times Ram's expenditure. The difference between Shyam's savings and Ram's savings is ₹$3750$. If the ratio of Ram's income to his savings is $5 : 1$, find the value of $3x$ given that Shyam's income is $2x + 10000$.",
+    "o": [
+      "75000",
+      "65000",
+      "55000",
+      "60000"
+    ],
+    "a": 0,
+    "s": "<b>Tool Triggered:</b> 5. Unitary Scaling.<br><br><b>The 'Pen-Free' Observation First:</b> Dekh bhai, teri galti ye thi ki tune $1.33$ ko exact value le liya tha jabki SSC me ye hamesha $\\frac{4}{3}$ hota hai. Decimal se bachne ke liye tera logic best tha, bas denominator $3$ ko dekh kar base ko $100$ ki jagah $300$ maan le! future me jab kabhi aise relation dekhne ko mile 1.25 1.33 or 12.75 then dekho base me kya fractions aa rhe hain unka relation if ek dusre ke multipliers ke form me hai toh bas fractions ka LCM or unke multiply result ko main base or total quantity maan lena. <br><br><b>Method 1 (Ninja Technique / Tera Optimized Way):</b><br>Let Shyam Exp = $300$<br>Ram Income = $1.25 \\times 300 = 375$<br>Ram Savings = $\\frac{375}{5} = 75$<br>Ram Exp = $375 - 75 = 300$<br>Shyam Income = $\\frac{4}{3} \\times 300 = 400$<br>Shyam Savings = $400 - 300 = 100$<br><br>Savings Diff = $100 - 75 = 25$ units.<br>$25 \\text{ units} = 3750 \\implies 1 \\text{ unit} = 150$<br><br>Shyam Income = $400 \\times 150 = 60000$<br>$2x + 10000 = 60000 \\implies 2x = 50000 \\implies x = 25000$<br>So, $3x = 75000$."
+  },
+  {
+    "q": "$25\\%$ of half of x is equal to $2.5$ times of ($30\\%$ of one-fourth of y). Then x is what percent more or less than y?",
+    "o": [
+      "$33\\% \\text{ more}$",
+      "$33 \\frac{1}{3}\\% \\text{ more}$",
+      "$50\\% \\text{ more}$",
+      "$50\\% \\text{ less}$"
+    ],
+    "a": 2,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, fractions me khelega toh fas jayega nahi. $25\\% = \\frac{1}{4}$. Equation kya hai: $\\frac{1}{4} \\times \\frac{1}{2} \\times x = 2.5 \\times (0.30 \\times \\frac{1}{4} \\times y)$. Thoda dimag laga. $\\frac{x}{8} = 2.5 \\times \\frac{3}{10} \\times \\frac{y}{4}$. RHS ho gaya $\\frac{25}{10} \\times \\frac{3}{10} \\times \\frac{y}{4} = \\frac{3}{16} y$. Ab equation ban gayi: $\\frac{x}{8} = \\frac{3y}{16}$. Simplify kar: $\\frac{x}{y} = \\frac{24}{16} = 1.5$. Iska matlab $x = 1.5y$. Yani x jo hai woh y se $0.5$ (yani $50\\%$) jyada hai. Seedha answer $50\\%$ more.<br><br><b>Method 1 (Basic Equation):</b><br>$0.25 \\times 0.5 \\times x = 2.5 \\times (0.3 \\times 0.25 \\times y)$<br>$0.125 x = 2.5 \\times 0.075 y$<br>$0.125 x = 0.1875 y$<br>$\\frac{x}{y} = \\frac{0.1875}{0.125} = \\frac{1875}{1250} = \\frac{3}{2}$<br>This means $x$ is 3 and $y$ is 2. Extra is 1 over base 2, i.e., $1/2 = 50\\%$ more.</div>"
+  },
+  {
+    "q": "The salary of a person is ₹30,000. It increases first by $2k\\%$ and then again by $k\\%$, making his new salary ₹44,850. If his original salary was instead decreased by $2k\\%$ and then further decreased by $k\\%$, what would his new salary be?",
+    "o": [
+      "17580",
+      "17850",
+      "18570",
+      "18750"
+    ],
+    "a": 1,
+    "s": "<div style='font-family:sans-serif;'><b>The \"Pen-Free\" Observation First:</b><br>Dekh bhai, ratio pakad. Final / Initial = $\\frac{44850}{30000} = 1.495$. Matlab lagbhag $50\\%$ ka growth hua hai successive badha ke. Equation hai: $(1 + \\frac{2k}{100})(1 + \\frac{k}{100}) = 1.495$. Hit and trial best hai. Agar $k=10$ manoge, toh $+20\\%$ aur $+10\\%$ ka net change $32\\%$ hota hai (nahi chalega). $k=15$ lo, toh $+30\\%$ aur $+15\\%$ ka net change: $30 + 15 + 4.5 = 49.5\\%$. Oh, ye perfect baith gaya! $k=15$. Ab pucha kya hai? Decrease by $30\\%$ aur $15\\%$. Successive decrease laga: 30000 pehle $-30\\%$ hua toh 21000 bacha. Ab uspe $-15\\%$ laga, toh $21000 \\times 0.85 = 17850$. Ninja trick with hit and trial wins the race!<br><br><b>Method 1 (Smart Assumption):</b><br>Step 1: Net increase % = $\\frac{14850}{30000} \\times 100 = 49.5\\%$<br>Step 2: Formula $2k + k + \\frac{2k^2}{100} = 49.5$. Clearly $k=15$ fits this ($30 + 15 + 4.5 = 49.5$).<br>Step 3: Required is successive decrease of $30\\%$ and $15\\%$.<br>$30000 \\times 0.70 \\times 0.85$<br>$= 21000 \\times 0.85 = 17850$.</div>"
+  }
+]
+}

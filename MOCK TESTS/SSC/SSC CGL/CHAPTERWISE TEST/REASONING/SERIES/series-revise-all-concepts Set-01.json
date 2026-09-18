@@ -1,0 +1,559 @@
+{
+  "quizTitle": "series-revise-all-concepts Set-01",
+  "quizTime": "15",
+  "totalMarks": "50",
+  "questions": [
+    {
+      "q": "What comes next in the series: \n\nL, O, S, V, ?",
+      "o": [
+        "Y",
+        "X",
+        "W",
+        "Z"
+      ],
+      "a": 3,
+      "s": "<b>Method:</b> Alphabet ki positional values likh lo:<br/>L = 12<br/>O = 15 (+3)<br/>S = 19 (+4)<br/>V = 22 (+3)<br/>Pattern chal raha hai +3, +4, +3... agla +4 hona chahiye.<br/>22 + 4 = 26. 26th letter 'Z' hota hai."
+    },
+    {
+      "q": "Select the number that can replace the question mark (?) in the following series. \n\n<b>4, 2, 2, 3, 6, ?</b>",
+      "o": [
+        "3",
+        "6",
+        "12",
+        "15"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Same 0.5 scaling wala logic hai. Pehle half ho raha hai fir constant.<br/><br/><b>Ninja Technique:</b><br/>$4 \\times 0.5 = 2$<br/>$2 \\times 1 = 2$<br/>$2 \\times 1.5 = 3$<br/>$3 \\times 2 = 6$<br/>$6 \\times 2.5 = 15$<br/>Option D is the right answer."
+    },
+    {
+      "q": "Complete the pattern: \n\n120, 96, 76.8, 61.44, ?",
+      "o": [
+        "60.27",
+        "78.91",
+        "47.89",
+        "49.152"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Har term lagbhag 20% se kam ho raha hai. Yani base shifting ho rahi hai.<br/><br/><b>Method (CPR/Unitary Logic):</b><br/>Har term pichle ka 80% (yaani 0.8 times) ho raha hai.<br/>120 $\\times$ 0.8 = 96<br/>96 $\\times$ 0.8 = 76.8<br/>76.8 $\\times$ 0.8 = 61.44<br/>Toh agla term hoga 61.44 $\\times$ 0.8.<br/>Last digit check kar: $4 \\times 8 = 32$, matlab end mein 2 aayega. Option (d) 49.152 is correct."
+    },
+    {
+      "q": "Which of the following numbers will replace the question mark (?) in the given series? \n\n11, 4, 22, 20, 44, 100, 88, 500, ?",
+      "o": [
+        "176",
+        "182",
+        "160",
+        "154"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Series ek baar choti, ek baar badi ho rahi hai. Ye 100% alternate series ka case hai!<br/><br/><b>Method (Concept Builder):</b><br/>Series ko do hisso mein tod de:<br/>Series 1: 11, 22, 44, 88, ?<br/>Series 2: 4, 20, 100, 500<br/><br/>Series 1 mein har number double ho raha hai ($\\times 2$).<br/>11 $\\times$ 2 = 22<br/>22 $\\times$ 2 = 44<br/>44 $\\times$ 2 = 88<br/>88 $\\times$ 2 = 176.<br/><br/>(Extra note: Series 2 mein $\\times 5$ chal raha hai). Correct answer 176."
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>9, 10, 13, 24, 37, 66, 97, ?</b>",
+      "o": [
+        "125",
+        "152",
+        "215",
+        "251"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Series ki chal thodi ajeeb hai. Ye addition with alternate subtraction of squares wali Ninja level series hai.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 9 + 1^2 + 0 = 10$<br/>$\\rightarrow 10 + 2^2 - 1 = 13$<br/>$\\rightarrow 13 + 3^2 + 2 = 24$<br/>$\\rightarrow 24 + 4^2 - 3 = 37$<br/>$\\rightarrow 37 + 5^2 + 4 = 66$<br/>$\\rightarrow 66 + 6^2 - 5 = 97$<br/>$\\rightarrow 97 + 7^2 + 6 = 97 + 49 + 6 = 152$."
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>3, 20, 38, 52, 75, 82, 114, ?</b>",
+      "o": [
+        "118",
+        "104",
+        "110",
+        "101"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Series utaar-chadhaav kha rahi hai bina logic ke. Confirm Alternate Series hai.<br/><br/><b>Ninja Technique:</b><br/>Alag-alag likh de dono ko:<br/><b>Odd positions:</b> 3, 38, 75, 114 (Diffs: 35, 37, 39)<br/><b>Even positions:</b> 20, 52, 82, ? (Diffs: 32, 30, 28)<br/>Decreasing differences by 2!<br/>Toh agla term hoga $82 + 28 = 110$."
+    },
+    {
+      "q": "Which of the following numbers will replace the question mark (?) in the given series? \n\n<b>5, 8, 24, 57, 109, 184, 288, 423, ?</b>",
+      "o": [
+        "559",
+        "595",
+        "659",
+        "695"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Isko directly double difference se attack karna sabse best hota hai.<br/><br/><b>Ninja Technique:</b><br/>Diffs: 3, 16, 33, 52, 75, 104, 135<br/>Double Diffs: 13, 17, 19, 23, 29, 31 (Continuous Prime numbers hain!)<br/>Agla prime number 37 hai.<br/>Next Diff $= 135 + 37 = 172$.<br/>Missing Term $= 423 + 172 = 595$."
+    },
+    {
+      "q": "In each of these questions, a number series is given. In each series, only one number is wrong number. Find out the wrong number. \n\n2, 7, 25, 108, 531, 3193",
+      "o": [
+        "3193",
+        "531",
+        "25",
+        "108"
+      ],
+      "a": 3,
+      "s": "<b>Method:</b> Multiplication pattern lagao:<br/>2 $\\times$ 2 + 3 = 7<br/>7 $\\times$ 3 + 4 = 25<br/>25 $\\times$ 4 + 5 = 105 (Par yahan 108 likha hai! Yeh wrong number lag raha hai).<br/>Check karte hain: Agar 105 ho, toh 105 $\\times$ 5 + 6 = 531 (Match ho gaya!).<br/>Toh 108 galat term hai."
+    },
+    {
+      "q": "Which number will come next in the following series? \n\n<b>5, 12, 31, 68, 129, ____</b>",
+      "o": [
+        "220",
+        "218",
+        "131",
+        "190"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Bhai, number line dhyan se dekh, sab numbers perfect cubes se thode bade hain. 125, 64, 27 ki range mein!<br/><br/><b>Ninja Technique:</b><br/>Logic apply kar:<br/>$1^3 + 4 = 5$<br/>$2^3 + 4 = 12$<br/>$3^3 + 4 = 31$<br/>$4^3 + 4 = 68$<br/>$5^3 + 4 = 129$<br/>Toh agla term hoga:<br/>$6^3 + 4 = 216 + 4 = 220$<br/><br/>Seedha Option A mark kar!"
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>28, 18, 12, 8, ?</b>",
+      "o": [
+        "2",
+        "4",
+        "3",
+        "5"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Constant speed se decrease ho raha hai toh fraction ya 0.5 ka game hai.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 28 \\times 0.5 + 4 = 18$<br/>$\\rightarrow 18 \\times 0.5 + 3 = 12$<br/>$\\rightarrow 12 \\times 0.5 + 2 = 8$<br/>$\\rightarrow 8 \\times 0.5 + 1 = 4 + 1 = 5$."
+    },
+    {
+      "q": "Select the correct option that will complete the series. \n\n<b>1, 3, 9, 31, ______, 651</b>",
+      "o": [
+        "109",
+        "97",
+        "127",
+        "129"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> 1 se 651 ka safar sirf multiplication se hi possible hai bhai.<br/><br/><b>Ninja Technique:</b><br/>Pattern: $\\times n + (n+1)$<br/>$\\rightarrow 1 \\times 1 + 2 = 3$<br/>$\\rightarrow 3 \\times 2 + 3 = 9$<br/>$\\rightarrow 9 \\times 3 + 4 = 31$<br/>$\\rightarrow 31 \\times 4 + 5 = 129$<br/>$\\rightarrow 129 \\times 5 + 6 = 651$<br/>Option D is correct."
+    },
+    {
+      "q": "Which number in the given series is INCORRECT? \n\n<b>11, 30, 67, 120, 219, 346</b>",
+      "o": [
+        "11",
+        "120",
+        "67",
+        "346"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Dekh bhai, numbers rapidly increase ho rahe hain aur perfect cubes ke aas-paas hain. Seedha cubes ka logic soch!<br/><br/><b>Ninja Technique (Exam Approach):</b><br/>Pattern check kar:<br/>$2^3 + 3 = 11$<br/>$3^3 + 3 = 30$<br/>$4^3 + 3 = 67$<br/>$5^3 + 3 = 128$ (Lekin yahan 120 diya hai, yehi chor hai!)<br/>$6^3 + 3 = 219$<br/>$7^3 + 3 = 346$<br/><br/><b>Future Exam Takeaway:</b> SSC CGL mein hamesha $n^3 \\pm k$ pattern check karna chahiye before calculating differences. 120 incorrect hai."
+    },
+    {
+      "q": "Select the number from among the given option that can replace the question mark (?) in the following series. \n\n<b>2, 6, 10, 17, 52, 94, 472, ?</b>",
+      "o": [
+        "763",
+        "861",
+        "736",
+        "816"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Differences mein multiplication aur addition ka fusion hai. High level logic alert!<br/><br/><b>Ninja Technique:</b><br/>Pehle differences dekho: 4, 4, 7, 35, 42, 378<br/>Ab in differences ke aapas ka relation dekho:<br/>$\\rightarrow 4 \\times 1 = 4$<br/>$\\rightarrow 4 + 3 = 7$<br/>$\\rightarrow 7 \\times 5 = 35$<br/>$\\rightarrow 35 + 7 = 42$<br/>$\\rightarrow 42 \\times 9 = 378$<br/>Next difference hona chahiye $378 + 11 = 389$<br/>Final Answer $= 472 + 389 = 861$."
+    },
+    {
+      "q": "Which number will replace the question mark (?) in the following series? \n\n<b>2, 4, 16, 52, 132, 282, ?</b>",
+      "o": [
+        "512",
+        "527",
+        "534",
+        "572"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Jump bada hai but multiply wala seedha logic nahi dikh raha. Difference nikal ke dekhte hain.<br/><br/><b>Ninja Technique:</b><br/>Differences nikal:<br/>$4 - 2 = 2$<br/>$16 - 4 = 12$<br/>$52 - 16 = 36$<br/>$132 - 52 = 80$<br/>$282 - 132 = 150$<br/>Ab in differences ko dhyaan se dekh. Ye $n^3 + n^2$ ka pattern hain!<br/>$1^3 + 1^2 = 2$<br/>$2^3 + 2^2 = 12$<br/>$3^3 + 3^2 = 36$<br/>$4^3 + 4^2 = 80$<br/>$5^3 + 5^2 = 150$<br/>Next difference hoga $6^3 + 6^2 = 216 + 36 = 252$.<br/>Final answer $= 282 + 252 = 534$."
+    },
+    {
+      "q": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series. \n\n<b>KO_MCL_QMCMO_M_NOQ_C</b>",
+      "o": [
+        "M, O, Q, C, O",
+        "Q, O, C, Q, M",
+        "M, O, Q, C, M",
+        "Q, O, Q, C, M"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Jab series badi ho toh 4 ya 5 letter ke tukdon mein kaat de.<br/><br/><b>Ninja Technique:</b><br/>Blocks divide kar: K O _ M C | L _ Q M C | M O _ M _ | N O Q _ C<br/>Sequence decode:<br/>1st letter: K, L, M, N (alphabetical)<br/>2nd letter: O constant<br/>3rd letter: Q constant<br/>4th letter: M constant<br/>5th letter: C constant<br/>Blanks honge: Q, O, Q, C, M."
+    },
+    {
+      "q": "Select the number among the given options that can replace the question mark (?) in the following series. \n\n<b>7, 10, 18, 29, ?, 78</b>",
+      "o": [
+        "54",
+        "45",
+        "48",
+        "51"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Same as previous question bhai. Differences of differences ka Fibonacci chal raha hai.<br/><br/><b>Ninja Technique:</b><br/>Diffs: 3, 8, 11, ?<br/>$\\rightarrow 3 + 8 = 11$<br/>$\\rightarrow 8 + 11 = 19$<br/>$\\rightarrow 11 + 19 = 30$<br/>Next diff $= 19$. Missing term $= 29 + 19 = 48$.<br/>Crosscheck: $48 + 30 = 78$. Ekdum perfect."
+    },
+    {
+      "q": "Select the number that can replace the question mark (?) in the following series. \n\n<b>5, 3, 3, 5, 15, ?</b>",
+      "o": [
+        "45",
+        "39",
+        "69",
+        "59"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Number chota ho ke wapas bada ban gaya. Multiplication aur subtraction ka deadly combo hai.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 5 \\times 1 - 2 = 3$<br/>$\\rightarrow 3 \\times 2 - 3 = 3$<br/>$\\rightarrow 3 \\times 3 - 4 = 5$<br/>$\\rightarrow 5 \\times 4 - 5 = 15$<br/>$\\rightarrow 15 \\times 5 - 6 = 75 - 6 = 69$.<br/>Ekdum Aman Sir level trick!"
+    },
+    {
+      "q": "Identify the number that does NOT belong in the given series. \n\n<b>0, 6, 24, 60, 120, 216</b>",
+      "o": [
+        "120",
+        "216",
+        "6",
+        "60"
+      ],
+      "a": 1,
+      "s": "<b>Pen-Free Observation:</b> Ye series toh har SSC aspirant ke dimaag mein chapi honi chahiye. $n^3 - n$ ka standard pattern hai.<br/><br/><b>Ninja Technique:</b><br/>$1^3 - 1 = 0$<br/>$2^3 - 2 = 6$<br/>$3^3 - 3 = 24$<br/>$4^3 - 4 = 60$<br/>$5^3 - 5 = 120$<br/>$6^3 - 6 = 210$ hona chahiye, lekin 216 diya hai.<br/><br/>Isliye 216 is the wrong term."
+    },
+    {
+      "q": "Which letter-cluster will replace the question mark (?) in the following series? \n\n<b>CGE, HJI, LPN, SUT, ?</b>",
+      "o": [
+        "XBZ",
+        "YAZ",
+        "YCA",
+        "XZY"
+      ],
+      "a": 2,
+      "s": "<b>Pen-Free Observation:</b> Har word ke internal difference ko pakad, poori chain solve karne ki jarurat nahi.<br/><br/><b>Ninja Technique:</b><br/>Har group ke 3 letters ke position gaps dekho:<br/>C(3) G(7) E(5) $\\rightarrow +4, -2$<br/>H(8) J(10) I(9) $\\rightarrow +2, -1$<br/>L(12) P(16) N(14) $\\rightarrow +4, -2$<br/>S(19) U(21) T(20) $\\rightarrow +2, -1$<br/>Pattern alternate chal raha hai. Toh next group mein $+4, -2$ gap hona chahiye.<br/>Options mein Y(25) C(3) A(1) check karo $\\rightarrow 25+4=29 (C)$, $3-2=1 (A)$. Bilkul set!"
+    },
+    {
+      "q": "Select the number that can replace the question mark (?) in the following series. \n\n<b>1, 2, 4, 7, 13, 24, 44, ?</b>",
+      "o": [
+        "81",
+        "73",
+        "63",
+        "112"
+      ],
+      "a": 0,
+      "s": "<b>Pen-Free Observation:</b> Ye series dekhte hi Tribonacci ki smell aani chahiye. Pichle teen number jud ke agla ban raha hai.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 1+2+4 = 7$<br/>$\\rightarrow 2+4+7 = 13$<br/>$\\rightarrow 4+7+13 = 24$<br/>$\\rightarrow 7+13+24 = 44$<br/>$\\rightarrow 13+24+44 = 81$."
+    },
+    {
+      "q": "Find out the correct alternative that when filled in the blanks in the same sequence will make the series logically complete. \n\nJ _ S X _ W U T N S _ P _ O Y L R K A _",
+      "o": [
+        "AKVML",
+        "ALWPH",
+        "ALWLK",
+        "AKUOG"
+      ],
+      "a": 1,
+      "s": "<b>Method:</b> Total 20 spaces hain. Inhe 5 groups of 4 mein baat lo, ya columns banakar compare karo:<br/>Col 1: J, _, N, _, R. Series is J(10), L(12), N(14), P(16), R(18). (Yani +2 chal raha hai). Blanks = L, P.<br/>Col 2: _, W, S, O, K. Series is A(27), W(23), S(19), O(15), K(11). (Yani -4 chal raha hai). Blank = A.<br/>Col 3: S, U, _, Y, A. Series +2 mein hai. Blank = W.<br/>Col 4: X, T, P, L, _. Series -4 mein hai. Blank = H.<br/>Chronological order of blanks padho: A, L, W, P, H."
+    },
+    {
+      "q": "Select the number that can replace the question mark (?) in the following series. \n\n<b>11, 14, 31, 14, 16, 34, 17, 18, 37, ?, 20, ?</b>",
+      "o": [
+        "21, 41",
+        "20, 41",
+        "21, 40",
+        "20, 40"
+      ],
+      "a": 3,
+      "s": "<b>Pen-Free Observation:</b> Series bohot lambi hai, iska matlab isme 3-3 ke chunks (triplets) hain. Pattern ko break kar!<br/><br/><b>Ninja Technique:</b><br/>Triplets mein divide kar:<br/>(11, 14, 31) $\\rightarrow$ (14, 16, 34) $\\rightarrow$ (17, 18, 37) $\\rightarrow$ (?, 20, ?)<br/>Har triplet ke elements compare kar:<br/>1st element: $11 \\xrightarrow{+3} 14 \\xrightarrow{+3} 17 \\xrightarrow{+3} 20$<br/>2nd element: $14 \\xrightarrow{+2} 16 \\xrightarrow{+2} 18 \\xrightarrow{+2} 20$<br/>3rd element: $31 \\xrightarrow{+3} 34 \\xrightarrow{+3} 37 \\xrightarrow{+3} 40$<br/>Toh missing numbers honge 20 aur 40. Option D correct hai."
+    },
+    {
+      "q": "Find the next element that replace the ? Logically. \n\n10, 21, 54, 153, ?",
+      "o": [
+        "451",
+        "443",
+        "450",
+        "464"
+      ],
+      "a": 2,
+      "s": "<b>Method:</b> Dekh bhai, yahan bhi difference ka hi khel hai.<br/>21 - 10 = 11<br/>54 - 21 = 33<br/>153 - 54 = 99<br/>Differences dekho: 11, 33, 99. Har term $\\times 3$ ho raha hai. Toh agla difference $99 \\times 3 = 297$ hoga.<br/>153 + 297 = 450."
+    },
+    {
+      "q": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n30, 22, 36, 75, 178, ?",
+      "o": [
+        "400",
+        "480",
+        "343",
+        "361"
+      ],
+      "a": 1,
+      "s": "<b>Ninja Technique (Top Tier Trap):</b> Ye question CGL ke best level traps mein se ek hai. Direct difference se brain freeze ho jayega. JSM / Multiplication base lagana padega.<br/><br/><b>Method:</b><br/>30 $\\times$ 0.5 + 7 = 15 + 7 = 22<br/>22 $\\times$ 1 + 14 = 36<br/>36 $\\times$ 1.5 + 21 = 54 + 21 = 75<br/>75 $\\times$ 2 + 28 = 150 + 28 = 178<br/><br/>Multiplier 0.5 se badh raha hai, aur addition 7 ke multiples mein hai.<br/>Agla term = 178 $\\times$ 2.5 + 35.<br/>178 ka 2.5 times = $178 \\times \\frac{5}{2} = 445$.<br/>445 + 35 = 480."
+    },
+    {
+      "q": "The series given below contains a sequence of numbers. Accordingly identify the incorrect combination. \n\n5, 10, 40, 46, 180, 185, 741",
+      "o": [
+        "46,741",
+        "10,46",
+        "180,741",
+        "10,180"
+      ],
+      "a": 0,
+      "s": "<b>Method (Exam Approach):</b> Bhai series ko chote tukdo mein tod kar relation dhundho.<br/>Pattern ye chalna chahiye tha: +5, $\\times$ 4, +5, $\\times$ 4.<br/>Check karte hain:<br/>5 + 5 = 10<br/>10 $\\times$ 4 = 40<br/>40 + 5 = 45 (Lekin series mein 46 likha hai. So 46 is WRONG).<br/>Agar 45 hota, toh next: 45 $\\times$ 4 = 180 (Sahi hai).<br/>180 + 5 = 185 (Sahi hai).<br/>185 $\\times$ 4 = 740 (Lekin series mein 741 likha hai. So 741 is WRONG).<br/>Isliye galat combination 46 aur 741 ka hai."
+    }
+  ],
+  "questions_hin": [
+    {
+      "q_hi": "What comes next in the series: \n\nL, O, S, V, ?",
+      "o_hi": [
+        "Y",
+        "X",
+        "W",
+        "Z"
+      ],
+      "a": 3,
+      "s_hi": "<b>Method:</b> Alphabet ki positional values likh lo:<br/>L = 12<br/>O = 15 (+3)<br/>S = 19 (+4)<br/>V = 22 (+3)<br/>Pattern chal raha hai +3, +4, +3... agla +4 hona chahiye.<br/>22 + 4 = 26. 26th letter 'Z' hota hai."
+    },
+    {
+      "q_hi": "Select the number that can replace the question mark (?) in the following series. \n\n<b>4, 2, 2, 3, 6, ?</b>",
+      "o_hi": [
+        "3",
+        "6",
+        "12",
+        "15"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Same 0.5 scaling wala logic hai. Pehle half ho raha hai fir constant.<br/><br/><b>Ninja Technique:</b><br/>$4 \\times 0.5 = 2$<br/>$2 \\times 1 = 2$<br/>$2 \\times 1.5 = 3$<br/>$3 \\times 2 = 6$<br/>$6 \\times 2.5 = 15$<br/>Option D is the right answer."
+    },
+    {
+      "q_hi": "Complete the pattern: \n\n120, 96, 76.8, 61.44, ?",
+      "o_hi": [
+        "60.27",
+        "78.91",
+        "47.89",
+        "49.152"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Har term lagbhag 20% se kam ho raha hai. Yani base shifting ho rahi hai.<br/><br/><b>Method (CPR/Unitary Logic):</b><br/>Har term pichle ka 80% (yaani 0.8 times) ho raha hai.<br/>120 $\\times$ 0.8 = 96<br/>96 $\\times$ 0.8 = 76.8<br/>76.8 $\\times$ 0.8 = 61.44<br/>Toh agla term hoga 61.44 $\\times$ 0.8.<br/>Last digit check kar: $4 \\times 8 = 32$, matlab end mein 2 aayega. Option (d) 49.152 is correct."
+    },
+    {
+      "q_hi": "Which of the following numbers will replace the question mark (?) in the given series? \n\n11, 4, 22, 20, 44, 100, 88, 500, ?",
+      "o_hi": [
+        "176",
+        "182",
+        "160",
+        "154"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Series ek baar choti, ek baar badi ho rahi hai. Ye 100% alternate series ka case hai!<br/><br/><b>Method (Concept Builder):</b><br/>Series ko do hisso mein tod de:<br/>Series 1: 11, 22, 44, 88, ?<br/>Series 2: 4, 20, 100, 500<br/><br/>Series 1 mein har number double ho raha hai ($\\times 2$).<br/>11 $\\times$ 2 = 22<br/>22 $\\times$ 2 = 44<br/>44 $\\times$ 2 = 88<br/>88 $\\times$ 2 = 176.<br/><br/>(Extra note: Series 2 mein $\\times 5$ chal raha hai). Correct answer 176."
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>9, 10, 13, 24, 37, 66, 97, ?</b>",
+      "o_hi": [
+        "125",
+        "152",
+        "215",
+        "251"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Series ki chal thodi ajeeb hai. Ye addition with alternate subtraction of squares wali Ninja level series hai.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 9 + 1^2 + 0 = 10$<br/>$\\rightarrow 10 + 2^2 - 1 = 13$<br/>$\\rightarrow 13 + 3^2 + 2 = 24$<br/>$\\rightarrow 24 + 4^2 - 3 = 37$<br/>$\\rightarrow 37 + 5^2 + 4 = 66$<br/>$\\rightarrow 66 + 6^2 - 5 = 97$<br/>$\\rightarrow 97 + 7^2 + 6 = 97 + 49 + 6 = 152$."
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>3, 20, 38, 52, 75, 82, 114, ?</b>",
+      "o_hi": [
+        "118",
+        "104",
+        "110",
+        "101"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Series utaar-chadhaav kha rahi hai bina logic ke. Confirm Alternate Series hai.<br/><br/><b>Ninja Technique:</b><br/>Alag-alag likh de dono ko:<br/><b>Odd positions:</b> 3, 38, 75, 114 (Diffs: 35, 37, 39)<br/><b>Even positions:</b> 20, 52, 82, ? (Diffs: 32, 30, 28)<br/>Decreasing differences by 2!<br/>Toh agla term hoga $82 + 28 = 110$."
+    },
+    {
+      "q_hi": "Which of the following numbers will replace the question mark (?) in the given series? \n\n<b>5, 8, 24, 57, 109, 184, 288, 423, ?</b>",
+      "o_hi": [
+        "559",
+        "595",
+        "659",
+        "695"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Isko directly double difference se attack karna sabse best hota hai.<br/><br/><b>Ninja Technique:</b><br/>Diffs: 3, 16, 33, 52, 75, 104, 135<br/>Double Diffs: 13, 17, 19, 23, 29, 31 (Continuous Prime numbers hain!)<br/>Agla prime number 37 hai.<br/>Next Diff $= 135 + 37 = 172$.<br/>Missing Term $= 423 + 172 = 595$."
+    },
+    {
+      "q_hi": "In each of these questions, a number series is given. In each series, only one number is wrong number. Find out the wrong number. \n\n2, 7, 25, 108, 531, 3193",
+      "o_hi": [
+        "3193",
+        "531",
+        "25",
+        "108"
+      ],
+      "a": 3,
+      "s_hi": "<b>Method:</b> Multiplication pattern lagao:<br/>2 $\\times$ 2 + 3 = 7<br/>7 $\\times$ 3 + 4 = 25<br/>25 $\\times$ 4 + 5 = 105 (Par yahan 108 likha hai! Yeh wrong number lag raha hai).<br/>Check karte hain: Agar 105 ho, toh 105 $\\times$ 5 + 6 = 531 (Match ho gaya!).<br/>Toh 108 galat term hai."
+    },
+    {
+      "q_hi": "Which number will come next in the following series? \n\n<b>5, 12, 31, 68, 129, ____</b>",
+      "o_hi": [
+        "220",
+        "218",
+        "131",
+        "190"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Bhai, number line dhyan se dekh, sab numbers perfect cubes se thode bade hain. 125, 64, 27 ki range mein!<br/><br/><b>Ninja Technique:</b><br/>Logic apply kar:<br/>$1^3 + 4 = 5$<br/>$2^3 + 4 = 12$<br/>$3^3 + 4 = 31$<br/>$4^3 + 4 = 68$<br/>$5^3 + 4 = 129$<br/>Toh agla term hoga:<br/>$6^3 + 4 = 216 + 4 = 220$<br/><br/>Seedha Option A mark kar!"
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n<b>28, 18, 12, 8, ?</b>",
+      "o_hi": [
+        "2",
+        "4",
+        "3",
+        "5"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Constant speed se decrease ho raha hai toh fraction ya 0.5 ka game hai.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 28 \\times 0.5 + 4 = 18$<br/>$\\rightarrow 18 \\times 0.5 + 3 = 12$<br/>$\\rightarrow 12 \\times 0.5 + 2 = 8$<br/>$\\rightarrow 8 \\times 0.5 + 1 = 4 + 1 = 5$."
+    },
+    {
+      "q_hi": "Select the correct option that will complete the series. \n\n<b>1, 3, 9, 31, ______, 651</b>",
+      "o_hi": [
+        "109",
+        "97",
+        "127",
+        "129"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> 1 se 651 ka safar sirf multiplication se hi possible hai bhai.<br/><br/><b>Ninja Technique:</b><br/>Pattern: $\\times n + (n+1)$<br/>$\\rightarrow 1 \\times 1 + 2 = 3$<br/>$\\rightarrow 3 \\times 2 + 3 = 9$<br/>$\\rightarrow 9 \\times 3 + 4 = 31$<br/>$\\rightarrow 31 \\times 4 + 5 = 129$<br/>$\\rightarrow 129 \\times 5 + 6 = 651$<br/>Option D is correct."
+    },
+    {
+      "q_hi": "Which number in the given series is INCORRECT? \n\n<b>11, 30, 67, 120, 219, 346</b>",
+      "o_hi": [
+        "11",
+        "120",
+        "67",
+        "346"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Dekh bhai, numbers rapidly increase ho rahe hain aur perfect cubes ke aas-paas hain. Seedha cubes ka logic soch!<br/><br/><b>Ninja Technique (Exam Approach):</b><br/>Pattern check kar:<br/>$2^3 + 3 = 11$<br/>$3^3 + 3 = 30$<br/>$4^3 + 3 = 67$<br/>$5^3 + 3 = 128$ (Lekin yahan 120 diya hai, yehi chor hai!)<br/>$6^3 + 3 = 219$<br/>$7^3 + 3 = 346$<br/><br/><b>Future Exam Takeaway:</b> SSC CGL mein hamesha $n^3 \\pm k$ pattern check karna chahiye before calculating differences. 120 incorrect hai."
+    },
+    {
+      "q_hi": "Select the number from among the given option that can replace the question mark (?) in the following series. \n\n<b>2, 6, 10, 17, 52, 94, 472, ?</b>",
+      "o_hi": [
+        "763",
+        "861",
+        "736",
+        "816"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Differences mein multiplication aur addition ka fusion hai. High level logic alert!<br/><br/><b>Ninja Technique:</b><br/>Pehle differences dekho: 4, 4, 7, 35, 42, 378<br/>Ab in differences ke aapas ka relation dekho:<br/>$\\rightarrow 4 \\times 1 = 4$<br/>$\\rightarrow 4 + 3 = 7$<br/>$\\rightarrow 7 \\times 5 = 35$<br/>$\\rightarrow 35 + 7 = 42$<br/>$\\rightarrow 42 \\times 9 = 378$<br/>Next difference hona chahiye $378 + 11 = 389$<br/>Final Answer $= 472 + 389 = 861$."
+    },
+    {
+      "q_hi": "Which number will replace the question mark (?) in the following series? \n\n<b>2, 4, 16, 52, 132, 282, ?</b>",
+      "o_hi": [
+        "512",
+        "527",
+        "534",
+        "572"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Jump bada hai but multiply wala seedha logic nahi dikh raha. Difference nikal ke dekhte hain.<br/><br/><b>Ninja Technique:</b><br/>Differences nikal:<br/>$4 - 2 = 2$<br/>$16 - 4 = 12$<br/>$52 - 16 = 36$<br/>$132 - 52 = 80$<br/>$282 - 132 = 150$<br/>Ab in differences ko dhyaan se dekh. Ye $n^3 + n^2$ ka pattern hain!<br/>$1^3 + 1^2 = 2$<br/>$2^3 + 2^2 = 12$<br/>$3^3 + 3^2 = 36$<br/>$4^3 + 4^2 = 80$<br/>$5^3 + 5^2 = 150$<br/>Next difference hoga $6^3 + 6^2 = 216 + 36 = 252$.<br/>Final answer $= 282 + 252 = 534$."
+    },
+    {
+      "q_hi": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series. \n\n<b>KO_MCL_QMCMO_M_NOQ_C</b>",
+      "o_hi": [
+        "M, O, Q, C, O",
+        "Q, O, C, Q, M",
+        "M, O, Q, C, M",
+        "Q, O, Q, C, M"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Jab series badi ho toh 4 ya 5 letter ke tukdon mein kaat de.<br/><br/><b>Ninja Technique:</b><br/>Blocks divide kar: K O _ M C | L _ Q M C | M O _ M _ | N O Q _ C<br/>Sequence decode:<br/>1st letter: K, L, M, N (alphabetical)<br/>2nd letter: O constant<br/>3rd letter: Q constant<br/>4th letter: M constant<br/>5th letter: C constant<br/>Blanks honge: Q, O, Q, C, M."
+    },
+    {
+      "q_hi": "Select the number among the given options that can replace the question mark (?) in the following series. \n\n<b>7, 10, 18, 29, ?, 78</b>",
+      "o_hi": [
+        "54",
+        "45",
+        "48",
+        "51"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Same as previous question bhai. Differences of differences ka Fibonacci chal raha hai.<br/><br/><b>Ninja Technique:</b><br/>Diffs: 3, 8, 11, ?<br/>$\\rightarrow 3 + 8 = 11$<br/>$\\rightarrow 8 + 11 = 19$<br/>$\\rightarrow 11 + 19 = 30$<br/>Next diff $= 19$. Missing term $= 29 + 19 = 48$.<br/>Crosscheck: $48 + 30 = 78$. Ekdum perfect."
+    },
+    {
+      "q_hi": "Select the number that can replace the question mark (?) in the following series. \n\n<b>5, 3, 3, 5, 15, ?</b>",
+      "o_hi": [
+        "45",
+        "39",
+        "69",
+        "59"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Number chota ho ke wapas bada ban gaya. Multiplication aur subtraction ka deadly combo hai.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 5 \\times 1 - 2 = 3$<br/>$\\rightarrow 3 \\times 2 - 3 = 3$<br/>$\\rightarrow 3 \\times 3 - 4 = 5$<br/>$\\rightarrow 5 \\times 4 - 5 = 15$<br/>$\\rightarrow 15 \\times 5 - 6 = 75 - 6 = 69$.<br/>Ekdum Aman Sir level trick!"
+    },
+    {
+      "q_hi": "Identify the number that does NOT belong in the given series. \n\n<b>0, 6, 24, 60, 120, 216</b>",
+      "o_hi": [
+        "120",
+        "216",
+        "6",
+        "60"
+      ],
+      "a": 1,
+      "s_hi": "<b>Pen-Free Observation:</b> Ye series toh har SSC aspirant ke dimaag mein chapi honi chahiye. $n^3 - n$ ka standard pattern hai.<br/><br/><b>Ninja Technique:</b><br/>$1^3 - 1 = 0$<br/>$2^3 - 2 = 6$<br/>$3^3 - 3 = 24$<br/>$4^3 - 4 = 60$<br/>$5^3 - 5 = 120$<br/>$6^3 - 6 = 210$ hona chahiye, lekin 216 diya hai.<br/><br/>Isliye 216 is the wrong term."
+    },
+    {
+      "q_hi": "Which letter-cluster will replace the question mark (?) in the following series? \n\n<b>CGE, HJI, LPN, SUT, ?</b>",
+      "o_hi": [
+        "XBZ",
+        "YAZ",
+        "YCA",
+        "XZY"
+      ],
+      "a": 2,
+      "s_hi": "<b>Pen-Free Observation:</b> Har word ke internal difference ko pakad, poori chain solve karne ki jarurat nahi.<br/><br/><b>Ninja Technique:</b><br/>Har group ke 3 letters ke position gaps dekho:<br/>C(3) G(7) E(5) $\\rightarrow +4, -2$<br/>H(8) J(10) I(9) $\\rightarrow +2, -1$<br/>L(12) P(16) N(14) $\\rightarrow +4, -2$<br/>S(19) U(21) T(20) $\\rightarrow +2, -1$<br/>Pattern alternate chal raha hai. Toh next group mein $+4, -2$ gap hona chahiye.<br/>Options mein Y(25) C(3) A(1) check karo $\\rightarrow 25+4=29 (C)$, $3-2=1 (A)$. Bilkul set!"
+    },
+    {
+      "q_hi": "Select the number that can replace the question mark (?) in the following series. \n\n<b>1, 2, 4, 7, 13, 24, 44, ?</b>",
+      "o_hi": [
+        "81",
+        "73",
+        "63",
+        "112"
+      ],
+      "a": 0,
+      "s_hi": "<b>Pen-Free Observation:</b> Ye series dekhte hi Tribonacci ki smell aani chahiye. Pichle teen number jud ke agla ban raha hai.<br/><br/><b>Ninja Technique:</b><br/>$\\rightarrow 1+2+4 = 7$<br/>$\\rightarrow 2+4+7 = 13$<br/>$\\rightarrow 4+7+13 = 24$<br/>$\\rightarrow 7+13+24 = 44$<br/>$\\rightarrow 13+24+44 = 81$."
+    },
+    {
+      "q_hi": "Find out the correct alternative that when filled in the blanks in the same sequence will make the series logically complete. \n\nJ _ S X _ W U T N S _ P _ O Y L R K A _",
+      "o_hi": [
+        "AKVML",
+        "ALWPH",
+        "ALWLK",
+        "AKUOG"
+      ],
+      "a": 1,
+      "s_hi": "<b>Method:</b> Total 20 spaces hain. Inhe 5 groups of 4 mein baat lo, ya columns banakar compare karo:<br/>Col 1: J, _, N, _, R. Series is J(10), L(12), N(14), P(16), R(18). (Yani +2 chal raha hai). Blanks = L, P.<br/>Col 2: _, W, S, O, K. Series is A(27), W(23), S(19), O(15), K(11). (Yani -4 chal raha hai). Blank = A.<br/>Col 3: S, U, _, Y, A. Series +2 mein hai. Blank = W.<br/>Col 4: X, T, P, L, _. Series -4 mein hai. Blank = H.<br/>Chronological order of blanks padho: A, L, W, P, H."
+    },
+    {
+      "q_hi": "Select the number that can replace the question mark (?) in the following series. \n\n<b>11, 14, 31, 14, 16, 34, 17, 18, 37, ?, 20, ?</b>",
+      "o_hi": [
+        "21, 41",
+        "20, 41",
+        "21, 40",
+        "20, 40"
+      ],
+      "a": 3,
+      "s_hi": "<b>Pen-Free Observation:</b> Series bohot lambi hai, iska matlab isme 3-3 ke chunks (triplets) hain. Pattern ko break kar!<br/><br/><b>Ninja Technique:</b><br/>Triplets mein divide kar:<br/>(11, 14, 31) $\\rightarrow$ (14, 16, 34) $\\rightarrow$ (17, 18, 37) $\\rightarrow$ (?, 20, ?)<br/>Har triplet ke elements compare kar:<br/>1st element: $11 \\xrightarrow{+3} 14 \\xrightarrow{+3} 17 \\xrightarrow{+3} 20$<br/>2nd element: $14 \\xrightarrow{+2} 16 \\xrightarrow{+2} 18 \\xrightarrow{+2} 20$<br/>3rd element: $31 \\xrightarrow{+3} 34 \\xrightarrow{+3} 37 \\xrightarrow{+3} 40$<br/>Toh missing numbers honge 20 aur 40. Option D correct hai."
+    },
+    {
+      "q_hi": "Find the next element that replace the ? Logically. \n\n10, 21, 54, 153, ?",
+      "o_hi": [
+        "451",
+        "443",
+        "450",
+        "464"
+      ],
+      "a": 2,
+      "s_hi": "<b>Method:</b> Dekh bhai, yahan bhi difference ka hi khel hai.<br/>21 - 10 = 11<br/>54 - 21 = 33<br/>153 - 54 = 99<br/>Differences dekho: 11, 33, 99. Har term $\\times 3$ ho raha hai. Toh agla difference $99 \\times 3 = 297$ hoga.<br/>153 + 297 = 450."
+    },
+    {
+      "q_hi": "Select the number from among the given options that can replace the question mark (?) in the following series. \n\n30, 22, 36, 75, 178, ?",
+      "o_hi": [
+        "400",
+        "480",
+        "343",
+        "361"
+      ],
+      "a": 1,
+      "s_hi": "<b>Ninja Technique (Top Tier Trap):</b> Ye question CGL ke best level traps mein se ek hai. Direct difference se brain freeze ho jayega. JSM / Multiplication base lagana padega.<br/><br/><b>Method:</b><br/>30 $\\times$ 0.5 + 7 = 15 + 7 = 22<br/>22 $\\times$ 1 + 14 = 36<br/>36 $\\times$ 1.5 + 21 = 54 + 21 = 75<br/>75 $\\times$ 2 + 28 = 150 + 28 = 178<br/><br/>Multiplier 0.5 se badh raha hai, aur addition 7 ke multiples mein hai.<br/>Agla term = 178 $\\times$ 2.5 + 35.<br/>178 ka 2.5 times = $178 \\times \\frac{5}{2} = 445$.<br/>445 + 35 = 480."
+    },
+    {
+      "q_hi": "The series given below contains a sequence of numbers. Accordingly identify the incorrect combination. \n\n5, 10, 40, 46, 180, 185, 741",
+      "o_hi": [
+        "46,741",
+        "10,46",
+        "180,741",
+        "10,180"
+      ],
+      "a": 0,
+      "s_hi": "<b>Method (Exam Approach):</b> Bhai series ko chote tukdo mein tod kar relation dhundho.<br/>Pattern ye chalna chahiye tha: +5, $\\times$ 4, +5, $\\times$ 4.<br/>Check karte hain:<br/>5 + 5 = 10<br/>10 $\\times$ 4 = 40<br/>40 + 5 = 45 (Lekin series mein 46 likha hai. So 46 is WRONG).<br/>Agar 45 hota, toh next: 45 $\\times$ 4 = 180 (Sahi hai).<br/>180 + 5 = 185 (Sahi hai).<br/>185 $\\times$ 4 = 740 (Lekin series mein 741 likha hai. So 741 is WRONG).<br/>Isliye galat combination 46 aur 741 ka hai."
+    }
+  ]
+}

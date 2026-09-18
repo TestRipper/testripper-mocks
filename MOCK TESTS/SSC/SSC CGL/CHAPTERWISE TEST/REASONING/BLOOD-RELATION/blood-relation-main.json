@@ -1,0 +1,238 @@
+{
+  "quizTitle": "blood-relation-main",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions":[
+  {
+    "q": "A family consisting of D, P, W, Y and M is travelling to meet one another. W is travelling with his daughters, D and P. M is travelling with his maternal grandmother, Y. D is the mother of M. How is Y related to P?",
+    "o": [
+      "Daughter",
+      "Mother",
+      "Grandmother",
+      "Sister"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, tree bana le fatafat! W ki 2 betiyan hain D aur P. D, M ki maa hai, aur M ki nani (maternal grandmother) Y hai. Iska matlab D ki maa Y hui! Ab agar D aur P behene hain, toh Y pakka P ki bhi Maa hui. CGL aise free ke marks deta hai, bas family tree saaf banana hai!"
+  },
+  {
+    "q": "P is the sister of Q and mother of R. S is the daughter-in-law of W and wife of Q. W's grandson M is the nephew of P and brother of V. W has only two children. How is Q related to V?",
+    "o": [
+      "Uncle",
+      "Father",
+      "Brother",
+      "Son"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, ye standard SSC CGL trap hai jisme 'only two children' ka use karke relation fix karte hain. W ke 2 bacche hain: P (beti) aur Q (beta, kyunki S uski patni hai). M, P ka bhatija hai matlab Q ka beta hai, aur V ka bhai hai. To Q ban gaya V ka Father! Options elimination se sidha Father tick kar."
+  },
+  {
+    "q": "P is the father of E. E is the sister of A. A has only one brother L. T is the only grandson of P. M is the wife of A. Only one child of P is married. How is L related to T?",
+    "o": [
+      "Father",
+      "Son",
+      "Father's brother",
+      "Mother's brother"
+    ],
+    "a": 2,
+    "s": "Dekh bhai dhyan se, P ke bacche hain E (behan), A (husband of M) aur L (A ka iklauta bhai). Sirf ek baccha married hai, matlab A married hai! T, P ka iklauta pota hai, to pakka T, A ka beta hua. Ab poocha hai L ka T se relation. L, A ka bhai hai, to L, T ke 'Father's brother' (Chacha) hue. CDS me bhi aisi wording ghumata hai!"
+  },
+  {
+    "q": "F is the father of G's father. G is married to H. H is the mother of I. J is the sister of G. K is the father of J. J is married to L. M is the brother of I and married to N. How is J related to I?",
+    "o": [
+      "Father's sister",
+      "Sister",
+      "Father's brother",
+      "Mother's mother"
+    ],
+    "a": 0,
+    "s": "Bhai, lamba chouda paragraph dekh ke darna mat! SSC CGL bas time waste karwana chahta hai. Seedha point pe aa: G aur H pati-patni hain, aur H, I ki maa hai (matlab G pita hai). J, G ki behan hai. To J ka I se kya relation hua? Seedha 'Bua' yaani 'Father's sister'. Baaki K, L, M, N ka data bas distract karne ke liye hai! Exam me irrelevant data skip karna seekh."
+  },
+  {
+    "q": "In a certain code language, $A + B$ means 'A is the wife of B', $A - B$ means 'A is the brother of B', $A \\times B$ means 'A is the father of B', $A \\div B$ means 'A is the mother of B'. Based on the above, if $P \\times Q + R - S \\div T$, which of the following is true?",
+    "o": [
+      "T is the son of S.",
+      "Q is the sister of S.",
+      "R is T's mother's brother.",
+      "P is the father of R."
+    ],
+    "a": 2,
+    "s": "Dekh bhai, isko back-to-front ya part-by-part decode karte hain.<br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Code</th><th style='text-align:left;padding:4px;color:var(--p2)'>Meaning</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>P $\\times$ Q</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>P is father of Q</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>Q + R</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>Q is wife of R (R is male)</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>R - S</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>R is brother of S</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>S $\\div$ T</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>S is mother of T</td></tr></table><br>Maa S ka bhai R hai, isliye R 'T's mother's brother' (Mama) hua. Option C is absolutely correct! CGL me family tree ka rough sketch 10 second me ban jana chahiye."
+  },
+  {
+    "q": "In a certain code language, $B + D$ means 'B is the father-in-law of D', $B \\& D$ means 'B is the brother of D', $B \\# D$ means 'B is the wife of D', $B \\$ D$ means 'B is the son of D', $B @ D$ means 'B is the mother of D'. If O is the only child of his parents, then which of the given options is true in reference to the following expression: $M \\# L \\& N @ O \\$ P + R$?",
+    "o": [
+      "R is the wife of O.",
+      "L and P are siblings.",
+      "N has only one son and one daughter.",
+      "N is the mother of R."
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye hai CGL Mains level ka blood relation.<br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Relation</th><th style='text-align:left;padding:4px;color:var(--p2)'>Deduction</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>N @ O $\\$ P</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>N is mother of O, O is son of P $\\Rightarrow$ N & P are Husband-Wife.</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>O is only child</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>O inka iklauta beta hai.</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'><b>P + R</b></td><td style='padding:6px;border-bottom:1px solid var(--brd)'>P is father-in-law of R $\\Rightarrow$ R pakka O ki patni hogi!</td></tr></table><br>Baaki statement $M \\# L \\& N$ check karne ki zaroorat hi nahi padti agar direct peeche se decode karta. Option A is the right answer. Smart work > Hard work!"
+  },
+  {
+    "q": "In a certain code language, $X + Y$ means 'X is the sister of Y', $X \\# Y$ means 'X is the husband of Y', $X \\$ Y$ means 'X is the daughter of Y', $X \\% Y$ means 'X is the mother of Y', $X @ Y$ means 'X is the brother of Y'. Based on the above, which of the following expressions denotes that 'D is the wife of F'?",
+    "o": [
+      "$D \\% P \\# K + R \\% F$",
+      "$P \\$ D \\% R + K \\% F$",
+      "$F @ R + K + P \\% D$",
+      "$D \\% P + K @ R \\$ F$"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, options elimination technique lagayenge yahan! Hamein chahiye 'D is wife of F'. Matlab D aur F ek hi generation me hone chahiye as a couple.<br>Option (d) ko check kar: $D \\% P + K @ R \\$ F$.<br>Iska matlab D maa hai P ki. P behan hai K ki. K bhai hai R ka. Aur R beti hai F ki. Agar D maa hai in sabki aur F pita hai, toh obvious si baat hai D patni hui F ki! Ye trick CGL me hamesha kaam aati hai, pehle generation gap check kar liya kar!"
+  },
+  {
+    "q": "If $S \\$ T$ means T is father of S, $S \\# T$ means T is mother of S, $S * T$ means T is sister of S and $S @ T$ means T is husband of S, then which of the following option indicates the relationship 'D is paternal grandmother of A'?",
+    "o": [
+      "$A * Q \\$ M \\# D$",
+      "$A @ Q \\$ M \\# D$",
+      "$A \\# Q \\$ D * M$",
+      "$A \\# Q @ M \\# D$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye 'REVERSE' coding ka trap hai! Yahan 'S \\$ T' ka matlab T pita hai S ka (Ulta relation diya hai).<br>Option (A) ko decode kar: $A * Q \\$ M \\# D$.<br>1. $A * Q \\Rightarrow$ Q behan hai A ki.<br>2. $Q \\$ M \\Rightarrow$ M pita hai Q ka (toh A ka bhi pita hua).<br>3. $M \\# D \\Rightarrow$ D maa hai M ki.<br>Matlab D, A ke pita ki maa hai $\\Rightarrow$ Paternal Grandmother (Dadi). CGL me yahi aage-peeche karke time waste karate hain, alert rehna!"
+  },
+  {
+    "q": "$L \\& M$ means 'L is the father of M'. $L = M$ means 'L is the sister of M'. $L \\wedge M$ means 'L is the son of M's brother'. $L \\# M$ means 'L is the wife of M'. Which of the following options means, 'B is the father-in-law of D'?",
+    "o": [
+      "$B \\wedge A = C \\# D$",
+      "$B = C \\# A \\& D$",
+      "$A \\wedge B \\& C \\# D$",
+      "$D \\& A = C \\# B$"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, B ko D ka sasur (father-in-law) banana hai, matlab D ki patni/pati ka pita B hona chahiye.<br>Option (C) check kar: $A \\wedge B \\& C \\# D$<br>1. $B \\& C \\Rightarrow$ B pita hai C ka.<br>2. $C \\# D \\Rightarrow$ C patni hai D ki.<br>Clear ho gaya na? D ki patni C hai, aur C ka pita B hai. Toh B automatic D ka sasur ban gaya! Aage ka decode karne ki zaroorat hi nahi. Options se khelo, CDS aur CGL me time bachega."
+  },
+  {
+    "q": "$A \\div B$ means 'A is B's son'. $A \\times B$ means 'A is B's sister'. $A + B$ means 'A is B's brother'. $A - B$ means 'A is B's mother'. Using the mathematical operators meaning the same as given above, which of the following means that 'S is T's husband'?",
+    "o": [
+      "$T - R + V \\div S$",
+      "$X \\times R - V + S$",
+      "$T - R \\div V \\times S$",
+      "$T \\div R \\times V + S$"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, 'S is T's husband' prove karna hai, matlab T maa honi chahiye aur S pita, tabhi dono husband-wife honge.<br>Option (A) utha: $T - R + V \\div S$<br>$T - R \\Rightarrow$ T maa hai R ki.<br>$R + V \\Rightarrow$ R bhai hai V ka (matlab T maa hai V ki bhi).<br>$V \\div S \\Rightarrow$ V beta hai S ka. Ab agar V ki maa T hai aur V beta hai S ka, toh pakka S, V ka pita hua. Isliye S, T ka pati ban gaya! Approximation aur backward checking lagao exam me."
+  },
+  {
+    "q": "In a certain code language, $A \\$ B$ means 'A is the mother of B', $A \\# B$ means 'A is the father of B', $A ! B$ means 'A is the sister of B', $A @ B$ means 'A is the brother of B', $A * B$ means 'A is the wife of B', $A > B$ means 'A is the husband of B', $A \\% B$ means 'A is the father-in-law of B', $A \\wedge B$ means 'A is the mother-in-law of B'. Based on the above, how is U related to A if a) $P > Q \\$ R > S ! T$, b) $U \\# T$, c) $R \\# A$?",
+    "o": [
+      "Father",
+      "Son",
+      "Mother's brother",
+      "Mother's father"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, itna lamba question dekh ke skip nahi karna hai. Hamein sirf U aur A ka link chahiye.<br>1. $R \\# A \\Rightarrow$ R pita hai A ka.<br>2. $R > S ! T \\Rightarrow$ R pati hai S ka (matlab S maa hui A ki), aur S behan hai T ki.<br>3. $U \\# T \\Rightarrow$ U pita hai T ka. Kyunki S aur T behene/bhai hain, U pita hua S ka bhi.<br>S maa hai A ki, aur U pita hai S ka. Toh U ban gaya A ki Maa ka Pita (Maternal Grandfather). CGL wale bas a, b, c statements deke darate hain!"
+  },
+  {
+    "q": "Looking at a picture of a woman Vineeta said, \"She is the wife of my father's brother's father.\" How is the woman in the picture related to Vineeta?",
+    "o": [
+      "Father's sister",
+      "Mother-in-law",
+      "Mother",
+      "Father's mother"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, isko verbal hi udaya kar bina pen uthaye! 'My father's brother' = Mere Chacha. 'Chacha's father' = Mere Dada (Grandfather). Aur 'Dada's wife' = Dadi (Father's mother). Sidha option D tick kar aur aage badh. Aise questions me pen paper use kiya toh time waste hoga!"
+  },
+  {
+    "q": "Rahul attended a competition, wherein his mother's paternal grandfather's only son's only granddaughter was fighting against the clock. How is the person in the competition related to Rahul?",
+    "o": [
+      "Sister",
+      "Maternal grandmother",
+      "Mother",
+      "Daughter"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, thoda ghuma ke poocha hai par hai aasan. Rahul ki Maa ka Paternal Grandfather (Maa ke Dada). Maa ke Dada ka iklauta beta (Maa ka Pita). Ab Maa ke Pita (Nana) ki iklauti poti/natni (granddaughter) kaun hogi? Ya toh khud Rahul ki behan, kyunki Rahul ladka hai. Isliye seedha answer 'Sister' aayega. Tree banane se accuracy 100% rehti hai!"
+  },
+  {
+    "q": "Pointing to the photograph of a girl Akanksha, Rajeev said, \"Her daughter's father's wife's mother is my wife's daughter's mother's mother-in-law\". How is Rajeev related to Akanksha?",
+    "o": [
+      "Paternal uncle",
+      "Brother",
+      "Father",
+      "Maternal uncle"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, equations ki tarah solve kar isko LHS aur RHS banake.<br>LHS: Akanksha ki beti ka pita (uska Pati) $\\rightarrow$ uski patni (khud Akanksha) $\\rightarrow$ uski Maa = Akanksha ki Maa.<br>RHS: Rajeev ki patni ki beti (Rajeev ki beti) $\\rightarrow$ uski maa (Rajeev ki patni) $\\rightarrow$ uski saas (Rajeev ki Maa).<br>Dono equal hain: Akanksha ki Maa = Rajeev ki Maa. Matlab dono Bhai-Behan hain! Rajeev male hai toh pakka Brother hua. CGL mains ka top-tier hacking method hai ye!"
+  },
+  {
+    "q": "Amil points towards a girl and says she is his only daughter's father's paternal grandfather's granddaughter. Amil's father has no siblings. How is the girl related to Amil?",
+    "o": [
+      "Granddaughter",
+      "Sister",
+      "Paternal grandmother",
+      "Mother"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, break it down: 'Amil's only daughter's father' matlab khud Amil. Fir 'Amil's paternal grandfather' matlab Amil ke Dada. Ab Amil ke pita ka koi bhai-bahan nahi hai (no siblings). Toh Dada ki poti kaun hogi? Pakka Amil ke pita ki hi beti hogi. Aur Amil ke pita ki beti Amil ki 'Sister' lagegi! Logic lagao, tricks se fraction of seconds me answer aayega."
+  },
+  {
+    "q": "Looking at the family picture, Amit said, \"He is my wife's father's son's only sister's father-in-law.\" How is the person in the photo related to Amit?",
+    "o": [
+      "Father-in-law",
+      "Wife's brother",
+      "Father",
+      "Son"
+    ],
+    "a": 2,
+    "s": "Dekh bhai, direct elimination!<br>'Amit ki wife ke father' = Sasur.<br>'Sasur ka beta' = Sala (Brother-in-law).<br>'Sale ki iklauti behan' = Khud Amit ki wife.<br>'Wife ke father-in-law' = Amit ke apne Pita (Father).<br>Language ko reverse me padhna seekho, CGL me yahi time bachata hai. Seedha Father pe tick maar."
+  },
+  {
+    "q": "Pointing to a woman, Param (a man) said, \"She is the mother-in-law of the mother-in-law of the daughter-in-law of my father.\" How is Param related to the woman?",
+    "o": [
+      "Father",
+      "Brother",
+      "Grandson",
+      "Son"
+    ],
+    "a": 2,
+    "s": "Dekh bhai dhyan se: Param (male) ke pita ki bahu (daughter-in-law) hui Param ki patni. Param ki patni ki saas (mother-in-law) hui Param ki Maa. Aur Param ki Maa ki saas hui Param ki Dadi (Grandmother).<br>Poocha hai Param ka kya relation hai us aurat se? Toh Param apni Dadi ka Pota (Grandson) hua. Aise reverse reading CGL ka favourite trap hai, dhokha mat khana!"
+  },
+  {
+    "q": "Pointing to a person in a photograph, a man, Amit, said, \"My only brother is his mother's father-in-law's son, but not his father.\" How is the person related to Amit?",
+    "o": [
+      "Brother",
+      "Father's father",
+      "Father",
+      "Son"
+    ],
+    "a": 3,
+    "s": "Dekh bhai, ye bahot gajab puzzle hai!<br>Amit ka iklauta bhai (maan le B). Ye B kiska beta hai? Uss photo wale person ki Maa ke sasur ka. Maa ka sasur matlab us person ka Dada.<br>Dada ka beta yaani person ka Pita ya Chacha. Question me saf diya hai ki B us person ka pita NAHI hai. Iska matlab B uska chacha hua.<br>Ab agar B chacha hai aur B ka iklauta bhai Amit hai, toh Amit hi uska Pita hua na! Isliye photo wala person Amit ka 'Son' (beta) hai. SSC CGL ke aise traps ko logic se foda kar!"
+  },
+  {
+    "q": "Pointing towards Sumit, Anuj said, \"He is my mother's father's son's brother's son\". If Vinita who is married to Kartik, is the mother of Anuj, then how is Vinita related to Sumit?",
+    "o": [
+      "Father's sister",
+      "Mother",
+      "Mother's sister",
+      "Sister"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, step-by-step jao: Anuj ki maa Vinita hai.<br>Vinita ke pita ka beta (Vinita ka bhai).<br>Us bhai ka bhai (Vinita ka dusra bhai).<br>Uska beta hai Sumit.<br>Matlab Sumit, Vinita ke bhai ka ladka (bhatija) hai. Toh Vinita kya lagi? Sumit ke pita ki behan (Bua) yaani 'Father's sister'. Kartik ka detail yahan bas confuse karne ke liye diya tha, ignore kar."
+  },
+  {
+    "q": "James said to David, \"That boy playing with the football is the younger of the two brothers of the daughter of my father's wife.\" How is the boy playing football related to James?",
+    "o": [
+      "Brother's son",
+      "Brother",
+      "Brother-in-law",
+      "Son"
+    ],
+    "a": 1,
+    "s": "Dekh bhai, kitna lallu sawal hai ye! 'My father's wife' = Meri Maa.<br>Maa ki beti = Meri Behan.<br>Behan ke do bhaiyo me se chhota bhai hai wo ladka. Ek bhai khud James hoga, toh dusra bhai wo ladka hoga jo football khel raha hai. Isliye seedha answer 'Brother' aayega. Language ko simplify karte hi CGL ke questions ghutne tek dete hain!"
+  },
+  {
+    "q": "A+B means A is the sister of B. A=B means A is the daughter of B. A#B means A is the son of B. A&B means A is the father of B. Based on the above information, find out which of the given statement can be the reason/s behind the assertion made below if it is given that 'H & N + Y = K = C'. Assertion: H is U's sister's husband? Reason A: D & U. Reason B: U # C.",
+    "o": [
+      "Only B is the reason behind the assertion",
+      "Neither A nor B is the reason behind the assertion",
+      "Only A is the reason behind the assertion",
+      "Both A and B are reason behind the assertion"
+    ],
+    "a": 0,
+    "s": "Dekh bhai, ye Assertion-Reason ka naya pattern hai jo exam ka level badhata hai!<br>Pehle equation solve kar: $H \\& N + Y = K = C$. H pita hai N aur Y ka. Y beti hai K ki, matlab H aur K pati-patni hain. K beti hai C ki.<br>Hamein chahiye: H, U ki behan ka pati ho. H pati hai K ka, toh K ko U ki behan hona padega!<br>Reason B utha: U # C $\\Rightarrow$ U beta hai C ka. Agar U beta hai aur K beti hai C ki, toh U aur K bhai-behan hue. Pura link baith gaya! Isliye only B is the reason. Aise tricky Qs mock me milenge, practice daba ke kar."
+  }
+]
+}
