@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Percentage-Concept-Revision- Set-06",
+  "Cutoff": "39",
+  "quizTime": "20",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "A student appeared in 6 papers. The maximum marks are the same for each paper. His marks in these papers are in the proportion 5 : 6 : 7 : 8 : 9 : 10. Overall he scored 60%. In how many papers he received less than 60% marks?",
+      "o": [
+        "3",
+        "2",
+        "4",
+        "5"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool Triggered: Unitary Scaling / Deviation</b><br/><br/><b>The 'Pen-Free' Observation First:</b> Data proportion me diya hai aur final relative constraint (60%) par focus hai. Total marks obtained ratio ke terms me jodo, waha se maximum marks ki imaginary value nikal lo.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... Sum of scores = $5+6+7+8+9+10 = 45x$. Ye 45x overall max marks ka 60% hai. Yaani $60\\% = 45x \\implies 100\\% (Total Max) = \\frac{45x}{60} \\times 100 = 75x$. 6 papers ka Total Max 75x hai, aur sab equal hain. Toh 1 paper ka Max = $\\frac{75x}{6} = 12.5x$. Kisi subject me 60% se kam aane ka constraint check karna hai. 12.5x ka 60% hota hai 7.5x. Toh kin subjects me 7.5x se kam hai? Pehle teen (5, 6, 7). Answer 3.<br/><br/><b>Method 2 (Concept Builder):</b> Algebraically assume Total Max = 600. Then 60% = 360. $45x = 360 \\implies x=8$. Marks are 40, 48, 56, 64, 72, 80. Each paper max = 100. 60% of 100 = 60. Marks &lt; 60 are 40, 48, 56 (3 papers). Same logic!<br/><br/><b>Best Exam Approach:</b> Method 1 me ek ratio base calculation hai jo dimag me jaldi process hota hai."
+    },
+    {
+      "q": "The population of bacteria in a culture prepared in a lab is 8 * 10^8. Their birth and death rates per hour are 12.75% and 10.75% respectively. Find their population in the culture after 3 hours.",
+      "o": [
+        "8,48,96,640",
+        "84,89,66,400",
+        "84,89,44,600",
+        "8,48,96,460"
+      ],
+      "a": 1,
+      "s": "<b>Tool Triggered: 2. Successive Change</b><br/><br/><b>The \"Pen-Free\" Observation First:</b><br/>Dekh bhai, exact calculation mat karna, unit digit aur DS laga! Net increase har ghante $12.75 - 10.75 = 2\\%$. Yani har ghante population $102\\%$ ho jayegi. 3 ghante baad options me zeroes se pehle wali digit check kar. $8 \\times 2 \\times 2 \\times 2 = 64$. Yani end me 4 aana chahiye zeroes se pehle. Sidha option 2!<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Unit digit check and zeroes match.<br/><br/>Mathematically :-<br/>$$ \\text{Net Rate} = 12.75\\% - 10.75\\% = +2\\% \\\\ \\text{Final Pop} \\propto 8 \\times 102 \\times 102 \\times 102 \\\\ \\text{Unit digit check} = 8 \\times 2 \\times 2 \\times 2 = 64 \\implies 4 \\\\ \\text{Zeroes cancel out} \\implies \\text{ends with } ...6400 $$<br/><br/><b>Method 2 (Concept Builder):</b><br/>Basic compound growth formula lagao.<br/><br/>Mathematically :-<br/>$$ A = P \\left(1 + \\frac{r}{100}\\right)^n \\\\ A = 8 \\times 10^8 \\times \\left(\\frac{102}{100}\\right)^3 \\\\ A = 800000000 \\times 1.02 \\times 1.02 \\times 1.02 \\\\ A = 800 \\times 1061208 = 848966400 $$<br/><br/><b>Exam Takeaway:</b> Examiner teri mazdoori nahi, smartness check kar raha hai. Aise options hamesha unit digit se toot'te hain."
+    },
+    {
+      "q": "A fruit seller sells $45\\%$ of the oranges that he has along with one more orange to a customer. He then sells $20\\%$ of the remaining oranges and 2 more oranges to a second customer. He then sells $90\\%$ of the now remaining oranges to a third customer and is still left with 5 oranges. How many oranges did the fruit seller have initially?",
+      "o": [
+        "100",
+        "121",
+        "111",
+        "120"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> Successive Change\n\n<b>Pen-Free Observation:</b> Dekh bhai, jab bhi successive remainder wala sawal ho aur numbers me kuch extra joda/ghataya jaye, wahan aage se equations banana suicide hai. Hamesha <b>Reverse Line Method</b> (Peeche se aage ki taraf) use kar.\n\n<b>Method 1 (Ninja Technique / Exam Approach):</b> C3 (Customer 3) ko $90\\%$ becha aur fir bhi 5 bache hain. Yani jo $10\\%$ bacha uski value 5 hai. Toh C3 ke aane se theek pehle total $50$ oranges the. C2 ke time: usne $20\\%$ beche aur 2 extra diye. Agar wo 2 extra nahi diye hote, toh uske paas $50+2=52$ hote. Ye 52, us stage ka $80\\%$ bacha hua hissa tha. Toh C2 ke aane se pehle total = $\\frac{52}{0.8} = 65$ the. C1 ke time: usne $45\\%$ beche aur 1 extra diya. Agar 1 extra nahi diya hota, toh $65+1=66$ bachte, jo initial ka $55\\%$ hote (kyunki $45\\%$ bik gaya tha). Toh Initial Total = $\\frac{66}{0.55} = 120$. Piche se socho, mind me ho jayega.\n\n<b>Method 2 (Concept Builder):</b> Options se uthakar forward track kar sakte ho agar reverse samajh nahi aa raha, jaise 120 ka 45% + 1 nikalna, fir jo bache uspe game khelna.\n\n<b>Exam Takeaway:</b> Remaining items aur constant adjustments wale sawal hamesha reverse engineering mangte hain.\n\n<table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Customer Stage</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Calculation (Reverse)</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Oranges Before</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Customer 3</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$5 / 0.10$</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">50</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Customer 2</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$(50+2) / 0.80$</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">65</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Customer 1 (Initial)</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$(65+1) / 0.55$</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">120</td></tr></table>"
+    },
+    {
+      "q": "A number first increased by $8\\%$ and then decreased by $3\\%$ to get 2619. What is $5\\%$ of that number?",
+      "o": [
+        "135",
+        "140",
+        "125",
+        "130"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Successive Change<br/><br/><b>Pen-Free Observation:</b> 1.08 aur 2619 dono mein 9 ka multiple chhupa hai, values directly kategi.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Net change $+8 - 3 - 0.24 = 4.76\\%$ up. $104.76\\% = 2619$, number 2500 aayega. Iska $5\\% = 2500 \\times 5/100 = 125$.<br/><br/><b>Method 2 (Concept Builder):</b> Fraction se chal $N \\times (27/25) \\times (97/100) = 2619$. 27 se kata 97 baar, 97 se 97 kata. Bacha 2500. $2500$ ka $5\\% = 125$.<br/><br/><b>Exam Takeaway:</b> Aise sawal me effective percentage ya fraction division dono tezi se answer dete hain, jo click kare laga de.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Math Step</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Result</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Effective %</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>$4.76\\%$</b></td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Original No.</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2500</b></td></tr></table>"
+    },
+    {
+      "q": "A cuboid tank has dimensions: length = 25 cm, breadth = 20 cm, and height = 16 cm. If the length is increased by 10%, the breadth is decreased by 20%, and the height is increased by 10%, what is the percentage change in volume?",
+      "o": [
+        "20% decrease",
+        "21.25% increase",
+        "23.75% increase",
+        "3.2% decrease"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool Triggered: Successive Change (The Chain Reaction)</b><br/><br/><b>The 'Pen-Free' Observation First:</b> Base dimensions (25, 20, 16) diye hain sirf darane aur time waste karne ke liye! Percentage change pucha hai, original values se koi matlab nahi. Net successive lagao.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai aise karna hai... $+10\\%, -20\\%, +10\\%$. Pehle 10 aur -20 ka net nikalo: $10 - 20 - \\frac{200}{100} = -12\\%$. Ab is -12% ka bache hue +10% ke sath lagao: $-12 + 10 - \\frac{120}{100} = -2 - 1.2 = -3.2\\%$. Negative sign ka matlab decrease. 10 second me answer! is se better +10, +10 ka successive 21-20 +\\frac{-20×21} {100} net 3.2 niklega successive seq jaruri noi 🫡😘<br/><br/><b>Method 2 (Concept Builder):</b> Ratio method se dekho: $L: 10 \\to 11$. $B: 5 \\to 4$. $H: 10 \\to 11$. Multiply kar: $500 \\to 484$. Change = -16. $\\% = \\frac{-16}{500} \\times 100 = -3.2\\%$.<br/><br/><b>Future Exam Takeaway:</b> Original data ignore karna aana chahiye jab answer relative (percentage) me pucha ho."
+    },
+    {
+      "q": "A mixture of milk and water contains 8 liters of water. On adding 6 liters of milk and 8 liters of water, the amount of milk becomes 75% of the new mixture. Now 10 liters of mixture is removed, then find the quantity of milk in the final mixture.",
+      "o": [
+        "32.5 L",
+        "40.5 L",
+        "37.5 L",
+        "34.5 L"
+      ],
+      "a": 1,
+      "s": "<b>Tool Triggered: 5. Unitary Scaling</b><br/><br/><b>The \"Pen-Free\" Observation First:</b><br/>Dekh bhai, Naya water 16L ho gaya. Milk $75\\%$ hai toh water $25\\%$ bacha, yani ratio 3:1. 1 part 16L hai, toh 3 part milk 48L hoga. Total mix 64L ka ho gaya. Jab 10L nikalenge toh $75\\%$ (yani 7.5L) milk niklega. 48 me se 7.5 hata, bacha 40.5L. Bina pen uthaye attack!<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Direct ratio mapping on new mixture.<br/><br/>Mathematically :-<br/>$$ \\text{New Water} = 8 + 8 = 16 \\text{ L} \\\\ \\text{Milk : Water} = 75\\% : 25\\% = 3 : 1 \\\\ 1 \\text{ unit} \\rightarrow 16 \\text{ L} \\implies 3 \\text{ units (Milk)} \\rightarrow 48 \\text{ L} \\\\ \\text{Milk removed} = 10 \\times \\frac{3}{4} = 7.5 \\text{ L} \\\\ \\text{Remaining Milk} = 48 - 7.5 = 40.5 \\text{ L} $$<br/><br/><b>Method 2 (Concept Builder):</b><br/>Initial variable maankar equation set karna.<br/><br/>Mathematically :-<br/>$$ \\text{Initial Milk} = M, \\quad \\text{Water} = 8 \\\\ \\frac{M + 6}{8 + 8} = \\frac{75}{25} = \\frac{3}{1} \\\\ M + 6 = 16 \\times 3 = 48 \\implies M = 42 \\text{ L} \\\\ \\text{Total New Mix} = 48 + 16 = 64 \\text{ L} \\\\ \\text{Milk in 10L removed} = \\frac{48}{64} \\times 10 = 7.5 \\text{ L} \\\\ \\text{Final Milk} = 48 - 7.5 = 40.5 \\text{ L} $$<br/><br/><b>Exam Takeaway:</b> Hamesha naye mixture ke final ratio par focus kar. Purani values nikalne ki zarurat hi nahi agar direct naya mix mil raha hai."
+    },
+    {
+      "q": "The income of Raman is Rs. 75400. He saves 23% of his income. If his income is increased by 27% and expenditure by 50%, then find the decrease in his savings.",
+      "o": [
+        "Rs. 8671",
+        "Rs. 8674",
+        "Rs. 8678",
+        "Rs. 8680"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling &amp; 3. JSM<br/><br/><b>Pen-Free Observation:</b> Income ko 100 units maan le. Jeb mein aaye $27$, par kharcha badha $38.5$. Toh extra kahan se aayega? Teri Saving se katenge!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Decrease base shift se nikal kar seedha Unitary scaling se mark kar.<br/><br/><b>Mathematically :-</b><br/>$$ I = 100, \\\\ S = 23, \\\\ E = 77 \\\\\\\\ \\\\Delta I = +27 \\\\\\\\ \\\\Delta E = 77 \\\\times 50\\\\% = +38.5 \\\\\\\\ \\\\Delta S = 27 - 38.5 = -11.5 \\\\ units \\\\\\\\ Value = 75400 \\\\times 11.5\\\\% = 8671 $$<br/><br/><b>Method 2 (Concept Builder):</b> Tera Deviation Method. Percentage change in Saving nikala jo ki $-50\\%$ aaya aur fir wapas original par lagaya.<br/><br/><b>Mathematically :-</b><br/>$$ S_{\\\\%} = 27\\\\% + \\\\frac{(27-50) \\\\times 77}{23}\\\\% = -50\\\\% \\\\\\\\ Value = (75400 \\\\times 23\\\\%) \\\\times 50\\\\% \\\\\\\\ = 17342 \\\\times 0.5 = 8671 $$<br/><br/><b>Exam Takeaway:</b> Jab absolute value (Rs.) mein puche toh Method 1 better hai, percent change puche toh Deviation better hai.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">List I (Question Demand)</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">List II (Best Method)</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>A.</b> Jab puche: '% Change in Saving batao'</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1.</b> Tera Deviation Method</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>B.</b> Jab puche: 'Absolute Value (Rs. mein) kitni giri?'</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2.</b> Method 1 (Unitary 100 base)</td></tr></table>"
+    },
+    {
+      "q": "In an examination, <b>(A + 6)%</b> of the students failed in Mathematics and <b>(A - 8)%</b> failed in Science. 28% of the students failed in both the subjects. If the percentage of students who passed in both the subjects was 50%, then what is the value of A?",
+      "o": [
+        "25",
+        "50",
+        "40",
+        "60"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, total bachhe humesha $100\\%$ hote hain. Jo dono subjects me pass hue wo $50\\%$ de rakhe hain, toh iska matlab jo kisi na kisi ek me (ya dono me) fail hue wo total $100 - 50 = 50\\%$ honge. Seedha set theory yaad kar.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Universal set wala formula laga aur equation turant solve kar de!<br/><br/>Mathematically :-<br/>$$n(M \\cup S) = n(M) + n(S) - n(M \\cap S)$$<br/>$$50 = (A + 6) + (A - 8) - 28$$<br/>$$50 = 2A - 30 \\implies 2A = 80 \\implies A = 40$$<br/><br/><b>Method 2 (Concept Builder):</b> Venn diagram ke logic se only math aur only science ke fail nikal ke total bana le.<br/><br/>Mathematically :-<br/>$$\\text{Only Math} = (A + 6) - 28 = A - 22$$<br/>$$\\text{Only Sci} = (A - 8) - 28 = A - 36$$<br/>$$\\text{Total Fail} = (A - 22) + (A - 36) + 28 = 2A - 30$$<br/>$$2A - 30 = 50 \\implies A = 40$$<br/><br/><b>Exam Takeaway:</b> Har baar Venn diagram draw karne me time barbaad mat kiya kar, seedha union wala set formula dimag me rakha kar!<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">List I</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">List II</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Total Union</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$</td></tr></table>"
+    },
+    {
+      "q": "Raman saves $x\\%$ of her income. If her income increases by $16\\%$ and expenditure increases by $10\\%$ then her savings increased by $50\\%$. What is the value of x?",
+      "o": [
+        "$12\\%$",
+        "$17\\%$",
+        "$18\\%$",
+        "$15\\%$"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> 3. JSM / Deviation (Cross-Product Alligation)<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, Income me bas $16\\%$ ka hike hai, aur Saving achanak $50\\%$ ud gayi, jabki Expenditure me halka sa $10\\%$ change hai. Iska seedha matlab hai initially saving ka share total income me bahut kam tha.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Seedha Alligation laga! Exp ($10\\%$) aur Sav ($50\\%$) mix hokar total Income ($16\\%$) ka change banate hain. Secondon ka game hai!<br/><br/><b>Mathematically :-</b><br/>$$ E = 10\\\\% , \\\\ S = 50\\\\% , \\\\ I = 16\\\\% \\\\\\\\ Ratio (E:S) = (50-16) : (16-10) \\\\\\\\ = 34 : 6 = 17 : 3 \\\\\\\\ Total \\\\ I = 17 + 3 = 20 \\\\\\\\ S\\\\% = \\\\frac{3}{20} \\\\times 100 = 15\\\\% $$<br/><br/><b>Method 2 (Concept Builder):</b> Maan le Total Income $= 100$, Sav $= x$, Exp $= 100-x$. Equation set kar: Naya Exp $+$ Nayi Sav $=$ Nayi Income. Par ye gadha majdoori hai.<br/><br/><b>Mathematically :-</b><br/>$$ I = 100, \\\\ S = x, \\\\ E = 100-x \\\\\\\\ E_{new} + S_{new} = I_{new} \\\\\\\\ 1.1(100-x) + 1.5x = 116 \\\\\\\\ 110 - 1.1x + 1.5x = 116 \\\\\\\\ 0.4x = 6 \\\\\\\\ x = 15\\\\% $$<br/><br/><b>Exam Takeaway:</b> Jab bhi $3$ components (A, B, aur unka combined total) ka percentage increase/decrease diya ho, Alligation se fast kuch nahi hota!<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">List I (Component Change)</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">List II (Ratio Share)</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>A.</b> Expenditure ($10\\%$)</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1.</b> $17$ units</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>B.</b> Savings ($50\\%$)</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2.</b> $3$ units</td></tr></table>"
+    },
+    {
+      "q": "F(a,b,c,d) = $3a + 2bc + 5c^2d$. If a, b, c and d increases by $65\\%$, $32\\%$, $25\\%$ and $5.6\\%$ respectively. What is the percentage change in F?",
+      "o": [
+        "$65\\%$",
+        "$63\\%$",
+        "$61\\%$",
+        "$67\\%$"
+      ],
+      "a": 0,
+      "s": "<b>[Core Tool Triggered: Successive Change]</b><br/><br/><b>Pen-Free Observation:</b> Dekh bhai, polynomial me agar har ek degree-term barabar percentage se badhe, toh total function bhi utne hi percentage se badhega. Har term ka degree net nikal kar dekh!<br/><br/><img onerror=\"this.onerror=null; this.src='https://wsrv.nl/?url=https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260804_165542.jpg';\" referrerpolicy=\"no-referrer\" src=\"https://raw.githubusercontent.com/TestRipper/testripper-mocks/refs/heads/main/assets/IMG_20260804_165542.jpg\" style=\"max-width:100%;\"/><br/><br/><b>Method 1 (Ninja Technique):</b><br/>Term 1: 'a' akela hai, $+65\\%$.<br/>Term 2: 'bc'. b ($+32\\%$), c ($+25\\%$). Net $= 32 + 25 + \\frac{32 \\times 25}{100} = 57 + 8 = +65\\%$.<br/>Term 3: '$c^2d$'. pehle c ka square yani $25+25+6.25 = 56.25\\%$. Phir iska d ($+5.6\\%$) ke sath: $56.25 + 5.6 + \\frac{56.25 \\times 5.6}{100} = 61.85 + 3.15 = +65\\%$.<br/>Chunki saare independent terms exactly $65\\%$ se badh rahe hain, unka addition bhi $65\\%$ se hi badhega!<br/><br/><b>Takeaway:</b> Ye CGL Mains ka trap hai. Calculations mat karo, pattern pakdo."
+    },
+    {
+      "q": "$5\\%$ of a = b, then b% of 20 is the same as",
+      "o": [
+        "$20\\%$ of a/2",
+        "$50\\%$ of a/2",
+        "$20\\%$ of a/20",
+        "$50\\%$ of a/20"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Unitary Scaling<br/><br/><b>Pen-Free Observation:</b> Variables dekhke ghabrana nahi hai, seedhi equation balance karni aani chahiye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Diya hai $b = 0.05a$. Pucha hai $b\\%$ of $20$, matlab $20b/100 = b/5$. Replace $b$ with $0.05a$, aayega $0.01a$. Options me dekho, $20\\%$ of $a/20 = 0.2 \\times (a/20) = 0.01a$ hai. Exact match!<br/><br/><b>Method 2 (Concept Builder):</b> $a$ ko 100 maan le, toh $b = 5$. Pucha hai $5\\%$ of $20 = 1$. Options check kar jisme $a=100$ rakhne pe 1 aaye. Option (c) $20\\%$ of $100/20 = 1$. Hit ho gaya!<br/><br/><b>Exam Takeaway:</b> Variables jab pareshan karein toh base value 100 assume karke option testing kar leni chahiye.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Method</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Result</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Equation</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$b/5 = 0.01a$</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Dummy Val</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$a=100 \\Rightarrow Ans=1$</td></tr></table>"
+    },
+    {
+      "q": "A jar is $\\frac{3}{5}$ full with a solution. After adding 3.2 liters, it becomes $\\frac{7}{8}$ full. What is the total capacity of the jar? (CPO TIER I- $\\frac{10}{12}$/2025 - SHIFT 2)",
+      "o": [
+        "11.64 L",
+        "24 L",
+        "20.5 L",
+        "18.28 L"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Unitary Scaling<br/><br/><b>Pen-Free Observation:</b> Fraction fraction khelna hai bas, base same kar LCM leke.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Sidha fraction difference le: $7/8 - 3/5 = 11/40$. Yani jar ka $11/40$ part $= 3.2$ L. Total $= (3.2 \\times 40)/11 = 128/11 = 11.6363...$ L. Options me $11.64$ clear match hai.<br/><br/><b>Method 2 (Concept Builder):</b> LCM 40 maan le. Pehle 24 litre bhara tha, ab 35 litre bhara. Fark aaya 11 unit ka jo 3.2 L ke barabar hai. Total 40 unit nikalne ke liye Unitary method laga.<br/><br/><b>Exam Takeaway:</b> Fractions ke questions me hamesha denominators ka LCM assume karke kaam aasan hota hai.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">State</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Fraction Part</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Difference</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>$11/40$</b></td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Value Match</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>$11/40 = 3.2 \\text{ L}$</b></td></tr></table>"
+    },
+    {
+      "q": "Weight of Ayush and Abhishek are in the ratio of 8:5. Abhishek's weight increases by 40 percent and total weight of Ayush and Abhishek both increases by 60 percent. If total weight becomes 104 kg, then what is the weight of Ayush after the increment?",
+      "o": [
+        "72 kg",
+        "69 kg",
+        "60 kg",
+        "75 kg"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> 3. JSM (Junior Satisfaction Method) / Deviation<br/><br/><b>Pen-Free Observation:</b> Dekh TestRipper bhai, pure group ka weight 60% bada, par ek banda sirf 40% bada, yani usne apne hisse ka 20% ghapla kiya. Dusre bande ko compensation dena padega!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Total deviation = Abhishek ne 5 unit par $-20\\%$ ka deficit diya yani $-100\\%$. Ye kami Ayush poori karega apne 8 unit par. Toh Ayush badhega $= 60\\% + (100/8)\\% = 72.5\\%$. Total weight naya 104 hai, purana $104/1.6 = 65$ tha. Purana Ayush $= (8/13) \\times 65 = 40$. Naya Ayush = $40 \\times 1.725 = 69$ kg. Solid concept!<br/><br/>Mathematically :-<br/>$\\text{Deficit} = 5 \\times (40-60) = -100\\%$<br/>$\\text{Ayush Inc} = 60 + \\frac{100}{8} = 72.5\\%$<br/>$\\text{Old Total} = \\frac{104}{1.6} = 65$<br/>$\\text{Old Ayush} = 65 \\times \\frac{8}{13} = 40$<br/>$\\text{New Ayush} = 40 \\times 1.725 = 69$<br/><br/><b>Method 2 (Concept Builder):</b> $8x$ aur $5x$ maan. Dono ko add karke equation set up kar, solve karne me pasina aayega.<br/><br/>Mathematically :-<br/>$8x + 5x = 13x$<br/>$13x \\times 1.6 = 104 \\implies 20.8x = 104 \\implies x = 5$<br/>$\\text{Ayush}_{old} = 40, \\text{Abhishek}_{old} = 25$<br/>$\\text{Abhishek}_{new} = 25 \\times 1.4 = 35$<br/>$\\text{Ayush}_{new} = 104 - 35 = 69$<br/><br/><b>Exam Takeaway:</b> JSM Deviation method se badhe se badhe weighted average ke questions tod sakte ho.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Person</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Increment</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Abhishek</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$40\\%$</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Ayush</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$72.5\\%$</td></tr></table>"
+    },
+    {
+      "q": "Number of females in a city is $22.22\\%$ less than the number of male and the percentage of the children among male and female are $25\\%$ and $40\\%$ respectively. If the number of adults in the city is 76650, then find the number of children in the city?",
+      "o": [
+        "2525",
+        "35350",
+        "37875",
+        "32320"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, $22.22\\%$ dekhte hi dimaag me $2/9$ aana chahiye. Males ko base 9 maan, toh females 7 hongi. Calculation asaan karne ke liye 900 aur 700 maan le.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> M=900, F=700. Children $25\\%$ and $40\\%$ hain toh Adults kitne honge? $75\\%$ and $60\\%$. Adult sum nikal ke real value se equate kar de. 1 unit aate hi children ke total se multiply maar.<br/><br/>Mathematically :-<br/>$M=900, F=700$<br/>$\\text{Child M} = 900 \\times 0.25 = 225$<br/>$\\text{Child F} = 700 \\times 0.40 = 280$<br/>$\\text{Total Child} = 505$<br/>$\\text{Adult} = 1095 \\equiv 76650$<br/>$1 \\text{ unit} = 70$<br/>$\\text{Ans} = 505 \\times 70 = 35350$<br/><br/><b>Method 2 (Concept Builder):</b> Fraction ko theek se tod: Adult M nikal aur Adult F nikal. Total adults ki imaginary unit ko 76650 se compare karke unitary method lagana hai.<br/><br/>Mathematically :-<br/>$\\text{Adult M} = 900 \\times 0.75 = 675$<br/>$\\text{Adult F} = 700 \\times 0.60 = 420$<br/>$\\text{Total Adults} = 1095 \\equiv 76650$<br/>$1 \\text{ unit} = 70$<br/>$\\text{Children} = (900-675) + (700-420) = 505$<br/>$\\text{Ans} = 505 \\times 70 = 35350$<br/><br/><b>Exam Takeaway:</b> Jab decimals me percentage aaye toh base humesha aisi unit lo jo fraction ke denominator ka multiple ho (yaha 9).<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Fraction</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Value</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>$22.22\\%$</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$2/9$</td></tr></table>"
+    },
+    {
+      "q": "There are two slabs of income tax, $10\\%$ tax on whole income for income up to $3$ lakh and $15\\%$ tax on whole income for income above $3$ lakh. Arun tried to evade tax by hiding some of the income, to fall in the $10\\%$ tax slab. The amount hid by Arun is $\\frac{4}{9}$ of the original taxable income. If Arun paid $\\text{Rs. } 25,000$ as tax, what is the original amount of tax he had to pay?",
+      "o": [
+        "67500",
+        "65000",
+        "66500",
+        "68000"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Unitary Scaling<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, hidden fraction $\\frac{4}{9}$ hai, toh usne show kitni kari? $\\frac{5}{9}$ kari! Aur us dikhayi income par usne $25,000$ tax bhara, waha se direct seedhi line me total base pata chal jayega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Ulta chalte hain. Language ko todna aana chahiye tabhi CGL fukega! Mathematically :- $$ 10\\% \\text{ of Declared} = 25,000 \\implies \\text{Declared} = 2,50,000 \\\\ \\text{Hidden} = \\frac{4}{9} \\implies \\text{Declared} = \\frac{5}{9} \\\\ \\frac{5}{9} \\text{ unit} = 2,50,000 \\implies \\text{Total} = 4,50,000 \\\\ \\text{Original Tax} = 15\\% \\times 4,50,000 = 67,500 $$<br/><br/><b>Method 2 (Concept Builder):</b> Let original income $= x$. Math steps proper follow karne honge. Mathematically :- $$ \\text{Hid} = \\frac{4x}{9} \\implies \\text{Declared} = \\frac{5x}{9} \\\\ 0.10 \\times \\frac{5x}{9} = 25000 \\\\ \\frac{0.50x}{9} = 25000 \\implies x = 4,50,000 \\\\ \\text{Orig Tax} = 0.15 \\times 450000 = 67500 $$<br/><br/><b>Exam Takeaway:</b> Fraction 'hidden' se direct us 'shown' fraction par focus shift karo jispe mathematical operation lag raha hai.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Step Action</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Outcome</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>A.</b> Tax to Declared Income</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1.</b> $25k \\implies 2.5$ Lakh (at $10\\%$)</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>B.</b> Original Income Logic</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2.</b> $\\frac{5}{9}$ unit $= 2.5$ L $\\implies$ Total $= 4.5$ L</td></tr></table>"
+    },
+    {
+      "q": "The salaries of Prashant and Sujal together amount to 24000. Prashant spends (x - 5)% of his salary and Sujal, (x + 5)% of his. If ratio of their income is 3 : 5 and their savings are same, then what is difference between their expenditure?",
+      "o": [
+        "9000",
+        "6000",
+        "900",
+        "4500"
+      ],
+      "a": 1,
+      "s": "<b>Tool Triggered: 5. Unitary Scaling</b><br/><br/><b>The \"Pen-Free\" Observation First:</b><br/>Dekh bhai, Income ratio 3:5 hai, total 8 unit = 24000. Toh Prashant = 9000, Sujal = 15000. Dono ki saving barabar hai. Agar Income ka gap 6000 hai aur savings same hain, toh Expenditure ka gap directly Income ke gap ke barabar hoga! Calculation ki zarurat hi nahi thi!<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Logic aur Common Sense.<br/><br/>Mathematically :-<br/>$$ \\text{Income (P)} = \\frac{3}{8} \\times 24000 = 9000 \\\\ \\text{Income (S)} = \\frac{5}{8} \\times 24000 = 15000 \\\\ \\text{Income} = \\text{Exp} + \\text{Sav} \\\\ \\text{If } \\text{Sav}_P = \\text{Sav}_S, \\text{ then:} \\\\ \\text{Inc}_S - \\text{Inc}_P = \\text{Exp}_S - \\text{Exp}_P \\\\ \\text{Diff} = 15000 - 9000 = 6000 $$<br/><br/><b>Method 2 (Concept Builder):</b><br/>Percentage equate karke x nikalna.<br/><br/>Mathematically :-<br/>$$ \\text{Sav}_P = 100 - (x - 5) = (105 - x)\\% \\\\ \\text{Sav}_S = 100 - (x + 5) = (95 - x)\\% \\\\ 9000 \\times (105 - x) = 15000 \\times (95 - x) \\\\ 3(105 - x) = 5(95 - x) \\implies 315 - 3x = 475 - 5x \\\\ 2x = 160 \\implies x = 80 \\\\ \\text{Exp}_P = 75\\% \\text{ of } 9000 = 6750 \\\\ \\text{Exp}_S = 85\\% \\text{ of } 15000 = 12750 \\\\ \\text{Diff} = 12750 - 6750 = 6000 $$<br/><br/><b>Exam Takeaway:</b> Jab savings same ho toh Income ka difference seedha Expenditure ke difference ke barabar hota hai. x nikalna bewakoofi thi!"
+    },
+    {
+      "q": "If A's income is $20\\%$ more than B's and B earns $\\text{Rs. } 50,000$, what percent less is B's income than A's? (CHSL TIER I - 24/11/2025 - SHIFT 1)",
+      "o": [
+        "$25\\%$",
+        "$20\\%$",
+        "$16.66\\%$",
+        "$18\\%$"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> 1. CPR (Constant Product Ratio)<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, yaha 50,000 sirf tera time waste karne ke liye diya hai! Jab options percentage me ho, toh actual value ka koi kaam nahi. A bada hai, wapas B pe aana hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Seedha CPR thok! Increase hai $+20\\% = +\\frac{1}{5}$. Toh decrease hoga $-\\frac{1}{6}$. Aur $\\frac{1}{6}$ hota hai seedha $16.66\\%$. Without pen solve hoga ye!<br/><br/>Mathematically :-<br/>$\\text{Inc} = +\\frac{1}{5}$<br/>$\\text{Dec} = -\\frac{1}{6} = 16.66\\%$<br/><br/><b>Method 2 (Concept Builder):</b> Maan le B ki income 100 hai, toh A ki 120 hogi. B kitna kam hai? 20 kam hai. Par kis base pe? A ke base pe (120). Fraction bana de.<br/><br/>Mathematically :-<br/>$A = 120$<br/>$B = 100$<br/>$\\text{Diff} = 20$<br/>$\\% = \\frac{20}{120} \\times 100 = 16.66\\%$<br/><br/><b>Exam Takeaway:</b> Useless absolute values ko exam me humesha ignore marna seekh. Percentage to Percentage conversion me base shift kaam aata hai!<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">CPR Shift</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Fraction</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Increase</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$+1/5$</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Decrease</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$-1/6 = 16.66\\%$</td></tr></table>"
+    },
+    {
+      "q": "A student gets 66 marks more in French than what she got in German. Her German marks are $28\\%$ of the sum of her French and German marks. What are her French marks?",
+      "o": [
+        "120",
+        "72",
+        "84",
+        "108"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> Cross-Product Method (Ratio Conversion)<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, $28\\% = \\frac{7}{25}$ hota hai. Toh German ke marks $7$ unit hue out of $25$. Bacha French jiske marks $18$ unit honge. Answer hamesha $18$ ka multiple hoga. Direct $108$ chamak raha hai na?<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Seedha percentage ko fraction me phek kar maar! Mathematically :- $$ 28\\% = \\frac{7}{25} \\\\ G = 7, F = 25 - 7 = 18 \\implies F:G = 18:7 \\\\ F - G = 11 \\text{ units} = 66 \\implies 1 \\text{ unit} = 6 \\\\ F = 18 \\times 6 = 108 $$<br/><br/><b>Method 2 (Concept Builder):</b> Equations solve karne me bahut waqt niklega. Mathematically :- $$ G = 0.28(F + G) \\\\ G = 0.28F + 0.28G \\implies 0.72G = 0.28F \\\\ \\frac{F}{G} = \\frac{72}{28} = \\frac{18}{7} \\\\ F - G = 66 \\implies 18x - 7x = 66 \\implies 11x = 66 \\implies x = 6 \\\\ F = 18(6) = 108 $$<br/><br/><b>Exam Takeaway:</b> Sum relation aate hi fractional base $100$ ko directly ratio logic me tod do taaki difference asani se compare ho jaye.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Language Link</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Ratio Form</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>A.</b> G is $28\\%$ of (F+G)</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1.</b> $G:F = 7:18$</td></tr></table>"
+    },
+    {
+      "q": "If the population of a town is 1,21,000 and it increases at an annual rate of $10\\%$, what will be the difference between the population of the town after three years and the population of the town two years ago?",
+      "o": [
+        "13310",
+        "14641",
+        "61051",
+        "40051"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> 2. Successive Change (The Chain Reaction)\n\n<b>Pen-Free Observation:</b> Dekh bhai aise karna hai... $10\\%$ rate matlab seedha $1.1$ ka multiplier yani 11 ki powers lagegi. Base $1,21,000$ bhi $11^2$ ka roop hai.\n\n<b>Method 1 (Ninja Technique / Exam Approach):</b> Present = $121,000$. 2 saal pehle? Seedha $1.1^2$ (yani 1.21) se divide maar. $\\frac{121000}{1.21} = 1,00,000$. 3 saal baad? Seedha $1.1^3$ (yani 1.331) se multiply maar. $121000 \\times 1.331$. Decimal hata ke digits khel, $121 \\times 1331 = 1,61,051$ aayega. Hame gap chahiye: $1,61,051 - 1,00,000 = 61,051$. Calculation fast honi mangti hai!\n\n<b>Method 2 (Concept Builder):</b> Let 2 saal pehle $P$ thi. $P \\times \\frac{11}{10} \\times \\frac{11}{10} = 121000$. $P = 100000$. Ab after 3 years = $121000 \\times \\frac{11}{10} \\times \\frac{11}{10} \\times \\frac{11}{10} = 121 \\times 1331 = 161051$. Difference $61051$. Basic formula hi best hai aisi standard percentages ke liye.\n\n<b>Exam Takeaway:</b> Compound Growth ke questions me 11 ki kam se kam 4 powers muh-jubani yaad rakh: 11, 121, 1331, 14641.\n\n<table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Timeline</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Population</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1.</b> 2 Years Ago</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1,00,000</b></td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2.</b> 3 Years After</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1,61,051</b></td></tr></table>"
+    },
+    {
+      "q": "In an election, only two candidates participated. 80% of people cast their votes and 900 people did not cast their votes. 25% of the votes are declared invalid. If the winner won by 300 valid votes, then find the total number of voters?",
+      "o": [
+        "6000",
+        "3000",
+        "7500",
+        "4500"
+      ],
+      "a": 3,
+      "s": "**Core Conceptual Tool:** 5. Unitary Scaling<br/><br/>**Pen-Free Observation:** Dekh bhai, ye question tumhe invalid aur winner votes dikha ke gumrah kar raha hai. Pehli do line hi kaafi hain answer fodne ke liye. Aage ki ramayan ignore mar de.<br/><br/>**Method 1 (Ninja Technique / Exam Approach):** Question padh: 80\\% logo ne vote dala aur bache hue 900 logo ne nahi dala. Toh bhai seedhi baat hai na, jo 20\\% log bach gaye wahi toh 900 hain! Agar 20\\% = 900 hai, toh Total (100\\%) nikalne ke liye 5 guna kar de. $900 \\times 5 = 4500$. Khatam! Niche ki invalid aur winner ki kahani padhne wala time waste karega.<br/><br/>**Method 2 (Concept Builder):** Examiner intentionally surplus data deta hai CGL me. Real skill aakhiri puchi hui cheez ko upar padh ke check karne me hai ki kaunsa data zaroori hai.<br/><br/>**Exam Takeaway:** Ek smart SSC aspirant hamesha pura structure samajh kar shortcut talashta hai. Over-solving is a disease, bhai!<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Extracted Data</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Calculation Logic</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>A.</b> Did not vote (%)</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1.</b> $100\\% - 80\\% = 20\\%$</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>B.</b> Total Voters</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2.</b> $900 \\times 5 = 4500$</td></tr></table>"
+    },
+    {
+      "q": "A man spends 80% of his income. His income has increased by 25%, but his expenditure remains the same. By what percent have his savings increased?",
+      "o": [
+        "125%",
+        "150%",
+        "200%",
+        "100%"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool Triggered: Unitary Scaling / Basic Arithmetic</b><br/><br/><b>The 'Pen-Free' Observation First:</b> Kharcha badha hi nahi! Yaani income me jo bhi extra paisa aaya, wo pura ka pura bachat (savings) me chala gaya. Direct logic.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Dekh bhai, Income = 100, Exp = 80, Sav = 20. Income ho gayi 125. Exp abhi bhi 80 hai. Toh new Savings = 45. Kitni badhi? 25. Original savings 20 thi. Percentage jump = $\\frac{25}{20} \\times 100 = 125\\%$.<br/><br/><b>Method 2 (Concept Builder):</b> JSM se bhi soch sakta hai, par isme values itni choti aur simple hain ki basic direct equating is visually much faster.<br/><br/><b>Best Exam Approach:</b> Sirf extra paise ka flow track kar. Extra 25 aaya aur wo direct 20 ki bachat par gaya. $25/20$ ka growth seedha 125% hai."
+    },
+    {
+      "q": "If house tax is paid before the due date, one gets a reduction of $12\\%$ on the amount of the bill. By paying the tax before the due date, a person got a reduction of $\\text{Rs. } 2,100$. The amount (in Rs) of house tax paid was:",
+      "o": [
+        "21,000",
+        "25,000",
+        "17,500",
+        "15,400"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> 5. Unitary Scaling\n\n<b>Pen-Free Observation:</b> Dekh bhai, aakhiri keyword pe teri aankh baaz ki tarah honi chahiye. Question puch raha hai amount 'PAID', na ki 'TOTAL BILL'. Examiner yahi trap set karta hai.\n\n<b>Method 1 (Ninja Technique / Exam Approach):</b> Reduction $12\\%$ ki hui aur amount me $2100$ ki. Yani $12\\% = 2100$. $1\\% = \\frac{2100}{12} = 175$. Total bill $100\\% = 17500$ ka tha. Par usne reduction ke baad pay kiya hai na! Toh $17500 - 2100 = 15400$. Option C (17500) mat mark kar dena jaldbazi me!\n\n<b>Method 2 (Concept Builder):</b> Ek aur direct tarika dekh. Tujhe 'Paid' amount puchi hai. Agar $12\\%$ ki chhoot mili, toh pay kitna kiya? $88\\%$. Agar $12\\% = 2100$, toh $88\\% = \\frac{2100}{12} \\times 88 = 175 \\times 88 = 15400$. Seedha ek step me aagaya answer!\n\n<b>Exam Takeaway:</b> Language ko last word tak dhyan se padh. SSC aise hi silly mistakes karwata hai.\n\n<table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Calculation</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Value</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1.</b> Discount ($12\\%$)</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2100</b></td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2.</b> Paid Amount ($88\\%$)</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>15400</b></td></tr></table>"
+    },
+    {
+      "q": "If due to a 12% decrease in the price of sugar, Akshat can buy 7 kg more sugar for Rs. 1200, then find the actual price (in rs) of sugar?",
+      "o": [
+        "28.25",
+        "23.38",
+        "25.79",
+        "26.35"
+      ],
+      "a": 1,
+      "s": "Core Conceptual Tool: CPR<br/><br/>Pen-Free Observation: Dekh bhai, ye basic savings model hai. ₹1200 ka $12\\%$ pocket me bacha, jis se 7 kg chini mili. Seedha naya price aagaya. Naya price purane ka $88\\%$ hai. Boom!<br/><br/>Method 1 (Ninja Technique): Naya price nikal ke actual ke liye reverse factor ka multiply.<br/><br/>Mathematically :-<br/>$$New \\ Price = \\frac{1200 \\times 0.12}{7} = \\frac{144}{7} \\\\\\\\ Old \\ Price \\times 0.88 = \\frac{144}{7} \\\\\\\\ Old \\ Price = \\frac{144}{7 \\times 0.88} = \\frac{14400}{7 \\times 88} \\\\\\\\ = \\frac{1800}{77} \\approx 23.376... \\approx 23.38$$<br/><br/>Method 2 (Concept Builder): Total Quantity ka equation equate kar ke base form me solve karo.<br/><br/>Mathematically :-<br/>$$P \\times Q = 1200 \\\\\\\\ 0.88P \\times (Q + 7) = 1200 \\\\\\\\ 0.88P (\\frac{1200}{P} + 7) = 1200 \\\\\\\\ 1056 + 6.16P = 1200 \\\\\\\\ 6.16P = 144 \\Rightarrow P = \\frac{144}{6.16} \\approx 23.38$$<br/><br/>Exam Takeaway: Concept fix kar lo - reduced price nikalna bohot fast hai, uske baad actual price reverse percentage se nikalo.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">List I</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">List II</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Formula Hack</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">New Price = (Amount $\\times$ $\\%$ Change) / Extra Qty</td></tr></table>"
+    },
+    {
+      "q": "If the price of rice is raised by $28\\%$, then by how much percent must a person reduce his consumption of rice so that his overall expenditure remains the same?",
+      "o": [
+        "$21.875\\%$",
+        "$22.875\\%$",
+        "$23.875\\%$",
+        "$24.875\\%$"
+      ],
+      "a": 0,
+      "s": "<b>The \"Pen-Free\" Observation First:</b><br/><br/>Dekh bhai, sidha CPR (Constant Product Ratio) laga. Jab fraction $+\\frac{x}{y}$ se badhti hai aur product same rakhna ho, toh factor $-\\frac{x}{x+y}$ se girana padta hai.<br/><br/><b>Method 1 (CPR Ninja Technique):</b><br/><br/>Mathematically :-<br/><br/>$$ \\text{Price } \\uparrow = +28\\% = +\\frac{28}{100} = +\\frac{7}{25} \\\\ \\text{Consumption } \\downarrow = -\\frac{7}{25+7} = -\\frac{7}{32} \\\\ \\% \\text{ Change} = \\frac{7}{32} \\times 100 = \\frac{175}{8} = 21.875\\% $$<br/><br/><b>Exam Takeaway:</b> General method lagaoge toh 1 minute waste hoga, CPR lagaya toh 10 second me answer. Flexi-Frac approach is deadly!"
+    },
+    {
+      "q": "A traveler loses $20 \\frac{1}{2} \\%$ of his total money and after spending $80 \\%$ of the <b>remainder</b>, he is left with Rs. 159. How much money did he have at the start?",
+      "o": [
+        "Rs. 1,200",
+        "Rs. 500",
+        "Rs. 800",
+        "Rs. 1,000"
+      ],
+      "a": 3,
+      "s": "Core Conceptual Tool: Successive Change<br/><br/>Pen-Free Observation: $20.5 \\%$ toh gaya, bacha seedha $79.5 \\%$. Ab us remaining ka $80 \\%$ kharch ho gaya matlab bacha sirf $20 \\%$. Seedha $79.5 \\%$ ka $20 \\%$ nikalna hai (yani $1/5$-th) jo exactly $15.9 \\%$ baithta hai.<br/><br/>Method 1 (Ninja Technique): Seedha final percentage bacha kar value se compare kar.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Remaining after loss} = 100 \\% - 20.5 \\% = 79.5 \\% \\\\ \\text{Left after spending } 80 \\% = 20 \\% \\text{ of Remaining} \\\\ \\text{Final Left} = 20 \\% \\text{ of } 79.5 \\% = \\frac{1}{5} \\times 79.5 \\% = 15.9 \\% \\\\ 15.9 \\% = 159 \\\\ 1 \\% = 10 \\implies 100 \\% = 1000 $$<br/><br/>Method 2 (Concept Builder): Fractional chain equation setup karo base P maan ke.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Let total money} = P \\\\ P \\times (1 - 0.205) \\times (1 - 0.8) = 159 \\\\ P \\times 0.795 \\times 0.2 = 159 \\\\ P \\times 0.159 = 159 \\\\ P = \\frac{159}{0.159} = 1000 $$<br/><br/>Exam Takeaway: $20 \\frac{1}{2} \\%$ dekh ke hamesha mixed fraction me open karne ki need nahi padti, decimals ($20.5 \\%$) kabhi kabhi exactly setup hote hain ki directly multiply ho jaye.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Timeline</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Value Remaining</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">After Loss</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$79.5 \\%$</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">After Spending</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$15.9 \\%$</td></tr></table>"
+    }
+  ]
+}
