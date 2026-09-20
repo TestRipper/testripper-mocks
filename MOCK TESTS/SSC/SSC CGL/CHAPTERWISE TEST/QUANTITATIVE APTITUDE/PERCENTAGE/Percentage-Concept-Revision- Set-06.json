@@ -1,8 +1,8 @@
 {
   "quizTitle": "Percentage-Concept-Revision- Set-06",
   "Cutoff": "39",
-  "quizTime": "20",
-  "totalMarks": "50",
+  "quizTime": "22",
+  "totalMarks": "54",
   "autoShuffle": true,
   "questions": [
     {
@@ -82,6 +82,17 @@
       "a": 0,
       "s": "<b>Tool Triggered: 5. Unitary Scaling</b><br/><br/><b>The \"Pen-Free\" Observation First:</b><br/><br/>Dekh bhai, $1.33$ ko fraction $\\frac{4}{3}$ maan. Jab fractions denominator $3$ aur $1.25$ (yani $\\frac{5}{4}$) me chal rahe hain toh base ko 100 ki jagah sidha 300 pakad le taki decimals paida hi na hon.<br/><br/><b>Method 1 (Ninja Technique):</b><br/><br/>Mathematically :-<br/><br/>$$ \\text{Let Shyam Exp} = 300 \\\\ \\text{Ram Inc} = 1.25 \\times 300 = 375 \\\\ \\text{Ram Sav} = \\frac{375}{5} = 75 \\implies \\text{Ram Exp} = 375 - 75 = 300 \\\\ \\text{Shyam Inc} = \\frac{4}{3} \\times 300 = 400 \\implies \\text{Shyam Sav} = 400 - 300 = 100 \\\\ \\text{Savings Diff} = 100 - 75 = 25 \\text{ units} \\\\ 25 \\text{ units} = 3750 \\implies 1 \\text{ unit} = 150 \\\\ \\text{Shyam Inc} = 400 \\times 150 = 60000 \\\\ 2x + 10000 = 60000 \\implies x = 25000 \\\\ 3x = 75000 $$<br/><br/><b>Exam Takeaway:</b> Future me jab 1.25, 1.33 type multipliers dekhe toh LCM le kar usko main base maan lena."
     },
+    {
+  "q": "The expenditure of a man and his family is $60\\%$ of his salary. He receives two successive increments of $30\\%$ and $60\\%$ in his salary. If his savings increase by $250\\%$ of his initial savings, then the new expenditure is what percentage of the increased salary (rounded off to the nearest integer)?",
+  "o": [
+    "$32.7\\%$",
+    "$43.6\\%$",
+    "$29.5\\%$",
+    "$36.6\\%$"
+  ],
+  "a": 0,
+  "s": "Core Conceptual Tool: Successive Change & Unitary Scaling.<br><br>Pen-Free Observation: Base $100$ par direct $1.3 \\times 1.6 = 2.08$ ka factor aur Savings me $3.5$ ka multiplier dikhna chahiye. Sabse clean percentage hain toh $100$ maan kar direct attack hoga.<br><br>Method 1 (Ninja Technique - 100 Base): Sabse fast aur error-free tarika. Initial $I = 100$, $E = 60$, $S = 40$.<br>Mathematically :-<br>$$I_{new} = 100 \\times 2.08 = 208 \\\\ S_{new} = 40 \\times 3.5 = 140 \\\\ E_{new} = 208 - 140 = 68 \\\\ Req \\% = \\frac{68}{208} \\times 100 \\approx 32.7\\%$$<br><br>Method 2 (Concept Builder - 5:3:2 Ratio): Agar numbers decimals me hon toh chhota ratio bana lo. $I:E:S = 5:3:2$.<br>Mathematically :-<br>$$I_{new} = 5 \\times 2.08 = 10.4 \\\\ S_{new} = 2 \\times 3.5 = 7 \\\\ E_{new} = 10.4 - 7 = 3.4 \\\\ Req \\% = \\frac{3.4}{10.4} \\times 100 = \\frac{34}{104} \\times 100 \\approx 32.7\\%$$<br><br>Method 3 (Decimal Scaling): Sab kuch $1$ unit maan kar calculate karo bina zero ki tension ke. $I = 1, E = 0.6, S = 0.4$.<br>Mathematically :-<br>$$I_{new} = 1 \\times 2.08 = 2.08 \\\\ S_{new} = 0.4 \\times 3.5 = 1.4 \\\\ E_{new} = 2.08 - 1.4 = 0.68 \\\\ Req \\% = \\frac{0.68}{2.08} \\times 100 \\approx 32.7\\%$$<br><br>Method 4 (Net Shift JSM): Sirf percentage change ko base mankar shift nikalo.<br>Mathematically :-<br>$$5 \\times 108\\% = 3 \\times E_{shift} + 2 \\times 250\\% \\\\ 540\\% = 3 \\times E_{shift} + 500\\% \\\\ E_{shift} = \\frac{40}{3}\\% \\\\ E_{new} = 3 \\times (1 + \\frac{40/3}{100}) = 3.4 \\\\ Req \\% = \\frac{3.4}{10.4} \\times 100 \\approx 32.7\\%$$<br><br>Exam Takeaway: Hamesha Method 1 laga jab percentage saaf hon. <b>\"250% se\"</b> badhna matlab multiplier $3.5$ hoga na ki $2.5$. Yehi TCS ka sabse bada trap tha.<br><br><table style='width:100%;border-collapse:collapse;font-size:0.95rem'><tr style='border-bottom:1px solid var(--brd)'><th style='text-align:left;padding:4px;color:var(--p2)'>Language Trap</th><th style='text-align:left;padding:4px;color:var(--p2)'>Multiplying Factor</th></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Increases <b>by</b> 250%</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$3.5 \\times$</td></tr><tr><td style='padding:6px;border-bottom:1px solid var(--brd)'>Increases <b>to</b> 250%</td><td style='padding:6px;border-bottom:1px solid var(--brd)'>$2.5 \\times$</td></tr></table>"
+},
     {
       "q": "The income of Raman is Rs. 75400. He saves 23% of his income. If his income is increased by 27% and expenditure by 50%, then find the decrease in his savings.",
       "o": [
