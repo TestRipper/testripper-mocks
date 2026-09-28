@@ -1,0 +1,283 @@
+{
+  "quizTitle": "Number-System-Set-08",
+  "quizTime": 18,
+  "totalMarks": 50,
+  "questions": [
+    {
+      "q": "Express $9.43\\overline{87}$ in p/q form.",
+      "o": [
+        "$\\frac{93444}{9900}$",
+        "$\\frac{93443}{9900}$",
+        "$\\frac{93445}{9900}$",
+        "$\\frac{93442}{9900}$"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br><br><b>Pen-Free Observation:</b> Dekh bhai, options dekh kar base $9900$ confirm hai kyuki 2 digits pe bar hai aur 2 digits bin-bar point ke baad hain. Seedha subtraction laga.<br><br><b>Method 1 (Ninja Technique):</b> Pura number bina point ke likh aur usme se wo hissa ghata de jis par bar nahi hai. Khel khatam!<br><br>Mathematically :-<br><br>$$ \\text{Numerator} = 94387 - 943 = 93444 \\\\ \\text{Fraction} = \\frac{93444}{9900} $$<br><br><b>Method 2 (Concept Builder):</b> Standard textbook approach me $x$ ki equation banake subtract kiya jata hai decimals ko shift karne ke liye.<br><br>Mathematically :-<br><br>$$ x = 9.438787\\dots \\\\ 10000x = 94387.8787\\dots \\\\ 100x = 943.8787\\dots \\\\ 9900x = 93444 \\implies x = \\frac{93444}{9900} $$<br><br><b>TCS Trap:</b> Bacche non-repeating part $9$ subtract karna bhul jate hain jo decimal ke pehle hota hai.<br><br><b>Exam Takeaway:</b><br><br>> Decimal trick: $ab.cd\\overline{ef} = \\frac{abcdef - abcd}{9900}$ seedha implement maar."
+    },
+    {
+      "q": "Find the last two digits of the sequence $1234\\dots$ up to exactly $138$ digits.",
+      "o": [
+        "37",
+        "73",
+        "74",
+        "72"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Unitary Scaling.<br><br><b>Pen-Free Observation:</b> Dekh bhai, counting series ka boundary wala khel hai. $1$ se $9$ tak $9$ digits ud gaye, baaki saare 2-digit number sequence banayenge.<br><br><b>Method 1 (Ninja Technique):</b> Bache hue digits ko 2 se divide kar. Kitne pure numbers aaye aur kitna remainder bacha (jo aakhiri kata hua digit hoga) wo nikal le.<br><br>Mathematically :-<br><br>$$ \\text{Remaining Digits} = 138 - 9 = 129 \\\\ \\frac{129}{2} = 64 \\text{ full numbers } + 1 \\text{ extra digit} \\\\ \\text{Last full number} = 9 + 64 = 73 \\\\ \\text{Next number starts with } 7 \\text{ (from } 74) \\\\ \\text{Sequence ends:} \\dots 72, 73, 7 \\implies \\text{Last two} = 37 $$<br><br><b>Method 2 (Concept Builder):</b> Series logic se hume exactly nikalna padta hai ki counting kahan tak pahuchegi. Arithmetic counting formula check karo.<br><br>Mathematically :-<br><br>$$ d(1 \\dots N) = 9 + 2(N - 9) \\text{ for 2-digit } N \\\\ 9 + 2(N - 9) = 137 \\text{ (closest even match)} \\\\ 2(N - 9) = 128 \\implies N = 73 \\\\ 138\\text{th digit is first digit of } 74, \\text{ which is } 7 $$<br><br><b>TCS Trap:</b> Options me seedha $74$ baithega taki tum '1 extra digit' bhool kar pura 74 append karke tick mar do.<br><br><b>Exam Takeaway:</b><br><br>> Hamesha block break karo. $1-9$ = 9 digits. $10-99$ = 180 digits. Extra digit hamesha next number ki starting place nikalta hai."
+    },
+    {
+      "q": "Find the remainder when the polynomial $x^3 - 3x^2 + 4x - 5$ is divided by $x - 2$.",
+      "o": [
+        "-1",
+        "0",
+        "1",
+        "3"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Value Putting & Symmetry.<br><br><b>Pen-Free Observation:</b> Remainder theorem ka sabse direct hit hai. Divider ko zero rakho aur pen chalane ki zaroorat hi mat feel hone do.<br><br><b>Method 1 (Ninja Technique):</b> Divisor ko equals to zero maan kar seedha polynomial me $x=2$ phek de. Jo aayega wahi Remainder hai.<br><br>Mathematically :-<br><br>$$ x - 2 = 0 \\implies x = 2 \\\\ (2)^3 - 3(2)^2 + 4(2) - 5 \\\\ 8 - 12 + 8 - 5 = -1 $$<br><br><b>Method 2 (Concept Builder):</b> Remainder Theorem state karta hai ki polynomial $P(x)$ ko jab linear divisor $x-a$ se divide karein to Remainder $P(a)$ hota hai.<br><br>Mathematically :-<br><br>$$ P(x) = x^3 - 3x^2 + 4x - 5 \\\\ R = P(2) \\\\ R = 8 - 12 + 8 - 5 = -1 $$<br><br><b>TCS Trap:</b> Algebraic long division lagane ka try karega to wahan basic plus-minus mistakes hone ke 100% chances hain.<br><br><b>Exam Takeaway:</b><br><br>> Divisor polynomial agar $ax-b$ form ka hai, toh Remainder is strictly equal to $P(b/a)$."
+    },
+    {
+      "q": "What is the remainder when $888\\dots 888$ (written 25 times) is divided by $37$?",
+      "o": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility & C9.<br><br><b>Pen-Free Observation:</b> Dekh bhai, same digit repeatedly aaye, aur divisor 37 ho, matlb 3-digit cyclicity wala rule direct udta hua aayega.<br><br><b>Method 1 (Ninja Technique):</b> Ek digit agar $3$ baar repeat ho to wo $37$ se pura divide hota hai. Total 25 hai. $25$ ko $3$ se divide kar, remainder 1 digit bachega. Wahi aakhiri digit tumhara answer hoga.<br><br>Mathematically :-<br><br>$$ \\text{Blocks of 3} = \\frac{25}{3} \\implies \\text{Quotient } 8, \\text{ Remainder } 1 \\\\ \\text{One digit left} = 8 \\\\ 8 \\pmod{37} = 8 $$<br><br><b>Method 2 (Concept Builder):</b> repeating blocks $111$ divisibility logic. $111$ khud $37$ ka multiple hai.<br><br>Mathematically :-<br><br>$$ 888 = 8 \\times 111 = 8 \\times (3 \\times 37) \\text{ (Divisible)} \\\\ \\text{24 digits will form } 8 \\text{ such divisible blocks.} \\\\ \\text{Final 25th digit is just } 8 \\text{ itself.} $$<br><br><b>TCS Trap:</b> Pattern figure out na karne pe kuch log isko basic expansion me convert karne baithenge jiska koi ant hi nahi hai.<br><br><b>Exam Takeaway:</b><br><br>> Any single digit repeated 3 times ($aaa$) is unconditionally divisible by $3, 37, \\text{ and } 111$."
+    },
+    {
+      "q": "What is the remainder when $100!$ is divided by $101$?",
+      "o": [
+        "1",
+        "100",
+        "0",
+        "99"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br><br><b>Pen-Free Observation:</b> Denominator exactly $101$ prime hai aur factorial seedha ek kam yani $100!$ hai. Wilson Uncle zindabad!<br><br><b>Method 1 (Ninja Technique):</b> Wilson Theorem lagao seedha. $(P-1)!$ ko kisi prime $P$ se divide kare to Remainder humesha $P-1$ hi hota hai.<br><br>Mathematically :-<br><br>$$ P = 101 \\text{ (Prime)} \\\\ (101-1)! \\pmod{101} \\equiv -1 \\pmod{101} \\\\ -1 + 101 = 100 $$<br><br><b>Method 2 (Concept Builder):</b> Standard theorem properties prove karke dikhati hai ki prime denominators saare middle terms ka pair inverses generate kar lete hain.<br><br>Mathematically :-<br><br>$$ (p-1)! \\equiv p-1 \\pmod p \\\\ 100! \\equiv 101-1 \\pmod{101} \\equiv 100 $$<br><br><b>TCS Trap:</b> Log Euler Totient thukne lagte hain yaha joki powers pe lagta hai, factorials pe bilkul fail hai.<br><br><b>Exam Takeaway:</b><br><br>> Wilson's Theorem is a fixed cheat code: $(P-1)! / P$ always yields a remainder of $(P-1)$ if $P$ is prime."
+    },
+    {
+      "q": "How many numbers between $400$ and $600$ begin with or end with the digit $5$?",
+      "o": [
+        "100",
+        "110",
+        "119",
+        "120"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br><br><b>Pen-Free Observation:</b> \"Between\" ka word boundary lagata hai, 500s ki saari sequence start with $5$ ki bucket me aayegi. Union rule overlap minus karega.<br><br><b>Method 1 (Ninja Technique):</b> $500$ se $599$ tak total $100$ numbers seedha mil gaye. Phir $401$ se $499$ me ending with $5$ wale total $10$ numbers milenge. Dono jod de.<br><br>Mathematically :-<br><br>$$ \\text{Start with 5 } (500 \\to 599) = 100 \\text{ numbers} \\\\ \\text{End with 5 in 400s } (405, 415 \\dots 495) = 10 \\text{ numbers} \\\\ \\text{Total} = 100 + 10 = 110 $$<br><br><b>Method 2 (Concept Builder):</b> Formal set logic (inclusion-exclusion) use karo jisse overlapping sets theek se resolve hote hain.<br><br>Mathematically :-<br><br>$$ n(A) = 100 \\text{ (starts with 5)} \\\\ n(B) = 20 \\text{ (ends with 5 from } 401 \\to 599) \\\\ n(A \\cap B) = 10 \\text{ (starts and ends with 5: } 505, 515\\dots) \\\\ n(A \\cup B) = 100 + 20 - 10 = 110 $$<br><br><b>TCS Trap:</b> Baccha $505$ wale pure $10$ numbers ko start me bhi ginta hai aur end me bhi. Double count se $+10$ hoke options set hote hain.<br><br><b>Exam Takeaway:</b><br><br>> Jab \"Or\" statement ho to Set theory intersection $n(A \\cap B)$ minus karna kabhi mat bhulna."
+    },
+    {
+      "q": "The total number of integers between $200$ and $400$, each of which either begins with $3$ or ends with $3$ or both, is",
+      "o": [
+        "10",
+        "100",
+        "110",
+        "120"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br><br><b>Pen-Free Observation:</b> Bhai ekdum pichle type ki xerox copy hai sawal. Same frame, same counting base, same answer form.<br><br><b>Method 1 (Ninja Technique):</b> $300$ wali puri line uthao ($100$ numbers). Fir bach gaya $200$ series, usme har 10 digit me ek baar last me $3$ aata hai. Total 10 nikal ke jod.<br><br>Mathematically :-<br><br>$$ \\text{Starts with 3: } 300 \\dots 399 \\implies 100 \\\\ \\text{Ends with 3 in 200s: } 203, 213 \\dots 293 \\implies 10 \\\\ \\text{Sum} = 100 + 10 = 110 $$<br><br><b>Method 2 (Concept Builder):</b> Wahi venn diagram lagti hai yaha, 3 start, 3 end and common numbers in 300s series.<br><br>Mathematically :-<br><br>$$ n(S_3) = 100, n(E_3) = 20 \\\\ n(S_3 \\cap E_3) = 10 \\text{ (like 303, 313...)} \\\\ \\text{Total} = 100 + 20 - 10 = 110 $$<br><br><b>TCS Trap:</b> Statement me likha \"or both\" padh ke log confuse hoke $110$ me phirse intersection wale $10$ add karke $120$ mark marte hain.<br><br><b>Exam Takeaway:</b><br><br>> Union function \"or both\" ki condition apne formula block $n(A \\cup B)$ me automatic handle karta hai, alag se add nahi karte."
+    },
+    {
+      "q": "$M$, is the largest 4-digit number, which when divided by $4, 5, 6$ and $7$ leaves remainder as $2, 3, 4$ and $5$, respectively. What is the remainder when $M$ is divided by $9$?",
+      "o": [
+        "2",
+        "1",
+        "3",
+        "6"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility & C9.<br><br><b>Pen-Free Observation:</b> Dekh bhai, Divisor aur Remainder ke beech difference dekh (4-2=2, 5-3=2). Jab gap same ho to us gap ko LCM ki complete value se negative offset maante hain.<br><br><b>Method 1 (Ninja Technique):</b> Divisors ka LCM nikalo, largest 4-digit number uske pass tak le jao. Phir wo constant offset (-2) minus karo. Aur last me Digital sum se rule of 9 lagao.<br><br>Mathematically :-<br><br>$$ \\text{LCM}(4,5,6,7) = 420 \\\\ \\frac{9999}{420} \\implies Q=23, \\text{ base val } = 9660 \\\\ \\text{Target } M = 9660 - 2 = 9658 \\\\ 9658 \\pmod 9 \\implies 9+6+5+8 = 28 \\implies 1 $$<br><br><b>Method 2 (Concept Builder):</b> The equation template for such problems is $N = \\text{LCM} \\times k - (\\text{Divisor} - \\text{Remainder})$.<br><br>Mathematically :-<br><br>$$ M = 420k - 2 \\\\ 420 \\times 23 - 2 = 9660 - 2 = 9658 \\\\ \\frac{9658}{9} = 1073 \\text{ with } R = 1 $$<br><br><b>TCS Trap:</b> Students us constant gap $2$ ko minus karne ki jagah subtract karke check karte hain ki galti se plus toh nahi karna. Constant diff = Minus it.<br><br><b>Exam Takeaway:</b><br><br>> Jab saare $D_i - R_i = k$ same aayein, toh pattern humesha $\\text{LCM}(D_1,D_2\\dots) \\times m - k$ banta hai."
+    },
+    {
+      "q": "Find the last two digits of $3^{1000} \\times 7^{1000}$.",
+      "o": [
+        "01",
+        "21",
+        "41",
+        "81"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br><br><b>Pen-Free Observation:</b> Jab exponents same ho, bases multiply kar. Jaise hi base end in $1$ (matlab 21) aayega, wahi puraani 'X1' wali jugad fix kar de.<br><br><b>Method 1 (Ninja Technique):</b> Combine the bases directly. Base 21 mil gaya. Tens place ke liye base tens ko power unit se multiply, and unit is obviously 1.<br><br>Mathematically :-<br><br>$$ (3 \\times 7)^{1000} = 21^{1000} \\\\ \\text{Unit digit} = 1 \\\\ \\text{Tens digit} = (2 \\times 0) \\pmod{10} = 0 \\\\ \\text{Result} = 01 $$<br><br><b>Method 2 (Concept Builder):</b> Using binomial expansion of form $(10x + 1)^n$, which expands to end with $(nx \\pmod{10})1$.<br><br>Mathematically :-<br><br>$$ (20+1)^{1000} = \\dots + {1000 \\choose 1}(20)^1(1)^{999} + 1 \\\\ 20000 + 1 \\implies \\text{Last two are } 01 $$<br><br><b>TCS Trap:</b> $3$ ka cyclicity alag, aur $7$ ka cyclicity alag nikalne beth jaoge toh multiplication me last two digits bura fasa dengi.<br><br><b>Exam Takeaway:</b><br><br>> Exponent rules apply first: $a^n \\times b^n = (ab)^n$. Fir $(\\dots X1)^Y$ wali solid tens trick apply karo."
+    },
+    {
+      "q": "If the 9-digit number $7x79251y8$ is divisible by $36$, what is the value of $(10x^2-3y^2)$ for the largest possible value of $y$?",
+      "o": [
+        "490",
+        "289",
+        "192",
+        "298"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility & C9.<br><br><b>Pen-Free Observation:</b> Divisible by $36$ gives you $4$ and $9$. Keyword \"largest possible value of $y$\" bolke options restrict kar diye hain. Reverse top down scan lagana hoga.<br><br><b>Method 1 (Ninja Technique):</b> Last two digits $y8$ divisibility of 4 test me daal. Highest value 8 aayega. Uske baad bache digits ko digital sum rule 9 se balance karke $x$ nikal le.<br><br>Mathematically :-<br><br>$$ y8 \\pmod 4 = 0 \\implies y \\in \\{0, 2, 4, 6, 8\\} \\\\ y_{max} = 8 \\text{ (checks out as } 88 \\text{ is div by 4)} \\\\ \\text{Digital Sum: } 7+x+7+9+2+5+1+8+8 = 47+x \\\\ 47+x \\pmod 9 = 0 \\implies x=7 \\text{ (since } 54 \\text{ is mul)} \\\\ 10(7^2) - 3(8^2) = 490 - 192 = 298 $$<br><br><b>Method 2 (Concept Builder):</b> Always resolve the variable at the unit/tens end first, then resolve the summation variable using C9 restriction.<br><br>Mathematically :-<br><br>$$ y=8 \\implies N = 7x7925188 \\\\ \\text{Rule 9 requires } (47+x) = 9k \\implies x=7 \\\\ \\text{Ans: } 10(49) - 3(64) = 298 $$<br><br><b>TCS Trap:</b> Jaldbazi me largest nahi pada to $y=0$ substitute kar loge pehle condition me. Calculation badhegi aur answer wrong ho jayega.<br><br><b>Exam Takeaway:</b><br><br>> Variables set karte time \"Largest\" ya \"Smallest\" wale conditions hamesha scan process uper ya niche se initiate karvate hain."
+    },
+    {
+      "q": "Find the smallest Six digit number which is a perfect Square?",
+      "o": [
+        "100389",
+        "100489",
+        "100589",
+        "100289"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Value Putting & Symmetry.<br><br><b>Pen-Free Observation:</b> Ek perfect bound limits wala number hai. $100000$ base hai jiska root nikalna asaan hai, $316$ ke thik thoda aage girega. Matlb seedha $317$ ka square required answer hai.<br><br><b>Method 1 (Ninja Technique):</b> $317$ ka square nikalne ki Base 300 trick maar. Number me difference jod kar 3 se multiply, then difference ka square piche rakh.<br><br>Mathematically :-<br><br>$$ \\sqrt{100000} \\approx 316.22 \\\\ \\text{Root needed is } 317 \\\\ 317^2 \\to \\text{Base } 300, \\text{ offset } +17 \\\\ 3 \\times (317 + 17) \\mid 17^2 = 3 \\times 334 \\mid 289 \\\\ 1002 \\mid 289 = 100489 $$<br><br><b>Method 2 (Concept Builder):</b> Long division approach se extra diff extract kiya ja sakta hai smaller squares me.<br><br>Mathematically :-<br><br>$$ 316^2 = 99856 \\text{ (Largest 5-digit square)} \\\\ 317^2 = 100489 \\text{ (Smallest 6-digit square)} $$<br><br><b>TCS Trap:</b> Long division root pe 100000 daalke solve karte hue calculation blunder hona fix hai. Limits direct verify karo.<br><br><b>Exam Takeaway:</b><br><br>> Hamesha Base Boundaries ke absolute fix squares memorize karke ja: $316^2 = 99856$ (Max 5D) aur $317^2 = 100489$ (Min 6D)."
+    },
+    {
+      "q": "Find the total number of digits of $2^{24} \\times 5^{12}$.",
+      "o": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br><br><b>Pen-Free Observation:</b> Jaha base me $2$ aur $5$ dikh gaye ek sath, matlab zeroes wali machine mil gayi. Total zeroes ek limit par power ko 10 ki form me bhej dete hain.<br><br><b>Method 1 (Ninja Technique):</b> 2 aur 5 ki equal powers separate kar. Unko $10^n$ me tod. Baaki jo odd elements bache unka actual output evaluate kar, kitne digit honge aur usme utne zero laga de.<br><br>Mathematically :-<br><br>$$ 2^{24} \\times 5^{12} = 2^{12} \\times (2^{12} \\times 5^{12}) \\\\ = 4096 \\times 10^{12} \\\\ \\text{Digits in } 4096 = 4 \\text{ digits.} \\\\ \\text{Total} = 4 + 12 = 16 \\text{ digits.} $$<br><br><b>Method 2 (Concept Builder):</b> Using basic logarithm principles to compute characteristic of large scientific numbers. Char + 1 = total digits.<br><br>Mathematically :-<br><br>$$ \\log_{10}(2^{24} \\cdot 5^{12}) = 24 \\log 2 + 12 \\log 5 \\\\ 24(0.301) + 12(0.699) = 7.224 + 8.388 = 15.612 \\\\ \\text{Digits} = \\lfloor 15.612 \\rfloor + 1 = 16 $$<br><br><b>TCS Trap:</b> Logarithms pe jaoge toh multiplication decimal truncation ki values error karwa sakti hain, directly combine karo base 10 ko.<br><br><b>Exam Takeaway:</b><br><br>> Jab $2$ and $5$ exist uniformly, hamesha smaller power ko completely pack karke multiples of $10$ eliminate karo."
+    },
+    {
+      "q": "A 6-digit number $524x8y$ is divisible by $36$. What is the maximum possible value of $(x + y)$?",
+      "o": [
+        "8",
+        "17",
+        "9",
+        "12"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility & C9.<br><br><b>Pen-Free Observation:</b> Dekh bhai $36$ matlb phirse $4$ and $9$. Aur is baar individual maximums hit karne bol raha hai kyunki aggregate result maxima me chahiye.<br><br><b>Method 1 (Ninja Technique):</b> Sum of $(x+y)$ max karna hai toh individual bounds max kar. Last 2 se $y=8$ confirm. Phir digital rule of 9 se limit set kar jisme $x$ check ho max tak.<br><br>Mathematically :-<br><br>$$ y \\in \\{0, 4, 8\\} \\implies y_{max} = 8 \\text{ (Div by 4)} \\\\ \\text{Digital Sum} = 5+2+4+x+8+8 = 27+x \\\\ (27+x) \\pmod 9 = 0 \\implies x \\in \\{0, 9\\} \\\\ x_{max} = 9 \\\\ x+y = 9+8 = 17 $$<br><br><b>Method 2 (Concept Builder):</b> If multiple possibilities arise, take the absolute bounding box. Sub in largest parameters possible.<br><br>Mathematically :-<br><br>$$ \\text{For } y=8 \\implies x=0 \\text{ or } 9 \\implies (0+8=8, \\text{ or } 9+8=17) \\\\ \\text{For } y=4 \\implies x=4 \\implies (4+4=8) \\\\ \\text{Max is absolutely } 17 $$<br><br><b>TCS Trap:</b> C9 test karte time agar base number $27$ nikal aaye toh mostly bacche next parameter ignore karke seedha $x=0$ man lete hain, maximum check zero pe miss ho jata hai"
+    },
+    {
+      "q": "What is the unit digit of $[7^{(4n+3)}] \\times 6^n$, where $n$ is a positive integer?",
+      "o": [
+        "8",
+        "7",
+        "6",
+        "1"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Value Putting & Symmetry.<br><br><b>Pen-Free Observation:</b> Variables power me hain. Kisi variable value formula limit se answer change nahi hone wala toh seedha apna manchaha independent constant rakh de.<br><br><b>Method 1 (Ninja Technique):</b> Variable dekh ke confuse mat hona. Seedha $n=1$ dal equation me aur constants nikal. 6 ki koi power wese bhi 6 rehti hai.<br><br>Mathematically :-<br><br>$$ \\text{Put } n = 1 \\\\ 7^{4(1)+3} \\times 6^1 = 7^7 \\times 6 \\\\ 7^7 \\equiv 7^3 = 343 \\implies \\text{Unit is } 3 \\\\ 3 \\times 6 = 18 \\implies \\text{Result ends in } 8 $$<br><br><b>Method 2 (Concept Builder):</b> Core cyclic repetition rule follow karke formula break kiya ja sakta hai.<br><br>Mathematically :-<br><br>$$ 7^{4n+3} = (7^4)^n \\times 7^3 \\\\ 1^n \\times 343 \\implies \\text{Unit 3} \\\\ 6^n \\equiv 6 \\\\ \\text{Final} = 3 \\times 6 = 18 \\implies 8 $$<br><br><b>TCS Trap:</b> Algebraic variable powers dekh kar hi bacche approach drop kar dete hain assumption nikaalne wali galti ke darr se.<br><br><b>Exam Takeaway:</b><br><br>> Algebraic variables in exponent expressions sirf dikhave ke hote hain, put simplest basic values like $1$ or $2$ to crack unit digit instantly."
+    },
+    {
+      "q": "From $500$ to $750$ (including both) how many natural numbers are there are which are neither Divisible by $3$ or $11$?",
+      "o": [
+        "114",
+        "93",
+        "151",
+        "451"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br><br><b>Pen-Free Observation:</b> Range me set theory direct apply karni hai. Multiplication limits exact hit karke numbers formulate karo union nikalne ke liye.<br><br><b>Method 1 (Ninja Technique):</b> Exact bracket multiples trick lagao upper minus lower floor range me. Dono sets aur overlap (33) ka counting nikal, total numbers subtract maar union value.<br><br>Mathematically :-<br><br>$$ \\text{Total} = 750 - 500 + 1 = 251 \\\\ n(3) = \\lfloor750/3\\rfloor - \\lfloor499/3\\rfloor = 250 - 166 = 84 \\\\ n(11) = \\lfloor750/11\\rfloor - \\lfloor499/11\\rfloor = 68 - 45 = 23 \\\\ n(33) = \\lfloor750/33\\rfloor - \\lfloor499/33\\rfloor = 22 - 15 = 7 \\\\ \\text{Neither} = 251 - (84 + 23 - 7) = 151 $$<br><br><b>Method 2 (Concept Builder):</b> This translates exactly to De Morgan's Law mapping for discrete bounds limits.<br><br>Mathematically :-<br><br>$$ \\text{Neither} = n(U) - n(A \\cup B) \\\\ = 251 - (n(A) + n(B) - n(A \\cap B)) \\\\ = 251 - 100 = 151 $$<br><br><b>TCS Trap:</b> Range $500$ \"including both\" skip karke log direct total $750-500 = 250$ le kar minus $1$ ka error la denge.<br><br><b>Exam Takeaway:</b><br><br>> Exact interval range of multiples finding trick: $\\lfloor b/k \\rfloor - \\lfloor (a-1)/k \\rfloor$."
+    },
+    {
+      "q": "When a number is divided by $65$, the remainder is $31$. When the same number is divided by $13$, the remainder is?",
+      "o": [
+        "7",
+        "5",
+        "3",
+        "9"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br><br><b>Pen-Free Observation:</b> Pehla divisor $65$, exactly dusre divisor $13$ ka multiple $(13 \\times 5)$ hai. Seedha purane remainder pe strike maar.<br><br><b>Method 1 (Ninja Technique):</b> Jo pura remainder hai (31) usi ko naya divisor (13) maanke seedha operation complete kar de.<br><br>Mathematically :-<br><br>$$ 65 \\pmod{13} == 0 \\text{ (Condition passed)} \\\\ 31 \\pmod{13} \\implies 31 - (13 \\times 2) = 31 - 26 = 5 $$<br><br><b>Method 2 (Concept Builder):</b> By Division Lemma algorithm, $N = 65k + 31$. Extract $13$ completely.<br><br>Mathematically :-<br><br>$$ N = 13(5k) + 13(2) + 5 \\\\ N = 13(5k+2) + 5 \\implies \\text{Remainder is } 5 $$<br><br><b>TCS Trap:</b> TCS pehla divisor multiple nahi rakhega (like $D_1=65$, $D_2=14$), us case me operation invalid hota hai answer \"Cannot be determined\" ayega.<br><br><b>Exam Takeaway:</b><br><br>> Rule constraint: Agar pehla divisor dusre se perfect divide hota hai to final Remainder sidha $R_1 \\pmod{D_2}$ hota hai."
+    },
+    {
+      "q": "In a farm, there are some cows and some hens. If heads are counted, there are $180$. If legs are counted, there are $420$. How many cows are there in the farm?",
+      "o": [
+        "30",
+        "150",
+        "60",
+        "120"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Triplet Scaling.<br><br><b>Pen-Free Observation:</b> Farm/Zoo and Wheel problems purely Junior Satisfaction Method (JSM) se hi hit kiye jate hain. Base assumption hen se shuru hoga.<br><br><b>Method 1 (Ninja Technique):</b> Maan le saare 180 janwar Murgiyan hain. Matlab minimum 2 pair hone chaiye sabke, 360 expected pair. Jo difference aya usko bache hue extra legs 2 per cow me baant de.<br><br>Mathematically :-<br><br>$$ \\text{Assume 100\\% Hens (2 legs): } 180 \\times 2 = 360 \\text{ legs.} \\\\ \\text{Extra Legs} = 420 - 360 = 60 \\\\ \\text{Cows count} = \\frac{\\text{Extra Legs}}{4 - 2} = \\frac{60}{2} = 30 $$<br><br><b>Method 2 (Concept Builder):</b> Classical approach substitution of variables pe chalta hai, jo time leta hai exam me.<br><br>Mathematically :-<br><br>$$ H + C = 180 \\implies H = 180 - C \\\\ 2H + 4C = 420 \\\\ 2(180-C) + 4C = 420 \\\\ 360 + 2C = 420 \\implies 2C = 60 \\implies C = 30 $$<br><br><b>TCS Trap:</b> $X$ aur $Y$ linear equation banwa kar tumhara calculation error badhane ki koshish chalegi average students par.<br><br><b>Exam Takeaway:</b><br><br>> JSM (Junior Satisfaction Method) is the absolute fastest hack to eliminate linear equation setups for Head/Leg constraints."
+    },
+    {
+      "q": "How many numbers are there between $99$ and $1000$ such that the digit $8$, occupies the unit's place?",
+      "o": [
+        "64",
+        "74",
+        "90",
+        "None of these"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br><br><b>Pen-Free Observation:</b> Range 99-1000 exactly 3-digit array define karti hai. Positions fix karke directly possibilities multiplier maar.<br><br><b>Method 1 (Ninja Technique):</b> Teen box bana digits ke liye. Last me sirf ek possibility ($8$) fix. First digit 0 nahi ho sakti (1 se 9). Second (middle) digit pe koi rok nai ($0$ se $9$). Multiply maar de.<br><br>Mathematically :-<br><br>$$ \\text{Box } [H][T][U] \\\\ \\text{Places count} \\implies (9 \\text{ opts}) \\times (10 \\text{ opts}) \\times (1 \\text{ opt fix } 8) \\\\ = 9 \\times 10 \\times 1 = 90 $$<br><br><b>Method 2 (Concept Builder):</b> Arithmetic progression bana ke total terms formuli se mapping karte hain basic level pe.<br><br>Mathematically :-<br><br>$$ AP = 108, 118, 128 \\dots 998 \\\\ L = a + (n-1)d \\\\ 998 = 108 + (n-1)10 \\\\ 890 = 10(n-1) \\implies n = 90 $$<br><br><b>TCS Trap:</b> Arithmetic approach me log limits lene (first term) me phaste hain. Permutation places concept limits eliminate kar deta hai.<br><br><b>Exam Takeaway:</b><br><br>> Digits placement constraints wale array count questions mostly Permutations (places fix multi) se solve hone chahiye AP series se nahi."
+    },
+    {
+      "q": "For the number $7200$, find the number of factors divisible by $40$.",
+      "o": [
+        "18",
+        "16",
+        "20",
+        "24"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br><br><b>Pen-Free Observation:</b> Jis condition pe fix karna hai number ko wo us factor base ka core multiplier block ban jayega. Us core block ko pura expression se nikal do bahar.<br><br><b>Method 1 (Ninja Technique):</b> 7200 ko fully factorize kar. Aur divisor 40 ko bracket common me bahar khich le. Ab andar kitni terms fraction factors bach gaye, bas unpe factor power formula maar.<br><br>Mathematically :-<br><br>$$ 7200 = 72 \\times 100 = 2^5 \\times 3^2 \\times 5^2 \\\\ \\text{Constraint Divisor } = 40 = 2^3 \\times 5^1 \\\\ \\text{Take } 40 \\text{ out: } 2^3 \\times 5^1 (2^2 \\times 3^2 \\times 5^1) \\\\ \\text{Total terms inside} = (2+1)(2+1)(1+1) = 3 \\times 3 \\times 2 = 18 $$<br><br><b>Method 2 (Concept Builder):</b> Direct probability permutation limit. Set up boundary thresholds needed for exponent ranges.<br><br>Mathematically :-<br><br>$$ N = 2^a \\cdot 3^b \\cdot 5^c \\text{ (multiple of } 2^3 \\cdot 5^1) \\\\ a \\in \\{3,4,5\\} (3), \\, b \\in \\{0,1,2\\} (3), \\, c \\in \\{1,2\\} (2) \\\\ 3 \\times 3 \\times 2 = 18 $$<br><br><b>TCS Trap:</b> Total divisor factor nikalte ho sab aur bad me divide karke options check karte ho jo pura waste of time block banega.<br><br><b>Exam Takeaway:</b><br><br>> Restricted multiple divisor nikalte time absolute divisor requirement bahar nikalkar bachi powers factor formula count me lo."
+    },
+    {
+      "q": "The average of $1088$ real numbers is zero. At most, how many of them can be negative?",
+      "o": [
+        "1088",
+        "1087",
+        "0",
+        "544"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Value Putting & Symmetry.<br><br><b>Pen-Free Observation:</b> Zero-sum restriction matrix dikh rahi hai. Bada positive ek side, baaki negatives samne rakh ke value shift symmetry laga do.<br><br><b>Method 1 (Ninja Technique):</b> Sum zero lane ke liye ek bohot bada positive number lakar baaki ke $N-1$ negative numbers ka wazan completely sambhala ja sakta hai.<br><br>Mathematically :-<br><br>$$ \\text{Assume } 1087 \\text{ numbers are } -1 \\\\ \\text{To make sum } 0, \\text{ the } 1088\\text{th number must be } +1087 \\\\ \\text{Max negatives allowed} = 1087 $$<br><br><b>Method 2 (Concept Builder):</b> Absolute proof formula that zero-sum equation handles bounds constraint limits.<br><br>Mathematically :-<br><br>$$ \\sum_{i=1}^{N} x_i = 0 \\\\ x_1 + x_2 \\dots x_{N-1} = -x_N \\\\ \\text{Max elements for arbitrary } -x_N \\text{ is } N - 1 $$<br><br><b>TCS Trap:</b> Yahan $50\\%$ symmetry lagti hai logical traps me aur baccha galat $544$ tick kar deta hai sum ko equate karne ki theory follow karke.<br><br><b>Exam Takeaway:</b><br><br>> Zero-sum operations me individual elements pe extreme property puche, toh $N-1$ absolute maximum limit hoti hai."
+    },
+    {
+  "q": "The $55x41y$ is a six-digit even number and is completely divisible by $33$, then among the following $(x^2 + y^2)$ is divisible by: ($x$ and $y$ are non-zero)",
+  "o": [
+    "7",
+    "11",
+    "13",
+    "17"
+  ],
+  "a": 2,
+  "s": "<b>Core Conceptual Tool:</b> Divisibility & C9.<br><br><b>Pen-Free Observation:</b> Even aur divisibility dono variables fasa rhi hai. Piche $y$ constraint sirf even lega $0$ neglect karke (non-zero). Phir substitution linear equations lagani hogi.<br><br><b>Method 1 (Ninja Technique):</b> Last digit even hai, non zero. Substitue $y \\in \\{2,4,6,8\\}$. $11$ ka divisibility format setup karke single bound output pick karo jo $3$ ka rule set follow kare.<br><br>Mathematically :-<br><br>$$ \\text{11 diff: } (5+x+1) - (5+4+y) = x-y-3 = 0 \\text{ or } 11 \\\\ x-y = 3 \\implies x = y+3 \\\\ \\text{3 Sum: } 15+x+y = \\text{multi 3} \\implies x+y = 3k \\\\ \\text{Put } y=6 \\implies x=9. \\text{ (Sum } x+y=15 \\text{ passed rule of 3)} \\\\ 9^2 + 6^2 = 81 + 36 = 117 = 13 \\times 9 $$<br><br><b>Method 2 (Concept Builder):</b> Full scale equation elimination process in variables limits constraints.<br><br>Mathematically :-<br><br>$$ x - y \\equiv 3 \\pmod{11} \\text{ (Since diff limit checks)} \\\\ x + y \\equiv 0 \\pmod 3 \\\\ \\text{Try } y=2 \\to x=5 (5+2=7 \\text{ not } /3) \\\\ \\text{Try } y=4 \\to x=7 (7+4=11 \\text{ not } /3) \\\\ \\text{Try } y=6 \\to x=9 (15 \\pmod 3=0) \\\\ 81 + 36 = 117 $$<br><br><b>TCS Trap:</b> Students word \"Even Number\" ignore kar dete hain initial me ya phr non zero nahi padhte aur $y=0$ pe attempt shuru kar dete hain.<br><br><b>Exam Takeaway:</b><br><br>> Overlapping parameters given hon to filter limit (Even / Non Zero) ko core variable base assume kiya karo calculation filter karke."
+}
+,
+    {
+      "q": "What is the largest 4-digit number that is exactly divisible by $88$?",
+      "o": [
+        "9944",
+        "9988",
+        "9966",
+        "9900"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br><br><b>Pen-Free Observation:</b> Largest condition and $88$ divisibility criteria (yani rule 11 aur 8 check). Top se sabse bada number scan kar option list me.<br><br><b>Method 1 (Ninja Technique):</b> Options largest to smallest line lagao. Pehle 8 aur 11 ka rule check kar direct reject condition udate ja.<br><br>Mathematically :-<br><br>$$ \\text{Largest } 9988 \\implies \\frac{988}{8} \\text{ fails} \\\\ 9966 \\implies \\frac{966}{8} \\text{ fails} \\\\ 9944 \\implies \\frac{944}{8} = 118. \\text{ And } 11 \\text{ checks } (13 - 13 = 0). \\\\ \\text{Answer fixed } = 9944 $$<br><br><b>Method 2 (Concept Builder):</b> Arithmetic absolute LCM remainder limit test apply karna traditional way me.<br><br>Mathematically :-<br><br>$$ \\frac{9999}{88} \\implies \\text{Quotient } 113, \\text{ Remainder } 55 \\\\ 9999 - 55 = 9944 $$<br><br><b>TCS Trap:</b> Traditional minus karoge toh Remainder me galati aana boht aam hai and $9900$ wagera match limit set hote hain errors me.<br><br><b>Exam Takeaway:</b><br><br>> Jab \"Largest/Smallest Divisible Array Number\" question complete options ke sath ho, Reverse Top Down test options ka 10x fast execution hai."
+    },
+    {
+      "q": "Find the rightmost two non-zero digits of $30^{2720}$.",
+      "o": [
+        "01",
+        "61",
+        "41",
+        "21"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Value Putting & Symmetry.<br><br><b>Pen-Free Observation:</b> Trailing zeroes kisi number form me extra multiple limits add karti hain. Pura Zero block hi ignore maro matrix separation property lagake.<br><br><b>Method 1 (Ninja Technique):</b> Zero nikal bahar kar de 10 multiple split lagake. Baaki sirf $3$ bachega base. 3 ke upar power exact $4$ ki multiplier sequence me fit baith rhi hai matlab 81 banayegi series ko 'X1' solve ke lie.<br><br>Mathematically :-<br><br>$$ 30^{2720} = (3 \\times 10)^{2720} = 3^{2720} \\times 10^{2720} \\\\ \\text{Ignore zeroes part} \\to 3^{2720} \\\\ 3^{2720} = (3^4)^{680} = 81^{680} \\\\ \\text{Unit} = 1 \\text{, Tens} = (8 \\times 0) = 0 \\implies 01 $$<br><br><b>Method 2 (Concept Builder):</b> Exact cyclical behavior and modular inverse scaling on core number parts.<br><br>Mathematically :-<br><br>$$ \\phi(100) = 40 \\\\ 3^{40k} \\equiv 1 \\pmod{100} \\\\ 2720 \\pmod{40} = 0 \\implies \\text{Last two are } 01 $$<br><br><b>TCS Trap:</b> Yahan decimal zeros aur extra zeros add hone ki confusion lagakar numbers $10^{X}$ ko directly mix karke powers calculate karne mat baitho.<br><br><b>Exam Takeaway:</b><br><br>> Trailing zeroes check limits me core non zero base separate mark karo, aur remaining portion power cyclicity rules execute karo."
+    },
+    {
+      "q": "The difference between a two-digit number and the number obtained by interchanging the positions of its digits is $54$. The difference between the two digits of that number is?",
+      "o": [
+        "4",
+        "5",
+        "6",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br><br><b>Pen-Free Observation:</b> Reversed positions wale difference condition hamesha $9$ ka perfectly clean multiple extract deta hai variable format ke liye.<br><br><b>Method 1 (Ninja Technique):</b> Interchanging digits ka difference diya ho to seedha given number (54) ko 9 se divide kar do, limits aur answer clear output degi.<br><br>Mathematically :-<br><br>$$ (10x + y) - (10y + x) = 9(x - y) \\\\ 9(x - y) = 54 \\implies (x - y) = 6 $$<br><br><b>Method 2 (Concept Builder):</b> Full linear algebraic setup variable extraction based on placeholders formulation.<br><br>Mathematically :-<br><br>$$ N = 10a + b \\text{ , Reverse } R = 10b + a \\\\ N - R = 9a - 9b = 9(a-b) \\\\ 9(a-b) = 54 \\implies a-b=6 $$<br><br><b>TCS Trap:</b> Students actual two-digit combinations nikalne ko assume karte hain like 93-39 jo ki manual hit-and-trial pe bhot heavy limit waste karta hai.<br><br><b>Exam Takeaway:</b><br><br>> Interchanged Reverse Difference is directly $9(x-y)$. And Reversed Addition Sum is perfectly $11(x+y)$ always."
+    },
+    {
+      "q": "Find the number of factors of $46656$ (which is $2^6 \\times 3^6$) that are BOTH a perfect square and a perfect cube.",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility & C9.<br><br><b>Pen-Free Observation:</b> Ek factor jo power 2 (Square) aur power 3 (Cube) dono ka perfectly balance divisor hai, uske andar LCM power 6 perfectly align hona chahiye base matrix pe.<br><br><b>Method 1 (Ninja Technique):</b> Hamesha square aur cube limits ko eliminate karo unka LCM bana ke yani 6 multiplier factor search karke. Total possible $6$ multiple limit ko pick karo.<br><br>Mathematically :-<br><br>$$ \\text{Matrix Needed} = (P_1)^{6x} \\times (P_2)^{6y} \\dots \\\\ \\text{Base factors } = 2^6 \\times 3^6 \\\\ 6\\text{th power possible for } 2 = \\{2^0, 2^6\\} \\implies 2 \\text{ choices} \\\\ 6\\text{th power possible for } 3 = \\{3^0, 3^6\\} \\implies 2 \\text{ choices} \\\\ \\text{Total Combos} = 2 \\times 2 = 4 $$<br><br><b>Method 2 (Concept Builder):</b> Combinatorics check parameters filtering exactly out non overlapping boundaries limits.<br><br>Mathematically :-<br><br>$$ x^a \\text{ must have } a \\pmod 2=0, a \\pmod 3=0 \\implies a \\pmod 6=0 \\\\ \\text{Since max power is 6, valid } a \\in \\{0,6\\} \\\\ \\text{Choices count} = 2 \\times 2 = 4 $$<br><br><b>TCS Trap:</b> Log common dhundhte hain dono ko (squares all nikalenge fir cubes ki alag process form kareinge) joki pura overlap checking waste operation hai.<br><br><b>Exam Takeaway:</b><br><br>> BOTH perfect Square and Perfect Cube operation ka universal standard matlab absolute factor matching $6\\text{th}$ Base Power multiples limits."
+    }
+  ]
+}

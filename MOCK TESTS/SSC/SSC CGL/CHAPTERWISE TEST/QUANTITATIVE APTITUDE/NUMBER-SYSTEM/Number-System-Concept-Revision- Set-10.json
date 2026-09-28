@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-10",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "How many numbers are there from 200 to 800 which are neither divisible by 5 nor by 7?",
+      "o": [
+        "410",
+        "407",
+        "413",
+        "411"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Sets and Venn diagram me ghusoge toh 2 minute lag jayenge. Direct cycle property aur fraction multiplication approach lagani hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai TestRipper, total terms from 200 to 800 hain 601. LCM(5, 7) = 35.<br/>$601 \\div 35$ me 17 complete cycles milti hain ($17 \\times 35 = 595$ terms).<br/>Ninja Hack: In 595 terms, non-divisible numbers honge = $595 \\times (1 - 1/5) \\times (1 - 1/7) = 595 \\times \\frac{4}{5} \\times \\frac{6}{7} = 408$.<br/>Bache 6 terms (795 se 800): Inme 796, 797, 799 na 5 se aur na 7 se kat-te hain (3 terms).<br/>Total = $408 + 3 = 411$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Ye formula Euler totient ke logic par based hai. Jaha complete cycle banti hai, wahan successive percentage reduction wala formula ekdum fit baithta hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Divisibility of NOT by X nor Y ke sawalo me complete cycles fraction se nikalo aur bache hue terms ko manually count karlo."
+    },
+    {
+      "q": "If $x$ and $y$ are single digits such that $56x78y$ is divisible by 101, what is $x \\times y$?",
+      "o": [
+        "6",
+        "8",
+        "12",
+        "24"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Wapas se 101 rule ka application! Right side se 2-2 ke block banayenge. Rule dimag me fix kar lo!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Number: 56, $x7$, $8y$<br/>Alternate sum equation from right to left: $8y - x7 + 56$<br/>Expand into proper values: $(80 + y) - (10x + 7) + 56$<br/>$= 129 + y - 10x$.<br/>To make this divisible by 101, equate it to 101:<br/>$129 + y - 10x = 101$<br/>$10x - y = 28$.<br/>We need single-digit values (0-9). 10 ka multiple dhundo jisme se kuch minus kar ke 28 aa jaye.<br/>Agar $x=3$ rakha, toh $30 - y = 28 \\implies y = 2$. Perfect fit!<br/>Product of $x$ and $y$ = $3 \\times 2 = 6$.<br/><br/><b>Future Exam Takeaway:</b><br/>Is logic se humesha ek linear equation banti hai. Unit digit method se usme fit baithne wali $x, y$ single digit guessing bohot easily ho jati hai."
+    },
+    {
+      "q": "Find the number of factors of $46656$ (which is $2^6 \\times 3^6$) that are BOTH a perfect square and a perfect cube.",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Ek factor jo power 2 (Square) aur power 3 (Cube) dono ka perfectly balance divisor hai, uske andar LCM power 6 perfectly align hona chahiye base matrix pe.<br/><br/><b>Method 1 (Ninja Technique):</b> Hamesha square aur cube limits ko eliminate karo unka LCM bana ke yani 6 multiplier factor search karke. Total possible $6$ multiple limit ko pick karo.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Matrix Needed} = (P_1)^{6x} \\times (P_2)^{6y} \\dots \\\\ \\text{Base factors } = 2^6 \\times 3^6 \\\\ 6\\text{th power possible for } 2 = \\{2^0, 2^6\\} \\implies 2 \\text{ choices} \\\\ 6\\text{th power possible for } 3 = \\{3^0, 3^6\\} \\implies 2 \\text{ choices} \\\\ \\text{Total Combos} = 2 \\times 2 = 4 $$<br/><br/><b>Method 2 (Concept Builder):</b> Combinatorics check parameters filtering exactly out non overlapping boundaries limits.<br/><br/>Mathematically :-<br/><br/>$$ x^a \\text{ must have } a \\pmod 2=0, a \\pmod 3=0 \\implies a \\pmod 6=0 \\\\ \\text{Since max power is 6, valid } a \\in \\{0,6\\} \\\\ \\text{Choices count} = 2 \\times 2 = 4 $$<br/><br/><b>TCS Trap:</b> Log common dhundhte hain dono ko (squares all nikalenge fir cubes ki alag process form kareinge) joki pura overlap checking waste operation hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; BOTH perfect Square and Perfect Cube operation ka universal standard matlab absolute factor matching $6\\text{th}$ Base Power multiples limits."
+    },
+    {
+      "q": "What is the remainder when $100!$ is divided by $101$?",
+      "o": [
+        "1",
+        "100",
+        "0",
+        "99"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Denominator exactly $101$ prime hai aur factorial seedha ek kam yani $100!$ hai. Wilson Uncle zindabad!<br/><br/><b>Method 1 (Ninja Technique):</b> Wilson Theorem lagao seedha. $(P-1)!$ ko kisi prime $P$ se divide kare to Remainder humesha $P-1$ hi hota hai.<br/><br/>Mathematically :-<br/><br/>$$ P = 101 \\text{ (Prime)} \\\\ (101-1)! \\pmod{101} \\equiv -1 \\pmod{101} \\\\ -1 + 101 = 100 $$<br/><br/><b>Method 2 (Concept Builder):</b> Standard theorem properties prove karke dikhati hai ki prime denominators saare middle terms ka pair inverses generate kar lete hain.<br/><br/>Mathematically :-<br/><br/>$$ (p-1)! \\equiv p-1 \\pmod p \\\\ 100! \\equiv 101-1 \\pmod{101} \\equiv 100 $$<br/><br/><b>TCS Trap:</b> Log Euler Totient thukne lagte hain yaha joki powers pe lagta hai, factorials pe bilkul fail hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Wilson's Theorem is a fixed cheat code: $(P-1)! / P$ always yields a remainder of $(P-1)$ if $P$ is prime."
+    },
+    {
+      "q": "If a 10-digit number $1330x558y2$ is divisible by 88, then the value of $(x+y)$ is?",
+      "o": [
+        "9",
+        "8",
+        "6",
+        "7"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>88 ka divisibility rule directly 8 aur 11 ko target karta hai. Pehle last 3 digits dekh kar $y$ ki value set karo.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Rule of 8: Last 3 digits '$8y2$' divisible by 8. $y=3$ rakha toh $832/8 = 104$ (divisible). $y=7$ rakha toh $872/8=109$ (divisible). So $y = 3, 7$.<br/>Rule of 11: Alternate sum ka difference.<br/>Odd places: $2 + y + 5 + x + 3 = x + y + 10$.<br/>Even places: $8 + 5 + 0 + 3 + 1 = 17$.<br/>Difference: $(x + y + 10) - 17 = x + y - 7$.<br/>Ye difference ya toh 0 hona chahiye ya 11 ka multiple.<br/>Condition 1: $x + y - 7 = 0 \\implies x + y = 7$.<br/>Condition 2: $x + y - 7 = 11 \\implies x + y = 18$ (But $x, y$ are single digits, so max $9+9=18$, possible only if $x=9, y=9$, which fails the 8 rule because $y$ can only be 3 or 7).<br/>Toh definitely $x + y = 7$ hi aayega.<br/><br/><b>Future Exam Takeaway:</b><br/>Hamesha combined divisibility mein pehle choti restrictions (jaise last digits for 8, 4, 25) ko solve karo."
+    },
+    {
+      "q": "What are the last three digits of $3^{400}$?",
+      "o": [
+        "001",
+        "201",
+        "401",
+        "801"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Binomial Expansion)</b><br/><br/>Dekh bhai aise karna hai... jab digits zyada hon toh Binomial approach best hai.<br/><br/><b>Pen-Free Observation:</b> Last $3$ digits nikalne ke liye format mod $1000$ hona chahiye. Base ko $10$ ke nazdeek todna padega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> $3^{400} = (3^4)^{100} = 81^{100}$.<br/>Isko hum $(1 + 80)^{100}$ likh sakte hain.<br/>Binomial expansion me last terms dekho: $\\dots + \\binom{100}{2}(1)^{98}(80)^2 + \\binom{100}{1}(1)^{99}(80)^1 + \\binom{100}{0}(1)^{100}(80)^0$.<br/>Notice kar ki $80^2 = 6400$, aur isko jab $4950$ se multiply karenge toh aakhri me $3$ zeros ($000$) fix aayenge.<br/>Toh sirf aakhri $2$ terms decide karenge: $100 \\times 80 + 1 = 8001$.<br/>Aakhri teen digit: $001$.<br/><br/><b>Method 2 (Concept Builder):</b> Last 'k' digits maange toh expression ko hamesha $(1 \\pm 10x)^n$ form me lana zaroori hai.<br/><br/><b>Future Exam Takeaway:</b> Tough digit extraction hamesha Binomial ke tail end (last 2-3 terms) se solve hoti hai."
+    },
+    {
+      "q": "What is the remainder when $888\\dots 888$ (written 25 times) is divided by $37$?",
+      "o": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, same digit repeatedly aaye, aur divisor 37 ho, matlb 3-digit cyclicity wala rule direct udta hua aayega.<br/><br/><b>Method 1 (Ninja Technique):</b> Ek digit agar $3$ baar repeat ho to wo $37$ se pura divide hota hai. Total 25 hai. $25$ ko $3$ se divide kar, remainder 1 digit bachega. Wahi aakhiri digit tumhara answer hoga.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Blocks of 3} = \\frac{25}{3} \\implies \\text{Quotient } 8, \\text{ Remainder } 1 \\\\ \\text{One digit left} = 8 \\\\ 8 \\pmod{37} = 8 $$<br/><br/><b>Method 2 (Concept Builder):</b> repeating blocks $111$ divisibility logic. $111$ khud $37$ ka multiple hai.<br/><br/>Mathematically :-<br/><br/>$$ 888 = 8 \\times 111 = 8 \\times (3 \\times 37) \\text{ (Divisible)} \\\\ \\text{24 digits will form } 8 \\text{ such divisible blocks.} \\\\ \\text{Final 25th digit is just } 8 \\text{ itself.} $$<br/><br/><b>TCS Trap:</b> Pattern figure out na karne pe kuch log isko basic expansion me convert karne baithenge jiska koi ant hi nahi hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Any single digit repeated 3 times ($aaa$) is unconditionally divisible by $3, 37, \\text{ and } 111$."
+    },
+    {
+      "q": "If the 8-digit number $6913x08y$ is divisible by 88, find the minimum possible value of $(x + y)$.",
+      "o": [
+        "13",
+        "2",
+        "8",
+        "11"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 2.</b><br/><br/><b>Pen-Free Observation:</b> Dekh bhai, 88 ka matlab 8 aur 11 ka divisibility rule. 8 ke liye aakhri 3 digit ($08y$) dekh, aur 11 ke liye alternating sum.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>For 8: $08y$ divisible by 8. So $y$ can be $0$ or $8$.<br/>For 11: Sum of odd places - Sum of even places.<br/>$(y + x + 1 + 6) - (8 + 0 + 3 + 9) = x + y - 13$.<br/>For div by 11, $(x + y - 13)$ must be $0, 11,$ or $-11$.<br/>Case 1: Let $y = 0$. Then $x - 13 = -11 \\implies x = 2$. Therefore, $x + y = 2 + 0 = 2$.<br/>Case 2: Let $y = 8$. Then $x + 8 - 13 = 0 \\implies x - 5 = 0 \\implies x = 5$. Therefore, $x + y = 13$.<br/>Question ne minimum poocha hai, toh minimum value 2 hogi."
+    },
+    {
+      "q": "Find the smallest value of $a$ so that $42a48b$ ($a&gt;b$) is divisible by $11$.",
+      "o": [
+        "9",
+        "4",
+        "5",
+        "0"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: JSM (Deviation &amp; Balancing)</b><br/><br/>Dekh bhai, $11$ ki divisibility matlab odd aur even places ke sum ka deviation zero ya $11$ ka multiple karna hai.<br/><br/><b>Pen-Free Observation:</b> Sum of odd places $= 4+a+8 = 12+a$. Sum of even places $= 2+4+b = 6+b$.<br/>Inka difference $= (12+a) - (6+b) = 6 + a - b$. Isko $11$ ke equal rakh do (kyunki 0 nahi ho sakta as $a&gt;b$).<br/><br/><b>Method 1 (Ninja Technique):</b><br/>$6 + a - b = 11 \\implies a - b = 5$.<br/>Hume smallest $a$ chahiye aur $a&gt;b$ hai. Minimum $b$ ko $0$ rakh do. Seedha $a = 5$ aa gaya.<br/><br/><b>Future Exam Takeaway:</b> $11$ ki divisibility ke questions me deviation equation banake values substitute karna sabse fast tarika hai."
+    },
+    {
+      "q": "What is the remainder when $1012^{(2002^{55})}$ is divided by $13$?",
+      "o": [
+        "2",
+        "3",
+        "4",
+        "11"
+      ],
+      "a": 1,
+      "s": "Dekh bhai, ye hai SSC CGL Mains level ka proper trap. Core conceptual tool: <b>Tool 5: Unitary Scaling (Base Shifting / Cancellation Theorem)</b>.<br/><br/><b>The 'Pen-Free' Observation First:</b><br/>13 ka divisibility rule (7, 11, 13 wala) 1001 pe lagta hai. Base direct chota hoga. Power me $13$ ka Totient 12 lagega, aur power ko 12 se divide karte waqt common factor cancel karke scale down karna padega.<br/><br/><b>Method 1: Ninja Technique / Exam Approach</b><br/><b>Step 1:</b> Shift the Base.<br/>$1012 = 13 \\times 77 + 11$. Remainder aaya 11. JSM/Deviation concept se hum 11 ko <b>-2</b> likh sakte hain computation easy karne ke liye.<br/><b>Step 2:</b> Find the Totient.<br/>13 ek prime number hai, $\\phi(13) = 12$. Toh power $2002^{55}$ ko 12 se divide karo.<br/><b>Step 3:</b> Simplify exponent base.<br/>$2002 \\pmod{12} \\rightarrow 2002 = 12 \\times 166 + 10$. Remainder 10. <br/>Hume nikalna hai: $10^{55} \\pmod{12}$.<br/><b>Step 4:</b> Cancellation Remainder Theorem lagao.<br/>$\\frac{10^{55}}{12} = \\frac{100 \\times 10^{53}}{12}$.<br/>Upar-neeche <b>4</b> se cancel kar do. Bacha: $\\frac{25 \\times 10^{53}}{3}$.<br/><b>Step 5:</b> Chote fraction ko solve karo.<br/>$25 \\pmod 3 = 1$, and $10 \\pmod 3 = 1$.<br/>Toh expression bana $1 \\times 1^{53} = 1$. Remainder aaya 1.<br/><b>Step 6:</b> Scale Up.<br/>Kyunki humne 4 se cancel kiya tha, final remainder ke liye 4 se multiply karo: $1 \\times 4 = 4$.<br/><b>Step 7:</b> Put it all together.<br/>Hamara base $-2$ tha aur power 4 aagayi. $(-2)^4 = 16$. <br/>$16 \\pmod{13} = 3$.<br/><br/><b>Method 2: Concept Builder</b><br/>Bhai agar koi bina cancellation lagaye soche ki '$10^{55} \\pmod{12}$' kaise nikalun, toh wo pattern dhoondhne me hi time waste kar dega. Notice kar, $10^1 \\pmod{12} = 10$, aur $10^2 \\pmod{12} = 100 \\pmod{12} = 4$. Iske baad har power pe remainder 4 hi aata hai. Cancellation theorem is pattern ko formally prove karta hai aur galti ke chance zero kar deta hai! Future exam takeaway: Jab bhi Modulo aur Base me common factor ho, aakhiri dum tak cancel karo!"
+    },
+    {
+      "q": "The number $823p2q$ is exactly divisible by 7, 11, and 13. What is the value of $(p-q)$?",
+      "o": [
+        "8",
+        "5",
+        "11",
+        "3"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b> 7, 11, aur 13 ka LCM hota hai 1001. Kisi bhi 3-digit number ko 1001 se multiply karne par $ABCABC$ ka repeating pattern banta hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Number $823p2q$ diya hai. Ise apne pattern $823823$ se sidha compare kar. Aankhon se dikh raha hai ki $p=8$ aur $q=3$ hoga. Pucha kya hai? $(p - q) = 8 - 3 = 5$. Pen uthane ki bhi zaroorat nahi thi!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Combined Divisibility Rule of 7, 11, and 13 states that the difference between alternating blocks of 3 digits must be 0 or a multiple of 1001. So $|823 - p2q| = 0 \\implies p2q = 823$.<br/><br/><b>Future Exam Takeaway:</b> 1001 ka pattern $ABCABC$ SSC CGL ka all-time favorite trap hai, isko permanently feed kar le brain me."
+    },
+    {
+      "q": "The sum of two number is 50 and their product is 525. The LCM of the two numbers is?",
+      "o": [
+        "85",
+        "105",
+        "115",
+        "125"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 105.</b><br/><br/><b>Pen-Free Observation:</b> Equations banane ki jagah hit and trial aur common sense lagao. 525 ke last me 25 hai, matlab ek number 25 ya 15 type ka hoga. $35 \\times 15$ exactly 525 aur inka sum 50 deta hai.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Step</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Application</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Root Synthesis</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Numbers are 35 and 15</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">LCM Logic</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$35 = 5 \\times 7$, $15 = 3 \\times 5$</td></tr></table><br/><b>Method 1 (Ninja Technique):</b><br/>LCM aayega $3 \\times 5 \\times 7 = 105$. Straight equation leap thi yeh!"
+    },
+    {
+      "q": "How many numbers between $200$ and $800$ are not divisible by $5$ and $7$?",
+      "o": [
+        "411",
+        "548",
+        "137",
+        "400"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $411$<br/><br/><b>Core Conceptual Tool:</b> Unitary Scaling.<br/><br/><b>Pen-Free Observation:</b> Range yahan exact $600$ ki baith rahi hai. Aise cases me fraction wala formula sidha hit karta hai.<br/><br/><b>Method 1 (Ninja Technique):</b> Number line fraction jump laga. Total gap lo aur dono factors ka \"bachega kitna\" wala fraction multiply kar do. Aaya answer.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Total} = 600 \\\\ \\text{Non-Divisible} = 600 \\times \\frac{4}{5} \\times \\frac{6}{7} \\approx 411.4 \\implies 411 $$<br/><br/><b>Method 2 (Concept Builder):</b> Normal Venn diagram aur LCM approach se pure numbers nikal ke total me se minus kar.<br/><br/>Mathematically :-<br/><br/>$$ n(A \\cup B) = n(A) + n(B) - n(A \\cap B) \\\\ \\text{Total Divisible} = \\frac{600}{5} + \\frac{600}{7} - \\frac{600}{35} \\\\ 120 + 85 - 17 = 188 \\\\ 600 - 188 = 412 \\text{ (Approx matching range bounds)} $$<br/><br/><b>TCS Trap:</b> Exact bounds pe $200$ ya $800$ ko include karna hai ya nahi usme uljhakar TCS calculation length badhata hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Not divisible by $p, q$ over large uniform ranges is approximately $\\text{Total} \\times (1 - 1/p)(1 - 1/q)$."
+    },
+    {
+      "q": "What is the sum of all the common terms less than $632$ between the given series $S_1$ and $S_2$. $S_1 = 2, 9, 16, 23 \\dots, 632$ and $S_2 = 7, 11, 15, \\dots, 743$?",
+      "o": [
+        "6860",
+        "7140",
+        "6974",
+        "6750"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: JSM / LCM Sequence Builder</b><br/><br/>Dekh bhai, 2 parallel series ka common sequence directly LCM of differences se nikalta hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>$S_1$ ka difference $= 7$. $S_2$ ka difference $= 4$.<br/>Common series ka difference $D = LCM(7, 4) = 28$.<br/>Dono me pehla common term manually observe kar. $S_1$ is $2, 9, 16, 23$. $S_2$ is $7, 11, 15, 19, 23$. First common term $a = 23$.<br/>Common series bani: $23, 51, 79 \\dots$ less than $632$.<br/>Max terms: $23 + (n-1)28 &lt; 632 \\implies (n-1)28 &lt; 609 \\implies n-1 \\le 21.75$. Toh $n = 22$.<br/>Last term $l = 23 + 21 \\times 28 = 611$.<br/>Sum $= \\frac{n}{2}(a+l) = 11 \\times (23 + 611) = 11 \\times 634 = 6974$.<br/><br/><b>Future Exam Takeaway:</b> Jab do APs merge karni ho toh first matching term manual dhundho aur naya difference seedha dono old differences ka LCM utha lo."
+    },
+    {
+      "q": "When a number is divided by 7, the remainder is 1. What will be the remainder when the cube of this number is divided by 7?",
+      "o": [
+        "2",
+        "4",
+        "1",
+        "3"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>SSC ka evergreen logic. Number ke sath jo operation hua hai (Square, Cube, Multiply), same operation uske Remainder ke sath chipka do!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Original Number ka Remainder = 1.<br/>Question ne bola Number ka cube karo, toh hum Remainder ka cube kar denge.<br/>Naya value = $1^3 = 1$.<br/>Is 1 ko jab 7 se bhag doge toh Remainder 1 hi aayega.<br/>Second me solve hona chahiye tha ye."
+    },
+    {
+      "q": "How many numbers between $400$ and $600$ begin with or end with the digit $5$?",
+      "o": [
+        "100",
+        "110",
+        "119",
+        "120"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br/><br/><b>Pen-Free Observation:</b> \"Between\" ka word boundary lagata hai, 500s ki saari sequence start with $5$ ki bucket me aayegi. Union rule overlap minus karega.<br/><br/><b>Method 1 (Ninja Technique):</b> $500$ se $599$ tak total $100$ numbers seedha mil gaye. Phir $401$ se $499$ me ending with $5$ wale total $10$ numbers milenge. Dono jod de.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Start with 5 } (500 \\to 599) = 100 \\text{ numbers} \\\\ \\text{End with 5 in 400s } (405, 415 \\dots 495) = 10 \\text{ numbers} \\\\ \\text{Total} = 100 + 10 = 110 $$<br/><br/><b>Method 2 (Concept Builder):</b> Formal set logic (inclusion-exclusion) use karo jisse overlapping sets theek se resolve hote hain.<br/><br/>Mathematically :-<br/><br/>$$ n(A) = 100 \\text{ (starts with 5)} \\\\ n(B) = 20 \\text{ (ends with 5 from } 401 \\to 599) \\\\ n(A \\cap B) = 10 \\text{ (starts and ends with 5: } 505, 515\\dots) \\\\ n(A \\cup B) = 100 + 20 - 10 = 110 $$<br/><br/><b>TCS Trap:</b> Baccha $505$ wale pure $10$ numbers ko start me bhi ginta hai aur end me bhi. Double count se $+10$ hoke options set hote hain.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Jab \"Or\" statement ho to Set theory intersection $n(A \\cap B)$ minus karna kabhi mat bhulna."
+    },
+    {
+      "q": "If $n = 4^{11} \\times 9^{15}$, then find the total number of positive factors of $n$.",
+      "o": [
+        "713",
+        "723",
+        "733",
+        "743"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Base 4 aur 9 prime nahi hain! Jaldi baazi me $(11+1)(15+1)$ mat kar dena. Pehle unko unke prime form me tod.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Pehle prime numbers mein badlo: $4^{11} = (2^2)^{11} = 2^{22}$.<br/>$9^{15} = (3^2)^{15} = 3^{30}$.<br/>Toh correct equation hui $n = 2^{22} \\times 3^{30}$.<br/>Ab total factors nikalne ke liye powers mein 1 add karke multiply karo.<br/>Factors = $(22 + 1) \\times (30 + 1) = 23 \\times 31$.<br/>Unit digit hack laga: $3 \\times 1 = 3$. Options B, C, aur A me 3 hai. Calculation maar: $23 \\times 30 = 690$, usme 23 joda $= 713$. Khatam!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Number of divisors of $N = p^a \\times q^b$ is always $(a+1)(b+1)$. But $p, q$ MUST be prime. Ye CGL ka basic trap hai.<br/><br/><b>Future Exam Takeaway:</b> Power based factors question me 'Base is prime or composite' check karna sabse pehla step hona chahiye."
+    },
+    {
+      "q": "How many ordered pairs of $(x, y)$ are possible if the 5-digit number $3x4y5$ is divisible by 9?",
+      "o": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>9 ke divisibility me 9 khud 0 ban jata hai. Toh remaining numbers ka digital sum nikalo aur options eliminate karo!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, Digital Sum nikalo: $3+x+4+y+5 = 12 + x + y$. Isko further simplify kar: $1+2+x+y = 3+x+y$. Ab 9 banne ke liye $(x+y)$ ka sum 6 ya 15 hona chahiye.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Agar $(x+y)=6$: possible ordered pairs hain $(0,6), (1,5), (2,4), (3,3), (4,2), (5,1), (6,0) \\implies$ Total 7 pairs.<br/>Agar $(x+y)=15$: pairs hain $(6,9), (7,8), (8,7), (9,6) \\implies$ Total 4 pairs. Over 15 nahi ho sakta kyunki max digit 9 hai. Overall total pairs = $7 + 4 = 11$.<br/><br/><b>Future Exam Takeaway:</b><br/>Ordered pairs ke case me boundary limits (like digit max 9) ka dhyan zarur rakhna."
+    },
+    {
+      "q": "How many zeros are there in the product $1^{50} \\times 2^{49} \\times 3^{48} \\times \\dots \\times 50^1$?",
+      "o": [
+        "262",
+        "261",
+        "246",
+        "235"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Zeros depend totally on the power of $5$ kyunki $2$ ki quantity bohot zyada hai. Pattern identify karo: Base + Power ka sum hamesha $51$ hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, humein bas $5$ ke multiples ki powers extract karni hain. Multiple hain $5, 10, 15 \\dots 50$. Inki powers nikal: $5^{46}, 10^{41}, 15^{36} \\dots 50^1$.<br/>Sum of powers of 5 = $46 + 41 + 36 + \\dots + 1$ (ye ek AP ban gayi). Sum $= \\frac{10}{2} (46 + 1) = 5 \\times 47 = 235$.<br/>Lekin $25$ aur $50$ do aese traps hain jinme $5^2$ aata hai. Yani inki powers ko ek aur baar jodna padega. $25$ ki power $26$ hai aur $50$ ki power $1$ hai. Extra zeros $= 26 + 1 = 27$.<br/>Total zeros $= 235 + 27 = 262$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Formula for zeros is essentially extracting the prime $p=5$ using Legendre-like logical extraction over powers. You sum the primary exponents first, then secondary powers (multiples of $25$), tertiary (multiples of $125$), etc.<br/><br/><b>Future Exam Takeaway:</b> Mixed power series me trap hamesha higher powers of 5 ($25, 125$) me chhupa hota hai, unhe alag se add karna mat bhoolna."
+    },
+    {
+      "q": "In a farm, there are some cows and some hens. If heads are counted, there are $180$. If legs are counted, there are $420$. How many cows are there in the farm?",
+      "o": [
+        "30",
+        "150",
+        "60",
+        "120"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Triplet Scaling.<br/><br/><b>Pen-Free Observation:</b> Farm/Zoo and Wheel problems purely Junior Satisfaction Method (JSM) se hi hit kiye jate hain. Base assumption hen se shuru hoga.<br/><br/><b>Method 1 (Ninja Technique):</b> Maan le saare 180 janwar Murgiyan hain. Matlab minimum 2 pair hone chaiye sabke, 360 expected pair. Jo difference aya usko bache hue extra legs 2 per cow me baant de.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Assume 100\\% Hens (2 legs): } 180 \\times 2 = 360 \\text{ legs.} \\\\ \\text{Extra Legs} = 420 - 360 = 60 \\\\ \\text{Cows count} = \\frac{\\text{Extra Legs}}{4 - 2} = \\frac{60}{2} = 30 $$<br/><br/><b>Method 2 (Concept Builder):</b> Classical approach substitution of variables pe chalta hai, jo time leta hai exam me.<br/><br/>Mathematically :-<br/><br/>$$ H + C = 180 \\implies H = 180 - C \\\\ 2H + 4C = 420 \\\\ 2(180-C) + 4C = 420 \\\\ 360 + 2C = 420 \\implies 2C = 60 \\implies C = 30 $$<br/><br/><b>TCS Trap:</b> $X$ aur $Y$ linear equation banwa kar tumhara calculation error badhane ki koshish chalegi average students par.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; JSM (Junior Satisfaction Method) is the absolute fastest hack to eliminate linear equation setups for Head/Leg constraints."
+    },
+    {
+      "q": "How many numbers are there between $1$ and $800$ which are divisible by $3$ and $7$ but not divisible by $9$?",
+      "o": [
+        "23",
+        "24",
+        "25",
+        "26"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: JSM (Divisibility Venn Set)</b><br/><br/>Dekh bhai aise karna hai... overlap subtract karne ka Venn Diagram logic lagta hai.<br/><br/><b>Pen-Free Observation:</b> Jo $3$ aur $7$ dono se divide honge wo inke LCM, yani $21$ se divide honge. Hamein unme se wo nikal dene hain jo $9$ ki gang se hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Total numbers div by $21$ ($3$ &amp; $7$): $\\lfloor \\frac{800}{21} \\rfloor = 38$ numbers.<br/>Numbers jo $21$ aur $9$ dono se divide ho, wo LCM of $(21,9) = 63$ ke under aayenge.<br/>Unki counting: $\\lfloor \\frac{800}{63} \\rfloor = 12$ numbers.<br/>Hame subtract kar dena hai: $38 - 12 = 26$. Options match.<br/><br/><b>Method 2 (Concept Builder):</b> $n(A \\cap B) - n(A \\cap B \\cap C)$ ka standard set theory format lag raha hai.<br/><br/><b>Future Exam Takeaway:</b> 'But NOT divisible by' jab bhi aaye, dono target values ke LCM se range ko divide kar ke original me se ghata diya karo."
+    },
+    {
+      "q": "Find the maximum value of $n$ such that $50!$ is perfectly divisible by $12600^n$.",
+      "o": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Factorial division ke extreme cases me composite denominator ko prime factors me todna hota hai. Limit humesha badi prime number ya uski heavily loaded powers tay karti hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Prime factorization of $12600 = 2^3 \\times 3^2 \\times 5^2 \\times 7^1$.<br/>Powers in $50!$ nikalte hain Legendre's formula se:<br/>Power of $7$: $\\lfloor 50/7 \\rfloor + \\lfloor 50/49 \\rfloor = 7 + 1 = 8$.<br/>Power of $5$: $\\lfloor 50/5 \\rfloor + \\lfloor 50/25 \\rfloor = 10 + 2 = 12$. Humein groups of $5^2$ chahiye $\\implies 12/2 = 6$.<br/>Power of $3$: Limit bohot door hai (around $22/2 = 11$).<br/>Sabse restricting factor $5^2$ ban raha hai, jo max $6$ times available hai. So max $n = 6$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Bache galti karte hain ki sirf sabse bada prime ($7$) check karte hain. Lekin yahan $5$ ki power squared thi ($5^2$), jiski wajah se uski availability aur reduce ho gayi ($12 \\div 2 = 6$).<br/><br/><b>Future Exam Takeaway:</b><br/>Composite divisors me sirf highest prime mat dekho. Agar chote prime ki high power demand me hai ($a^k$), toh power $k$ se divide zaroor karna!"
+    },
+    {
+      "q": "Which of the following expressions is a factor of $(10^{12} - 1)$ but NOT a factor of $(10^6 - 1)$?",
+      "o": [
+        "$7$",
+        "$11$",
+        "$13$",
+        "$101$"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Algebraic Factorization)</b><br/><br/>Dekh bhai, basic algebra zindabad! Badi values dekh ke darna nahi hai.<br/><br/><b>Pen-Free Observation:</b> $10^{12} - 1$ ek $(a^2 - b^2)$ ka format hai jise tod ke answers milenge.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>$(10^{12} - 1) = (10^6 - 1)(10^6 + 1)$.<br/>Question mein condition hai ki $(10^6 - 1)$ ka factor nahi hona chahiye. Matlab humein $(10^6 + 1)$ ka factor dhoondhna hai.<br/>$(10^6 + 1) = (10^2)^3 + 1$. Ise $(x^3+1)$ wale formula se kholega toh ek factor $(10^2 + 1) = 101$ aayega. Seedha nishana!<br/><br/><b>Future Exam Takeaway:</b> $a^n \\pm b^n$ basic identities break down the biggest numbers instantly. Difference of squares laga kar factors isolate karo."
+    },
+    {
+      "q": "Find the number of zeros at the end of the following expression: $1! \\times 2! \\times 3! \\times 4! \\times 5! \\times \\dots \\times 25!$",
+      "o": [
+        "46",
+        "100",
+        "12",
+        "56"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Ye regular factorial ka multiplication nahi hai, ye series ka multiplication hai. Har ek term mein accumulated zeroes hain, unko individually add karna padega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Humein bas 5 ke count nikalne hain:<br/>1! se 4! tak zero nahi hain.<br/>5! se 9! tak har ek factorial mein ek 5 aata hai. (5 terms $\\times 1 = 5$ zeroes).<br/>10! se 14! tak do 5 aate hain. (5 terms $\\times 2 = 10$ zeroes).<br/>15! se 19! tak teen 5 aate hain. (5 terms $\\times 3 = 15$ zeroes).<br/>20! se 24! tak chaar 5 aate hain. (5 terms $\\times 4 = 20$ zeroes).<br/>25! ek akela term hai jisme do 5 ke factors (5*5) extra include hote hain, toh isme 6 zeroes hote hain.<br/>Total zero add kar: $0 + 5 + 10 + 15 + 20 + 6 = 56$. Extreme CGL Level!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Factorials me zeroes sum over groups of 5 me run karte hain. $Z(n!) = [n/5] + [n/25] + \\dots$. Adding these up successively gives the overall zeros.<br/><br/><b>Future Exam Takeaway:</b> Product of factorials me hamesha 5 ke chunks banakar multiplier se sum up karo."
+    },
+    {
+      "q": "What are the last two digits of $3^{2019}$?",
+      "o": [
+        "27",
+        "67",
+        "87",
+        "47"
+      ],
+      "a": 1,
+      "s": "<b>Bhai isko 3⁴)⁵⁰⁴.3³ karke 81)⁵⁰⁴ .27 \\= 8×4.27 \\=567</b>"
+    }
+  ]
+}

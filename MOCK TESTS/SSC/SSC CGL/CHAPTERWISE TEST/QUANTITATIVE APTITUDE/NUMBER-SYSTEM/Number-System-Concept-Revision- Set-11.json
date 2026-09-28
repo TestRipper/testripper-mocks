@@ -1,0 +1,273 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-11",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "If six-digit number $5x2y6z$ is divisible by $7, 11$ and $13$, then the value of $(x-y+3z)$ is?",
+      "o": [
+        "7",
+        "4",
+        "0",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> $7, 11, 13$ dekhte hi dimag ki batti jalni chahiye. Ye combined divisibility $1001$ ka specific pattern hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai TestRipper, is type ka ek fix pattern hota hai. Jo number in teeno se katega, wo essentially inke LCM ($1001$) se katega.<br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Concept</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Rule</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>7, 11, 13 Magic Multiplier</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Any 3-digit number $\\times 1001$ becomes $ABCABC$</td></tr></table><br/>Toh $5x2$ aur $y6z$ bilkul judwa (identical) hone chahiye. Compare karlo: $y=5, x=6, z=2$.<br/>Equation mein daalo: $x - y + 3z = 6 - 5 + 3(2) = 1 + 6 = 7$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Number is form $1000 \\times (5x2) + (y6z)$. $1001$ se divisibility ka matab hai alternate 3-digit blocks ka difference $0$ ya $1001$ ka multiple ho. Since it's a 6-digit number, difference exactly $0$ hi hoga.<br/><br/><b>Future Exam Takeaway:</b> SSC me ab $1001$ ke alawa $7, 11, 13$ ka difference approach bhi puchte hain, par $ABCABC$ format sabse scoring hai."
+    },
+    {
+      "q": "Find the number of proper divisors of $3^6 \\times 5^4$.",
+      "o": [
+        "34",
+        "35",
+        "36",
+        "33"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $34$<br/><br/><b>Core Conceptual Tool:</b> Unitary Scaling.<br/><br/><b>Pen-Free Observation:</b> Yaar yahan 'proper' divisors pucha hai, simple total nahi. Formula me end me bas number khud ko subtract karna hai.<br/><br/><b>Method 1 (Ninja Technique):</b> Powers me $+1$ karke multiply kar, ye dega total. Proper pucha hai toh end me $1$ minus kar de.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Total Factors} = (6+1)(4+1) = 35 \\\\ \\text{Proper Divisors} = 35 - 1 = 34 $$<br/><br/><b>Method 2 (Concept Builder):</b> Proper divisor matlab wo number khud include nahi hoga uski counting me. Baki saara calculation total factors jaisa hi chalega.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Proper Divisors} = (p+1)(q+1) - 1 \\text{ (Excluding } N \\text{ itself)} $$<br/><br/><b>TCS Trap:</b> Proper keyword miss karega to $35$ pehla option ya $B$ option me mil jayega and $-2.5$ leke aayega.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Proper divisors = Total Factors $- 1$. Original number count nahi hota hai."
+    },
+    {
+      "q": "Find the least common multiple of 1.2 and 2.7?",
+      "o": [
+        "5.4",
+        "10.8",
+        "32.4",
+        "7.08"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 10.8.</b><br/><br/><b>Pen-Free Observation:</b> Decimals ka LCM nikalne me bache aksar fraction $12/10$ aur $27/10$ bana kar fans jate hain. Standard ninja technique lagao: decimal places equalize karo aur integers ki tarah treat karo.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Numbers hain 1.2 and 2.7. Point bhool ja, 12 aur 27 treat kar.<br/>LCM(12, 27): $27 \\times 4 = 108$.<br/>Ab original equation me ek decimal place tha, toh LCM me bhi wapas 1 decimal place laga de.<br/>Final Output = 10.8. Khatam!"
+    },
+    {
+      "q": "What is the remainder when $(123456789101112\\dots 444546)$ is divided by $16$?",
+      "o": [
+        "2",
+        "6",
+        "10",
+        "14"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Tail Limit Observation)</b><br/><br/>Dekh bhai! Pura number dekh kar panic nahi hona hai, sirf base ki power pakad.<br/><br/><b>Pen-Free Observation:</b> $16 = 2^4$, toh 16 ki divisibility check karne ke liye sirf number ki aakhiri 4 digits chahiye hote hain.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Yeh counting series chal rahi hai $44, 45, 46$ tak. Toh last 4 digits hue $4546$.<br/>Ab bas $4546 \\div 16$ kar. $16 \\times 284 = 4544$ hota hai.<br/>Remainder kya bacha? 2 bacha. Options eliminate kar aur aage badh!<br/><br/><b>Future Exam Takeaway:</b> Divisibility of $2^n$ depends entirely on the last $n$ digits. Aage ke saare digits sirf daraane ke liye hote hain."
+    },
+    {
+      "q": "What is the ratio of the sum of the even factors to the sum of the odd factors of $240$?",
+      "o": [
+        "30:1",
+        "15:1",
+        "14:1",
+        "24:1"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $30:1$<br/><br/><b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Ratio pucha hai toh samajh jao odd wale numbers bracket equation me apne aap even ke factor se cancel ho jayenge pura calculation mat karna.<br/><br/><b>Method 1 (Ninja Technique):</b> Number ka factors tod de. Odd wale brackets ratio me upper aur lower dono side honge, cancel honge. Bas powers of 2 wale ka difference extract kar ratio ke liye.<br/><br/>Mathematically :-<br/><br/>$$ 240 = 2^4 \\times 3 \\times 5 \\\\ \\text{Even component sum} = 2^1 + 2^2 + 2^3 + 2^4 = 30 \\\\ \\text{Odd component sum} = 2^0 = 1 \\\\ \\text{Ratio} = 30 : 1 $$<br/><br/><b>Method 2 (Concept Builder):</b> Formula se karoge tab bhi $3, 5$ wale brackets same cancel hi honge fraction banate time.<br/><br/>Mathematically :-<br/><br/>$$ \\frac{\\text{Even Sum}}{\\text{Odd Sum}} = \\frac{(2^1+2^2+2^3+2^4)(3^0+3^1)(5^0+5^1)}{2^0(3^0+3^1)(5^0+5^1)} \\\\ = \\frac{30}{1} $$<br/><br/><b>TCS Trap:</b> Aadha dimag yahi ratio dono ki individual heavy values extract karne me nikal dega tabhi time kam padega exam me.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Even to Odd factor sum ratio seedha only powers of $2$ component pe depend karta hai, baki primes ud jaate hain."
+    },
+    {
+      "q": "In a parking lot, there are only two-wheelers and four-wheelers. The total number of vehicles is 60 and the total number of wheels is 200. How many two-wheelers are parked there?",
+      "o": [
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: JSM (Shift Method)</b><br/><br/>Dekh bhai... Linear equations $x$ aur $y$ wali equations banayega toh time nikal jayega. Shift method se bina pen chalaye solve kar.<br/><br/><b>Pen-Free Observation:</b> Maan le parking lot mein sabke paas 4 pahiye hain.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Toh total wheels $= 60 \\times 4 = 240$ hone the. Lekin asal mein wheels sirf 200 hain.<br/>Yeh 40 wheels jyada kyu aaye? Kyunki humne 2-wheelers ko bhi 4-wheeler ginn liya (matlab har 2-wheeler pe 2 extra pahiye assume kiye).<br/>Extra wheels ko extra factor 2 se divide kar de: $40 / 2 = 20$. So, 20 two-wheelers the.<br/><br/><b>Future Exam Takeaway:</b> Shift method avoids simultaneous equations completely. Shift all entities to the higher value and divide the error gap."
+    },
+    {
+      "q": "The ratio between a two-digit number and the number obtained by reversing its digits is $4:7$. Find the ratio between the tens place digit and the units place digit.",
+      "o": [
+        "$1:2$",
+        "$2:1$",
+        "$1:3$",
+        "$3:1$"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br/><br/>Dekh bhai, ye options se udane wala question hai! Pen uthane ki bhi zarurat nahi.<br/><br/><b>Pen-Free Observation:</b> Number $ab$ aur reversed $ba$ ka ratio $4:7$ diya hai. Ratio $1$ se chota hai, matlab pehla digit dusre se chhota hoga. Option B aur D sidha eliminate ho gaye.<br/><br/><b>Method 1 (Ninja Technique - Option Elimination):</b><br/>Option A: Ratio $1:2$ hai. Number maano $12$. Reverse hoga $21$. Seedha $\\frac{12}{21} = \\frac{4}{7}$ match kar gaya. Sirf 2 second ka game tha!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Let number be $10x+y$ and reverse be $10y+x$.<br/>$\\frac{10x+y}{10y+x} = \\frac{4}{7} \\implies 70x + 7y = 40y + 4x \\implies 66x = 33y \\implies \\frac{x}{y} = \\frac{1}{2}$.<br/><br/><b>Future Exam Takeaway:</b> Ratio of digits pooche toh sidha base values assume karke fraction check kar lena, equation banane mein time waste mat karna."
+    },
+    {
+      "q": "If $n = 8^{12}$, then how many perfect squares are there in its factors?",
+      "o": [
+        "18",
+        "19",
+        "20",
+        "21"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $19$<br/><br/><b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Perfect square matlb factors me numbers ki powers hamesha even (multiple of 2) chalengi. Pehle prime base convert maro.<br/><br/><b>Method 1 (Ninja Technique):</b> Given base $8$ ko pure prime base $2$ me change kar. Uske baad jo bhi exponent bane usko 2 se divide maar kar ek 1 add kar de zero power ke liye.<br/><br/>Mathematically :-<br/><br/>$$ 8^{12} = 2^{36} \\\\ \\text{Even powers} = \\{0, 2, 4 \\dots 36\\} \\\\ \\text{Count} = \\frac{36}{2} + 1 = 19 $$<br/><br/><b>Method 2 (Concept Builder):</b> Square hone ka matlab hai prime factor ka exponent $2k$ ki form me express hona chahiye.<br/><br/>Mathematically :-<br/><br/>$$ N = P^{2k} \\\\ \\text{Squares factor count} = \\left\\lfloor \\frac{2k}{2} \\right\\rfloor + 1 $$<br/><br/><b>TCS Trap:</b> Baccha division $36/2$ kar leta hai par zero exponent count (jaise $2^0 = 1$ is also perfect square) krna bhool kar seedha 18 tick maar aayega.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Perfect squares in factors nikalne ki trick hai: $(\\text{Highest even exponent} / 2) + 1$."
+    },
+    {
+      "q": "Find the highest power of 10 in $50! + 60! + 70!$?",
+      "o": [
+        "50",
+        "14",
+        "12",
+        "5"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Bhai jab addition ho raha ho (multiply nahi), toh common zeroes bahar nikali jaati hain. Iska matlab addition mein total zeroes hamesha wahi decide karega jo sabse choti term ($50!$) hogi!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Sabse choti term = $50!$. Hum sirf iske trailing zeroes nikalenge. (Zeroes 5 ki power pe depend karte hain kyunki 2 ki power already bohot zyada hoti hai).<br/>Successive division of 50 by 5:<br/>$\\frac{50}{5} = 10$<br/>$\\frac{10}{5} = 2$<br/>Inko add kar do: $10 + 2 = 12$.<br/>Toh 50! mein end mein 12 zeroes aayengi, toh combined sum mein bhi 12 hi rahengi."
+    },
+    {
+      "q": "Find the maximum power of 3 in 60!",
+      "o": [
+        "18",
+        "27",
+        "28",
+        "30"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Successive Change (Legendre's Formula)</b><br/><br/>Dekh bhai... Factorials mein prime powers nikalne ka universally fastest tareeqa lagana hai.<br/><br/><b>Pen-Free Observation:</b> Divisors ko baar baar 3 se divide kar aur quotients ko add kar.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>60 ko 3 se divide kar: quotient 20.<br/>Phir 20 ko 3 se kar: quotient 6.<br/>Phir 6 ko 3 se kar: quotient 2.<br/>Bas in quotients ko add kar de: $20 + 6 + 2 = 28$. Is hack se kabhi calculation error nahi aayega!<br/><br/><b>Future Exam Takeaway:</b> Don't rely on complex summation notations; just successively divide the quotient by the prime and add the results."
+    },
+    {
+      "q": "If $N = 3^{14} + 3^{13} - 12$, What is the largest prime factor of N?",
+      "o": [
+        "11",
+        "79",
+        "13",
+        "73"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Algebraic Factorization)</b><br/><br/>Dekh bhai aise karna hai... Jab constants aur powers mix hon, toh factors isolate karke algebra laga.<br/><br/><b>Pen-Free Observation:</b> 12 extract karke format ko square identities jaisa banaya ja sakta hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Common le pehle. $N = 3^{13}(3 + 1) - 12 = 4 \\times 3^{13} - 12$.<br/>12 common le le: $12(3^{12} - 1)$.<br/>Ab $3^{12} - 1$ ko algebra se tod $(3^6 - 1)(3^6 + 1)$. $3^6$ hota hai 729.<br/>Bracket ho gaye $728 \\times 730$.<br/>Factors break kar: $728 = 8 \\times 7 \\times 13$, aur $730 = 10 \\times 73$.<br/>Maximum bound prime factor perfectly 73 nikal gaya!<br/><br/><b>Future Exam Takeaway:</b> Extract common constants to reveal standard $a^n - b^n$ algebraic identities. The largest prime is always hidden inside the factored brackets."
+    },
+    {
+      "q": "What is the remainder when $2^{736}$ is divided by 117?",
+      "o": [
+        "1",
+        "16",
+        "32",
+        "64"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>117 thoda bada number hai, toh CRT (Chinese Remainder Theorem) ka socho. Options me se us number ko check karo jo 117 ke coprime factors ko set kare.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai TestRipper, 117 ko tod de $13 \\times 9$ me.<br/>Mod 9: $2^3 = 8 \\equiv -1 \\implies (2^3)^{245} \\times 2 \\implies (-1)^{245} \\times 2 = -2 \\equiv 7 \\pmod 9$.<br/>Options dekh, $16 \\pmod 9 = 7$ de raha hai. Baaki options (1, 32, 64) nahi de rahe. Seedha Option 16 tick kar aur aage badh!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Proper check karne ke liye 13 se bhi verify kar le. $2^6 = 64 \\equiv -1 \\pmod{13}$. Toh $2^{736} = (2^6)^{122} \\times 2^4 \\implies (-1)^{122} \\times 16 \\equiv 16 \\equiv 3 \\pmod{13}$. Option 16 isko bhi satisfy karta hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Bade divisors ko hamesha co-prime factors me tod kar options eliminate kiya karo, mazdoori time kill karti hai."
+    },
+    {
+      "q": "Find no. of zeroes in $[100!]$?",
+      "o": [
+        "23",
+        "50",
+        "25",
+        "24"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Factorial me Zeros nikalne hain, yani number of $5$s check karne hain. $100$ tak ki range me ye ek standard data hai jo yaad hona chahiye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, $100!$ ki sidhi calculation Legendre's Formula se nikalti hai. Hum successive division karte hain $5$ se.<br/>$\\frac{100}{5} = 20$.<br/>$\\frac{20}{5} = 4$.<br/>Ab $4$, $5$ se chota ho gaya toh wahi ruk ja. Dono ko jod de: $20 + 4 = 24$. Option D answer!<br/><br/><b>Method 2 (Concept Builder):</b><br/>The formula is $\\lfloor \\frac{100}{5} \\rfloor + \\lfloor \\frac{100}{5^2} \\rfloor + \\lfloor \\frac{100}{5^3} \\rfloor \\dots$<br/>It counts one $5$ from every multiple of 5, then a second $5$ from every multiple of $25$.<br/><br/><b>Future Exam Takeaway:</b> $100!$ ka 24 zeroes hota hai ye directly yaad rakho, bahut baari badi values ke base calculations me use hota hai."
+    },
+    {
+      "q": "What is the remainder when $2^{3^{51}}$ is divided by 17?",
+      "o": [
+        "8",
+        "11",
+        "9",
+        "16"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Divisor 17 prime hai aur base 2 uske coprime hai. Matlab Fermat bhai ki entry hogi! Power $3^{51}$ bohot badi hai, usko Fermat divisor pe break karna padega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Fermat ka rule: $2^{16} \\equiv 1 \\pmod{17}$. Matlab base 2 ki power ko 16 ke remainder cycle me lana hai.<br/>Toh step 2 hai power $3^{51}$ ko 16 se bhag de: $3^{51} \\pmod{16}$.<br/>$3^2 = 9, 3^3 = 27 \\equiv 11, 3^4 = 81 \\equiv 1 \\pmod{16}$.<br/>Cyclicity 4 ki aayi. Power 51 ko 4 se bhag de, remainder 3 bachega. Yaani $3^{51} \\equiv 3^3 \\equiv 27 \\equiv 11 \\pmod{16}$.<br/>Akhiri step: Base ki actual effective power 11 ban gayi! Humein ab sirf $2^{11} \\pmod{17}$ nikalna hai.<br/>$2^4 = 16 \\equiv -1 \\pmod{17}$.<br/>$2^{11} = (2^4)^2 \\times 2^3 \\equiv (-1)^2 \\times 8 \\equiv 1 \\times 8 = 8$. Final answer 8 aaya!<br/><br/><b>Method 2 (Concept Builder):</b><br/>The tower power concept relies on Euler's Totient function. $\\phi(17) = 16$. So you first reduce the tower power modulo 16, then apply the result back to base modulo 17.<br/><br/><b>Future Exam Takeaway:</b> Tower powers dekhte hi top ki power ko base divisor ke totient function ($\\phi$) se mod karo."
+    },
+    {
+      "q": "What is the result when the sum of the digits of $(10^{15} + 1)$ is divided by $11$?",
+      "o": [
+        "$0$",
+        "$2$",
+        "$9$",
+        "$10$"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br/><br/>Dekh bhai aise karna hai... language ka ghatiya trap samajh.<br/><br/><b>Pen-Free Observation:</b> Sawaal me dhokha hai! Sawaal number ko $11$ se divide karne ka nahi hai, uske 'Sum of digits' ko $11$ se divide karne ka hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> $10^{15} + 1$ number dikhne me kaisa hoga? Ek $1$, uske beech me $14$ zeros, aur aakhiri me ek $1$. Is pure number ke digits ko jodega toh sum aayega $1 + 0 + \\dots + 1 = 2$. Ab $2$ ko $11$ se divide karega toh Remainder $2$ hi aayega na mere bhai!<br/><br/><b>Method 2 (Concept Builder):</b> $10^n + 1$ form me sum of digits hamesha $2$ hi hota hai, chahe $n$ kuch bhi ho.<br/><br/><b>Future Exam Takeaway:</b> Language ko dhyan se padho. 'Sum of digits' aur 'Number' me confuse mat hona."
+    },
+    {
+      "q": "Raj wants to type first 200 natural numbers. Find out the number of times he has to press the keys.",
+      "o": [
+        "492",
+        "489",
+        "490",
+        "491"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 492.</b><br/><br/><b>Pen-Free Observation:</b> Typewriter/keystroke ke sawaal range segmentation se hote hain. 1-digit, 2-digit aur 3-digit ke bundles alag-alag count kar.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Segment</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Calculation</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1 to 9</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">9 numbers $\\times 1 = 9$ keys</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>10 to 99</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">90 numbers $\\times 2 = 180$ keys</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>100 to 200</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">101 numbers $\\times 3 = 303$ keys</td></tr></table><br/><b>Takeaway:</b> Direct leap karo, sum it up: $9 + 180 + 303 = 492$ keystrokes."
+    },
+    {
+      "q": "Find the greatest possible 5-digit number of the form $4a3b2$ which is divisible by $36$.",
+      "o": [
+        "49392",
+        "48312",
+        "47372",
+        "46332"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>'Greatest' pucha hai matlab hum digits ko $9$ se check karna shuru karenge. Divisibility $36$ yani $4$ and $9$ dono lagana hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Number is $4a3b2$. For divisibility by $4$, last two digits '$b2$' must be divisible.<br/>To maximize, test largest $b$: $b=9 \\implies 92$ is div by $4$. So $b=9$ set kar do.<br/>Now number is $4a392$. For divisibility by $9$, digital sum must be div by $9$.<br/>Sum $= 4 + a + 3 + 9 + 2 = 18 + a$.<br/>To maximize, put $a=9 \\implies 18+9 = 27$ (div by $9$).<br/>So the greatest number is $49392$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Pehle hamesha choti constraint wala rule lagao (jaise $4$ ke liye bas last $2$ digits). Phir global rule (jaise $9$ ke liye sabka sum) apply karo.<br/><br/><b>Future Exam Takeaway:</b><br/>Maximization ke questions me variable ko default $9$ assume karke condition check kiya karo, speed $2x$ ho jayegi."
+    },
+    {
+      "q": "Find the remainder when $20^{23}$ is divided by 23.",
+      "o": [
+        "1",
+        "3",
+        "20",
+        "0"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Power aur divisor ko dekh! Divisor 23 ek prime number hai aur power bhi prime 23 hi hai. Seedha Fermat's theorem chamakna chahiye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Ye Fermat's Little Theorem ka dusra advance roop hai.<br/>Basic form: $a^{P-1} \\equiv 1 \\pmod P$.<br/>Advance form: $a^P \\equiv a \\pmod P$.<br/>Yahan prime $P = 23$ diya hai. Toh sidha $20^{23} \\equiv 20 \\pmod{23}$. Dekhte hi answer 20 mark kar de bhai!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Agar Fermat's base version apply karna ho toh: $20^{22} \\equiv 1 \\pmod{23}$. Both sides 20 multiply kar, toh $20^{23} \\equiv 20 \\pmod{23}$ ban jayega.<br/><br/><b>Future Exam Takeaway:</b> Divisor agar Prime ho, toh powers break karne me Fermat's Rule hi Divisibility ka raja hai."
+    },
+    {
+      "q": "What is the remainder when $1^1 + 2^2 + 3^3 + \\dots + 10^{10}$ is divided by 4?",
+      "o": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Options 0, 1, 2, 3 hain. 4 se division check karna hai. Even bases ka power $&gt;1$ hai toh vo seedha 4 ka multiple ban jayenge (Remainder 0). Sirf odd bases calculate karne hain!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai TestRipper, $2^2, 4^4, 6^6, 8^8, 10^{10}$ sabme 4 chupa hai, toh inka remainder sidha 0 bachega. Ab odd bases pe Mod 4 lagao:<br/>$1^1 \\implies 1$<br/>$3^3 = 27 \\implies 3$<br/>$5^5 \\equiv 1^5 \\implies 1$<br/>$7^7 \\equiv (-1)^7 \\implies -1 \\equiv 3$<br/>$9^9 \\equiv 1^9 \\implies 1$<br/>Sum = $1 + 3 + 1 + 3 + 1 = 9$. Final step: $9 \\pmod 4 = 1$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Bhai, divisibility ki property hai ki sum ke andar har term ko individually divide karke remainder nikal sakte hain. Odd terms alternating 1 aur 3 remainder dete hain mod 4 me, cyclicity follow hoti hai. Aisa breakdown karo questions ka, SSC CGL first attempt me nikal jayega.<br/><br/><b>Future Exam Takeaway:</b><br/>Jab 4 se bhag ho aur even base power $\\ge 2$ ho, toh usko direct kaat ke 0 likh dena, mazdoori mat karna!"
+    },
+    {
+      "q": "Find the remainder when $2^{100}$ is divided by $102$.",
+      "o": [
+        "2",
+        "16",
+        "52",
+        "0"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Base $2$ aur Divisor $102$ coprime nahi hain. Iska matlab direct totient nahi lagega, pehle 'Cancellation Rule' lagana padega!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Expression: $\\frac{2^{100}}{102} = \\frac{2 \\times 2^{99}}{2 \\times 51}$. Upar niche $2$ se cancel kar do. Nayi form: $\\frac{2^{99}}{51}$.<br/>Euler's Totient $\\phi(51) = 51 \\times \\left(1 - \\frac{1}{3}\\right) \\times \\left(1 - \\frac{1}{17}\\right) = 32$.<br/>Power reduce: $99 \\pmod{32} = 3$.<br/>Remainder of $\\frac{2^3}{51} = \\frac{8}{51}$ is $8$.<br/>Crucial Step: Jis $2$ se pehle kata tha, usko wapis multiply karo! $8 \\times 2 = 16$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Agar $\\text{HCF}(a, n) &gt; 1$ ho, toh Euler ya Fermat fail ho jate hain. Pehle common factor HCF cancel karke coprime banao, solve karo, aur end me HCF se wapas multiply karo.<br/><br/><b>Future Exam Takeaway:</b><br/>SSC CGL Mains me cancellation rule ka ye trap bohot common hai. Cancellation factor ko side me likh liya karo taaki end me bhool na jao."
+    },
+    {
+      "q": "Which of the following numbers is completely divisible by 99?",
+      "o": [
+        "135792",
+        "913464",
+        "114345",
+        "357240"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>99 matlab usme 9 aur 11 dono ki divisibility lagegi. Sabse pehle 9 ka digital sum check karke ghatiya options udane hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, 114345 ka digital sum dekh: $1+1+4+3+4+5 = 18$ (9 ka multiple hai).<br/>Ab 11 ka check kar isme: alternate sum le. $S_1 = 1+4+4 = 9, S_2 = 1+3+5 = 9$. Difference = $9-9 = 0$.<br/>Ye number dono shartein poori kar raha hai, yahi correct hai.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Options ki scan aise kiya kar: $135792 \\implies$ sum 27 (divisible by 9). But 11 rule: $(1+5+9)-(3+7+2) = 15-12 = 3$ (not div by 11). Direct elimination.<br/><br/><b>Future Exam Takeaway:</b><br/>99 ki divisibility check me C9 (casting out nines) first pass hona chahiye, aur bache options me hi 11 ka rule lagao."
+    },
+    {
+      "q": "Find the rightmost two non-zero digits of $30^{2720}$.",
+      "o": [
+        "01",
+        "61",
+        "41",
+        "21"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Value Putting &amp; Symmetry.<br/><br/><b>Pen-Free Observation:</b> Trailing zeroes kisi number form me extra multiple limits add karti hain. Pura Zero block hi ignore maro matrix separation property lagake.<br/><br/><b>Method 1 (Ninja Technique):</b> Zero nikal bahar kar de 10 multiple split lagake. Baaki sirf $3$ bachega base. 3 ke upar power exact $4$ ki multiplier sequence me fit baith rhi hai matlab 81 banayegi series ko 'X1' solve ke lie.<br/><br/>Mathematically :-<br/><br/>$$ 30^{2720} = (3 \\times 10)^{2720} = 3^{2720} \\times 10^{2720} \\\\ \\text{Ignore zeroes part} \\to 3^{2720} \\\\ 3^{2720} = (3^4)^{680} = 81^{680} \\\\ \\text{Unit} = 1 \\text{, Tens} = (8 \\times 0) = 0 \\implies 01 $$<br/><br/><b>Method 2 (Concept Builder):</b> Exact cyclical behavior and modular inverse scaling on core number parts.<br/><br/>Mathematically :-<br/><br/>$$ \\phi(100) = 40 \\\\ 3^{40k} \\equiv 1 \\pmod{100} \\\\ 2720 \\pmod{40} = 0 \\implies \\text{Last two are } 01 $$<br/><br/><b>TCS Trap:</b> Yahan decimal zeros aur extra zeros add hone ki confusion lagakar numbers $10^{X}$ ko directly mix karke powers calculate karne mat baitho.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Trailing zeroes check limits me core non zero base separate mark karo, aur remaining portion power cyclicity rules execute karo."
+    },
+    {
+      "q": "When a number is divided by $65$, the remainder is $31$. When the same number is divided by $13$, the remainder is?",
+      "o": [
+        "7",
+        "5",
+        "3",
+        "9"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Pehla divisor $65$, exactly dusre divisor $13$ ka multiple $(13 \\times 5)$ hai. Seedha purane remainder pe strike maar.<br/><br/><b>Method 1 (Ninja Technique):</b> Jo pura remainder hai (31) usi ko naya divisor (13) maanke seedha operation complete kar de.<br/><br/>Mathematically :-<br/><br/>$$ 65 \\pmod{13} == 0 \\text{ (Condition passed)} \\\\ 31 \\pmod{13} \\implies 31 - (13 \\times 2) = 31 - 26 = 5 $$<br/><br/><b>Method 2 (Concept Builder):</b> By Division Lemma algorithm, $N = 65k + 31$. Extract $13$ completely.<br/><br/>Mathematically :-<br/><br/>$$ N = 13(5k) + 13(2) + 5 \\\\ N = 13(5k+2) + 5 \\implies \\text{Remainder is } 5 $$<br/><br/><b>TCS Trap:</b> TCS pehla divisor multiple nahi rakhega (like $D_1=65$, $D_2=14$), us case me operation invalid hota hai answer \"Cannot be determined\" ayega.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Rule constraint: Agar pehla divisor dusre se perfect divide hota hai to final Remainder sidha $R_1 \\pmod{D_2}$ hota hai."
+    },
+    {
+      "q": "If $x = 0.535353\\dots$ and $y = 0.424242\\dots$, then what is the value of $(x+y)$ as a fraction?",
+      "o": [
+        "95/99",
+        "105/99",
+        "89/99",
+        "97/99"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Bar bar recurring digit hamesha fraction me denominator '9' lati hai. In dono ki periodicity same hai, toh direct sum kar sakte hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, $0.\\overline{53} = \\frac{53}{99}$. Dusra $0.\\overline{42} = \\frac{42}{99}$.<br/>Dono ka base common hai, seedha numerator jod de: $\\frac{53+42}{99} = \\frac{95}{99}$.<br/>Ye sawal literally 2 second ka tha.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Mixed recurring me dhyaan rakhna, agar $0.2\\overline{53}$ hota toh $\\frac{253-2}{990}$ likhna padta. Lekin yaha direct pure recurring decimal diya tha.<br/><br/><b>Future Exam Takeaway:</b><br/>Pure recurring fractions (digits repeat from the start) me directly numbers add/subtract kiye ja sakte hain bina fractions banaye ($0.53 + 0.42 = 0.95$ recurring)."
+    }
+  ]
+}

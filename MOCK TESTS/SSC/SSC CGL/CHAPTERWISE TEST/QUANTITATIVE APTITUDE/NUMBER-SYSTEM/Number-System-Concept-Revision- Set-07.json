@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-07",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "Let $x$ be the smallest 4-digit number such that when it is divided by 5, 6 and 7, it leaves the remainders 2, 3 and 4, respectively. The sum of the digits of $x$ is:",
+      "o": [
+        "9",
+        "11",
+        "12",
+        "14"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Divisors aur remainders ka difference constant (-3) hai. Matlab answer $\\text{LCM} \\times K - 3$ hoga. Digits sum nikalna hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, LCM(5,6,7) = 210. Pattern hai $210k - 3$.<br/>Sabse chota 4-digit number jo 210 ka multiple hai vo hai $210 \\times 5 = 1050$.<br/>Number nikal de: $1050 - 3 = 1047$.<br/>Inke digits ko jod de: $1+0+4+7 = 12$. Game over.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Aise questions me always check for constant difference: (5-2=3), (6-3=3), (7-4=3). Agar constant na ho, tab hume CRT (Chinese Remainder Theorem) ka actual format lagana padta.<br/><br/><b>Future Exam Takeaway:</b><br/>LCM based remainders ke 3 format hote hain: Same Remainder, Constant Difference, aur Random. Constant difference wale CGL ke favorites hain."
+    },
+    {
+      "q": "The expression $333^{555} + 555^{333}$ is divisible by",
+      "o": [
+        "3",
+        "2",
+        "37",
+        "All of these"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Cross-Product / Modulo Factorization</b><br/><br/> Ye \\a^b + b^a ki format hai mtlb ye no. \\a+b dono se divide hoga.                                                       Dekh bhai, expression ke base bhot suspicious hain. Yahan prime factorization aur parity rule check karni hoti hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Rule 1 (Divisibility by 2): $333^{555}$ = $Odd^{Odd}$ = Odd. $555^{333}$ = $Odd^{Odd}$ = Odd. Odd + Odd = Even. Toh divisible by $2$ hai.<br/>Rule 2 (Divisibility by 3 &amp; 37): Note kar $111$ ke dono multiples hain. $333 = 3 \\times 111$ and $555 = 5 \\times 111$. Aur $111 = 3 \\times 37$. Matlab $333$ aur $555$ dono $3$ aur $37$ ke multiples hain. Jab base me hi factors baithe hain, toh poora expression dono se completely divisible hoga.<br/>Since $2, 3$ aur $37$ teeno satisfies ho gaye, seedha 'All of these' maro.<br/><br/><b>Future Exam Takeaway:</b> $111$ aur uske multiples ($222, 333$ etc.) $37 \\times 3$ format mein break hote hain. SSC in bases par baar baar question frame karta hai."
+    },
+    {
+      "q": "When a number is successively divided by $3, 4$ and $7$, the remainders obtained are $2, 3$ and $5$, respectively. What will be the remainder when $84$ divides the same number?",
+      "o": [
+        "71",
+        "53",
+        "48",
+        "30"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Successive division ka fixed structure hota hai. Sabse chhota number nikal ke direct $84$ (jo ki $3 \\times 4 \\times 7$ hai) se divide kar do.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Table method reverse me lagao, let final quotient be $0$.<br/>Step 1: $(7 \\times 0) + 5 = 5$.<br/>Step 2: $(4 \\times 5) + 3 = 23$.<br/>Step 3: $(3 \\times 23) + 2 = 71$.<br/>Smallest number mil gaya $71$.<br/>Ab $71$ ko $84$ se divide karo, remainder $71$ hi bachega!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Yahan divisors ka product $3 \\times 4 \\times 7 = 84$ hai. Jab bhi same product se final divide karne ko bole, toh jo original smallest number aata hai, wahi directly remainder hota hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Always assume the last quotient as $0$ to find the absolute minimum number. This prevents calculation errors and saves time."
+    },
+    {
+      "q": "How many divisors of $10^5$ are NOT divisible by 10?",
+      "o": [
+        "11",
+        "21",
+        "25",
+        "15"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 11.</b><br/><br/><b>Pen-Free Observation:</b> Dekh bhai, Total divisors nikal ke, unn divisors ko subtract karna hai jo 10 ke multiples hain. Basic prime factorization lagana hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Number $N = 10^5 = 2^5 \\times 5^5$.<br/>Total Divisors = $(5+1)(5+1) = 36$.<br/>Divisors divisible by 10: Isme se ek '10' bahar nikal le. $10 \\times (2^4 \\times 5^4)$.<br/>Iske divisors hue $(4+1)(4+1) = 25$.<br/>Not divisible by 10 = $36 - 25 = 11$.<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Concept Builder</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Formula</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Total Factors</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">If $N = a^p \\times b^q$, Factors = $(p+1)(q+1)$</td></tr></table><br/><b>Takeaway:</b> Hamesha jo nikalna ho (like multiple of 10, 12 etc), usko factorize karke equation ke bahar common le lo."
+    },
+    {
+      "q": "What is the remainder when $(23^{(112^{717})} - 21^{(112^{717})})$ is divided by $88$?",
+      "o": [
+        "0",
+        "2",
+        "44",
+        "87"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Algebraic Divisibility)</b><br/><br/>Dekh bhai aise karna hai... gande powers humesha algebraic identity me fold hote hain.<br/><br/><b>Pen-Free Observation:</b> Power check kar bhai, base $112$ even hai toh uski koi bhi power Even hi result degi. Matalab ye format $(x^n - y^n)$ hai jahan $n$ Even hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Jab $n$ even ho, toh $(x^n - y^n)$ compulsory $(x-y)$ aur $(x+y)$ dono se divide hota hai. Matlab $(x^2 - y^2)$ usko poora katega.<br/>Yahan $x=23, y=21$.<br/>$x^2 - y^2 = 23^2 - 21^2 = (23+21)(23-21) = 44 \\times 2 = 88$.<br/>Divisor bhi exact $88$ diya hai! Matalab number poori tarah kat jayega. Remainder seedha $0$ aayega.<br/><br/><b>Method 2 (Concept Builder):</b> Even powers create symmetric factors $(x+y)(x-y)$.<br/><br/><b>Future Exam Takeaway:</b> Gande power towers hamesha Odd/Even check karne ke liye hote hain, calculate karne ke liye nahi."
+    },
+    {
+      "q": "If $N = 1! + 2! + 3! + \\dots + 50!$, then what is the remainder when $N$ is divided by $15$?",
+      "o": [
+        "0",
+        "3",
+        "8",
+        "13"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b> $15$ se bhag dena hai yani $3 \\times 5$. Factorial series wahi end ho jati hai jahan se divisor banne lagta hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, jis term me $3$ aur $5$ dono factor aa gaye, wahan se remainder $0$ aana shuru. $5! = 120$ (jo $15$ se pura katta hai). Toh $5!$ ke aage ke saare factorials ($6!, 7! \\dots$) zero remainder denge. <br/>Humein bas chillar sum karna hai: $1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33$.<br/>Ab $33 \\div 15$ karo, $15 \\times 2 = 30$, bacha remainder $3$. Bina pen uthaye $3$ sec ka question!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Divisibility of factorials depends entirely on their constituent prime factors. Once a factorial exceeds the prime factors of the divisor, all subsequent terms are irrelevant for remainder calculation.<br/><br/><b>Future Exam Takeaway:</b> Hamesha check karo divisor kin prime numbers se bana hai aur wo pehli baar kis factorial me combine ho rahe hain."
+    },
+    {
+      "q": "If a number $P$ is divided by $D$, the remainder is $14$. When $3P$ is divided by the same divisor $D$, the remainder is $8$. What is the value of the divisor $D$?",
+      "o": [
+        "32",
+        "34",
+        "38",
+        "42"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Agar number $3$ guna ho raha hai, toh mathematically remainder bhi $3$ guna hoga (temporarily). Naya remainder tabhi ghatega jab Divisor se bhaag lagega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Old Remainder was $14$. Condition says number is multiplied by $3$ ($3P$).<br/>Temporary New Remainder $= 14 \\times 3 = 42$.<br/>Actual Remainder given is $8$.<br/>Iska seedha matlab hai: $42$ ko jab Divisor $D$ se bhag diya, toh $8$ bacha.<br/>$42 - D = 8 \\implies D = 34$. Divisor $34$ hai!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Algebraically: $P = kD + 14$. Then $3P = 3kD + 42$. $3kD$ is fully divisible. Modulo operation pe focus karo: $42 \\equiv 8 \\pmod D \\implies 42 - 8 = 34$, which is a multiple of $D$. $D$ could be $17$ or $34$, options me se $34$ correct hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Operation performed on the number is EXACTLY performed on its remainder. Remainder exceeds divisor? Subtract divisor. Simple!"
+    },
+    {
+      "q": "What is the remainder when 45324532 is divided by 10001?",
+      "o": [
+        "0",
+        "45",
+        "32",
+        "1"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Jab bhi koi 4-digit ka number khud ko repeat kare (jaise abcdabcd), toh wo directly 10001 ka multiple hota hai. Seedha 0 pe tick maar!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>45324532 ko hum aise likh sakte hain: $45320000 + 4532$.<br/>Common le le: $4532(10000 + 1) = 4532 \\times 10001$.<br/>Jab number khud 10001 se bana hai, toh remainder kya khak bachega? 0 aayega!<br/><br/><b>Future Exam Takeaway:</b><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Repetition Pattern</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Divisible By</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">xyxy</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">101</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">xyzxyz</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">1001 ($7 \\times 11 \\times 13$)</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">abcdabcd</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">10001 ($73 \\times 137$)</td></tr></table>"
+    },
+    {
+      "q": "Find the total number of prime factors in the expression $30^{15} \\times 22^{11} \\times 15^{24}$.",
+      "o": [
+        "110",
+        "115",
+        "125",
+        "130"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $115$<br/><br/><b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, saare numbers composite hain. Sabko patla kar prime numbers me, uske baad seedha power add kar diyo.<br/><br/><b>Method 1 (Ninja Technique):</b> Har number me check kar kitne alag primes hain. Jaise $30=2 \\times 3 \\times 5$ (3 primes). Number of primes ko uski bahar wali power se multiply kar de.<br/><br/>Mathematically :-<br/><br/>$$ 30 \\to 3 \\text{ primes, } 22 \\to 2 \\text{ primes, } 15 \\to 2 \\text{ primes} \\\\ 3(15) + 2(11) + 2(24) = 45 + 22 + 48 = 115 $$<br/><br/><b>Method 2 (Concept Builder):</b> Basic rules of exponents use karke brackets open karo aur individual prime powers ka sum le lo.<br/><br/>Mathematically :-<br/><br/>$$ (2 \\times 3 \\times 5)^{15} \\times (2 \\times 11)^{11} \\times (3 \\times 5)^{24} \\\\ 2^{15+11} \\times 3^{15+24} \\times 5^{15+24} \\times 11^{11} \\\\ \\text{Total} = 26 + 39 + 39 + 11 = 115 $$<br/><br/><b>TCS Trap:</b> Bacche jaldi me sirf alag alag prime count karte hain (distinct prime factor pucha jaye to alag cheez hoti hai, usme sirf type batane hote hain).<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; 'Total prime factors' pucha ho toh individual primes ki powers ka sidha sum nikalte hain."
+    },
+    {
+      "q": "Dividing $2226$ and $2529$ by a certain three-digit number leaves the same remainder $R$ in each case. Find the value of $R$.",
+      "o": [
+        "4",
+        "5",
+        "9",
+        "6"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Options single digit hain, aur 'same remainder' bola hai toh seedha divisors ke difference ka game hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, jab bhi 'same remainder' aaye, dono numbers ka difference le lo. $2529 - 2226 = 303$. Ab divisor is $303$ ka hi koi factor hoga, aur question ne clearly 3-digit divisor bola hai. $303$ ke 3-digit factors hain: $101$ aur $303$. Agar main $303$ se $2226$ ko bhag dun, remainder $105$ aayega, jo options mein nahi hai. Matlab divisor pakka $101$ hai. $2226 \\div 101$ par remainder $4$ aata hai. Seedha Option A tick maar!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Agar $N_1$ aur $N_2$ ko $D$ se divide karne par remainder $R$ aata hai, toh unka difference $(N_1 - N_2)$ hamesha $D$ se perfectly divisible hota hai. Yahi fundamental property hum shortcut me use karte hain.<br/><br/><b>Future Exam Takeaway:</b> CGL Mains mein jab bhi 'same remainder' dekho, HCF of differences nikalne ki aadat daalo."
+    },
+    {
+      "q": "What is the smallest number which when divided by 6, 8, and 10 leaves remainder 4, 6, and 8 respectively?",
+      "o": [
+        "120",
+        "118",
+        "112",
+        "88"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: JSM (Deviation / Negative Remainder)</b><br/><br/>Dekh bhai... Jab har number pe alag remainder aaye toh unke gaps observe kiya kar, wahan hack chhupa hota hai.<br/><br/><b>Pen-Free Observation:</b> Divisor aur Remainder ke beech ka difference check kar: $6-4=2$, $8-6=2$, $10-8=2$. Sabme common negative offset -2 aa raha hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Aise cases mein seedha LCM(6, 8, 10) nikal aur usme se constant difference minus kar de.<br/>LCM hai 120.<br/>Answer = $120 - 2 = 118$. Option se bhi har number ko divide karke direct remainder check kar sakta tha.<br/><br/><b>Future Exam Takeaway:</b> Constant difference between divisor and remainder implies the answer format is $K \\times \\text{LCM} - \\text{Difference}$. Block bana ke division method tab lagate hain jab successively divide kare mtlb jo quotient aaye usko divide karte jaaye but yahan koi number N hai usko hi sabse sivide karna hai."
+    },
+    {
+      "q": "What is the remainder when $3^{102} + 5$ is divided by 10?",
+      "o": [
+        "1",
+        "4",
+        "7",
+        "9"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Kisi bhi number ka 'mod 10' mathematically uski unit digit hi hoti hai. Toh sawal sirf unit digit nikalne ka hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, $3^{102}$ ki unit digit nikalne ke liye $102 \\pmod 4 = 2$ bacha.<br/>Toh $3^2 = 9$ aayi unit digit.<br/>Ab isme +5 kar de, $9+5=14$. Aakhiri digit aayi 4. Yahi tera 10 se remainder hoga.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Unit digit theorem essentially modulo 10 arithmetic hi hai. Har cycle 4 ke baad repeat hota hai kyunki kisi bhi digit ko 4 baar multiply karne se cycle renew ho jata hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Divide by 10 means Unit Digit, Divide by 100 means Last Two Digits. Ye equivalence hamesha dimag me rakh."
+    },
+    {
+      "q": "What is the sum of the digits of a two-digit prime number for which the digits in the ones and tens places are equal?",
+      "o": [
+        "2",
+        "4",
+        "7",
+        "11"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Common sense over calculation lagana yahan! Koi bhi 2-digit number jiske dono digit barabar hote hain, wo sidha sidha 11 ka multiple hota hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Aise numbers kya hote hain? 11, 22, 33, 44, 55, 66, 77, 88, 99.<br/>In sabme se dhyan se dekh, sirf aur sirf ek hi number Prime hai, aur wo hai 11! (Baaki sab indirectly 11 ki table aane ki wajah se composite ban jaate hain).<br/>Question ne number ki digits ka sum pucha hai: $1 + 1 = 2$. Seedha tick maar aur aage badh!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Mathematically, repeating digits equal $10x + x = 11x$. For $11x$ to be prime, the integer $x$ must strictly be 1. Thus number is 11.<br/><br/><b>Future Exam Takeaway:</b> 11 is the universally unique multi-digit prime that consists exclusively of repeating identical digits."
+    },
+    {
+      "q": "In a farm, the ratio of the total number of heads to the total number of legs of pigs and ducks is 7:20. If there are 20 ducks in the farm, find the total number of pigs.",
+      "o": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Cross-Product Method</b><br/><br/>Dekh bhai, jab fractions/ratios directly linked ho toh basic ratio method linear variables nikal deta hai.<br/><br/><b>Pen-Free Observation:</b> Pig ke 4 pair, Duck ke 2 pair hote hain. Duck count fixed hai 20.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Maan le Pigs $P$ hain. Total heads = $P + 20$.<br/>Total legs = $4P + 40$.<br/>Question ne diya hai: $\\frac{P + 20}{4P + 40} = \\frac{7}{20}$.<br/>Cross multiply karega toh $20P + 400 = 28P + 280$.<br/>Solve kar, $8P = 120$, so $P = 15$. Approximation ya options rakh ke bhi check kar sakta tha. If 10 rakhte toh total head 30 banta jisme 7 hai hi nahi toh ratio kabhi 7 unit nahi aayega only 15 rakhne pe 35 banega jisme 7 hai.<br/><br/><b>Future Exam Takeaway:</b> Simple linear ratios on 'Heads &amp; Legs' problems equate directly. Don't overcomplicate with mixtures unless required."
+    },
+    {
+      "q": "$M$, is the largest 4-digit number, which when divided by $4, 5, 6$ and $7$ leaves remainder as $2, 3, 4$ and $5$, respectively. What is the remainder when $M$ is divided by $9$?",
+      "o": [
+        "2",
+        "1",
+        "3",
+        "6"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, Divisor aur Remainder ke beech difference dekh (4-2=2, 5-3=2). Jab gap same ho to us gap ko LCM ki complete value se negative offset maante hain.<br/><br/><b>Method 1 (Ninja Technique):</b> Divisors ka LCM nikalo, largest 4-digit number uske pass tak le jao. Phir wo constant offset (-2) minus karo. Aur last me Digital sum se rule of 9 lagao.<br/><br/>Mathematically :-<br/><br/>$$ \\text{LCM}(4,5,6,7) = 420 \\\\ \\frac{9999}{420} \\implies Q=23, \\text{ base val } = 9660 \\\\ \\text{Target } M = 9660 - 2 = 9658 \\\\ 9658 \\pmod 9 \\implies 9+6+5+8 = 28 \\implies 1 $$<br/><br/><b>Method 2 (Concept Builder):</b> The equation template for such problems is $N = \\text{LCM} \\times k - (\\text{Divisor} - \\text{Remainder})$.<br/><br/>Mathematically :-<br/><br/>$$ M = 420k - 2 \\\\ 420 \\times 23 - 2 = 9660 - 2 = 9658 \\\\ \\frac{9658}{9} = 1073 \\text{ with } R = 1 $$<br/><br/><b>TCS Trap:</b> Students us constant gap $2$ ko minus karne ki jagah subtract karke check karte hain ki galti se plus toh nahi karna. Constant diff = Minus it.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Jab saare $D_i - R_i = k$ same aayein, toh pattern humesha $\\text{LCM}(D_1,D_2\\dots) \\times m - k$ banta hai."
+    },
+    {
+      "q": "A natural number $N$ is such that when divided by 5 it leaves a remainder of 2, when divided by 6 it leaves a remainder of 3, and when divided by 7 it leaves a remainder of 4. Find the smallest such value of $N$.",
+      "o": [
+        "207",
+        "210",
+        "213",
+        "197"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Negative remainder trick lagane ka perfect candidate hai yeh question! Har divisor aur uske remainder ka difference same hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Difference check kar bhai:<br/>Divisor 5 - Rem 2 = 3<br/>Divisor 6 - Rem 3 = 3<br/>Divisor 7 - Rem 4 = 3<br/>Kyunki difference sabme barabar (3) hai, hum seedha LCM trick use karenge.<br/>$N = \\text{LCM}(5, 6, 7) - \\text{Common Difference}$.<br/>LCM of 5, 6, 7 (teeno coprime hain) = $5 \\times 6 \\times 7 = 210$.<br/>Toh $N = 210 - 3 = 207$. Bina paper pen ke udne wala question tha!<br/><br/><b>Method 2 (Concept Builder):</b><br/>The concept says if $N \\equiv R_i \\pmod{D_i}$ and $(D_i - R_i) = K$ (constant), then $N = \\text{LCM}(D_i) \\times q - K$. For smallest value, take quotient $q=1$.<br/><br/><b>Future Exam Takeaway:</b> Jab bhi multiple divisors aur remainders ho, 99% time unka difference constant hoga, Negative Remainder formula thop do."
+    },
+    {
+      "q": "What is the sum of all the natural number between $1$ and $200$ which are multiple of $5$?",
+      "o": [
+        "3900",
+        "4100",
+        "4155",
+        "4235"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: JSM (Average Balancing)</b><br/><br/>Dekh bhai aise karna hai... AP ka sum bina gande formula ke solve hota hai, sirf average ka hack laga.<br/><br/><b>Pen-Free Observation:</b> Range $5$ se start hoke $195$ tak jayegi. Average lagbhag $100$ aayega aur numbers $40$ ke aas-paas hain. $100 \\times 40 = 4000$ ke kareeb ka answer hoga.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> AP me Average hamesha $\\frac{\\text{First} + \\text{Last}}{2}$ hota hai. Matalab $\\frac{5+195}{2} = 100$. Total terms $n = \\frac{195}{5} = 39$. Seedha multiply mar: Sum = $39 \\times 100 = 3900$.<br/><br/><b>Method 2 (Concept Builder):</b> Formula $S_n = \\frac{n}{2}(2a + (n-1)d)$ time waste hai. Jab AP me $a$ aur $l$ pata ho, toh $S_n = n \\times \\text{Average}$ use kar.<br/><br/><b>Future Exam Takeaway:</b> Sum of AP hamesha 'Number of terms $\\times$ Middle Term (Average)' hota hai. Pen uthane ki zaroorat nahi padni chahiye!"
+    },
+    {
+      "q": "How many 100-digit positive integers are completely divisible by $5$?",
+      "o": [
+        "$1.8 \\times 10^{99}$",
+        "$1.8 \\times 10^{98}$",
+        "$9 \\times 10^{99}$",
+        "$2 \\times 10^{99}$"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> $5$ se divide hone ki probability hamesha $1/5$ hoti hai kisi bhi large uniform set mein.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, $100$-digit numbers ki duniya me total numbers kitne hain? Pehla digit $1-9$ hi ho sakta hai (9 choices), baaki $99$ digits kuch bhi $0-9$ (yani $10^{99}$ choices). Toh total hue: $9 \\times 10^{99}$.<br/>Ab inme se $5$ se katne wale chahiye. Har $5$ lagatar numbers mein theek ek $5$ se katta hai. Toh total ko $5$ se bhag kar de: $\\frac{9 \\times 10^{99}}{5} = 1.8 \\times 10^{99}$. Option A mark kar!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Counting aur basic Arithmetic Progression (AP) ka mixture hai. Lowest 100-digit number is $10^{99}$ and highest is $10^{100}-1$. You can use $T_n = a + (n-1)d$ to find $n$, but logical probability is way faster.<br/><br/><b>Future Exam Takeaway:</b> Jab bhi aisi massive ranges me divisibility puchi jaye, always find Total Items and divide by the Divisor directly."
+    },
+    {
+      "q": "The product of two co-prime numbers is 903. Then their LCM should be?",
+      "o": [
+        "903",
+        "1",
+        "301",
+        "Cannot be determined"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Co-prime numbers unhe kehte hain jinme kuch bhi common factor nahi hota (except 1). Unka HCF hamesha 1 hoga, aur LCM unka direct product hoga.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, CGL language se darata hai bas. Universal LCM HCF rule: $\\text{LCM} \\times \\text{HCF} = A \\times B$<br/>Co-prime ke liye $\\text{HCF} = 1$<br/>Toh $\\text{LCM} = A \\times B$ (Product). Product given hai 903, toh LCM bhi 903 hoga. Pen mat uthana aise questions ke liye!<br/><br/><b>Method 2 (Concept Builder):</b><br/>For example 4 and 9 co-prime hain. Inka HCF 1 aur LCM inka product 36 hi aayega. This holds true for any co-prime pair.<br/><br/><b>Future Exam Takeaway:</b><br/>Co-prime terms, twin primes aur consecutive integers me LCM hamesha direct multiplication of numbers hota hai."
+    },
+    {
+      "q": "Using remainder theorem to find last two digits: What are the last two digits of $2^{2026}$?",
+      "o": [
+        "24",
+        "44",
+        "64",
+        "84"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Last 2 digits matlab mod 100. $2^{2026}$ obviously 4 ka multiple hai, toh answer wahi option hoga jo 4 se divisible ho. Saare options hain, so Mod 25 apply karna padega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, 100 ko $4 \\times 25$ me tod.<br/>Mod 4 me $2^{2026} \\equiv 0$.<br/>Mod 25 ke liye Euler laga: $\\phi(25) = 20$. Power $2026 \\pmod{20} = 6$. So, $2^6 = 64$. Ab $64 \\pmod{25} = 14$.<br/>Aisa option dhundh jo mod 4 pe 0 de aur mod 25 pe 14 de. 64 satisfy kar raha hai! ($64 = 25 \\times 2 + 14$).<br/><br/><b>Method 2 (Concept Builder):</b><br/>Euler's totient theorem kehti hai ki $a^{\\phi(n)} \\equiv 1 \\pmod n$. Iska base hamesha strong rakh, unit digits ke hardest sawal isse udate hain.<br/><br/><b>Future Exam Takeaway:</b><br/>Last 2 digits base 2, 4, 6, 8 ke liye hamesha mod 100 ko 4 and 25 me tod kar check kiya kar."
+    },
+    {
+      "q": "A number when divided by a divisor, leaves a remainder of 29. Thrice the number, when divided by the same divisor, gives remainder 7. Find the divisor, if it is less than 50?",
+      "o": [
+        "60",
+        "40",
+        "80",
+        "20"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Simple proportionality! Jo relation Numbers ke beech hai, wahi Remainder ke beech hona chahiye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Agar Number 3 guna hua hai, toh Remainder bhi 3 guna hona chahiye tha.<br/>Expected remainder = $29 \\times 3 = 87$.<br/>Lekin actual remainder 7 bacha hai. Yani baaki ka bacha hua hissa divisor se perfectly divide ho gaya hoga.<br/>Difference = $87 - 7 = 80$.<br/>Yani Divisor 80 ka koi factor hai.<br/>Factors of 80: 80, 40, 20, 16$\\dots$<br/>Condition 1: Divisor Remainder (29) se humesha bada hona chahiye (D &gt; 29). Toh 20, 16 reject ho gaye.<br/>Condition 2: Question mein diya hai D &lt; 50. Toh 80 reject ho gaya.<br/>Bacha sirf 40. Wahi answer hai!"
+    },
+    {
+      "q": "What is the Remainder of 21^201 / 400?",
+      "o": [
+        "21",
+        "61",
+        "39",
+        "None of these"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 21.</b><br/><br/><b>Pen-Free Observation:</b> Dekh bhai, base 21 aur divisor 400 dekhte hi dimaag me $20+1$ chamakna chahiye. Binomial Expansion ka direct application hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Number ko $(20+1)^{201}$ me tod de.<br/>Binomial expansion me aakhri 2 terms chhod kar baki sabme $20^2 = 400$ aayega, jo ki totally divisible by 400 hoga.<br/>Bachi aakhri do terms: $^{201}C_1 (20)^1 (1)^{200} + ^{201}C_0 (20)^0 (1)^{201}$<br/>$= (201 \\times 20) + 1 = 4020 + 1 = 4021$.<br/>Ab $4021$ ko 400 se divide karega toh naturally $4000$ kat jayega, strictly 21 bachega."
+    },
+    {
+      "q": "A printer numbers the pages of a book starting with $1$ and uses $5189$ digits in all. How many pages does the book have?",
+      "o": [
+        "1575",
+        "1574",
+        "1573",
+        "1576"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Page numbering ke digit chunks yaad hone chahiye. $999$ pages tak $2889$ digits hote hain. Uske upar sab $4$-digit wale hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Pages $1$ to $999$ use exactly $2889$ digits.<br/>Remaining digits = $5189 - 2889 = 2300$ digits.<br/>Ye saare bachhe hue digits $4$-digit number banayenge.<br/>Number of $4$-digit pages = $2300 \\div 4 = 575$ pages.<br/>Total pages = $999 + 575 = 1574$ pages.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Breakdown: $1-9$ ($9$ digits), $10-99$ ($180$ digits), $100-999$ ($2700$ digits). Total = $2889$. Ye sequence yaad rakhne se time bachta hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Always memorize standard digit counts: $1$ to $99 = 189$ digits. $1$ to $999 = 2889$ digits. Direct application se calculation aadhi ho jati hai."
+    },
+    {
+      "q": "Which of the following statements is true? I) $\\text{odd} \\times \\text{even} = \\text{odd}$, II) $\\text{odd} \\times \\text{odd} = \\text{even}$",
+      "o": [
+        "Only I is true",
+        "Only II is true",
+        "Both I and II are true",
+        "Neither I nor II is true"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Statements padh ke direct numbers put karo dimaag me. Algebraic proof ki zarurat nahi hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Check I) $\\text{odd} \\times \\text{even}$. Take $3 \\times 2 = 6$ (Even). Statement says odd. False.<br/>Check II) $\\text{odd} \\times \\text{odd}$. Take $3 \\times 3 = 9$ (Odd). Statement says even. False.<br/>Dono statements completely wrong hain.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Even number behaves like a black hole in multiplication; koi bhi number even se multiply hoga toh overall even hi ban jayega. Odd tabhi aata hai jab sirf odd numbers multiply ho rahe hon.<br/><br/><b>Future Exam Takeaway:</b><br/>Theoretical statements me variables ke saath mat khelo. Simple prime numbers ($2, 3$) put karke seconds me counter-example dhoondh liya karo."
+    },
+    {
+      "q": "What is the remainder when $(10^{10} + 10^{100} + 10^{1000} + 10^{10000})$ is divided by $7$?",
+      "o": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Successive Change (Fermat's Cyclic Pattern)</b><br/><br/>Dekh bhai, base agar bada ho aur divisor prime ho, toh seedha Fermat's theorem lagake powers choti karni hai.<br/><br/><b>Pen-Free Observation:</b> Base $10 \\equiv 3 \\pmod 7$. Toh $(3^{10} + 3^{100} + 3^{1000} + 3^{10000}) \\pmod 7$. Fermat's says cyclicity is $7-1 = 6$. Powers ko 6 se divide karke chota kar lo.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Powers hain $10, 100, 1000...$<br/>$10 \\div 6 \\implies$ Remainder $4$.<br/>$100 \\div 6 \\implies$ Remainder $4$.<br/>Dhyan se dekh, 10 ki har power ko $6$ se divide karne pe $4$ hi remainder aayega.<br/>Toh expression bana: $3^4 + 3^4 + 3^4 + 3^4$.<br/>$3^4 = 81 \\equiv 4 \\pmod 7$.<br/>So char baar $4$ aayega. Sum = $4 + 4 + 4 + 4 = 16$.<br/>$16 \\pmod 7 = 2$. Seedha answer!<br/><br/><b>Future Exam Takeaway:</b>Remainder MTLB hota hai ki divide karte jao jab tk divisor se chhota n ho jaaye si divide karte jana hai rukne ka noi.Modulo prime wale questions me Fermat's chhota base-power banata hai. Powers ko divisor ki cyclicity ($P-1$) se pehle hi kaat do."
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-09",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "Evaluate: $0.23\\overline{472} + 0.24\\overline{362}$",
+      "o": [
+        "0.47(bar on 834)",
+        "0.47(bar on 835)",
+        "0.48(bar on 348)",
+        "0.47(bar on 833)"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: JSM (Direct Bar Expansion)</b><br/><br/>Dekh bhai aise karna hai... fraction conversion mat lagana idhar, time waste ho jayega.<br/><br/><b>Pen-Free Observation:</b> Fraction conversion $\\frac{N}{99900}$ jaisi badsurat chize banati hain. Bar ko seedha expand kar ke add karna smartness hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>$0.23472472\\dots$<br/>$0.24362362\\dots$<br/>------------------<br/>$0.47834834\\dots$<br/>Addition me $472 + 362 = 834$ sidha add ho raha hai bina kisi carry-forward (jo $&gt;1000$ pe milta hai) ke. Iska matlab pattern perfectly $834$ ka hi banega.<br/>Result = $0.47\\overline{834}$.<br/><br/><b>Method 2 (Concept Builder):</b> Carry check hamesha right se aane wale cycle pe kiya karo.<br/><br/><b>Future Exam Takeaway:</b> Recurring decimals ko directly unki expanded form me likh ke basic addition karna sabse safe aur fast hai."
+    },
+    {
+      "q": "Is zero considered an integer?",
+      "o": [
+        "Yes",
+        "No",
+        "Cannot be determined",
+        "None of these"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Bhai mere, Number system ki basic pehchan. Number line pe Zero bilkul center me baitha integer hai.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Integers ke 3 types hote hain:<br/>1. Positive Integers ($+1, +2, +3\\dots$)<br/>2. Negative Integers ($-1, -2, -3\\dots$)<br/>3. Zero (Na positive, na negative).<br/>Answer 'Yes' hai."
+    },
+    {
+      "q": "Find the remainder when the polynomial $x^3 - 3x^2 + 4x - 5$ is divided by $x - 2$.",
+      "o": [
+        "-1",
+        "0",
+        "1",
+        "3"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Value Putting &amp; Symmetry.<br/><br/><b>Pen-Free Observation:</b> Remainder theorem ka sabse direct hit hai. Divider ko zero rakho aur pen chalane ki zaroorat hi mat feel hone do.<br/><br/><b>Method 1 (Ninja Technique):</b> Divisor ko equals to zero maan kar seedha polynomial me $x=2$ phek de. Jo aayega wahi Remainder hai.<br/><br/>Mathematically :-<br/><br/>$$ x - 2 = 0 \\implies x = 2 \\\\ (2)^3 - 3(2)^2 + 4(2) - 5 \\\\ 8 - 12 + 8 - 5 = -1 $$<br/><br/><b>Method 2 (Concept Builder):</b> Remainder Theorem state karta hai ki polynomial $P(x)$ ko jab linear divisor $x-a$ se divide karein to Remainder $P(a)$ hota hai.<br/><br/>Mathematically :-<br/><br/>$$ P(x) = x^3 - 3x^2 + 4x - 5 \\\\ R = P(2) \\\\ R = 8 - 12 + 8 - 5 = -1 $$<br/><br/><b>TCS Trap:</b> Algebraic long division lagane ka try karega to wahan basic plus-minus mistakes hone ke 100% chances hain.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Divisor polynomial agar $ax-b$ form ka hai, toh Remainder is strictly equal to $P(b/a)$."
+    },
+    {
+      "q": "Find the smallest number which when successively divided by $7$ and $8$ leaves remainders $2$ and $3$ respectively, and is a multiple of $5$.",
+      "o": [
+        "135",
+        "415",
+        "695",
+        "975"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Number 'multiple of 5' hona chahiye, aur saare options multiples of 5 hain. Toh successive division se base equation bana lo.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, successive division ka standard equation bottom-up chalta hai. Let last quotient be $k$.<br/>Number $N = 7(8k + 3) + 2 = 56k + 21 + 2 = 56k + 23$.<br/>Ab is $N$ ko $5$ ka multiple ban na hai (yani aakhiri digit $0$ ya $5$ ho).<br/>Agar main $k=0$ lu, $N = 23$ (Fail).<br/>Agar main $k=1$ lu, $N = 79$ (Fail).<br/>Agar main $k=2$ lu, $N = 112 + 23 = 135$. Ye pass ho gaya kyunki last me $5$ hai. Toh smallest answer $135$ hai.<br/><br/><b>Method 2 (Concept Builder):</b><br/>To solve $56k + 23 \\equiv 0 \\pmod{5}$, break it down: $(55k + k) + 20 + 3 \\implies k + 3 \\equiv 0 \\pmod{5}$. Smallest positive integer $k$ satisfying this is $k=2$. Plugin $k=2$ in $56k+23$ gives $135$.<br/><br/><b>Future Exam Takeaway:</b> Successive division equation banakar Modulo reduction (Concept Builder method) is the most failsafe approach for CGL Mains."
+    },
+    {
+      "q": "Find the number of factors of 14400 divisible by 18 but not by 36.",
+      "o": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Combinatorics / Unitary Scaling</b><br/><br/>Dekh bhai aise karna hai... factors mein conditions set hain, iska matlab bas powers ko lock karna hai.<br/><br/><b>Pen-Free Observation:</b> $18 = 2^1 \\times 3^2$ and $36 = 2^2 \\times 3^2$. Difference sirf power of 2 ka hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Prime factorize $14400 = 2^6 \\times 3^2 \\times 5^2$.<br/>Divisible by $18$ matlab at least ($2^1 \\times 3^2$) hona chahiye.<br/>Not divisible by $36$ matlab ($2^2 \\times 3^2$) nahi hona chahiye.<br/>Requirement strict ho gayi: 2 ki power sirf $1$ ho sakti hai (1 choice). 3 ki power exactly $2$ rahegi kyunki max $3^2$ hi hai (1 choice). 5 ki power kuch bhi $0, 1, 2$ ho sakti hai (3 choices).<br/>Combinations: $1 \\times 1 \\times 3 = 3$. Brilliant question!<br/><br/><b>Future Exam Takeaway:</b> 'Divisible by X, not by Y' means lock the exact power of the prime that differs between X and Y."
+    },
+    {
+      "q": "What are the last two digits of $31^{41^{51}}$?",
+      "o": [
+        "11",
+        "31",
+        "51",
+        "71"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $31$<br/><br/><b>Core Conceptual Tool:</b> Value Putting &amp; Symmetry.<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, base agar $1$ par end ho raha hai, toh seedha Aman Sir ka universal 'X1' wala jugad laagu hoga yahan.<br/><br/><b>Method 1 (Ninja Technique):</b> Unit digit humesha $1$ hi rahegi. Tens digit ke liye, base ke tens ko power ke unit digit se multiply kar de. Khallas.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Base Tens} = 3 \\\\ \\text{Power Unit} = 1 \\text{ (Since } 41^{\\text{anything}} \\text{ ends in } 1) \\\\ \\text{Result Tens} = 3 \\times 1 = 3 \\implies 31 $$<br/><br/><b>Method 2 (Concept Builder):</b> Binomial theorem se expand karne par baaki saari higher powers $100$ ka multiple ban jati hain, bas last do terms bach ti hain.<br/><br/>Mathematically :-<br/><br/>$$ (30+1)^k = \\dots + k(30)(1) + 1 \\\\ \\text{Last two digits} = (3k \\pmod{10}) \\times 10 + 1 $$<br/><br/><b>TCS Trap:</b> Power ki actual power nikalne me bacha panic kar jata hai, jabki wahan sirf aakhiri digit hi matter karti hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; $(\\dots x1)^y$ ke last two digits hamesha $(x \\times \\text{last digit of } y)$ and $1$ hote hain."
+    },
+    {
+      "q": "Find the unit digit of $\\frac{12^{55}}{3^{11}} + \\frac{8^{48}}{16^{18}}$",
+      "o": [
+        "2",
+        "4",
+        "0",
+        "6"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Never find unit digits before simplifying fractions! Denominators must be completely canceled out.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Term 1: $\\frac{12^{55}}{3^{11}} = \\frac{4^{55} \\times 3^{55}}{3^{11}} = 4^{55} \\times 3^{44}$.<br/>Unit digit: $4^{\\text{odd}} \\implies 4$. $3^{44}$ (power is multiple of $4$) $\\implies 1$. $4 \\times 1 = 4$.<br/>Term 2: $\\frac{8^{48}}{16^{18}} = \\frac{(2^3)^{48}}{(2^4)^{18}} = \\frac{2^{144}}{2^{72}} = 2^{72}$.<br/>Unit digit: $2^{72}$ (multiple of $4$) $\\implies 6$.<br/>Total Unit Digit = $4 + 6 = 10 \\implies 0$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Indices ka base rule use kiya: $\\frac{a^m}{a^n} = a^{m-n}$. Bacha denominator me fas ke galat unit digit nikalta hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Simplification first, cyclicity second. Base same banao, powers minus karo."
+    },
+    {
+      "q": "If a number is divided by a divisor D leaves remainder 17. If the number 3N is divided by D leaves a remainder 5. Find the remainder when 4N is divided by D?",
+      "o": [
+        "20",
+        "26",
+        "28",
+        "22"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: JSM (Remainder Balancing)</b><br/><br/>Dekh bhai... Remainder theorem mein equations banayi toh phasega. Seedha operation remainders pe karna hota hai.<br/><br/><b>Pen-Free Observation:</b> Number 3 times hua toh remainder bhi $3 \\times 17 = 51$ hona chahiye tha, par 5 aa raha hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Agar theoretical remainder 51 hai aur actual 5, matlab inka difference $(51 - 5) = 46$ divisor $D$ se cut gaya (multiple hai).<br/>Since initial remainder 17 tha, toh rules ke according $D &gt; 17$ hoga.<br/>$46$ ke factors hain 23, 46. So $D$ is purely $23$ or $46$.<br/>Ab $4N$ par aate hain, remainder should be $4 \\times 17 = 68$.<br/>Agar usko $D$ se divide kare (let's say 23), toh $68 = 23 \\times 2 + 22$. Remainder hamesha 22 aayega. Mast concept!<br/><br/><b>Future Exam Takeaway:</b> Theoretical remainder minus actual remainder is always a multiple of the divisor. Ek baar Divisor nikal gaya toh koi bhi multiple poch le."
+    },
+    {
+      "q": "Find the number of factors of $N = 2^8 \\times 3^5 \\times 5^4$ which are perfect cubes.",
+      "o": [
+        "12",
+        "18",
+        "24",
+        "8"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Perfect cube matlab powers ka multiple of 3 hona zaroori hai. (jaise 0, 3, 6, 9\\dots).<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Check ki kin powers ko select kar sakte hain:<br/>Base 2: Max power 8. Multiples of 3 available: 0, 3, 6. (3 Choices).<br/>Base 3: Max power 5. Multiples of 3 available: 0, 3. (2 Choices).<br/>Base 5: Max power 4. Multiples of 3 available: 0, 3. (2 Choices).<br/>Sabko multiply kar de: Total choices = $3 \\times 2 \\times 2 = 12$.<br/>Ekdum CPR jaisi smooth counting!"
+    },
+    {
+      "q": "What is the sum of all integer values of $n$ for which $n^2 + 19n + 92$ is a perfect square?",
+      "o": [
+        "21",
+        "19",
+        "0",
+        "-19"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: Unitary Scaling / Quadratic Completion</b><br/><br/>Dekh bhai, jab polynomial perfect square banani ho toh 'completing the square' lagana padta hai, bina pen ruke.<br/><br/><b>Method 1 (Concept Builder to Ninja Shortcut):</b><br/>Let $n^2 + 19n + 92 = k^2$. Multiply whole equation by $4$ (to remove fractions).<br/>$4n^2 + 76n + 368 = 4k^2$. Isko complete karo: $(2n+19)^2 - 361 + 368 = 4k^2$.<br/>$(2n+19)^2 - 4k^2 = -7 \\implies (2n+19-2k)(2n+19+2k) = -7$.<br/>Since $-7$ prime hai, factors sirf $(\\pm 1, \\mp 7)$ honge. Symmetric roots aate hain in cases me. Sum of all integer values unke midpoint ke double pe settle hoti hai. Solving gives roots $n = -8, -11$. Sum is $-19$.<br/><br/><b>Ninja Hack:</b> Aise format $n^2 + bn + c$ me sum of valid integer values humesha $-b$ ke barabar hota hai agar discriminant allow kare! Yaha $b=19$, toh sum seedha $-19$ aayega. Pen chhod de!<br/><br/><b>Future Exam Takeaway:</b> 'Sum of all integers for a quadratic perfect square' puche toh $-b$ ka mental hack yaad rakhna, exam me $1$ minute save karega."
+    },
+    {
+      "q": "If the 10-digit number $5432y1749x$ is divisible by $72$, what is the minimum possible value of $(5x - 4y)$?",
+      "o": [
+        "14",
+        "10",
+        "24",
+        "18"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: JSM (Base Divisibility Balancing)</b><br/><br/>Dekh bhai, $72$ ka direct divisibility rule nahi hota, humesha isko co-primes $8$ aur $9$ mein todna hota hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Step 1: Rule of $8$ for last 3 digits. $49x$ must be divisible by $8$. $8 \\times 60 = 480$, agla multiple $488$, fir $496$. Toh seedha $x = 6$ locked.<br/>Step 2: Rule of $9$ for sum of digits. Sum = $5+4+3+2+y+1+7+4+9+6 = 41 + y$.<br/>Sum must be multiple of $9$. $41$ ke baad $45$ aata hai. So $41 + y = 45 \\implies y = 4$.<br/>Dono variables mil gaye. Final calculation: $5(6) - 4(4) = 30 - 16 = 14$.<br/><br/><b>Future Exam Takeaway:</b> $72, 88, 99$ jaise bade divisors me JSM ki tarah do alag divisibility parts ko balance karte hain. Humesha end digits (jaise 8) se start karo, fir sum of digits (jaise 9 ya 11) par aao."
+    },
+    {
+      "q": "What is the value of $1006^2 - 1007 \\times 1005 + 1008 \\times 1004 - 1009 \\times 1003$?",
+      "o": [
+        "4",
+        "6",
+        "-6",
+        "9"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $6$<br/><br/><b>Core Conceptual Tool:</b> Value Putting &amp; Symmetry.<br/><br/><b>Pen-Free Observation:</b> Saare numbers strictly $1006$ ke ird-gird set hain. Isme algebra ghusaa, number calculate karega toh barbaad ho jayega.<br/><br/><b>Method 1 (Ninja Technique):</b> Beech waale ko $x$ maan le aur baakiyo ko $(x+1), (x-1)$ form me rakh de. Terms ekdum cancel out ho jayengi.<br/><br/>Mathematically :-<br/><br/>$$ x^2 - (x+1)(x-1) + (x+2)(x-2) - (x+3)(x-3) \\\\ x^2 - (x^2 - 1) + (x^2 - 4) - (x^2 - 9) \\\\ 1 - 4 + 9 = 6 $$<br/><br/><b>Method 2 (Concept Builder):</b> Yahan par direct difference of squares wali basic identity ka application chal raha hai.<br/><br/>Mathematically :-<br/><br/>$$ (a-b)(a+b) = a^2 - b^2 \\\\ 1006^2 - (1006^2 - 1^2) + (1006^2 - 2^2) - (1006^2 - 3^2) \\\\ 1 - 4 + 9 = 6 $$<br/><br/><b>TCS Trap:</b> Exam pressure me tu in bade numbers ki unit digit nikalne ki koshish karega jisme minus sign error ke chances bohot rehte hain.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Never multiply! Treat consecutive massive numbers uniformly as $(x-a)(x+a)$ forms."
+    },
+    {
+      "q": "What is the remainder when the number $8888\\dots$ (written $25$ times) is divided by $13$?",
+      "o": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Successive Change (Cycle Division)</b><br/><br/>Dekh bhai aise karna hai... repdigits hamesha fixed cycle me cut hote hain.<br/><br/><b>Pen-Free Observation:</b> $7, 11$, aur $13$ ka combined divisibility rule ek specific pattern create karta hai. Koi bhi ek digit ka number jab $6$ baar likha jaye ($aaaaaa$), wo $13$ se completely divide hota hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Total $25$ digits hain. $6-6$ ki cycle me unhe uda de. $\\frac{25}{6}$ ka remainder aayega $1$.<br/>Matlab shuruwaat ke $24$ digits ($4$ pairs of $6$) mil kar perfectly zero remainder denge.<br/>Bachega sirf aur sirf last ka aakhri $8$. Ab us akela $8$ ko $13$ se bhag dega toh remainder $8$ hi bachega.<br/><br/><b>Method 2 (Concept Builder):</b> $6$ times same digit is always divisible by $7, 11, 13, 37, 1001$.<br/><br/><b>Future Exam Takeaway:</b> Repdigit questions ($7777\\dots$) dekhte hi total digits ko $6$ se divide karke cycle choti kar lo."
+    },
+    {
+      "q": "Find the remainder when $7^{84}$ is divided by 342.",
+      "o": [
+        "1",
+        "7",
+        "49",
+        "341"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Remainder theorem ka classic format! Hamesha base ki power ko aisi limit tak expand karo ki wo divisor ke aas-paas ($+1$ ya $-1$) gap me fit ho jaye. Divisor 342 hai aur Base 7, connection dikh raha hai 343 wala!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Humein pata hai $7^3 = 343$. Boom! Connection set hai.<br/>Ab given power ko break karo: $7^{84} = (7^3)^{28}$.<br/>Expression ban gaya $(343)^{28} \\div 342$.<br/>Ab 343 ko 342 se bhag doge toh $+1$ remainder aayega. $1^{28} = 1$. Khatam kaam!<br/><br/><b>Method 2 (Concept Builder):</b><br/>By Binomial Expansion Remainder Theorem: $(ax + 1)^n \\div ax$ always leaves a remainder of $1^n = 1$. Here $x = 1, a = 342$. $(342 + 1)^{28} \\implies R = 1$.<br/><br/><b>Future Exam Takeaway:</b> Power divisibility sawalon me humesha Dividend ko $\\text{Divisor} \\pm 1$ ke format me express karne ki koshish karo."
+    },
+    {
+      "q": "What is the largest 4-digit number that is exactly divisible by $88$?",
+      "o": [
+        "9944",
+        "9988",
+        "9966",
+        "9900"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br/><br/><b>Pen-Free Observation:</b> Largest condition and $88$ divisibility criteria (yani rule 11 aur 8 check). Top se sabse bada number scan kar option list me.<br/><br/><b>Method 1 (Ninja Technique):</b> Options largest to smallest line lagao. Pehle 8 aur 11 ka rule check kar direct reject condition udate ja.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Largest } 9988 \\implies \\frac{988}{8} \\text{ fails} \\\\ 9966 \\implies \\frac{966}{8} \\text{ fails} \\\\ 9944 \\implies \\frac{944}{8} = 118. \\text{ And } 11 \\text{ checks } (13 - 13 = 0). \\\\ \\text{Answer fixed } = 9944 $$<br/><br/><b>Method 2 (Concept Builder):</b> Arithmetic absolute LCM remainder limit test apply karna traditional way me.<br/><br/>Mathematically :-<br/><br/>$$ \\frac{9999}{88} \\implies \\text{Quotient } 113, \\text{ Remainder } 55 \\\\ 9999 - 55 = 9944 $$<br/><br/><b>TCS Trap:</b> Traditional minus karoge toh Remainder me galati aana boht aam hai and $9900$ wagera match limit set hote hain errors me.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Jab \"Largest/Smallest Divisible Array Number\" question complete options ke sath ho, Reverse Top Down test options ka 10x fast execution hai."
+    },
+    {
+      "q": "Find the remainder when a 50-digit number formed by writing $123456789101112\\dots$ is divided by $16$.",
+      "o": [
+        "2",
+        "5",
+        "10",
+        "14"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Digit Counting)</b><br/><br/>Dekh bhai... aise sawalon mein pura number nahi likhna hota, sirf aakhiri tak jump karna hai.<br/><br/><b>Pen-Free Observation:</b> 16 se check karna hai, so only last 4 digits matter. Hume 50th digit locate karni hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Pehle 9 numbers mein 9 digits cover ho gaye. Bachi $50 - 9 = 41$ digits.<br/>Ab sab 2-digit numbers hain ($10, 11, \\dots$). 41 digits matlab 20 pure numbers aur ek single digit ($41/2 = 20$ remainder 1).<br/>10 se shuru karke 20 numbers $29$ tak aayenge. Agla number 30 hona tha par ek hi digit leni hai, so sirf '3'.<br/>String ends at $28293$. 16 se last 4 digits: $8293 \\pmod{16} = 5$. Khatam!<br/><br/><b>Future Exam Takeaway:</b> Jump to the end of the series using digit block counts (1-9, 10-99) instead of writing it out sequentially."
+    },
+    {
+      "q": "Determine the last three digits of $9^{100}$.",
+      "o": [
+        "001",
+        "201",
+        "401",
+        "801"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Binomial Expansion)</b><br/><br/>Dekh bhai aise karna hai... Last 3 digits matlab calculation mod 1000 ki karni hai. Jab base 10 ke aas paas ho toh Binomial Theorem zindabad.<br/><br/><b>Pen-Free Observation:</b> $9^{100} = (10 - 1)^{100}$. Expansion mein aakhiri 3 terms hi bachenge, baki sab 1000 se multiply hoke end mein $000$ denge.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Expand karega toh aakhiri terms hongi: $\\dots - \\binom{100}{97} 10^3 + \\binom{100}{98} 10^2 - \\binom{100}{99} 10 + 1$.<br/>Modulo 1000 karna hai, so higher powers cancel. Third last term $4950 \\times 100 = 495000 \\equiv 0 \\pmod{1000}$.<br/>Second last $-1000 \\equiv 0$.<br/>Aakhiri bacha sirf $+1$. So last 3 digits lock ho gaye $001$ par.<br/><br/><b>Future Exam Takeaway:</b> For last 3 digits, shift the base to $\\pm 1$ of a power of 10 and expand binomially. Most terms become zero instantly."
+    },
+    {
+      "q": "Find the remainder when $4^{100}$ is divided by 6.",
+      "o": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Ye remainder theorem ka universal truth hai bhai! 4 aur 6 ka combination jab bhi dekho, bina pen uthaye result mark kar dena.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Pattern observe kar: <br/>$4^1 \\div 6 \\implies R = 4$.<br/>$4^2 \\div 6 \\implies 16 \\div 6 \\implies R = 4$.<br/>$4^3 \\div 6 \\implies 64 \\div 6 \\implies R = 4$.<br/>Bhai 4 ki power chahe 100 ho ya 1 lakh, usko jab bhi 6 se bhag doge, remainder HAMESHA 4 hi aayega. Isko ratt le, seconds me answer nikalega!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Technically, $4^n = (6 - 2)^n$. This eventually boils down to checking $(-2)^n \\pmod 6$, and cyclic remainders for $2^{even}$ over 6 also reduce down to pattern logic. But direct memorization is the key here.<br/><br/><b>Future Exam Takeaway:</b> Special combinations like $4^n \\div 6 \\implies 4$ and $10^n \\div 6 \\implies 4$ fixed patterns hain, inme calculation penalty hoti hai."
+    },
+    {
+      "q": "Find the total number of factors of $(73^3 - 40^3 - 33^3)$.",
+      "o": [
+        "192",
+        "190",
+        "188",
+        "186"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $192$<br/><br/><b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Ye number system ka sawal hi nahi hai. Dhyan se dekh, in numbers ka seedha sum zero ban raha hai. Seedha algebra lapet isme.<br/><br/><b>Method 1 (Ninja Technique):</b> Agar $a+b+c = 0$ hai toh cubes ki value $3abc$ me todi jaati hai. Waha se seedha primes ki exponents extract kar.<br/><br/>Mathematically :-<br/><br/>$$ 73 - 40 - 33 = 0 \\implies 3(73)(-40)(-33) \\\\ \\text{Take abs val: } 3 \\times 73 \\times 40 \\times 33 \\\\ 3^2 \\times 5^1 \\times 11^1 \\times 73^1 \\times 2^3 \\\\ \\text{Factors} = (3)(2)(2)(2)(4) = 192 $$<br/><br/><b>Method 2 (Concept Builder):</b> Algebraic conditional identities bohot rarely par brutal tarike se test hoti hain idhar.<br/><br/>Mathematically :-<br/><br/>$$ \\text{If } x+y+z = 0, \\text{ then } x^3 + y^3 + z^3 = 3xyz \\\\ 3(73^1)(2^3 \\times 5^1)(3^1 \\times 11^1) $$<br/><br/><b>TCS Trap:</b> Ye identity mind me nahi aayi toh tum in bade numbers ka cube nikalne chale jaoge jo practically impossible hai exam me.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Sum of base terms zero ho to direct $3abc$ identity me tod do calculation fat-se banegi."
+    },
+    {
+      "q": "Find the sum of the reciprocals of all the factors of $360$.",
+      "o": [
+        "$2.8$",
+        "$3.25$",
+        "$3.5$",
+        "$2.5$"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Reciprocal Symmetry)</b><br/><br/>Dekh bhai, yahan sab factors likh kar fraction add karega toh agla attempt dena padega. Direct trick lagani hai.<br/><br/><b>Method 1 (Ninja Technique Formula):</b><br/>Sum of Reciprocals of Factors = $\\frac{\\text{Sum of Factors}}{N}$.<br/>Pehle $360$ ka prime factorization kar: $360 = 2^3 \\times 3^2 \\times 5^1$.<br/>Sum of factors formula: $\\frac{2^4-1}{2-1} \\times \\frac{3^3-1}{3-1} \\times \\frac{5^2-1}{5-1}$<br/>$= 15 \\times 13 \\times 6 = 1170$.<br/>Ab seedha value daal: $\\frac{1170}{360} = \\frac{117}{36} = \\frac{13}{4} = 3.25$.<br/><br/><b>Future Exam Takeaway:</b> Sum of reciprocals ka ek universal shortcut $\\frac{\\text{Sum of Divisors}}{N}$ apni notes me bold karke likh lo."
+    },
+    {
+      "q": "If a 10-digit number $2094x843y2$, is divisible by 88, for the maximum possible value of x the value of (5x-7y) is?",
+      "o": [
+        "5",
+        "3",
+        "2",
+        "8"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: JSM (Base Divisibility Balancing)</b><br/><br/>Dekh bhai... 88 jaisi badi values composite hoti hain. Inhe 8 aur 11 mein tod ke constraints satisfy karo.<br/><br/><b>Pen-Free Observation:</b> Hamesha last 3 digits rule (8) pehle lagao taaki 'y' ki limited values mil jayein.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>88 matlab 8 aur 11.<br/>Div by 8: last 3 digits $3y2$ chahiye. $y=1$ (312), $y=5$ (352), $y=9$ (392) satisfy karenge.<br/>Ab 11 ka alternate sum: $(15+x+y) - 17 = x+y-2$. Yeh $0$ ya $11$ hona chahiye.<br/>Max $x$ ke liye $x+y-2=11 \\implies x+y=13$. Agar hum $y=5$ lenge toh $x=8$ perfectly set hota hai.<br/>Equation mein dal: $5(8) - 7(5) = 40 - 35 = 5$. Question tod diya!<br/><br/><b>Future Exam Takeaway:</b> Always find all possibilities for the unit digit from the $2^n$ rule before blindly applying the alternate sum 11's rule."
+    },
+    {
+      "q": "When two numbers are separately divided by $44$ the remainders are $11$ and $38$ respectively. If the sum of the two number is divided by $44$, then the obtained remainder will be?",
+      "o": [
+        "16",
+        "33",
+        "5",
+        "44"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: JSM (Remainder Addition)</b><br/><br/>Dekh bhai, remainder theorem ka universal law hai: Jo numbers ka operation bola hai, wahi unke remainders ka kardo.<br/><br/><b>Pen-Free Observation:</b> Dono case mein divisor $44$ hai. Final divisor bhi $44$ hai. Seedha remainders add kar do.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Naye number ka base banega $11 + 38 = 49$.<br/>Ab directly $49$ ko $44$ se divide kar de. $49 \\pmod{44}$ seedha remainder $5$ dega. Pen rakh do!<br/><br/><b>Future Exam Takeaway:</b> Add, Subtract ya multiply, jo operation numbers ke saath likha ho woh hamesha base remainders par utar diya karo. Constants maintain rehte hain."
+    },
+    {
+      "q": "What are the last three digits of $11^{2020}$?",
+      "o": [
+        "001",
+        "101",
+        "201",
+        "401"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Last 3 digits nikalne ka matlab hai 1000 se remainder dhoondhna. Base 11 ko 10+1 likh sakte hain, so Binomial expansion hi single way out hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Binomial approach laga bhai: $11^{2020} = (10 + 1)^{2020}$.<br/>Expand karega toh pehli saari terms me 10 ki power 3 ya usse badi hogi (yaani sab 1000 se cut jayenge end me 000 aayega). Sirf aakhiri do terms matters karengi!<br/>Second last term: $\\binom{2020}{1} \\times 10^1 \\times 1^{2019} = 2020 \\times 10 = 20200$. Yahan se end ke 3 digit aaye $200$.<br/>Last term: $1^{2020} = 1$.<br/>Toh total $200 + 1 = 201$. Option ud gaya!<br/><br/><b>Method 2 (Concept Builder):</b><br/>$(x+a)^n$ expansion mein last $k$ digits nikalne ke liye last $k$ terms ko observe karna hota hai jab $x$ 10, 100 type ka multiple ho.<br/><br/><b>Future Exam Takeaway:</b> End digits poochne par number ko powers of 10 ke nearest binomial format ($10^k \\pm 1$) mein break kardo."
+    },
+    {
+      "q": "If a book has $250$ pages, how many digits have been used to number the pages.",
+      "o": [
+        "650",
+        "453",
+        "642",
+        "672"
+      ],
+      "a": 2,
+      "s": "<b>Final Output:</b> $642$<br/><br/><b>Core Conceptual Tool:</b> Unitary Scaling.<br/><br/><b>Pen-Free Observation:</b> Pagination me fix milestones set hain pehle se. Ye question seedha formula blocks ka hai.<br/><br/><b>Method 1 (Ninja Technique):</b> Pehle 99 pages ki constant value $189$ yaad rakh. Uske baad jo bhi 3-digit pages bache hain usme $3$ multiply maar kar add kar de.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Pages } 1 \\text{ to } 99 \\implies 189 \\text{ digits} \\\\ \\text{Remaining 3-digit pages} = 250 - 99 = 151 \\\\ \\text{Total} = 189 + (151 \\times 3) = 642 $$<br/><br/><b>Method 2 (Concept Builder):</b> Range break kar ke step by step addition chal raha hai yahan. 1-digit wale $9$, 2-digit wale $90$, bache 3-digit wale.<br/><br/>Mathematically :-<br/><br/>$$ (9 \\times 1) + (90 \\times 2) + (151 \\times 3) \\\\ 9 + 180 + 453 = 642 $$<br/><br/><b>TCS Trap:</b> 3-digit pages nikalne ke chakkar me log directly $250-100 = 150$ kar dete hain, jabki count me 100th page bhi included hota hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Standard pagination facts yaad rakh: 1 se 99 pages me exactly 189 digits hoti hain, aur 1 se 999 me 2889 digits."
+    },
+    {
+      "q": "Find the greatest value of $b$ so that $30a68b$ (where $a &gt; b$) is divisible by 11.",
+      "o": [
+        "4",
+        "6",
+        "3",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>11 ki divisibility means alternate digits sum ka difference 0, 11, 22 hona chahiye. $a&gt;b$ ka constraint dhyan rakhna hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, $30a68b$ me sums nikal:<br/>$S_1 = 3+a+8 = 11+a$<br/>$S_2 = 0+6+b = 6+b$<br/>Difference = $5+a-b$.<br/>Difference 0 nahi ho sakta kyuki $a&gt;b$ (positive result aayega). Toh isko 11 ke barabar rakh: $5+a-b = 11 \\implies a-b = 6$.<br/>$b$ ki maximum value chahiye, toh $a$ ko maximum single digit 9 rakh. $b = 9-6 = 3$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Basic equations se constraints dhyan na rakhne pe marks kat-te hain. $a$ aur $b$ dono digits hain (0-9).<br/><br/><b>Future Exam Takeaway:</b><br/>Jab bhi do unknowns $a, b$ hon aur maximum/minimum pucha jaye, ek ko 9 ya 0 boundary value dekar dusre ko set kiya kar."
+    }
+  ]
+}

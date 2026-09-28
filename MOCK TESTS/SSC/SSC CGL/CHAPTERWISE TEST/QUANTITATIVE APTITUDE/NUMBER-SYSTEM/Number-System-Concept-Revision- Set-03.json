@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-03",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "What is the sum of all the individual digits of the first 100 natural numbers (1 to 100)?",
+      "o": [
+        "900",
+        "901",
+        "902",
+        "903"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: JSM (Symmetry Counting)</b><br/><br/>Dekh bhai... series add nahi karni, smart approach lagao. 0 to 99 ek perfect symmetric block hota hai.<br/><br/><b>Pen-Free Observation:</b> 00 se 99 tak har digit (0-9) apne place par equally repeat karti hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>00 se 99 tak har digit exactly 20 baar aati hai (10 baar tens par, 10 baar units par, total 10 sets mein).<br/>Sum of digits = $20 \\times (0+1+2+\\dots+9) = 20 \\times 45 = 900$.<br/>Bacha 100, iske digits ka sum hai 1.<br/>Total ho gaya $900 + 1 = 901$. CGL level logic!<br/><br/><b>Future Exam Takeaway:</b> Exploit symmetry in counting problems. The block 00-99 is your best friend for digit frequencies."
+    },
+    {
+      "q": "If $n$ is a positive integer, then when $1^{n}+2^{n}+3^{n}+4^{n}$ is divided by $10$, how many possible remainders can there be?",
+      "o": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Dividing by $10$ is just finding the Unit Digit! We only need to check cycles of powers up to $4$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Put $n=1$: $1+2+3+4 = 10 \\implies$ Unit digit $0$.<br/>Put $n=2$: $1+4+9+6 = 20 \\implies$ Unit digit $0$.<br/>Put $n=3$: $1+8+7+4 = 20 \\implies$ Unit digit $0$.<br/>Put $n=4$: $1+6+1+6 = 14 \\implies$ Unit digit $4$.<br/>Possible remainders are only $0$ and $4$. That means exactly $2$ possible remainders.<br/><br/><b>Method 2 (Concept Builder):</b><br/>The cyclicity of unit digits for $1, 2, 3, 4$ repeats every $4$th power. So checking $n=1,2,3,4$ covers all infinite possibilities.<br/><br/><b>Future Exam Takeaway:</b><br/>Divisibility by $10$ ALWAYS means 'Find the Unit Digit'. Don't waste time thinking about complex polynomial theorems. CGL bas unit digit check karwana chahta hai!"
+    },
+    {
+      "q": "Find the least number which is completely divisible by $9, 24$ and $36$?",
+      "o": [
+        "72",
+        "24",
+        "36",
+        "9"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>'Least number completely divisible' matlab sedha-sedha LCM (Lowest Common Multiple) pucha hai. Language ghumaai hai bas.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Numbers hain $9, 24, 36$.<br/>Notice karo ki $36$ exactly $9$ se divide hota hai. Toh $9$ ko picture se hi hata do.<br/>Ab sirf $24$ aur $36$ ka LCM nikalna hai.<br/>Highest common factor of $24, 36$ is $12$.<br/>LCM = $12 \\times (2 \\times 3) = 72$. Option dekhte hi mark karo!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Jab given set of numbers me koi chota number kisi bade number ka factor ho, toh chote number ka LCM par koi effect nahi padta.<br/><br/><b>Future Exam Takeaway:</b><br/>Don't draw lines and solve for LCM blindly. Eliminate factors immediately to shrink your calculation."
+    },
+    {
+      "q": "Three fractions $x, y$ and $z$, are such that $x &gt; y &gt; z$. When the smallest of them is divided by the greatest, the result is $9/16$, which exceeds $y$ by $0.0625$. If $x+y+z = 1 \\frac{13}{24}$ then the value of $x+z$ is:",
+      "o": [
+        "7/6",
+        "1",
+        "25/24",
+        "7/8"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Fraction Decoding)</b><br/><br/>Dekh bhai aise karna hai... Language me extra details ko ignore karke direct fraction attack karo.<br/><br/><b>Pen-Free Observation:</b> Main loop hai $0.0625$ ko decode karna, jo directly $\\frac{1}{16}$ ka fraction value hota hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Question kehta hai ki $\\frac{z}{x} = \\frac{9}{16}$ aur ye $y$ se $\\frac{1}{16}$ zyada hai.<br/>Yani $y = \\frac{9}{16} - \\frac{1}{16} = \\frac{8}{16} = \\frac{1}{2}$.<br/>Sum diya hai: $x + y + z = \\frac{37}{24}$.<br/>Hamein chahiye $x + z$. Toh seedha sum me se $y$ uda de!<br/>$x + z = \\frac{37}{24} - \\frac{1}{2} = \\frac{37}{24} - \\frac{12}{24} = \\frac{25}{24}$.<br/><br/><b>Method 2 (Concept Builder):</b> Fractions aur unki decimal values ($0.0625 = 1/16$) rata hona chahiye.<br/><br/><b>Future Exam Takeaway:</b> Language chahe kitni ghumaye, fraction conversions dimag me ready rakho."
+    },
+    {
+      "q": "Find the total number of distinct prime factors of the product: $10! \\times 11! \\times 12! \\times \\dots \\times 20!$",
+      "o": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br/><br/>Dekh bhai, seedha logic! Pura calculate karna hi nahi hai, numbers ka behavior samajh.<br/><br/><b>Pen-Free Observation:</b> Factorials multiplication mein naye primes generate nahi hote, jo sabse bada boundary number hota hai, highest prime bas uske andar ka hota hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Yahan limit 20! hai, matlab jo prime numbers 20 tak hain, sirf wahi is pure product mein honge.<br/>Primes $\\le 20$ nikal: 2, 3, 5, 7, 11, 13, 17, 19.<br/>Count karega toh exact 8 aayenge. Aise questions ko second mein uda.<br/><br/><b>Future Exam Takeaway:</b> Factorial products don't introduce new primes, they just increase the power of existing ones up to the highest boundary."
+    },
+    {
+      "q": "Find the unit digit of $348^{114^{115^{116}}}$.",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 6.</b><br/><br/><b>Pen-Free Observation:</b> Dekh bhai, power tower dekh kar ghabrana nahi hai. Base ka unit digit 8 hai. Humein bas check karna hai ki power 4 ka multiple hai ya nahi.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Power $= 114^{115^{116}}$. Yeh clearly ek even number hai kyunki base 114 even hai.<br/>Kya yeh 4 se divide hota hai? $114 = 4k + 2$.<br/>So, $(4k+2)^{\\text{power &gt; 1}}$. Koi bhi number jo 2 (mod 4) ho, uski power 2 ya usse badi karne par wo hamesha 4 ka multiple ban jata hai (e.g., $2^2=4, 6^2=36$).<br/>Matlab, poori power perfectly divisible by 4 hai.<br/>Toh $8^4$ projection use kar. $8 \\times 8 \\times 8 \\times 8 \\implies 4 \\times 4 = 16$. Terminal digit is strictly 6."
+    },
+    {
+      "q": "A number consists of two digits and the digit in the ten's place exceeds that in the unit's place by $5$. If $5$ times the sum of the digits is subtracted from the number, the digits of the number are reversed. Then the sum of the digits of the number is:",
+      "o": [
+        "11",
+        "7",
+        "9",
+        "13"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Basic number system property: $(N - \\text{Reverse of } N) = 9(x-y)$. Direct equation put karni hai, no lengthy algebra.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Given: Tens digit exceeds units by $5 \\implies x - y = 5$.<br/>Standard Rule: $N - \\text{Reverse} = 9(x-y) = 9(5) = 45$.<br/>Question says: $N - 5(x+y) = \\text{Reverse} \\implies N - \\text{Reverse} = 5(x+y)$.<br/>Equating both: $5(x+y) = 45 \\implies x+y = 9$.<br/>Bhai sum directly $9$ aa gaya, number was $72$. Options dekhte hi khatam!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Agar details verify karni ho: $x-y=5$ aur $x+y=9$. Solve kiya toh $x=7, y=2$. Number $72$ ban gaya. Reverse $27$. $72 - 27 = 45$. Condition satisfied.<br/><br/><b>Future Exam Takeaway:</b><br/>Difference between a $2$-digit number and its reverse is ALWAYS $9(x-y)$. Sum is ALWAYS $11(x+y)$. Isko muh-zubaani yaad rakho."
+    },
+    {
+      "q": "Six bells commence tolling together at 7:59 am. They toll at intervals of $3, 6, 9, 12$ and $15$ seconds respectively. How many times will they toll together till 8:16 am? (excluding the toll at 7:59 am)",
+      "o": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: JSM (LCM Interval Scaling)</b><br/><br/>Dekh bhai aise karna hai... interval wale question hamesha LCM se chalte hain.<br/><br/><b>Pen-Free Observation:</b> LCM ka direct execution hai. Values $3, 6, 9, 12, 15$ choti hain, inka LCM mentally $180$ seconds aana chahiye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> LCM of $3, 6, 9, 12, 15 = 180$ seconds = $3$ minute.<br/>Time kitna available hai? 7:59 se 8:16 am tak total $17$ minute hain.<br/>Har $3$ minute par toll hoti hai. Toh $17$ minute me kitni baar aayega? $17 \\div 3 = 5$ times (ignoring the fraction).<br/>Question ne directly 'excluding start toll' bola hai, toh $+1$ wali tension nahi leni. Answer exact $5$.<br/><br/><b>Method 2 (Concept Builder):</b> Total Times = $\\lfloor \\frac{\\text{Total Duration}}{\\text{LCM}} \\rfloor$. Agar initial include karne bole tab $+1$ hota hai.<br/><br/><b>Future Exam Takeaway:</b> Traffic light aur Toll bell questions me language padh lena ki initial occurrence add karni hai ya minus."
+    },
+    {
+      "q": "Find the number of distinct prime factors of 536.",
+      "o": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Dhyan se padh - \\\"distinct prime factors\\\". Matlab base kaun kaun se unique primes hain wo ginna hai, total factor nahi!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>536 ko jaldi todo:<br/>Last digits 36 hain toh 4 se jayega: $536 = 4 \\times 134$<br/>Aur ek 2 nikal lo: $4 \\times 2 \\times 67$<br/>$536 = 2^3 \\times 67^1$.<br/>67 khud ek prime number hai. Toh bases dekho: ek 2 hai, aur ek 67 hai.<br/>Total distinct prime factors siraf 2 huye."
+    },
+    {
+      "q": "The $55x41y$ is a six-digit even number and is completely divisible by $33$, then among the following $(x^2 + y^2)$ is divisible by: ($x$ and $y$ are non-zero)",
+      "o": [
+        "7",
+        "11",
+        "13",
+        "17"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Even aur divisibility dono variables fasa rhi hai. Piche $y$ constraint sirf even lega $0$ neglect karke (non-zero). Phir substitution linear equations lagani hogi.<br/><br/><b>Method 1 (Ninja Technique):</b> Last digit even hai, non zero. Substitue $y \\in \\{2,4,6,8\\}$. $11$ ka divisibility format setup karke single bound output pick karo jo $3$ ka rule set follow kare.<br/><br/>Mathematically :-<br/><br/>$$ \\text{11 diff: } (5+x+1) - (5+4+y) = x-y-3 = 0 \\text{ or } 11 \\\\ x-y = 3 \\implies x = y+3 \\\\ \\text{3 Sum: } 15+x+y = \\text{multi 3} \\implies x+y = 3k \\\\ \\text{Put } y=6 \\implies x=9. \\text{ (Sum } x+y=15 \\text{ passed rule of 3)} \\\\ 9^2 + 6^2 = 81 + 36 = 117 = 13 \\times 9 $$<br/><br/><b>Method 2 (Concept Builder):</b> Full scale equation elimination process in variables limits constraints.<br/><br/>Mathematically :-<br/><br/>$$ x - y \\equiv 3 \\pmod{11} \\text{ (Since diff limit checks)} \\\\ x + y \\equiv 0 \\pmod 3 \\\\ \\text{Try } y=2 \\to x=5 (5+2=7 \\text{ not } /3) \\\\ \\text{Try } y=4 \\to x=7 (7+4=11 \\text{ not } /3) \\\\ \\text{Try } y=6 \\to x=9 (15 \\pmod 3=0) \\\\ 81 + 36 = 117 $$<br/><br/><b>TCS Trap:</b> Students word \"Even Number\" ignore kar dete hain initial me ya phr non zero nahi padhte aur $y=0$ pe attempt shuru kar dete hain.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Overlapping parameters given hon to filter limit (Even / Non Zero) ko core variable base assume kiya karo calculation filter karke."
+    },
+    {
+      "q": "What is the remainder when $1! + 2! + 3! + \\dots + 1000!$ is divided by $18$?",
+      "o": [
+        "0",
+        "9",
+        "12",
+        "15"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 9.</b><br/><br/><b>Pen-Free Observation:</b> Series of factorials mei hamesha ek collapse point dhundho jahan se terms perfectly divisible ho jayein. 18 banane ke liye $9 \\times 2$ chahiye.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Notice kar ki $6! = 720$, jo ki 18 se perfectly divide hota hai. Toh $6!$ aur uske aage saare aane wale factorials ($7!, 8!, \\dots$) me bhi 18 chupa hoga. Un sabka remainder zero ho gaya.<br/>Game bas pehle 5 terms me bacha: $1! + 2! + 3! + 4! + 5! = 1 + 2 + 6 + 24 + 120 = 153$.<br/>Ab $153$ ko 18 se divide kar de. $18 \\times 8 = 144$.<br/>Active remainder strictly collapses to $153 - 144 = 9$."
+    },
+    {
+      "q": "Find the remainder when $55^{55^{55}}$ is divided by $14$.",
+      "o": [
+        "1",
+        "5",
+        "9",
+        "13"
+      ],
+      "a": 3,
+      "s": "<b>Answer is 13.</b><br/><br/><b>Pen-Free Observation:</b> Jab negative remainder chamak jaye na, toh maths aasan ho jati hai. $14 \\times 4 = 56$, toh $55$ base ko mod 14 me $-1$ likh sakte hain.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Base $= 55 \\equiv -1 \\pmod{14}$.<br/>Power $= 55^{55}$ jo ki clearly ek odd number hai.<br/>So equation ban jayegi: $(-1)^{\\text{odd}} = -1$.<br/>Remainder hamesha positive hona chahiye, so structurally $-1 + 14 = 13$ yields the final result."
+    },
+    {
+      "q": "What are the last two digits of the product of the first $20$ odd prime numbers?",
+      "o": [
+        "15",
+        "25",
+        "35",
+        "75"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Modular Trap)</b><br/><br/>Dekh bhai aise karna hai... options ka elimination aur modulo hack lagana padega.<br/><br/><b>Pen-Free Observation:</b> Number 'odd primes' ka product hai. Yani isme ek baar $5$ aayega. Lekin ye number $25$ se divide nahi hoga kyunki prime set me dusra $5$ nahi hota. Toh last digits hargiz $25$ ya $75$ nahi ho sakte!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Mod 4 and Mod 5 ka hack laga.<br/>Product $P$ me $5$ nahi hai ($5$ alag rakh). Baaki primes ko Mod $4$ pe dekho.<br/>Primes $\\equiv 3 \\pmod 4$ ki counting $11$ hogi pehle $20$ me. Unka product $(-1)^{11} \\equiv 3 \\pmod 4$.<br/>Toh remaining product $P \\equiv 3 \\pmod 4$.<br/>And $P \\pmod 5$ calculate karne par $2$ aayega. CRT se $P = 4m+3 \\equiv 2 \\pmod 5 \\implies m \\equiv 1 \\pmod 5$.<br/>Toh last digits $5(20m+15)$. For $m=1$, value $= 35$.<br/><br/><b>Method 2 (Concept Builder):</b> Ye highly logical CDS trap hai. Aapko pata hona chahiye ek single $5$ multiply hone par last 2 digit hamesha odd multiple of $5$ deta hai but not a multiple of $25$.<br/><br/><b>Future Exam Takeaway:</b> Product of distinct primes kabhi bhi $25$ se divisible nahi hota, isliye wo kabhi $25$ ya $75$ par end nahi hoga."
+    },
+    {
+      "q": "The sum of four consecutive two-digit odd numbers, when divided by 10, yields a perfect square. What is the smallest of these four numbers?",
+      "o": [
+        "27",
+        "33",
+        "37",
+        "41"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Sum ko 10 se divide karne pe perfect square ban raha hai, iska matlab sum exactly ek perfect square $\\times 10$ hoga (jaise 90, 160, 250). Chote options se check karo.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, seedha options se khel! Smallest number pucha hai.<br/>Take 27: sum = $27+29+31+33 = 120$. $120/10 = 12$ (Not perfect square).<br/>Take 37: sum = $37+39+41+43 = 160$. $160/10 = 16 = 4^2$ (Perfect square). Yahi tera answer hai, 5 seconds ka kaam!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Basic se: Numbers assume kar $x, x+2, x+4, x+6$. Inka sum $4x + 12$. Question keh raha hai $\\frac{4x+12}{10} = k^2$. Aise algebra banane me CGL ka cutoff nikal jayega, options is best!<br/><br/><b>Future Exam Takeaway:</b><br/>Jaha 'perfect square' ya 'cube' condition ho, reverse option checking is the supreme hack."
+    },
+    {
+      "q": "What is the remainder when the number 58627316892 is divided by 7?",
+      "o": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Bade number ko 7 se bhag karne ka normal tarika time khayega. Seedha 3-3 digits ke blocks (right to left) banake Osculator method/Alternate Sum method lagao.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Number: $058, 627, 316, 892$.<br/>Alternate Add/Subtract karo:<br/>$+ 892 - 316 + 627 - 058$.<br/>Calculate: $(892 + 627) - (316 + 58) = 1519 - 374 = 1145$.<br/>Ab is 1145 ko 7 se bhag de do, easy padega.<br/>$1145 = 7 \\times 163 + 4$.<br/>Remainder seedha 4 aagaya.<br/><br/><b>Future Exam Takeaway:</b><br/>Ye same 3-digit alternating block rule 11 aur 13 ke liye bhi perfectly kaam karta hai."
+    },
+    {
+      "q": "The simplification of $(1.\\bar{3} \\times 1.\\bar{3} \\times 1.\\bar{3} - 1) / (1.\\bar{3} \\times 1.\\bar{3} \\times 1.\\bar{3} + 1)$ is:",
+      "o": [
+        "37/91",
+        "37/128",
+        "37/129",
+        "37/130"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br/><br/>Dekh bhai... Bar decimals ko algebraically handle karna sikho.<br/><br/><b>Pen-Free Observation:</b> Expression is just $(x^3 - 1) / (x^3 + 1)$. Bar repeat logic laga kar fraction le lo.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>$1.\\bar{3} = 1 + 3/9 = 4/3$. Direct substitution kar de.<br/>Equation banegi $\\frac{(4/3)^3 - 1}{(4/3)^3 + 1}$.<br/>Ise khol: $\\frac{64/27 - 1}{64/27 + 1} = \\frac{37/27}{91/27}$.<br/>Denominators (27) cancel hue, answer aa gaya $37/91$. Basic identity trap thi bas!<br/><br/><b>Future Exam Takeaway:</b> Convert repeating decimals to fractions immediately before applying any algebraic identities to avoid calculation nightmares."
+    },
+    {
+      "q": "In how many ways can the number $10800$ be written as a product of two co-prime factors?",
+      "o": [
+        "4",
+        "8",
+        "16",
+        "32"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Combinatorics)</b><br/><br/>Dekh bhai aise karna hai... jab bhi co-prime factors puche, sidha base primes count karo, pure group uthane hote hain.<br/><br/><b>Pen-Free Observation:</b> $10800$ me prime bases $2, 3$ aur $5$ aayenge. Co-prime factors banane ke liye pure-pure base ki family uthani padegi.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Number of ways = $2^{n-1}$, jahan $n$ distinct prime bases ka count hai. $10800 = 2^4 \\times 3^3 \\times 5^2$. Yahan $n=3$ bases hain ($2,3,5$). Formula me daal: $2^{3-1} = 2^2 = 4$ ways. Seedha hack!<br/><br/><b>Method 2 (Concept Builder):</b> Co-prime matlab HCF $1$. Yani ek prime factor ya toh poora group A me jayega ya poora group B me. Ye distribution of distinct items jaisa hai.<br/><br/><b>Future Exam Takeaway:</b> Number system me 'ways to express as co-prime product' pooche toh bas prime bases gino aur $2^{n-1}$ thop do."
+    },
+    {
+      "q": "What is the digit at the 100th place of the number $(225)^{40}$?",
+      "o": [
+        "6",
+        "5",
+        "4",
+        "2"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 6.</b><br/><br/><b>Pen-Free Observation:</b> 100th place matlab last 3 digits nikalne hain, so we need $(225)^{40} \\pmod{1000}$. CGL/CDS ka advance level remainder concept hai.<br/><br/><b>Method 1 (Concept Builder):</b><br/>Number $= (15^2)^{40} = 15^{80}$.<br/>Mod 1000 nikalne ke liye CRT lagate hain ($1000 = 125 \\times 8$).<br/>Part 1: $15^{80} \\pmod{125} \\implies (3 \\times 5)^{80} \\implies$ 5 ki power 80 hai toh obviously 125 se divisible hoga, so remainder is 0.<br/>Part 2: $15^{80} \\pmod 8 \\implies (-1)^{80} = 1$.<br/>So number $N$ 125 ka aesa multiple hai jo 8 se divide karne par 1 remainder de. Multiples check kar: 125(rem 5), 250(rem 2), 375(rem 7), 500(rem 4), 625(rem 1).<br/>Match mil gaya! Terminal triad (last 3 digits) is 625. Toh 100th place (hundreds digit) naturally 6 hai."
+    },
+    {
+      "q": "The 6-digit number $537xy5$ is divisible by $125$. How many possible values can the digit $x$ take?",
+      "o": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Divisibility by $125$ ($5^3$) means checking ONLY the last $3$ digits. Poora number ignore maaro.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Last $3$ digits hain $xy5$.<br/>$125$ ke $3$-digit multiples ending in $5$ are: $125, 375, 625, 875$.<br/>Yani $x$ ki place pe values ho sakti hain: $1, 3, 6, 8$.<br/>Total possible values for $x$ are exactly $4$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Jaise $8$ ($2^3$) ke liye last $3$ digits dekhte hain, waise hi $125$ ($5^3$) ke liye karte hain. Even endings ($250, 500, 750$) valid nahi the kyunki unit digit fix $5$ hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Remember the standard endings for $125$: $125, 250, 375, 500, 625, 750, 875, 000$. Direct filter out karo given conditions se."
+    },
+    {
+      "q": "The sum of three consecutive odd natural numbers is 147. What is the middle number?",
+      "o": [
+        "47",
+        "49",
+        "51",
+        "53"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Average concepts in AP (Arithmetic Progression) zindabad! Jab terms Odd ginti mein hon (3, 5, 7 terms), unka Average hamesha bilkul center (middle) wali term hoti hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Seedha Average nikal le bhai:<br/>$\\frac{\\text{Sum}}{\\text{Number of terms}} = \\frac{147}{3} = 49$.<br/>Yehi tera middle number hai. Equation $(x + x+2 + x+4)$ banane walo ka selection nahi hota time pe.<br/><br/><b>Future Exam Takeaway:</b><br/>JSM or AP average rules save you 30 seconds minimum here."
+    },
+    {
+      "q": "What is the sum of the first $39$ odd numbers?",
+      "o": [
+        "1521",
+        "1541",
+        "1601",
+        "1421"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $1521$<br/><br/><b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, pehle $n$ odd numbers ka sum manga hai, series dekh kar sidha lag raha hai formula trick se udayenge.<br/><br/><b>Method 1 (Ninja Technique):</b> AP wagera ka lamba formula bhul ja. First $n$ odd terms bola hai toh seedha $n^2$ wali trick lapet aur aage badh.<br/><br/>Mathematically :-<br/><br/>$$ n^2 = 39^2 = 1521 $$<br/><br/><b>Method 2 (Concept Builder):</b> Agar bhool jaye toh Arithmetic Progression (AP) ka formula use kar, jisme first term $a=1$ and common difference $d=2$ hoga.<br/><br/>Mathematically :-<br/><br/>$$ S_n = \\frac{n}{2}(2a + (n-1)d) \\\\ S_{39} = \\frac{39}{2}(2(1) + 38(2)) = 1521 $$<br/><br/><b>TCS Trap:</b> TCS chahega tu poora AP likh ke time waste kare, usme nahi fasna hai time bacha.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; First $n$ odd numbers ka sum hamesha $n^2$ hota hai. First $n$ even pucha hota toh $n(n+1)$ hota."
+    },
+    {
+      "q": "Find the number of even factors of $N = 2^{5} \\times 3^{4} \\times 5^{3}$ which are also perfect squares.",
+      "o": [
+        "12",
+        "18",
+        "24",
+        "36"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> 'Even factor' ka matlab hai ki prime factorization me $2$ zaroor hona chahiye. 'Perfect square' ka matlab hai powers even honi chahiye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, combinations banate hain:<br/>$2$ ki powers: Perfect square ke lie $0, 2, 4$ chahiye. Par Even condition ne $2^0$ ko reject kar diya. Toh choice bachi: $2^2, 2^4$ (Total 2 options).<br/>$3$ ki powers: Square ke lie $0, 2, 4$ (Total 3 options).<br/>$5$ ki powers: Square ke lie $0, 2$ (Total 2 options).<br/>Sabko multiply kar do (Fundamental Principle of Counting): $2 \\times 3 \\times 2 = 12$. Option A is correct.<br/><br/><b>Method 2 (Concept Builder):</b><br/>A factor $F$ is a perfect square if its prime decomposition has only even exponents. The 'even' constraint specifically forces the prime $2$'s exponent to be strictly greater than $0$.<br/><br/><b>Future Exam Takeaway:</b> Combinatorics based factors questions me conditions ko overlapping parts me break karke independent choices multiply karna is the most robust way."
+    },
+    {
+      "q": "How many composite factors does the number $2^3 \\times 3^2 \\times 5^1$ have?",
+      "o": [
+        "20",
+        "21",
+        "19",
+        "24"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Total factors nikal ke Primes aur '$1$' ko hata dena hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Formula: Composite = Total Factors - Prime Factors - 1.<br/>Total = $(3+1)(2+1)(1+1) = 4 \\times 3 \\times 2 = 24$.<br/>Prime bases are $2, 3, 5$ (Total $3$ primes).<br/>Composite = $24 - 3 - 1 = 20$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Every factor is either Prime, Composite, or Neither (which is $1$). Isiliye humesha $1$ subtract karna mat bhulna, ye CDS ka classic trap hai!<br/><br/><b>Future Exam Takeaway:</b><br/>Keep this equation tattooed in memory: Total Factors = Prime + Composite + 1."
+    },
+    {
+      "q": "$64329$ is divided by a certain number. While dividing, the numbers, $175, 114, 213$ appear as $3$ successive remainders. The divisor is:",
+      "o": [
+        "184",
+        "224",
+        "234",
+        "296"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Division algorithms me consecutive intermediate remainders humein Divisor ke direct multiples dedenge via subtraction.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai, Divisor guess karne ke reverse engineering ko samajh: <br/>First step: 3 digits lo $643$. Isme se Divisor $D$ ghata ke $175$ aaya. Yani $D \\times x = 643 - 175 = 468$.<br/>Second step: Agla digit utara, number bana $1752$. Isme se ghatake $114$ bacha. $D \\times y = 1752 - 114 = 1638$.<br/>Third step: Last digit laaye, bana $1149$. Ghataya toh $213$ remainder. $D \\times z = 1149 - 213 = 936$.<br/>Ab aisa $D$ dhoondho jo $468, 1638,$ aur $936$ teeno ka factor ho (yani unka HCF).<br/>HCF trick: $468$ aur $936$ clearly $468$ me related hain ($468 \\times 2 = 936$). Ab $468$ aur $1638$ ko dekho, $468$ ka half $234$ kya dono me lag raha hai? $234 \\times 7 = 1638$ aur $234 \\times 4 = 936$. Yes! Toh Divisor = $234$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Long division steps strictly equate to: $\\text{Dividend block} - \\text{Divisor Multiple} = \\text{Remainder}$. Collecting all difference equations provides numbers that all share the Divisor as a common factor.<br/><br/><b>Future Exam Takeaway:</b> Jab bhi intermediate remainders diye hon, unhe 'New Formed Dividend' se subtract karke seedha unka HCF nikal lo."
+    },
+    {
+      "q": "Find the remainder when $(-13)^{100}$ is divided by $14$.",
+      "o": [
+        "1",
+        "13",
+        "0",
+        "7"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Base $(-13)$ aur Divisor $14$ ke beech exactly $1$ ka difference hai. Seedha Fermat/Negative Remainder ka application hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai, negative base dekh kar CGL me darna nahi. $(-13)$ ko $14$ se bhag dega toh positive remainder kya aayega? $+1$ (kyunki $-13 + 14 = 1$).<br/>Ya direct deviation lagao: $(-13) \\equiv 1 \\pmod{14}$.<br/>Ab us remainder par original power rakh do: $1^{100} = 1$. Itna lallu sawal free ke marks deta hai.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Polynomial theorem ke hisab se: $\\frac{(a-1)^n}{a}$. Agar $n$ even hai toh remainder hamesha $1$ hota hai. Yahan $a=14$ aur base $14-27$ ya $-13$ le sakte hain, practically the distance to nearest multiple is what matters.<br/><br/><b>Future Exam Takeaway:</b> Negative base hamesha modulus add karke positive remainder me convert karo, mistakes zero ho jayengi."
+    }
+  ]
+}

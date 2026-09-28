@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-02",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "The sum of a two-digit number and the number obtained by reversing its digits is a perfect square. How many such two-digit numbers are there?",
+      "o": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: JSM (Digital Balancing)</b><br/><br/>Dekh bhai, reversing digits hamesha basic algebraic form me tut-te hain. Wahi se constraint balancing karni hai.<br/><br/><b>Pen-Free Observation:</b> Number $10x+y$ and reverse $10y+x$. Inka sum hamesha $11(x+y)$ hota hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Sum $= 11(x+y)$. Perfect square banane ke liye isme ek aur $11$ chahiye, yani $(x+y)$ ko $11$ banna hi padega (ya 44 ban sakta hai but digits ka sum 18 se bada nahi hota).<br/>So, $x+y = 11$.<br/>Valid digit pairs: $(2,9), (3,8), (4,7), (5,6)$.<br/>Inke reversed pairs bhi honge: $(9,2), (8,3), (7,4), (6,5)$.<br/>Total numbers $4 + 4 = 8$ ho gaye. Seedha count karo.<br/><br/><b>Future Exam Takeaway:</b> Sum of reversed two-digit numbers always multiple of $11$, and difference is always multiple of $9$. Ye static facts seconds bachate hain."
+    },
+    {
+      "q": "Let $y$ be the least number which is divisible by $22, 33, 36$, and $66$, and is also a perfect cube. Find the sum of the digits of the remainder when $y$ is divided by $179$.",
+      "o": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $4$<br/><br/><b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Divisibility aur perfect cube dono sath mango hai, toh iska base LCM banega and multiplier se uski powers $3$ push karni padegi.<br/><br/><b>Method 1 (Ninja Technique):</b> LCM lo un charo ka primes format me. Sabhi exponents ko exactly multiple of $3$ banakar complete number nikalo, fir seedha remainder divide maarke.<br/><br/>Mathematically :-<br/><br/>$$ \\text{LCM} = 396 = 2^2 \\times 3^2 \\times 11^1 \\\\ \\text{Cube Completion} = (2^1 \\times 3^1 \\times 11^2) = 726 \\\\ y = 396 \\times 726 = 287496 \\\\ 287496 \\pmod{179} = 22 \\implies \\text{Sum} = 2+2=4 $$<br/><br/><b>Method 2 (Concept Builder):</b> Perfect cube number hamesha sabhi underlying prime bases ki exponent ko 3 ya uske multiples pe demand karta hai.<br/><br/>Mathematically :-<br/><br/>$$ y = P_1^{3k} \\times P_2^{3m} \\dots \\\\ y = 2^3 \\times 3^3 \\times 11^3 = 287496 $$<br/><br/><b>TCS Trap:</b> Yahan unit digit wagera ka hack bilkul fail hai kyuki examiner ne cleverly remainder ka sum pucha hai sidha remainder nahi.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Cube banane ke liye LCM ke prime factors ki har power ko explicitly 3 ke multiple tak stretch karte hain."
+    },
+    {
+      "q": "A number divided by $13$ leaves a remainder of $7$. The same number divided by $11$ leaves a remainder of $9$. What is the remainder when the same number is divided by $143$?",
+      "o": [
+        "20",
+        "33",
+        "85",
+        "124"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Successive Change (CRT Method)</b><br/><br/>Dekh bhai aise karna hai... Jab do alag divisors aur remainders hon, toh Chinese Remainder Theorem lagti hai.<br/><br/><b>Pen-Free Observation:</b> Divisors $13$ aur $11$ hain. Inka product hi final divisor $143$ diya gaya hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Badi condition pakdo: $N = 13k + 7$.<br/>Values daal ke check kar. Agar $k=1$, toh $N = 20$.<br/>Ab is $20$ ko second condition se check kar: $20 \\div 11$, quotient $1$, remainder $9$. Perfect match!<br/>Toh sabse chhota number $N = 20$ hi hoga.<br/>Sawaal me $20 \\div 143$ pucha hai, jiska remainder $20$ hi aayega.<br/><br/><b>Method 2 (Concept Builder):</b> CRT me series banake (with the largest divisor) chote divisor se check karna faster hota hai.<br/><br/><b>Future Exam Takeaway:</b> CRT wale sawalon me hamesha bade divisor ki series ($13k+7$) likh ke check karo."
+    },
+    {
+      "q": "For the number $7200$, find the number of factors divisible by $40$.",
+      "o": [
+        "18",
+        "16",
+        "20",
+        "24"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Jis condition pe fix karna hai number ko wo us factor base ka core multiplier block ban jayega. Us core block ko pura expression se nikal do bahar.<br/><br/><b>Method 1 (Ninja Technique):</b> 7200 ko fully factorize kar. Aur divisor 40 ko bracket common me bahar khich le. Ab andar kitni terms fraction factors bach gaye, bas unpe factor power formula maar.<br/><br/>Mathematically :-<br/><br/>$$ 7200 = 72 \\times 100 = 2^5 \\times 3^2 \\times 5^2 \\\\ \\text{Constraint Divisor } = 40 = 2^3 \\times 5^1 \\\\ \\text{Take } 40 \\text{ out: } 2^3 \\times 5^1 (2^2 \\times 3^2 \\times 5^1) \\\\ \\text{Total terms inside} = (2+1)(2+1)(1+1) = 3 \\times 3 \\times 2 = 18 $$<br/><br/><b>Method 2 (Concept Builder):</b> Direct probability permutation limit. Set up boundary thresholds needed for exponent ranges.<br/><br/>Mathematically :-<br/><br/>$$ N = 2^a \\cdot 3^b \\cdot 5^c \\text{ (multiple of } 2^3 \\cdot 5^1) \\\\ a \\in \\{3,4,5\\} (3), \\, b \\in \\{0,1,2\\} (3), \\, c \\in \\{1,2\\} (2) \\\\ 3 \\times 3 \\times 2 = 18 $$<br/><br/><b>TCS Trap:</b> Total divisor factor nikalte ho sab aur bad me divide karke options check karte ho jo pura waste of time block banega.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Restricted multiple divisor nikalte time absolute divisor requirement bahar nikalkar bachi powers factor formula count me lo."
+    },
+    {
+      "q": "What is the remainder when $11^{11} + 12^{12} + 13^{13} + 14^{14}$ is divided by $10$?",
+      "o": [
+        "6",
+        "2",
+        "4",
+        "8"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 6.</b><br/><br/><b>Pen-Free Observation:</b> 'Divided by 10' ka simple matlab hota hai 'Unit Digit nikalna'. Ye trick words the examiner ke. Bas sabka individual unit digit nikal kar add kar de.<br/><br/><b>Method 1 (Exam Approach):</b><br/>$11^{11} \\implies$ unit digit 1.<br/>$12^{12} \\implies$ power 12 is divisible by 4. So $2^4 \\implies$ unit digit 6.<br/>$13^{13} \\implies$ power $13 / 4$, rem 1. So $3^1 \\implies$ unit digit 3.<br/>$14^{14} \\implies$ 4 ki power even hai, toh hamesha 6 aata hai.<br/>Sum them up: $1 + 6 + 3 + 6 = 16$. Last digit 6 hai. Mod 10 strictly resolves to 6."
+    },
+    {
+      "q": "Let $k$ be a natural number and $1 \\le k \\le 16$. Let $A$ be a set of two-digit natural numbers which are in the form $6k+1$, $B$ be the set of two-digit prime numbers which are in the form $6k+1$. $n(A) = x, n(B) = y$, and the number of pairs of co-prime numbers of set $A$ be $z$. What is the value of $x+y+z$:",
+      "o": [
+        "125",
+        "231",
+        "225",
+        "100"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling / Combinatorics</b><br/><br/>Dekh bhai, set aur counting ka hybrid question hai. Thoda focus se padh.<br/><br/><b>Method 1 (Concept Builder &amp; Ninja Technique):</b><br/>Condition 1: Two digit numbers format $6k+1$. Range check karo $k=2$ ($13$) se $k=16$ ($97$) tak. Total elements $x = 16 - 2 + 1 = 15$.<br/>Condition 2: Inme prime kitne hain? Set A ke numbers hain $13, 19, 25, 31, 37, 43, 49, 55, 61, 67, 73, 79, 85, 91, 97$. Primes find kiye: $13, 19, 31, 37, 43, 61, 67, 73, 79, 97$. Total primes $y = 10$.<br/>Condition 3: Pairs of co-primes in Set A. Total pairs $= \\frac{15 \\times 14}{2} = 105$. Non-coprime pairs wo honge jinke common factors honge (like 5, 7, 13). Sirf 5 ke multiples hain $25, 55, 85$ ($3$ numbers, pairs = $3$). $7$ ke multiples $49, 91$ ($1$ pair). $13$ ka multiple sirf $13, 91$ ($1$ pair). Total non-coprimes = $3+1+1 = 5$. So $z = 105 - 5 = 100$.<br/>Final value: $x+y+z = 15 + 10 + 100 = 125$.<br/><br/><b>Future Exam Takeaway:</b> CDS aur CGL Mains ke counting questions me hamesha ulta socho. Co-prime nikalne se better hai Total me se Non-coprime minus kar do (JSM thinking)."
+    },
+    {
+      "q": "find the last two digits of $2^{999}$.",
+      "o": [
+        "68",
+        "88",
+        "28",
+        "48"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 88.</b><br/><br/><b>Pen-Free Observation:</b> Last two digits wale chapter ka pro-hack! $2^{10} = 1024$. Iske end me 24 aata hai. 24 ki odd power hamesha 24 me end hoti hai, aur even power hamesha 76 me end hoti hai.<br/><br/><b>Method 1 (Concept Builder):</b><br/>Split $2^{999}$ as $2^{990} \\times 2^9$.<br/>Now $2^{990} = (2^{10})^{99}$. Since 99 is ODD, last two digits of this part will be 24.<br/>Second part $2^9 = 512$. Iske last two digits hain 12.<br/>Final product = $24 \\times 12 = 288$. Terminal digits lock strictly at 88."
+    },
+    {
+      "q": "A student claims that the sum of two irrational numbers is always irrational. Which of the following pairs of numbers disproves this claim?",
+      "o": [
+        "$\\sqrt{2}$ and $\\sqrt{3}$",
+        "$2 + \\sqrt{3}$ and $2 - \\sqrt{3}$",
+        "$\\pi$ and $e$",
+        "$\\sqrt{5}$ and $2\\sqrt{5}$"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Claim dis-prove karna hai, yani exception find karna hai. Humein aisa pair dhoondhna hai jinka sum solve hokar root (irrational part) ko zero kar de aur ek absolute integer (Rational) bahar de.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Seedha options pe nazar daal! Option 2 me conjugate pairs dikh rahe hain: $(2 + \\sqrt{3})$ ek irrational hai, aur $(2 - \\sqrt{3})$ bhi irrational hai.<br/>Dono ko add kar de bhai: $2 + \\sqrt{3} + 2 - \\sqrt{3} = 4$.<br/>Aur 4 ek pure rational number hai! Claim disproved in 2 seconds.<br/><br/><b>Method 2 (Concept Builder):</b><br/>An irrational number can have a negative irrational counterpart. Jab bhi sum pucha ho claim counter karne ke liye, always look for $x + \\sqrt{y}$ and $z - \\sqrt{y}$ expressions.<br/><br/><b>Future Exam Takeaway:</b> Algebraic roots ki properties hamesha conjugate options ko check karke verify karni chahiye."
+    },
+    {
+      "q": "What is the remainder when the number $8888\\dots$ (written 25 times) is divided by 7?",
+      "o": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Number system ka ultimate Repeating Digits hack! Koi bhi single digit agar continuous 6 times repeat ho ($XXXXXX$), toh wo humesha 7, 11, 13, 37 se perfectly divide hota hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Number me '8' 25 baar likha gaya hai. Har 6 digit ka group 7 se mod hone par zero ho jayega.<br/>25 ko 6 se divide karo: $25 = 6 \\times 4 + 1$.<br/>Matlab starting ke 24 digits ke pairs banke cancel out ho jayenge aur zero remainder denge.<br/>Bacha sirf aakhiri ka 1 digit: '8'.<br/>Ab is akele 8 ko 7 se bhag de do, remainder seedha 1 bachega. Bina series solve kiye uda diya sawaal!<br/><br/><b>Method 2 (Concept Builder):</b><br/>The divisibility pattern of 6 repetitive numbers stems from factors of 111111 which is $3 \\times 7 \\times 11 \\times 13 \\times 37$. This cyclical destruction rule chunks down massive repetitive numbers.<br/><br/><b>Future Exam Takeaway:</b> Same digit ki series ko 6 ke multiple me udha do, sirf extra leftover digits par divisor lagao."
+    },
+    {
+      "q": "Find the largest number which when divides 148, 246 and 623 leaves remainders 4, 6 and 11 respectively.",
+      "o": [
+        "12",
+        "14",
+        "24",
+        "48"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Numbers aur remainders ke beech HCF nikalna hai. Difference of numbers lene se HCF hamesha limit ho jata hai chote factors me.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai TestRipper, pehle remainders ghata: 144, 240, 612.<br/>Unke beech ka sabse chota difference pakad: $240 - 144 = 96$. HCF is difference 96 ka factor hi hoga.<br/>Ab options reverse-check kar. 48 612 ko nahi kaat-ta. 24 bhi 612 ko nahi kaat-ta. 12 in teeno ko kaat deta hai. $\\text{HCF} = 12$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Long division factor tree method exam me fail ho jata hai. HCF of numbers is always a factor of their absolute difference. Ye property calculations ko $10\\times$ fast karti hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Jaha 'largest number dividing X, Y' ho, waha Remainders ghata kar Seedha Minimum Difference HCF technique lagao."
+    },
+    {
+      "q": "A number $N$ is formed by writing $999$ exactly $99$ times side by side. What is the remainder when $N$ is divided by $7$?",
+      "o": [
+        "$0$",
+        "$2$",
+        "$5$",
+        "$6$"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br/><br/>Dekh bhai, seedhi si baat hai... ye cyclicity ka question hai jise dekh ke solve karna hai.<br/><br/><b>Pen-Free Observation:</b> 7 ki divisibility mein 6 digits ka cycle chalta hai ($1001 \\times 999 = 999999$). Yaani har 6 same digit block 7 se zero remainder deta hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Yahan 999, 99 times hai, toh total digits hue $99 \\times 3 = 297$.<br/>Ab 297 ko 6 se divide karega toh remainder aayega 3. Matlab shuru ki 294 digits 7 se poori divide ho jayengi.<br/>Bachenge sirf aakhiri 3 digits yani $999$. Direct $999 \\pmod 7$ nikal le, remainder $5$ aayega. Best method hai yeh time bachane ka!<br/><br/><b>Future Exam Takeaway:</b> $10^6 \\equiv 1 \\pmod 7$, so digits repeating in blocks of 6 give remainder 0. Hamesha total digits nikal kar 6 se divide karo."
+    },
+    {
+      "q": "What is the remainder when $18!$ is divided by $23$?",
+      "o": [
+        "1",
+        "18",
+        "22",
+        "4"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Factorial division by prime! Ye seedha Wilson's Theorem ka derivative hai. Wilson kehta hai $(P-1)! \\equiv -1 \\pmod P$.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>$23$ prime hai. By Wilson's Theorem: $22! \\equiv -1 \\pmod{23}$.<br/>Isko $18!$ tak piche khicho:<br/>$22 \\times 21 \\times 20 \\times 19 \\times 18! \\equiv -1 \\pmod{23}$.<br/>Negative remainders apply karo $\\pmod{23}$: $(-1)(-2)(-3)(-4) \\times 18! \\equiv -1$.<br/>$24 \\times 18! \\equiv -1$.<br/>Now $24 \\equiv 1 \\pmod{23}$.<br/>So, $1 \\times 18! \\equiv -1$.<br/>To make remainder positive: $23 - 1 = 22$. Answer $22$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Negative remainders calculation ko extremely short banate hain. $22$ is practically $-1$ w.r.t $23$. Yahi step multiply karne ka dard bachaata hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Agar $(P-x)! \\pmod P$ pucha ho toh negative remainders ka back-gear lagao, direct answer niklega."
+    },
+    {
+      "q": "Remainder when $2025^{(2024^{3025})}$ is divided by $7$ is",
+      "o": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "a": 2,
+      "s": "<b>Final Output:</b> $4$<br/><br/><b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Base aur power dono dekh kar lag raha hai phatne wala sawal hai. Aise questions seedha Totient theorem se uthte hain.<br/><br/><b>Method 1 (Ninja Technique):</b> Euler Totient ka hack laga. Divisor prime hai toh totient ek kam hoga. Power ko us totient se chota kar aur base ka seedha remainder le.<br/><br/>Mathematically :-<br/><br/>$$ 2025 \\equiv 2 \\pmod 7 \\\\ \\text{Totient of } 7 = 6 \\\\ 2024^{3025} \\equiv 2^{\\text{Odd}} \\equiv 2 \\pmod 6 \\\\ 2^2 \\pmod 7 = 4 $$<br/><br/><b>Method 2 (Concept Builder):</b> Fermat's Little Theorem ka use hota hai yahan. $a^{p-1} \\equiv 1 \\pmod p$.<br/><br/>Mathematically :-<br/><br/>$$ 2024 \\equiv 2 \\pmod 6 \\\\ 2024^1 \\equiv 2, \\, 2024^2 \\equiv 4, \\, 2024^3 \\equiv 2 \\pmod 6 \\\\ \\text{Power } \\pmod 6 = 2 \\\\ 2^2 = 4 $$<br/><br/><b>TCS Trap:</b> Massive power towers dekh ke bacche skip mar dete hain ya unit digit check karne lag jate hain. Modulo $7$ par unit digit logic fail ho jata hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Euler Totient is the ultimate cheat code for massive power towers. Divisor $p$ prime ho toh power ko $(p-1)$ se mod kar do."
+    },
+    {
+      "q": "What is largest six digit number divisible by 52?",
+      "o": [
+        "999960",
+        "999999",
+        "100000",
+        "999984"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Approximation &amp; Range Definition</b><br/><br/>Dekh bhai... Option se divide mat karne lag jana, standard bounded constraint approach best hai.<br/><br/><b>3-3 KE PAIR BNA LO AND DIFF FIND KARLOLAST WALA REMAINDER 15 DEGA AND FIRST WALA 39 AND BAKI TOH 4 SE DIV BHI NAHI HAI EK BAHUT CHHOTA HAI<br/><br/><b>Future Exam Takeaway:</b> Direct division of the boundary number (like 999... or 100...) is faster than building multiples from scratch.</b>"
+    },
+    {
+      "q": "$xy$ is a number that is divided by $ab$ where $xy &lt; ab$ and gives a result $0.xyxyxy\\dots$ then $ab$ equals",
+      "o": [
+        "99",
+        "11",
+        "66",
+        "33"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Fraction Conversion)</b><br/><br/>Dekh bhai... Isme toh pen uthane ki bhi zarurat nahi thi! Bar wale decimals ka logic seedha apply hota hai.<br/><br/><b>Pen-Free Observation:</b> Two-digit repeating cycle $xyxyxy$ means the denominator must be based on 99.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>$0.xyxyxy\\dots = 0.\\overline{xy} = \\frac{xy}{99}$.<br/>Question ke mutabiq yeh value $\\frac{xy}{ab}$ ke barabar hai.<br/>Dono ko equate kar de: $\\frac{xy}{ab} = \\frac{xy}{99}$. Clear cut $ab = 99$ aa gaya.<br/><br/><b>Future Exam Takeaway:</b> An $n$-digit repeating decimal pattern is always that number divided by $10^n - 1$ (e.g., 9, 99, 999). Direct observation gives the answer."
+    },
+    {
+      "q": "Find the total number of factors of 1800 which are not divisible by 5.",
+      "o": [
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Jab question strictly bole \\\"not divisible by 5\\\", iska seedha matlab hai ki prime factorization mein base 5 ki koi bhi power leni hi nahi hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>1800 ko jaldi factorize kar:<br/>$1800 = 18 \\times 100 = 2 \\times 3^2 \\times 2^2 \\times 5^2 = 2^3 \\times 3^2 \\times 5^2$.<br/>Humein base 5 ko poora delete karna hai. Uska wajood khatam kar do.<br/>Bacha kya? $2^3 \\times 3^2$.<br/>Number of factors nikalne ke liye powers mein +1 karke multiply kar do:<br/>Total = $(3+1) \\times (2+1) = 4 \\times 3 = 12$.<br/><br/><b>Future Exam Takeaway:</b><br/>Jiske divisible na hona ho, us prime base ko udhaa do factorization se. Free ka 1 mark."
+    },
+    {
+      "q": "A number when divided by $15$ leaves remainder $8$ and when divided by $9$ leaves remainder $a$. Which of the following regarding $a$ is TRUE?",
+      "o": [
+        "$a$ is always a prime number",
+        "$a$ is always a multiple of $3$",
+        "$a$ is always an even number",
+        "None of the above"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br/><br/>Dekh bhai, isme koi fixed pattern nahi hai, SSC yaha trap set karta hai.<br/><br/><b>Pen-Free Observation:</b> Divisor $15$ se $9$ pe jana hai. $15$ aur $9$ completely divisible nahi hain. Isliye remainder fluctuate karega. Seedha 'None' mark kar sakte ho.<br/><br/><b>Method 1 (Ninja Technique - Value Putting):</b><br/>Number format: $N = 15k + 8$.<br/>Put $k = 1 \\implies N = 23$. $23 \\div 9$ gives remainder $a = 5$ (Prime/Odd).<br/>Put $k = 2 \\implies N = 38$. $38 \\div 9$ gives remainder $a = 2$ (Prime/Even).<br/>Dono case me even/odd aur values badal rahi hain. Koi ek statement TRUE nahi ho sakti.<br/><br/><b>Future Exam Takeaway:</b> Jab naya divisor purane divisor ka direct factor na ho, toh answer hamesha 'Cannot be determined' ya fluctuating aayega."
+    },
+    {
+      "q": "How many integers between $299$ and $501$ are divisible by $4$ or $10$?",
+      "o": [
+        "56",
+        "72",
+        "51",
+        "61"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Venn diagram set theory (Inclusion-Exclusion Principle) ka classic application! Formula $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$ dimag me flash hona chahiye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Numbers between $299$ and $501$ (Total $201$ numbers from $300$ to $500$).<br/>Div by $4$: $300, 304, \\dots, 500 \\implies \\frac{500-300}{4} + 1 = 51$.<br/>Div by $10$: $300, 310, \\dots, 500 \\implies \\frac{500-300}{10} + 1 = 21$.<br/>Div by LCM $20$ (intersection): $300, 320, \\dots, 500 \\implies \\frac{500-300}{20} + 1 = 11$.<br/>Total integers = $51 + 21 - 11 = 61$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Series ki total terms nikalne ka JSM (Junior Satisfaction Method) $\\implies \\frac{\\text{Last} - \\text{First}}{\\text{Common Difference}} + 1$. Isko directly mentally count kiya karo.<br/><br/><b>Future Exam Takeaway:</b><br/>'Or' likha ho toh humesha LCM wala part subtract karna hai nahi toh double counting ho jayegi. Ye SSC ka sabse favourite trap hai."
+    },
+    {
+      "q": "Find the unit digit of $(1!)^{1!^{1!}} + (2!)^{2!^{2!}} + (3!)^{3!^{3!}} + (4!)^{4!^{4!}}$.",
+      "o": [
+        "1",
+        "3",
+        "7",
+        "9"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $9$<br/><br/><b>Core Conceptual Tool:</b> Option Elimination.<br/><br/><b>Pen-Free Observation:</b> Bhai factorials me $5!$ ke aage sabke unit digits end me hamesha $0$ hote hain, toh expression me $4!$ ke aage sab kachra hai, evaluate hi mat karna.<br/><br/><b>Method 1 (Ninja Technique):</b> Pehle 3 terms nikal ke aakhri wali pe focus kar. $4! = 24$. Aur power even hogi hamesha kyunki factorial hai.<br/><br/>Mathematically :-<br/><br/>$$ 1^1 + 2^2 + 6^6 + 24^{\\text{Even}} \\\\ 1 + 4 + 6 + 6 = 17 \\text{ (wait, } 6^6 \\equiv 6) \\\\ (1!)+(2!)+(3!)\\text{ units} = 1 + 4 + 6 = 11 \\text{.. Actually } (3!)^{3!^{3!}} = 6^{\\text{anything}} = 6 \\\\ (4!)^{4!\\dots} = 24^{\\text{Even}} \\implies 4^{\\text{Even}} = 6 \\\\ 1 + 4 + 6 + 6 = 17 \\implies 7 \\dots \\text{ wait, sum for 1 to 3 is } 1+4+6 = 11 \\implies unit 1? No! 2! is 2. power is 2! = 2. 2^2 = 4. 3! = 6. 6^x = 6. 1+4+6 = 11. plus 4^even = 6. 11+6=17. Wait, the actual sum is } 1+4+6=11. + 6 = 17? Let's check power } 3!^{3!} = 6^{720} = 6. Unit is 1+4+6+6=17 \\implies 7? Ah, wait, option given was 9! Let's re-verify my math. } 1^1 = 1. 2^{2^2}=2^4 = 16 \\implies 6. Oh! } 2!^{2!^{2!}} = 2^{2^2} = 2^4 = 16! So unit is 6. \\\\ \\text{Total unit} = 1 + 6 + 6 + 6 = 19 \\implies 9. $$<br/><br/><b>Method 2 (Concept Builder):</b> Step by step unit rules laga lo. $0, 1, 5, 6$ ke unit digit same rehte hain powers pe. $4, 9$ ka odd/even pe chalta hai.<br/><br/>Mathematically :-<br/><br/>$$ T_1 = 1 \\\\ T_2 = 2^{(2^2)} = 2^4 = 16 \\implies 6 \\\\ T_3 = 6^{\\text{anything}} = 6 \\\\ T_4 = 24^{\\text{Even}} \\implies 4^{\\text{Even}} = 6 \\\\ \\text{Sum} = 1+6+6+6 = 19 \\implies 9 $$<br/><br/><b>TCS Trap:</b> TCS CGL me yahan bacha $2!^{2!^{2!}}$ ko normal $2^2=4$ calculate kar deta hai aur fass jata hai. Power tower upar se neeche aati hai, evaluate carefully.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Power towers top-to-bottom khulti hain. $4^{\\text{Even}}$ hamesha $6$ deta hai. Ignore $n! \\ge 5!$ for unit digits."
+    },
+    {
+      "q": "How many total digits are required to write the natural numbers from $1$ to $125$?",
+      "o": [
+        "265",
+        "267",
+        "270",
+        "273"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b> 1 se 99 tak fix $189$ digits hote hain. Bas $100$ se $125$ tak calculate karna hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, typing wale counting sawalon me standard base yaad rakh: $1-9$ tak $9$ digits, $1-99$ tak $189$ digits. Humein $125$ tak jaana hai.<br/>$100$ se $125$ tak kitne numbers hue? $125 - 100 + 1 = 26$ numbers. Sabme 3 digits hain.<br/>Toh naye digits = $26 \\times 3 = 78$.<br/>Pehle ke $189$ + $78$ = $267$. Seedha calculation aur done.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Manual grouping: <br/>1-digit ($1-9$): $9 \\times 1 = 9$<br/>2-digit ($10-99$): $90 \\times 2 = 180$<br/>3-digit ($100-125$): $26 \\times 3 = 78$<br/>Sum $= 9 + 180 + 78 = 267$.<br/><br/><b>Future Exam Takeaway:</b> Exam me speed badhane ke lie $1-99$ ($189$ digits) aur $1-999$ ($2889$ digits) ka data direct memorize hona chahiye."
+    },
+    {
+      "q": "How many natural numbers are there between 1000 to 2000, which when divided by 341 leaves remainder 5?",
+      "o": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 3.</b><br/><br/><b>Pen-Free Observation:</b> Dekh bhai, basic linear range ka sawal hai. Form hamesha $N = Dk + R$ hoti hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Format of number: $N = 341k + 5$<br/>Range limit: $1000 \\le 341k + 5 \\le 2000$<br/>$\\implies 995 \\le 341k \\le 1995$<br/>Multiplier check kar: <br/>$k = 3 \\implies 1023$ (Valid)<br/>$k = 4 \\implies 1364$ (Valid)<br/>$k = 5 \\implies 1705$ (Valid)<br/>$k = 6 \\implies 2046$ (Crosses 2000, invalid).<br/>Strictly 3 numbers satisfy kar rahe hain."
+    },
+    {
+      "q": "Which of the following numbers will completely divide the expression $(4^{61} + 4^{62} + 4^{63} + 4^{64})$?",
+      "o": [
+        "13",
+        "15",
+        "17",
+        "19"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Ye continuous power series wala classic template question hai. Inme humesha sabse minimum power ko common liya jata hai taaki andar ek fixed composite number generate ho jaye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Take out $4^{61}$ as common: $4^{61} \\times (1 + 4^1 + 4^2 + 4^3)$.<br/>Bracket ko solve kar bhai: $1 + 4 + 16 + 64 = 85$.<br/>Toh tumhara modified expression ban gaya $4^{61} \\times 85$.<br/>Ab check karo 85 inme se kis option se poori tarah bhag hota hai? 17 ki table mein 85 aata hai ($17 \\times 5 = 85$). Toh poora number naturally 17 se divide hoga!<br/><br/><b>Method 2 (Concept Builder):</b><br/>The expression simplifies to a product where one factor is clearly a multiple of a prime present in the options. This factorization rule proves divisibility uniformly.<br/><br/><b>Future Exam Takeaway:</b> Consecutive powers summation series me hamesha lowest exponent factor out karke constant sum dhoondo."
+    },
+    {
+      "q": "When $f(x) = 15x^3 - 14x^2 - 4x + 10$ is divided by $(3x + 2)$, then the remainder is:",
+      "o": [
+        "-1",
+        "1",
+        "-2",
+        "2"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Polynomial Remainder Theorem seedha chillam-chilli kar rahi hai yahan. Divisor ko zero put karo, value function me daalo.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, $3x + 2 = 0 \\implies x = -\\frac{2}{3}$.<br/>Is choti si value ko $f(x)$ mein patak do.<br/>$f(-\\frac{2}{3}) = 15(-\\frac{8}{27}) - 14(\\frac{4}{9}) - 4(-\\frac{2}{3}) + 10$<br/>$= -\\frac{40}{9} - \\frac{56}{9} + \\frac{8}{3} + 10$<br/>$= -\\frac{96}{9} + \\frac{24}{9} + \\frac{90}{9}$ (Sabka denominator $9$ kar diya mentally)<br/>$= \\frac{-96 + 114}{9} = \\frac{18}{9} = 2$.<br/>Basic calculation thi, $2$ marks andar.<br/><br/><b>Method 2 (Concept Builder):</b><br/>By Remainder Theorem, dividing polynomial $P(x)$ by $(ax - b)$ yields remainder $P(b/a)$. It bypasses the tedious long polynomial division entirely.<br/><br/><b>Future Exam Takeaway:</b> Fractions wale calculations mein LCM mentally ek step me combine karna seekho, time bachega."
+    },
+    {
+      "q": "Find the sum of all factors of 900 that are multiples of 3.",
+      "o": [
+        "2604",
+        "2614",
+        "2624",
+        "2634"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Sum of factors poochha hai aur multiple of 3 ki condition hai. Iska matlab humein normal factor sum formula mein $3^0$ (yani 1) ko ignore karna hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>900 ka Prime Factorization: $900 = 36 \\times 25 = 2^2 \\times 3^2 \\times 5^2$.<br/>Factor multiple of 3 hone ke liye, 3 ki power kam se kam 1 honi chahiye. Isliye $3^0$ wali term chhod de.<br/>Sum = $(2^0 + 2^1 + 2^2) \\times (3^1 + 3^2) \\times (5^0 + 5^1 + 5^2)$.<br/>Calculate kar: $(1 + 2 + 4) \\times (3 + 9) \\times (1 + 5 + 25)$.<br/>$= 7 \\times 12 \\times 31$.<br/>Unit digit hack lagao: $7 \\times 2 \\times 1 \\rightarrow$ unit digit 4. Lekin options mein sabke last mein 4 hai. Toh pura multiply kar le:<br/>$84 \\times 31 = 2604$.<br/><br/><b>Future Exam Takeaway:</b><br/>Agar bolta 'multiples of 5', toh sum equation mein $5^0$ exclude kar dete."
+    },
+    {
+      "q": "Find the number of Zeros at the end of the product $(12 \\times 27 \\times 63 \\times 113 \\times 1250 \\times 24 \\times 650)$?",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Factor Hunting)</b><br/><br/>Dekh bhai aise karna hai... zeros ka khel bottleneck pairs pe chalta hai.<br/><br/><b>Pen-Free Observation:</b> Number of zeros utne hi hote hain jitne $2$ aur $5$ ke pairs banenge. Baki kachra numbers ($27, 63$) ignore marne hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Bas $5$ aur $2$ ki power gin!<br/>Power of 5: $1250 = 5^4 \\times 2$. $650 = 5^2 \\times 26$. Total $5$ ki power = $4 + 2 = 6$.<br/>Power of 2: $12 (2^2)$, $1250 (2^1)$, $24 (2^3)$, $650 (2^1)$. Total $2$ ki power = $2 + 1 + 3 + 1 = 7$.<br/>Pair wahi banenge jo minimum power hogi. Minimum $(6, 7)$ me $6$ hai. Toh $6$ zeros lagenge end me.<br/><br/><b>Method 2 (Concept Builder):</b> Trailing zeros is entirely a game of bottleneck resource.<br/><br/><b>Future Exam Takeaway:</b> Product form me hamesha 'botteneck variable' (usually $5$) ko extract karke direct tick maro, pura factorise mat karo."
+    }
+  ]
+}

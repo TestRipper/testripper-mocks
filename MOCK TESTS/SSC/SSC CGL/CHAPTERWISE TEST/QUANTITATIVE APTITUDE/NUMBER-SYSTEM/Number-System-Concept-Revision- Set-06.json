@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-06",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "If a 9-digit number $897359y7x$ is divisible by $72$, then what is the value of $(3x + 4y)$ for the largest possible value of $y$?",
+      "o": [
+        "54",
+        "48",
+        "60",
+        "72"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $54$<br/><br/><b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Divisibility of 72 ka sidha matlab $8$ aur $9$. Exam word 'largest $y$' diya hai toh trial top se shuru karna hai.<br/><br/><b>Method 1 (Ninja Technique):</b> Largest $y$ lena hai toh seedha $9$ se check maar rule of 8 ke liye. Phir digit sum nikal ke rule of 9 lagana.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Assume } y=9 \\implies 97x / 8 \\implies x=6 \\\\ \\text{Sum for 9:} \\, 48 + 6 + 9 = 63 \\text{ (Divisible)} \\\\ (3(6) + 4(9)) = 18 + 36 = 54 $$<br/><br/><b>Method 2 (Concept Builder):</b> Hamesha last 3 digits rule apply karke dependent variable $x$ ka ek chota set banana padta hai for different values of $y$.<br/><br/>Mathematically :-<br/><br/>$$ \\text{If } y \\text{ is max, try } 9: \\frac{97x}{8} = 121 \\text{ R } 4+x \\implies x=6 \\\\ \\text{Checking sum} \\pmod 9: \\frac{48+y+x}{9} = \\frac{63}{9} = 7 \\text{ (Valid)} $$<br/><br/><b>TCS Trap:</b> TCS yahan variable restriction me khelta hai. Tum minimum wala solve kar loge and option me answer bhi hoga but galat ho jayega.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Hamesha bold trap words jaise 'largest' ya 'smallest' possible value pe gaur karo, pura khel wahi badalta hai."
+    },
+    {
+      "q": "If the 6-digit number $51x34y$ is divisible by 72, find the value of $(2x + 3y)$.",
+      "o": [
+        "12",
+        "14",
+        "16",
+        "18"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>$72 = 8 \\times 9$. Sabse pehle 8 ka rule last 3 digits pe lagega, phir digital sum 9 ke liye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, 8 ke rule me $34y$ hai. 300 series me 344 8 se kat-ta hai (yaad rakhna $8 \\times 43$). Toh seedha $y=4$.<br/>Ab 9 ke liye CPR mat laga, bas Digital Sum (C9 method) kaat de: $5+4=9$ (cancel), $1+3+4+x = 8+x$. Isko 9 banne ke liye $x=1$ chahiye.<br/>Find: $2(1) + 3(4) = 2 + 12 = 14$. Khatam!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Digital sum is universally the best approach for 9. Just ignore combinations that add up to 9.<br/><br/><b>Future Exam Takeaway:</b><br/>88, 72, 99 wale questions SSC ke damad hain, humesha 8, 9, 11 ke separate rules apply karo."
+    },
+    {
+      "q": "If $N = 77^{77^{77}}$ and $M = 33^{33^{33}}$, what is the unit digit of $N \\times M$?",
+      "o": [
+        "1",
+        "3",
+        "7",
+        "9"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Successive Change (Cyclicity of 4)</b><br/><br/>Dekh bhai aise karna hai... power towers dekh ke ghabrana nahi hai.<br/><br/><b>Pen-Free Observation:</b> Base digits $7$ aur $3$ hain. Unki power towers ajeeb lag rahi hain but essentially wo Odd numbers ki Odd power hain. Matalab power HAMESHA Odd hi rahegi.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Unit digit me sirf aakhri power $4$ se divide hoti hai.<br/>$N$ me power $77^{\\text{odd}}$. $77 \\pmod 4 \\equiv 1$. Toh $1^{\\text{odd}} = 1$. Base power $1$ aayegi. $7^1 = 7$.<br/>$M$ me power $33^{\\text{odd}}$. $33 \\pmod 4 \\equiv 1$. Toh $1^{\\text{odd}} = 1$. Base power $1$. $3^1 = 3$.<br/>Unit digit = $7 \\times 3 = 21 \\implies 1$.<br/><br/><b>Method 2 (Concept Builder):</b> Power tower $a^{b^c}$ me bas $b \\pmod 4$ check kar liya karo aur uski power $c$ chala do.<br/><br/><b>Future Exam Takeaway:</b> Power towers dekh ke ghabrana nahi, Modulo 4 Cyclicity hamesha bachayegi."
+    },
+    {
+      "q": "If a 9-digit number $32x4115y2$, is divisible by $88$, then the value of $(4x-y)$ for the minimum possible value of $y$ is?",
+      "o": [
+        "-1",
+        "20",
+        "11",
+        "31"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b> $88$ divisibility hamesha $8$ aur $11$ ke combined rules se todi jaati hai. Minimum $y$ nikal ke directly $11$ ki equation me fit karo.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai, pehle $8$ ka rule (last 3 digits): $5y2$. Minimum $y$ pucha hai. $y=0$ rakha toh $502$ fail. $y=1$ rakha toh $512$ (jo $8$ ka cube hai) perfectly pass! Toh $y=1$ lock ho gaya.<br/>Ab $11$ ka rule lagao (Alternating sum difference): <br/>Odd places: $3+x+1+5+2 = 11+x$.<br/>Even places: $2+4+1+y = 7+y$.<br/>Difference: $(11+x) - (7+y) = 4 + x - y$.<br/>$y=1$ yahan daal do: $4 + x - 1 = 3 + x$.<br/>Ab isko ya toh $0$ banna hai ya $11$. Positive digits ke lie $0$ impossible hai, toh $11$ banao. $3 + x = 11 \\implies x = 8$.<br/>Humein pucha hai: $4x - y = 4(8) - 1 = 32 - 1 = 31$. Option D is right.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Isolate divisibility rules strictly. The parameter 'minimum' simplifies the search space for $y$ instantly, converting a two-variable Diophantine problem into a linear one.<br/><br/><b>Future Exam Takeaway:</b> 'Minimum possible' aur 'Maximum possible' limits hamesha dhyan se padhna, warna correct variables aakar bhi final value galat ho sakti hai."
+    },
+    {
+      "q": "What is the remainder of $71^{382}$ divided by 100?",
+      "o": [
+        "41",
+        "28",
+        "39",
+        "46"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Base ka unit digit 1 hai. Aakhiri do digits nikalne ka shortcut yahi kehta hai ki unit place par humesha 1 hi aayega. Options dekh, sirf pehle option me 1 hai. Dekhte hi tick!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, in case options close hon, Ninja Technique lagana:<br/>1. Unit digit hamesha 1.<br/>2. Tens digit $\\implies$ Base ki tens digit (7) $\\times$ Power ki unit digit (2). $7 \\times 2 = 14$. Iska last digit 4 utha le.<br/>Dono mila ke ban gaye 41.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Ye actual me Binomial theorem ka expansion hai: $(70+1)^{382}$. First all terms will end with 00 except the last two which give $382 \\times 70 \\times 1 + 1 = 26740 + 1$, ending in 41.<br/><br/><b>Future Exam Takeaway:</b><br/>Base ending in 1 ka hamesha Tens(Base) * Unit(Power) wala shortcut use karna."
+    },
+    {
+      "q": "How many two-digit prime numbers are there between $10$ to $100$ which remain prime numbers when the order of their digits is reversed?",
+      "o": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Static GK of Math)</b><br/><br/>Dekh bhai aise karna hai... Number system ke static facts sidhe memory se aate hain, prove nahi karne baithna.<br/><br/><b>Pen-Free Observation:</b> Reverse karne par $2, 4, 5, 6, 8$ end me aane wale numbers even ya div by $5$ ban jate hain. Toh sirf $1, 3, 7, 9$ combinations matter karenge.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Wo primes list karo: $11, 13 (31), 17 (71), 37 (73), 79 (97)$.<br/>Dhyan rakhna $19$ prime hai but ulta hoke $91$ banta hai jo $13 \\times 7$ hota hai, toh wo out ho jayega.<br/>Total count: $11, 13, 17, 31, 37, 71, 73, 79, 97$. Exact $9$ prime numbers hain.<br/><br/><b>Method 2 (Concept Builder):</b> Memory based check, specific digits ending logic reduce combinations.<br/><br/><b>Future Exam Takeaway:</b> Kuch chize exam me prove nahi karni hoti, unhe as a static data treat karo."
+    },
+    {
+      "q": "Find a positive integer less than 55 that leaves a remainder of 3 when divided by 5, and a remainder of 7 when divided by 11.",
+      "o": [
+        "18",
+        "28",
+        "38",
+        "48"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Options ko dhyan se dekh bhai. Number ko 5 se bhag dene par 3 remainder bachna chahiye, matlab unit digit ya toh 3 hoga ya 8. Saare options ke end me 8 hai, toh direct 11 ki divisibility test kar!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bina pen uthaye! Number $11k + 7$ ki form mein hoga. Seedha options ko 11 se divide kar aur dekh kis me 7 bachta hai. 18 ko 11 se bhag doge, 7 remainder aayega. 28 me 6 aayega. Baaki ud gaye, sirf Option 1 pass!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Chinese Remainder Theorem (CRT) ka basic laga. Let Number $N = 11k + 7$. Ab $k=1$ rakh ke dekh: $N = 18$. Ab 18 ko 5 se divide kar, remainder 3 aaya. Condition satisfied.<br/><br/><b>Future Exam Takeaway:</b> Hamesha bade divisor ka base form banao aur options me hit &amp; trial lagao, CGL me seconds bachenge!"
+    },
+    {
+      "q": "On dividing the numbers 6453 and 1676 by a three digit number M, the same remainder is obtained. Then, find the sum of the digits of the number M.",
+      "o": [
+        "7",
+        "9",
+        "10",
+        "11"
+      ],
+      "a": 3,
+      "s": "<b>Answer is 11.</b><br/><br/><b>Pen-Free Observation:</b> Dekh bhai, jab bhi 'same remainder' ka case ho, HCF/Difference method kaam aata hai. Dono numbers ka difference le lo, wo M ka exact multiple hoga.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Difference $= 6453 - 1676 = 4777$.<br/>Number M (3-digit) is 4777 ka factor hona chahiye. 4777 kisse divide hota hai? Prime test kar: 17 se try kar.<br/>$4777 = 17 \\times 281$.<br/>Since M ek 3-digit number hai, M strictly 281 hoga.<br/>Sum of digits of $M = 2 + 8 + 1 = 11$."
+    },
+    {
+      "q": "If $A = 0.497$, $B = 0.299$ and $C = 0.157$, then what is the value of $(A+B+C)$?",
+      "o": [
+        "911/1000",
+        "93/100",
+        "953/1000",
+        "95/100"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Decimals ko exact solve karna time wastage hai. Digital Sum (C9 Method) aur Unit Digit hack lagao options nikalne ke liye.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/> sbke upon me 1000 so num ka unit digit dekh ke add kardo opt matched. Dekh bhai aise karna hai... Sabse pehle C9 (Digital Sum) check kar.<br/>$A = 0.497 \\implies 4+9+7 = 20 \\implies 2$<br/>$B = 0.299 \\implies 2+9+9 = 20 \\implies 2$<br/>$C = 0.157 \\implies 1+5+7 = 13 \\implies 4$<br/>Expression ka total C9 Sum = $2 + 2 + 4 = 8$.<br/>Ab Options check kar kiska digit sum 8 hai:<br/>911/1000 $\\implies 9+1+1 = 11 \\implies 2$<br/>93/100 $\\implies 9+3 = 12 \\implies 3$<br/>953/1000 $\\implies 9+5+3 = 17 \\implies 8$ (Bhai match ho gaya!)<br/>Khatam sawaal!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Last digit Unit Trick bhi lagti: $7 + 9 + 7 = 23$, yaani sum ke end mein 3 aana chahiye. 953 me 3 hai. Direct add karna $0.497+0.299+0.157 = 0.953$ fraction me $953/1000$ banta hai.<br/><br/><b>Future Exam Takeaway:</b> Decimal additions/fractions dekh ke darna mat, Digital Sum lagakar options jaldi eliminate karo."
+    },
+    {
+      "q": "What is the remainder when $(1^{49} + 2^{49} + 3^{49} + \\dots + 49^{49})$ is divided by 50?",
+      "o": [
+        "25",
+        "1",
+        "0",
+        "49"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Symmetry Grouping)</b><br/><br/>Dekh bhai... Itni badi series add hone ke liye nahi bani hoti, ye sirf pairs mein cutne ke liye hoti hai.<br/><br/><b>Pen-Free Observation:</b> Algebraic symmetric grouping. Formula yaad kar: $(a^n + b^n)$ hamesha $(a+b)$ se divide hota hai agar $n$ odd ho.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>First aur last term pakdo: $1^{49} + 49^{49}$. Sum of bases $1+49 = 50$. Toh yeh 50 se divisible hai.<br/>Aise hi $2+48$, $3+47$ sab pairs zero remainder ban jayenge.<br/>Beech mein sirf ek bichara bachega: $25^{49}$ kyunki iska pair nahi hai.<br/>$25^n$ ko $50$ se divide karo toh remainder hamesha 25 aata hai (for any $n \\ge 1$). Ans is 25.<br/><br/><b>Future Exam Takeaway:</b> In massive series, look for first and last term symmetry to collapse the series into zero remainders."
+    },
+    {
+      "q": "The non-terminating repeating decimal among the following fractions is:",
+      "o": [
+        "879/16",
+        "679/76",
+        "979/40",
+        "597/8"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Base Properties)</b><br/><br/>Dekh bhai... fraction ko evaluate nahi karna, sirf denominator ke DNA ko padhna hai.<br/><br/><b>Pen-Free Observation:</b> Fraction tabhi terminate hota hai jab uske denominator ke prime factors sirf 2, 5, ya dono hon ($2^n \\times 5^m$).<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Option B dekh, $76 = 4 \\times 19$.<br/>Isme prime number 19 aa gaya, jo fraction ko non-terminating bana dega kyunki numerator 679 bhi 19 se completely divide nahi hota. Direct hack!<br/><br/><b>Future Exam Takeaway:</b> Hunt for primes other than 2 and 5 in the denominator to instantly spot non-terminating fractions."
+    },
+    {
+      "q": "What are the last two digits of $4^{4^4}$?",
+      "o": [
+        "16",
+        "36",
+        "76",
+        "96"
+      ],
+      "a": 3,
+      "s": "<b>Final Output:</b> $96$<br/><br/><b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Power tower with base 4. Bada number hai but trick $76$ par hinge kar rahi hogi kyuki numbers terminating trick wahi rehti hai.<br/><br/><b>Method 1 (Ninja Technique):</b> Convert base aur power into 2. Iske baad powers ko $10$ me break karke seedha 76 magic number exploit karo.<br/><br/>Mathematically :-<br/><br/>$$ 4^{256} = (2^2)^{256} = 2^{512} \\\\ 2^{512} = 2^{12} \\times (2^{10})^{50} = 4096 \\times (1024)^{\\text{Even}} \\\\ \\text{Mod } 100: 96 \\times 76 \\equiv 96 $$<br/><br/><b>Method 2 (Concept Builder):</b> $2^{10} = 1024$. Iski agar Even power karein toh aakhri do digit hamesha $76$ aate hain aur odd karein to $24$ aate hain.<br/><br/>Mathematically :-<br/><br/>$$ (1024)^{\\text{Even}} \\equiv 76 \\pmod{100} \\\\ 4096 \\equiv 96 \\pmod{100} \\\\ 96 \\times 76 = 7296 \\equiv 96 \\pmod{100} $$<br/><br/><b>TCS Trap:</b> Bacche isko $4^{256}$ karke uske aage expand karne ke raste dhundhne lag jate hain jo possible nahi hai in raw digits without $2$ based hacks.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Magic property yaad kar bhai: Any number ending in $76$ jab kisi bhi power of 2 se multiply hota hai, toh answer ki last 2 digits original number ke end digits hi rehti hai (yahan $96$)."
+    },
+    {
+      "q": "How many numbers are there between $99$ and $1000$ such that the digit $8$, occupies the unit's place?",
+      "o": [
+        "64",
+        "74",
+        "90",
+        "None of these"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br/><br/><b>Pen-Free Observation:</b> Range 99-1000 exactly 3-digit array define karti hai. Positions fix karke directly possibilities multiplier maar.<br/><br/><b>Method 1 (Ninja Technique):</b> Teen box bana digits ke liye. Last me sirf ek possibility ($8$) fix. First digit 0 nahi ho sakti (1 se 9). Second (middle) digit pe koi rok nai ($0$ se $9$). Multiply maar de.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Box } [H][T][U] \\\\ \\text{Places count} \\implies (9 \\text{ opts}) \\times (10 \\text{ opts}) \\times (1 \\text{ opt fix } 8) \\\\ = 9 \\times 10 \\times 1 = 90 $$<br/><br/><b>Method 2 (Concept Builder):</b> Arithmetic progression bana ke total terms formuli se mapping karte hain basic level pe.<br/><br/>Mathematically :-<br/><br/>$$ AP = 108, 118, 128 \\dots 998 \\\\ L = a + (n-1)d \\\\ 998 = 108 + (n-1)10 \\\\ 890 = 10(n-1) \\implies n = 90 $$<br/><br/><b>TCS Trap:</b> Arithmetic approach me log limits lene (first term) me phaste hain. Permutation places concept limits eliminate kar deta hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Digits placement constraints wale array count questions mostly Permutations (places fix multi) se solve hone chahiye AP series se nahi."
+    },
+    {
+      "q": "In how many ways can the number $11025$ be resolved into two factors which are co-prime to each other?",
+      "o": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> $4$<br/><br/><b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Number chota ho ya bada, co-prime factor pairs hamesha base primes ki counting par nikalte hain. Factorize fast.<br/><br/><b>Method 1 (Ninja Technique):</b> Number ka prime factorization maar. Dekh kitne distinct prime numbers aaye. Fir seedha formula thok de $2^{n-1}$.<br/><br/>Mathematically :-<br/><br/>$$ 11025 = 3^2 \\times 5^2 \\times 7^2 \\\\ \\text{Distinct primes } (n) = 3 \\\\ \\text{Ways} = 2^{n-1} = 2^{3-1} = 4 $$<br/><br/><b>Method 2 (Concept Builder):</b> Co-prime hone ka matlab do numbers me kuch common na aye. Toh prime powers ek saath ek side jani chaiye.<br/><br/>Mathematically :-<br/><br/>$$ N = p_1^a p_2^b p_3^c \\dots \\\\ \\text{Co-prime factors} = 2^{k-1} \\text{ where } k \\text{ is number of distinct prime bases.} $$<br/><br/><b>TCS Trap:</b> Yahan factor powers ko consider karke calculation lamba matt karna, co-prime pairs sirf distinct primes ginte hain.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Direct hack yaad rakh: Co-prime factor pairs hamesha $2^{n-1}$ hote hain jahan $n$ distinct primes ka count hota hai."
+    },
+    {
+      "q": "Find the smallest integer which should be added to the given expression to make it a perfect square? $79998 \\times 79999$",
+      "o": [
+        "79999",
+        "89999",
+        "79998",
+        "79997"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Dekhte hi algebraic identity $n(n+1)$ dikhni chahiye. Multiply karne ka paap nahi karna hai!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Let $n = 79998$. Expression is $n \\times (n+1) = n^2 + n$.<br/>Isme kya add karein ki agla perfect square $(n+1)^2$ ban jaye?<br/>$(n+1)^2 = n^2 + 2n + 1$.<br/>Hamare paas $(n^2 + n)$ hai, toh humein $(n + 1)$ aur chahiye.<br/>Matlab $79998 + 1 = 79999$ add karna padega!<br/><br/><b>Method 2 (Concept Builder):</b><br/>General rule: Product of two consecutive integers $n(n+1)$. Add the larger number $(n+1)$ to make it $(n+1)^2$. Subtract the smaller number $n$ to make it $n^2$.<br/><br/><b>Future Exam Takeaway:</b><br/>Seedha formula yaad rakh: $A \\times (A+1)$ me BADA number add karne pe perfect square banta hai, aur CHHOTA number subtract karne pe."
+    },
+    {
+      "q": "What is the remainder when the $7$-digit number $4538291$ is divided by $101$?",
+      "o": [
+        "58",
+        "27",
+        "15",
+        "42"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $58$<br/><br/><b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Divisor $101$ dikhte hi samajh ja $10^2+1$ ka case hai. Isme pichhe se $2-2$ ke block ban ke plus-minus khela jata hai.<br/><br/><b>Method 1 (Ninja Technique):</b> Right side se $2$ digits ke pairs pakad. Alternating plus aur minus maar. Jo value bachi, wahi seedha remainder hai.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Blocks: } 04, 53, 82, 91 \\\\ \\text{Alt Sum} = 91 - 82 + 53 - 04 = 58 $$<br/><br/><b>Method 2 (Concept Builder):</b> Algebraic divisibility rule lagta hai yahan. Agar base $100$ hai toh $100 \\equiv -1 \\pmod{101}$.<br/><br/>Mathematically :-<br/><br/>$$ N = a_0 + a_1(10^2) + a_2(10^4) + \\dots \\\\ N \\pmod{101} \\equiv a_0 - a_1 + a_2 - a_3 \\dots $$<br/><br/><b>TCS Trap:</b> Students left side (starting digits) se block banana shuru kar dete hain aur fas jate hain. Block hamesha unit digit se start karna hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Base $10^2+1$ (like $101$) requires alternating blocks of $2$. Base $10^3+1$ (like $1001$) requires blocks of $3$."
+    },
+    {
+      "q": "What is the value of $7/2 + 11/3 + 7/6 + 11/15 + 7/12 + 11/35 \\dots + 7/156 + 11/575$?",
+      "o": [
+        "3216/315",
+        "3714/345",
+        "3917/355",
+        "3816/325"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: JSM (Series Splitting)</b><br/><br/>Bhai, dhyan se dekh! Yeh do mixed telescoping series ka jhol hai. Ek flow mein add karne gaya toh fass jayega.<br/><br/><b>Pen-Free Observation:</b> Isko 7 aur 11 wale numerators mein alag-alag split kar le.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Series 1: $7 \\times (1/2 + 1/6 + 1/12 + \\dots + 1/156) = 7 \\times (1 - 1/13) = 84/13$.<br/>Series 2: $11 \\times (1/3 + 1/15 + \\dots + 1/575)$. Yahan difference 2 ka hai denominators ke factors mein ($1\\times3, 3\\times5$), so formula lagega $\\frac{1}{\\text{diff}} \\times (\\text{first} - \\text{last})$. $11 \\times \\frac{1}{2} \\times (1 - 1/25) = 132/25$.<br/>Dono ko jod de: $84/13 + 132/25 = 3816/325$.<br/><br/><b>Future Exam Takeaway:</b> Mixed series are CGL mains traps designed to induce panic; separate them to reveal standard telescoping patterns."
+    },
+    {
+      "q": "Find the last two digits of $3^{1000} \\times 7^{1000}$.",
+      "o": [
+        "01",
+        "21",
+        "41",
+        "81"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Jab exponents same ho, bases multiply kar. Jaise hi base end in $1$ (matlab 21) aayega, wahi puraani 'X1' wali jugad fix kar de.<br/><br/><b>Method 1 (Ninja Technique):</b> Combine the bases directly. Base 21 mil gaya. Tens place ke liye base tens ko power unit se multiply, and unit is obviously 1.<br/><br/>Mathematically :-<br/><br/>$$ (3 \\times 7)^{1000} = 21^{1000} \\\\ \\text{Unit digit} = 1 \\\\ \\text{Tens digit} = (2 \\times 0) \\pmod{10} = 0 \\\\ \\text{Result} = 01 $$<br/><br/><b>Method 2 (Concept Builder):</b> Using binomial expansion of form $(10x + 1)^n$, which expands to end with $(nx \\pmod{10})1$.<br/><br/>Mathematically :-<br/><br/>$$ (20+1)^{1000} = \\dots + {1000 \\choose 1}(20)^1(1)^{999} + 1 \\\\ 20000 + 1 \\implies \\text{Last two are } 01 $$<br/><br/><b>TCS Trap:</b> $3$ ka cyclicity alag, aur $7$ ka cyclicity alag nikalne beth jaoge toh multiplication me last two digits bura fasa dengi.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Exponent rules apply first: $a^n \\times b^n = (ab)^n$. Fir $(\\dots X1)^Y$ wali solid tens trick apply karo."
+    },
+    {
+      "q": "If 83 is divided successively by 7, 3, and 2, then what are the successive remainders?",
+      "o": [
+        "6, 2, 1",
+        "5, 2, 1",
+        "6, 1, 2",
+        "1, 2, 6"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Successive division normal division se alag hai. Yahan agle step ka dividend pichle step ka quotient (bhagfal) ban jata hai. Step by step follow karna hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Step 1: Pehle 83 ko 7 se divide kar. $83 = 7 \\times 11 + 6$. (Quotient = 11, Pehla remainder = 6). Option B aur D gaye!<br/>Step 2: Ab pichle quotient (11) ko next divisor (3) se bhag de. $11 = 3 \\times 3 + 2$. (Quotient = 3, Dusra remainder = 2).<br/>Step 3: Ab naye quotient (3) ko next divisor (2) se bhag de. $3 = 2 \\times 1 + 1$. (Teesra remainder = 1).<br/>Successive remainders line se aaye: 6, 2, 1. Option A mark kar!<br/><br/><b>Method 2 (Concept Builder):</b><br/>In successive division, number $N = d_1 \\times q_1 + r_1$. Then $q_1 = d_2 \\times q_2 + r_2$, and so on. Remainders flow consecutively exactly as derived.<br/><br/><b>Future Exam Takeaway:</b> Successive division me kabhi bhi original number (83) ko saare divisors se baar baar bhag mat dena, woh normal division hota hai."
+    },
+    {
+      "q": "What is the remainder when $15^{400}$ is divided by $1309$?",
+      "o": [
+        "1",
+        "15",
+        "1012",
+        "1308"
+      ],
+      "a": 0,
+      "s": "<b>Final Output:</b> $1$<br/><br/><b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Itna bada divisor bina logic ke nahi aata. Ye chote prime numbers ka product hai, seedha Chinese Remainder Theorem lagana hai idhar.<br/><br/><b>Method 1 (Ninja Technique):</b> Divisor ko primes me tod. Unke respect me modulo theorem check kar. Sabme value $1$ aayegi toh final remainder bhi wahi hoga.<br/><br/>Mathematically :-<br/><br/>$$ 1309 = 7 \\times 11 \\times 17 \\\\ 15^{400} \\pmod 7 \\equiv (15^6)^{\\dots} \\equiv 1 \\\\ 15^{400} \\pmod{11} \\equiv (15^{10})^{\\dots} \\equiv 1 \\\\ 15^{400} \\pmod{17} \\equiv (15^{16})^{\\dots} \\equiv 1 \\\\ R = 1 $$<br/><br/><b>Method 2 (Concept Builder):</b> Fermat's Little theorem ko component basis par split karke lagana hai yahan pe.<br/><br/>Mathematically :-<br/><br/>$$ a^{p-1} \\equiv 1 \\pmod p \\\\ x \\equiv 1 \\pmod{p_1}, x \\equiv 1 \\pmod{p_2} \\implies x \\equiv 1 \\pmod{p_1p_2} $$<br/><br/><b>TCS Trap:</b> Bade weird numbers ko direct expand/modulo property marne chale jate hain bina primes todhe. Hamesha divisor ko break karo.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Large weird divisors are always product of primes. Break them and conquer."
+    },
+    {
+      "q": "What is the remainder when $7^{99}$ is divided by $344$?",
+      "o": [
+        "1",
+        "343",
+        "7",
+        "0"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Negative Remainder Concept)</b><br/><br/>Dekh bhai, powers bade ho toh divisor ke aas-paas base ki power dhundhni chahiye, taaki remainder $+1$ ya $-1$ ban jaye.<br/><br/><b>Pen-Free Observation:</b> Divisor $344$ hai. $7$ ki powers yaad kar: $7^1=7$, $7^2=49$, $7^3=343$. $343$, $344$ se bas $1$ chota hai! Boom!<br/><br/><b>Method 1 (Ninja Technique):</b><br/>$7^{99} = (7^3)^{33} = (343)^{33}$.<br/>Ab $343 \\div 344$ ka remainder $-1$ aata hai.<br/>$(-1)^{33} = -1$. Negative remainder allow nahi hota math me, toh isme divisor add kar do.<br/>Real Remainder = $344 - 1 = 343$.<br/><br/><b>Future Exam Takeaway:</b> Hamesha power ko aise split karo ki base, divisor ke $\\pm 1$ range mein aa jaye. Arithmetic ki cycle bohot fast chalti hai is format pe."
+    },
+    {
+      "q": "How many factors of $N = 2^7 \\times 3^4 \\times 5^3$ are both even and perfect squares?",
+      "o": [
+        "12",
+        "15",
+        "18",
+        "24"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Perfect square ke liye powers even honi chahiye (0, 2, 4...). Aur 'Even' factor maanga hai, toh base 2 ki power me 0 nahi aa sakta! Waha se filtering karni hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Base 2: Powers available 0,1,2,3,4,5,6,7. Perfect square &amp; even hone ke liye choices hain $2^2, 2^4, 2^6$ (Total 3 choices).<br/>Base 3: Powers available 0,1,2,3,4. Perfect square ke liye choices $3^0, 3^2, 3^4$ (Total 3 choices).<br/>Base 5: Powers available 0,1,2,3. Perfect square ke liye choices $5^0, 5^2$ (Total 2 choices).<br/>Total factors = $3 \\times 3 \\times 2 = 18$.<br/><br/><b>Future Exam Takeaway:</b><br/>Jo condition question de, bas uske hisab se un base powers ko count karke P&amp;C ka basic multiplication rule laga do."
+    },
+    {
+      "q": "$N$ is a natural number less than $1000$ and is a multiple of $5$. When $N$ is successively divided by $7$ and $8$, it leaves remainders of $2$ and $3$ respectively. How many possible values of $N$ exist?",
+      "o": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Successive Change</b><br/><br/>Dekh bhai, successive division me seedha 'base building' equation banani hoti hai.<br/><br/><b>Pen-Free Observation:</b> Divisors $7, 8$ ke remainders $2, 3$. Final divisor $7 \\times 8 = 56$ banega.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Find the least number: $8 \\times 0 + 3 = 3$. Then $3 \\times 7 + 2 = 23$. So general form is $N = 56k + 23$.<br/>Hume pata hai $N$ multiple of $5$ hai. Is equation me mod $5$ lagao: $N \\equiv 1k + 3 \\equiv 0 \\pmod 5 \\implies k = 2$.<br/>First valid number: Put $k=2 \\implies 56(2) + 23 = 135$.<br/>Next numbers will have a gap of LCM(56, 5) = $280$. So numbers are $135, 135+280=415, 695, 975$.<br/>Total $4$ values less than $1000$.<br/><br/><b>Future Exam Takeaway:</b> Successive division equation banake, dusri condition (multiple of 5) ke liye usko wahi mod kar diya karo, pura solve karne me time bachega."
+    },
+    {
+      "q": "A book contains $500$ pages. How many times does the digit $3$ appear in the page numbers?",
+      "o": [
+        "140",
+        "200",
+        "220",
+        "210"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Block Counting Method)</b><br/><br/>Dekh bhai aise karna hai... frequency counting hamesha blocks me karni chahiye.<br/><br/><b>Pen-Free Observation:</b> Digit occurrence fixed pattern me chalti hai. Har $100$ ke block me tens aur unit digit ki fixed frequency milti hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Har standard block ($0-99, 100-199$ etc) me kisi bhi digit ka count exactly $20$ hota hai (in tens &amp; unit places).<br/>Range $1$ se $500$ me total $5$ block banenge. Toh $5 \\times 20 = 100$ bar $3$ aayega.<br/>Ab dhyan de 'Hundreds place' par: $300$ se leke $399$ tak, pure $100$ bar lagatar $3$ aayega.<br/>Total jodd do: $100 + 100 = 200$.<br/><br/><b>Method 2 (Concept Builder):</b> Base value calculate karke specific zone ke extra instances add karo.<br/><br/><b>Future Exam Takeaway:</b> Digit frequency $0-99$ block me hamesha $20$ bar hoti hai, ye fact rat lo, calculation fast ho jayegi."
+    },
+    {
+      "q": "Find the sum of 6 + 8 + 10 + 12 + 14 + ... + 40.",
+      "o": [
+        "424",
+        "1600",
+        "400",
+        "414"
+      ],
+      "a": 3,
+      "s": "<b>Answer is 414.</b><br/><br/><b>Pen-Free Observation:</b> Even numbers ki simple AP (Arithmetic Progression) series hai. First term aur last term pata hai, toh $\\frac{n}{2} (a+l)$ lagana best hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Number of terms $n = \\frac{\\text{Last} - \\text{First}}{\\text{Difference}} + 1 = \\frac{40 - 6}{2} + 1 = 17 + 1 = 18$ terms.<br/>Sum = $\\frac{n}{2} \\times (a + l) = \\frac{18}{2} \\times (6 + 40) = 9 \\times 46$.<br/>Unit digit check: $9 \\times 6 = 54$, aakhri digit 4 aayega. Options me 424, 400, 414 hain. $9 \\times 46 = 414$ direct leap. JSM/Deviation lagane ki zaroorat nahi yahan!"
+    }
+  ]
+}

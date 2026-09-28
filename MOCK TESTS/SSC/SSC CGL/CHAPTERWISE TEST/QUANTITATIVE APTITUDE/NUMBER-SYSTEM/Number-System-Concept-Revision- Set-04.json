@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-04",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "The difference between a two-digit number and the number obtained by interchanging the positions of its digits is $54$. The difference between the two digits of that number is?",
+      "o": [
+        "4",
+        "5",
+        "6",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Reversed positions wale difference condition hamesha $9$ ka perfectly clean multiple extract deta hai variable format ke liye.<br/><br/><b>Method 1 (Ninja Technique):</b> Interchanging digits ka difference diya ho to seedha given number (54) ko 9 se divide kar do, limits aur answer clear output degi.<br/><br/>Mathematically :-<br/><br/>$$ (10x + y) - (10y + x) = 9(x - y) \\\\ 9(x - y) = 54 \\implies (x - y) = 6 $$<br/><br/><b>Method 2 (Concept Builder):</b> Full linear algebraic setup variable extraction based on placeholders formulation.<br/><br/>Mathematically :-<br/><br/>$$ N = 10a + b \\text{ , Reverse } R = 10b + a \\\\ N - R = 9a - 9b = 9(a-b) \\\\ 9(a-b) = 54 \\implies a-b=6 $$<br/><br/><b>TCS Trap:</b> Students actual two-digit combinations nikalne ko assume karte hain like 93-39 jo ki manual hit-and-trial pe bhot heavy limit waste karta hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Interchanged Reverse Difference is directly $9(x-y)$. And Reversed Addition Sum is perfectly $11(x+y)$ always."
+    },
+    {
+      "q": "Which of the following sets is a proper subset of rational numbers?",
+      "o": [
+        "Irrational numbers",
+        "Natural numbers",
+        "Real numbers",
+        "None of the above"
+      ],
+      "a": 1,
+      "s": "<b>Final Output:</b> Natural numbers<br/><br/><b>Core Conceptual Tool:</b> Option Elimination.<br/><br/><b>Pen-Free Observation:</b> Ye pure number system ki basic hierarchy hai. Isme pen uthane ki zaroorat nahi hai.<br/><br/><b>Method 1 (Ninja Technique):</b> Chart dimag me laa. Real ke do bacche - Rational aur Irrational. Rational ke andar sab kuch (Integers, Whole, Natural). Seedha answer tick kar.<br/><br/>Mathematically :-<br/><br/>$$ \\mathbb{N} \\subset \\mathbb{W} \\subset \\mathbb{Z} \\subset \\mathbb{Q} $$<br/><br/><b>Method 2 (Concept Builder):</b> Proper subset ki definition hoti hai ki saare elements dusre set me hone chahiye par dusra set bada hona chahiye. Rationals $p/q$ form wale hain.<br/><br/>Mathematically :-<br/><br/>$$ x \\in \\mathbb{N} \\implies x = \\frac{x}{1} \\in \\mathbb{Q} \\\\ \\mathbb{N} \\subset \\mathbb{Q} $$<br/><br/><b>TCS Trap:</b> Real numbers tick karke mat aa jana, wo superset hai, subset nahi.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Diagrammatic mapping of number sets mind me set rakh, direct 5 sec ka sawal hai."
+    },
+    {
+      "q": "The value of A for which the expression $2x^3 + x^2 - 6x + A$ will be divisible by $(x - 3)$ is:",
+      "o": [
+        "-45",
+        "54",
+        "45",
+        "-54"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Polynomial Remainder Theorem lagani hai. Agar completely divisible hai, toh remainder seedha zero hoga.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Divisor ko 0 ke equal rakho: $x - 3 = 0 \\implies x = 3$.<br/>Expression mein jahan x hai waha 3 thok de aur equal to 0 kar de.<br/>$2(3)^3 + (3)^2 - 6(3) + A = 0$<br/>$2(27) + 9 - 18 + A = 0$<br/>$54 + 9 - 18 + A = 0$<br/>$45 + A = 0 \\implies A = -45$.<br/><br/><b>Future Exam Takeaway:</b><br/>Aise algebraic division wale sawalo me division lamba lamba mat karna, seedha zero banakar root dalo."
+    },
+    {
+      "q": "Find the total number of digits of $2^{24} \\times 5^{12}$.",
+      "o": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Jaha base me $2$ aur $5$ dikh gaye ek sath, matlab zeroes wali machine mil gayi. Total zeroes ek limit par power ko 10 ki form me bhej dete hain.<br/><br/><b>Method 1 (Ninja Technique):</b> 2 aur 5 ki equal powers separate kar. Unko $10^n$ me tod. Baaki jo odd elements bache unka actual output evaluate kar, kitne digit honge aur usme utne zero laga de.<br/><br/>Mathematically :-<br/><br/>$$ 2^{24} \\times 5^{12} = 2^{12} \\times (2^{12} \\times 5^{12}) \\\\ = 4096 \\times 10^{12} \\\\ \\text{Digits in } 4096 = 4 \\text{ digits.} \\\\ \\text{Total} = 4 + 12 = 16 \\text{ digits.} $$<br/><br/><b>Method 2 (Concept Builder):</b> Using basic logarithm principles to compute characteristic of large scientific numbers. Char + 1 = total digits.<br/><br/>Mathematically :-<br/><br/>$$ \\log_{10}(2^{24} \\cdot 5^{12}) = 24 \\log 2 + 12 \\log 5 \\\\ 24(0.301) + 12(0.699) = 7.224 + 8.388 = 15.612 \\\\ \\text{Digits} = \\lfloor 15.612 \\rfloor + 1 = 16 $$<br/><br/><b>TCS Trap:</b> Logarithms pe jaoge toh multiplication decimal truncation ki values error karwa sakti hain, directly combine karo base 10 ko.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Jab $2$ and $5$ exist uniformly, hamesha smaller power ko completely pack karke multiples of $10$ eliminate karo."
+    },
+    {
+      "q": "The six-digit number $537xy5$ is divisible by $125$. How many such six-digit numbers are there?",
+      "o": [
+        "4",
+        "2",
+        "3",
+        "5"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Tail Limit Observation)</b><br/><br/>Dekh bhai, kisi number ki taqat uske end digits mein hoti hai. $125$ (yani $5^3$) ka divisibility rule says last $3$ digits matter karte hain.<br/><br/><b>Pen-Free Observation:</b> Number $125$ se divisible chahiye, toh last 3 digits $xy5$ ko $125$ ka multiple hona padega.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>$125$ ke multiples likho: $125, 250, 375, 500, 625, 750, 875, 1000$.<br/>Number $xy5$ form mein hai matlab unit digit $5$ hi honi chahiye. Valid multiples dekho: $125, 375, 625, 875$.<br/>Total $4$ aise combination banenge jahan last me $5$ aayega. Seedha tick maro aur aage badho.<br/><br/><b>Future Exam Takeaway:</b> Divisibility of $2^n$ aur $5^n$ me hamesha only last $n$ digits check karne hote hain. Bakwas aage ke digits pe dhyan mat dena."
+    },
+    {
+      "q": "A number when divided by $4$ and $5$ successively leaves remainders of $1$ and $4$ respectively. What will be the successive remainders when the same number is divided by $5$ and $4$ successively?",
+      "o": [
+        "4, 1",
+        "1, 4",
+        "2, 3",
+        "3, 2"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Successive Change (Base Formation)</b><br/><br/>Dekh bhai, successive division me least valid number bottom-up approach se nikala jata hai.<br/><br/><b>Pen-Free Observation:</b> Divisors $(4, 5)$ and Remainders $(1, 4)$.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Number formation (Bottom-up): Least value ke liye last quotient $0$ maan lo.<br/>Step 1: $5 \\times 0 + 4 = 4$<br/>Step 2: $4 \\times 4 + 1 = 17$<br/>Number nikal gaya $17$.<br/>Ab pucha hai reverse successive division by $5, 4$.<br/>Step A: $17 \\div 5 \\implies$ Quotient $3$, Remainder $2$.<br/>Step B: Quotient $3 \\div 4 \\implies$ Quotient $0$, Remainder $3$.<br/>Final remainders $2$ and $3$.<br/><br/><b>Future Exam Takeaway:</b> Successive division hamesha last step se upar chalti hai. Base calculation ke bad normal division cascade laga diya karo."
+    },
+    {
+      "q": "What is the remainder when $17!$ is divided by $18$?",
+      "o": [
+        "0",
+        "1",
+        "17",
+        "18"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> $18$ ek composite number hai. Wilson Theorem lagane ki glti mat karna yahan. Logical divisibility ka concept check ho raha hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai, dhyan se dekh, divide kisko karna hai? $17!$ ko. Yani $1 \\times 2 \\times 3 \\dots \\times 9 \\dots \\times 17$.<br/>Aur Divisor kya hai? $18$. Yani $9 \\times 2$.<br/>Teri $17!$ ki train mein $9$ aur $2$ dono aaram se baithe hain. Jab numerator mein divisor ke saare tukde already present hain, toh remainder pura $0$ bachega!<br/><br/><b>Method 2 (Concept Builder):</b><br/>For any factorial $N!$ and composite number $C$, if the prime factors of $C$ are fully present in the product sequence up to $N$, then $N! \\equiv 0 \\pmod{C}$.<br/><br/><b>Future Exam Takeaway:</b> Factorials ke denominator me Prime aur Composite numbers ka farak clearly observe karna. Prime me Wilson chalegi, composite me basic structure."
+    },
+    {
+      "q": "The product of three consecutive positive integers is always exactly divisible by which of the following numbers?",
+      "o": [
+        "12",
+        "6",
+        "8",
+        "15"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Factorial Property)</b><br/><br/>Dekh bhai, ye CDS ka standard theoretical trap hai. Ise bina values rakhe theory se udana hai.<br/><br/><b>Pen-Free Observation:</b> Rule hai ki koi bhi $n$ lagatar integers ka product hamesha $n!$ se divide hoga.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Yaha $3$ consecutive positive integers diye hain. Us particular rule se seedha $3!$ ka factor lagega.<br/>$3! = 3 \\times 2 \\times 1 = 6$. So, product $6$ se humesha exact divisible hoga. Dummy check: $1 \\times 2 \\times 3 = 6$ (divisible by 6).<br/><br/><b>Future Exam Takeaway:</b> Agar $n$ consecutive numbers ka question aaye, toh bina soche usme $n!$ ka divisibility rule laga dena. Time save hoga."
+    },
+    {
+      "q": "If a 9-digit number $32x4115y2$ is divisible by 88, then what is the value of $(4x - y)$ for the smallest possible value of $y$?",
+      "o": [
+        "27",
+        "31",
+        "34",
+        "39"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>88 means check for 8 and 11. Aur specifically pucha hai 'smallest possible value of $y$', toh 8 ke divisibility pe trial small numbers se start hoga.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Target</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Calculation</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1. Div 8 (y)</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Last 3 digits $5y2$. Smallest $y=1$ gives 512 (perfect cube of 8). So $y=1$.</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2. Div 11 (x)</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">Alt diff: $(3+x+1+5+2) - (2+4+1+1) = (11+x) - 8 = 3+x$. Equate to 11 $\\implies x=8$.</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>3. Final</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$4(8) - 1 = 32 - 1 = 31$.</td></tr></table><br/><b>Method 2 (Concept Builder):</b><br/>Agar smallest nahi pucha hota toh $y=5$ (552) aur $y=9$ (592) bhi satisfy karte. Hamesha question ki requirement padho.<br/><br/><b>Future Exam Takeaway:</b><br/>SSC CGL ka sabse evergreen pattern! Div 88 me pehle always extreme end variable ($y$) ko set karo, fir $x$ par aao."
+    },
+    {
+      "q": "How many whole numbers are there between 122 and 156?",
+      "o": [
+        "32",
+        "33",
+        "34",
+        "35"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>'Between' word pe focus karna hai. Jab bhi between aata hai, endpoints count nahi hote. Aise silly traps bahut aate hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, seedha sa funda yaad rakh:<br/>'From a to b' $\\implies b - a + 1$<br/>'Between a and b' $\\implies b - a - 1$<br/>Hamein chaiye: $156 - 122 - 1 = 33$. Bina pen touch kare answer 33.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Agar tu sequence se sochega toh pehla number 123 aur aakhiri 155. Number of terms = $L - F + 1 = 155 - 123 + 1 = 33$.<br/><br/><b>Future Exam Takeaway:</b><br/>Arithmetic Progression me language games ko break down karna seekho. From/To vs Between ka difference basic but crucial hai."
+    },
+    {
+      "q": "From $500$ to $750$ (including both) how many natural numbers are there are which are neither Divisible by $3$ or $11$?",
+      "o": [
+        "114",
+        "93",
+        "151",
+        "451"
+      ],
+      "a": 2,
+      "s": "<b>Core Conceptual Tool:</b> Option Elimination.<br/><br/><b>Pen-Free Observation:</b> Range me set theory direct apply karni hai. Multiplication limits exact hit karke numbers formulate karo union nikalne ke liye.<br/><br/><b>Method 1 (Ninja Technique):</b> Exact bracket multiples trick lagao upper minus lower floor range me. Dono sets aur overlap (33) ka counting nikal, total numbers subtract maar union value.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Total} = 750 - 500 + 1 = 251 \\\\ n(3) = \\lfloor750/3\\rfloor - \\lfloor499/3\\rfloor = 250 - 166 = 84 \\\\ n(11) = \\lfloor750/11\\rfloor - \\lfloor499/11\\rfloor = 68 - 45 = 23 \\\\ n(33) = \\lfloor750/33\\rfloor - \\lfloor499/33\\rfloor = 22 - 15 = 7 \\\\ \\text{Neither} = 251 - (84 + 23 - 7) = 151 $$<br/><br/><b>Method 2 (Concept Builder):</b> This translates exactly to De Morgan's Law mapping for discrete bounds limits.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Neither} = n(U) - n(A \\cup B) \\\\ = 251 - (n(A) + n(B) - n(A \\cap B)) \\\\ = 251 - 100 = 151 $$<br/><br/><b>TCS Trap:</b> Range $500$ \"including both\" skip karke log direct total $750-500 = 250$ le kar minus $1$ ka error la denge.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Exact interval range of multiples finding trick: $\\lfloor b/k \\rfloor - \\lfloor (a-1)/k \\rfloor$."
+    },
+    {
+      "q": "Find the remainder when a number consisting of $1111\\dots$ written 100 times is divided by 37.",
+      "o": [
+        "0",
+        "1",
+        "11",
+        "111"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Ek hi digit repeating wali chain dekar exam setter 37, 7, 11, 13, 27 ki divisibility hi test karta hai. Rule of 37 kehta hai ki har 3-digit ka same block perfectly cut jayega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>100 digits hain.<br/>3-3 ke kitne sets banenge? 99 digits tak 33 blocks banenge jo 37 se poori tarah Zero remainder denge.<br/>Bachega sirf $100^{\\text{th}}$ position ka akela digit, jo ki '1' hai.<br/>Answer = 1. Pen nahi uthana tha issme!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Koi bhi digit 'A' agar 6 times aaye (AAAAAA), toh wo 7, 11, 13, 37, 1001 sabse divide hota hai. 37 ke liye 3 ka block sufficient hai."
+    },
+    {
+      "q": "What is the unit digit of $1^5 + 2^5 + 3^5 + \\dots + 20^5$?",
+      "o": [
+        "0",
+        "5",
+        "2",
+        "4"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Cyclicity rules ke mutabiq har $n$-th number ka unit digit uske $n \\pmod 4$ power se define hota hai. Power 5 waale question free marks baatne aate hain.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Cyclicity ka sabse bada astra! Kisi bhi power ko agar 4 se bhag do, toh naya power base ka same unit digit deta hai. Yahan har number ki power 5 hai. $5 \\div 4$ pe remainder 1 bachta hai.<br/>Iska matlab $x^5$ ka unit digit wahi hoga jo $x^1$ ka hoga.<br/>Toh problem simplify ho gayi: $1 + 2 + 3 + \\dots + 20$.<br/>Ye toh first 20 natural numbers ka simple sum hai! Formula lagao: $\\frac{n(n+1)}{2} = \\frac{20 \\times 21}{2} = 210$.<br/>Last digit kya nikal ke aayi? Zero (0)! Dekhte hi thook diya is sawal ko!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Sum of unit digits of powers of $4k+1$ is perfectly symmetrical to the sum of the base numbers themselves. This rule holds purely because of cyclicity of all digits $0-9$ running over a 4 cycle interval.<br/><br/><b>Future Exam Takeaway:</b> Power 5, 9, 13 dekhte hi power 1 me replace karke direct ap arithmetic formula lagao."
+    },
+    {
+      "q": "Let $ab$ (where $a \\ne b$) be a two-digit prime number such that $ba$ is also a prime number. The sum of all such numbers is:",
+      "o": [
+        "418",
+        "428",
+        "408",
+        "398"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Bhai $2$-digit primes gine-chune hote hain. Reversible prime pairs toh aur bhi limited hain, bas dimaag me count karna hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Find pairs of $(ab, ba)$ which both are primes, and $a \\ne b$ (eliminates $11$).<br/>Pairs are: $(13, 31)$, $(17, 71)$, $(37, 73)$, $(79, 97)$.<br/>Total $8$ numbers. Unka sum nikalna hai:<br/>$13+31+17+71+37+73+79+97 = 418$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Baki combination jaise $23$ (rev $32$ is even), $47$ (rev $74$ is even), ya $19$ (rev $91 = 13 \\times 7$) trap hote hain. Hamesha reverse ko factorize karne ki aadat dalo.<br/><br/><b>Future Exam Takeaway:</b><br/>Reversible primes up to $100$ ko 'Emirp primes' bolte hain. Inka set $\\{13, 17, 31, 37, 71, 73, 79, 97\\}$ direct yaad hona chahiye."
+    },
+    {
+      "q": "$18^{2000} + 12^{2000} - 5^{2000} - 1$ is divisible by?",
+      "o": [
+        "221",
+        "237",
+        "299",
+        "323"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Format $a^n + b^n - c^n - d^n$ ka hai. Grouping technique lagegi. Power Even hai, toh $(x^n - y^n)$ humesha $(x+y)$ aur $(x-y)$ dono se divide hota hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Chalo isko 2 parts me club karte hain:<br/>Part 1: $(18^{2000} - 5^{2000})$. Ye divide hoga $18-5 = 13$ se, aur $18+5 = 23$ se.<br/>Part 2: $(12^{2000} - 1^{2000})$. Ye divide hoga $12-1 = 11$ se, aur $12+1 = 13$ se.<br/>Dhyan se dekho dono parts me 13 common factor nikal raha hai. Yani pura expression 13 se divide hoga!<br/>Ab doosri grouping try karte hain:<br/>Part A: $(18^{2000} - 1^{2000})$ divide hoga $18-1=17$ se.<br/>Part B: $(12^{2000} - 5^{2000})$ divide hoga $12-5=7$ se, wait, power even hai, toh check karo: $(12^{2000} - 5^{2000})$ is actually divisible by 17 as well using modulo logic: $12 \\equiv -5 \\pmod{17}$, so $(-5)^{2000} - 5^{2000} = 0$.<br/>So the expression is universally divisible by 13 aur 17 dono!<br/>Result = $13 \\times 17 = 221$.<br/><br/><b>Future Exam Takeaway:</b><br/>Aise algebraic factor questions mein hamesha pairs banakar check karo kaunsa Prime factor dono terms se common nikal raha hai."
+    },
+    {
+      "q": "Which of the following rational numbers are in ascending order?",
+      "o": [
+        "$21/38 &lt; 13/24 &lt; 19/33 &lt; 17/29$",
+        "$13/24 &lt; 21/38 &lt; 19/33 &lt; 17/29$",
+        "$19/33 &lt; 13/24 &lt; 17/29 &lt; 21/38$",
+        "$17/29 &lt; 19/33 &lt; 21/38 &lt; 17/29$"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Fractions ke gaps almost uniform nahi hain, to cross-multiplication lamba padega. Yahan 'Approximation &amp; Range Definition' (Difference Method) se second me order dikhega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Numerator (Num) aur Denominator (Denom) ka difference check kar:<br/>21/38 (diff 17), 13/24 (diff 11), 19/33 (diff 14), 17/29 (diff 12).<br/>Fraction ko $\\frac{\\text{Num}}{\\text{Diff}}$ karke approximate kar le:<br/>21/17 $\\approx 1.23$<br/>13/11 $\\approx 1.18$<br/>19/14 $\\approx 1.35$<br/>17/12 $\\approx 1.41$<br/>Ascending order me lagao: $1.18 &lt; 1.23 &lt; 1.35 &lt; 1.41$.<br/>Matlab $13/24 &lt; 21/38 &lt; 19/33 &lt; 17/29$. Ye hai asli shortcut!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Mathematical logic behind difference method is based on changing the base. $\\frac{N}{D} = \\frac{N}{N + \\text{Diff}} = \\frac{1}{1 + \\frac{\\text{Diff}}{N}}$. Jiska $\\frac{\\text{Diff}}{N}$ ratio chota, wo fraction bada.<br/><br/><b>Future Exam Takeaway:</b> Fractions ko arrange karte time LCM lene wala method hamesha fail hota hai, CPR ya Deviation ka difference trick lagao."
+    },
+    {
+      "q": "When a two-digit number is multiplied by the sum of its digits, the product is 424. When the number obtained by interchanging its digits is multiplied by the sum of its digits, the result is 280. What is the sum of the digits of the given number?",
+      "o": [
+        "7",
+        "8",
+        "9",
+        "11"
+      ],
+      "a": 1,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Equations banakar add karte hi $11(x+y)^2$ ban jayega, numbers (424+280=704) ko 11 se mentally divide karke square root lenge toh sum of digits aa jayega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, in conditions ko mentally jod de:<br/>Sum = $(10x+y+10y+x) \\times (x+y) = 11(x+y) \\times (x+y) = 11(x+y)^2$.<br/>Toh $11(x+y)^2 = 704 \\implies (x+y)^2 = 64 \\implies (x+y) = 8$.<br/>Bina pen uthaye 8 mark kar!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Two digit number $10x+y$ and reverse $10y+x$ ka sum humesha $11(x+y)$ hota hai aur difference $9(x-y)$ hota hai. Ye identity tips pe honi chahiye.<br/><br/><b>Future Exam Takeaway:</b><br/>Number reverse wale sawalo me hamesha Sum aur Difference equations bana ke chize cancel out karna easy rehta hai."
+    },
+    {
+      "q": "What is the sum of $1 \\frac{1}{2} + 4 \\frac{1}{6} + 7 \\frac{1}{12} + 10 \\frac{1}{20} \\dots$ upto $20$ terms?",
+      "o": [
+        "12410/21",
+        "12412/21",
+        "12433/21",
+        "12435/21"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: JSM (Series Splitting &amp; Deviation)</b><br/><br/>Dekh bhai aise karna hai... mixed fractions ki heavy series kabhi direct ek sath nahi kholni.<br/><br/><b>Pen-Free Observation:</b> Integer part ($1, 4, 7\\dots$) alag se AP bana raha hai aur fraction part ($\\frac{1}{2}, \\frac{1}{6}\\dots$) ek Telescoping series hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Integers: $1 + 4 + 7 \\dots 20$ terms tak. Sum = $\\frac{20}{2}[2(1) + 19(3)] = 10 \\times 59 = 590$.<br/>Fractions: $\\frac{1}{1 \\times 2} + \\frac{1}{2 \\times 3} \\dots 20$ terms tak. Sum = $\\frac{n}{n+1} = \\frac{20}{21}$.<br/>Dono jodd de: $590 + \\frac{20}{21} = \\frac{12390 + 20}{21} = \\frac{12410}{21}$.<br/><br/><b>Method 2 (Concept Builder):</b> Mixed series ko split karna best approach hai. Telescoping $\\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}$ me first aur last term bachti hai.<br/><br/><b>Future Exam Takeaway:</b> Mixed fractions ki badi series hamesha Integer + Fraction me tod kar solve karni hai."
+    },
+    {
+      "q": "When $456753$ is divided by a certain number, the successive remainders are $44, 35, 46,$ and $51$ respectively. Find the sum of the digits of the divisor.",
+      "o": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Ye CDS/CGL ka hardcore reverse-engineering division type hai. Long division ko visualize karke equations draw karni padengi.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, step-by-step numbers likh: <br/>Pehla operation: $456 - kD = 44 \\implies kD = 412$.<br/>Next digit laane par $447$ banega. Usme operation: $447 - mD = 35 \\implies mD = 412$.<br/>Next $355$ banega: $355 - nD = 46 \\implies nD = 309$.<br/>Last $463$ banega: $463 - pD = 51 \\implies pD = 412$.<br/>Humein divisor $D$ chahiye jo in sabko divide kare. Yani inka HCF! HCF of $(412, 309)$ is $103$.<br/>Toh Divisor $103$ mil gaya. Sum of digits = $1 + 0 + 3 = 4$. Option A is right.<br/><br/><b>Method 2 (Concept Builder):</b><br/>In a standard long division process, the number formed minus the remainder gives exactly a multiple of the divisor. Taking the HCF of all such multiple-differences yields the precise divisor.<br/><br/><b>Future Exam Takeaway:</b> Successive remainders in long division hamesha Multiples ka difference dete hain. HCF trick ko lock kar lo dimag me."
+    },
+    {
+      "q": "Value of $22.\\overline{4} + 11.5\\overline{67} - 33.5\\overline{9}$ is?",
+      "o": [
+        "$0.\\overline{32}$",
+        "$0.4\\overline{12}$",
+        "$0.4\\overline{21}$",
+        "$0.\\overline{3}$"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Bar Decimals Shift)</b><br/><br/>Dekh bhai, Bar (recurring) decimals ko fraction me break karne se time waste hoga. Direct column wise add karke approximate karo.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Expand the values vertically till 4 decimal places:<br/>$22.4444...$<br/>$+ 11.5676...$<br/>$------------- $<br/>$34.0120...$<br/>Now, subtract the third value ($33.5999...$, which is practically $33.6000$):<br/>$34.0120 - 33.6000 = 0.4120$<br/>Pattern matching: The outcome stabilizes around $0.41212...$ i.e., $0.4\\overline{12}$.<br/><br/><b>Future Exam Takeaway:</b> Recurring decimals ki equation fractions se handle karne ke bajaye, unhe $3-4$ digit tak open kar lo, aur column approach se seedha answer dikh jayega."
+    },
+    {
+      "q": "What is the remainder when $10^{10} + 10^{100} + 10^{1000}$ is divided by 7?",
+      "o": [
+        "1",
+        "3",
+        "5",
+        "6"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Divisibility by 7 cycle (Euler's Totient ya Pattern recognition) se solve hoti hai. 10 aur 7 ka remainder relation nikalo pehle.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>$10 \\div 7$ gives remainder 3.<br/>Toh expression ban gaya: $3^{10} + 3^{100} + 3^{1000} \\pmod{7}$.<br/>Pattern of powers of 3 mod 7 check karo:<br/>$3^1 \\equiv 3$<br/>$3^2 \\equiv 2$<br/>$3^3 \\equiv 27 \\equiv 6 \\equiv -1$<br/>Jab $3^3 \\equiv -1$ mil gaya, toh game over!<br/>Power 10: $3^{10} = (3^3)^3 \\times 3^1 \\equiv (-1)^3 \\times 3 \\equiv -3 \\equiv 4$.<br/>Power 100: $3^{100} = (3^3)^{33} \\times 3^1 \\equiv (-1)^{33} \\times 3 \\equiv -3 \\equiv 4$.<br/>Power 1000: $3^{1000} = (3^3)^{333} \\times 3^1 \\equiv (-1)^{333} \\times 3 \\equiv -3 \\equiv 4$.<br/>Final step: $4 + 4 + 4 = 12$.<br/>$12 \\div 7 \\rightarrow$ Remainder 5.<br/><br/><b>Future Exam Takeaway:</b><br/>Number system me negative remainder technique (jaise -1) calculation ka pura kachra saaf kar deti hai."
+    },
+    {
+      "q": "What is the smallest positive number that must be added to the product of any two consecutive even numbers to make the result a perfect square?",
+      "o": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Value Assumption)</b><br/><br/>Dekh bhai aise karna hai... variables assume mat kar, seedha dummy values laga.<br/><br/><b>Pen-Free Observation:</b> Seedha values assume kar lo. Pehle do even number $2$ aur $4$ man lo. Unka product $= 8$. Isme kya jode ki square bane? $+1$ karega toh $9$ ($3^2$) ban jayega.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Koi aur bada number lelo for safety: $10$ aur $12$. Product $= 120$. Isme kya jode ki perfect square bane? $121$ banane ke liye $+1$ karna hoga. Hamesha answer $1$ aayega.<br/><br/><b>Method 2 (Concept Builder):</b> Algebra se dekho: $x$ aur $(x+2)$ consecutive even numbers hain. Product $x^2 + 2x$ hota hai. Agar hum $+1$ kar dein, toh ye $(x+1)^2$ identity ban jayega.<br/><br/><b>Future Exam Takeaway:</b> Variables $N, N+2$ wale statement sums humesha ek choti dummy value ($2,4$) le kar solve karne chahiye."
+    },
+    {
+      "q": "What is the sum of all $3$ digit positive integers divisible by $11$?",
+      "o": [
+        "44550",
+        "43550",
+        "42550",
+        "45550"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: JSM / AP Average Scaling</b><br/><br/>Dekh bhai, Arithmetic Progression ke sum ko hum average method se jaldi approach karenge.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>First 3-digit number divisible by $11 = 110$. Last number $= 990$.<br/>Number of terms $n = \\frac{\\text{Last} - \\text{First}}{\\text{Common Difference}} + 1 = \\frac{990 - 110}{11} + 1 = \\frac{880}{11} + 1 = 81$.<br/>Sum is basically (Number of terms) $\\times$ (Average of sequence).<br/>Average $= \\frac{110 + 990}{2} = 550$.<br/>Sum $= 81 \\times 550 = 44550$.<br/><br/><b>Future Exam Takeaway:</b> Sum of AP hamesha $n \\times \\text{Middle term (ya average)}$ se speed me nikala karo, $\\frac{n}{2}[2a+(n-1)d]$ baccho wale formula par reliance kam karo."
+    },
+    {
+      "q": "If the number $89x43y$ is exactly divisible by 101, find the possible maximum value of $x+y$.",
+      "o": [
+        "8",
+        "12",
+        "15",
+        "18"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>SSC CGL ka hardcore pattern! 101 ki divisibility humesha right se 2-2 digits ke blocks bana kar alternating sum se nikalte hain, exactly 11 ke divisibility rule jaisa but with blocks of 2!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Number: $89, x4, 3y$.<br/>Right se start karke alternately subtract/add kar:<br/>$3y - x4 + 89$.<br/>Isko proper digits me expand kar le:<br/>$(30 + y) - (10x + 4) + 89 = 115 + y - 10x$.<br/>Ab is equation ko 101 ke barabar hona chahiye.<br/>$115 + y - 10x = 101 \\implies 10x - y = 14$.<br/>$x$ aur $y$ dono single digits (0-9) hain.<br/>Agar $x=2$ rakhun, toh $10(2) - y = 14 \\implies y=6$. Ye perfect match hai.<br/>Aur koi pair fit hi nahi hoga (e.g. $x=3$ dega $y=16$, which is two-digit).<br/>Toh maximum (aur ek-loti) possible value of $x+y = 2 + 6 = 8$.<br/><br/><b>Future Exam Takeaway:</b><br/>Rule of 101 dekhte hi pair making from right side yaad aana chahiye."
+    },
+    {
+      "q": "What is the sum of the digits of the sum of all factors of $100$?",
+      "o": [
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Formula Application)</b><br/><br/>Dekh bhai aise karna hai... chota number hai, direct formula laga aur aage badh.<br/><br/><b>Pen-Free Observation:</b> $100$ ke total factors ka sum direct formulae se jaldi aayega. Uske baad bas digits ko joddna hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> $100 = 2^2 \\times 5^2$.<br/>Sum of factors = $\\left(\\frac{2^3 - 1}{2-1}\\right) \\times \\left(\\frac{5^3 - 1}{5-1}\\right) = (7) \\times (31) = 217$.<br/>Sum of digits of $217 = 2 + 1 + 7 = 10$. Khatam.<br/><br/><b>Method 2 (Concept Builder):</b> $(2^0+2^1+2^2)(5^0+5^1+5^2)$ method se bhi expand kar sakta hai. $100$ ke liye easy rehta hai.<br/><br/><b>Future Exam Takeaway:</b> CGL Mains me direct formula application ke upar ek chota step (like sum of digits) laga kar traps banate hain."
+    }
+  ]
+}

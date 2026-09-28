@@ -1,0 +1,284 @@
+{
+  "quizTitle": "Number-System-Concept-Revision- Set-05",
+  "Cutoff": "37",
+  "quizTime": "25",
+  "totalMarks": "50",
+  "autoShuffle": true,
+  "questions": [
+    {
+      "q": "A 6-digit number $524x8y$ is divisible by $36$. What is the maximum possible value of $(x + y)$?",
+      "o": [
+        "8",
+        "17",
+        "9",
+        "12"
+      ],
+      "a": 1,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Dekh bhai $36$ matlb phirse $4$ and $9$. Aur is baar individual maximums hit karne bol raha hai kyunki aggregate result maxima me chahiye.<br/><br/><b>Method 1 (Ninja Technique):</b> Sum of $(x+y)$ max karna hai toh individual bounds max kar. Last 2 se $y=8$ confirm. Phir digital rule of 9 se limit set kar jisme $x$ check ho max tak.<br/><br/>Mathematically :-<br/><br/>$$ y \\in \\{0, 4, 8\\} \\implies y_{max} = 8 \\text{ (Div by 4)} \\\\ \\text{Digital Sum} = 5+2+4+x+8+8 = 27+x \\\\ (27+x) \\pmod 9 = 0 \\implies x \\in \\{0, 9\\} \\\\ x_{max} = 9 \\\\ x+y = 9+8 = 17 $$<br/><br/><b>Method 2 (Concept Builder):</b> If multiple possibilities arise, take the absolute bounding box. Sub in largest parameters possible.<br/><br/>Mathematically :-<br/><br/>$$ \\text{For } y=8 \\implies x=0 \\text{ or } 9 \\implies (0+8=8, \\text{ or } 9+8=17) \\\\ \\text{For } y=4 \\implies x=4 \\implies (4+4=8) \\\\ \\text{Max is absolutely } 17 $$<br/><br/><b>TCS Trap:</b> C9 test karte time agar base number $27$ nikal aaye toh mostly bacche next parameter ignore karke seedha $x=0$ man lete hain, maximum check zero pe miss ho jata hai"
+    },
+    {
+      "q": "What is the remainder when $36363636$ is divided by $101$?",
+      "o": [
+        "36",
+        "100",
+        "0",
+        "1"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Ek dam free ke marks! $2$-digit number ki repeating sequence hamesha $101$ se judti hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Any number of the form $abab$ is completely divisible by $101$ ($ab \\times 101$).<br/>Yahan $36363636$ extended form hai, jo strictly $36360000 + 3636$ ki sequence se banta hai.<br/>Chunki ye completely multiple hai, Remainder = $0$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Format $xyxy = xy \\times 101$. $abababab$ ka format essentially $ab \\times 1010101$ hai. Yahan pair perfectly $101$ ka multiple banata hai.<br/><br/><b>Future Exam Takeaway:</b><br/>Pattern $xyxy$ is div by $101$. $xyzxyz$ is div by $1001$. Memorize these structural primes."
+    },
+    {
+      "q": "What is the least number must be added to 56992 so that the given number becomes a perfect square?",
+      "o": [
+        "43",
+        "167",
+        "129",
+        "469"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Number 56992 hai, aur humein agla perfect square dhoondhna hai. Base $230^2$ hota hai 52900 aur $240^2$ hota hai 57600. Matlab root around 238-239 hoga.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Approximation game khel bhai! $240^2 = 57600$. <br/>Ek number peeche aao: $239^2 = (240-1)^2 = 57600 - 480 + 1 = 57121$.<br/>Number 56992 se bada agla perfect square 57121 hai. Is tak pahunchne ke liye kitna add karna padega?<br/>$57121 - 56992 = 129$. Option C ud gaya seconds mein!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Standard long division method for square roots se nikalne jayega toh time lagega. Aise numbers mein $(a-b)^2$ ka formula lagakar immediate higher base value nikal liya karo.<br/><br/><b>Future Exam Takeaway:</b> 50 ke multiples (200, 250) ke bases ke aas paas algebra formula lagakar roots estimate karna seekho."
+    },
+    {
+      "q": "Let '$a$', '$b$', '$c$' be three integers which give $3, 4$ and $8$ remainders respectively when divided by $45$. What is the remainder if $3a^{2}+5b+c^{3}$ is divided by $15$?",
+      "o": [
+        "0",
+        "4",
+        "5",
+        "10"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Remainder Substitution)</b><br/><br/>Dekh bhai, Arithmetic Remainder property ka ek hi usool hai - jo operation numbers ke sath bola hai, wahi remainders ke sath kar do!<br/><br/><b>Pen-Free Observation:</b> Purana divisor $45$, naya divisor $15$. $45$ is a multiple of $15$. Toh base safe hai, a, b, c ki jagah unke purane remainders (3, 4, 8) seedhe put kar do.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Expression = $3(3)^2 + 5(4) + (8)^3 = 27 + 20 + 512 = 559$.<br/>Ab $559$ ko $15$ se divide karna hai. $15 \\times 37 = 555$. Remainder directly $4$ aayega.<br/><br/><b>Future Exam Takeaway:</b> Check karo ki kya naya divisor purane ka factor hai? Agar hai, toh without thinking, initial remainders ko equation me daal kar solve kar do."
+    },
+    {
+      "q": "If the 9-digit number $7x79251y8$ is divisible by $36$, what is the value of $(10x^2-3y^2)$ for the largest possible value of $y$?",
+      "o": [
+        "490",
+        "289",
+        "192",
+        "298"
+      ],
+      "a": 3,
+      "s": "<b>Core Conceptual Tool:</b> Divisibility &amp; C9.<br/><br/><b>Pen-Free Observation:</b> Divisible by $36$ gives you $4$ and $9$. Keyword \"largest possible value of $y$\" bolke options restrict kar diye hain. Reverse top down scan lagana hoga.<br/><br/><b>Method 1 (Ninja Technique):</b> Last two digits $y8$ divisibility of 4 test me daal. Highest value 8 aayega. Uske baad bache digits ko digital sum rule 9 se balance karke $x$ nikal le.<br/><br/>Mathematically :-<br/><br/>$$ y8 \\pmod 4 = 0 \\implies y \\in \\{0, 2, 4, 6, 8\\} \\\\ y_{max} = 8 \\text{ (checks out as } 88 \\text{ is div by 4)} \\\\ \\text{Digital Sum: } 7+x+7+9+2+5+1+8+8 = 47+x \\\\ 47+x \\pmod 9 = 0 \\implies x=7 \\text{ (since } 54 \\text{ is mul)} \\\\ 10(7^2) - 3(8^2) = 490 - 192 = 298 $$<br/><br/><b>Method 2 (Concept Builder):</b> Always resolve the variable at the unit/tens end first, then resolve the summation variable using C9 restriction.<br/><br/>Mathematically :-<br/><br/>$$ y=8 \\implies N = 7x7925188 \\\\ \\text{Rule 9 requires } (47+x) = 9k \\implies x=7 \\\\ \\text{Ans: } 10(49) - 3(64) = 298 $$<br/><br/><b>TCS Trap:</b> Jaldbazi me largest nahi pada to $y=0$ substitute kar loge pehle condition me. Calculation badhegi aur answer wrong ho jayega.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Variables set karte time \"Largest\" ya \"Smallest\" wale conditions hamesha scan process uper ya niche se initiate karvate hain."
+    },
+    {
+      "q": "Find the number of ways in which 1200 can be resolved as a product of two factors.",
+      "o": [
+        "12",
+        "15",
+        "14",
+        "30"
+      ],
+      "a": 1,
+      "s": "<b>Answer is 15.</b><br/><br/><b>Pen-Free Observation:</b> Product of two factors nikalna ho toh bas Total Factors nikal kar half (divide by 2) kar do (if it's not a perfect square).<br/><br/><b>Method 1 (Exam Approach):</b><br/>Prime factorization of 1200: $12 \\times 100 = (2^2 \\times 3) \\times (2^2 \\times 5^2) = 2^4 \\times 3^1 \\times 5^2$.<br/>Total number of factors = $(4+1)(1+1)(2+1) = 5 \\times 2 \\times 3 = 30$.<br/>Number of ways to resolve as product of 2 factors = $30 / 2 = 15$ pairs. Straight hit, no calculation!"
+    },
+    {
+      "q": "Find the LCM of $1/6, 5/27, 4/15, 8/3$?",
+      "o": [
+        "40/3",
+        "40/5",
+        "5/28",
+        "3/28"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Fractions ka LCM maanga hai. Formula clear hona chahiye: Numerator ka LCM, Denominator ka HCF.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai, upar ke numbers dekh: $1, 5, 4, 8$. $4$ already $8$ ka part hai, usko hata. $8$ aur $5$ co-prime hain, toh unka LCM seedha multiply kar de $= 40$. Numerator set ho gaya.<br/>Neeche ke numbers dekh: $6, 27, 15, 3$. In sab me sabse bada common factor (HCF) kya hai? $3$.<br/>Dono ko mila de: $\\frac{40}{3}$. Fraction ka question $5$ sec se zyada time nahi deserve karta.<br/><br/><b>Method 2 (Concept Builder):</b><br/>By definition, LCM of fractions must be a multiple of every numerator while being divided exactly by every denominator's maximum commonality. $\\text{LCM}(a/b) = \\text{LCM(numerators)} / \\text{HCF(denominators)}$.<br/><br/><b>Future Exam Takeaway:</b> Hamesha ensure karna fractions unke simplified form me hon LCM lene se pehle (yahan sab already simple the)."
+    },
+    {
+      "q": "How many numbers are there from $500$ to $550$ (including both) which are neither divisible by $3$ nor by $11$?",
+      "o": [
+        "18",
+        "11",
+        "28",
+        "30"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b> 'Neither/Nor' wale Venn Diagram set-theory type ke conditions hai. Total items me se Union minus karna hoga.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, sequence break karo:<br/>Total numbers $500$ to $550$ = $550 - 500 + 1 = 51$ numbers.<br/>Divisible by 3: Sequence starts at $501$, ends at $549$. AP ke elements $= \\frac{549 - 501}{3} + 1 = 17$ numbers.<br/>Divisible by 11: Starts at $506$, ends at $550$. Elements $= \\frac{550 - 506}{11} + 1 = 5$ numbers.<br/>Divisible by Both (LCM 33): Range me pehla $33$ ka multiple $528$ hai. Range me bas yahi $1$ number aayega.<br/>Formula laga Union ka $n(A \\cup B) = 17 + 5 - 1 = 21$ (Ye divisible hain).<br/>Humein Neither chahiye: $51 - 21 = 30$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Basic counting principle combining arithmetic progressions with Set Theory inclusion-exclusion: $N(\\text{Total}) - [N(3) + N(11) - N(33)]$.<br/><br/><b>Future Exam Takeaway:</b> Jab boundary 'including both' ho, toh initial count me $+1$ add karna mat bhoolna ($550-500+1$). Varna poori mehnat bekaar jayegi."
+    },
+    {
+      "q": "Find the sum of all the factors and the sum of all the even factors of the number 240 respectively.",
+      "o": [
+        "744 and 720",
+        "744 and 700",
+        "720 and 700",
+        "700 and 680"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Even factors ka sum tab aayega jab hum 2 ki lowest zero power ko ignore kar denge. Total factors sum se odd factors minus karke cross-verify bhi ho sakta hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Prime factorization maar: $240 = 2^4 \\times 3^1 \\times 5^1$.<br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">List I (Type)</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">List II (Sum Calculation)</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>A.</b> All Factors</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>1.</b> $(1+2+4+8+16)(1+3)(1+5) = 31 \\times 4 \\times 6 = 744$</td></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>B.</b> Even Factors</td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>2.</b> Base 2 ka $2^0$ (1) hata do: $(2+4+8+16)(1+3)(1+5) = 30 \\times 4 \\times 6 = 720$</td></tr></table><br/>Seedha 744 aur 720 answer match hua!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Even factors banne ke liye kam se kam ek $2^1$ zaroori hai. Isiliye hum base 2 ki bracket me $2^0$ nahi lete. JSM se samjho: Total = Odd + Even.<br/><br/><b>Future Exam Takeaway:</b> Even / Odd factors ke sum mein hamesha bracket series ka rule dhyaan me rakho, multiplication jaldi karo."
+    },
+    {
+      "q": "A natural number when successively divided by $2, 3, 5, 7,$ and $9$ leaves remainders $1, 2, 3, 4,$ and $5$ respectively. What is the remainder when the same number is directly divided by $7$?",
+      "o": [
+        "1",
+        "3",
+        "5",
+        "0"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Successive division equation me beech ka modulus find karna hai toh puri chain banane ki zaroorat nahi, wahi se Modulo property laga lenge.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, successive division ka standard number chain banao: $N = (((((k \\times 9 + 5) \\times 7 + 4) \\times 5 + 3) \\times 3 + 2) \\times 2 + 1$.<br/>Humein iska Remainder with 7 chahiye. Let internal block $X = (9k+5)$. Humare paas hai $(7X + 4)$. Aage multiply karo aur directly Modulo 7 lo:<br/>$((7X+4) \\times 5 + 3) = 35X + 23$. Mod 7 karo: $23 \\pmod{7} = 2$.<br/>Agla block: $2 \\times 3 + 2 = 8$. Mod 7 karo: $8 \\pmod{7} = 1$.<br/>Last block: $1 \\times 2 + 1 = 3$. Mod 7 karo: $3 \\pmod{7} = 3$.<br/>Seedha remainder 3 aa gaya bina poori algebraic gatha likhe!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Expand the constants manually: $N = 210X + 143$. If you divide $143$ by $7$, the quotient is $20$ and remainder is $3$. The $210X$ part becomes $0$ mod $7$.<br/><br/><b>Future Exam Takeaway:</b> Successive division ke intermediate modulo nikalne ke liye hamesha step-by-step moduli update karo, pure constants evaluate karna is a trap!"
+    },
+    {
+      "q": "What is the least common multiple (LCM) of $x^2-8x+15$ and $x^2-5x+6$?",
+      "o": [
+        "$(x-6)^2(x+1)(x-3)$",
+        "$(x+6)(x+1)(x-3)$",
+        "$(x-6)(x+1)(x-3)$",
+        "$(x-2)(x-3)(x-5)$"
+      ],
+      "a": 3,
+      "s": "<b>Core Tool Triggered: Unitary Scaling</b><br/><br/>Dekh bhai... Polynomials ka LCM unke roots mein chupa hota hai. Isko normal numbers ki prime factorization ki tarah treat kar.<br/><br/><b>Pen-Free Observation:</b> Dono quadratics ke basic factors dekhne hain jo visually clear hain.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Dono quadratics ko factorize kar.<br/>Pehla: $x^2-8x+15 = (x-3)(x-5)$.<br/>Doosra: $x^2-5x+6 = (x-2)(x-3)$.<br/>LCM lene ke liye saare unique factors likh lo, jo common ho use ek baar likho.<br/>Toh highest superset ban gaya $(x-2)(x-3)(x-5)$. Simple school level algebra.<br/><br/><b>Future Exam Takeaway:</b> Treat polynomials like prime factorization of numbers. LCM combines all distinct roots to their highest power."
+    },
+    {
+      "q": "What is the sum of the squares of the first 20 natural numbers?",
+      "o": [
+        "2870",
+        "2860",
+        "2770",
+        "2970"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Formula based hai, par calculations puri nahi karni. Unit digit aur last two digits se options eliminate karke apna time bachana hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Dekh bhai, sum of squares ka formula: $\\frac{n(n+1)(2n+1)}{6}$.<br/>$n = 20$ rakh: $\\frac{20 \\times 21 \\times 41}{6} = 10 \\times 7 \\times 41 = 70 \\times 41$.<br/>Calculation hack lagao: Aakhiri me 0 aayega, aur uske pehle $7 \\times 1 = 7$ aayega. Last 2 digits 70 sirf pehle option (2870) me hain.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Aise sums ke formula tips pe hone chahiye. Sum of natural numbers $\\frac{n(n+1)}{2}$, aur cubes ke liye iska square.<br/><br/><b>Future Exam Takeaway:</b><br/>Lamba multiplication kbhi solve mat karo, aakhiri 2 digits (tens place) hack se answer tak pahocha karo!"
+    },
+    {
+      "q": "Find the number of factors of $6600$ which are greater than $10$.",
+      "o": [
+        "40",
+        "38",
+        "36",
+        "42"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Total factors nikal kar usme se $1-10$ range wale chhote factors subtract karne hain. No direct formula, complementary counting chalegi.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai, pehle prime factorization udhad de: $6600 = 66 \\times 100 = (2 \\times 3 \\times 11) \\times (2^2 \\times 5^2) = 2^3 \\times 3^1 \\times 5^2 \\times 11^1$.<br/>Total factors $= (3+1)(1+1)(2+1)(1+1) = 4 \\times 2 \\times 3 \\times 2 = 48$.<br/>Ab $10$ tak ke numbers me check kar kon kon $6600$ ko kaat sakta hai: $1, 2, 3, 4, 5, 6, 8, 10$. (Ye total $8$ numbers hue). $7$ aur $9$ nahi kaat te.<br/>Bache hue factors = $48 - 8 = 40$. Option A right hai.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Whenever asked for factors satisfying a \"greater than\" or \"less than\" bound that is relatively small, always use Total Factors $-$ Undesired Factors. It saves you from manually listing large combinations.<br/><br/><b>Future Exam Takeaway:</b> Prime factorization me silly mistake mat karna, powers add karte waqt focus maintain rakhna!"
+    },
+    {
+      "q": "The sum of a rational number and an irrational number is always:",
+      "o": [
+        "Rational",
+        "Irrational",
+        "Can be either",
+        "Integer"
+      ],
+      "a": 1,
+      "s": "<b>Answer is Irrational.</b><br/><br/><b>Pen-Free Observation:</b> CDS ka pet theoretical statement. Dekh bhai, ek pure paani ka glass (Rational) me ek boond keechad (Irrational) dalega toh result keechad (Irrational) hi rahega.<br/><br/><b>Concept Definition:</b> By mathematical axioms, combination (sum/difference) of any rational ($p/q$) and irrational (non-terminating, non-repeating) strictly and invariably resolves to an Irrational number. Option B mark kar aur aage badh!"
+    },
+    {
+      "q": "Express $9.43\\overline{87}$ in p/q form.",
+      "o": [
+        "$\\frac{93444}{9900}$",
+        "$\\frac{93443}{9900}$",
+        "$\\frac{93445}{9900}$",
+        "$\\frac{93442}{9900}$"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Fixed Identities.<br/><br/><b>Pen-Free Observation:</b> Dekh bhai, options dekh kar base $9900$ confirm hai kyuki 2 digits pe bar hai aur 2 digits bin-bar point ke baad hain. Seedha subtraction laga.<br/><br/><b>Method 1 (Ninja Technique):</b> Pura number bina point ke likh aur usme se wo hissa ghata de jis par bar nahi hai. Khel khatam!<br/><br/>Mathematically :-<br/><br/>$$ \\text{Numerator} = 94387 - 943 = 93444 \\\\ \\text{Fraction} = \\frac{93444}{9900} $$<br/><br/><b>Method 2 (Concept Builder):</b> Standard textbook approach me $x$ ki equation banake subtract kiya jata hai decimals ko shift karne ke liye.<br/><br/>Mathematically :-<br/><br/>$$ x = 9.438787\\dots \\\\ 10000x = 94387.8787\\dots \\\\ 100x = 943.8787\\dots \\\\ 9900x = 93444 \\implies x = \\frac{93444}{9900} $$<br/><br/><b>TCS Trap:</b> Bacche non-repeating part $9$ subtract karna bhul jate hain jo decimal ke pehle hota hai.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Decimal trick: $ab.cd\\overline{ef} = \\frac{abcdef - abcd}{9900}$ seedha implement maar."
+    },
+    {
+      "q": "Calculate the sum: $1 + 3 + 5 + 7 + \\dots + 21 = ?$",
+      "o": [
+        "100",
+        "121",
+        "144",
+        "169"
+      ],
+      "a": 1,
+      "s": "<b>Core Tool Triggered: JSM / AP Average Shift</b><br/><br/>Dekh bhai, Arithmetic Progression lagaoge toh time jayega, seedha odd numbers ka static rule lagao.<br/><br/><b>Pen-Free Observation:</b> Sequence starting se $1, 3, 5...$ odd numbers ka hai. First $n$ odd numbers ka sum humesha $n^2$ hota hai.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Last term $21$ hai. $n$-th odd term ka formula hota hai $(2n - 1)$.<br/>$(2n - 1) = 21 \\implies 2n = 22 \\implies n = 11$.<br/>Sum $= n^2 = 11^2 = 121$. Khatam.<br/><br/><b>Future Exam Takeaway:</b> Odd number sums par standard AP methods waste of time hain. Seedha $n$ nikalo aur $n^2$ thoko."
+    },
+    {
+      "q": "What is the unit digit of $[7^{(4n+3)}] \\times 6^n$, where $n$ is a positive integer?",
+      "o": [
+        "8",
+        "7",
+        "6",
+        "1"
+      ],
+      "a": 0,
+      "s": "<b>Core Conceptual Tool:</b> Value Putting &amp; Symmetry.<br/><br/><b>Pen-Free Observation:</b> Variables power me hain. Kisi variable value formula limit se answer change nahi hone wala toh seedha apna manchaha independent constant rakh de.<br/><br/><b>Method 1 (Ninja Technique):</b> Variable dekh ke confuse mat hona. Seedha $n=1$ dal equation me aur constants nikal. 6 ki koi power wese bhi 6 rehti hai.<br/><br/>Mathematically :-<br/><br/>$$ \\text{Put } n = 1 \\\\ 7^{4(1)+3} \\times 6^1 = 7^7 \\times 6 \\\\ 7^7 \\equiv 7^3 = 343 \\implies \\text{Unit is } 3 \\\\ 3 \\times 6 = 18 \\implies \\text{Result ends in } 8 $$<br/><br/><b>Method 2 (Concept Builder):</b> Core cyclic repetition rule follow karke formula break kiya ja sakta hai.<br/><br/>Mathematically :-<br/><br/>$$ 7^{4n+3} = (7^4)^n \\times 7^3 \\\\ 1^n \\times 343 \\implies \\text{Unit 3} \\\\ 6^n \\equiv 6 \\\\ \\text{Final} = 3 \\times 6 = 18 \\implies 8 $$<br/><br/><b>TCS Trap:</b> Algebraic variable powers dekh kar hi bacche approach drop kar dete hain assumption nikaalne wali galti ke darr se.<br/><br/><b>Exam Takeaway:</b><br/><br/>&gt; Algebraic variables in exponent expressions sirf dikhave ke hote hain, put simplest basic values like $1$ or $2$ to crack unit digit instantly."
+    },
+    {
+      "q": "What is the remainder when 14! is divided by 17?",
+      "o": [
+        "1",
+        "8",
+        "16",
+        "0"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 8.</b><br/><br/><b>Pen-Free Observation:</b> Factorial aur Prime Divisor ka combination dekhte hi Wilson's Theorem yaad aani chahiye. 5 second ka sawaal hai!<br/><br/><table style=\"width:100%;border-collapse:collapse;font-size:0.95rem\"><tr style=\"border-bottom:1px solid var(--brd)\"><th style=\"text-align:left;padding:4px;color:var(--p2)\">Concept Builder</th><th style=\"text-align:left;padding:4px;color:var(--p2)\">Wilson's Theorem</th></tr><tr><td style=\"padding:6px;border-bottom:1px solid var(--brd)\"><b>Rule</b></td><td style=\"padding:6px;border-bottom:1px solid var(--brd)\">$(P-1)! \\equiv -1 \\pmod{P}$</td></tr></table><br/><b>Method 1 (Ninja Technique):</b><br/>Using Wilson's, $16! \\equiv -1 \\pmod{17}$.<br/>Expand kar backward: $16 \\times 15 \\times 14! \\equiv -1 \\pmod{17}$.<br/>Mod 17 mein, $16 \\equiv -1$ aur $15 \\equiv -2$.<br/>So, $(-1) \\times (-2) \\times 14! \\equiv -1 \\implies 2 \\times 14! \\equiv -1$.<br/>Ab $-1$ ko $16$ (since $17-1=16$) likh sakte hain.<br/>$2 \\times 14! = 16 \\implies 14! \\equiv 8 \\pmod{17}$."
+    },
+    {
+      "q": "Calculate the unit digit of $123^{123!} + 124^{124!} + 125^{125!} + 126^{126!}$.",
+      "o": [
+        "0",
+        "4",
+        "6",
+        "8"
+      ],
+      "a": 3,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Power factorial me hai aur $4!$ (24) se badi hai. Iska matlab saari powers 4 ka perfectly multiple hongi. Seedha last digits ka cyclicity 4 check karna hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai mere, sabka power multiple of 4 hai.<br/>$123^{\\dots} \\implies 3^4 \\implies 1$<br/>$124^{\\dots} \\implies 4^{\\text{even}} \\implies 6$<br/>$125^{\\dots} \\implies 5$ (Hamesha 5 rehta hai)<br/>$126^{\\dots} \\implies 6$ (Hamesha 6 rehta hai)<br/>In sab ki unit digits ko jod de: $1+6+5+6 = 18$. Aakhiri digit 8 bacha.<br/><br/><b>Method 2 (Concept Builder):</b><br/>Unit digit property ke hisaab se, kisi bhi base number N ki power cycle har 4 power ke baad repeat hoti hai. Kyunki $123!$ etc me 4 maujood hai, vo completely divisible by 4 hain, so remainder power is taken as 4.<br/><br/><b>Future Exam Takeaway:</b><br/>Factorial $\\ge 4!$ power me ho toh aankh band karke power 4 assume kar liya kar!"
+    },
+    {
+      "q": "What is the unit digit of $1237^{15^{16^{17}}}$?",
+      "o": [
+        "1",
+        "3",
+        "7",
+        "9"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Base ka aakhiri digit $7$ hai jiski cyclicity $4$ ki hoti hai. Nested powers dekhar ghabrana nahi, sirf power ki parity (Even/Odd mod 4) track karni hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai, unit digit nikani hai toh $1237$ me sirf $7$ pe dhyan de. Ab $7$ ki power $4$ me ghoomti hai.<br/>Power dekho: $15^{\\text{Kuch Bhi}}$. Hamein bas $15 \\pmod{4}$ nikalna hai.<br/>$15$ ko $4$ se bhag doge toh remainder $-1$ (ya $3$) aata hai.<br/>Upar power $16^{17}$ ek EVEN number hai chahe kuch bhi ho.<br/>Toh $(-1)^{\\text{Even}} = +1$. Yani actual effective power bas $1$ reh gayi.<br/>Base $7$ pe power $1$ chadha do: $7^1 = 7$. Ye tricks Aman Sir jaisi observation mangti hain bhai!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Unit digits rely entirely on cyclicity. By finding the modulus of the exponent string w.r.t to the base's cycle length, you reduce infinite-looking exponents to a single fundamental digit.<br/><br/><b>Future Exam Takeaway:</b> Power ke upar power ladder wale problems hamesha Modulo Negative remainders aur Even/Odd parity pe khatam ho jate hain. Base level up!"
+    },
+    {
+      "q": "Find the remainder when $2^{76}$ is divided by $96$.",
+      "o": [
+        "16",
+        "32",
+        "64",
+        "48"
+      ],
+      "a": 2,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Base Cancellation)</b><br/><br/>Dekh bhai, jab base aur divisor coprime na ho, toh fraction ko simplify karna zaruri hota hai!<br/><br/><b>Pen-Free Observation:</b> Divisor $96 = 2^5 \\times 3$. Upar $2$ ki power hai. $2^5$ yaani $32$ seedha cancel ho jayega.<br/><br/><b>Method 1 (Ninja Technique):</b><br/>Expression: $\\frac{2^{76}}{2^5 \\times 3}$. Upar niche $2^5$ se cut kar do. Bacha $\\frac{2^{71}}{3}$.<br/>$2 \\div 3$ ka remainder $-1$ hota hai. $(-1)^{71} = -1 \\implies$ Positive remainder = $3 - 1 = 2$.<br/><b>Crucial Step:</b> Jisse divide (cancel) kiya tha, end me usse wapas multiply karna padega! $2 \\times 2^5 = 64$.<br/><br/><b>Future Exam Takeaway:</b> Power based remainder me cancel karne ke baad wapas multiply karna mat bhulna, varna sidha negative marking."
+    },
+    {
+      "q": "Find the last two digits of $19^{19^{19}}$.",
+      "o": [
+        "39",
+        "59",
+        "79",
+        "99"
+      ],
+      "a": 2,
+      "s": "<b>The 'Pen-Free' Observation First:</b><br/>Base ends in $9$. Aakhiri do digits nikalne hain, matlab $\\pmod{100}$ karna hai. Yahan cyclicity of tens place lagani hogi.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>$19^2 = 361 \\equiv 61 \\pmod{100}$. Cyclicity of bases ending in $9$ modulo $100$ is usually $10$.<br/>Calculate effective power $19^{19} \\pmod{10}$: $19 \\equiv -1 \\pmod{10} \\implies (-1)^{19} = -1 \\equiv 9 \\pmod{10}$.<br/>So we need last two digits of $19^9$.<br/>$19^9 = 19 \\times (19^2)^4 = 19 \\times (61)^4$.<br/>Shortcut for $61^4$: unit is $1$, tens is $6 \\times 4 = 24 \\implies 4$. Last two = $41$.<br/>$19 \\times 41 = 779 \\implies 79$.<br/><br/><b>Method 2 (Concept Builder):</b><br/>For any number ending in $1$, $(x1)^y$, the last two digits are $(\\text{unit digit of } x \\times y)1$. Isliye $61^4 \\implies (6\\times4)1 = 41$ aaya.<br/><br/><b>Future Exam Takeaway:</b><br/>Whenever asked for last two digits of numbers ending in $3, 7,$ or $9$, always raise them to a power that ends in $1$ (like $19^2=361$) and then apply the $x1$ binomial shortcut."
+    },
+    {
+      "q": "The difference between the cubes of two given natural numbers is 6272, while the positive difference between the two given numbers is 8. What is the sum of the cubes of the two given numbers?",
+      "o": [
+        "9728",
+        "9684",
+        "8000",
+        "9600"
+      ],
+      "a": 0,
+      "s": "<b>Answer is 9728.</b><br/><br/><b>Pen-Free Observation:</b> SSC pre ka pet question hai. Formulas ka direct application. $(a-b)^3$ waali identity dimaag mein aani chahiye.<br/><br/><b>Method 1 (Concept Builder):</b><br/>Given: $a^3 - b^3 = 6272$ and $a - b = 8$.<br/>Formula: $a^3 - b^3 = (a-b)[(a-b)^2 + 3ab]$<br/>Substitute kar: $6272 = 8 [64 + 3ab]$<br/>$\\implies 784 = 64 + 3ab \\implies 3ab = 720 \\implies ab = 240$.<br/>Numbers jinka difference 8 ho aur product 240, woh mentally socho: 20 aur 12.<br/>Sum of cubes: $20^3 + 12^3 = 8000 + 1728 = 9728$."
+    },
+    {
+      "q": "$0.\\overline{47} + 0.5\\overline{03} - 0.\\overline{39} \\times 0.\\overline{9} = ?$",
+      "o": [
+        "$0.5\\overline{83}$",
+        "$0.6\\overline{15}$",
+        "$0.6\\overline{25}$",
+        "$0.5\\overline{78}$"
+      ],
+      "a": 0,
+      "s": "<b>Core Tool Triggered: Unitary Scaling (Fraction Base Scaling)</b><br/><br/>Dekh bhai aise karna hai... ek magical property use karke sawaal todna hai.<br/><br/><b>Pen-Free Observation:</b> Sabse badi trick ye hai ki $0.\\overline{9}$ hamesha exact $1$ ke barabar hota hai! Equation ko complex banane ke liye use dala gaya hai.<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b> Equation ko decode kar: $\\frac{47}{99} + \\frac{503-5}{990} - \\frac{39}{99} \\times 1$.<br/>Pehle $\\frac{47}{99}$ aur $\\frac{39}{99}$ ko handle kar: $\\frac{47-39}{99} = \\frac{8}{99} = \\frac{80}{990}$.<br/>Ab isko second fraction me jodd de: $\\frac{80}{990} + \\frac{498}{990} = \\frac{578}{990}$.<br/>Wapas bar format me convert karne ke liye denominator me $990$ hai. Option A check kar: $0.5\\overline{83} = \\frac{583-5}{990} = \\frac{578}{990}$. Matched!<br/><br/><b>Method 2 (Concept Builder):</b> Bar ko fraction me badalne ka rule: Puri sankhya minus bina bar wali sankhya, divided by jitne bar hain utne $9$ aur jitne khali utne $0$.<br/><br/><b>Future Exam Takeaway:</b> $0.\\overline{9} = 1$ is property pe direct MCQ banta hai."
+    },
+    {
+      "q": "The sum of three prime numbers is $100$. If one of them exceeds another by $36$, then one of the numbers is:",
+      "o": [
+        "67",
+        "41",
+        "43",
+        "53"
+      ],
+      "a": 0,
+      "s": "<b>The 'Pen-Free' Observation First:</b> Teen prime numbers ka sum ek Even number ($100$) hai. Ye tabhi possible hai jab unn teeno me se ek Even Prime ho!<br/><br/><b>Method 1 (Ninja Technique / Exam Approach):</b><br/>Bhai, Even prime sirf ek hi hota hai aur wo hai $2$. Toh ek number pakka $2$ ho gaya.<br/>Ab baaki do primes ($p$ aur $q$) ka sum kitna bacha? $100 - 2 = 98$.<br/>Question ne bola hai ek prime doosre se $36$ bada hai: $p - q = 36$.<br/>Dono add kar do: $2p = 134 \\implies p = 67$.<br/>Aur $q = 98 - 67 = 31$.<br/>Hamare teen primes hain $2, 31, 67$. Options mein $67$ diya hai, mark maar!<br/><br/><b>Method 2 (Concept Builder):</b><br/>Odd + Odd + Odd = Odd. But sum is Even (100). Therefore, pattern must be Even + Odd + Odd. By fixing the unique even prime (2), it converts to a basic linear system.<br/><br/><b>Future Exam Takeaway:</b> \"Sum of three primes is even\" is a classic SSC Trap. Always fix $2$ as one of the primes instantly."
+    }
+  ]
+}
