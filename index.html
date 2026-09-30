@@ -321,6 +321,46 @@
   body[data-theme="dark"] .mini-chip.cur { outline: 3px solid #eab308 !important; }
   body[data-theme="dark"] .btn-modal{ background:rgba(255,255,255,.1); color:#fff;}
 
+
+  /* =========================================================
+     AI MISTAKE TRACKER + WEEKLY COACH (PREMIUM)
+     ========================================================= */
+  .ai-coach-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:18px;padding:18px;margin:20px 0;box-shadow:0 10px 28px rgba(0,0,0,.08);position:relative;overflow:hidden}
+  .ai-coach-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent-purple),#d946ef,var(--accent-blue));}
+  .ai-coach-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+  .ai-coach-title{font-weight:900;font-size:1.05rem;text-transform:uppercase;letter-spacing:.3px}
+  .ai-coach-sub{font-size:.75rem;color:var(--text-secondary);margin-top:4px;line-height:1.45}
+  .ai-btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .ai-action-btn{border:none;border-radius:10px;padding:10px 13px;font-weight:900;font-size:.78rem;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+  .ai-action-btn.primary{background:linear-gradient(90deg,var(--accent-purple),#d946ef);color:#fff;box-shadow:0 5px 14px rgba(139,92,246,.25)}
+  .ai-action-btn.secondary{background:var(--bg-nav);color:var(--text-primary);border:1px solid var(--border-color)}
+  .ai-action-btn.green{background:linear-gradient(90deg,#16a34a,#22c55e);color:#fff}
+  .ai-filter-box{margin-top:14px;background:rgba(127,127,127,.06);border:1px solid var(--border-color);border-radius:14px;padding:12px}
+  .ai-filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .ai-select,.ai-input,.ai-textarea{width:100%;background:var(--bg-nav);color:var(--text-primary);border:1px solid var(--border-color);border-radius:9px;padding:9px 10px;outline:none;font-size:.82rem}
+  .ai-textarea{resize:vertical;min-height:85px;line-height:1.45}
+  .ai-check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:10px}
+  .ai-check{display:flex;align-items:center;gap:7px;background:var(--bg-nav);border:1px solid var(--border-color);border-radius:9px;padding:8px;font-size:.72rem;font-weight:800;cursor:pointer}
+  .ai-check input{accent-color:var(--accent-purple)}
+  .ai-log-list{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+  .ai-log-item{background:var(--bg-nav);border:1px solid var(--border-color);border-radius:12px;padding:12px}
+  .ai-log-meta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.68rem;color:var(--text-secondary);margin-bottom:6px}
+  .ai-pill{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font-size:.65rem;font-weight:900;background:rgba(139,92,246,.12);color:var(--accent-purple);border:1px solid rgba(139,92,246,.22)}
+  .ai-log-q{font-size:.84rem;font-weight:700;line-height:1.45}
+  .ai-log-remark{font-size:.72rem;color:var(--text-secondary);margin-top:6px;line-height:1.45}
+  .ai-report-box{margin-top:14px;border:1px solid rgba(139,92,246,.28);background:linear-gradient(145deg,rgba(139,92,246,.06),rgba(59,130,246,.04));border-radius:14px;padding:14px;display:none}
+  .ai-report-box.show{display:block}
+  .ai-report-summary{font-size:.82rem;line-height:1.6;color:var(--text-primary)}
+  .ai-report-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+  .ai-mini-stat{background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;padding:10px}
+  .ai-mini-stat b{display:block;font-size:1rem}.ai-mini-stat span{font-size:.65rem;color:var(--text-secondary)}
+  .ai-report-section{margin-top:12px}.ai-report-section h4{font-size:.78rem;text-transform:uppercase;margin-bottom:6px;color:var(--accent-purple)}
+  .ai-report-list{margin:0;padding-left:18px;font-size:.76rem;line-height:1.55}
+  .ai-loader{display:none;text-align:center;padding:12px;color:var(--text-secondary);font-size:.78rem}.ai-loader.show{display:block}
+  .ai-word-counter{font-size:.65rem;color:var(--text-secondary);text-align:right;margin-top:4px}
+  .ai-danger-note{font-size:.68rem;color:var(--accent-red);margin-top:7px;line-height:1.4}
+  @media(max-width:560px){.ai-filter-grid{grid-template-columns:1fr}.ai-check-grid{grid-template-columns:1fr 1fr}.ai-report-grid{grid-template-columns:1fr 1fr}.ai-action-btn{flex:1;justify-content:center;min-width:120px}}
+
   /* ====== BOTTOM NAV ====== */
   .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-nav); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); z-index: 100; }
   .nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 0.7rem; color: var(--text-secondary); transition: 0.2s; }
@@ -731,6 +771,45 @@ body[data-theme="light"] .glass-card {
       <h3 class="section-title" style="margin-top: 24px;">Weak Topics <span style="font-size:0.7rem; color:var(--accent-red)">Auto-Detected</span></h3>
       <div class="weak-topics-list" id="weak-topics-container"></div>
 
+
+      <!-- AI WEEKLY COACH -->
+      <section class="ai-coach-card" id="ai-coach-card">
+        <div class="ai-coach-head">
+          <div>
+            <div class="ai-coach-title"><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--accent-purple)"></i> AI Weekly Performance Coach</div>
+            <div class="ai-coach-sub">Mistake logs ko 6 root-cause buckets mein track karo, phir Gemini se weekly improvement plan generate karo.</div>
+          </div>
+          <span class="ai-pill" id="ai-week-label">This Week</span>
+        </div>
+        <div class="ai-report-grid" style="margin-top:12px;">
+          <div class="ai-mini-stat"><b id="ai-log-count">0</b><span>Logged Mistakes</span></div>
+          <div class="ai-mini-stat"><b id="ai-week-accuracy">--</b><span>Week Accuracy</span></div>
+        </div>
+        <div class="ai-btn-row">
+          <button class="ai-action-btn primary" onclick="openMistakeLogger()"><i class="fa-solid fa-plus"></i> Log Mistake</button>
+          <button class="ai-action-btn green" onclick="generateWeeklyAIAnalytics()"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate Weekly AI</button>
+          <button class="ai-action-btn secondary" onclick="generateAllTimeAIAnalytics()"><i class="fa-solid fa-chart-line"></i> All-Time AI</button>
+        </div>
+        <div class="ai-filter-box">
+          <div style="font-size:.72rem;font-weight:900;text-transform:uppercase;margin-bottom:7px;">Mistake Filters</div>
+          <div class="ai-filter-grid">
+            <select id="mistake-subject-filter" class="ai-select" onchange="renderMistakeAnalyticsUI()"><option value="all">All Subjects</option></select>
+            <select id="mistake-topic-filter" class="ai-select" onchange="renderMistakeAnalyticsUI()"><option value="all">All Topics</option></select>
+          </div>
+          <div class="ai-check-grid" id="mistake-bucket-filters">
+            <label class="ai-check"><input type="checkbox" value="Knowledge Gap" checked onchange="renderMistakeAnalyticsUI()"> Knowledge Gap</label>
+            <label class="ai-check"><input type="checkbox" value="Concept/Application Gap" checked onchange="renderMistakeAnalyticsUI()"> Concept/Application</label>
+            <label class="ai-check"><input type="checkbox" value="Calculation/Silly Error" checked onchange="renderMistakeAnalyticsUI()"> Calculation/Silly</label>
+            <label class="ai-check"><input type="checkbox" value="Reading/Comprehension Error" checked onchange="renderMistakeAnalyticsUI()"> Reading</label>
+            <label class="ai-check"><input type="checkbox" value="Strategy/Time Management" checked onchange="renderMistakeAnalyticsUI()"> Strategy/Time</label>
+            <label class="ai-check"><input type="checkbox" value="Attempt/Decision Error" checked onchange="renderMistakeAnalyticsUI()"> Attempt/Decision</label>
+          </div>
+        </div>
+        <div class="ai-loader" id="ai-analytics-loader"><i class="fa-solid fa-spinner fa-spin"></i> AI is analyzing your logs...</div>
+        <div class="ai-report-box" id="weekly-ai-report"></div>
+        <div class="ai-log-list" id="mistake-log-list"></div>
+      </section>
+
       <h3 class="section-title">Achievements <span style="font-size:0.7rem; color:var(--accent-gold)">Auto-Unlocks</span></h3>
       <div class="badges-container" id="prof-badges"></div>
     </div>
@@ -971,6 +1050,26 @@ body[data-theme="light"] .glass-card {
         <button onclick="downloadSavedQs('html')" style="background:linear-gradient(90deg, var(--accent-red), #ff7675); color:#fff; border:none; padding:10px 16px; border-radius:8px; font-weight:900; font-size:0.9rem; cursor:pointer; box-shadow:0 4px 10px rgba(239, 68, 68, 0.3);"><i class="fa-solid fa-file-pdf"></i> HTML</button>
       </div>
       <div class="rev-wrap" id="savedQsListArea" style="padding:24px; max-height:65vh; background:var(--bg-main);"></div>
+    </div>
+  </div>
+
+
+  <!-- MISTAKE LOGGER MODAL -->
+  <div class="modal" id="mistake-logger-modal">
+    <div class="result" style="max-width:620px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;">
+        <div><h3 style="margin:0;color:var(--accent-purple);font-weight:900;"><i class="fa-solid fa-bug"></i> Log Mistake</h3><p style="font-size:.72rem;color:var(--text-secondary);margin-top:4px;">Exactly kya galat hua — bucket + subject + topic + short remark.</p></div>
+        <button class="btn-modal" onclick="closeMistakeLogger()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="margin-bottom:10px;"><label style="font-size:.72rem;font-weight:900;">Question</label><textarea id="mistake-question" class="ai-textarea" placeholder="Question paste/type karo..." style="min-height:70px;"></textarea></div>
+      <div class="ai-filter-grid">
+        <div><label style="font-size:.72rem;font-weight:900;">Subject</label><input id="mistake-subject" class="ai-input" placeholder="Maths / English / Reasoning / GK"></div>
+        <div><label style="font-size:.72rem;font-weight:900;">Topic</label><input id="mistake-topic" class="ai-input" placeholder="Percentage / Algebra / Error Spotting..."></div>
+      </div>
+      <div style="margin-top:10px;"><label style="font-size:.72rem;font-weight:900;">Primary Root-Cause Bucket</label><select id="mistake-bucket" class="ai-select"><option>Knowledge Gap</option><option>Concept/Application Gap</option><option>Calculation/Silly Error</option><option>Reading/Comprehension Error</option><option>Strategy/Time Management</option><option>Attempt/Decision Error</option></select></div>
+      <div style="margin-top:10px;"><label style="font-size:.72rem;font-weight:900;">What exactly did I do?</label><textarea id="mistake-remark" class="ai-textarea" maxlength="450" placeholder="Example: Percentage ka base value galat le liya aur final increase wrong ho gaya."></textarea><div class="ai-word-counter"><span id="mistake-word-count">0</span>/50 words</div></div>
+      <div class="ai-danger-note">Remark 50 words se zyada nahi hona chahiye. AI isi text se recurring root-cause patterns identify karega.</div>
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px;"><button class="btn-modal" onclick="closeMistakeLogger()">Cancel</button><button class="ai-action-btn primary" onclick="saveMistakeLog()"><i class="fa-solid fa-floppy-disk"></i> Save Mistake</button></div>
     </div>
   </div>
 
@@ -2643,6 +2742,7 @@ window.closeDashSnapModal = function(fromPopState = false) {
       
       let sourceBook = customBookArray ? customBookArray : [];
       let filteredQs = sourceBook.filter(q => q.errType === filterType).reverse();
+      window.currentErrorBookItems = filteredQs;
       
       if(filteredQs.length === 0) {
           ebListArea.innerHTML = `<div style="text-align:center; color:var(--text-secondary); padding:20px;">No questions found in this category! 🎉</div>`;
@@ -2667,6 +2767,7 @@ window.closeDashSnapModal = function(fromPopState = false) {
                   <div class="q">${index + 1}. ${item.q}</div>
                   <div>${optHTML}</div>
                   <div class="sol" style="display:block; margin-top:12px;"><b>Solution:</b><br>${item.sol || 'No solution provided.'}</div>
+                  <div style="display:flex;justify-content:flex-end;margin-top:12px;"><button class="ai-action-btn primary" onclick="openMistakeLoggerFromBook(${index})"><i class="fa-solid fa-tag"></i> Classify Mistake</button></div>
               `;
               ebListArea.appendChild(qBlock);
           });
@@ -2994,7 +3095,35 @@ window.closeDashSnapModal = function(fromPopState = false) {
             }
         }
     });
+    if (typeof renderMistakeAnalyticsUI === 'function') renderMistakeAnalyticsUI();
   }
+
+
+  /* =========================================================
+     TESTRIPPER AI MISTAKE TRACKER + WEEKLY / ALL-TIME ANALYTICS
+     ========================================================= */
+  window.globalMistakeLogs = window.globalMistakeLogs || [];
+  window.currentErrorBookItems = window.currentErrorBookItems || [];
+  window.currentMistakeWeekId = null;
+  const AI_MISTAKE_BUCKETS=['Knowledge Gap','Concept/Application Gap','Calculation/Silly Error','Reading/Comprehension Error','Strategy/Time Management','Attempt/Decision Error'];
+  function aiWordCount(t){return(String(t||'').trim().match(/\S+/g)||[]).length;}
+  function aiWeekIdFromMonday(ts){const d=new Date(Number(ts)),s=new Date(Date.UTC(d.getUTCFullYear(),0,1));return d.getUTCFullYear()+'-W'+String(Math.ceil((((d-s)/86400000)+1)/7)).padStart(2,'0');}
+  function escAI(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
+  function selectedBuckets(){return Array.from(document.querySelectorAll('#mistake-bucket-filters input:checked')).map(x=>x.value);}
+  async function refreshMistakeLogs(){const u=auth.currentUser;if(!u){window.globalMistakeLogs=[];renderMistakeAnalyticsUI();return;}try{const s=await db.collection('users').doc(u.uid).collection('mistakeLogs').orderBy('createdAt','desc').get();window.globalMistakeLogs=s.docs.map(d=>({id:d.id,...d.data()}));}catch(e){console.warn(e);window.globalMistakeLogs=[];}renderMistakeAnalyticsUI();}
+  function currentWeekMistakes(){const m=getMonday(getISTDate());window.currentMistakeWeekId=aiWeekIdFromMonday(m);return window.globalMistakeLogs.filter(x=>x.weekId===window.currentMistakeWeekId);}
+  function fillMistakeFilters(){const s=document.getElementById('mistake-subject-filter'),t=document.getElementById('mistake-topic-filter');if(!s||!t)return;const os=s.value||'all',ot=t.value||'all';const ss=[...new Set(window.globalMistakeLogs.map(x=>(x.subject||'').trim()).filter(Boolean))].sort(),ts=[...new Set(window.globalMistakeLogs.map(x=>(x.topic||'').trim()).filter(Boolean))].sort();s.innerHTML='<option value="all">All Subjects</option>'+ss.map(x=>`<option value="${escAI(x)}">${escAI(x)}</option>`).join('');t.innerHTML='<option value="all">All Topics</option>'+ts.map(x=>`<option value="${escAI(x)}">${escAI(x)}</option>`).join('');if(ss.includes(os))s.value=os;if(ts.includes(ot))t.value=ot;}
+  window.renderMistakeAnalyticsUI=function(){const list=document.getElementById('mistake-log-list');if(!list)return;fillMistakeFilters();const s=document.getElementById('mistake-subject-filter')?.value||'all',t=document.getElementById('mistake-topic-filter')?.value||'all',b=selectedBuckets();const logs=window.globalMistakeLogs.filter(x=>(s==='all'||x.subject===s)&&(t==='all'||x.topic===t)&&(b.length===0||b.includes(x.bucket)));const wk=currentWeekMistakes();document.getElementById('ai-log-count').textContent=wk.length;const at=globalUserAttempts.filter(a=>{try{return aiWeekIdFromMonday(getMonday(parseFirebaseDateToIST(a.ts)))===window.currentMistakeWeekId}catch(e){return false;}});let c=0,w=0;at.forEach(a=>{c+=a.correct||0;w+=a.incorrect||0});document.getElementById('ai-week-accuracy').textContent=c+w?((c/(c+w))*100).toFixed(1)+'%':'--';document.getElementById('ai-week-label').textContent=formatWeekLabel(getMonday(getISTDate()));list.innerHTML=logs.length?logs.slice(0,20).map(x=>`<div class="ai-log-item"><div class="ai-log-meta"><span>${escAI(x.subject||'Subject')} · ${escAI(x.topic||'Topic')}</span><span>${escAI(x.weekLabel||'')}</span></div><span class="ai-pill">${escAI(x.bucket||'Unclassified')}</span><div class="ai-log-q">${escAI(x.question||'')}</div>${x.remark?`<div class="ai-log-remark"><b>Remark:</b> ${escAI(x.remark)}</div>`:''}</div>`).join(''):'<div style="text-align:center;color:var(--text-secondary);font-size:.76rem;padding:16px;border:1px dashed var(--border-color);border-radius:12px;">No mistake logs match the selected filters.</div>';};
+  window.openMistakeLogger=function(p=null){const m=document.getElementById('mistake-logger-modal');if(!m)return;document.getElementById('mistake-question').value=p?.question||'';document.getElementById('mistake-subject').value=p?.subject||p?.secName||'';document.getElementById('mistake-topic').value=p?.topic||'';document.getElementById('mistake-bucket').value=p?.bucket||'Calculation/Silly Error';document.getElementById('mistake-remark').value=p?.remark||'';document.getElementById('mistake-word-count').textContent=aiWordCount(p?.remark||'');m.classList.add('show');};
+  window.openMistakeLoggerFromBook=function(i){const x=window.currentErrorBookItems?.[i];if(x)openMistakeLogger({question:x.q||'',subject:x.subject||x.secName||'',topic:x.topic||'',bucket:'Calculation/Silly Error'});};
+  window.closeMistakeLogger=function(){document.getElementById('mistake-logger-modal')?.classList.remove('show');};
+  document.addEventListener('input',e=>{if(e.target?.id==='mistake-remark')document.getElementById('mistake-word-count').textContent=aiWordCount(e.target.value);});
+  window.saveMistakeLog=async function(){const u=auth.currentUser;if(!u)return alert('Pehle login karo.');const q=document.getElementById('mistake-question').value.trim(),s=document.getElementById('mistake-subject').value.trim(),t=document.getElementById('mistake-topic').value.trim(),b=document.getElementById('mistake-bucket').value,r=document.getElementById('mistake-remark').value.trim();if(!q||!s||!t)return alert('Question, Subject aur Topic teeno bharna zaroori hai.');if(!AI_MISTAKE_BUCKETS.includes(b))return alert('Valid bucket select karo.');if(aiWordCount(r)>50)return alert('Remark 50 words se zyada nahi hona chahiye.');const m=getMonday(getISTDate());try{await db.collection('users').doc(u.uid).collection('mistakeLogs').add({question:q,subject:s,topic:t,bucket:b,remark:r,weekId:aiWeekIdFromMonday(m),weekLabel:formatWeekLabel(m),createdAt:firebase.firestore.FieldValue.serverTimestamp(),createdAtISO:new Date().toISOString()});closeMistakeLogger();await refreshMistakeLogs();alert('Mistake saved successfully.');}catch(e){alert('Mistake save nahi hua: '+e.message);}};
+  function buildWeeklyAIData(){const id=window.currentMistakeWeekId||aiWeekIdFromMonday(getMonday(getISTDate())),m=window.globalMistakeLogs.filter(x=>x.weekId===id),a=globalUserAttempts.filter(x=>{try{return aiWeekIdFromMonday(getMonday(parseFirebaseDateToIST(x.ts)))===id}catch(e){return false;}});const bc={};AI_MISTAKE_BUCKETS.forEach(x=>bc[x]=0);m.forEach(x=>{if(bc[x.bucket]!=null)bc[x.bucket]++});const sc={},tc={};m.forEach(x=>{sc[x.subject]=(sc[x.subject]||0)+1;tc[x.topic]=(tc[x.topic]||0)+1});return{mode:'weekly',weekId:id,weekLabel:formatWeekLabel(getMonday(getISTDate())),attemptSummary:a.map(x=>({testName:x.testName,correct:x.correct||0,wrong:x.incorrect||0,unattempted:x.unattempted||0,marked:x.marked||0,score:x.score||'',minutes:x.minutes||0,date:x.ts||''})),bucketCounts:bc,subjectCounts:sc,topicCounts:tc,mistakes:m.map(x=>({question:x.question,subject:x.subject,topic:x.topic,bucket:x.bucket,remark:x.remark}))};}
+  function renderAIReport(r,title){const box=document.getElementById('weekly-ai-report');if(!box)return;const o=r.overview||{},li=a=>Array.isArray(a)?a.map(x=>`<li>${escAI(typeof x==='string'?x:(x.action||x.text||JSON.stringify(x)))}</li>`).join(''):'';box.innerHTML=`<div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><b style="color:var(--accent-purple)"><i class="fa-solid fa-wand-magic-sparkles"></i> ${escAI(title)}</b><span class="ai-pill">AI GENERATED</span></div><div class="ai-report-grid"><div class="ai-mini-stat"><b>${escAI(o.accuracy??'--')}${o.accuracy!==undefined?'%':''}</b><span>Accuracy</span></div><div class="ai-mini-stat"><b>${escAI(o.mistakes??'0')}</b><span>Mistake Logs</span></div></div><div class="ai-report-section"><h4>Executive Summary</h4><div class="ai-report-summary">${escAI(r.summary||'No summary returned.')}</div></div><div class="ai-report-section"><h4>Root Cause</h4><ul class="ai-report-list">${li(r.root_causes)}</ul></div><div class="ai-report-section"><h4>What To Improve</h4><ul class="ai-report-list">${li(r.improvements)}</ul></div><div class="ai-report-section"><h4>Next Action Plan</h4><ul class="ai-report-list">${li(r.action_plan)}</ul></div>`;box.classList.add('show');}
+  window.generateWeeklyAIAnalytics=async function(){const u=auth.currentUser;if(!u)return alert('Pehle login karo.');await refreshMistakeLogs();const p=buildWeeklyAIData();if(!p.mistakes.length)return alert('Is week ke liye mistake logs nahi mile.');document.getElementById('ai-analytics-loader').classList.add('show');try{const res=await fetch('/api/gemini-analytics',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)}),d=await res.json();if(!res.ok)throw Error(d.error||'AI server error');await db.collection('users').doc(u.uid).collection('weeklyAnalytics').doc(p.weekId).set({...d,weekId:p.weekId,weekLabel:p.weekLabel,generatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});renderAIReport(d,'Weekly AI Analysis · '+p.weekLabel);alert('Weekly AI analysis save ho gaya.');}catch(e){alert('Weekly AI analysis fail hua: '+e.message);}finally{document.getElementById('ai-analytics-loader').classList.remove('show');}};
+  window.generateAllTimeAIAnalytics=async function(){const u=auth.currentUser;if(!u)return alert('Pehle login karo.');document.getElementById('ai-analytics-loader').classList.add('show');try{const s=await db.collection('users').doc(u.uid).collection('weeklyAnalytics').orderBy('generatedAt','asc').get(),w=s.docs.map(d=>({id:d.id,...d.data()}));if(!w.length)return alert('Pehle weekly AI report generate karo.');const res=await fetch('/api/gemini-analytics',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:'all_time',weeks:w.map(x=>({weekId:x.weekId||x.id,weekLabel:x.weekLabel,overview:x.overview,summary:x.summary,root_causes:x.root_causes,improvements:x.improvements,action_plan:x.action_plan}))})}),d=await res.json();if(!res.ok)throw Error(d.error||'AI server error');await db.collection('users').doc(u.uid).collection('allTimeAnalytics').doc('current').set({...d,generatedAt:firebase.firestore.FieldValue.serverTimestamp(),weeksAnalyzed:w.length},{merge:true});renderAIReport(d,'All-Time AI Learning Profile');alert('All-Time AI analysis save ho gaya.');}catch(e){alert('All-Time AI analysis fail hua: '+e.message);}finally{document.getElementById('ai-analytics-loader').classList.remove('show');}};
+  const _openProfileOriginal=window.openProfile;window.openProfile=function(push=true){const r=_openProfileOriginal?_openProfileOriginal(push):undefined;setTimeout(refreshMistakeLogs,200);return r;};
 
   /* =========================================
      ADVANCED IN-APP MEDIA VIEWER LOGIC
