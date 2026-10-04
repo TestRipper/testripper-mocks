@@ -700,8 +700,17 @@ body[data-theme="light"] .glass-card {
         </div>
       </div>
 
-      <h3 class="section-title">Weekly Accuracy Matrix</h3>
-      <div class="chart-box" style="height: auto; min-height: 260px;">
+         <!-- Toggle Switch for Analytics -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 class="section-title" style="margin-bottom:0;">Analytics Matrix</h3>
+        <div style="background:var(--bg-nav); border:1px solid var(--border-color); border-radius:8px; display:flex; overflow:hidden;">
+          <button id="tab-btn-acc" onclick="switchProfileTab('acc')" style="padding:6px 12px; font-weight:800; font-size:0.8rem; background:var(--accent-purple); color:#fff; border:none; cursor:pointer;">Accuracy</button>
+          <button id="tab-btn-ml" onclick="switchProfileTab('ml')" style="padding:6px 12px; font-weight:800; font-size:0.8rem; background:transparent; color:var(--text-primary); border:none; cursor:pointer;">Mistake Log</button>
+        </div>
+      </div>
+      
+      <!-- ID ADDED HERE -->
+      <div id="acc-matrix-container" class="chart-box" style="height: auto; min-height: 260px;">
         <div class="chart-title" style="display:flex; justify-content:space-between; width:calc(100% - 32px); align-items:flex-start;">
             <div>
                 <span class="week-tag" id="main-week-title">This Week</span>
@@ -717,6 +726,24 @@ body[data-theme="light"] .glass-card {
         </div>
         <div style="height: 180px; width: 100%; margin-top: 50px;">
            <canvas id="profAccChart"></canvas>
+        </div>
+      </div>
+
+      <!-- 🔥 NAYA: MISTAKE LOG CONTAINER (Hidden by default) -->
+      <div id="mistake-log-container" style="display:none; margin-bottom:16px;">
+        <div class="chart-box" style="height: auto; min-height: 260px; margin-bottom:16px;">
+          <div class="chart-title">
+            <span class="week-tag" style="background:var(--accent-red); color:#fff;" id="ml-week-title">This Week</span>
+            <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:4px; font-weight:normal;">Root Cause Analysis (Bar Graph)</div>
+          </div>
+          <div style="height: 180px; width: 100%; margin-top: 50px;">
+             <canvas id="mlBarChart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Yahan Niche List Aayegi -->
+        <div id="ml-list-area" style="display:flex; flex-direction:column; gap:12px;"></div>
+      </div>
         </div>
       </div>
 
@@ -993,6 +1020,44 @@ body[data-theme="light"] .glass-card {
       <button class="btn-modal" onclick="closeEngineModal()" style="margin-top: 20px; background: rgba(0,0,0,0.1); border: 1px solid var(--border-color);">Cancel</button>
     </div>
   </div>
+  
+  <!-- 🔥 NAYA: MISTAKE LOG MODAL -->
+<div class="modal" id="mistake-log-modal">
+  <div class="result" style="max-width: 500px; padding:0; overflow:hidden; border-radius:18px;">
+    <div style="background:linear-gradient(90deg, #f97316, #ea580c); padding:16px 20px; display:flex; justify-content:space-between; align-items:center;">
+      <h3 style="margin:0; font-weight:900; font-size:1.2rem; color:#fff;"><i class="fa-solid fa-microscope"></i> Mistake Analysis</h3>
+      <button onclick="document.getElementById('mistake-log-modal').classList.remove('show')" style="background:rgba(0,0,0,0.2); color:#fff; border:none; padding:6px 12px; border-radius:6px; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div style="padding:20px; max-height:70vh; overflow-y:auto; background:var(--bg-card);">
+      
+      <div style="display:flex; gap:12px; margin-bottom:16px;">
+        <div style="flex:1;">
+          <label style="font-size:0.8rem; font-weight:800; color:var(--text-secondary);">SUBJECT</label>
+          <select id="ml-subject" style="width:100%; padding:10px; background:var(--bg-main); border:1px solid var(--border-color); border-radius:8px; color:var(--text-primary); font-weight:600; margin-top:4px;">
+            <option value="General Awareness">General Awareness</option>
+            <option value="Reasoning">Reasoning</option>
+            <option value="Quantitative Aptitude">Quantitative Aptitude</option>
+            <option value="English Comprehension">English Comprehension</option>
+          </select>
+        </div>
+        <div style="flex:1;">
+          <label style="font-size:0.8rem; font-weight:800; color:var(--text-secondary);">TOPIC / CHAPTER</label>
+          <input type="text" id="ml-topic" placeholder="e.g. Time & Work" style="width:100%; padding:10px; background:var(--bg-main); border:1px solid var(--border-color); border-radius:8px; color:var(--text-primary); font-weight:600; margin-top:4px;">
+        </div>
+      </div>
+
+      <label style="font-size:0.85rem; font-weight:900; color:var(--accent-purple); display:block; margin-bottom:8px;">ROOT CAUSES (Select Multiple)</label>
+      <div id="ml-causes-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px;"></div>
+
+      <label style="font-size:0.8rem; font-weight:800; color:var(--text-secondary);">REMARKS (50 Words Max)</label>
+      <textarea id="ml-remarks" rows="3" placeholder="Galti kya hui, aage kya yaad rakhna hai..." style="width:100%; padding:10px; background:var(--bg-main); border:1px solid var(--border-color); border-radius:8px; color:var(--text-primary); font-weight:600; margin-top:4px; resize:none; font-family:inherit;"></textarea>
+
+      <button onclick="submitMistakeLog()" style="width:100%; background:linear-gradient(90deg, var(--accent-green), #22c55e); color:#000; border:none; padding:12px; border-radius:8px; font-weight:900; font-size:1.05rem; cursor:pointer; margin-top:16px; box-shadow:0 4px 10px rgba(34, 197, 94, 0.3); text-transform:uppercase;">Save Mistake Log</button>
+    </div>
+  </div>
+</div>
+  
 <!-- 1. RETAKE STRATEGY MODAL -->
 <div class="modal" id="retake-modal">
   <div class="result" style="max-width: 420px; text-align: center; padding: 24px;">
@@ -1113,7 +1178,7 @@ body[data-theme="light"] .glass-card {
   let globalUserAttempts = [];
   let globalWeeksMap = {};
   let currentlySelectedWeek = null;
-  window.currentLbDocs = []; // Rank Predictor ke liye
+    window.currentLbDocs = []; // Rank Predictor ke liye
 
   window.googleLoginDash = function() {
     auth.signInWithPopup(provider).then((result) => {
@@ -1122,6 +1187,8 @@ body[data-theme="light"] .glass-card {
   };
 
   window.savedQuestionsCache = {}; // Saved questions track karne ke liye
+  window.mistakeLogCache = {}; // 🔥 NAYA: Mistake Log Tracker
+  window.globalMistakesByWeek = {}; // 🔥 NAYA: Weekly Mistake Chart ke liye
 
 // Ninja Technique: Glass UI with Exit/Cross Button to prevent getting stuck
 function showPendingApprovalUI(user) {
@@ -1243,7 +1310,29 @@ auth.onAuthStateChanged(async (user) => {
         }
     });
 
+    // 🔥 NAYA: Live Mistake Log Tracker
+    db.collection("users").doc(user.uid).collection("mistake_logs").orderBy("savedAt", "desc").onSnapshot(snap => {
+        window.mistakeLogCache = {};
+        window.globalMistakesByWeek = {};
+        
+        snap.docs.forEach(doc => {
+            let data = doc.data();
+            data.id = doc.id;
+            window.mistakeLogCache[data.q] = doc.id; 
+            
+            let dateObj = data.savedAt ? data.savedAt.toDate() : new Date();
+            let mondayTs = getMonday(dateObj);
+            if (!window.globalMistakesByWeek[mondayTs]) window.globalMistakesByWeek[mondayTs] = [];
+            window.globalMistakesByWeek[mondayTs].push(data);
+        });
+        
+        if(document.getElementById('dash-snap').classList.contains('show')) {
+            if(typeof drawDashSnap === 'function') drawDashSnap();
+        }
+    });
+
   } else {
+
     globalUserAttempts = [];
     window.savedQuestionsCache = {};
     document.getElementById('prof-login-sec').style.display = 'block';
@@ -1860,12 +1949,25 @@ window.filterBySection = function(secName, index = null) {
       const starColor = isSaved ? '#facc15' : 'var(--text-primary)';
       const starText = isSaved ? 'SAVED' : 'SAVE This Q';
       
-      const saveBtnHtml = `<button onclick="toggleSaveCurrentDashQ()" style="background: transparent; color:${starColor}; border:1px solid var(--border-color); padding:8px 16px; border-radius:10px; font-weight:800; cursor:pointer; font-size:1rem; display:flex; align-items:center; gap:8px; transition:0.2s;">
-        ${starIcon} <span>${starText}</span>
-      </button>`;
+            // 🔥 UPDATED: Save & Mistake Log Buttons Logic
+      const isMistakeLogged = !!window.mistakeLogCache[qCheckText];
+      const mistkBg = isMistakeLogged ? 'var(--accent-green)' : 'linear-gradient(90deg, #f97316, #ea580c)';
+      const mistkColor = isMistakeLogged ? '#000' : '#fff';
+      const mistkIcon = isMistakeLogged ? '<i class="fa-solid fa-circle-check"></i>' : '<i class="fa-solid fa-pen-to-square"></i>';
+      const mistkText = isMistakeLogged ? 'LOGGED ✅' : 'LOG MISTK';
+
+      const dualBtnsHtml = `
+      <div style="display:flex; gap:10px; align-items:center;">
+          <button onclick="toggleSaveCurrentDashQ()" style="background: transparent; color:${starColor}; border:1px solid var(--border-color); padding:8px 16px; border-radius:10px; font-weight:800; cursor:pointer; font-size:0.95rem; display:flex; align-items:center; gap:8px; transition:0.2s;">
+            ${starIcon} <span>${starText}</span>
+          </button>
+          <button onclick="openMistakeLogModal()" style="background: ${mistkBg}; color:${mistkColor}; border:none; padding:8px 16px; border-radius:10px; font-weight:900; cursor:pointer; font-size:0.95rem; display:flex; align-items:center; gap:8px; transition:0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+            ${mistkIcon} <span>${mistkText}</span>
+          </button>
+      </div>`;
       
       let saveContainer = document.getElementById('saveBtnContainer');
-      if(saveContainer) saveContainer.innerHTML = saveBtnHtml;
+      if(saveContainer) saveContainer.innerHTML = dualBtnsHtml;
 
            // 🔥 CHUNK 2: INTERACTIVE TIMER DROPDOWN & CORRECT % BADGE
       if (window.currentLbStats) {
@@ -2694,15 +2796,24 @@ window.closeDashSnapModal = function(fromPopState = false) {
   }
 
   window.downloadErrorBook = function(format) {
-      let weekData = globalWeeksMap[currentlySelectedWeek];
-      if (!weekData || !weekData.eBook || weekData.eBook.length === 0) {
-          alert("No mistakes/unattempted questions found for this week to download! 🎉");
-          return;
-      }
-      
+      const isMistakeLogTab = document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block';
       let weekLabel = formatWeekLabel(currentlySelectedWeek);
-      let fileName = `${weekLabel}-Mistake Journal`;
-      let sortedErrors = weekData.eBook.slice().reverse();
+      let fileName = isMistakeLogTab ? `${weekLabel}-Mistake Log` : `${weekLabel}-Mistake Journal`;
+      let sortedErrors = [];
+
+      if (isMistakeLogTab) {
+          let weekMistakes = window.globalMistakesByWeek[currentlySelectedWeek] || [];
+          if (weekMistakes.length === 0) { alert("Is hafte koi Mistake Log nahi kiya! 🎉"); return; }
+          // Format data for export
+          sortedErrors = weekMistakes.map(m => ({
+              q: m.q, opts: m.o, correct: m.a, sol: m.s + `<br><br>[Pichli Galti: ${m.topic} | ${m.status} | Cause: ${(m.rootCauses||[]).join(', ')} | Remarks: ${m.remarks}]`,
+              errType: m.status === 'Correct' ? 'ok' : 'wrong', ts: (m.savedAt ? m.savedAt.toDate().toLocaleString() : ''), testName: m.testName
+          }));
+      } else {
+          let weekData = globalWeeksMap[currentlySelectedWeek];
+          if (!weekData || !weekData.eBook || weekData.eBook.length === 0) { alert("No mistakes found for this week! 🎉"); return; }
+          sortedErrors = weekData.eBook.slice().reverse();
+      }
 
       if (format === 'txt') {
           let exportData = sortedErrors.map(item => ({
@@ -3535,23 +3646,58 @@ window.closeDashSnapModal = function(fromPopState = false) {
       window.location.href = "Mock-fetcher.html"; 
   }
 
-  window.launchMistakesMock = function() {
-      let weekData = globalWeeksMap[currentlySelectedWeek];
-      if (!weekData || !weekData.eBook || weekData.eBook.length === 0) {
-          alert("Is hafte ekdum solid gaya? Koi mistakes/unattempted Qs nahi mile! 🎉");
-          return;
+    window.launchMistakesMock = function() {
+      const isMistakeLogTab = document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block';
+
+      if (isMistakeLogTab) {
+          // 🔥 MISTAKE LOG WALA TEST (Naya Logic)
+          let weekMistakes = window.globalMistakesByWeek[currentlySelectedWeek];
+          if (!weekMistakes || weekMistakes.length === 0) {
+              alert("Is hafte koi Mistake Log nahi kiya bhai! 🎉"); return;
+          }
+          let weekLabel = formatWeekLabel(currentlySelectedWeek);
+          let title = `${weekLabel}-MISTAKE-LOG QUIZ`;
+          
+          let exportData = weekMistakes.map(item => {
+              let dateStr = item.savedAt ? item.savedAt.toDate().toLocaleDateString('en-IN') : '';
+              let causes = (item.rootCauses || []).join(', ');
+              
+              // 🔥 NINJA HACK: Solution ke andar hi Error Report HTML inject kar diya
+              let errorWarningBox = `
+              <div style="margin-top:16px; background:rgba(239, 68, 68, 0.05); border:1px solid rgba(239, 68, 68, 0.3); border-left:4px solid var(--accent-red); padding:12px; border-radius:8px;">
+                  <h4 style="margin:0 0 8px 0; color:var(--accent-red); font-size:0.9rem;"><i class="fa-solid fa-clock-rotate-left"></i> Pichli Baar Ki Galti (${dateStr})</h4>
+                  <div style="font-size:0.85rem; margin-bottom:4px; color:var(--text-primary);"><b>Topic:</b> ${item.subject} - ${item.topic}</div>
+                  <div style="font-size:0.85rem; margin-bottom:4px; color:var(--text-primary);"><b>Status:</b> ${item.status} | <b>Root Cause:</b> ${causes}</div>
+                  <div style="font-size:0.85rem; color:var(--text-primary);"><b><i class="fa-solid fa-pen-nib"></i> Remarks:</b> ${item.remarks}</div>
+              </div>`;
+
+              return {
+                  q: item.q, q_hi: item.q_hi || '',
+                  o: item.o, o_hi: item.o_hi || item.o,
+                  a: item.a,
+                  s: (item.s || 'No solution provided.') + errorWarningBox, 
+                  s_hi: (item.s_hi ? item.s_hi + errorWarningBox : '')
+              };
+          });
+          openEngineModal("", title, exportData);
+
+      } else {
+          // 🔹 ACCURACY MATRIX WALA TEST (Purana Logic)
+          let weekData = globalWeeksMap[currentlySelectedWeek];
+          if (!weekData || !weekData.eBook || weekData.eBook.length === 0) {
+              alert("Is hafte ekdum solid gaya? Koi mistakes/unattempted Qs nahi mile! 🎉"); return;
+          }
+          let weekLabel = formatWeekLabel(currentlySelectedWeek);
+          let title = `${weekLabel}-MISTAKES QUIZ`;
+          
+          let exportData = weekData.eBook.slice().reverse().map(item => ({
+              q: item.q, q_hi: item.q_hi || '',
+              o: item.opts, o_hi: item.o_hi || item.opts,
+              a: item.correct,
+              s: item.sol || 'No solution provided.', s_hi: item.s_hi || ''
+          }));
+          openEngineModal("", title, exportData);
       }
-      let weekLabel = formatWeekLabel(currentlySelectedWeek);
-      let title = `${weekLabel}-MISTAKES QUIZ`;
-      
-      let exportData = weekData.eBook.slice().reverse().map(item => ({
-          q: item.q, q_hi: item.q_hi || '',
-          o: item.opts, o_hi: item.o_hi || item.opts,
-          a: item.correct,
-          s: item.sol || 'No solution provided.', s_hi: item.s_hi || ''
-      }));
-            openEngineModal("", title, exportData);
-      
   };
 
   window.launchSavedQsMock = function() {
@@ -3860,5 +4006,208 @@ window.closeEngineModal = function() {
   }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script>
+  // =========================================
+  // 🔥 MISTAKE LOG ENGINE LOGIC
+  // =========================================
+  const ROOT_CAUSES = [
+      "Concept leak", "Calculation Mistake", "Silly Mistake in Reading", 
+      "Avg se zyada time Method disparity", "Pre assumption Pattern", 
+      "New Concept Blinder", "Well Concept 😃", "Ego clash", 
+      "Options Neglected", "Over Logic", "Feel & Tukka", "Hard & Irrelevant"
+  ];
+
+  window.openMistakeLogModal = function() {
+      const user = auth.currentUser;
+      if(!user) { alert("Bhai, pehle login kar le log save karne ke liye!"); return; }
+
+      const it = dSnapS.arr[curDashIdx()];
+      const qText = it.q;
+      
+      if(window.mistakeLogCache[qText]) {
+          if(confirm("Ye question pehle se Mistake Log me add hai! Kya isko wahan se remove karna hai?")) {
+              db.collection("users").doc(user.uid).collection("mistake_logs").doc(window.mistakeLogCache[qText]).delete();
+          }
+          return;
+      }
+
+      let causeHtml = '';
+      ROOT_CAUSES.forEach((cause) => {
+          causeHtml += `
+          <label style="display:flex; align-items:flex-start; gap:6px; background:rgba(0,0,0,0.03); padding:6px 8px; border-radius:6px; border:1px solid var(--border-color); cursor:pointer;">
+             <input type="checkbox" value="${cause}" class="ml-cause-cb" style="margin-top:2px;">
+             <span style="font-size:0.75rem; font-weight:700; color:var(--text-primary); line-height:1.2;">${cause}</span>
+          </label>`;
+      });
+      document.getElementById('ml-causes-grid').innerHTML = causeHtml;
+      document.getElementById('ml-topic').value = '';
+      document.getElementById('ml-remarks').value = '';
+
+      document.getElementById('mistake-log-modal').classList.add('show');
+  };
+
+  window.submitMistakeLog = async function() {
+      const user = auth.currentUser;
+      const it = dSnapS.arr[curDashIdx()];
+      
+      const subject = document.getElementById('ml-subject').value;
+      const topic = document.getElementById('ml-topic').value.trim();
+      const remarks = document.getElementById('ml-remarks').value.trim();
+      
+      let selectedCauses = [];
+      document.querySelectorAll('.ml-cause-cb:checked').forEach(cb => selectedCauses.push(cb.value));
+
+      if(!topic) { alert("Bhai, Topic ka naam toh daal de!"); return; }
+      if(selectedCauses.length === 0) { alert("Kam se kam 1 Root Cause toh select kar mere bhai!"); return; }
+
+      let statusStr = "Unattempted";
+      if(it.mark) statusStr = "Marked";
+      else if(it.user !== -1) statusStr = (it.user === it.correct) ? "Correct" : "Wrong";
+
+      let mistakeObj = {
+          q: it.q, q_hi: it.q_hi || '',
+          o: it.opts, o_hi: it.o_hi || [],
+          a: it.correct,
+          s: it.sol || '', s_hi: it.s_hi || '',
+          testName: dSnapS.meta.testName,
+          status: statusStr,
+          subject: subject,
+          topic: topic,
+          rootCauses: selectedCauses,
+          remarks: remarks,
+          savedAt: firebase.firestore.FieldValue.serverTimestamp()
+      };
+
+      try {
+          document.getElementById('mistake-log-modal').classList.remove('show');
+          await db.collection("users").doc(user.uid).collection("mistake_logs").add(mistakeObj);
+      } catch(e) {
+          console.error("Error saving log:", e);
+      }
+  };
+    // =========================================
+  // 🔥 PROFILE TAB SWITCH & BAR CHART LOGIC
+  // =========================================
+  let mlBarChartObj = null;
+
+  window.switchProfileTab = function(tab) {
+      if(tab === 'acc') {
+          document.getElementById('tab-btn-acc').style.background = 'var(--accent-purple)';
+          document.getElementById('tab-btn-acc').style.color = '#fff';
+          document.getElementById('tab-btn-ml').style.background = 'transparent';
+          document.getElementById('tab-btn-ml').style.color = 'var(--text-primary)';
+          
+          document.getElementById('acc-matrix-container').style.display = 'block';
+          document.getElementById('mistake-log-container').style.display = 'none';
+      } else {
+          document.getElementById('tab-btn-ml').style.background = 'var(--accent-red)';
+          document.getElementById('tab-btn-ml').style.color = '#fff';
+          document.getElementById('tab-btn-acc').style.background = 'transparent';
+          document.getElementById('tab-btn-acc').style.color = 'var(--text-primary)';
+          
+          document.getElementById('acc-matrix-container').style.display = 'none';
+          document.getElementById('mistake-log-container').style.display = 'block';
+          
+          renderMistakeLogTab(); 
+      }
+  };
+
+  window.renderMistakeLogTab = function() {
+      if(!currentlySelectedWeek) return; 
+      
+      let weekMistakes = window.globalMistakesByWeek[currentlySelectedWeek] || [];
+      document.getElementById('ml-week-title').innerText = document.getElementById('main-week-title').innerText;
+
+      // 1. Bar Chart Data Prep
+      let causeCounts = {};
+      ROOT_CAUSES.forEach(c => causeCounts[c] = 0);
+      
+      weekMistakes.forEach(m => {
+          if(m.rootCauses) {
+              m.rootCauses.forEach(c => { if(causeCounts[c] !== undefined) causeCounts[c]++; });
+          }
+      });
+
+      let labels = ROOT_CAUSES;
+      let data = ROOT_CAUSES.map(c => causeCounts[c]);
+
+      // Draw Chart.js Bar Chart
+      if(mlBarChartObj) { try{ mlBarChartObj.destroy(); }catch(e){} mlBarChartObj = null; }
+      const ctx = document.getElementById('mlBarChart').getContext('2d');
+      mlBarChartObj = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: labels,
+              datasets: [{
+                  label: 'Mistakes Count',
+                  data: data,
+                  backgroundColor: ['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6', '#06b6d4', '#ec4899', '#f97316', '#84cc16', '#64748b', '#d946ef', '#14b8a6'],
+                  borderRadius: 4
+              }]
+          },
+          options: {
+              maintainAspectRatio: false,
+              plugins: { legend: { display: false } },
+              scales: {
+                  x: { ticks: { color: 'rgba(128,128,128,0.7)', font: {size: 9}, maxRotation: 45, minRotation: 45 }, grid: { display: false } },
+                  y: { ticks: { color: 'rgba(128,128,128,0.7)', stepSize: 1 }, grid: { color: 'rgba(128,128,128,0.1)' } }
+              }
+          }
+      });
+
+      // 2. Render List Detail 
+      let listArea = document.getElementById('ml-list-area');
+      if(weekMistakes.length === 0) {
+          listArea.innerHTML = `<div style="text-align:center; padding:20px; color:var(--text-secondary);"><i class="fa-solid fa-face-smile" style="font-size:2rem; margin-bottom:10px; opacity:0.5;"></i><br>Is week koi mistake log nahi kiya! 🎉</div>`;
+          return;
+      }
+
+      let html = '';
+      weekMistakes.forEach((m, idx) => {
+          let dateStr = m.savedAt ? m.savedAt.toDate().toLocaleString('en-IN', {day:'2-digit', month:'short'}) : '';
+          let causesBadges = (m.rootCauses||[]).map(c => `<span style="background:rgba(255,255,255,0.1); padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:800; border:1px solid var(--border-color); color:var(--text-secondary);">${c}</span>`).join(' ');
+          
+          let statusColor = (m.status === 'Correct') ? 'var(--accent-green)' : (m.status === 'Wrong' ? 'var(--accent-red)' : 'var(--accent-purple)');
+          
+          html += `
+          <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:12px; padding:16px; margin-bottom:4px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; border-bottom:1px dashed rgba(128,128,128,0.2); padding-bottom:8px;">
+                  <div>
+                      <div style="font-size:0.8rem; color:var(--accent-gold); font-weight:900; text-transform:uppercase;">${m.testName}</div>
+                      <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:2px; font-weight:600;"><i class="fa-regular fa-clock"></i> ${dateStr} &nbsp;•&nbsp; <b style="color:${statusColor}; background:rgba(255,255,255,0.05); padding:2px 6px; border-radius:4px;">${m.status}</b></div>
+                  </div>
+                  <div style="text-align:right;">
+                      <div style="font-size:0.85rem; font-weight:900; color:var(--text-primary);">${m.subject}</div>
+                      <div style="font-size:0.75rem; color:var(--accent-blue); font-weight:800;">${m.topic}</div>
+                  </div>
+              </div>
+              <div class="q" style="font-size:1.05rem; font-weight:600; margin-bottom:12px; line-height:1.4;"><b>Q.</b> ${m.q}</div>
+              <div style="margin-bottom:14px; display:flex; flex-wrap:wrap; gap:6px;">${causesBadges}</div>
+              <div style="background:rgba(239, 68, 68, 0.05); border-left:3px solid var(--accent-red); padding:10px 14px; border-radius:6px; font-size:0.85rem; color:var(--text-primary); font-weight:500;">
+                  <b style="color:var(--accent-red);"><i class="fa-solid fa-pen-nib"></i> Remarks:</b> ${m.remarks}
+              </div>
+          </div>`;
+      });
+      listArea.innerHTML = html;
+  };
+
+  // 🔥 NINJA HACK: Purane logic ko chhere bina week switch ko hijack karna
+  const originalLoadWeek = window.loadWeekToMain;
+  window.loadWeekToMain = function(monTimestamp) {
+      if(originalLoadWeek) originalLoadWeek(monTimestamp);
+      if(document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block') {
+          renderMistakeLogTab();
+      }
+  };
+  const originalLoadThisWeek = window.loadThisWeek;
+  window.loadThisWeek = function() {
+      if(originalLoadThisWeek) originalLoadThisWeek();
+      if(document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block') {
+          renderMistakeLogTab();
+      }
+  };
+</script>
 </body>
 </html>
