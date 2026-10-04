@@ -729,20 +729,51 @@ body[data-theme="light"] .glass-card {
         </div>
       </div>
 
-      <!-- 🔥 NAYA: MISTAKE LOG CONTAINER (Hidden by default) -->
+      <!-- 🔥 NAYA: MISTAKE LOG CONTAINER -->
       <div id="mistake-log-container" style="display:none; margin-bottom:16px;">
-        <div class="chart-box" style="height: auto; min-height: 260px; margin-bottom:16px;">
-          <div class="chart-title">
-            <span class="week-tag" style="background:var(--accent-red); color:#fff;" id="ml-week-title">This Week</span>
-            <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:4px; font-weight:normal;">Root Cause Analysis (Bar Graph)</div>
+        <div class="chart-box" style="height: auto; min-height: 300px; margin-bottom:16px; display:flex; flex-direction:column;">
+          
+          <!-- Top Row: Filters & Export Buttons -->
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%; align-items:center; margin-bottom:16px; z-index:10;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+              <span class="week-tag" style="background:var(--accent-red); color:#fff; margin:0;" id="ml-week-title">This Week</span>
+              <select id="ml-filter-cause" onchange="renderMistakeLogTab()" style="background:var(--bg-main); color:var(--text-primary); border:1px solid var(--border-color); border-radius:6px; font-size:0.75rem; font-weight:800; padding:4px 6px;"><option value="ALL">Root Cause</option></select>
+              <select id="ml-filter-sub" onchange="renderMistakeLogTab()" style="background:var(--bg-main); color:var(--text-primary); border:1px solid var(--border-color); border-radius:6px; font-size:0.75rem; font-weight:800; padding:4px 6px;"><option value="ALL">Sub</option></select>
+              <select id="ml-filter-topic" onchange="renderMistakeLogTab()" style="background:var(--bg-main); color:var(--text-primary); border:1px solid var(--border-color); border-radius:6px; font-size:0.75rem; font-weight:800; padding:4px 6px;"><option value="ALL">Topic</option></select>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button onclick="launchFilteredMock('ALL')" style="background:linear-gradient(90deg, #6d28d9, #3b82f6); color:#fff; border:none; padding:4px 10px; border-radius:6px; font-weight:800; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-gamepad"></i> ATTEMPT TEST</button>
+              <button onclick="downloadFilteredLogs('txt', 'ALL')" style="background:var(--bg-main); color:var(--accent-gold); border:1px solid var(--border-color); padding:4px 10px; border-radius:6px; font-weight:800; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-file-code"></i> TXT</button>
+              <button onclick="downloadFilteredLogs('html', 'ALL')" style="background:linear-gradient(90deg, #ef4444, #f43f5e); color:#fff; border:none; padding:4px 10px; border-radius:6px; font-weight:800; font-size:0.75rem; cursor:pointer;"><i class="fa-solid fa-file-pdf"></i> HTML</button>
+            </div>
           </div>
-          <div style="height: 180px; width: 100%; margin-top: 50px;">
+          
+          <div style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:10px; font-weight:600;">Root Cause Analysis (Bar Graph)</div>
+          
+          <div style="flex-grow:1; position:relative; min-height:180px;">
              <canvas id="mlBarChart"></canvas>
           </div>
         </div>
-        
-        <!-- Yahan Niche List Aayegi -->
-        <div id="ml-list-area" style="display:flex; flex-direction:column; gap:12px;"></div>
+      </div>
+
+      <!-- 🔥 MISTAKE LOG DETAIL MODAL (Image 2 UI) -->
+      <div class="modal" id="ml-detail-modal">
+        <div class="result" style="max-width: 600px; padding:0; overflow:hidden; border-radius:18px;">
+          <div style="background:linear-gradient(90deg, #6d28d9, #3b82f6); padding:16px 20px; display:flex; justify-content:space-between; align-items:center;">
+            <h3 id="mld-title" style="margin:0; font-weight:900; font-size:1.4rem; color:#fff; text-transform:uppercase;">Cause Title</h3>
+            <button onclick="document.getElementById('ml-detail-modal').classList.remove('show')" style="background:rgba(255,255,255,0.2); color:#fff; border:none; padding:6px 12px; border-radius:8px; cursor:pointer; font-weight:bold;">Close ✕</button>
+          </div>
+          
+          <div style="padding:16px 20px; background:var(--bg-main); border-bottom:1px solid var(--border-color); display:flex; gap:10px; align-items:center; justify-content:center;">
+              <button id="mld-btn-test" style="background:linear-gradient(90deg, #3b82f6, #8b5cf6); color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:900; font-size:0.85rem; cursor:pointer;"><i class="fa-solid fa-gamepad"></i> ATTEMPT TEST</button>
+              <button id="mld-btn-txt" style="background:var(--bg-card); color:var(--accent-gold); border:1px solid var(--border-color); padding:8px 16px; border-radius:8px; font-weight:900; font-size:0.85rem; cursor:pointer;"><i class="fa-solid fa-file-code"></i> TXT</button>
+              <button id="mld-btn-html" style="background:linear-gradient(90deg, #ef4444, #f43f5e); color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:900; font-size:0.85rem; cursor:pointer;"><i class="fa-solid fa-file-pdf"></i> HTML</button>
+          </div>
+          
+          <div id="mld-list-area" style="padding:20px; max-height:60vh; overflow-y:auto; background:var(--bg-main); display:flex; flex-direction:column; gap:16px;">
+            <!-- Content injected via JS -->
+          </div>
+        </div>
       </div>
         </div>
       </div>
@@ -4083,6 +4114,11 @@ window.closeEngineModal = function() {
       try {
           document.getElementById('mistake-log-modal').classList.remove('show');
           await db.collection("users").doc(user.uid).collection("mistake_logs").add(mistakeObj);
+          
+          // 🔥 BUG FIX: Instant UI Update bina refresh ke
+          window.mistakeLogCache[it.q] = 'temp_saved';
+          if(typeof drawDashSnap === 'function') drawDashSnap();
+          
       } catch(e) {
           console.error("Error saving log:", e);
       }
@@ -4114,17 +4150,60 @@ window.closeEngineModal = function() {
       }
   };
 
+    // Helper to process Data for Mock & Downloads
+  function getFilteredMistakes(causeFilter) {
+      let weekMistakes = window.globalMistakesByWeek[currentlySelectedWeek] || [];
+      
+      // Apply UI dropdown filters first
+      const subF = document.getElementById('ml-filter-sub')?.value || "ALL";
+      const topF = document.getElementById('ml-filter-topic')?.value || "ALL";
+      const causeDropF = document.getElementById('ml-filter-cause')?.value || "ALL";
+
+      return weekMistakes.filter(m => {
+          let match = true;
+          if (subF !== "ALL" && m.subject !== subF) match = false;
+          if (topF !== "ALL" && m.topic !== topF) match = false;
+          if (causeDropF !== "ALL" && !(m.rootCauses||[]).includes(causeDropF)) match = false;
+          // Apply Specific Chart Bar cause filter if passed
+          if (causeFilter !== "ALL" && !(m.rootCauses||[]).includes(causeFilter)) match = false;
+          return match;
+      });
+  }
+
+  // Populate Dropdowns
+  function populateMLDropdowns(weekMistakes) {
+      const subDrop = document.getElementById('ml-filter-sub');
+      const topDrop = document.getElementById('ml-filter-topic');
+      const causeDrop = document.getElementById('ml-filter-cause');
+      
+      let currSub = subDrop.value; let currTop = topDrop.value; let currCause = causeDrop.value;
+      
+      let subs = new Set(); let tops = new Set();
+      weekMistakes.forEach(m => { if(m.subject) subs.add(m.subject); if(m.topic) tops.add(m.topic); });
+      
+      subDrop.innerHTML = '<option value="ALL">All Subjects</option>' + [...subs].map(s => `<option value="${s}">${s}</option>`).join('');
+      topDrop.innerHTML = '<option value="ALL">All Topics</option>' + [...tops].map(t => `<option value="${t}">${t}</option>`).join('');
+      causeDrop.innerHTML = '<option value="ALL">All Causes</option>' + ROOT_CAUSES.map(c => `<option value="${c}">${c}</option>`).join('');
+      
+      if([...subs].includes(currSub)) subDrop.value = currSub;
+      if([...tops].includes(currTop)) topDrop.value = currTop;
+      if(ROOT_CAUSES.includes(currCause)) causeDrop.value = currCause;
+  }
+
   window.renderMistakeLogTab = function() {
       if(!currentlySelectedWeek) return; 
-      
-      let weekMistakes = window.globalMistakesByWeek[currentlySelectedWeek] || [];
+      let allWeekMistakes = window.globalMistakesByWeek[currentlySelectedWeek] || [];
       document.getElementById('ml-week-title').innerText = document.getElementById('main-week-title').innerText;
 
-      // 1. Bar Chart Data Prep
+      // Populate Dropdowns only once per data change to avoid reset
+      if(document.getElementById('ml-filter-sub').options.length <= 1) populateMLDropdowns(allWeekMistakes);
+
+      // Get filtered data
+      let filteredMistakes = getFilteredMistakes("ALL");
+
       let causeCounts = {};
       ROOT_CAUSES.forEach(c => causeCounts[c] = 0);
-      
-      weekMistakes.forEach(m => {
+      filteredMistakes.forEach(m => {
           if(m.rootCauses) {
               m.rootCauses.forEach(c => { if(causeCounts[c] !== undefined) causeCounts[c]++; });
           }
@@ -4133,7 +4212,6 @@ window.closeEngineModal = function() {
       let labels = ROOT_CAUSES;
       let data = ROOT_CAUSES.map(c => causeCounts[c]);
 
-      // Draw Chart.js Bar Chart
       if(mlBarChartObj) { try{ mlBarChartObj.destroy(); }catch(e){} mlBarChartObj = null; }
       const ctx = document.getElementById('mlBarChart').getContext('2d');
       mlBarChartObj = new Chart(ctx, {
@@ -4141,7 +4219,7 @@ window.closeEngineModal = function() {
           data: {
               labels: labels,
               datasets: [{
-                  label: 'Mistakes Count',
+                  label: 'Mistakes',
                   data: data,
                   backgroundColor: ['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6', '#06b6d4', '#ec4899', '#f97316', '#84cc16', '#64748b', '#d946ef', '#14b8a6'],
                   borderRadius: 4
@@ -4151,62 +4229,134 @@ window.closeEngineModal = function() {
               maintainAspectRatio: false,
               plugins: { legend: { display: false } },
               scales: {
-                  x: { ticks: { color: 'rgba(128,128,128,0.7)', font: {size: 9}, maxRotation: 45, minRotation: 45 }, grid: { display: false } },
+                  x: { ticks: { color: 'rgba(128,128,128,0.7)', font: {size: 10}, maxRotation: 45, minRotation: 45 }, grid: { display: false } },
                   y: { ticks: { color: 'rgba(128,128,128,0.7)', stepSize: 1 }, grid: { color: 'rgba(128,128,128,0.1)' } }
+              },
+              onClick: (e, elements) => {
+                  if(elements.length > 0) {
+                      const idx = elements[0].index;
+                      const clickedCause = labels[idx];
+                      if(data[idx] > 0) openMistakeDetailModal(clickedCause);
+                  }
               }
           }
       });
-
-      // 2. Render List Detail 
-      let listArea = document.getElementById('ml-list-area');
-      if(weekMistakes.length === 0) {
-          listArea.innerHTML = `<div style="text-align:center; padding:20px; color:var(--text-secondary);"><i class="fa-solid fa-face-smile" style="font-size:2rem; margin-bottom:10px; opacity:0.5;"></i><br>Is week koi mistake log nahi kiya! 🎉</div>`;
-          return;
-      }
-
-      let html = '';
-      weekMistakes.forEach((m, idx) => {
-          let dateStr = m.savedAt ? m.savedAt.toDate().toLocaleString('en-IN', {day:'2-digit', month:'short'}) : '';
-          let causesBadges = (m.rootCauses||[]).map(c => `<span style="background:rgba(255,255,255,0.1); padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:800; border:1px solid var(--border-color); color:var(--text-secondary);">${c}</span>`).join(' ');
-          
-          let statusColor = (m.status === 'Correct') ? 'var(--accent-green)' : (m.status === 'Wrong' ? 'var(--accent-red)' : 'var(--accent-purple)');
-          
-          html += `
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:12px; padding:16px; margin-bottom:4px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; border-bottom:1px dashed rgba(128,128,128,0.2); padding-bottom:8px;">
-                  <div>
-                      <div style="font-size:0.8rem; color:var(--accent-gold); font-weight:900; text-transform:uppercase;">${m.testName}</div>
-                      <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:2px; font-weight:600;"><i class="fa-regular fa-clock"></i> ${dateStr} &nbsp;•&nbsp; <b style="color:${statusColor}; background:rgba(255,255,255,0.05); padding:2px 6px; border-radius:4px;">${m.status}</b></div>
-                  </div>
-                  <div style="text-align:right;">
-                      <div style="font-size:0.85rem; font-weight:900; color:var(--text-primary);">${m.subject}</div>
-                      <div style="font-size:0.75rem; color:var(--accent-blue); font-weight:800;">${m.topic}</div>
-                  </div>
-              </div>
-              <div class="q" style="font-size:1.05rem; font-weight:600; margin-bottom:12px; line-height:1.4;"><b>Q.</b> ${m.q}</div>
-              <div style="margin-bottom:14px; display:flex; flex-wrap:wrap; gap:6px;">${causesBadges}</div>
-              <div style="background:rgba(239, 68, 68, 0.05); border-left:3px solid var(--accent-red); padding:10px 14px; border-radius:6px; font-size:0.85rem; color:var(--text-primary); font-weight:500;">
-                  <b style="color:var(--accent-red);"><i class="fa-solid fa-pen-nib"></i> Remarks:</b> ${m.remarks}
-              </div>
-          </div>`;
-      });
-      listArea.innerHTML = html;
   };
 
-  // 🔥 NINJA HACK: Purane logic ko chhere bina week switch ko hijack karna
+  // 🔥 OPENS THE POPUP WHEN A GRAPH BAR IS CLICKED
+  window.openMistakeDetailModal = function(causeName) {
+      document.getElementById('mld-title').innerText = causeName;
+      
+      // Update action buttons inside modal
+      document.getElementById('mld-btn-test').onclick = () => launchFilteredMock(causeName);
+      document.getElementById('mld-btn-txt').onclick = () => downloadFilteredLogs('txt', causeName);
+      document.getElementById('mld-btn-html').onclick = () => downloadFilteredLogs('html', causeName);
+
+      let qs = getFilteredMistakes(causeName);
+      let html = '';
+      
+      qs.forEach((m, idx) => {
+          let dateStr = m.savedAt ? m.savedAt.toDate().toLocaleString('en-IN', {day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit'}) : '';
+          let statusColor = (m.status === 'Correct') ? 'var(--accent-green)' : (m.status === 'Wrong' ? 'var(--accent-red)' : 'var(--accent-purple)');
+          
+          let optHTML = '';
+          m.o.forEach((optText, oIdx) => {
+              let cls = 'rev-opt';
+              if(oIdx === m.a) cls += ' correct';
+              optHTML += `<div class="${cls}" style="background:#fff; border-color:#e2e8f0; color:#000; padding:10px; margin:6px 0; border-radius:8px;"><div>${String.fromCharCode(65+oIdx)}) ${optText}</div></div>`;
+          });
+
+          html += `
+          <div style="background:#fff; border-radius:14px; padding:16px; box-shadow:0 6px 15px rgba(0,0,0,0.1); color:#000;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                  <b style="color:${statusColor}; font-size:1.1rem;">${m.status}</b>
+                  <div style="font-size:0.8rem; color:#64748b;"><i class="fa-regular fa-clock"></i> ${dateStr}</div>
+              </div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.85rem; border-bottom:1px dashed #cbd5e1; padding-bottom:8px;">
+                  <div style="color:#d97706; font-weight:800; text-transform:uppercase;"><i class="fa-solid fa-tag"></i> ${m.testName}</div>
+                  <div style="text-align:right;">
+                      <b style="color:#334155;">${m.subject}</b><br>
+                      <span style="color:#3b82f6; font-weight:700;">${m.topic}</span>
+                  </div>
+              </div>
+              <div style="background:rgba(239, 68, 68, 0.05); border-left:3px solid #ef4444; padding:8px 12px; border-radius:6px; font-size:0.85rem; color:#475569; margin-bottom:12px;">
+                  <b style="color:#ef4444;"><i class="fa-solid fa-pen-nib"></i> Remarks:</b> ${m.remarks}
+              </div>
+              <div style="font-size:1.05rem; font-weight:600; margin-bottom:12px; line-height:1.5;">${m.q}</div>
+              <div>${optHTML}</div>
+          </div>`;
+      });
+
+      document.getElementById('mld-list-area').innerHTML = html;
+      document.getElementById('ml-detail-modal').classList.add('show');
+      
+      if (window.renderMathInElement) {
+          renderMathInElement(document.getElementById('ml-detail-modal'), {
+              delimiters: [{left: '$$', right: '$$', display: false}, {left: '$', right: '$', display: false}], throwOnError: false
+          });
+      }
+  };
+
+  // 🔥 UNIFIED LAUNCH MOCK
+  window.launchFilteredMock = function(causeFilter) {
+      let qs = getFilteredMistakes(causeFilter);
+      if (qs.length === 0) { alert("Data nahi mila bhai! 🎉"); return; }
+      
+      let weekLabel = formatWeekLabel(currentlySelectedWeek);
+      let title = causeFilter !== "ALL" ? `${weekLabel}-${causeFilter.replace(/ /g, '')}-QUIZ` : `${weekLabel}-MISTAKE-LOG-QUIZ`;
+      
+      let exportData = qs.map(item => {
+          let dateStr = item.savedAt ? item.savedAt.toDate().toLocaleDateString('en-IN') : '';
+          let causes = (item.rootCauses || []).join(', ');
+          let errorBox = `<div style="margin-top:16px; background:rgba(239, 68, 68, 0.05); border:1px solid rgba(239, 68, 68, 0.3); border-left:4px solid var(--accent-red); padding:12px; border-radius:8px;"><h4 style="margin:0 0 8px 0; color:var(--accent-red); font-size:0.9rem;"><i class="fa-solid fa-clock-rotate-left"></i> Pichli Baar Ki Galti (${dateStr})</h4><div style="font-size:0.85rem; margin-bottom:4px; color:var(--text-primary);"><b>Topic:</b> ${item.subject} - ${item.topic}</div><div style="font-size:0.85rem; margin-bottom:4px; color:var(--text-primary);"><b>Status:</b> ${item.status} | <b>Root Cause:</b> ${causes}</div><div style="font-size:0.85rem; color:var(--text-primary);"><b><i class="fa-solid fa-pen-nib"></i> Remarks:</b> ${item.remarks}</div></div>`;
+
+          return {
+              q: item.q, q_hi: item.q_hi || '', o: item.o, o_hi: item.o_hi || item.o, a: item.a,
+              s: (item.s || 'No solution.') + errorBox, s_hi: (item.s_hi ? item.s_hi + errorBox : '')
+          };
+      });
+      openEngineModal("", title, exportData);
+  };
+
+  // 🔥 UNIFIED DOWNLOAD
+  window.downloadFilteredLogs = function(format, causeFilter) {
+      let qs = getFilteredMistakes(causeFilter);
+      if (qs.length === 0) { alert("Data nahi mila bhai! 🎉"); return; }
+      
+      let weekLabel = formatWeekLabel(currentlySelectedWeek);
+      let fileName = causeFilter !== "ALL" ? `${weekLabel}-${causeFilter}` : `${weekLabel}-Mistake Log`;
+
+      if (format === 'txt') {
+          let exportData = qs.map(m => ({
+              q: m.q, opts: m.o, correct: m.a, 
+              sol: (m.s||'') + `\n[Pichli Galti: ${m.topic} | ${m.status} | Cause: ${(m.rootCauses||[]).join(', ')} | Remarks: ${m.remarks}]`
+          }));
+          let blob = new Blob([JSON.stringify(exportData, null, 2)], {type: "text/plain;charset=utf-8"});
+          let a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${fileName}.txt`; a.click();
+      } else {
+          let htmlContent = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${fileName}</title><style> body{font-family:sans-serif; background:#0B0E14; color:#fff; padding:20px; max-width:800px; margin:auto;} h1{color:#A3E635; text-align:center; text-transform:uppercase;} .q-card{background:#151A22; border:1px solid #1E293B; border-radius:12px; padding:20px; margin-bottom:20px;} .meta{color:#FACC15; font-size:0.85rem; font-weight:bold; margin-bottom:10px;} .q{font-size:1.1rem; margin-bottom:12px;} .opt{padding:10px; border:2px solid #1E293B; border-radius:8px; margin-bottom:8px; background:rgba(255,255,255,0.03);} .opt.correct{border-color:#10B981; background:rgba(16,185,129,0.1);} .sol{margin-top:15px; background:rgba(16,185,129,0.1); border-left:4px solid #10B981; padding:12px; border-radius:6px;} </style></head><body><h1>${fileName.replace(/-/g, ' ')}</h1>`;
+          qs.forEach((m, idx) => {
+              let optsHTML = '';
+              m.o.forEach((optText, oIdx) => {
+                  optsHTML += `<div class="opt ${oIdx === m.a ? 'correct' : ''}"><b>${String.fromCharCode(65+oIdx)})</b> ${optText}</div>`;
+              });
+              htmlContent += `<div class="q-card"><div class="meta">${m.testName} | ${m.status} | Cause: ${(m.rootCauses||[]).join(', ')}</div><div class="q"><b>Q${idx+1}.</b> ${m.q}</div>${optsHTML}<div class="sol"><b>Solution & Remarks:</b><br>${m.remarks}<br><br>${m.s || 'No solution provided.'}</div></div>`;
+          });
+          htmlContent += `</body></html>`;
+          let blob = new Blob([htmlContent], {type: 'text/html;charset=utf-8'});
+          let a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${fileName}.html`; a.click();
+      }
+  };
+
   const originalLoadWeek = window.loadWeekToMain;
   window.loadWeekToMain = function(monTimestamp) {
       if(originalLoadWeek) originalLoadWeek(monTimestamp);
-      if(document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block') {
-          renderMistakeLogTab();
-      }
+      if(document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block') renderMistakeLogTab();
   };
   const originalLoadThisWeek = window.loadThisWeek;
   window.loadThisWeek = function() {
       if(originalLoadThisWeek) originalLoadThisWeek();
-      if(document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block') {
-          renderMistakeLogTab();
-      }
+      if(document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block') renderMistakeLogTab();
   };
 </script>
 </body>
