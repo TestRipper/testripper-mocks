@@ -4261,7 +4261,7 @@ window.closeEngineModal = function() {
           m.o.forEach((optText, oIdx) => {
               let cls = 'rev-opt';
               if(oIdx === m.a) cls += ' correct';
-              optHTML += `<div class="${cls}" style="background:#fff; border-color:#e2e8f0; color:#000; padding:10px; margin:6px 0; border-radius:8px;"><div>${String.fromCharCode(65+oIdx)}) ${optText}</div></div>`;
+              optHTML += `<div class="${cls}" style="background:#fff; border-color:#e2e8f0; color:#000; padding:10px; margin:6px 0; border-radius:8px;"><div>${String.fromCharCode(65+oIdx)})${optText}</div></div>`;
           });
 
           html += `
@@ -4286,6 +4286,7 @@ window.closeEngineModal = function() {
                   <b><i class="fa-solid fa-lightbulb"></i> Solution:</b><br>${m.s || 'No solution provided.'}
               </div>
           </div>`;
+      });
 
       document.getElementById('mld-list-area').innerHTML = html;
       document.getElementById('ml-detail-modal').classList.add('show');
