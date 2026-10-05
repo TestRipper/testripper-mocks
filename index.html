@@ -4265,7 +4265,7 @@ window.closeEngineModal = function() {
           });
 
           html += `
-          <div style="background:#fff; border-radius:14px; padding:16px; box-shadow:0 6px 15px rgba(0,0,0,0.1); color:#000;">
+          <div style="background:#fff; border-radius:14px; padding:16px; box-shadow:0 6px 15px rgba(0,0,0,0.1); color:#000; margin-bottom:16px;">
               <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
                   <b style="color:${statusColor}; font-size:1.1rem;">${m.status}</b>
                   <div style="font-size:0.8rem; color:#64748b;"><i class="fa-regular fa-clock"></i> ${dateStr}</div>
@@ -4282,8 +4282,10 @@ window.closeEngineModal = function() {
               </div>
               <div style="font-size:1.05rem; font-weight:600; margin-bottom:12px; line-height:1.5;">${m.q}</div>
               <div>${optHTML}</div>
+              <div class="sol" style="display:block; margin-top:12px; background:rgba(16,185,129,0.1); border-left:4px solid #10b981; padding:12px; border-radius:8px; font-size:0.95rem;">
+                  <b><i class="fa-solid fa-lightbulb"></i> Solution:</b><br>${m.s || 'No solution provided.'}
+              </div>
           </div>`;
-      });
 
       document.getElementById('mld-list-area').innerHTML = html;
       document.getElementById('ml-detail-modal').classList.add('show');
