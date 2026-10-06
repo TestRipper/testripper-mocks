@@ -497,8 +497,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   // Shuffle Questions
   for(let i = QS.length - 1; i > 0; i--){ let j = Math.floor(Math.random() * (i + 1)); [QS[i], QS[j]] = [QS[j], QS[i]]; }
 
-    // 🚀 SMART TIMER LOGIC (Priority to JSON time, fallback to 40s/Q)
-  let TIME_SECONDS = QS.length * 40; 
+    // 🚀 SMART TIMER LOGIC (Priority to JSON time, fallback to 30s/Q)
+  let TIME_SECONDS = QS.length * 30; 
   if (customEngineData) {
       try {
           let parsed = JSON.parse(customEngineData);
@@ -783,22 +783,45 @@ document.addEventListener('DOMContentLoaded',()=>{
     const mos = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
     const formattedTs = `${String(d.getDate()).padStart(2,'0')} ${mos[d.getMonth()]} ${d.getFullYear()}, ${d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
 
-    const rec={ ts:formattedTs, score:disp,correct:C,incorrect:W,unattempted:U,marked:M,minutes:mins, snap:snap(), testName: QUIZ_TITLE };
+        const rec={ ts:formattedTs, score:disp,correct:C,incorrect:W,unattempted:U,marked:M,minutes:mins, snap:snap(), testName: QUIZ_TITLE };
 
-    (async () => {
-        const arr = await Aget(); 
-        if (Array.isArray(arr)) { arr.unshift(rec); Aset(arr); }
-        const user = auth.currentUser;
-        if (user) {
-            db.collection("users").doc(user.uid).collection("attempts").add({
-                ...rec, serverTime: firebase.firestore.FieldValue.serverTimestamp()
-            }).catch(e => console.error("Sync Error", e));
-        }
-    })();
-
+    // 1. Pehle result modal dikhao aur button ko disable state me set karo
     clearProgress();
     $('ovr').classList.add('show');
     render();
+
+    let closeBtn = $('closeOvr');
+    if(closeBtn) {
+        closeBtn.disabled = true;
+        closeBtn.textContent = "Syncing... Please Wait";
+        closeBtn.style.opacity = "0.6";
+        closeBtn.style.cursor = "not-allowed";
+    }
+
+    // 2. Firebase Sync Logic (Wait for it to finish)
+    (async () => {
+        const arr = await Aget(); 
+        if (Array.isArray(arr)) { arr.unshift(rec); Aset(arr); }
+        
+        const user = auth.currentUser;
+        if (user) {
+            try {
+                await db.collection("users").doc(user.uid).collection("attempts").add({
+                    ...rec, serverTime: firebase.firestore.FieldValue.serverTimestamp()
+                });
+            } catch (e) {
+                console.error("Sync Error", e);
+            }
+        }
+        
+        // 3. Sync complete hone ke baad button ko wapas active karo
+        if(closeBtn) {
+            closeBtn.disabled = false;
+            closeBtn.textContent = "Close & Return to Dashboard";
+            closeBtn.style.opacity = "1";
+            closeBtn.style.cursor = "pointer";
+        }
+    })();
   }
 
   // 🚀 REDIRECT / REFRESH ON CLOSE
