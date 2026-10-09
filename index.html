@@ -471,6 +471,26 @@ body[data-theme="light"] .glass-card {
     box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
 }
 .whatsapp-btn:active { transform: scale(0.95); }
+
+      .rtg-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+      .rtg-head { padding: 12px 16px; background: rgba(16, 185, 129, 0.05); display: flex; gap: 12px; align-items: center; border-bottom: 1px solid var(--border-color); border-radius: 12px 12px 0 0;}
+      .rtg-head i { font-size: 1.8rem; color: #10b981; }
+      .rtg-badge { background: #10b981; color: #fff; font-size: 0.65rem; padding: 2px 6px; border-radius: 8px; font-weight: 800; text-transform: uppercase; margin-left:6px;}
+      .rtg-step-row { padding: 14px 16px; border-bottom: 1px dashed var(--border-color); }
+      .rtg-step-label { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+      .rtg-step-num { width: 22px; height: 22px; background: #10b981; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+      .rtg-browser { display: flex; height: 220px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-main); }
+      .rtg-tree-pane { width: 45%; border-right: 1px solid var(--border-color); overflow-y: auto; padding: 6px; }
+      .rtg-file-pane { width: 55%; overflow-y: auto; padding: 6px; }
+      .tree-folder { padding: 8px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+      .tree-folder:hover, .tree-folder.active { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+      .tree-children { padding-left: 10px; display: none; border-left: 1px dashed var(--border-color); margin-left: 8px; }
+      .tree-children.open { display: block; }
+      .file-item { display: flex; align-items: center; gap: 8px; padding: 8px; border: 1px solid var(--border-color); border-radius: 6px; margin-bottom: 4px; background: var(--bg-card); cursor: pointer; }
+      .file-item.selected { background: rgba(16, 185, 129, 0.1); border-color: #10b981; }
+      .file-name { font-size: 0.75rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-primary);}
+      .rtg-input-full { width: 100%; background: var(--bg-main); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; font-size: 0.9rem; font-weight: 800; color: var(--text-primary); outline: none;}
+      .rtg-launch-btn { width: 100%; background: linear-gradient(90deg, #10b981, #059669); color: #fff; border: none; padding: 14px; font-size: 1rem; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 0 0 12px 12px;}
   /* ====== TESTRIPPER PREMIUM RESPONSIVE UI ====== */
   
   /* 1. MOBILE APP VIEW (Small Screens) */
@@ -593,6 +613,54 @@ body[data-theme="light"] .glass-card {
         <div class="la-btn ann" onclick="openFolder('ANNOUNCEMENTS')">
           <i class="fa-solid fa-bullhorn"></i>
           <span style="font-size: 0.8rem; letter-spacing: 0.5px;">Announcements</span>
+        </div>
+      </div>
+      
+              <div class="rtg-card" id="rtg-master-card">
+        <div class="rtg-head">
+          <i class="fa-solid fa-shuffle"></i>
+          <div>
+            <h3 style="margin:0;">Random Test Generator <span class="rtg-badge">Beta</span></h3>
+            <p style="margin:0;">Create a custom test from Mock Tests. Select multiple tests and generate.</p>
+          </div>
+        </div>
+        <div class="rtg-body">
+          <div class="rtg-step-row">
+            <div class="rtg-step-label"><div class="rtg-step-num">T</div> Quiz Title</div>
+            <input type="text" id="rtg-title" class="rtg-input-full" placeholder="e.g. Mix Revision Math 2026" value="Warrior Random Mock">
+          </div>
+          <div class="rtg-step-row">
+            <div class="rtg-step-label" style="justify-content: space-between; width: 100%;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div class="rtg-step-num">1</div> Browse & Select Tests
+              </div>
+              <span style="font-size: 0.8rem; color: #10b981; cursor: pointer; font-weight:900;" onclick="clearRtgSelection()">Clear (<span id="rtg-sel-count">0</span>)</span>
+            </div>
+            <div class="rtg-browser">
+              <div class="rtg-tree-pane" id="rtg-tree-pane">
+                <div style="padding: 20px; text-align: center; color: var(--text-secondary);"><i class="fa-solid fa-spinner fa-spin"></i> Loading Folders...</div>
+              </div>
+              <div class="rtg-file-pane" id="rtg-file-pane">
+                <div style="padding: 30px 10px; text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+                  <i class="fa-solid fa-folder-open" style="font-size: 2rem; margin-bottom: 10px; opacity: 0.5;"></i><br>
+                  Select a folder from left to view tests.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rtg-step-row" style="display:flex; gap:12px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:200px;">
+              <div class="rtg-step-label"><div class="rtg-step-num">2</div> Questions</div>
+              <input type="number" id="rtg-q-custom" class="rtg-input-full" value="25" min="5">
+            </div>
+            <div style="flex:1; min-width:200px;">
+              <div class="rtg-step-label"><div class="rtg-step-num">3</div> Time (Min)</div>
+              <input type="number" id="rtg-t-custom" class="rtg-input-full" value="15" min="5">
+            </div>
+          </div>
+          <button class="rtg-launch-btn" id="rtg-launch-btn" onclick="executeAdvancedRTG()">
+            <span id="rtg-btn-text">Generate Random Test <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
         </div>
       </div>
 
@@ -4360,6 +4428,169 @@ window.closeEngineModal = function() {
       if(originalLoadThisWeek) originalLoadThisWeek();
       if(document.getElementById('mistake-log-container') && document.getElementById('mistake-log-container').style.display === 'block') renderMistakeLogTab();
   };
+  
+      let rtgSelectedFiles = new Map();
+
+      window.addEventListener('load', () => { initRtgTree(); });
+
+      async function initRtgTree() {
+          const treePane = document.getElementById('rtg-tree-pane');
+          try {
+              const res = await fetch(GITHUB_API_BASE);
+              const data = await res.json();
+              let html = '';
+              const allowedRoots = ['MOCK TESTS', 'TARGET-SERIES']; 
+              data.forEach(item => {
+                  if (item.type === 'dir' && allowedRoots.includes(item.name)) {
+                      let safeName = item.name.replace(/'/g, "\\'");
+                      html += `
+                      <div class="tree-node">
+                          <div class="tree-folder" onclick="toggleRtgFolder(this, '${safeName}', '${item.path}')">
+                              <i class="fa-solid fa-folder"></i> <span>${item.name}</span>
+                          </div>
+                          <div class="tree-children" id="rtg-child-${safeName}"></div>
+                      </div>`;
+                  }
+              });
+              treePane.innerHTML = html;
+          } catch(e) {}
+      }
+
+      window.toggleRtgFolder = async function(el, idStr, fullPath) {
+          document.querySelectorAll('.tree-folder').forEach(f => f.classList.remove('active'));
+          el.classList.add('active');
+          const childContainer = document.getElementById(`rtg-child-${idStr}`);
+          const filePane = document.getElementById('rtg-file-pane');
+          
+          if (childContainer.innerHTML.trim() !== '') childContainer.classList.toggle('open');
+          filePane.innerHTML = `<div style="padding: 20px; text-align: center;"><i class="fa-solid fa-spinner fa-spin"></i> Fetching...</div>`;
+          
+          try {
+              let apiPath = fullPath.split('/').map(segment => encodeURIComponent(segment)).join('/');
+              const res = await fetch(GITHUB_API_BASE + apiPath);
+              const data = await res.json();
+              
+              const folders = data.filter(i => i.type === 'dir');
+              const files = data.filter(i => i.type === 'file' && i.name.endsWith('.json'));
+
+              if (folders.length > 0 && childContainer.innerHTML.trim() === '') {
+                  let subHtml = '';
+                  folders.forEach(f => {
+                      let uniqueId = Math.random().toString(36).substr(2, 9);
+                      subHtml += `
+                      <div class="tree-node">
+                          <div class="tree-folder" onclick="toggleRtgFolder(this, '${uniqueId}', '${f.path.replace(/'/g, "\\'")}')">
+                              <i class="fa-regular fa-folder"></i> <span>${f.name.replace(/-/g, ' ')}</span>
+                          </div>
+                          <div class="tree-children" id="rtg-child-${uniqueId}"></div>
+                      </div>`;
+                  });
+                  childContainer.innerHTML = subHtml;
+                  childContainer.classList.add('open');
+              }
+
+              if (files.length > 0) {
+                  let fileHtml = '';
+                  files.forEach(file => {
+                      let isSelected = rtgSelectedFiles.has(file.path);
+                      let cleanName = decodeURIComponent(file.name).replace('.json', '').replace(/-/g, ' ');
+                      fileHtml += `
+                      <div class="file-item ${isSelected ? 'selected' : ''}" onclick="toggleRtgFile(this, '${file.path.replace(/'/g, "\\'")}', '${cleanName.replace(/'/g, "\\'")}')">
+                          <input type="checkbox" ${isSelected ? 'checked' : ''} onclick="event.stopPropagation(); toggleRtgFile(this.parentElement, '${file.path.replace(/'/g, "\\'")}', '${cleanName.replace(/'/g, "\\'")}')">
+                          <div class="file-info"><div class="file-name">${cleanName}</div></div>
+                      </div>`;
+                  });
+                  filePane.innerHTML = fileHtml;
+              } else {
+                  filePane.innerHTML = `<div style="padding:20px; text-align:center; font-size:0.8rem; color:var(--text-secondary);">No JSON found here.</div>`;
+              }
+          } catch(e) {}
+      };
+
+      window.toggleRtgFile = function(el, path, name) {
+          if (rtgSelectedFiles.has(path)) {
+              rtgSelectedFiles.delete(path);
+              el.classList.remove('selected');
+              el.querySelector('input').checked = false;
+          } else {
+              rtgSelectedFiles.set(path, name);
+              el.classList.add('selected');
+              el.querySelector('input').checked = true;
+          }
+          document.getElementById('rtg-sel-count').innerText = rtgSelectedFiles.size;
+      };
+
+      window.clearRtgSelection = function() {
+          rtgSelectedFiles.clear();
+          document.getElementById('rtg-sel-count').innerText = "0";
+          document.querySelectorAll('.file-item').forEach(el => { el.classList.remove('selected'); el.querySelector('input').checked = false; });
+      };
+
+      window.executeAdvancedRTG = async function() {
+          const qCount = parseInt(document.getElementById('rtg-q-custom').value);
+          const tLimit = parseInt(document.getElementById('rtg-t-custom').value);
+          if (rtgSelectedFiles.size === 0) { alert("Kam se kam 1 file select kar bhai!"); return; }
+          if (!qCount || qCount < 5) { alert("Minimum 5 questions chahiye!"); return; }
+
+          const btn = document.getElementById('rtg-launch-btn');
+          btn.disabled = true;
+          document.getElementById('rtg-btn-text').innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Compiling Test...`;
+
+          try {
+              let allPools = [];
+              for (let [path, name] of rtgSelectedFiles) {
+                  let rawUrl = `https://raw.githubusercontent.com/TestRipper/testripper-mocks/main/${path}`;
+                  let res = await fetch(rawUrl);
+                  let json = await res.json();
+                  let extractedQs = [];
+                  if (json.questionsData) { json.questionsData.forEach(sec => { if (sec.questions) extractedQs.push(...sec.questions); }); } 
+                  else if (json.questions) { extractedQs.push(...json.questions); }
+                  
+                  // Shuffle single file's questions first
+                  for (let i = extractedQs.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [extractedQs[i], extractedQs[j]] = [extractedQs[j], extractedQs[i]]; }
+                  allPools.push(extractedQs);
+              }
+
+              let finalQuestions = [];
+              let baseQsPerFile = Math.floor(qCount / allPools.length);
+              let remainderPool = [];
+
+              // Proportional picking logic
+              allPools.forEach(pool => {
+                  let pickCount = Math.min(baseQsPerFile, pool.length);
+                  finalQuestions.push(...pool.slice(0, pickCount));
+                  if (pool.length > pickCount) remainderPool.push(...pool.slice(pickCount));
+              });
+
+              // Complete the deficit
+              let needed = qCount - finalQuestions.length;
+              if (needed > 0 && remainderPool.length > 0) {
+                  for (let i = remainderPool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [remainderPool[i], remainderPool[j]] = [remainderPool[j], remainderPool[i]]; }
+                  finalQuestions.push(...remainderPool.slice(0, Math.min(needed, remainderPool.length)));
+              }
+
+              // Final global shuffle
+              for (let i = finalQuestions.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [finalQuestions[i], finalQuestions[j]] = [finalQuestions[j], finalQuestions[i]];
+              }
+
+              const finalPayload = {
+                  title: document.getElementById('rtg-title').value.trim() || "Random Warrior Test",
+                  quizTime: tLimit,
+                  totalMarks: finalQuestions.reduce((sum, q) => sum + (parseFloat(q.posMarks || 2)), 0),
+                  questions: finalQuestions
+              };
+
+              sessionStorage.setItem('customEngineData', JSON.stringify(finalPayload));
+              window.location.href = "Mock-fetcher.html";
+
+          } catch (err) {
+              alert("Error generating test. Check console.");
+              btn.disabled = false;
+              document.getElementById('rtg-btn-text').innerHTML = `Generate Random Test <i class="fa-solid fa-arrow-right"></i>`;
+          }
+      };
 </script>
 </body>
 </html>
