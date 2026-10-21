@@ -767,6 +767,50 @@ body[data-theme="light"] .glass-card {
           <p id="prof-avg-score" style="font-size:1.1rem; font-weight:800; color:var(--text-primary)">0.00</p>
         </div>
       </div>
+      
+            <!-- AI WEEKLY PERFORMANCE COACH BANNER -->
+      <div id="ai-coach-banner" class="social-banner" style="background: linear-gradient(135deg, #0f172a, #1e1b4b); border: 1px solid #6366f1; padding: 20px; margin-bottom: 24px; border-radius: 16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+          <h2 style="font-size: 1.3rem; color: #c7d2fe; margin:0;"><i class="fa-solid fa-robot"></i> AI Weekly Coach</h2>
+          <span style="background: linear-gradient(90deg, #8b5cf6, #3b82f6); color:#fff; padding:2px 8px; border-radius:6px; font-size:0.7rem; font-weight:900;">Gemini</span>
+        </div>
+        <div style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 16px;">Deep analysis of your mistakes, patterns & improvement plan.</div>
+        
+        <button id="btn-generate-ai" onclick="generateWeeklyAIAnalysis()" style="width: 100%; background: linear-gradient(90deg, #8b5cf6, #3b82f6); color: #fff; padding: 12px; border-radius: 10px; font-weight: 900; border: none; cursor: pointer; text-transform: uppercase; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); transition: 0.2s;">
+          Generate Weekly AI Analysis <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </button>
+        <div id="ai-loading-status" style="display:none; text-align:center; font-size:0.8rem; color:#facc15; margin-top:10px; font-weight:bold;">
+          <i class="fa-solid fa-spinner fa-spin"></i> AI is analyzing your brain patterns...
+        </div>
+      </div>
+
+      <!-- AI OUTPUT EDITABLE CARDS (Hidden by default) -->
+      <div id="ai-output-cards" style="display: none; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+        
+        <!-- Causes Card -->
+        <div style="background: var(--bg-card); border: 2px solid var(--border-color); border-radius: 14px; overflow: hidden;">
+          <div style="background: rgba(239, 68, 68, 0.1); padding: 10px 16px; border-bottom: 1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="color: var(--accent-red); margin:0; font-size:1rem; font-weight:900;"><i class="fa-solid fa-triangle-exclamation"></i> Causes Analysis</h3>
+            <i class="fa-solid fa-pen-to-square" style="color:var(--text-secondary); font-size:0.8rem;"></i>
+          </div>
+          <textarea id="ai-causes-text" onblur="saveAIEditsToFirestore()" style="width:100%; min-height:100px; background:var(--bg-main); color:var(--text-primary); border:none; padding:16px; font-size:0.9rem; font-weight:600; line-height:1.5; outline:none; resize:vertical; font-family:inherit;"></textarea>
+        </div>
+
+        <!-- Plans & Executions Card -->
+        <div style="background: var(--bg-card); border: 2px solid var(--border-color); border-radius: 14px; overflow: hidden;">
+          <div style="background: rgba(16, 185, 129, 0.1); padding: 10px 16px; border-bottom: 1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="color: var(--accent-green); margin:0; font-size:1rem; font-weight:900;"><i class="fa-solid fa-bullseye"></i> Plans & Executions</h3>
+            <i class="fa-solid fa-pen-to-square" style="color:var(--text-secondary); font-size:0.8rem;"></i>
+          </div>
+          <textarea id="ai-plans-text" onblur="saveAIEditsToFirestore()" style="width:100%; min-height:100px; background:var(--bg-main); color:var(--text-primary); border:none; padding:16px; font-size:0.9rem; font-weight:600; line-height:1.5; outline:none; resize:vertical; font-family:inherit; border-bottom:1px dashed var(--border-color);"></textarea>
+          
+          <div style="padding: 16px; background: var(--bg-card);">
+            <h4 style="color:var(--text-secondary); font-size:0.8rem; text-transform:uppercase; margin-bottom:8px; font-weight:900;">My Executions (Action Taken)</h4>
+            <textarea id="ai-executions-text" onblur="saveAIEditsToFirestore()" placeholder="Type here what you have executed to fix the mistakes..." style="width:100%; min-height:60px; background:rgba(0,0,0,0.05); color:var(--text-primary); border:1px solid var(--border-color); border-radius:8px; padding:12px; font-size:0.9rem; font-weight:600; outline:none; resize:vertical; font-family:inherit;"></textarea>
+          </div>
+        </div>
+
+      </div>
 
          <!-- Toggle Switch for Analytics -->
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
@@ -4592,5 +4636,150 @@ window.closeEngineModal = function() {
           }
       };
 </script>
+
+<!-- AI Weekly Coach Logic -->
+<script>
+     // =========================================
+  // 🔥 AI WEEKLY PERFORMANCE COACH LOGIC
+  // =========================================
+  
+  // 1. Hook into your existing week loader to toggle button state
+  const originalLoadWeekForAI = window.loadWeekToMain;
+  window.loadWeekToMain = function(monTimestamp) {
+      if(originalLoadWeekForAI) originalLoadWeekForAI(monTimestamp);
+      checkAndLoadAIAnalytics(monTimestamp);
+  };
+  
+  const originalLoadThisWeekForAI = window.loadThisWeek;
+  window.loadThisWeek = function() {
+      if(originalLoadThisWeekForAI) originalLoadThisWeekForAI();
+      checkAndLoadAIAnalytics(getMonday(getISTDate()));
+  };
+
+  async function checkAndLoadAIAnalytics(weekTimestamp) {
+      const user = auth.currentUser;
+      if(!user || !weekTimestamp) return;
+
+      const btn = document.getElementById('btn-generate-ai');
+      const outputDiv = document.getElementById('ai-output-cards');
+      
+      // Reset State
+      outputDiv.style.display = 'none';
+      btn.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = `Generate Weekly AI Analysis <i class="fa-solid fa-wand-magic-sparkles"></i>`;
+      btn.style.background = 'linear-gradient(90deg, #8b5cf6, #3b82f6)';
+      btn.style.opacity = '1';
+
+      // Rule: Disable if it's the CURRENT ongoing week
+      const currentWeekMonday = getMonday(getISTDate());
+      if(weekTimestamp === currentWeekMonday) {
+          btn.disabled = true;
+          btn.innerHTML = `<i class="fa-solid fa-lock"></i> Locked (Available after week ends)`;
+          btn.style.background = 'var(--bg-nav)';
+          btn.style.color = 'var(--text-secondary)';
+          btn.style.border = '1px solid var(--border-color)';
+          return;
+      }
+
+      // Check Firestore if analysis already exists for this past week
+      try {
+          const docRef = db.collection("users").doc(user.uid).collection("weekly_ai_analytics").doc(String(weekTimestamp));
+          const doc = await docRef.get();
+          
+          if(doc.exists) {
+              const data = doc.data();
+              // Hide generate button, show editable cards
+              btn.style.display = 'none';
+              outputDiv.style.display = 'flex';
+              
+              document.getElementById('ai-causes-text').value = data.causes || "";
+              document.getElementById('ai-plans-text').value = data.plans || "";
+              document.getElementById('ai-executions-text').value = data.executions || "";
+          }
+      } catch(e) {
+          console.error("Error loading AI analytics:", e);
+      }
+  }
+
+  // 2. Generate Analysis via Backend API
+  window.generateWeeklyAIAnalysis = async function() {
+      const user = auth.currentUser;
+      if(!user || !currentlySelectedWeek) return;
+
+      let weekMistakes = window.globalMistakesByWeek[currentlySelectedWeek];
+      if (!weekMistakes || weekMistakes.length === 0) {
+          alert("Bhai, is hafte ka koi mistake log hi nahi hai! Pehle mocks de aur mistakes log kar.");
+          return;
+      }
+
+      const btn = document.getElementById('btn-generate-ai');
+      const status = document.getElementById('ai-loading-status');
+      
+      btn.style.display = 'none';
+      status.style.display = 'block';
+
+      // Prepare lightweight data payload to save tokens
+      const payloadData = weekMistakes.map(m => ({
+          subject: m.subject, topic: m.topic, 
+          causes: (m.rootCauses||[]).join(', '), remarks: m.remarks
+      }));
+
+      try {
+          const response = await fetch('/api/ai-analytics', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ mistakeLogs: payloadData })
+          });
+
+          if(!response.ok) throw new Error("API failed");
+          
+          const result = await response.json();
+          
+          // Save to Firestore immediately
+          const docRef = db.collection("users").doc(user.uid).collection("weekly_ai_analytics").doc(String(currentlySelectedWeek));
+          await docRef.set({
+              causes: result.causes,
+              plans: result.plans,
+              executions: "", // Empty for user to fill later
+              generatedAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+
+          // Update UI
+          status.style.display = 'none';
+          checkAndLoadAIAnalytics(currentlySelectedWeek);
+
+      } catch(error) {
+          console.error("AI Generation failed:", error);
+          alert("Generation fail ho gaya bhai! Server error.");
+          btn.style.display = 'block';
+          status.style.display = 'none';
+      }
+  };
+
+  // 3. Auto-Save Editable Textareas on Blur
+  window.saveAIEditsToFirestore = async function() {
+      const user = auth.currentUser;
+      if(!user || !currentlySelectedWeek) return;
+
+      const causes = document.getElementById('ai-causes-text').value;
+      const plans = document.getElementById('ai-plans-text').value;
+      const executions = document.getElementById('ai-executions-text').value;
+
+      try {
+          const docRef = db.collection("users").doc(user.uid).collection("weekly_ai_analytics").doc(String(currentlySelectedWeek));
+          await docRef.update({
+              causes: causes,
+              plans: plans,
+              executions: executions,
+              updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+          console.log("AI Card Edits Saved!");
+      } catch(e) {
+          console.error("Failed to save edits", e);
+      }
+  };
+</script>
+
 </body>
 </html>
