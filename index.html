@@ -4703,6 +4703,7 @@ window.closeEngineModal = function() {
   }
 
   // 2. Generate Analysis via Backend API
+    // 2. Generate Analysis via Backend API (Updated Error Catcher)
   window.generateWeeklyAIAnalysis = async function() {
       const user = auth.currentUser;
       if(!user || !currentlySelectedWeek) return;
@@ -4719,7 +4720,7 @@ window.closeEngineModal = function() {
       btn.style.display = 'none';
       status.style.display = 'block';
 
-      // Prepare lightweight data payload to save tokens
+      // Prepare lightweight data payload
       const payloadData = weekMistakes.map(m => ({
           subject: m.subject, topic: m.topic, 
           causes: (m.rootCauses||[]).join(', '), remarks: m.remarks
@@ -4732,7 +4733,11 @@ window.closeEngineModal = function() {
               body: JSON.stringify({ mistakeLogs: payloadData })
           });
 
-          if(!response.ok) throw new Error("API failed");
+          // NINJA HACK: Agar server error dega, toh asli wajah nikaalenge
+          if(!response.ok) {
+              const errText = await response.text();
+              throw new Error(errText); 
+          }
           
           const result = await response.json();
           
@@ -4741,7 +4746,7 @@ window.closeEngineModal = function() {
           await docRef.set({
               causes: result.causes,
               plans: result.plans,
-              executions: "", // Empty for user to fill later
+              executions: "", 
               generatedAt: firebase.firestore.FieldValue.serverTimestamp()
           });
 
@@ -4751,7 +4756,8 @@ window.closeEngineModal = function() {
 
       } catch(error) {
           console.error("AI Generation failed:", error);
-          alert("Generation fail ho gaya bhai! Server error.");
+          // Yahan exact error print hoga screen par
+          alert("Beemari pakdi gayi: " + error.message);
           btn.style.display = 'block';
           status.style.display = 'none';
       }
