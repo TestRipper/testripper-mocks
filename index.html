@@ -4702,8 +4702,7 @@ window.closeEngineModal = function() {
       }
   }
 
-  // 2. Generate Analysis via Backend API
-    // 2. Generate Analysis via Backend API (Updated Error Catcher)
+  // 2. Generate Analysis via Backend API (Ninja Hack 2.0)
   window.generateWeeklyAIAnalysis = async function() {
       const user = auth.currentUser;
       if(!user || !currentlySelectedWeek) return;
@@ -4720,28 +4719,33 @@ window.closeEngineModal = function() {
       btn.style.display = 'none';
       status.style.display = 'block';
 
-      // Prepare lightweight data payload
       const payloadData = weekMistakes.map(m => ({
           subject: m.subject, topic: m.topic, 
           causes: (m.rootCauses||[]).join(', '), remarks: m.remarks
       }));
 
       try {
-          const response = await fetch('/api/ai-analytics.js', {
+          const response = await fetch('/api/ai-analytics', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ mistakeLogs: payloadData })
           });
 
-          // NINJA HACK: Agar server error dega, toh asli wajah nikaalenge
+          // NINJA HACK 2.0: JSON parse karne se pehle data ko 'Raw Text' me nikalte hain
+          const rawText = await response.text(); 
+
           if(!response.ok) {
-              const errText = await response.text();
-              throw new Error(errText); 
+              throw new Error(`HTTP Error ${response.status}:\n\n` + rawText.substring(0, 150)); 
           }
           
-          const result = await response.json();
+          let result;
+          try {
+              result = JSON.parse(rawText); 
+          } catch(e) {
+              // Asli beemari yahan pakdi jayegi!
+              throw new Error("Server ne JSON ki jagah ye kachra bheja hai (EdgeOne Route Issue):\n\n" + rawText.substring(0, 200));
+          }
           
-          // Save to Firestore immediately
           const docRef = db.collection("users").doc(user.uid).collection("weekly_ai_analytics").doc(String(currentlySelectedWeek));
           await docRef.set({
               causes: result.causes,
@@ -4750,14 +4754,12 @@ window.closeEngineModal = function() {
               generatedAt: firebase.firestore.FieldValue.serverTimestamp()
           });
 
-          // Update UI
           status.style.display = 'none';
           checkAndLoadAIAnalytics(currentlySelectedWeek);
 
       } catch(error) {
           console.error("AI Generation failed:", error);
-          // Yahan exact error print hoga screen par
-          alert("Beemari pakdi gayi: " + error.message);
+          alert("Beemari ka Exact Roop:\n\n" + error.message);
           btn.style.display = 'block';
           status.style.display = 'none';
       }
