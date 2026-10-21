@@ -4727,7 +4727,7 @@ window.closeEngineModal = function() {
       }));
 
       try {
-          const response = await fetch('/api/ai-analytics', {
+          const response = await fetch('/api/ai-analytics.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ mistakeLogs: payloadData })
