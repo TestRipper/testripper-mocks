@@ -24,7 +24,7 @@ You MUST output ONLY a valid JSON object with exactly two keys:
 Do NOT output any markdown blocks like \`\`\`json. Return pure JSON string.`;
 
   try {
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite :generateContent?key=${API_KEY}`;
     
     const response = await fetch(endpoint, {
       method: "POST",
